@@ -486,9 +486,9 @@ footer .d4 .dq{background-position: center -65px; color:#FFF}
 
 }
 
-@media screen and (max-height : 600px) {	
-	
+@media screen and (max-height : 600px) {
 
+}
 @media screen and (max-width : 320px) {	
 	.use .u2 .l1{  width:41%;}
 	.use .u2 .r1{ width:58%;}
