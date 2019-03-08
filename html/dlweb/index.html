@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script src="js/jquery-1.8.min.js" type="text/javascript"></script>
+    <script src="js/swiper-2.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/Site20150525.css">
+    <link rel="stylesheet" href="css/a.css">
+    <link rel="stylesheet" href="css/c.css">
+	<title></title>
+	<script type="text/javascript">
+		 $(document).scroll(function(){
+			 var scroolY=$(window).scrollTop();
+			 var len=$(".contenty .list").length;
+			 for(var i=0;i<len;i++){
+				var hei=$(".contenty .list").eq(i).offset().top;
+				if(scroolY>=hei-500){
+					//$(".contenty .list").removeClass("dq")
+					$(".contenty .list").eq(i).addClass("dq")
+					}
+				 }
+			 })
+	    </script>
+        
+<style>
+
+</style>
+</head>
+<body>
+
+<div  class="new20150525">
+<div class="nav"><div class="conter"><img src="img/20150525/logo.png" width="132" height="36" /> <a>关注我们</a></div></div>
+
+
+<div class="box1" style="background-color:#1fca7c">
+<div class="conter">
+<div class="swiper-container">
+    <div class="swiper-wrapper" id="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#"><img src="img/20150525/1.jpg" alt="#1fca7c" name=""  title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/20150525/2.jpg" alt="#2dbcff" name="img/20150525/bg.png" title="詹姆斯变形的脚趾 风光十足背后的"></a>                
+        </div>
+		<div class="swiper-slide">
+            <a href="#"><img src="img/20150525/3.jpg" alt="#29b7c5" name="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+                
+    </div>   
+    <!--<span class="swiper_title"></span>  -->        
+    <div class="pagination"><!--右下角圆点标示--></div>  
+    
+<script type="text/javascript">        
+ var newSlideSize = function slideSize(){
+	$(".swiper-container,.swiper-wrapper,.swiper-slide").height(410); 
+ };
+ newSlideSize();
+ $(window).resize(function(){
+   newSlideSize();
+ });
+</script>
+
+<!--首页焦点图  触屏滑动 鼠标拖拽-->
+<script type="text/javascript">
+$(function(){
+	var oDetail = $(".swiper_title");
+	oDetail.text($(".swiper-slide a img").eq(0).attr("title"));
+	var mySwiper = new Swiper('.swiper-container',{   
+		pagination: '.pagination',
+		loop:true,
+		autoplay:3000,	
+		paginationClickable: true,
+		onSlideChangeStart: function(){
+		   oDetail.text($(".swiper-slide a img").eq(mySwiper.activeIndex).attr("title"));
+		   $(".box1").css("background","url("+$(".swiper-slide a img").eq(mySwiper.activeIndex).attr("name")+") repeat-x "+$(".swiper-slide a img").eq(mySwiper.activeIndex).attr("alt"))
+		}
+	});   
+}); 
+</script>          
+</div>
+</div>
+</div>
+
+
+<div class="contenty">
+	<div class="list no1 dq">
+    	<div class="conter">
+          <div class="wrap">
+       	   <div class="verticalWrap">
+              <div class="vertical">
+              		<div class="a1">
+                    	<div class="a1L"><img src="img/20150525/a1.png"/></div>
+                      <div class="a1R">
+                        	<p><strong>快驴</strong> 最快的方式,找到小伙伴,拼吃拼住出国玩.</p>
+                            <div class="a1R1"><img src="img/20150525/a2.png" /><img src="img/20150525/a3.png" /><img src="img/20150525/a4.png" /></div>
+                            <div class="a1R2"><img src="img/20150525/a5.png" /></div>
+                            <div class="clear"></div>
+                      </div>
+                        <div class="clear"></div>
+                    </div>
+             </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    
+    
+    <div class="list no2" style="background-color:#f6f6f6">
+    	<div class="conter"><div class="tag"><strong>快速结伴</strong><br />周三</div>
+          <div class="wrap">
+       	   <div class="verticalWrap">
+              <div class="vertical">
+              		<div class="a1">
+                    	<div class="a1L" style="width:570px">
+                        	<div class="text36" style="padding:40px 0 0 40px; font-weight:bold">关注快驴微信<br /> 最快的方式，找到小伙伴</div>
+                            <div class="tagico" style="padding-left:40px">
+                            	<a>关注<br />微信</a><a style="color:#f0ad2b">结伴<br /> 成功</a>
+                            </div>
+                      </div>
+                      	<div class="a1R" style="width:370px">
+                        <img src="img/20150525/a7.png"/>
+                     	</div>
+                        <div class="clear"></div>
+                    </div>
+             </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    
+    
+    <div class="list no3">
+    	<div class="conter"><div class="tag"><strong>行程安排</strong><br />周四</div>
+          <div class="wrap">
+       	   <div class="verticalWrap">
+              <div class="vertical">
+              		<div class="a1">
+                    	<div class="a1L" style="width:430px; padding-top:20px; padding-left:90px"><img src="img/20150525/a8.png"/> </div>
+                      	<div class="a1R" style="width:510px">
+                        <div class="text36" style="padding:0px 0 0 40px">旅游达人，<br />
+                          安排最精彩的当地游行程</div>
+                            <div class="tagico" style="padding-left:40px">
+                            	<a>同城<br /> 交友</a><a style="color:#f0ad2b">安全<br /> 保障</a><a style="color:#f16666">行程<br /> 安排 </a>
+                            </div>
+                     	</div>
+                        <div class="clear"></div>
+                    </div>
+             </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    
+    
+    <div class="list no4" style="background-color:#f6f6f6">
+    	<div class="conter">
+    	  <div class="tag"><strong>结伴出国</strong><br />
+   	      周三</div>
+          <div class="wrap">
+       	   <div class="verticalWrap">
+              <div class="vertical">
+              		<div class="a1">
+                    	<div class="a1L" style="width:620px">
+                        	<div class="text36" style="padding:40px 0 0 40px">一次花钱少的高大上旅行，<br />
+                       	    吃当地最地道的，玩当地最好玩</div>
+                            <div class="tagico" style="padding-left:40px">
+                            	<a>拼吃<br /> 拼喝</a><a style="color:#f0ad2b">拼房<br /> 拼车</a><a style="color:#f16666; pa">拼攻<br />略 </a>
+                            </div>
+                      </div>
+                      	<div class="a1R" style="width:370px; padding-top:50px">
+                        <img src="img/20150525/a9.png"/>
+                     	</div>
+                        <div class="clear"></div>
+                    </div>
+             </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+
+	<div class="list no5" style="background-color:#e8e8e8">
+    	<div class="conter">
+          <div class="wrap">
+       	   <div class="verticalWrap">
+              <div class="vertical">
+              		<div class="foot1"><img src="img/20150525/wx.png"/><img class="map" src="img/20150525/dt.png"/></div>
+                    <div class="foot2">联系我们 / Contact Us<br />
+                      电话：18512526208   13390910229<br />
+                      Q Q：1846246903<br />
+                      邮箱：kuailvclub@163.com<br />
+                      地址：南京市中⼭北路200号弘正楼203室<br />
+南京市浦⼝区宁六路219号⾼新区创业园216室</div>
+                    <div class="clear"></div>
+             </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+	
+</div>
+
+
+</div>
+</body>
+</html>

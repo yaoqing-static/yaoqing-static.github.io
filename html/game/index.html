@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>I love 陈甜香</title>
+<link rel="stylesheet" type="text/css" href="img/main.min.css">
+<script type="text/javascript" src="img/jQuery-1.7.1.js"></script>
+<script src="img/main.js"></script>
+<script>
+$(function(){
+	
+	var wHeigh=$(window).height();
+	$("article").css("height",wHeigh);
+	$("#screen").css("height",wHeigh);
+	$("#cvs").css("height",wHeigh-60);
+	
+
+	})
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<article>
+    <div class="grid cc">
+        <div id="screen" class="sprite bg-screen">
+            <canvas id="cvs" width="502" height="538" style="width:550px">
+                您的游览器玩不了这个游戏，请换个高级一点的浏览器，如火狐、谷歌、QQ浏览器。
+            </canvas>
+        </div>
+
+        <!--
+                    <div id="control" class="hide">
+                            <div class="direction">
+                                    <button ontouchstart="" class="btn sprite bg-btn" id="btn-up">
+                                    </button>
+                                    <button ontouchstart="" class="btn sprite bg-btn" id="btn-left">
+                                    </button>
+                                    <button ontouchstart="" class="btn sprite bg-btn" id="btn-right">
+                                    </button>
+                                    <button ontouchstart="" class="btn sprite bg-btn" id="btn-down">
+                                    </button>
+                            </div>
+                            <button ontouchstart="" class="btn sprite" id="btn-pause">
+                            </button>
+                            <button ontouchstart="" class="btn sprite" id="btn-speed">
+                            </button>
+                    </div>
+        -->
+
+        <button class="btn sprite" id="btn-start">开始
+        </button>
+    </div>
+    <div id="dialog" class="hide">
+        <div id="spn">
+        </div>
+        <div class="inner hide" id="d-pause">
+            <div class="txt">
+                游戏暂停
+            </div>
+            <button class="btn" id="btn-resume">
+                继续游戏
+            </button>
+            <button class="btn btn-share">
+                分享好友
+            </button>
+            <button class="btn btn-more" onclick="parent.moregame();
+                    return flase;" style="cursor: pointer;">
+                更多游戏
+            </button>
+        </div>
+        <div class="inner hide" id="d-over">
+            <div class="txt">
+                123
+            </div>
+            <button class="btn" id="btn-retry">
+                再来一发
+            </button>
+            <button class="btn btn-share">
+                分享好友
+            </button>
+            <button class="btn btn-more" onclick="parent.moregame();
+                    return flase;" style="cursor: pointer;">
+                更多游戏
+            </button>
+        </div>
+    </div>
+
+</article>
+
+
+<script src="img/main.min.js"></script>
+<script type="text/javascript" src="img/jssdk.min.js" charset="utf-8"></script>
+</body>
+</html>

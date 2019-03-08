@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title>Swiper中文网基础演示(www.swiper.com.cn)</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link href="css/slide.css"  rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+$(function(){
+	var winH=$(window).height();
+	$("body").css("height",winH);
+	$(".swiper-slide").css("height",winH);
+	$(".gapindex").css("height",winH);
+	
+	//时间
+	
+	var dateTime=new Date();
+         var hh=dateTime.getHours();//小时
+         var mm=dateTime.getMinutes();//分钟
+         var ss=dateTime.getSeconds();//秒钟
+
+         var yy=dateTime.getFullYear();//年份
+         var MM=dateTime.getMonth()+1;  //月份-因为1月这个方法返回为0，所以加1
+         var dd=dateTime.getDate();//日数
+		 if(mm<10)
+		 	mm="0"+mm;
+
+         var week=dateTime.getDay();//周(0~6,0表示星期日)
+              var days=[ "日 ", "一 ", "二 ", "三 ", "四 ", "五 ", "六 ",]
+		$(".swiper-slide .gapindex .time").html(hh+":"+mm);
+		$(".swiper-slide .gapindex .data").html(MM+"月"+dd+"日"+" 星期"+days[week]);
+             //document.getElementById("date").innerHTML=yy+"年"+MM+"月"+dd+"日 "+"星期"+days[week] ;
+           //document.getElementById("time").innerHTML=hh+"时"+mm+"分"+ss+"秒";
+
+
+
+
+
+$("body").on("touchstart", function(event) {
+					var pos = event.originalEvent.changedTouches[0].screenX;
+					var start = pos;
+					$("article").on("touchend", function(event) {
+					$("article").unbind("touchmove");
+					$("article").unbind("touchend");
+					var direct = event.originalEvent.changedTouches[0].screenX- start;
+					if(direct>10){
+						window.location.href="index2.html"; 
+						}//
+					//if(direct<-10){alert("向左边")}//
+					return false;
+				});	
+				})
+
+
+	
+	
+	})
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+<article>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+  
+  	<div class="swiper-slide">
+   		<div class="gapindex">
+        	<div class="time">17:57</div>
+            <div class="data">7月20日 星期一</div>
+            <div class="botom">
+            	<div class="ga1">>滑动来解锁</div>
+                <div class="ga2"><img src="image/xj.jpg"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</article>
+
+
+
+</body>
+</html>

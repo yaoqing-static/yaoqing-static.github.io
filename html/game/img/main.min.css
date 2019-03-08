@@ -1,0 +1,454 @@
+/** 
+ * -------------------------------------------------------------
+ * Copyright (c) 2014 7k7k All rights reserved. 
+ * http://www.7k7k.com/ 
+ * ------------------------------------------------------------- 
+ */ 
+
+
+/*!
+ * @overview: 主样式
+ */html {
+	color: #545454;
+	background-color: #23282B;
+	-webkit-text-size-adjust: 100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,html,img,input,legend,li,ol,p,pre,td,textarea,th,ul {
+	margin: 0;
+	padding: 0
+}
+
+
+article{ width:640px; margin:auto; background-color:#F00;; position:relative}
+
+body,button,input,select,textarea {
+	font: 14px/1.5 "Helvetica neue",Helvetica,Tahoma,Arial,"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53",sans-serif
+}
+
+aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	margin: 0;
+	padding: 0;
+	display: block
+}
+
+audio,canvas,video {
+	display: inline-block
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%
+}
+
+em,i {
+	font-style: normal
+}
+
+ol,ul {
+	list-style: none
+}
+
+button {
+	cursor: pointer;
+	border: 0
+}
+
+a:link,a:visited {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent
+}
+
+a:active,a:hover {
+	text-decoration: none
+}
+
+.hide {
+	display: none
+}
+
+
+.grid {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+}
+
+#screen {
+	position: relative;
+	overflow: visible;
+	-webkit-transform: translateZ(0); position:relative
+}
+
+canvas {
+	position: absolute;
+	left: 24px;
+	top: 22px;
+	1background: rgba(2,2,222,.4);
+	height: 538px
+}
+
+#control {
+	position: absolute;
+	width: 100%;
+	height: 335px;
+	top: 595px;
+	left: 0
+}
+
+.btn {
+	outline: 0;
+	display: block;
+	border: none;
+	position: absolute
+}
+
+.direction {
+	position: absolute;
+	top: 15px;
+	height: 300px;
+	width: 300px;
+	left: 60px
+}
+
+#btn-down,#btn-up {
+	left: 100px
+}
+
+#btn-right {
+	right: 0
+}
+
+#btn-left,#btn-right {
+	top: 80px
+}
+
+#btn-down {
+	top: 160px
+}
+
+#btn-speed {
+	right: 16px;
+	top: 50px
+}
+
+#btn-down:after,#btn-left:after,#btn-right:after,#btn-speed:after,#btn-up:after {
+	display: block;
+	content: '';
+	background-repeat: no-repeat;
+	background-image: url(../img/sprites.png);
+	background-color: transparent;
+	position: absolute;
+	height: 10px
+}
+
+#btn-up:after {
+	top: -15px;
+	left: 39px;
+	width: 22px;
+	background-position: -350px -682px
+}
+
+#btn-left:after {
+	top: 45px;
+	left: -51px;
+	width: 46px;
+	background-position: -446px -860px
+}
+
+#btn-right:after {
+	top: 45px;
+	right: -59px;
+	width: 54px;
+	background-position: -388px -870px
+}
+
+#btn-down:after {
+	bottom: -15px;
+	left: 27px;
+	width: 46px;
+	background-position: -442px -870px
+}
+
+#btn-speed:after {
+	width: 58px;
+	top: -20px;
+	left: 20px;
+	background-position: -388px -860px
+}
+
+.sprite {
+	display: block;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../img/sprites1.png); background-size:100% 100%
+}
+
+#btn-speed {
+	width: 194px;
+	height: 194px;
+	background-position: -194px -692px
+}
+
+#btn-speed:active {
+	background-position: 0 -692px
+}
+
+.bg-btn {
+	width: 100px;
+	height: 100px;
+	background-position: -388px -688px
+}
+
+.bg-btn:active {
+	background-position: -350px -582px
+}
+
+.bg-screen {
+	width: 640px;
+	height: 582px;
+	background-position: 0 0
+}
+
+#btn-pause {
+	width: 124px;
+	height: 36px;
+	background-position: -388px -788px;
+	left: 300px
+}
+
+#btn-pause:active {
+	background-position: -388px -824px
+}
+
+#btn-start {
+	width: 350px;
+	height: 110px;
+	left: 100px;
+	background-image:none; background-color:#CCC; position:absolute; z-index:111; top:200px; font-size:34px
+}
+
+#dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.4)
+}
+
+#dialog .inner {
+	margin-top: 80px
+}
+
+#dialog .txt {
+	padding: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 40px
+}
+
+#dialog .btn {
+	width: 280px;
+	height: 50px;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	background-color: #fff;
+	position: relative;
+	margin: 20px auto
+}
+
+#spn {
+	position: absolute;
+	left: 50%!important;
+	margin-left: -160px;
+	width: 320px;
+	height: 50px;
+	top: 0;
+	z-index: 100
+}
+
+#dialog .btn#btn-resume,#dialog .btn#btn-retry {
+	background-color: #FFDE00
+}
+
+#share {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.4);
+	z-index: 1000;
+	display: none
+}
+
+#share img {
+	position: absolute;
+	width: 160px;
+	display: block;
+	top: 0;
+	right: 0
+}
+
+.newbut{ position:absolute; width:80%; height:100px; z-index:111; bottom:0px}
+.newbut a{ display:inline-block; width:50%; height:100px;}
+
+@media all and (max-width:380px) {
+	canvas {
+		left: 12px;
+		top: 11px;
+
+		height: 269px
+	}
+
+	#screen {
+		margin: 0px auto
+	}
+
+	#control {
+		top: 298px;
+		height: 163px
+	}
+
+	.direction {
+		top: 8px;
+		position: absolute;
+		height: 150px;
+		width: 150px;
+		left: 30px
+	}
+
+	#btn-down,#btn-up {
+		left: 50px
+	}
+
+	#btn-left,#btn-right {
+		top: 40px
+	}
+
+	#btn-down {
+		top: 80px
+	}
+
+	#btn-speed {
+		right: 8px;
+		top: 25px
+	}
+
+	#btn-down:after,#btn-left:after,#btn-right:after,#btn-speed:after,#btn-up:after {
+		height: 5px;
+		-webkit-background-size: 271px 443px;
+		background-size: 271px 443px
+	}
+
+	#btn-up:after {
+		top: -8px;
+		left: 20px;
+		width: 11px;
+		background-position: -175px -341px
+	}
+
+	#btn-left:after {
+		top: 22px;
+		left: -26px;
+		width: 23px;
+		background-position: -223px -430px
+	}
+
+	#btn-right:after {
+		top: 22px;
+		right: -30px;
+		width: 27px;
+		background-position: -194px -435px
+	}
+
+	#btn-down:after {
+		bottom: -8px;
+		left: 14px;
+		width: 23px;
+		background-position: -221px -435px
+	}
+
+	#btn-speed:after {
+		width: 29px;
+		top: -10px;
+		left: 10px;
+		background-position: -194px -430px
+	}
+
+	.sprite {
+
+	}
+
+	#btn-speed {
+		width: 97px;
+		height: 97px;
+		background-position: -97px -346px
+	}
+
+	.bg-btn {
+		width: 50px;
+		height: 50px;
+		background-position: -194px -344px
+	}
+
+
+	#btn-pause {
+		width: 62px;
+		height: 18px;
+		background-position: -194px -394px;
+		left: 150px
+	}
+
+	#btn-pause:active {
+		background-position: -194px -412px
+	}
+
+
+	#btn-speed:active {
+		background-position: 0 -346px
+	}
+
+	.bg-btn:active {
+		background-position: -175px -291px
+	}
+
+	#dialog .inner {
+		margin-top: 70px
+	}
+
+	#dialog .txt {
+		padding: 20px;
+		text-align: center;
+		color: #fff;
+		font-size: 30px
+	}
+
+	#dialog .btn {
+		width: 280px;
+		height: 50px;
+		border-radius: 20px;
+		text-align: center;
+		line-height: 50px;
+		background-color: #fff;
+		position: relative;
+		margin: 20px auto
+	}
+}

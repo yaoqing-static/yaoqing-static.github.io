@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>Swiper中文网基础演示(www.swiper.com.cn)</title>
+
+<link href="css/slide.css"  rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	var winH=$(window).height();
+	$("body").css("height",winH);
+	$(".swiper-slide").css("height",winH);
+	$(".gapindex").css("height",winH);
+	$("article").css("height",winH);
+	
+	var boxH=$(".box").height();
+	$(".card").css("height",boxH*0.82)
+	
+	//浮层
+	$(".bgcolor").css("height",winH);
+	$(".Attention .lq").click(function(){
+		$(".bgcolor1").css("display","block");
+		$(".layer1").css("display","block");
+		})
+
+	})
+	
+</script>
+
+
+
+</head>
+<body>
+
+<article>
+<div class="bgcolor1"></div>
+<div class="layer1">
+    	<p><img src="image/xx.png">恭喜你获得7元七夕代金券！<br>求好友告白，<br>
+   	    更可升级获得77元代金券哦！</p>
+ 		<a href="javascript:void(0)">继续领取</a>
+        <a href="javascript:void(0)">马上升级</a>
+</div>
+
+
+<div class="box">
+	<div class="logonew1"><img src="image/logo.png" ></div>
+    <div class="Attention">
+    	<div class="p1"><img src="image/gapnew4a.png" ></div>
+        <div class="name">XXX，</div>
+   
+      <a href="#" class="lq">点击<br>领取<br>礼物</a>
+        <div class="ewm"><img src="image/gapnew5.png"></div>
+    </div>
+    
+    
+</div>
+
+<div class="footbut"><a href="#">活动首页</a><a href="#">活动规则</a><a href="#">我的优惠券</a></div> 
+</article>
+
+
+
+</body>
+</html>

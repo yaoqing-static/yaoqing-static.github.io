@@ -2,46 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d538413e-1653-4ff7-9f3f-c958a0c42eea" name="Default Changelist" comment="1111">
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/active2/Activity.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/active2/img/a1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/active2/img/a2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/Result1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/Result2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/active.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/card1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/card2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/card3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/gz.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/Prompt.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/bg2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/but1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/continuous.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/loading.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/loading2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/new2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p1a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p2_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p2_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p4_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p4_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p4_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p5_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p5_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p6_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/p6_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/share1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/images/wz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/js/zepto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/share1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/CHARLES/web/share2.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/CONTRIBUTING.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/LICENSE.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/README.md" afterDir="false" />
@@ -364,43 +324,6 @@
       <change afterPath="$PROJECT_DIR$/html/HTML/login.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/WorldX/img/qrcord.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/WorldX/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/active5100/Activity.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/active5100/img/a1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/active5100/img/a2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/active5100/img/a3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/active5100/img/a4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/active5100/img/a5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/active5100/img/a6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/end.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/a1(1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/bg2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/bg3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/bg4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/but1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/but2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/but3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/cheack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/ewm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/ico3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/img2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/images/text.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/activity/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/.idea/AngularTemp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/10个点的坐标计算/star.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/angular-csp.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/angular.js" afterDir="false" />
@@ -410,79 +333,8 @@
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/bower.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/index.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/jsTemp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/jstest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/spectrum/spectrum.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/spectrum/spectrum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/svgTest.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/card.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/FirstPerson_new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/NotSatrt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/RepeatParticipate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/card_new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/hdgz_new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/bg(1).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/but.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/but2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/card1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/card2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/card3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/fix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/gz1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/kl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/topcard.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/images/coco/user.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/js/zepto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/page100.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/page2_new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/pageTop100.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco/ycjg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/convenientList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/css/index(1).css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/banner1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/but.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/down.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/gg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/img1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/img2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/img3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/img4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/img5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/images/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/js/zepto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/stationProvince.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－ 购买抽奖－浮层1,2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－先到先得.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－加油站粉丝-小奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－提交成功.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－无奖品.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－查看中奖名单.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－活动结束.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－活动规则.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－第1-3次抽奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－购买抽奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－赢大奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－输入信息.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/coco2/为出行加油－非加油站扫码.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/copy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/createjs/lib/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/createjs/lib/preloadjs-NEXT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/createjs/lib/preloadjs-NEXT.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/createjs/lib/preloadjs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/createjs/lib/preloadjs.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/createjs/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/css/_notes/slide.css.mno" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/css/adaption.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/css/date.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/css/slide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/css/slide2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/css/slide20160706.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/dlweb/css/Site20150525.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/2.jpg" afterDir="false" />
@@ -4718,8 +4570,6 @@
       <change afterPath="$PROJECT_DIR$/html/浙报/运营－自定义菜单-添加一级菜单.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/浙报/运营－自定义菜单-添加二级菜单.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/浙报/运营－自定义菜单-默认状态.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/5100/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/5100/css/index.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -4918,7 +4768,7 @@
       <workItem from="1552016318674" duration="234000" />
       <workItem from="1552016553774" duration="8309000" />
       <workItem from="1552025281506" duration="1463000" />
-      <workItem from="1552026949805" duration="3218000" />
+      <workItem from="1552026949805" duration="3695000" />
     </task>
     <task id="LOCAL-00001" summary="1111">
       <created>1552016367595</created>
@@ -5011,11 +4861,32 @@
       <option name="project" value="LOCAL" />
       <updated>1552031294809</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="静态文件">
+      <created>1552031411614</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1552031411614</updated>
+    </task>
+    <task id="LOCAL-00015" summary="静态文件">
+      <created>1552031507649</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1552031507649</updated>
+    </task>
+    <task id="LOCAL-00016" summary="静态文件">
+      <created>1552031730130</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1552031730130</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13224000" />
+    <option name="totallyTimeSpent" value="13701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
