@@ -2,267 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d538413e-1653-4ff7-9f3f-c958a0c42eea" name="Default Changelist" comment="1111">
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/.bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/MIT-LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/dist/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/dist/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/dist/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/jsonp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/load.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/parseJSON.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/parseXML.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/var/nonce.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/var/rquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/ajax/xhr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/attributes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/attributes/attr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/attributes/classes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/attributes/prop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/attributes/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/attributes/val.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/callbacks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/core/access.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/core/init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/core/parseHTML.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/core/ready.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/core/var/rsingleTag.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/addGetHookIf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/curCSS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/defaultDisplay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/swap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/var/cssExpand.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/var/isHidden.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/var/rmargin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/data/accepts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/data/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/deferred.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/deprecated.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/dimensions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/effects.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/effects/Tween.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/effects/animatedSelector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/effects/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/event.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/event/ajax.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/event/alias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/event/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/exports/amd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/exports/global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/intro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/manipulation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/manipulation/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/manipulation/var/rcheckableType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/offset.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/outro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/queue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/queue/delay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/selector-sizzle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/selector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/serialize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/sizzle/dist/sizzle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/sizzle/dist/sizzle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/sizzle/dist/sizzle.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/traversing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/traversing/findFilter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/class2type.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/concat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/deletedIds.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/hasOwn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/indexOf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/pnum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/push.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/rnotwhite.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/slice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/strundefined.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/var/toString.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/bower_components/jquery/src/wrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/changelog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/css/base.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/css/font.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/css/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/css/resets.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/css/responsive.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/css/theme.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/css/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/basic-carousel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/basic-slider-with-caption.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/basic-slider-with-custom-direction-nav.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/carousel-min-max.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/css/flexslider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/dynamic-carousel-min-max.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-medium/eot/1110FC_0.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-medium/svg/1110FC_0.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-medium/svg/svg_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-medium/ttf/1110FC_0.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-medium/woff/1110FC_0.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-regular/eot/11014B_0.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-regular/svg/11014B_0.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-regular/svg/svg_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-regular/ttf/11014B_0.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-regular/woff/11014B_0.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-semibold/eot/style_169898.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-semibold/svg/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-semibold/svg/style_169898.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-semibold/ttf/style_169898.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/fonts/webfonts/geo-semibold/woff/style_169898.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/images/kitchen_adventurer_caramel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/images/kitchen_adventurer_cheesecake_brownie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/images/kitchen_adventurer_donut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/images/kitchen_adventurer_lemon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/froogaloop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/jquery.easing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/jquery.fitvid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/jquery.flexslider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/jquery.mousewheel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/modernizr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/shBrushCss.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/shBrushJScript.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/shBrushXml.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/js/shCore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/thumbnail-controlnav.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/thumbnail-slider.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/video-wistia.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/demo/video.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/flexslider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/flexslider.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/fonts/flexslider-icon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/fonts/flexslider-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/fonts/flexslider-icon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/fonts/flexslider-icon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/images/bg_play_pause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/jquery.flexslider-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/jquery.flexslider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/.bowerrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/.jscsrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/AUTHORS.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/MIT-LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/dist/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/dist/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/dist/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/jsonp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/load.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/parseJSON.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/parseXML.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/var/nonce.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/var/rquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/ajax/xhr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/attributes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/attributes/attr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/attributes/classes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/attributes/prop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/attributes/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/attributes/val.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/callbacks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/core/access.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/core/init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/core/parseHTML.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/core/ready.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/core/var/rsingleTag.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/addGetHookIf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/curCSS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/defaultDisplay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/swap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/var/cssExpand.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/var/isHidden.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/var/rmargin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/data/accepts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/data/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/deferred.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/deprecated.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/dimensions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/effects.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/effects/Tween.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/effects/animatedSelector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/effects/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/event.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/event/ajax.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/event/alias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/event/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/exports/amd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/exports/global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/intro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/manipulation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/manipulation/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/manipulation/var/rcheckableType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/offset.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/outro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/queue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/queue/delay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/selector-sizzle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/selector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/serialize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/dist/sizzle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/dist/sizzle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/dist/sizzle.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/data/empty.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/data/mixed_sort.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/data/testinit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/unit/extending.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/unit/selector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/sizzle/test/unit/utilities.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/traversing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/traversing/findFilter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/class2type.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/concat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/deletedIds.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/hasOwn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/indexOf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/pnum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/push.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/rnotwhite.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/slice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/strundefined.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/var/toString.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/node_modules/jquery/src/wrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/FlexSlider-2.6.4-1/woocommerce-FlexSlider-0d95828/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/H5demo/animations.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/H5demo/component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/H5demo/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/H5demo/modernizr.custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/H5demo/pageconter.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/HTML/.idea/html.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/HTML/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/HTML/.idea/workspace.xml" afterDir="false" />
@@ -335,134 +74,7 @@
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/card.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/copy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/css/Site20150525.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/a9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/dt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/tag2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/tag3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/img/20150525/xx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/js/jquery-1.8.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/dlweb/js/swiper-2.1.min(1).js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/em.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/css/swiper.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/images/web-swipe-tip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/js/maps/swiper.jquery.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/js/maps/swiper.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/js/swiper.animate.min(1).js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/js/swiper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/flower(1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s1-t1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s1-t2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s2-i1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s2-i2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s2-i3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s2-i4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s2-i5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s3-i2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s3-i4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/festival/upload/s3-i5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/jQuery-1.7.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/jssdk.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/loading-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/loading-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/main.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/main.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/share.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/sprites.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/img/sprites1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/game/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/Advertising.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/cheakcard - 已关注.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/cheakcard - 我的优惠券 无.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/cheakcard - 未关注.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/cheakcard - 查看卡券.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/cheakcard - 活动规则.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/cheakcard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/ckgb1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/ckgb2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/ckgb3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/ckgb3a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/css/css/slide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/css/css/swiper.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/css/slide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/css/swiper.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/end.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/gb.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/gzgap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/aixin1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/aixin2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/aixin2a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/aixinred1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/aixinred2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/aixinred2d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/but.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/butnee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/end.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/endwx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap3a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap4b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gap7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gapend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gapindex.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gapnew4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gapnew4a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gapnew5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gapok.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/gb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/jt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/logo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/logo1a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/love.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/love1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/lovemini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/mebut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/pen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/res.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/xj.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/image/xx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/index3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/js/Untitled-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/js/jquery-1.9.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/js/swiper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/kjhx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/navIndex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/qgb.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/slide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/gapLove/test.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/haizitong/anqing/$compile.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/haizitong/anqing/.idea/.name" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/haizitong/anqing/.idea/encodings.xml" afterDir="false" />
@@ -4768,7 +4380,7 @@
       <workItem from="1552016318674" duration="234000" />
       <workItem from="1552016553774" duration="8309000" />
       <workItem from="1552025281506" duration="1463000" />
-      <workItem from="1552026949805" duration="3695000" />
+      <workItem from="1552026949805" duration="4173000" />
     </task>
     <task id="LOCAL-00001" summary="1111">
       <created>1552016367595</created>
@@ -4882,11 +4494,25 @@
       <option name="project" value="LOCAL" />
       <updated>1552031730130</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="静态文件">
+      <created>1552031976102</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1552031976102</updated>
+    </task>
+    <task id="LOCAL-00018" summary="静态文件">
+      <created>1552032299513</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1552032299513</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13701000" />
+    <option name="totallyTimeSpent" value="14179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />

@@ -1,0 +1,800 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body { line-height: 1; font-family: "微软雅黑"; text-align:justify; text-justify:inter-ideograph; overflow-x:hidden }
+ol, ul {
+	list-style: none;
+}
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family:"微软雅黑"; 
+  color: #030d18;
+  background-color: #body;
+}
+
+a {
+  color: #f5484a;
+  text-decoration: none;
+}
+a:hover,a:active,a:focus {text-decoration: none;}
+
+img {
+  max-width: 100%;
+}
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+}
+.cd-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.has-top-margin {
+  /* this class is given - using jQuery - to the .cd-main-content following the .cd-secondary-nav when it becomes fixed */
+}
+@media only screen and (min-width: 990px) {
+  .has-top-margin {
+    -webkit-animation: animate-margin-top 0.3s;
+    -moz-animation: animate-margin-top 0.3s;
+    animation: animate-margin-top 0.3s;
+    margin-top: 0px;
+  }
+}
+
+@-webkit-keyframes animate-margin-top {
+  0% {
+    margin-top: 100px;
+  }
+
+  100% {
+    margin-top: 70px;
+  }
+}
+@-moz-keyframes animate-margin-top {
+  0% {
+    margin-top: 100px;
+  }
+
+  100% {
+    margin-top: 70px;
+  }
+}
+@keyframes animate-margin-top {
+  0% {
+    margin-top: 100px;
+  }
+
+  100% {
+    margin-top: 70px;
+  }
+}
+/* -------------------------------- 
+
+Navigation
+
+-------------------------------- */
+.cd-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #030d18;
+  z-index: 3;
+}
+@media only screen and (min-width: 768px) {
+  .cd-header {
+    height: 70px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+#cd-logo {
+  float: left;
+  margin: 13px 0 0 5%;
+}
+#cd-logo img {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  #cd-logo {
+    margin: 23px 0 0 5%;
+  }
+}
+@media only screen and (min-width: 990px) {
+  #cd-logo.is-hidden {
+    /* assign a position fixed and move outside the viewport (on the left) */
+    opacity: 0;
+    position: fixed;
+    left: -20%;
+    margin-left: 0;
+    -webkit-transition: left 0.3s, opacity 0.3s;
+    -moz-transition: left 0.3s, opacity 0.3s;
+    transition: left 0.3s, opacity 0.3s;
+  }
+  #cd-logo.is-hidden.slide-in {
+    /* slide in when the secondary navigation gets fixed */
+    left: 5%;
+    opacity: 1;
+  }
+}
+
+.cd-primary-nav {
+  /* mobile first - navigation hidden by default, triggered by tap/click on navigation icon */
+  float: right;
+  margin-right: 5%;
+  width: 44px;
+  height: 100%;
+  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+  background-size: 44px 44px;
+}
+.cd-primary-nav ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.cd-primary-nav ul.is-visible {
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  transform: translateY(50px);
+}
+.cd-primary-nav a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 5%;
+  background: #000101;
+  border-top: 1px solid #051426;
+  color: #f0eee1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-primary-nav {
+    /* reset navigation values */
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  .cd-primary-nav ul {
+    position: static;
+    width: auto;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    line-height: 70px;
+  }
+  .cd-primary-nav ul.is-visible {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .cd-primary-nav li {
+    display: inline-block;
+    margin-left: 1em;
+  }
+  .cd-primary-nav a {
+    display: inline-block;
+    height: auto;
+    line-height: normal;
+    background: transparent;
+    padding: .6em 1em;
+    border-top: none;
+    color: #030d18;
+  }
+}
+
+/* -------------------------------- 
+
+Intro
+
+-------------------------------- */
+#cd-intro {
+  position: relative;
+  height: 250px;
+  background: url(../img/intro-background.jpg) no-repeat center center;
+  z-index: 2;
+}
+#cd-intro #cd-intro-tagline {
+  width: 90%;
+  max-width: 990px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 120px;
+}
+#cd-intro h1 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #030d18;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (min-width: 768px) {
+  #cd-intro {
+    height: 400px;
+  }
+  #cd-intro #cd-intro-tagline {
+    padding-top: 160px;
+  }
+  #cd-intro h1 {
+    font-size: 32px;
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 990px) {
+  #cd-intro {
+    height: 250px;
+  }
+  #cd-intro #cd-intro-tagline {
+    padding-top: 250px;
+  }
+}
+
+.cd-btn {
+  display: inline-block;
+  padding: 1em 1.8em;
+  background-color: rgba(245, 72, 74, 0.9);
+  margin-top: 1em;
+  border-radius: 20em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+.no-touch .cd-btn:hover {
+  background-color: #f5484a;
+}
+@media only screen and (min-width: 990px) {
+  .cd-btn.is-hidden {
+    /* assign a position fixed and move outside the viewport (on the right) */
+    opacity: 0;
+    position: fixed;
+    right: -20%;
+    top: 0;
+    padding: .8em 1.2em;
+    margin: 14px 0 0;
+    -webkit-transition: right 0.3s, opacity 0.3s;
+    -moz-transition: right 0.3s, opacity 0.3s;
+    transition: right 0.3s, opacity 0.3s;
+  }
+  .cd-btn.is-hidden.slide-in {
+    /* slide in when the secondary nav gets fixed */
+    right: 5%;
+    opacity: 1;
+  }
+}
+
+/* -------------------------------- 
+
+Secondary Fixed Navigation
+
+-------------------------------- */
+.cd-secondary-nav {
+  position:fixed; width:100%; top:0px; left:0px;
+  z-index: 999999;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cd-secondary-nav ul {
+  /* mobile first - secondary navigation hidden by default, triggered by tap/click on .cd-secondary-nav-trigger*/
+  position: fixed;
+  width: 90%;
+  max-width: 400px;
+  left: 5%;
+  top: 20px;
+  border-radius: 0.25em;
+  background: rgba(3, 13, 24, 0.96);
+  visibility: hidden;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: left 0;
+  -moz-transform-origin: left 0;
+  -ms-transform-origin: left 0;
+  -o-transform-origin:left 0;
+  transform-origin: left 0;
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s;
+}
+
+.cd-secondary-nav ul.is-visible {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+}
+.cd-secondary-nav li a {
+  display: block;
+  padding: 1.6em;
+  border-bottom: 1px solid #092645;
+  color: #f0eee1;
+}
+.cd-secondary-nav li:last-child a {
+  border-bottom: none;
+}
+@media only screen and (min-width: 990px) {
+  .cd-secondary-nav {
+    z-index: 9999;
+    height: 70px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .cd-secondary-nav nav, .cd-secondary-nav ul, .cd-secondary-nav li, .cd-secondary-nav a {
+    height: 100%;
+  }
+  .cd-secondary-nav ul {
+    /* reset navigation values */
+    position: static;
+    width: auto;
+    max-width: 100%;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    text-align: right;
+    background-color: transparent;
+  }
+  .cd-secondary-nav li {
+    display: inline-block;
+    margin-left: -4px;
+  }
+  .cd-secondary-nav li a {
+    position: relative;
+    text-align: center;
+    display: block;
+    padding: 28px 0px 0 0px;
+	margin:0px 40px 0 40px;
+    border-bottom: none;
+    -webkit-transition: padding 0.2s;
+    -moz-transition: padding 0.2s;
+    transition: padding 0.2s;
+  }
+  .cd-secondary-nav li a b {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: rgba(240, 238, 225, 1);
+  }
+  .cd-secondary-nav li a span {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    top: 18px;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-repeat: no-repeat;
+    background-image: url(../img/cd-nav-icons.svg);
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+  }
+  .cd-secondary-nav li a:hover b, .cd-secondary-nav li a.active b {
+    color: #f0eee1;
+  }
+  .cd-secondary-nav li:nth-child(1) a span {
+    background-position: 0 0;
+  }
+  .cd-secondary-nav li:nth-child(2) a span {
+    background-position: -40px 0;
+  }
+  .cd-secondary-nav li:nth-child(3) a span {
+    background-position: -80px 0;
+  }
+  .cd-secondary-nav li:nth-child(4) a span {
+    background-position: -120px 0;
+  }
+  .cd-secondary-nav li:nth-child(5) a span {
+    background-position: -160px 0;
+  }
+  .cd-secondary-nav.is-fixed {
+    /* on Firefox CSS transition/animation fails when parent element changes position attribute*/
+    /* so we defined to diffent classes: .is-fixed to change the position value and .is-animated to change childrens' attributes (padding and opacity)*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 76px;
+    width: 100%;
+  }
+  .cd-secondary-nav.animate-children {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	background-color:rgba(3, 13, 24, 0.96)
+  }
+  .cd-secondary-nav.animate-children li .active b{ border-bottom:3px solid #ffcc00; display:inline-block; padding-bottom:5px}	
+
+}
+
+.cd-secondary-nav-trigger {
+  position: fixed;
+  top: 20px;
+  left: 5%;
+  width: 44px;
+  height: 44px;
+  background: rgba(3, 13, 24, 0.96);
+  border-radius: 0.25em;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  z-index: 2;
+}
+.cd-secondary-nav-trigger span {
+  /* the span element is used to create the menu icon */
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #f0eee1;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.cd-secondary-nav-trigger span::before, .cd-secondary-nav-trigger span::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.cd-secondary-nav-trigger span::before {
+  right: -10px;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+.cd-secondary-nav-trigger span::after {
+  left: -10px;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+}
+.cd-secondary-nav-trigger.menu-is-open {
+  background: transparent;
+}
+.cd-secondary-nav-trigger.menu-is-open span {
+  background: rgba(240, 238, 225, 0);
+  width: 20px;
+  height: 2px;
+}
+.cd-secondary-nav-trigger.menu-is-open span::before, .cd-secondary-nav-trigger.menu-is-open span::after {
+  background: #f0eee1;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+}
+.cd-secondary-nav-trigger.menu-is-open span::before {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.cd-secondary-nav-trigger.menu-is-open span::after {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.is-visible .close-div{ position:absolute; width:33px; height:33px;top: 5px; right:5px; z-index:999; cursor:pointer;}
+.is-visible .close {
+  background: rgba(240, 238, 225, 0);
+  width: 20px;
+  height: 2px;position: absolute;
+  display: block;top: 16px;
+  right: 7px;
+  z-index:1111;
+}
+.is-visible .close::before, .is-visible .close::after {
+  background: #f0eee1;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  content: '';    position: absolute;
+  width: 100%;
+  height: 100%;color: red; z-index: 555;    top: 0;
+  left: 0;
+}
+.is-visible .close::before {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.is-visible .close::after {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+.is-visible li{ position: relative}
+
+@media only screen and (min-width: 990px) {
+  .cd-secondary-nav-trigger {
+    display: none;
+  }
+}
+
+/* -------------------------------- 
+
+Placeholder Sections
+
+-------------------------------- */
+.cd-section {
+  margin: 0 auto;
+}
+.cd-section h2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: .6em;
+  font-weight: 700;
+}
+.cd-section p {
+  line-height: 1.6;
+}
+@media only screen and (min-width: 990px) {
+  .cd-section {
+    margin: 0 auto;
+  }
+  .cd-section h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+  .cd-section p {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+
+.clear{ clear:both}
+img{ vertical-align:top}
+.banner{}
+.no-js body .banner .img img{ width:100%}
+.cd-secondary-nav li a b{ font-family:Arial; font-size:18px}
+.banner a img{ width:auto; position:absolute}
+.about{ width:100%; position:relative; background-color:#FFF;}
+.about .a1{ width:50%; position:relative}
+.about .a2{ position:absolute; width:50%; left:50%; top:0px; height:100%}
+.about .a2 .content{ padding:0; position: relative; height: 100%}
+.about .a2 .content .text{ font-size:1.1rem; font-family:"微软雅黑"; line-height:40px; color:#2d2d37; padding-top:3rem}
+.cd-secondary-nav-trigger{
+	background-image: url(../img/down.png);
+	background-repeat: no-repeat;
+	background-position: center center; background-size:100% 100%
+}
+.cd-secondary-nav.is-fixed{ z-index:9999}
+/*.about .a2 .content .con{ position: absolute; top: 50%; transform:translateY(-50%); -moz-transform:translateY(-50%); -webkit-transform:translateY(-50%); }*/
+
+.about .a2 .content .con{ position:relative; padding-top:15%}
+.about .a2 .content .con .padd{ padding: 0 10%}
+
+.SERVICES{ position:relative; background-color:#313131}
+.SERVICES .col-lg-3{ padding:0px; height:100%; position:relative; overflow:hidden}
+.swiper-pagination-bullet{ background-color:#c5c5c5}
+.swiper-container-horizontal>.swiper-pagination{ bottom:47%}
+.SERVICES .col-lg-3 .none{ visibility:hidden}
+.SERVICES .col-lg-3 .box{ height:50%; position:absolute; width:100%; background-color:#ffcc00; top:0px; left:0px}
+.SERVICES .col-lg-3 .box.bottom{ bottom:0px; top:auto; background:#313131}
+.SERVICES .col-lg-3 .box .box1{ position:relative; height:100% }
+.SERVICES .col-lg-3 .box .box1 .con{ position:absolute; width:100%; top:50%;transform:translateY(-50%); -moz-transform:translateY(-50%); -webkit-transform:translateY(-50%);}
+.SERVICES .col-lg-3  .ico{ text-align:center; height: 100px;}
+.SERVICES .col-lg-3  p{ text-align: center; font-family: Arial; color: #fff; font-size: 26px; padding: 10px 0 0 0}
+.SERVICES .col-lg-3  .ico img{}
+.SERVICES .col-lg-3  .text{ color:#FFF; font-size:16px; font-family:"微软雅黑"; padding:20px 40px; text-align:center; line-height:24px}
+.about .SERVICES .col-lg-3 .dBox{ position:absolute; width:100%; height:100%; top:0px; left:0px}
+.SERVICES .col-lg-3  .text span{ display: inline-block; max-width: 280px}
+.box2{ background-color: #373737; padding-top: 80px}
+.box2-title{ text-align: center; font-size: 55px; color: #fff; font-family: Arial; background: url("../img/line.png") no-repeat center bottom;}
+.box2-title span{ display: inline-block; padding: 0 50px}
+.box2-pic{
+  padding: 50px 0 0 0;
+}
+.box2-pic .lis{ padding: 0px; float: left}
+.box2-pic .lis img{ width: 100%}
+.box2-pic .no1{ width: 74.42%}
+.box2-pic .no2{ width: 25.58%}
+.box2-pic .no1-1{ width: 55.14%}
+.box2-pic .no1-2{ width: 44.86%}
+
+.box3 {
+	background-color: #dbdbdb;
+	padding-top: 80px;
+	background-size: 100% 100%;
+	background-attachment:fixed;
+	background-image: url(../img/bg1.jpg);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+.box3 .box2-title{background: url("../img/line2.png") no-repeat center bottom;}
+.box3 .box2-title span{
+	color: #000;
+	background-color:transparent
+}
+.box3-con{ padding:40px 20px 80px 20px}
+.box3-con .img{ position:relative}
+.box3-con .text{ background-color:#FFF; font-family:"微软雅黑"; font-size:16px; line-height:28px; padding:20px 30px}
+.box3-con .tag{padding:0px 30px; line-height:65px; background-color:#474644; font-size:24px; color:#FFF}
+.box3-con .img a{ position:absolute; width:50px; height:50px; background-color:#ffcc00; text-align:center; line-height:45px; border-radius:50%; font-size:35px; color:#000; bottom:-25px; right:40px}
+.box3-con .text p{ font-weight:bold}
+.box4{}
+
+.box3-con .col-lg-3{ padding:0 10px; margin-bottom:20px}
+.box2.box4{background:#343434 url("../img/bg3.jpg") no-repeat center top; background-size:100% auto;}
+.box2-title.new{ background-image:url("../img/line0.png") }
+.box4-text{ padding:30px 20px}
+.SERVICES .col-lg-3 .box .hover{transition: all .3s;
+    -moz-transition: all .3s; /* Firefox 4 */
+    -webkit-transition: all .3s; /* Safari 和 Chrome */
+    -o-transition: all .3s; /* Opera */}
+.SERVICES .col-lg-3 .box:hover .hover{-webkit-transform:scale(1.2) ; /* Safari and Chrome */-moz-transform:scale(1.2); /* Firefox */-ms-transform:scale(1.2); /* IE 9 */-o-transform:scale(1.2); /* Opera */transform:scale(1.2);}
+.SERVICES .col-lg-3 .box{ cursor:pointer}
+.imgN{ position:relative; overflow:hidden}
+
+
+.swiper-pagination-bullet{ background-color:#c5c5c5}
+.swiper-container-horizontal>.swiper-pagination{ bottom:47%}
+.swiper-pagination2{ bottom: 20px; position: absolute; width: 100%; text-align: center; z-index: 2222}
+.swiper-pagination2 span{ display: inline-block; margin: 0 3px; width: 10px ;height: 10px}
+.swiper-container2{ position: relative; overflow: hidden}
+.swiper-container2 img{ width: 100%}
+.swiper-container2{ display: none}
+.banner .swiper-slide{ background-size: cover; background: no-repeat center center}
+.banner .swiper-pagination-bullet{ background-color: #fff}
+.banner .swiper-pagination-bullet.swiper-pagination-bullet-active{background-color: #fff}
+.video-box{ position:fixed; z-index:99999; height:100%; width:100%; background:rgba(0,0,0,0.5); top:0px; left:0px}
+.video-box .close{ position:absolute; top:10px; right:20px; font-size:26px; color:#FFF; z-index:999999}
+
+@media screen and (max-width: 1250px) {
+  .SERVICES .col-lg-3  p{ text-align: center; font-family: Arial; color: #fff; font-size: 22px; padding: 20px 0 0 0}
+  .SERVICES .col-lg-3  .ico img{ height: 100%}
+  .SERVICES .col-lg-3  .ico{ height: 70px}
+}
+@media screen and (max-width: 1100px) {
+	.about .a2 .content .text{font-size:1rem; line-height:26px}
+  .SERVICES .col-lg-3  .ico{ height: 50px}
+  .SERVICES .col-lg-3  p{ font-size: 18px; padding-top: 10px}
+  .SERVICES .col-lg-3  .text{ font-size: 14px; padding: 10px 30px}
+
+  }
+@media screen and (max-width: 850px) {
+	.about .a2 .content .text{font-size:14px; line-height:22px; padding-top:20px}
+  .box2-title span{ font-size: 21px; padding: 0 20px}
+  .box2{ padding-top: 10px}
+  .box2-pic{ padding: 30px 0}
+  .box2-title,.box3 .box2-title{ background-size:100% 14px}
+
+	}	
+	
+@media screen and (max-width: 650px) {
+	.about .a2 .content .con{ padding-top:0px; padding-bottom:20px}
+	.SERVICES .col-lg-3  .text{ font-size:12px; line-height:21px; padding-top:10px}
+	.about .a1{ float:left; display:inline-block; margin:0 20px 0px 0}
+	.about .a2{ position:relative; width:auto; left:auto; padding:0px}
+	.about .a2 .content{padding:0px 0 0 0}
+	.about .a2 .content img{ width:40%}
+	.about{ padding:20px 0 0 0}
+	.about .a2 .content .text{ padding:0 20px; padding-top:20px; font-size:12px}
+     .about .a2 .content .con{ position: relative; top: 0px;transform:translateY(0%); -moz-transform:translateY(0%); -webkit-transform:translateY(0%);}
+     .about .a2 .content .con .padd{ padding: 0px}
+  .SERVICES .col-lg-3  p{ font-size: 16px}
+  .SERVICES .col-lg-3  .text{ padding: 0px 15px}
+  .box2-pic .no2{ display:none}
+  .box2-pic .no1{ width:100%}
+  .box3{ padding-top:10px}
+  .box3 .box2-title{ background-size:200% 14px}
+  .box3-con .text{ font-size:14px; line-height:24px; padding:20px}
+  .box3-con .tag{ font-size:18px; line-height:45px; padding:0 20px}
+  .box3-con .img a{ right:15px; width:40px; height:40px; line-height:35px}
+  .box3-con{padding:40px 10px 40px 10px}
+  .box2-title{ background-size:180% 14px}
+  /*.banner .img{ display: none}*/
+  /*.swiper-container2{ display: block}*/
+  .box3{ background-attachment: inherit}
+}
+@media screen and (min-width: 1500px) {
+
+  .about .a2 .content .con .padd{ padding-right: 25%}
+}
+@media screen and (min-width: 1761px) {
+	.box2-title,.box3 .box2-title{ background-size:1761px 17px}
+}
+@media screen and (min-width: 650px) {
+	.imgN img{ cursor:pointer; -webkit-transition:all 0.5s ease;
+    transition:all 0.5s ease;}
+	.imgN:hover img{-webkit-transform:scale(1.1); /* Safari and Chrome */-moz-transform:scale(1.1); /* Firefox */-ms-transform:scale(1.1); /* IE 9 */-o-transform:scale(1.1); /* Opera */transform:scale(1.1);}
+	
+	
+}
