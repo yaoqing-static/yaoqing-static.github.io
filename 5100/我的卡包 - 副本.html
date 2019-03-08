@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+
+</head>
+<body>
+<div class="bglayer" style="display:none">
+	<div class="layer">
+    	<div class="nam"><p>主银，补充申请已经提交成功！</p>(请耐心等待审核结果)</div>
+        <a>关闭</a>
+    </div>
+</div>
+
+
+<div class="hdgz new kb">
+主银，您目前已经是<strong>白银合伙人</strong>！拥有9大类，共83张卡券（可发）！还需要5450积分才能升级为黄金合伙人！请继续努力噢！ </div>
+
+<div class="vip new">
+	<span class="vip1">vip</span><span>5折优惠券</span> <span class="time">有效期：2015-09-01至2015-10-01</span>
+</div>
+
+<div class="bccs new new3">
+    <dd><img src="images/ico7.png"><span>当前库存：20/100</span><b>（可发/总量）</b></dd>
+	<dd class="a2"><img src="images/ico8.png"><span>补充次数：4</span></dd>
+    <dd class="a2"><img src="images/ico9.png"><span>发放情况：270/380 </span><b>（领取/发放）</b></dd>
+    <dd class="n1"><img src="images/a2.png"><span>发放情况：270/380</span> <b>（可发/总量）</b></dd>
+    <dd class="a2"><img src="images/ico9a.png"><span>核销情况：160/270</span><b>（核销/领取）</b></dd>
+</div>
+
+
+<div class="card10">
+<dd><a href="#">卡券发放</a></dd><dd class="a2"><a href="#">发放记录</a></dd><dd class="a3"><a href="#">申请补充</a></dd><dd class="a4"><a href="#">补充记录</a></dd><dd class="a5"><a href="#">卡券追踪</a></dd>
+</div>
+
+
+<div class="swiper-container new">
+    <div class="swiper-wrapper">
+  
+
+        
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+<script language="javascript"> 
+function mySwiper(){
+	var mySwiper = new Swiper('.swiper-container',{
+	prevButton:'.swiper-button-prev',
+	nextButton:'.swiper-button-next',
+	})
+}
+
+$(function(){
+	$(".bglayer .layer a").click(function(){
+		$(".bglayer").hide();
+		})
+	var STRhtml=$('<div class="list"><dd><div class="range"><b>&nbsp;</b></div><div class="namec">1折优惠券</div></dd><dd><div class="range"><b style="background-color:#01bbdc; width:80%">&nbsp;</b></div><div class="namec">2元抵用券</div></dd><dd><div class="range"><b style="background-color:#ff9ab2; width:20%">&nbsp;</b></div><div class="namec">3折优惠券</div></dd><dd><div class="range"><b style="background-color:#01bbdc; width:100%">&nbsp;</b></div><div class="namec">4元抵用券</div></dd><dd><div class="range"><b>&nbsp;</b></div><div class="namec">5折优惠券</div></dd></div>');
+    var count=STRhtml.find("dd").length;
+	var strhtml="";
+	var strhtml2="";
+  	STRhtml.find("dd").each(function(index) {
+		var nIndex=index+1;
+        strhtml2+=$(this).get(0).outerHTML;
+		if(nIndex%4==0)
+		{	strhtml+="<div class='swiper-slide'><div class='card1'>"+strhtml2+"</div></div>";
+			strhtml2="";
+		}
+		if(nIndex==count&&nIndex%4!=0){
+			strhtml+="<div class='swiper-slide'><div class='card1'>"+strhtml2+"</div></div>";
+		}
+		
+    });
+	
+	$(".swiper-wrapper").html(strhtml)
+	mySwiper();
+	
+	})
+
+</script>
+
+
+
+<div style="height:60px"></div>
+<footer>
+	<dd><a class="">呼唤朋友</a></dd>
+    <dd class="d2"><a class="dq">我的卡包</a></dd>
+    <dd class="d3"><a class="">我的返利</a></dd>
+    <dd class="d4"><a class="">个人信息</a></dd>
+</footer>
+
+</body>
+</html>

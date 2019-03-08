@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript">
+$(function(){
+	var boxH=$(window).height()-70;
+	$(".bfnew").css("height",boxH);
+	
+	$("#hhpy li .R.new .w4").each(function() {
+        var dat=$(this).html();
+		$(this).html(dat.substring(5));
+    });
+	
+	
+	})
+	
+	
+
+
+var myScroll,
+	pullDownEl, pullDownOffset,
+	pullUpEl, pullUpOffset,type=0;
+
+function loaded() {
+	pullDownEl = document.getElementById('pullDown');
+	pullDownOffset = pullDownEl.offsetHeight;
+	pullUpEl = document.getElementById('pullUp');	
+	pullUpOffset = pullUpEl.offsetHeight;
+	
+	myScroll = new iScroll('wrapper', {
+		useTransition: true,
+		topOffset: pullDownOffset,
+		checkDOMChanges:true,//初始化内容高度
+		onRefresh: function () {
+			if (pullDownEl.className.match('loading')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+			} else if (pullUpEl.className.match('loading')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '下拉刷新...';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'flip';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+				this.maxScrollY = pullUpOffset;
+				
+			}
+			console.log(this.scrollerH + " <--> " + this.scroller.offsetHeight);
+		},
+		onScrollEnd: function () {
+			if (pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'loading';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+				
+				if(type==0){
+					var strhtml='<li><div class="l"><img src="images/img1.png"></div><div class="R new"><dd class="w1">塞纳河不结冰</dd><dd class="w2">￥0.5</dd><dd class="w3">1</dd><dd class="w4">09-15</dd></div></li>';	
+					var ID="hhpy";
+					pullUpAction (ID,strhtml)
+					
+				}
+				else if(type==1){
+					strhtml="<li><dd>5折优惠券</dd><dd>2015-06-11</dd><dd>￥102</dd><dd>5</dd></li>";
+					var ID="hxlj";
+					pullUpAction (ID,strhtml)
+				}
+				else{
+					strhtml="<li><dd>2015-9-16</dd><dd>2015-06-11</dd><dd>处理中</dd><dd>￥600</dd></li>";
+					var ID="fltx";
+					pullUpAction (ID,strhtml)
+				}
+				
+				
+			}
+			
+		
+		
+		}
+	});
+	
+	setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+}
+
+function pullUpAction (id,strhtml) {
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+		$("#"+id).append(strhtml);
+		myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+}
+
+
+
+
+
+
+$(function(){
+	
+
+$(".linkHer a").click(function(){
+	var index=$(this).index();
+	type=index;
+
+	if(index==0){
+		$("#hxlj,#fltx").hide();
+		$("#hhpy").show();
+
+	}
+	else if(index==1){
+		$("#hhpy,#fltx").hide();
+		$("#hxlj").show();
+	}
+	else{
+		$("#hhpy,#hxlj").hide();
+		$("#fltx").show();
+	}
+	})
+	
+})	
+
+	
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+
+</script>
+
+</head>
+<body>
+
+<form name="reg_testdate">
+
+<div class="bfnew new noe1">
+<div id="wrapper">
+	<div id="scroller">
+		<div id="pullDown" style="height:0px">
+		</div>
+		<ul id="thelist">
+       	    <div class="vip new">
+                主银，您已经累积了<strong>￥11000</strong> 返利了噢！
+            </div>
+            
+            <div class="bccs new new3">
+                <dd><span>已提现返利：　￥6000 </span></dd>
+                <dd><span>可提现返利：　<strong>￥6000</strong></span><b><a href="#">点击申请提现</a></b></dd>
+                <dd class="a2"><span>未入账返利：　￥1000 </span><b>2015-10-15</b></dd>
+                <dd class="a2"><span>已获得积分：　4500 </span><b>升级需5450积分</b></dd>
+            </div>
+            
+          <div class="linkHer">
+            	<a>呼朋唤友</a><a class="p2">核销卡券</a><a class="p3">我的返利</a>
+            </div>
+            
+            
+            <!--1-->
+           <div class="hhpy" style="display:block" id="hhpy">
+                <div class="kjsearch">
+                    <select class="date" name="YYYY" onChange="YYYYDD(this.value)"><option>年</option></select>&nbsp;年&nbsp;
+                    <select class="date" name="MM" onChange="MMDD(this.value)"><option>月</option></select>&nbsp;月&nbsp;<a href="#">查询</a>
+                </div>
+                <div class="linkHer2">
+                 共召唤<strong>50</strong>位好友，获得<strong>￥25</strong>和<strong>50</strong>积分 
+                </div>
+                
+                <div class="lingkname"><dd class="a1">昵称</dd><dd class="a2">获得返利</dd><dd class="a3">获得积分</dd></div>
+                <li>
+                    <div class="l"><img src="images/img1.png"></div>
+                    <div class="R new"><dd class="w1">塞纳河不结冰</dd><dd class="w2">￥0.5</dd><dd class="w3">1</dd><dd class="w4">2015-09-25</dd></div>
+                </li>
+                <li>
+                    <div class="l"><img src="images/img1.png"></div>
+                    <div class="R new"><dd class="w1">塞纳河不结冰</dd><dd class="w2">￥0.5</dd><dd class="w3">1</dd><dd class="w4">2015-09-15</dd></div>
+                </li>
+            </div>
+            
+            <!--2-->
+            <div class="hxlj" style="display:none" id="hxlj">
+            	 <div class="kjsearch">
+                    <select class="date" name="YYYY2" onChange="YYYYDD2(this.value)"><option>年</option></select>&nbsp;年&nbsp;
+                    <select class="date" name="MM2" onChange="MMDD2(this.value)"><option>月</option></select>&nbsp;月&nbsp;<a href="#">查询</a>
+                </div>
+                <div class="linkHer2">
+                 共召唤<strong>50</strong>位好友，获得<strong>￥25</strong>和<strong>50</strong>积分 
+                </div>
+                <div class="lingkname"><dd>卡券名</dd><dd>核销时间</dd><dd>获得返利</dd><dd>获得积分</dd></div>
+            	<li><dd>5折优惠券</dd><dd>2015-06-11</dd><dd>￥102</dd><dd>5</dd></li>
+                <li><dd>5折优惠券</dd><dd>2015-06-11</dd><dd>￥102</dd><dd>5</dd></li>
+                <li><dd>5折优惠券</dd><dd>2015-06-11</dd><dd>￥102</dd><dd>5</dd></li>
+            </div>
+            
+            <!--3-->
+            <div class="hxlj" id="fltx" style="display:none">
+                <div class="linkHer2">
+                共提现<strong>10</strong>次累积提现 <strong>￥6000</strong> 
+                </div>
+                <div class="lingkname"><dd>申请时间</dd><dd>提现时间</dd><dd>状态</dd><dd>提现金额</dd></div>
+            	<li><dd>2015-9-16</dd><dd>2015-06-11</dd><dd>处理中</dd><dd>￥600</dd></li>
+                <li><dd>2015-9-16</dd><dd>2015-06-11</dd><dd>处理中</dd><dd>￥600</dd></li>
+                <li><dd>2015-9-16</dd><dd>2015-06-11</dd><dd>处理中</dd><dd>￥600</dd></li>
+            </div>
+            
+            
+            
+            
+		</ul>
+		<div id="pullUp">
+			<span class="pullUpLabel">下拉获取更多</span><span class="pullUpIcon"></span>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+<div style="height:60px"></div>
+<footer>
+	<dd><a class="">呼唤朋友</a></dd>
+    <dd class="d2"><a class="">我的卡包</a></dd>
+    <dd class="d3"><a class="dq">我的返利</a></dd>
+    <dd class="d4"><a class="">个人信息</a></dd>
+</footer>
+
+</form>
+
+<script language="JavaScript">   
+function YYYYMMDDstart(){   
+	MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];   
+	
+	//先给年下拉框赋内容   
+	var y  = new Date().getFullYear();  
+	for (var i = (y-30); i < (y+30); i++){ //以今年为准，前30年，后30年   
+		   document.reg_testdate.YYYY.options.add(new Option(" "+ i +" 年", i));
+		   document.reg_testdate.YYYY2.options.add(new Option(" "+ i +" 年", i));  }  
+	
+	//赋月份的下拉框   
+	for (var i = 1; i < 13; i++)   {
+		   document.reg_testdate.MM.options.add(new Option(" " + i + " 月", i));
+		   document.reg_testdate.MM2.options.add(new Option(" " + i + " 月", i)); }    
+	
+	document.reg_testdate.YYYY.value = y;
+	document.reg_testdate.YYYY2.value = y;      
+	document.reg_testdate.MM.value = new Date().getMonth() + 1;
+	document.reg_testdate.MM2.value = new Date().getMonth() + 1;      
+	
+	
+}   
+if(document.attachEvent)   
+	window.attachEvent("onload", YYYYMMDDstart);   
+else   
+window.addEventListener('load', YYYYMMDDstart, false);   
+function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年)   
+{   
+	var MMvalue = document.reg_testdate.MM.options[document.reg_testdate.MM.selectedIndex].value;    
+	var n = MonHead[MMvalue - 1];   
+	if (MMvalue ==2 && IsPinYear(str)) n++;   
+	writeDay(n)   
+}
+function YYYYDD2(str) //年发生变化时日期发生变化(主要是判断闰平年)   
+{   
+	var MMvalue = document.reg_testdate.MM2.options[document.reg_testdate.MM2.selectedIndex].value;   
+	var n = MonHead[MMvalue - 1];   
+	if (MMvalue ==2 && IsPinYear(str)) n++;   
+	writeDay(n)   
+}     
+function MMDD(str)   //月发生变化时日期联动   
+{   
+	var YYYYvalue = document.reg_testdate.YYYY.options[document.reg_testdate.YYYY.selectedIndex].value;   
+	var n = MonHead[str - 1];   
+	if (str ==2 && IsPinYear(YYYYvalue)) n++;   
+	writeDay(n)   
+}
+
+function MMDD2(str)   //月发生变化时日期联动   
+{   
+	var YYYYvalue = document.reg_testdate.YYYY2.options[document.reg_testdate.YYYY2.selectedIndex].value;    
+	var n = MonHead[str - 1];   
+	if (str ==2 && IsPinYear(YYYYvalue)) n++;   
+	writeDay(n)   
+}     
+
+function IsPinYear(year)//判断是否闰平年   
+{
+	return(0 == year%4 && (year%100 !=0 || year%400 == 0));
+}   
+function optionsClear(e)   
+{   
+	e.options.length = 1;   
+}   
+</script>
+</body>
+</html>
