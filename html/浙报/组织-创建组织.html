@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#" title="最近打开">
+      <i class="zj-open"></i>
+    </a>
+    <a href="#" title="运营">
+      <i class="Operate"></i>
+    </a>
+    <a href="#" title="卡券">
+      <i class="Card-coupons"></i>
+    </a>
+    <a href="#" title="活动">
+      <i class="Activity"></i>
+    </a>
+
+    <a href="#" class="last3" title="消息">
+      <i class="The-news"></i>
+    </a>
+    <a href="#" class="last2" title="组织">
+      <i class="nav-Organization active"></i>
+    </a>
+    <a href="#" class="last1" title="退出">
+      <i class="Sign-out"></i>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>组织</h1>
+
+    <div class="subNav">
+      <a href="#">
+        <img class="subNavOrgAdd" src="images/subNavOrgAdd.png"/>
+        <span>已加入组织</span>
+      </a>
+      <a href="#">
+        <img class="subNavOrgFind" src="images/subNavOrgFind.png"/>
+        <span>搜索组织</span>
+      </a>
+      <a href="#" class="actived">
+        <img class="subNavOrgCreate" src="images/subNavOrgCreate.png"/>
+        <span>创建组织</span>
+      </a>
+    </div>
+
+    <div class="content create">
+      <h3>创建组织</h3>
+
+      <div class="row mainInfo">
+        <label>图标</label>
+        <img src="images/myPhoto.png"/>
+        <label for="upload" class="btn btn-default">上传新头像</label>
+        <input type="file" id="upload"/>
+        <span>只支持JPG/PNG/GIF，大小不超过5M</span>
+      </div>
+      <div class="row">
+        <label>*名称</label>
+        <input id="inputName" class="form-control longInput" type="text"/>
+        <span>0/32</span>
+
+        <p>用户名不能为空或超过32个字符</p>
+      </div>
+      <div class="row tx">
+        <label>描述</label>
+        <textarea id="describe" class="form-control"></textarea>
+        <span>0/120</span>
+
+        <p>用户名不能为空或超过120个字符</p>
+      </div>
+      <div class="row">
+        <button id="saveBtn" class="btn btn-primary btn-block bottomBtn">创建</button>
+      </div>
+
+    </div>
+    <div class="errorMsg">
+      <img src="images/i.png"/>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    borderInit();
+
+    $('#inputName').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/32');
+      if($(this).val().length>32 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=32 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    $('#describe').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/120');
+      if($(this).val().length>120 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=120 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    var validataFunc = function () {
+      var validator = new Validator();
+      validator.add(document.getElementById('inputName'), [{
+        strategy: 'isNotEmpty',
+        errorMsg: '创建失败！组织名称不能为空'
+      }, {
+        strategy: 'maxLength:32',
+        errorMsg: '创建失败！组织名称不能超过32个字符'
+      }]);
+      validator.add(document.getElementById('describe'), [{
+        strategy: 'maxLength:120',
+        errorMsg: '创建失败！组织描述不能超过120个字符'
+      }]);
+      var errorMsg = validator.start();
+      return errorMsg;
+    };
+
+    var saveBtn = document.getElementById('saveBtn');
+    saveBtn.onclick = function () {
+      var errorMsg = validataFunc();
+      if (errorMsg) {
+        $('.errorMsg').show().find('span').html(errorMsg);
+        return false;
+      } else {
+        $('.errorMsg').hide();
+        //向后台提交...
+      }
+    }
+  });
+</script>
+</body>
+</html>

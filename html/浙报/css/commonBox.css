@@ -1,0 +1,135 @@
+.subNavBorder {
+  border-right: 1px solid #e6e6e6;
+}
+.commonBox {
+  min-width: 1020px;
+  cursor: default;
+  height: 100%;
+}
+.commonBox a {
+  text-decoration: none;
+}
+.commonBox .errorMsg {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 400px;
+  margin-left: -200px;
+  text-align: center;
+  background: white;
+}
+.commonBox .nav {
+  background: #2a569a;
+  min-height: 670px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  width: 100px;
+  height: 100%;
+}
+.commonBox .nav a {
+  margin: 15px 0;
+  display: block;
+  text-align: center;
+}
+.commonBox .nav .head {
+  margin: 18px 0 50px;
+}
+.commonBox .nav .head img {
+  border-radius: 50%;
+}
+.commonBox .nav .last1,
+.commonBox .nav .last2,
+.commonBox .nav .last3 {
+  position: absolute;
+  width: 100%;
+}
+.commonBox .nav .last1 {
+  bottom: 70px;
+}
+.commonBox .nav .last2 {
+  bottom: 170px;
+}
+.commonBox .nav .last3 {
+  bottom: 220px;
+}
+.commonBox .contentBox {
+  position: relative;
+  padding-left: 100px;
+}
+.commonBox .contentBox .title {
+  margin: 20px 0 40px;
+  font-size: 12px;
+  color: #999999;
+}
+.commonBox .contentBox h1 {
+  padding-left: 40px;
+  font-size: 34px;
+  margin: 20px 0;
+}
+.commonBox .subNav {
+  width: 290px;
+  padding-left: 40px;
+  position: absolute;
+  left: 100px;
+  border-right: 1px solid #e6e6e6;
+}
+.commonBox .subNav a {
+  display: block;
+  line-height: 50px;
+  padding-left: 40px;
+  color: #333333;
+}
+.commonBox .subNav .subNavPerson {
+  margin-top: -4px;
+  margin-right: 10px;
+}
+.commonBox .subNav .subNavPwd {
+  margin-top: -6px;
+  margin-right: 14px;
+  margin-left: 2px;
+}
+.commonBox .subNav .subNavThird {
+  margin-top: -6px;
+  margin-right: 14px;
+}
+.commonBox .subNav .subNavOrgAdd {
+  margin-top: -6px;
+  margin-right: 10px;
+}
+.commonBox .subNav .subNavOrgFind {
+  margin-top: -6px;
+  margin-right: 12px;
+}
+.commonBox .subNav .subNavOrgCreate {
+  margin-top: -4px;
+  margin-right: 14px;
+  margin-left: 2px;
+}
+.commonBox .subNav .subNavTime {
+  margin-top: -2px;
+  margin-right: 14px;
+}
+.commonBox .subNav .subNavOrgControl {
+  margin-top: -4px;
+  margin-right: 12px;
+}
+.commonBox .subNav .subNavOrgJoin {
+  margin-top: -4px;
+  margin-right: 14px;
+}
+.commonBox .subNav span {
+  font-size: 16px;
+}
+.commonBox .subNav .actived {
+  background: #e2ecff;
+}
+.commonBox .content {
+  width: 1000px;
+  padding-left: 330px;
+}
+.commonBox .content h3 {
+  color: #2a569a;
+}

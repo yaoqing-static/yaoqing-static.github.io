@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/kaquan.css" />
+    <link rel="stylesheet" href="css/slStyle.css" />
+</head>
+
+<body>
+    <div class="commonBox card">
+        <div class="nav">
+            <a href="#" class="head">
+                <img src="images/navHead.png" />
+            </a>
+            <a href="#">
+                <img src="images/navicon1.png" />
+            </a>
+            <a href="#">
+                <img src="images/navicon2.png" />
+            </a>
+            <a href="#">
+                <img src="images/navicon3.png" />
+            </a>
+            <a href="#">
+                <img src="images/navicon4.png" />
+            </a>
+            <a href="#" class="last1">
+                <img src="images/navBack.png" />
+            </a>
+        </div>
+        <div class="contentBox">
+            <div class="title text-center">
+                新媒体云服务平台-NewMedia
+            </div>
+            <h1>卡券</h1>
+            <div class="panel panel-info">
+                <div class="panel-heading text-center modal-open">
+                    <a class="pull-left kjhx" href="###">卡券核销</a>
+                    <a class="pull-left hxjl actived" href="###">核销记录</a>
+                </div>
+
+      <div class="panel-body display_none" id="kjhx">
+
+        <div id="holdingMe" class="form-group">
+          <input type="text" class="form-control">
+        </div>
+         <div class="kaqhe">
+            <div class="fll hetu">
+                <img src="images/buz.png" />
+            </div>
+            <div class="hexy fll">
+                <div>
+                <div class="souc">搜索卡券</div>
+                <div class="xiaozi">请顾客出示卡券，输入卡券号</div>
+                </div>
+                <div class="mrt88">
+                <div class="souc">校验</div>
+                <div class="xiaozi">核对卡券信息</div>
+                </div>
+                <div class="mrt88">
+                <div class="souc">销券完成</div>
+                <div class="xiaozi">查看销券结果，顾客将同时收到销券成功通知</div>
+                </div>
+            </div>
+       
+         </div>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+
+<div class="panel-body" id="hxjl">
+                <div class=" hexj">
+                    <div class="fll">
+                        <select class="btn btn-default">
+                            <option selected="selected">核消渠道</option>
+                            <option>券号</option>
+                        </select>
+                    </div>
+                    <div id="holdingMe1" class="form-group frr kajuanseach" style="width: 730px;">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="hexjl mr20">
+                    <table width="100%" border="0">
+                        <tr class="hg50 souc ">
+                            <td class="wk400">券号</td>
+                            <td class="telr"><span class="mrr75">核销时间</span></td>
+                            <td class="wk400">核销渠道</td>
+                        </tr>
+                        <tr class="xiaozi  hg05">
+                            <td class="wk400"> 1029 2092 1234 0291</td>
+                            <td class="telr">2014-09-09&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20：05：25
+                            </td>
+                            <td class="wk400">自核销</td>
+                        </tr>
+                        <tr class="xiaozi hg05 bot ">
+                            <td class="wk400"> 1029 2092 1234 0291</td>
+                            <td class="telr">2014-09-09&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20：05：25
+                            </td>
+                            <td class="wk400">自核销</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="js/holdingMe.js"></script>
+    <script>
+    jQuery(function($) {
+        $(".kjhx").click(function(){
+            $(this).addClass("actived").siblings().removeClass("actived");
+            $("#kjhx").show();
+            $("#hxjl").hide();
+        });
+        $(".hxjl").click(function(){
+            $(this).addClass("actived").siblings().removeClass("actived");
+            $("#kjhx").hide();
+            $("#hxjl").show();
+        });
+
+        $('#holdingMe').holding({
+            'content': '请输入券号号，如：888888888',
+            'callback': function() {
+                alert($(this).parent().find('input').val());
+            }
+        });
+        $('#holdingMe1').holding({
+            'content': '请输入券号号，如：888888888',
+            'callback': function() {
+                alert($(this).parent().find('input').val());
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

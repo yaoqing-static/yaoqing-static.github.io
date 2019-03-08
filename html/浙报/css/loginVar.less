@@ -1,0 +1,35 @@
+@guideColor: #04a9f4;
+@footColor:#aaaaaa;
+@grayColor:#aaaaaa;
+@errorColor:#d68a8a;
+@errorBg:#fff7f6;
+@rightBtnColor:#04a9f4;
+@wecharColor:#35bc47;
+@qqColor:#3d96d6;
+@sinaColor:#e74242;
+@eipColor:#2e2e2e;
+
+.blueHover{
+  &:hover{
+    background: @guideColor;
+    color:white;
+  }
+}
+
+.grayHover{
+  &:hover{
+    background: @grayColor;
+    color:white;
+  }
+}
+
+.btnHover{
+  &:hover::after{
+    content:url(images/hover.png);
+  }
+  &:after{
+    position: relative;
+    top: 5px;
+    left: 5px;
+  }
+}

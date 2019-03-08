@@ -1,0 +1,103 @@
+.cardAppend .line {
+  position: relative;
+}
+.cardAppend .line i,
+.cardAppend .line b {
+  position: absolute;
+  top: 5px;
+  left: 454px;
+  font-style: normal;
+}
+.cardAppend .state .iradio_flat-blue {
+  float: none;
+  padding-top: 12px;
+}
+.cardAppend .colorSelect {
+  list-style: none;
+  padding: 0;
+}
+.cardAppend .colorSelect .choosed {
+  background: #f30;
+}
+.cardAppend .colorSelect li {
+  width: 26px;
+  height: 22px;
+  padding: 2px;
+  float: left;
+  margin-top: 6px;
+}
+.cardAppend .colorSelect div {
+  width: 100%;
+  height: 100%;
+}
+.cardAppend .iradio_flat-blue,
+.cardAppend .icheckbox_flat-blue {
+  float: left;
+}
+.cardAppend .youxq .iradio_flat-blue,
+.cardAppend .youxqq .iradio_flat-blue {
+  margin-top: -4px;
+}
+.cardAppend .fenx label {
+  margin-left: 10px;
+}
+.cardAppend textarea {
+  resize: none;
+}
+.cardAppend .bigTitle,
+.cardAppend .subTitle {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+.cardAppend .bigTitle {
+  top: 80px;
+  line-height: 30px;
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+}
+.cardAppend .subTitle {
+  top: 120px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #ededed;
+}
+.cardAppend .error {
+  display: none;
+  color: red;
+  padding-left: 104px;
+}
+.cardAppend .cardStyleTitle {
+  color: #666;
+  font-size: 16px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.cardAppend .cardStyleLine {
+  margin-top: 16px;
+  margin-left: 20px;
+}
+.cardAppend .cardStyleLine label {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #999;
+}
+.cardAppend .cardStyleLine p {
+  font-size: 12px;
+  color: #ccc;
+  margin-left: 20px;
+}
+.cardAppend .cardStyleBtns {
+  width: 300px;
+}
+.cardAppend .cardStyleBtns button {
+  margin: 4px 10px 0;
+  padding: 4px 20px;
+}
+.cardAppend .cardStyleBtns .btn-primary {
+  background: #23b7e5;
+  border-color: #23b7e5;
+}

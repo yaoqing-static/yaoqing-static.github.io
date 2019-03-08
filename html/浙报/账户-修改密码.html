@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox account">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navHistory.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navOperate.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navCard.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navActivity.png"/>
+    </a>
+
+    <a href="#" class="last3">
+      <img src="images/navMsg.png"/>
+    </a>
+    <a href="#" class="last2">
+      <img src="images/navGroup.png"/>
+    </a>
+    <a href="#" class="last1">
+      <img src="images/navOff.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>账户</h1>
+
+    <div class="subNav">
+      <a href="#">
+        <img class="subNavPerson" src="images/subNavPerson.png"/>
+        <span>个人信息</span>
+      </a>
+      <a href="#">
+        <img class="subNavPwd" src="images/subNavPwd.png"/>
+        <span>第三方账号</span>
+      </a>
+      <a href="#" class="actived">
+        <img class="subNavThird" src="images/subNavThird.png"/>
+        <span>修改密码</span>
+      </a>
+    </div>
+
+    <div class="content password">
+      <h3>修改密码</h3>
+
+      <div class="row">
+        <label class="text-right">当前密码</label>
+        <input id="oldPassword" class="form-control" type="password"/>
+        <p>当前密码输入错误！</p>
+      </div>
+      <div class="row">
+        <label class="text-right">新密码</label>
+        <input id="newPassword" class="form-control" type="password"/>
+        <p>请输入6-13位新密码</p>
+      </div>
+      <div class="row">
+        <label class="text-right">确认密码</label>
+        <input id="secPassword" class="form-control" type="password"/>
+        <p>两次密码不一致</p>
+      </div>
+
+      <div class="row">
+        <button id="saveBtn" class="btn btn-primary btn-block bottomBtn">保存</button>
+      </div>
+    </div>
+
+    <div class="errorMsg">
+      <img src="images/i.png"/>
+      <span></span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/jquery.placeholder.min.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/border.js"></script>
+<script>
+  jQuery(function ($) {
+    //fix IE8 placeholder
+    $('input, textarea').placeholder();
+
+    borderInit();
+
+    var validataFunc = function () {
+      var validator1 = new Validator();
+      var validator2 = new Validator();
+      var validator3 = new Validator();
+      validator1.add(document.getElementById('oldPassword'), [{
+        strategy: 'isOldPassword',
+        errorMsg: '保存失败！当前密码输入错误'
+      }]);
+      validator2.add(document.getElementById('newPassword'), [{
+        strategy: 'minLength:6',
+        errorMsg: '保存失败！密码长度不能小于6位'
+      }, {
+        strategy: 'maxLength:13',
+        errorMsg: '保存失败！密码长度不能大于13位'
+      }]);
+      validator3.add(document.getElementById('secPassword'), [{
+        strategy: 'isSecPassword:' + document.getElementById('newPassword').value,
+        errorMsg: '保存失败！二次密码不一致'
+      }]);
+      var errorMsg = {};
+      errorMsg.m1 = validator1.start();
+      errorMsg.m2 = validator2.start();
+      errorMsg.m3 = validator3.start();
+      return errorMsg;
+    };
+
+    $('#saveBtn').on('click', function () {
+      //传入旧密码
+      window.oldPassword = '123456';
+
+      var errorMsg = validataFunc();
+      if (errorMsg.m1) {
+        $('.errorMsg').show().find('span').text(errorMsg.m1);
+        $('.password p').hide().eq(0).show();
+        return false;
+      } else if (errorMsg.m2) {
+        $('.errorMsg').show().find('span').text(errorMsg.m2);
+        $('.password p').hide().eq(1).show();
+        return false;
+      } else if (errorMsg.m3) {
+        $('.errorMsg').show().find('span').text(errorMsg.m3);
+        $('.password p').hide().eq(2).show();
+        return false;
+      } else {
+        $('.password p').hide();
+        $('.errorMsg').hide();
+        //向后台提交...
+      }
+    });
+  });
+</script>
+</body>
+</html>

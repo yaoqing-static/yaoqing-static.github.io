@@ -1,0 +1,453 @@
+.xinjzb {
+    height: auto;
+    position: relative;
+}
+
+.tuwen {
+    position: relative;
+    overflow: hidden;
+}
+
+.tuwen .tipq {
+    line-height: 148px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.tuwen .default_tip {
+    background: no-repeat scroll 150px 70px rgba(229, 229, 229, 0.85);
+    height: 100%;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.tuwen .default_tip img {
+    margin-top: 70px;
+}
+
+.tuwen .default_tip img.del {
+    margin-left: 30px;
+}
+
+.error {
+    color: #ff7e3f;
+}
+
+input.upload {
+    display: none;
+}
+
+.w390w {
+    width: 390px;
+}
+
+.mixinj {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.inpup {
+    width: 335px;
+}
+#fixedErrorDiv{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+}
+#fixedErrorDiv span{
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    background: #eaaa00;
+    padding: 5px;
+}
+#fixedErrorDiv span .error{
+    color: #fff;
+    margin: 0 15px;
+}
+.mr20{
+    margin:0 20px 10px 0;
+}
+.delIco{
+    cursor: pointer;
+}
+#ulClear{
+    border: 1px solid #aaaaaa;
+    background: #ffffff url("images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
+    color: #222222;
+    position: absolute;
+    padding: 0;
+    margin-left: 0;
+}
+#ulClear li{
+    list-style: none;
+    padding: 0 5px;
+}
+#ulClear li:hover{    
+    border:none;
+    background: #dadada url("images/ui-bg_glass_75_dadada_1x400.png") 50% 50% repeat-x;
+    font-weight: normal;
+    color: #212121;
+}
+.ml10{
+    margin-left: 10px;
+}
+.mt9{
+    margin-top: 9px;
+}
+.w150{
+    width: 150px;
+}
+.relative{
+    position: relative;
+}
+.date_error{
+    position: absolute; z-index: 1; top: -25px; left: 70px; display: none;
+}
+.table_1{
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.table_1 thead tr th {
+    vertical-align: bottom;
+    border: 1px solid #ddd;
+    background:#ddd;
+    font-size: 14px;
+    text-align: center;
+    vertical-align:middle;
+}
+.table_1 tbody tr td{
+    vertical-align: middle;
+}
+.table_2 thead tr th {
+    background: #e2ecff;
+    border-bottom: 2px solid #ddd;
+    padding: 0;
+}
+.display_none{
+    display: none;
+}
+#list{
+    height: 360px;
+    overflow: auto;
+}
+.border_bottom{
+    border-bottom: 1px solid #ddd;
+}
+.youxiaoqi{
+    margin-top: -5px;
+    margin-left: 5px;
+}
+.youxiaoqi .error{
+    left: 50px;
+}
+.youxiaoqi input{
+    margin-top: -3px;
+}
+.qushi,.xiangx{
+    cursor: pointer;
+}
+.guize{
+    height: auto;
+    clear: both;
+    zoom: 1
+}
+.guize:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    height: 0px;
+    font-size: 0px;
+    content: " "
+}
+.xial{
+    cursor: pointer;
+}
+.addword,.quan,.di,.aa,#fa1,#fa2,.tudian,.pointer{
+    cursor: pointer;
+}
+.tudian{
+    position: relative;
+}
+.fenxf{
+    position: absolute;
+    z-index: 22;
+    left: -64px;
+    top: 33px;
+    background:#fff;
+}
+.tu27 .x_ico{
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    left: 15px;
+    top: -5px;
+    cursor: pointer;
+    display: none;
+}
+.commonBox .subNav span.jiahao{
+    font-size: 33px;
+    line-height: 22px;
+    color: #ccc;
+}
+.card .form-group.kajuanseach{
+    width: 770px;
+    padding: 0;
+    margin: 0;
+}
+.ma_le_box{
+    margin-left: 82px;
+}
+.commonBox .nav1 {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.commonBox .nav1>li>a {
+    position: relative;
+    display: block;
+    padding: 15px 15px 15px 15px;
+}
+.commonBox .nav1>li {
+    position: relative;
+    display: block;
+}
+.commonBox .navbar-default .navbar-nav>li>a {
+    color: #555;
+    font-size: 14px;
+}
+.commonBox .navbar-default .navbar-nav>.active>a, .commonBox .navbar-default .commonBox .navbar-nav>.active>a:focus, .commonBox .navbar-default .navbar-nav>.active>a:hover {
+    color: #555;
+    background-color: #e7e7e7;
+}
+.commonBox .navbar-default .navbar-nav>li>a:hover {
+    color: #555;
+    background-color: #e7e7e7;
+}
+.lastsync{
+    float: left;
+    border-left: 1px solid #e7e7e7;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #999;
+}
+.mask{
+    position: absolute;
+    z-index: 8888;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:#ccc;
+    opacity:.5;
+}
+.alert_cos{
+    width: 670px;
+    height: 360px;
+    background:#fff;
+    position: fixed;
+}
+.alert_cos .modal-header{
+    border: none;
+}
+.alert_cos .hei_box{
+    margin-left: 0;
+    text-align: left;
+    color: #666666;
+    font-size: 18px;
+}
+.alert_cos img{
+    margin-left: 110px;
+    margin-right: 40px;
+    margin-top: 40px;
+    float: left;
+}
+.commonBox .contentBox .alert_cos .title, .alert_cos .title{
+    font-size: 18px;
+    margin: 0;
+    margin-top: 50px;
+    font-weight: bold;
+}
+.alert_cos .con{
+    color: #999;
+    margin-top: 5px;
+}
+.alert_cos .bt_box{
+    margin-top: 160px;
+}
+.commonBox .subNav1{
+    position: static;
+    float: left;
+}
+.commonBox .content1{
+    float: left;
+    padding-left: 40px;
+    width: 700px;
+}
+.h24{
+    height: 24px;
+    overflow-y:hidden;
+}
+.oFirst,.remove{
+    cursor: pointer;
+}
+.form-group span.glyphicon {
+    float: none;
+    font-size: 14px;
+    color: #666;
+    height: 14px;
+    line-height: 14px;
+    margin-left: 0;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.form-group .btn-default{
+    margin:0;
+}
+.oCenter a{
+    color: #fff;
+}
+.ui-dialog .ui-dialog-content{
+    overflow: visible;
+}
+.nrsz{
+    width:60px;float: left;font-size: 14px;color: #666;font-weight: normal;margin-left: 10px;
+}
+.jiahao1{
+    color: #999;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #CFCFCF;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 33px;
+    font-size: 40px;
+    margin-top: -2px;;
+    cursor: pointer;
+}
+.jiahao1 .jh{
+    height: 40px;
+}
+.nic1 {
+    min-height: 40px;
+    margin-top: 20px;
+}
+.tag_list{
+    display: block;
+    position: absolute;
+    z-index: 221;
+    margin-left: -60px;
+    display: none;
+}
+.tag_list ul{
+    width: 160px;
+    background:#fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-top: -8px;
+}
+.tag_list ul li{
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+    text-align:left;
+    cursor: auto;
+}
+.tag_list ul li input,.tag_list ul li label{
+    float: none;
+    display: inline-block;
+}
+.tag_list ul li label{
+    margin: 0;
+    font-size: 14px;
+}
+#userAdminTable{
+    margin-top: 30px;
+}
+#userAdminTable th,#userAdminTable td{
+    text-align: center;
+    vertical-align:middle;
+}
+#userAdminTable td img{
+    cursor:pointer;
+}
+.sl_modal_body{
+    width: 400px;
+    height: 500px;
+    margin-top:-200px;
+    margin-left: -250px;
+    font-size: 14px;
+}
+.sl_modal_body .modal-body{
+    padding: 15px 0 0 0;
+}
+.sl_modal_body .w-tc-te{
+    text-align: left;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+.sl_modal_body .bj_qx{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    margin: 0;
+}
+.sl_modal_body .mai_box_one{
+    margin-top: 20px;
+    padding: 0 30px;
+}
+.sl_modal_body .mai_box_one .avatar{
+    border-radius: 100%;
+    border: 1px solid #ccc; 
+    margin-right: 20px;
+}
+.sl_modal_body .id,.sl_modal_body .nickname{
+    font-size: 16px;
+    margin-top: 5px;
+}
+.sl_modal_body .table td{
+    border: none;
+}
+.sl_modal_body .bordertop{
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+.myModal1_content{
+    height: 320px;
+    overflow-y: auto;
+}
+/**************************************/
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    height: 0px;
+    font-size: 0px;
+    content: " "
+}
+
+.clearfix {
+    clear: both;
+    zoom: 1
+}

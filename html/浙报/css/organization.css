@@ -1,0 +1,549 @@
+.way .subNav span {
+  font-size: 14px;
+}
+.way .subNav i {
+  color: #929292;
+  font-style: normal;
+  vertical-align: middle;
+  font-size: 18px;
+}
+.way .subNav .btn {
+  border: 0;
+  padding: 0 10px;
+}
+.way .subNav img {
+  vertical-align: text-bottom;
+  margin: 0 2px;
+}
+.way .content {
+  width: 1060px;
+}
+.way .content .panel-show {
+  display: none;
+  padding: 0 68px 0 42px;
+  overflow: hidden;
+}
+.way .content .panel-show span {
+  width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 24px;
+  height: 24px;
+}
+.way .content .panel-show span.pull-right {
+  text-align: right;
+}
+.way .content h3 {
+  font-size: 14px;
+  color: #333;
+}
+.way .content label {
+  font-weight: normal;
+  width: 114px;
+  padding-left: 40px;
+}
+.way .content input[type="text"] {
+  width: 560px;
+  display: inline;
+}
+.way .content textarea {
+  display: inline;
+  width: 560px;
+  height: 50px;
+  resize: none;
+}
+.way .content i {
+  color: #999;
+  font-size: 12px;
+  font-style: normal;
+  position: relative;
+  top: 10px;
+}
+.way .content .panel-heading {
+  font-size: 16px;
+  color: #333;
+}
+.way .content .panel-heading .pull-right {
+  font-size: 12px;
+}
+.way .content .btns {
+  margin: 10px 0 26px;
+}
+.way .content .btn.pull-right {
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  padding: 4px 0;
+}
+.way .content .btn-default.pull-right {
+  margin: 0 54px 0 18px;
+}
+.way .content .btn-primary.pull-right {
+  background: #38b3f7;
+  border-color: #38b3f7;
+}
+.way .content .line {
+  margin: 14px 0;
+}
+.way .content .lineTx {
+  margin: 14px 0 -14px;
+}
+.way .content .lineTx label {
+  position: relative;
+  top: -30px;
+}
+.way .content .lineTx i {
+  top: -2px;
+}
+.way .content b {
+  margin: 0 56px 0 10px;
+}
+.organization .joined .carousel {
+  width: 50%;
+  padding-left: 84px;
+  margin: 18px 0;
+}
+.organization .joined .carousel img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.organization .joined .carousel div {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 6px;
+}
+.organization .joined .carousel p {
+  font-size: 14px;
+  color: #666;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.organization .log .subNav a {
+  padding-left: 20px;
+}
+.organization .log .subNav .carousel .headImg {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  margin-top: -21px;
+}
+.organization .log .subNav div {
+  padding: 6px 0 6px 56px;
+  line-height: 22px;
+}
+.organization .log .subNav div img {
+  margin-left: 6px;
+  vertical-align: baseline;
+}
+.organization .log .subNav p {
+  margin: 0;
+  font-size: 14px;
+}
+.organization .log .subNav i {
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+}
+.organization .log .content .noLog {
+  padding-top: 176px;
+}
+.organization .log .content .noLog img {
+  display: block;
+  margin: 0 auto;
+}
+.organization .log .content .noLog p {
+  text-align: center;
+}
+.organization .log .content .carousel {
+  padding-left: 82px;
+  width: 100%;
+  margin: 44px 0;
+}
+.organization .log .content .carousel .headImg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+}
+.organization .log .content .carousel .msgBox img {
+  margin-top: -4px;
+  margin-left: 10px;
+}
+.organization .log .content .carousel .msgBox div {
+  font-size: 16px;
+  color: #333;
+}
+.organization .log .content .carousel .msgBox p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.organization .log .content .carousel .msgBox span {
+  font-size: 14px;
+  color: #2a569a;
+}
+.organization .log .content .carousel .msgBox i {
+  font-size: 14px;
+  font-style: normal;
+  color: #dcdcdc;
+  padding: 0 8px;
+}
+.organization .log .content .carousel .rightBtn {
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+}
+.organization .log .content .carousel .rightBtn span {
+  color: #999;
+  margin-right: 14px;
+}
+.organization .finding .no img,
+.organization .member .no img {
+  display: block;
+  margin: 106px auto 10px;
+}
+.organization .finding .no p,
+.organization .member .no p {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+.organization .finding .content .carousel,
+.organization .member .content .carousel {
+  padding-left: 82px;
+  width: 100%;
+  margin: 44px 0;
+}
+.organization .finding .content .carousel .headImg,
+.organization .member .content .carousel .headImg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+}
+.organization .finding .content .carousel .msgBox img,
+.organization .member .content .carousel .msgBox img {
+  margin-top: -4px;
+  margin-left: 10px;
+}
+.organization .finding .content .carousel .msgBox div,
+.organization .member .content .carousel .msgBox div {
+  font-size: 16px;
+  color: #333;
+}
+.organization .finding .content .carousel .msgBox p,
+.organization .member .content .carousel .msgBox p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.organization .finding .content .carousel .msgBox span,
+.organization .member .content .carousel .msgBox span {
+  font-size: 14px;
+  color: #2a569a;
+}
+.organization .finding .content .carousel .msgBox i,
+.organization .member .content .carousel .msgBox i {
+  font-size: 14px;
+  font-style: normal;
+  color: #2a569a;
+  padding: 0 8px;
+}
+.organization .finding .content .carousel .rightBtn,
+.organization .member .content .carousel .rightBtn {
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+}
+.organization .finding .content .carousel .rightBtn span,
+.organization .member .content .carousel .rightBtn span {
+  color: #999;
+  margin-right: 14px;
+}
+.organization .finding .content .carousel .rightBtn ul,
+.organization .member .content .carousel .rightBtn ul {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  padding: 10px 20px;
+  width: 134px;
+  height: 190px;
+  list-style: none;
+  background: #f6faff;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#c8c8c8', Direction=135, Strength=5);
+  -moz-box-shadow: 2px 2px 5px #c8c8c8;
+  -webkit-box-shadow: 2px 2px 5px #c8c8c8;
+  box-shadow: 2px 2px 5px #c8c8c8;
+  font-size: 14px;
+  color: #333;
+}
+.organization .finding .content .carousel .rightBtn li,
+.organization .member .content .carousel .rightBtn li {
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+.organization .finding .content .carousel .rightBtn img,
+.organization .member .content .carousel .rightBtn img {
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
+.organization .finding .content .carousel .rightBtn p,
+.organization .member .content .carousel .rightBtn p {
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+.organization .info .subNav {
+  padding-left: 0;
+}
+.organization .info .subNav a {
+  margin-bottom: 60px;
+  cursor: pointer;
+  position: relative;
+}
+.organization .info .subNav ul {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 120px;
+  left: 40px;
+  list-style: none;
+  background: #f6faff;
+  padding: 0;
+  width: 120px;
+  text-align: center;
+}
+.organization .info .subNav li:hover {
+  background: #e2ecff;
+}
+.organization .info .subNav div {
+  position: relative;
+  display: none;
+  background: white;
+  height: 150px;
+  width: 414px;
+  box-shadow: 0px 0px 10px 0px #c8c8c8;
+  padding: 26px 0;
+}
+.organization .info .subNav div img {
+  margin-right: 10px;
+}
+.organization .info .subNav .triangle {
+  position: absolute;
+  left: 46px;
+  top: -14px;
+}
+.organization .info .subNav small {
+  line-height: 22px;
+  height: 22px;
+  display: block;
+  color: #333;
+  font-size: 16px;
+}
+.organization .info .subNav b {
+  line-height: 24px;
+  height: 24px;
+  display: block;
+  color: #666;
+  font-size: 14px;
+}
+.organization .info .subNav button {
+  margin: 0 12px;
+}
+.organization .create span {
+  color: #999999;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: 14px;
+}
+.organization .create span.error {
+  color: #ff7e3f;
+}
+.organization .create p {
+  color: #ff7e3f;
+  margin: 0 0 0 80px;
+  display: none;
+}
+.organization .create i {
+  font-style: normal;
+  position: relative;
+  left: -244px;
+}
+.organization .create input[type="text"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+}
+.organization .create .longInput {
+  width: 510px;
+}
+.organization .create textarea {
+  display: inline;
+  background: white;
+  width: 510px;
+  height: 100px;
+  resize: none;
+}
+.organization .create .tx label {
+  position: relative;
+  bottom: 74px;
+}
+.organization .create .tx span {
+  top: 0;
+}
+.organization .create label {
+  font-size: 14px;
+  width: 90px;
+}
+.organization .create label.btn {
+  width: 160px;
+  margin: 0 0 0 10px;
+}
+.organization .create .mainInfo input {
+  display: none;
+}
+.organization .create .mainInfo img {
+  border-radius: 50%;
+}
+.organization .create .mainInfo .btn {
+  line-height: 38px;
+  color: #38b3f7;
+  border-color: #38b3f7;
+}
+.organization .create .bottomBtn {
+  background: #38b3f7;
+  border-color: #38b3f7;
+  margin-left: 94px;
+  margin-top: 20px;
+  height: 38px;
+  line-height: 26px;
+  width: 520px;
+}
+.organization .create .row {
+  margin: 8px 0;
+}
+.organization .invite textarea {
+  display: block;
+  margin: 20px auto 0;
+  resize: none;
+  width: 630px;
+  height: 300px;
+  border-radius: 6px;
+}
+.organization .invite button {
+  display: block;
+  margin: 22px auto 0;
+  background: #38b3f7;
+  border-color: #38b3f7;
+  width: 200px;
+  height: 40px;
+}
+.organization .info p {
+  color: #ff7e3f;
+  margin: 0 0 0 80px;
+  display: none;
+}
+.organization .info i {
+  font-style: normal;
+  position: relative;
+  left: -244px;
+}
+.organization .info input[type="text"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+}
+.organization .info .longInput {
+  width: 520px;
+}
+.organization .info textarea {
+  display: inline;
+  background: white;
+  width: 520px;
+  height: 100px;
+  resize: none;
+}
+.organization .info label {
+  font-size: 14px;
+  width: 110px;
+}
+.organization .info label.btn {
+  width: 160px;
+  margin: 0 0 0 10px;
+}
+.organization .info .mainInfo span {
+  color: #999999;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: 14px;
+}
+.organization .info .mainInfo span.error {
+  color: #ff7e3f;
+}
+.organization .info .mainInfo input {
+  display: none;
+}
+.organization .info .mainInfo img {
+  border-radius: 50%;
+}
+.organization .info .mainInfo .btn {
+  line-height: 38px;
+  color: #38b3f7;
+  border-color: #38b3f7;
+}
+.organization .info .bottomBtn {
+  background: #38b3f7;
+  border-color: #38b3f7;
+  margin-left: 114px;
+  margin-top: 20px;
+  height: 38px;
+  line-height: 26px;
+  width: 520px;
+}
+.organization .info .row {
+  margin: 8px 0;
+}
+.organization .modal-body .form-group {
+  margin-bottom: 0;
+}
+.organization .modal-footer {
+  text-align: center;
+}
+.organization .modal-footer .btn {
+  width: 80px;
+  height: 32px;
+}
+.organization .modal-footer .btn-primary {
+  background: #2fb0f7;
+  border-color: #2fb0f7;
+}
+.organization .finding .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -92.5px;
+  margin-left: -300px;
+}

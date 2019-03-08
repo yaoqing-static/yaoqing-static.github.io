@@ -1,0 +1,1601 @@
+body {
+  font: normal 12px/24px "Microsoft YaHei", Helvetica, Tahoma, Arial, sans-serif;
+}
+.blueHover:hover {
+  background: #04a9f4;
+  color: white;
+}
+.grayHover:hover {
+  background: #aaaaaa;
+  color: white;
+}
+.btnHover:hover::after {
+  content: url(images/hover.png);
+}
+.btnHover:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login {
+  min-width: 1020px;
+  cursor: default;
+}
+.login .topBg {
+  background: #0e4c98;
+}
+.login .topBg img {
+  display: block;
+  margin: 0 auto;
+}
+.login .box {
+  width: 312px;
+  margin: 58px auto 80px;
+  font-size: 14px;
+}
+.login .form-group {
+  position: relative;
+}
+.login .form-group .rightBtn {
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  color: #04a9f4;
+}
+.login .form-control {
+  height: 40px;
+}
+.login .btn {
+  line-height: 28px;
+}
+.login .commonBtn {
+  color: #aaaaaa;
+}
+.login .commonBtn:hover::after {
+  content: url(images/hover.png);
+}
+.login .commonBtn:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login .commonBtn:hover {
+  background: #aaaaaa;
+  color: white;
+}
+.login .guideBtn {
+  background: #04a9f4;
+  border-color: #04a9f4;
+  color: white;
+}
+.login .guideBtn:hover::after {
+  content: url(images/hover.png);
+}
+.login .guideBtn:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login .guideA {
+  color: #04a9f4;
+  border-color: #04a9f4;
+}
+.login .guideA:hover::after {
+  content: url(images/hover.png);
+}
+.login .guideA:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login .guideA:hover {
+  background: #04a9f4;
+  color: white;
+}
+.login .footer {
+  color: #aaaaaa;
+}
+.login .footer a {
+  color: #aaaaaa;
+}
+.login .error {
+  display: none;
+  color: #ff7e3f;
+  background: #fff7f6;
+}
+.login .wechar,
+.login .qq,
+.login .sina {
+  position: relative;
+  padding-left: 112px;
+  text-align: left;
+}
+.login .wechar img,
+.login .qq img,
+.login .sina img {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+.login .wechar {
+  color: #35bc47;
+  border-color: #35bc47;
+}
+.login .wechar:hover {
+  background: #35bc47;
+}
+.login .wechar:hover::before {
+  content: url(images/wechar.png);
+}
+.login .wechar:before {
+  position: relative;
+  top: 5px;
+  left: 32px;
+}
+.login .qq {
+  color: #3d96d6;
+  border-color: #3d96d6;
+}
+.login .qq:hover {
+  background: #3d96d6;
+}
+.login .qq img {
+  position: absolute;
+  top: 10px;
+  left: 54px;
+}
+.login .qq:hover::before {
+  content: url(images/qq.png);
+}
+.login .qq:before {
+  position: relative;
+  top: 5px;
+  left: 35px;
+}
+.login .sina {
+  color: #e74242;
+  border-color: #e74242;
+}
+.login .sina:hover {
+  background: #e74242;
+}
+.login .sina:hover::before {
+  content: url(images/sina.png);
+}
+.login .sina:before {
+  position: relative;
+  top: 5px;
+  left: 32px;
+}
+.login .eip {
+  color: #2e2e2e;
+  border-color: #2e2e2e;
+}
+.login .eip:hover {
+  background: #2e2e2e;
+}
+.login .eip:hover::before {
+  content: "EIP";
+}
+.login .eip:before {
+  position: relative;
+  left: 43px;
+  color: white;
+}
+.mail .title {
+  color: #2a569a;
+}
+.mail .box {
+  width: 486px;
+  margin: 0 auto;
+  word-break: break-all;
+  font-size: 14px;
+}
+.mail h1 {
+  font-size: 40px;
+  text-align: center;
+  margin: 216px 0 76px;
+}
+.mail a {
+  color: #04a9f4;
+}
+.login .wi50 {
+  width: 55%;
+}
+.login .fl {
+  float: left;
+}
+.login .fr {
+  float: right;
+}
+.login .wi25 {
+  width: 40%;
+}
+.login .but {
+  margin-bottom: 15px;
+}
+.login .h40 {
+  height: 40px;
+}
+.login .login .btnn {
+  line-height: 28px;
+  border-color: #04a9f4;
+  background: #FFF;
+  color: #04a9f4;
+}
+.login .cy {
+  color: #04a9f4;
+}
+.login .yanz {
+  margin: 56px auto 200px auto;
+  text-align: center;
+}
+.login .tu img {
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+}
+.login .chengy {
+  color: #2e2e2e;
+  font-size: 16px;
+  font-family: "微软雅黑";
+  line-height: 30px;
+}
+.login .heng {
+  border-bottom: 1px solid #22ca73;
+  margin: 15px auto 20px auto;
+}
+.login .huan {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-family: "微软雅黑";
+}
+.login .login .guideAb {
+  color: #04a9f4;
+  border-color: #04a9f4;
+}
+.login .login .guideAb:hover {
+  background: #04a9f4;
+  color: white;
+}
+.login .zhong {
+  margin-top: 45px;
+}
+.login .mrz {
+  margin: auto auto;
+}
+.login .zhongh {
+  width: 150px;
+  height: 42px;
+}
+.login .yans {
+  color: #04a9f4;
+}
+.subNavBorder {
+  border-right: 1px solid #e6e6e6;
+}
+.commonBox {
+  min-width: 1020px;
+  cursor: default;
+  height: 100%;
+}
+.commonBox a {
+  text-decoration: none;
+}
+.commonBox .errorMsg {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 400px;
+  margin-left: -200px;
+  text-align: center;
+  background: white;
+}
+.commonBox .nav {
+  background: #2a569a;
+  min-height: 670px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  width: 100px;
+  height: 100%;
+}
+.commonBox .nav a {
+  margin: 15px 0;
+  display: block;
+  text-align: center;
+}
+.commonBox .nav a i{
+	background: url(../images/all_icon.png) no-repeat;
+	width: 37px;
+	height: 37px;
+	display: inline-block;
+}
+.commonBox .nav a .zj-open{
+	background-position: -598px 0;
+}
+.commonBox .nav a:hover .zj-open{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -658px 0;
+}
+.commonBox .nav a .Operate{
+	background-position: -599px -56px;
+}
+.commonBox .nav a:hover .Operate{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -659px -55px;
+}
+.commonBox .nav a .Card-coupons{
+	background-position: -597px -108px;
+}
+.commonBox .nav a:hover .Card-coupons{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -657px -108px;
+}
+.commonBox .nav a .Activity{
+	background-position: -597px -165px;
+}
+.commonBox .nav a:hover .Activity{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -657px -165px;
+}
+.commonBox .nav a .The-news{
+	background-position: -596px -395px;
+}
+.commonBox .nav a:hover .The-news{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -656px -395px;
+}
+.commonBox .nav a .nav-Organization{
+	background-position: -596px -447px;
+}
+.commonBox .nav a:hover .nav-Organization{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -656px -447px;
+}
+.commonBox .nav a .Sign-out{
+	background-position: -592px -535px;
+	height: 45px;
+	width: 45px;
+}
+.commonBox .nav a:hover .Sign-out{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -654px -535px;
+}
+.commonBox .nav a .Information{
+	background-position: -454px 0;
+}
+.commonBox .nav a:hover .Information{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -514px 0;
+}
+.commonBox .nav a .Data-report{
+	background-position: -453px -56px;
+}
+.commonBox .nav a:hover .Data-report{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -513px -55px;
+}
+.commonBox .nav a .Custom-menu{
+	background-position: -453px -108px;
+}
+.commonBox .nav a:hover .Custom-menu{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -513px -108px;
+}
+.commonBox .nav a .Automatic-response{
+	background-position: -454px -165px;
+}
+.commonBox .nav a:hover .Automatic-response{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -514px -165px;
+}
+.commonBox .nav a .Group-management{
+	background-position: -454px -223px;
+}
+.commonBox .nav a:hover .Group-management{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -514px -223px;
+}
+.commonBox .nav a .Material-management{
+	background-position: -452px -275px;
+}
+.commonBox .nav a:hover .Material-management{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -512px -275px;
+}
+.commonBox .nav a .Account-management{
+	background-position: -452px -330px;
+}
+.commonBox .nav a:hover .Account-management{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -512px -330px;
+}
+.commonBox .nav a .Back-off{
+	background-position: -454px -535px;
+	height: 45px;
+	width: 45px;
+}
+.commonBox .nav a:hover .Back-off{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -515px -535px;
+}
+.commonBox .nav a .kq-Edit{
+	background-position: -301px -56px;
+}
+.commonBox .nav a:hover .kq-Edit{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -360px -53px;
+}
+.commonBox .nav a .kq-Release{
+	background-position: -301px -108px;
+}
+.commonBox .nav a:hover .kq-Release{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -360px -108px;
+}
+.commonBox .nav a .kq-Write-off{
+	background-position: -300px -167px;
+}
+.commonBox .nav a:hover .kq-Write-off{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -360px -165px;
+}
+.commonBox .nav a .hd-Make{
+	background-position: -153px -49px;
+}
+.commonBox .nav a:hover .hd-Make{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -213px -49px;
+}
+.commonBox .nav a .Activity-statistics{
+	background-position: -153px -160px;
+}
+.commonBox .nav a:hover .Activity-statistics{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -213px -160px;
+}
+.commonBox .nav a .Form-statistics{
+	background-position: -153px -219px;
+}
+.commonBox .nav a:hover .Form-statistics{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -213px -219px;
+}
+.commonBox .nav a .Members{
+	background-position: 1px -49px;
+}
+.commonBox .nav a:hover .Members{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -69px -49px;
+}
+.commonBox .nav a .zz-log{
+	background-position: 0 -108px;
+}
+.commonBox .nav a:hover .zz-log{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -70px -108px;
+}
+.commonBox .nav a .Channel{
+	background-position: 0 -165px;
+}
+.commonBox .nav a:hover .Channel{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -70px -165px;
+}
+.commonBox .nav a .zj-open.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -658px 0;
+}
+.commonBox .nav a .Operate.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -659px -55px;
+}
+.commonBox .nav a .Card-coupons.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -657px -108px;
+}
+.commonBox .nav a .Activity.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -657px -165px;
+}
+.commonBox .nav a .The-news.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -656px -395px;
+}
+.commonBox .nav a .nav-Organization.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -656px -447px;
+}
+.commonBox .nav a .Sign-out.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -654px -535px;
+}
+.commonBox .nav a .Information.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -514px 0;
+}
+.commonBox .nav a .Data-report.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -513px -55px;
+}
+.commonBox .nav a .Custom-menu.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -513px -108px;
+}
+.commonBox .nav a .Automatic-response.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -514px -165px;
+}
+.commonBox .nav a .Group-management.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -514px -223px;
+}
+.commonBox .nav a .Material-management.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -512px -275px;
+}
+.commonBox .nav a .Account-management.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -512px -330px;
+}
+.commonBox .nav a .Back-off.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -515px -535px;
+}
+.commonBox .nav a .kq-Edit.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -360px -53px;
+}
+.commonBox .nav a .kq-Release.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -360px -108px;
+}
+.commonBox .nav a .kq-Write-off.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -360px -165px;
+}
+.commonBox .nav a .hd-Make.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -213px -49px;
+}
+.commonBox .nav a .Activity-statistics.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -213px -160px;
+}
+.commonBox .nav a .Form-statistics.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -213px -219px;
+}
+.commonBox .nav a .Members.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -69px -49px;
+}
+.commonBox .nav a .zz-log.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -70px -108px;
+}
+.commonBox .nav a .Channel.active{
+	background: url(../images/all_icon.png) no-repeat;
+	background-position: -70px -165px;
+}
+.commonBox .nav .head {
+  margin: 18px 0 50px;
+}
+.commonBox .nav .head img {
+  border-radius: 50%;
+}
+.commonBox .nav .last1,
+.commonBox .nav .last2,
+.commonBox .nav .last3 {
+  position: absolute;
+  width: 100%;
+}
+.commonBox .nav .last1 {
+  bottom: 70px;
+}
+.commonBox .nav .last2 {
+  bottom: 170px;
+}
+.commonBox .nav .last3 {
+  bottom: 220px;
+}
+.commonBox .contentBox {
+  position: relative;
+  padding-left: 100px;
+}
+.commonBox .contentBox .title {
+  margin: 20px 0 40px;
+  font-size: 12px;
+  color: #999999;
+}
+.commonBox .contentBox h1 {
+  padding-left: 40px;
+  font-size: 34px;
+  margin: 20px 0;
+}
+.commonBox .subNav {
+  width: 290px;
+  padding-left: 40px;
+  position: absolute;
+  left: 100px;
+  border-right: 1px solid #e6e6e6;
+}
+.commonBox .subNav a {
+  display: block;
+  line-height: 50px;
+  padding-left: 40px;
+  color: #333333;
+}
+.commonBox .subNav .subNavPerson {
+  margin-top: -4px;
+  margin-right: 10px;
+}
+.commonBox .subNav .subNavPwd {
+  margin-top: -6px;
+  margin-right: 14px;
+  margin-left: 2px;
+}
+.commonBox .subNav .subNavThird {
+  margin-top: -6px;
+  margin-right: 14px;
+}
+.commonBox .subNav .subNavOrgAdd {
+  margin-top: -6px;
+  margin-right: 10px;
+}
+.commonBox .subNav .subNavOrgFind {
+  margin-top: -6px;
+  margin-right: 12px;
+}
+.commonBox .subNav .subNavOrgCreate {
+  margin-top: -4px;
+  margin-right: 14px;
+  margin-left: 2px;
+}
+.commonBox .subNav .subNavTime {
+  margin-top: -2px;
+  margin-right: 14px;
+}
+.commonBox .subNav .subNavOrgControl {
+  margin-top: -4px;
+  margin-right: 12px;
+}
+.commonBox .subNav .subNavOrgJoin {
+  margin-top: -4px;
+  margin-right: 14px;
+}
+.commonBox .subNav span {
+  font-size: 16px;
+}
+.commonBox .subNav .actived {
+  background: #e2ecff;
+}
+.commonBox .content {
+  width: 1000px;
+  padding-left: 330px;
+}
+.commonBox .content h3 {
+  color: #2a569a;
+}
+.account .personInfo span {
+  color: #999999;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: 14px;
+}
+.account .personInfo span.error {
+  color: #ff7e3f;
+}
+.account .personInfo p {
+  color: #ff7e3f;
+  margin: 0 0 0 80px;
+  display: none;
+}
+.account .personInfo i {
+  font-style: normal;
+  position: relative;
+  left: -244px;
+}
+.account .personInfo input[type="text"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+}
+.account .personInfo .longInput {
+  width: 520px;
+}
+.account .personInfo .shortInput {
+  width: 352px;
+}
+.account .personInfo .shortInputBtn {
+  width: 158px;
+  line-height: 26px;
+  margin-top: -4px;
+  margin-left: 6px;
+}
+.account .personInfo label {
+  font-size: 14px;
+  width: 40px;
+  margin-right: 28px;
+}
+.account .personInfo label.btn {
+  width: 160px;
+  margin: 0 0 0 10px;
+}
+.account .personInfo .mainInfo input {
+  display: none;
+}
+.account .personInfo .mainInfo img {
+  border-radius: 50%;
+}
+.account .personInfo .mainInfo .btn {
+  line-height: 38px;
+  color: #38b3f7;
+  border-color: #38b3f7;
+}
+.account .personInfo .bottomBtn {
+  background: #38b3f7;
+  border-color: #38b3f7;
+  margin-left: 68px;
+  margin-top: 20px;
+  height: 38px;
+  line-height: 26px;
+  width: 500px;
+}
+.account .personInfo .row {
+  margin: 8px 0;
+}
+.account .content.third h3 {
+  margin-bottom: 40px;
+}
+.account .content.third .row {
+  margin: 22px 0;
+}
+.account .content.third span {
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 44px;
+  color: #333333;
+}
+.account .content.third .pull-right {
+  width: 120px;
+  height: 40px;
+  line-height: 28px;
+}
+.account .content.third .msgT {
+  margin: 16px 0 0 0;
+  line-height: 22px;
+}
+.account .content.third .msgT img {
+  margin-right: 20px;
+}
+.account .content.third .msgC {
+  margin: 2px 0 12px 0;
+}
+.account .content.third .msgB .btn-info {
+  margin-right: 24px;
+}
+.account .content.third .msgB button {
+  width: 80px;
+  height: 32px;
+}
+.account .content.password h3 {
+  margin-bottom: 35px;
+}
+.account .content.password label {
+  font-size: 14px;
+  width: 60px;
+  margin-right: 28px;
+}
+.account .content.password p {
+  color: #ff7e3f;
+  margin: 0 0 0 100px;
+  display: none;
+}
+.account .content.password .row {
+  margin: 16px 0;
+}
+.account .content.password input[type="password"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+  width: 352px;
+}
+.account .content.password .bottomBtn {
+  margin: 0 0 0 90px;
+  background: #38b3f7;
+  border-color: #38b3f7;
+  width: 352px;
+}
+.recently .content h3 {
+  padding-bottom: 10px;
+}
+.recently .carousel {
+  padding-left: 70px;
+  margin: 20px 0;
+}
+.recently .carousel img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+}
+.recently .carousel div {
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 2px;
+}
+.recently .carousel i {
+  font-style: normal;
+  margin-left: 18px;
+}
+.recently .carousel a {
+  font-size: 16px;
+  color: #333;
+  line-height: 32px;
+}
+.recently .carousel a:hover {
+  color: #a05961;
+}
+.way .subNav span {
+  font-size: 14px;
+}
+.way .subNav i {
+  color: #929292;
+  font-style: normal;
+  vertical-align: middle;
+  font-size: 18px;
+}
+.way .subNav .btn {
+  border: 0;
+  padding: 0 10px;
+}
+.way .subNav img {
+  vertical-align: text-bottom;
+  margin: 0 2px;
+}
+.way .content {
+  width: 1060px;
+}
+.way .content .panel-show {
+  display: none;
+  padding: 0 68px 0 42px;
+  overflow: hidden;
+}
+.way .content .panel-show span {
+  width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 24px;
+  height: 24px;
+}
+.way .content .panel-show span.pull-right {
+  text-align: right;
+}
+.way .content h3 {
+  font-size: 14px;
+  color: #333;
+}
+.way .content label {
+  font-weight: normal;
+  width: 114px;
+  padding-left: 40px;
+}
+.way .content input[type="text"] {
+  width: 560px;
+  display: inline;
+}
+.way .content textarea {
+  display: inline;
+  width: 560px;
+  height: 50px;
+  resize: none;
+}
+.way .content i {
+  color: #999;
+  font-size: 12px;
+  font-style: normal;
+  position: relative;
+  top: 10px;
+}
+.way .content .panel-heading {
+  font-size: 16px;
+  color: #333;
+}
+.way .content .panel-heading .pull-right {
+  font-size: 12px;
+}
+.way .content .btns {
+  margin: 10px 0 26px;
+}
+.way .content .btn.pull-right {
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  padding: 4px 0;
+}
+.way .content .btn-default.pull-right {
+  margin: 0 54px 0 18px;
+}
+.way .content .btn-primary.pull-right {
+  background: #38b3f7;
+  border-color: #38b3f7;
+}
+.way .content .line {
+  margin: 14px 0;
+}
+.way .content .lineTx {
+  margin: 14px 0 -14px;
+}
+.way .content .lineTx label {
+  position: relative;
+  top: -30px;
+}
+.way .content .lineTx i {
+  top: -2px;
+}
+.way .content b {
+  margin: 0 56px 0 10px;
+}
+.organization .joined .carousel {
+  width: 50%;
+  padding-left: 84px;
+  margin: 18px 0;
+}
+.organization .joined .carousel img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.organization .joined .carousel div {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 6px;
+}
+.organization .joined .carousel p {
+  font-size: 14px;
+  color: #666;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.organization .log .subNav a {
+  padding-left: 20px;
+}
+.organization .log .subNav .carousel .headImg {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  margin-top: -21px;
+}
+.organization .log .subNav div {
+  padding: 6px 0 6px 56px;
+  line-height: 22px;
+}
+.organization .log .subNav div img {
+  margin-left: 6px;
+  vertical-align: baseline;
+}
+.organization .log .subNav p {
+  margin: 0;
+  font-size: 14px;
+}
+.organization .log .subNav i {
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+}
+.organization .log .content .noLog {
+  padding-top: 176px;
+}
+.organization .log .content .noLog img {
+  display: block;
+  margin: 0 auto;
+}
+.organization .log .content .noLog p {
+  text-align: center;
+}
+.organization .log .content .carousel {
+  padding-left: 82px;
+  width: 100%;
+  margin: 44px 0;
+}
+.organization .log .content .carousel .headImg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+}
+.organization .log .content .carousel .msgBox img {
+  margin-top: -4px;
+  margin-left: 10px;
+}
+.organization .log .content .carousel .msgBox div {
+  font-size: 16px;
+  color: #333;
+}
+.organization .log .content .carousel .msgBox p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.organization .log .content .carousel .msgBox span {
+  font-size: 14px;
+  color: #2a569a;
+}
+.organization .log .content .carousel .msgBox i {
+  font-size: 14px;
+  font-style: normal;
+  color: #dcdcdc;
+  padding: 0 8px;
+}
+.organization .log .content .carousel .rightBtn {
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+}
+.organization .log .content .carousel .rightBtn span {
+  color: #999;
+  margin-right: 14px;
+}
+.organization .finding .no img,
+.organization .member .no img {
+  display: block;
+  margin: 106px auto 10px;
+}
+.organization .finding .no p,
+.organization .member .no p {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+.organization .finding .content .carousel,
+.organization .member .content .carousel {
+  padding-left: 82px;
+  width: 100%;
+  margin: 44px 0;
+}
+.organization .finding .content .carousel .headImg,
+.organization .member .content .carousel .headImg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+}
+.organization .finding .content .carousel .msgBox img,
+.organization .member .content .carousel .msgBox img {
+  margin-top: -4px;
+  margin-left: 10px;
+}
+.organization .finding .content .carousel .msgBox div,
+.organization .member .content .carousel .msgBox div {
+  font-size: 16px;
+  color: #333;
+}
+.organization .finding .content .carousel .msgBox p,
+.organization .member .content .carousel .msgBox p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.organization .finding .content .carousel .msgBox span,
+.organization .member .content .carousel .msgBox span {
+  font-size: 14px;
+  color: #2a569a;
+}
+.organization .finding .content .carousel .msgBox i,
+.organization .member .content .carousel .msgBox i {
+  font-size: 14px;
+  font-style: normal;
+  color: #2a569a;
+  padding: 0 8px;
+}
+.organization .finding .content .carousel .rightBtn,
+.organization .member .content .carousel .rightBtn {
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+}
+.organization .finding .content .carousel .rightBtn span,
+.organization .member .content .carousel .rightBtn span {
+  color: #999;
+  margin-right: 14px;
+}
+.organization .finding .content .carousel .rightBtn ul,
+.organization .member .content .carousel .rightBtn ul {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  padding: 10px 20px;
+  width: 134px;
+  height: 190px;
+  list-style: none;
+  background: #f6faff;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#c8c8c8', Direction=135, Strength=5);
+  -moz-box-shadow: 2px 2px 5px #c8c8c8;
+  -webkit-box-shadow: 2px 2px 5px #c8c8c8;
+  box-shadow: 2px 2px 5px #c8c8c8;
+  font-size: 14px;
+  color: #333;
+}
+.organization .finding .content .carousel .rightBtn li,
+.organization .member .content .carousel .rightBtn li {
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+.organization .finding .content .carousel .rightBtn img,
+.organization .member .content .carousel .rightBtn img {
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
+.organization .finding .content .carousel .rightBtn p,
+.organization .member .content .carousel .rightBtn p {
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+.organization .info .subNav {
+  padding-left: 0;
+}
+.organization .info .subNav a {
+  margin-bottom: 60px;
+  cursor: pointer;
+  position: relative;
+}
+.organization .info .subNav ul {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 120px;
+  left: 40px;
+  list-style: none;
+  background: #f6faff;
+  padding: 0;
+  width: 120px;
+  text-align: center;
+}
+.organization .info .subNav li:hover {
+  background: #e2ecff;
+}
+.organization .info .subNav div {
+  position: relative;
+  display: none;
+  background: white;
+  height: 150px;
+  width: 414px;
+  box-shadow: 0px 0px 10px 0px #c8c8c8;
+  padding: 26px 0;
+}
+.organization .info .subNav div img {
+  margin-right: 10px;
+}
+.organization .info .subNav .triangle {
+  position: absolute;
+  left: 46px;
+  top: -14px;
+}
+.organization .info .subNav small {
+  line-height: 22px;
+  height: 22px;
+  display: block;
+  color: #333;
+  font-size: 16px;
+}
+.organization .info .subNav b {
+  line-height: 24px;
+  height: 24px;
+  display: block;
+  color: #666;
+  font-size: 14px;
+}
+.organization .info .subNav button {
+  margin: 0 12px;
+}
+.organization .create span {
+  color: #999999;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: 14px;
+}
+.organization .create span.error {
+  color: #ff7e3f;
+}
+.organization .create p {
+  color: #ff7e3f;
+  margin: 0 0 0 80px;
+  display: none;
+}
+.organization .create i {
+  font-style: normal;
+  position: relative;
+  left: -244px;
+}
+.organization .create input[type="text"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+}
+.organization .create .longInput {
+  width: 510px;
+}
+.organization .create textarea {
+  display: inline;
+  background: white;
+  width: 510px;
+  height: 100px;
+  resize: none;
+}
+.organization .create .tx label {
+  position: relative;
+  bottom: 74px;
+}
+.organization .create .tx span {
+  top: 0;
+}
+.organization .create label {
+  font-size: 14px;
+  width: 90px;
+}
+.organization .create label.btn {
+  width: 160px;
+  margin: 0 0 0 10px;
+}
+.organization .create .mainInfo input {
+  display: none;
+}
+.organization .create .mainInfo img {
+  border-radius: 50%;
+}
+.organization .create .mainInfo .btn {
+  line-height: 38px;
+  color: #38b3f7;
+  border-color: #38b3f7;
+}
+.organization .create .bottomBtn {
+  background: #38b3f7;
+  border-color: #38b3f7;
+  margin-left: 94px;
+  margin-top: 20px;
+  height: 38px;
+  line-height: 26px;
+  width: 520px;
+}
+.organization .create .row {
+  margin: 8px 0;
+}
+.organization .invite textarea {
+  display: block;
+  margin: 20px auto 0;
+  resize: none;
+  width: 630px;
+  height: 300px;
+  border-radius: 6px;
+}
+.organization .invite button {
+  display: block;
+  margin: 22px auto 0;
+  background: #38b3f7;
+  border-color: #38b3f7;
+  width: 200px;
+  height: 40px;
+}
+.organization .info p {
+  color: #ff7e3f;
+  margin: 0 0 0 80px;
+  display: none;
+}
+.organization .info i {
+  font-style: normal;
+  position: relative;
+  left: -244px;
+}
+.organization .info input[type="text"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+}
+.organization .info .longInput {
+  width: 520px;
+}
+.organization .info textarea {
+  display: inline;
+  background: white;
+  width: 520px;
+  height: 100px;
+  resize: none;
+}
+.organization .info label {
+  font-size: 14px;
+  width: 110px;
+}
+.organization .info label.btn {
+  width: 160px;
+  margin: 0 0 0 10px;
+}
+.organization .info .mainInfo span {
+  color: #999999;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: 14px;
+}
+.organization .info .mainInfo span.error {
+  color: #ff7e3f;
+}
+.organization .info .mainInfo input {
+  display: none;
+}
+.organization .info .mainInfo img {
+  border-radius: 50%;
+}
+.organization .info .mainInfo .btn {
+  line-height: 38px;
+  color: #38b3f7;
+  border-color: #38b3f7;
+}
+.organization .info .bottomBtn {
+  background: #38b3f7;
+  border-color: #38b3f7;
+  margin-left: 114px;
+  margin-top: 20px;
+  height: 38px;
+  line-height: 26px;
+  width: 520px;
+}
+.organization .info .row {
+  margin: 8px 0;
+}
+.organization .modal-body .form-group {
+  margin-bottom: 0;
+}
+.organization .modal-footer {
+  text-align: center;
+}
+.organization .modal-footer .btn {
+  width: 80px;
+  height: 32px;
+}
+.organization .modal-footer .btn-primary {
+  background: #2fb0f7;
+  border-color: #2fb0f7;
+}
+.organization .finding .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -92.5px;
+  margin-left: -300px;
+}
+.card .panel {
+  width: 920px;
+  height: 620px;
+  margin-left: 40px;
+}
+.card .panel-heading {
+  padding: 0;
+}
+.card .panel-heading a {
+  width: 94px;
+  height: 50px;
+  color: #333;
+  line-height: 50px;
+  font-size: 14px;
+}
+.card .panel-heading a:hover {
+  background: #41b6f7;
+  color: white;
+}
+.card .panel-heading .actived {
+  background: #41b6f7;
+  color: white;
+}
+.card .phoneBox {
+  margin: 0 auto;
+  width: 306px;
+  height: 448px;
+  border: 1px solid #d0d0d0;
+}
+.card .phoneHead {
+  background: #df9d32;
+  height: 162px;
+  color: white;
+}
+.card .phoneHead img {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  margin-right: 10px;
+}
+.card .phoneHead span {
+  font-size: 12px;
+}
+.card .phoneHead .text-left {
+  padding: 18px 0 10px 12px;
+}
+.card .phoneTitle {
+  font-size: 20px;
+}
+.card .phoneSN {
+  font-size: 14px;
+  margin: 6px 0 12px;
+}
+.card .phoneDate {
+  font-size: 14px;
+}
+.card .btn-primary {
+  margin-top: 190px;
+  background: #41b6f7;
+  border-color: #41b6f7;
+}
+.card .phoneExplain {
+  color: #333;
+  font-size: 14px;
+}
+.card .form-group {
+  margin: 10px 0 22px;
+}
+.card .findNothing {
+  padding: 110px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+.card .done {
+  padding: 92px 0 0;
+  color: #666;
+  font-size: 20px;
+}
+.card .done img {
+  display: block;
+  margin: 0 auto 12px;
+}
+.cardAppend .line {
+  position: relative;
+}
+.cardAppend .line i,
+.cardAppend .line b {
+  position: absolute;
+  top: 5px;
+  left: 454px;
+  font-style: normal;
+}
+.cardAppend .state .iradio_flat-blue {
+  float: none;
+  padding-top: 12px;
+}
+.cardAppend .colorSelect {
+  list-style: none;
+  padding: 0;
+}
+.cardAppend .colorSelect .choosed {
+  background: #f30;
+}
+.cardAppend .colorSelect li {
+  width: 26px;
+  height: 22px;
+  padding: 2px;
+  float: left;
+  margin-top: 6px;
+}
+.cardAppend .colorSelect div {
+  width: 100%;
+  height: 100%;
+}
+.cardAppend .iradio_flat-blue,
+.cardAppend .icheckbox_flat-blue {
+  float: left;
+}
+.cardAppend .youxq .iradio_flat-blue,
+.cardAppend .youxqq .iradio_flat-blue {
+  margin-top: -4px;
+}
+.cardAppend .fenx label {
+  margin-left: 10px;
+}
+.cardAppend textarea {
+  resize: none;
+}
+.cardAppend .bigTitle,
+.cardAppend .subTitle {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+.cardAppend .bigTitle {
+  top: 80px;
+  line-height: 30px;
+  font-size: 22px;
+  color: #fff;
+  font-weight: bold;
+}
+.cardAppend .subTitle {
+  top: 120px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #ededed;
+}
+.cardAppend .error {
+  display: none;
+  color: red;
+  padding-left: 104px;
+}
+.cardAppend .cardStyleTitle {
+  color: #666;
+  font-size: 16px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.cardAppend .cardStyleLine {
+  margin-top: 16px;
+  margin-left: 20px;
+}
+.cardAppend .cardStyleLine label {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #999;
+}
+.cardAppend .cardStyleLine p {
+  font-size: 12px;
+  color: #ccc;
+  margin-left: 20px;
+}
+.cardAppend .cardStyleBtns {
+  width: 300px;
+}
+.cardAppend .cardStyleBtns button {
+  margin: 4px 10px 0;
+  padding: 4px 20px;
+}
+.cardAppend .cardStyleBtns .btn-primary {
+  background: #23b7e5;
+  border-color: #23b7e5;
+}
+.block{ display:block}
+.w320{ width:320px; margin-top:5px}
+#Cancel{ margin-left:10px}
+#panel-Edit{ display:none}
+.modal-dialog{ margin-top:100px}
+.subNav li{ position:relative}
+.subNav li b{ position:absolute; right:0px; z-index:1111; display:none; top:0px}
+.subNav li:hover b{ display:block}
+.subNav li .edit{ right:46px}
+.subNav li .delte{ right:15px}
+.subNav li .name{ font-size:12px}
+.newddd{ color:#ff7e3f; margin-left:120px; margin-top:0px; display:none; width:500px}
+.lyp_oForm .oPara .error1{color:#ff7e3f; font-size:12px; display:none}
+.ui-dialog-close{ top:3px}
+.ui-dialog-header{ background-color:#efefef}
+.thumbnail{ color:#666}
+.thumbnail p{ line-height:26px; padding-top:6px}
+.newimg .ui-dialog-body,.newimg .modal-body,.newimg .ui-dialog-body{ padding:0px}
+.row.newimg .modal-body div .tab-content .fade{ padding-top:20px}
+.row.newimg .modal-body div .tab-content .fade img{ min-height:106px}

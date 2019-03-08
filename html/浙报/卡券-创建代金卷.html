@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css"/>
+  <link rel="stylesheet" href="css/bootstrap-select.min.css"/>
+  <link rel="stylesheet" href="css/flat/blue.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/kaquan.css"/>
+</head>
+
+<body>
+<div class="commonBox cardAppend">
+  <div class="nav">
+    <a href="#" class="head"><img src="images/navHead.png"/></a>
+    <a href="#"><img src="images/zuoq.png"/></a>
+    <a href="#" class="tuu"><img src="images/zuow.png"/></a>
+    <a href="#" class="tuu"><img src="images/zuoe.png"/></a>
+    <a href="#" class="tuu"><img src="images/zuor.png"/></a>
+    <a href="#" class="last1"><img src="images/zuohui.png"/></a>
+  </div>
+  <div class="contentBox">
+    <div class="title text-center">新媒体云服务平台-NewMedia</div>
+    <h1>卡券编辑</h1>
+
+    <div class="kaq">
+      <div class="daijin kaqtitle"><img src="images/weilo.png"><span>代金券</span></div>
+      <div class="bgg">
+        <div class="chuangj carousel" style="background-color:rgb(208, 154, 69);" id="kaqb1">
+          <div class="xians"><img src="images/xiao.png"/><span>XXX公司</span></div>
+          <div class="bigTitle"></div>
+          <div class="subTitle"></div>
+          <div class="frr bianx di" style="display: block;" id="jian11"><img src="images/bianx.png"/></div>
+        </div>
+        <div class=" xiao" id="kaqb2">
+          <ul class=" shiui">
+            <li class="fll xiaoq">销券设置</li>
+            <li class="frr bianx" id="jian21"><img src="images/jiant.png"/></li>
+            <li class="frr bianx di" id="jian22"><img src="images/bianx.png"/></li>
+          </ul>
+        </div>
+        <div class="shiy">
+          <div class="dajy" id="kaqb3">
+            <ul>
+              <li class="fll daizi">代金券详情</li>
+              <li class="frr jian" id="jian31"><img src="images/jiant.png"/></li>
+              <li class="frr jian di" id="jian32"><img src="images/bianx.png"/></li>
+            </ul>
+          </div>
+          <div class="dajyy" id="kaqb4">
+            <ul>
+              <li class="fll daizi">适用门店</li>
+              <li class="frr jian" id="jian41"><img src="images/jiant.png"/></li>
+              <li class="frr jian di" id="jian42"><img src="images/bianx.png"/></li>
+            </ul>
+          </div>
+        </div>
+        <div class="dajyj" id="kaqb5">
+          <ul>
+            <li class="fll daizi">自定义入口（未启用）</li>
+            <li class="frr jian" id="jian51"><img src="images/jiant.png"/></li>
+            <li class="frr jian di" id="jian52"><img src="images/bianx.png"/></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content kaqbianj " id="juanm1">
+      <div class="juti">券面信息</div>
+      <div class="xianh"></div>
+      <div id="t-one" class="shangh">
+        <div class="fll shang">商户</div>
+        <div class=" fll">
+          <div class="shalo">
+            <div class="fll shgo"><img src="images/shlo.png"/></div>
+            <div class="fll shangm">随视传媒<input type="hidden" name="old_brand_name" id="old_brand_name" value="随视传媒" /></div>
+          </div>
+          <div class="zhus"><span class="huiz">如商户信息有变更，请在</span>
+            <span id="update" class="lanzi">卡券基础功能</span>
+            <span class="huiz">开通页更新</span></div>
+        </div>
+      </div>
+      <div id="t-two" class="shangh" style="height: 173px; display: none;">
+        <div class="fll shang">商户</div>
+        <div class=" fll" style="width: 564px;" id="couponlist_right_txt">
+          <div class="shalo">
+            <div class="fll shgo">
+            	<img src="images/shlo.png"/>
+            	<input id="logo_url" type="hidden" value="http://pic.weibopie.com/imgUpload/weixin/upload/201507101014448441.jpg" name="logo_url">
+							<input id="edit" type="hidden" value="1" name="edit">
+            </div>
+			      <input id="brand_name" type="text" name="brand_name" class="form-control inpup" style="float: left; margin: 26px 10px; width: 200px;">
+          </div>
+          <div style="display: block; float: left; width: 100%; margin-top: 5px;">
+          	<input id="upload_logo" class="qued fll" type="button" value="上传图片">
+          </div>         
+          <div class="zhus"><span class="huiz">建议尺寸：300像素*300像素。</span>
+            <span id="none_update" class="lanzi">不修改</span><br/>
+            <span class="huiz">仅支持.jpg .jpeg .bmp .png格式正方形照片，大小不超过2M。</span></div>
+        </div>
+      </div>
+      <div class="kaqy">
+        <div class="fll kay">卡券颜色</div>
+        <div class="fll">
+          <ul class="colorSelect">
+            <li class="choosed">
+              <div class="color" style="background:#D09A45;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#E4B138;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#EE903C;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#DD6549;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#CC463D;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#63B359;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#2C9F67;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#509FC9;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#5885CF;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#9062C0;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#F08500;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#A9D92D;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#CF3E36;"></div>
+            </li>
+            <li>
+              <div class="color" style="background:#5E6671;"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="kaqyy line">
+        <div class="fll kay">代金券标题</div>
+        <div class="fll">
+          <input id="inputBigTitle" type="text" name="title" class="form-control inpup"/><i>0/9</i>
+          <span class="zhusw">建议填写代金券“减免金额”及自定义内容，描述卡券提供的具体优惠</span>
+        </div>
+      </div>
+      <p id="inputBigTitleError" class="error">卡券名称不能为空且长度不超过9个汉字或18个英文字母</p>
+
+      <div class="kaqy line">
+        <div class="fll kay">副标题(选填)</div>
+        <div class="fll">
+          <input id="inputSubTitle" type="text" name="sub_title" class="form-control inpup"/><i>0/18</i>
+        </div>
+      </div>
+      <p id="inputSubTitleError" class="error">副标题长度不超过18个汉字或36个英文字母</p>
+
+      <div class="kaqy line">
+        <div class="fll kay">减免金额</div>
+        <div class="fll">
+          <input id="inputReduceCost" type="text" name="reduce_cost" class="form-control inpup onlyInputNum"/><b>元</b>
+        </div>
+      </div>
+      <p id="inputReduceCostError" class="error">减免金额不能为空</p>
+
+      <div class="kaqyy line">
+        <div class="fll kay">抵扣条件(选填)</div>
+        <div class="fll">
+          <input type="text" name="least_cost" class="form-control inpup onlyInputNum"/><b>元</b>
+          <span class="zhusw">消费满多少元可用。如不填写则默认：消费满任意金额可用 </span>
+        </div>
+      </div>
+
+      <div class="youxia">有效期</div>
+      <div class="xianh"></div>
+      <div class="youxq ">
+        <div class="mrt10 fll">
+          <input id="fixedDate" name="date_type" type="radio" class="pull-left" checked/>
+          <label for="fixedDate" class="fll gud">固定日期</label>
+
+          <div class="fll riqo form-inline">
+            <input type="text" name="start_date" class="form-control" id="dataStart"/>
+            <span>---</span>
+            <input type="text" name="end_date" class="form-control" id="dataEnd"/>
+          </div>
+        </div>
+      </div>
+      <div class="youxqq ">
+        <div class="mrt10 fll ">
+          <input id="afterDate" name="date_type" type="radio" class="pull-left"/>
+          <label for="afterDate" class="fll gud">领取后</label>
+
+          <div class="fll riqo">
+            <select id="startTime" name="fixed_begin_term" class="form-control kuan128">
+            </select>
+          </div>
+          <div class="xiaoqi fll">生效，有效天数</div>
+          <div class="fll riqo">
+            <select id="endTime" name="fixed_term" class="form-control kuan128">
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="quequ">
+        <input type="button" class="qued fll" value="确定"/>
+        <input type="button" class="quxiao frr" value="取消"/>
+      </div>
+    </div>
+    <div class="content kaqbianj di" id="juanm2">
+      <div class="juti">领券设置</div>
+      <div class="xianh"></div>
+      <div class="kaqy">
+        <div class="fll kay">库存</div>
+        <div class="fll">
+          <input id="inputQuantity" type="text" name="quantity" class="form-control inpup fll onlyInputNum"/><span
+          class="fen">份</span>
+        </div>
+      </div>
+      <p id="inputQuantityError" class="error">库存不能为空</p>
+
+      <div class="kaqyy">
+        <div class="fll">
+          <div class="xuanti">领券限制</div>
+          <div class="xuantp">(选填)</div>
+        </div>
+        <div class="fll">
+          <div class="h36">
+            <input type="text" name="get_limit" class="form-control inpup fll onlyInputNum"/><span class="fen">张</span>
+          </div>
+          <div><span class="zhusw"> 每个用户领券上限，如不填，则默认为1 </span></div>
+        </div>
+      </div>
+      <div class="fenx" id="dui1">
+        <input type="checkbox" id="canShare" name="can_give_friend">
+        <label for="canShare" class="xiaozi">用户可以分享领券链接</label>
+      </div>
+      <div class="youxia"> 销券设置</div>
+      <div class="xianh"></div>
+      <div class="xuanti mrt15">销券方式</div>
+      <div class="youxz ">
+        <div class="mrt10 fll">
+          <input id="onlyNum" name="code_type" type="radio" checked class="pull-left"/>
+
+          <div class="fll">
+            <label for="onlyNum" class="gud"> 仅卡券号</label>
+
+            <div class="zhusw mrlw">只显示卡券号，验证后进行销券</div>
+          </div>
+        </div>
+      </div>
+      <div class="youxz">
+        <div class="mrt10 fll">
+          <input id="onlyCode" name="code_type" type="radio" class="pull-left"/>
+
+          <div class="fll">
+            <label for="onlyCode" class="gud"> 二维码</label>
+
+            <div class="zhusw mrlw">包含卡券信息的二维码，扫码后可进行销券</div>
+          </div>
+        </div>
+      </div>
+      <div class="youxz ">
+        <div class="mrt10 fll">
+          <input id="cardCode" name="code_type" type="radio" class="pull-left"/>
+
+          <div class="fll">
+            <label for="cardCode" class="gud"> 仅卡券号</label>
+
+            <div class="zhusw mrlw">包含卡券信息的条形码，扫描后可进行销券</div>
+          </div>
+        </div>
+      </div>
+      <div class="kaqyy">
+        <div class="fll">
+          <div class="xuanti">操作提示</div>
+        </div>
+        <div class="fll line">
+          <div class="h36">
+            <input id="inputCtrlMsg" name="notice" type="text" class="form-control inpup fll"/><span class="fen">0/16</span></div>
+          <div><span class="zhusw"> 建议引导用户到店出示卡券，由店员完成核销操作 </span></div>
+        </div>
+        <p id="inputCtrlMsgError" class="error" style="clear:both;">操作提示不能为空且长度不超过9个汉字或18个英文字母</p>
+      </div>
+      <div class="quequ">
+        <input type="button" class="qued fll" value="确定"/>
+        <input type="button" class="quxiao frr" value="取消"/>
+      </div>
+    </div>
+    <div class="content kaqbianj di" id="juanm3">
+      <div class="xing">
+        <div class="fll kay">使用须知</div>
+        <div class="fll">
+          <textarea id="inputUsingKnow" class="form-control duoh" name="description"></textarea>
+        </div>
+      </div>
+      <p id="inputUsingKnowError" class="error">操作提示不能为空且长度不超过9个汉字或18个英文字母</p>
+
+      <div class="kaqyy">
+        <div class="fll">
+          <div class="xuanti">客户电话</div>
+        </div>
+        <div class="fll">
+          <div class="h36">
+            <input id="inputPhone" type="text" class="form-control inpup fll" name="service_phone"/>
+          </div>
+          <div><span class="zhusw">手机或固话</span></div>
+          <p id="inputPhoneError" class="error" style="padding:0;">请填写正确的电话号码</p>
+        </div>
+      </div>
+      <div class="quequ">
+        <input type="button" class="qued fll" value="确定"/>
+        <input type="button" class="quxiao frr" value="取消"/>
+      </div>
+    </div>
+    <div class="content kaqbianj di" id="juanm4">
+      <div class="juti">服务信息</div>
+      <div class="xianh"></div>
+      <div class="xuanti mrt20">适用门店</div>
+      <div class=" mrl75 shiyjei"> “适用门店”方便帮助用户到店消费。如有门店，请仔细配置。 可在“功能”-“门店管理”管理门店信息。</div>
+      <div class=" youxqq mrl75">
+        <div class="mrt10 fll">
+          <input type="radio" id="thisOne" disabled/>
+
+          <div class="fll">
+            <label for="thisOne" class="gudd">指定门店适用</label>
+          </div>
+        </div>
+      </div>
+      <div class="youxzu mrl75">
+        <div class="mrt10 fll">
+          <input type="radio" id="allUse" disabled/>
+
+          <div class="fll">
+            <label for="allUse" class="gudd">全部门店适用</label>
+          </div>
+        </div>
+      </div>
+      <div class="youxzu mrl75">
+        <div class="mrt10 fll">
+          <input type="radio" id="noShop" checked/>
+
+          <div class="fll">
+            <label for="noShop" class="gudd">无指定门店<span class="huise">请选择不指定实体门店的原因 </span></label>
+          </div>
+        </div>
+      </div>
+      <div class="mrtf10" id="ma">
+        <div class="mrl120 fll">
+          <div class="mrt10 fll">
+            <input type="radio" id="online" name="unknow" checked/>
+
+            <div class="fll">
+              <label for="online" class="gudd">网上经营，无需到店消费</label>
+            </div>
+          </div>
+        </div>
+        <div class=" mrl20 fll">
+          <div class="mrt10 fll">
+            <input type="radio" id="otherReason" name="unknow"/>
+
+            <div class="fll">
+              <label for="otherReason" class="gudd"> 其他原因</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quequ" style="padding-top: 60px;">
+        <input type="button" class="qued fll" value="确定"/>
+        <input type="button" class="quxiao frr" value="取消"/>
+      </div>
+
+    </div>
+    <div class="content kaqbianj di" id="juanm5">
+      <div class="kaqy">
+        <div class="fll kay">状态</div>
+        <div class="fll state">
+          <div class="h36" style="padding-top: 6px;">
+            <input name="custom_type" type="radio" id="enterOn" checked value="0"/>
+            <label for="enterOn" style="margin-right: 20px;">未启用</label>
+            <input name="custom_type" type="radio" id="enterOff" value="1"/>
+            <label for="enterOff">启用</label>
+          </div>
+        </div>
+      </div>
+      <div id="stateBox" class="hidden">
+        <div class="kaqy line">
+          <div class="fll kay">入口名称</div>
+          <div class="fll">
+            <input id="inputEnterName" type="text" class="form-control inpup fll"/><span class="fen">0/5</span>
+          </div>
+        </div>
+        <p id="inputEnterNameError" class="error">入口名称不能为空且长度不超过5个汉字或10个英文字母</p>
+
+        <div class="kaqyy line">
+          <div class="fll">
+            <div class="xuanti">引导语</div>
+            <div class="xuantp">(选填)</div>
+          </div>
+          <div class="fll">
+            <div class="h36">
+              <input id="inputLeadWords" type="text" class="form-control inpup fll"/><span class="fen">0/6</span></div>
+          </div>
+        </div>
+        <p id="inputLeadWordsError" class="error">引导语不能超过6个汉字或12个英文字母</p>
+
+        <div class="kaqy">
+          <div class="fll kay">点击跳转</div>
+          <div class="mrtf10">
+            <div class="  fll">
+              <div class="mrt10 fll">
+                <input type="radio" id="picTxt" name="unknow1" disabled/>
+
+                <div class="fll">
+                  <label for="picTxt" class="gudd">图文消息</label>
+                </div>
+              </div>
+            </div>
+            <div class=" mrl20 fll">
+              <div class="mrt10 fll">
+                <input type="radio" id="cardShelf" name="unknow1" disabled/>
+
+                <div class="fll">
+                  <label for="cardShelf" class="gudd">卡券货架</label>
+                </div>
+              </div>
+            </div>
+            <div class=" mrl20 fll">
+              <div class="mrt10 fll">
+                <input type="radio" id="shopShelf" name="unknow1" disabled/>
+
+                <div class="fll">
+                  <label for="shopShelf" class="gudd">小店货架</label>
+                </div>
+              </div>
+            </div>
+            <div class=" mrl20 fll">
+              <div class="mrt10 fll">
+                <input type="radio" id="webLink" name="unknow1" checked/>
+
+                <div class="fll">
+                  <label for="webLink" class="gudd">网页链接</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="kaqy">
+          <div class="fll kay">网址</div>
+          <div class="fll">
+            <input id="inputUrl" type="text" class="form-control ku285 fll"/>
+          </div>
+        </div>
+        <p id="inputUrlError" class="error">网址不能为空</p>
+
+        <div class="quequ">
+          <input type="button" class="qued fll" value="确定"/>
+          <input type="button" class="quxiao frr" value="取消"/>
+        </div>
+      </div>
+    </div>
+
+<input id="color" type="hidden" value="Color060" name="color">
+  </div>
+</div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="bower_components/datetimepicker/jquery.datetimepicker.js"></script>
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/lib/bootstrap-select.min.js"></script>
+<script src="js/lib/icheck.min.js"></script>
+<script src="js/daijin.js"></script>
+<script src="js/ajaxupload.js"></script>
+<script>
+$(function(){
+	var wxColor=["Color060","Color070","Color080","Color090","Color100","Color010","Color020","Color030","Color040","Color050","Color081","Color082","Color0101","Color0102"];
+	$(".colorSelect li").click(function(){
+		$("#color").val(wxColor[$(this).index()]);
+		})
+	})
+
+
+
+var brand_name='';
+//上传商家logo
+var button = $('#upload_logo'), interval;
+var fileType = "pic", fileNum = "one";
+var url = 'http://pic.weibopie.com/imgUpload/action/weixin/UploadImage.php';
+var proxy_url = 'http://www.mobhui.com' + '/UploadImg/imgCallback.php';
+new AjaxUpload(button, {
+	action: url,
+	name: 'upfile',
+	data: {'printFormat': 'proxy', 'max_size': '2048000', 'upTypes': '.jpg,.png,.jpeg,.gif', 'callback': 'parent.logoCallback', 'proxy_url': proxy_url},
+	onSubmit: function (file, ext) {
+		if (fileType == "pic") {
+			if (ext && /^(jpg|png|jpeg|gif)$/.test(ext)) {
+				/*
+				 this.setData({
+				 'info': '文件类型为图片'//post提交到处理页面的参数变量
+				 });
+				 */
+			} else {
+				button.text('非图片类型文件，重新上传');
+				return false;
+			}
+		}
+		button.text('文件上传中');
+
+		if (fileNum == 'one')
+			this.disable();
+		interval = window.setInterval(function () {
+			var text = button.text();
+			if (text.length < 14) {
+				button.text(text + '.');
+			} else {
+				button.text('文件上传中');
+			}
+		}, 200);
+	},
+	onComplete: function (file, response) {
+		window.clearInterval(interval);
+		this.enable();
+	}
+});
+	
+//图片传到pic.weibopie.com服务器上，下面这个函数处理回调
+function logoCallback(logo_url, bool) {
+	if (bool) {
+		$('#edit').val(1);
+		$('#logo_url').val(logo_url);//新的logo
+		$(".couponlist_left_bot_top_1_logo img").attr("src", logo_url);
+		$("#couponlist_right_txt img").attr("src", logo_url);
+		$('#upload_logo').text('本地上传');
+	} else {
+		$('#upload_logo').text(logo_url);
+	}
+}
+
+
+  jQuery(function ($) {
+    var webSwitch = false;
+    var inputBigTitle = document.getElementById('inputBigTitle');
+    var inputSubTitle = document.getElementById('inputSubTitle');
+    var inputReduceCost = document.getElementById('inputReduceCost');
+    var inputQuantity = document.getElementById('inputQuantity');
+    var inputCtrlMsg = document.getElementById('inputCtrlMsg');
+    var inputUsingKnow = document.getElementById('inputUsingKnow');
+    var inputPhone = document.getElementById('inputPhone');
+    var inputEnterName = document.getElementById('inputEnterName');
+    var inputLeadWords = document.getElementById('inputLeadWords');
+    var inputUrl = document.getElementById('inputUrl');
+
+
+$('#update').click(function () {
+		$('#t-two').show();
+		$('#t-one').hide();
+		//商家名称修改，联动左侧效果图
+		$('#brand_name').on('input', function (e) {
+			$('.xians span').html($(this).val());
+			brand_name=$(this).val();
+		});	
+		$('#edit').val(1);
+	});
+	$('#none_update').click(function () {
+		$('#t-two').hide();
+		$('#t-one').show();
+		$('#edit').val(0);
+		$('#brand_name').val($('#old_brand_name').val());
+		$('.couponlist_left_bot_top_1_title').html($('#old_brand_name').val());
+		$(".couponlist_left_bot_top_1_logo img").attr("src", $('#old_logo_url').val());
+		$("#couponlist_right_txt img").attr("src", $('#old_logo_url').val());
+
+	});
+
+    $('#startTime').html(function () {
+      var temp = '<option selected="selected" value="0">当天</option>';
+      for (var i = 1; i <= 90; i++) {
+        temp += '<option value="' + i + '">' + i + '天</option>';
+      }
+      return temp;
+    });
+
+    $('#endTime').html(function () {
+      var temp = '<option selected="selected" value="1">1天</option>';
+      for (var i = 2; i <= 90; i++) {
+        temp += '<option value="' + i + '">' + i + '天</option>';
+      }
+      return temp;
+    });
+
+    $('select').selectpicker();
+
+    $(':checkbox').iCheck({
+      checkboxClass: 'icheckbox_flat-blue'
+    });
+
+    $('#dataStart').val(moment().format('YYYY-MM-DD')).datetimepicker({
+      lang: "ch",
+      format: "Y-m-d",
+      timepicker: false,
+      minDate: moment().format('YYYY/MM/DD'),
+      startDate: moment().format('YYYY/MM/DD')
+    });
+
+    $('#dataEnd').val(moment().add(7, 'days').format('YYYY-MM-DD')).datetimepicker({
+      lang: "ch",
+      format: "Y-m-d",
+      timepicker: false,
+      minDate: moment().format('YYYY/MM/DD'),
+      startDate: moment().add(7, 'days').format('YYYY/MM/DD')
+    });
+
+    $(':radio').iCheck({
+      radioClass: 'iradio_flat-blue'
+    });
+
+    $('.colorSelect').on('click', function (e) {
+      e.stopPropagation();
+      if (e.target.style.backgroundColor) {
+        $('.chuangj').css({
+          'background': e.target.style.backgroundColor
+        });
+        $(this).find('.choosed').removeClass('choosed');
+        $(e.target).parent().addClass('choosed');
+      }
+    });
+
+    $('#enterOn').on('ifChecked', function (event) {
+      $('#kaqb5 .daizi').html('自定义入口（未启用）');
+      $('#stateBox').addClass('hidden');
+      webSwitch = false;
+    });
+    $('#enterOff').on('ifChecked', function (event) {
+      $('#kaqb5 .daizi').html('网页链接');
+      $('#stateBox').removeClass('hidden');
+      webSwitch = true;
+    });
+
+    function inputLint(len, isNotEmpty, callback) {
+      if (isNotEmpty) {
+        return function () {
+          var l = $(this).val().length;
+          var blen = 0;
+          for (i = 0; i < l; i++) {
+            if (($(this).val().charCodeAt(i) & 0xff00) != 0) {
+              blen++;
+            }
+            blen++;
+          }
+          $(this).next().text(parseInt(blen / 2) + '\/' + len);
+          if ((blen / 2) <= len && blen !== 0) {
+            $(this).next().css({color: 'rgb(51, 51, 51)'});
+            $(this).parents('.line').next().hide();
+          } else {
+            $(this).next().css({color: 'red'});
+            $(this).parents('.line').next().show();
+          }
+          callback.call(this);
+        }
+      } else {
+        return function () {
+          var l = $(this).val().length;
+          var blen = 0;
+          for (i = 0; i < l; i++) {
+            if (($(this).val().charCodeAt(i) & 0xff00) != 0) {
+              blen++;
+            }
+            blen++;
+          }
+          $(this).next().text(parseInt(blen / 2) + '\/' + len);
+          if ((blen / 2) <= len) {
+            $(this).next().css({color: 'rgb(51, 51, 51)'});
+            $(this).parents('.line').next().hide();
+          } else {
+            $(this).next().css({color: 'red'});
+            $(this).parents('.line').next().show();
+          }
+          callback.call(this);
+        }
+      }
+    };
+
+    $('#inputBigTitle').on('keyup', inputLint(9, true, function () {
+      $('.bigTitle').text($(this).val())
+    }));
+
+    $('#inputSubTitle').on('keyup', inputLint(18, false, function () {
+      $('.subTitle').text($(this).val())
+    }));
+
+    $('#inputCtrlMsg').on('keyup', inputLint(16, false, function () {
+    }));
+
+    $('#inputEnterName').on('keyup', inputLint(10, false, function () {
+    }));
+
+    $('#inputLeadWords').on('keyup', inputLint(6, false, function () {
+    }));
+
+    $('.onlyInputNum').on('keyup', function () {
+      if (!/^[0-9]*$/.test($(this).val())) {
+        $(this).val('');
+      }
+    });
+
+
+    var validataFunc = function () {
+      var validator = new Validator();
+      validator.add(inputBigTitle, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(0).show();
+          $('#inputBigTitleError').show();
+        }
+      }, {
+        strategy: 'maxLength:18',
+        errorMsg: function () {
+          $('.content').hide().eq(0).show();
+          $('#inputBigTitleError').show();
+        }
+      }]);
+      validator.add(inputSubTitle, [{
+        strategy: 'maxLength:18',
+        errorMsg: function () {
+          $('.content').hide().eq(0).show();
+          $('#inputSubTitleError').show();
+        }
+      }]);
+      validator.add(inputReduceCost, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(0).show();
+          $('#inputReduceCostError').show();
+        }
+      }]);
+      validator.add(inputQuantity, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(1).show();
+          $('#inputQuantityError').show();
+        }
+      }]);
+      validator.add(inputCtrlMsg, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(1).show();
+          $('#inputCtrlMsgError').show();
+        }
+      }, {
+        strategy: 'maxLength:32',
+        errorMsg: function () {
+          $('.content').hide().eq(1).show();
+          $('#inputCtrlMsgError').show();
+        }
+      }]);
+      validator.add(inputUsingKnow, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(2).show();
+          $('#inputUsingKnowError').show();
+        }
+      }, {
+        strategy: 'maxLength:300',
+        errorMsg: function () {
+          $('.content').hide().eq(2).show();
+          $('#inputUsingKnowError').show();
+        }
+      }]);
+      validator.add(inputPhone, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(2).show();
+          $('#inputPhoneError').show();
+        }
+      }, {
+        strategy: 'isPhone',
+        errorMsg: function () {
+          $('.content').hide().eq(2).show();
+          $('#inputPhoneError').show();
+        }
+      }]);
+      var errorMsg = validator.start();
+      return errorMsg;
+    };
+
+    var validataWebFunc = function () {
+      var validatorWeb = new Validator();
+      validatorWeb.add(inputEnterName, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(4).show();
+          $('#inputEnterNameError').show();
+        }
+      }, {
+        strategy: 'maxLength:10',
+        errorMsg: function () {
+          $('.content').hide().eq(4).show();
+          $('#inputEnterNameError').show();
+        }
+      }]);
+      validatorWeb.add(inputLeadWords, [{
+        strategy: 'maxLength:12',
+        errorMsg: function () {
+          $('.content').hide().eq(4).show();
+          $('#inputLeadWordsError').show();
+        }
+      }]);
+      validatorWeb.add(inputUrl, [{
+        strategy: 'isNotEmpty',
+        errorMsg: function () {
+          $('.content').hide().eq(4).show();
+          $('#inputUrlError').show();
+        }
+      }]);
+      var errorMsg = validatorWeb.start();
+      return errorMsg;
+    };
+
+    $('.qued').on('click', function () {
+      $('.error').hide();
+      var errorMsg = validataFunc();
+      var errorMsgWeb = validataWebFunc();
+      if (errorMsg) {
+        errorMsg();
+        return false;
+      } else if (webSwitch && errorMsgWeb) {
+        errorMsgWeb();
+        return false;
+      } else {
+		  
+        alert('ok');
+        //向后台提交...
+      }
+    });
+    $('.quxiao').on('click', function () {
+      alert('取消...');
+    });
+
+  });
+</script>
+</body>
+
+</html>

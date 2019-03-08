@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGInfo.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGMember.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGLog.png"/>
+    </a>
+    <a href="#">
+      <img src="images/NavGWay.png"/>
+    </a>
+
+    <a href="#" class="last3">
+      <img src="images/navMsg.png"/>
+    </a>
+    <a href="#" class="last2">
+      <img src="images/navGroupC.png"/>
+    </a>
+    <a href="#" class="last1">
+      <img src="images/navBack.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox finding">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>组织</h1>
+
+    <div class="subNav">
+      <a href="#">
+        <img class="subNavOrgAdd" src="images/subNavOrgAdd.png"/>
+        <span>已加入组织</span>
+      </a>
+      <a href="#" class="actived">
+        <img class="subNavOrgFind" src="images/subNavOrgFind.png"/>
+        <span>搜索组织</span>
+      </a>
+      <a href="#">
+        <img class="subNavOrgCreate" src="images/subNavOrgCreate.png"/>
+        <span>创建组织</span>
+      </a>
+    </div>
+
+    <div class="content finding">
+      <h3>搜索组织</h3>
+
+      <div id="holdingMe" class="form-group">
+        <input type="text" class="form-control">
+      </div>
+
+      <div>
+        <div class="carousel">
+          <img class="headImg" src="images/placeholder.png"/>
+
+          <div class="msgBox">
+            <div>新媒体云服务<img src="images/best.png"/></div>
+            <p>公共号运营的最佳平台</p>
+
+            <p>成员：<span>123</span><i>|</i>群号：<span>99912123</span></p>
+          </div>
+          <div class="rightBtn">
+            <span class="glyphicon glyphicon-plus"></span>申请加入
+          </div>
+        </div>
+
+        <div class="carousel">
+          <img class="headImg" src="images/placeholder.png"/>
+
+          <div class="msgBox">
+            <div>新媒体云服务<img src="images/best.png"/></div>
+            <p>公共号运营的最佳平台</p>
+
+            <p>成员：<span>123</span><i>|</i>群号：<span>99912123</span></p>
+          </div>
+
+          <div class="rightBtn">
+            <span class="glyphicon glyphicon-ok"></span>已加入
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">申请加入组织</h4>
+            </div>
+            <div class="modal-body form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="addGroup">我的申请:</label>
+
+                <div class="col-sm-10">
+                  <input id="addGroup" type="text" class="form-control" placeholder="请输入邀请文字"/>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/jquery.placeholder.min.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    borderInit();
+
+    //fix IE8 placeholder
+    $('input, textarea').placeholder();
+
+    $('#holdingMe').holding({
+      'content': '组织名称或者群号', 'callback': function () {
+        alert($(this).parent().find('input').val());
+      }
+    });
+
+    $('.glyphicon-plus').parent().on('click', function () {
+      $('#myModal').modal('show').find('input').val('');
+    });
+
+  });
+</script>
+</body>
+</html>

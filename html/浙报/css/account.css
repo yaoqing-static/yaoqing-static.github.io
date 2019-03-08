@@ -1,0 +1,133 @@
+.account .personInfo span {
+  color: #999999;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: 14px;
+}
+.account .personInfo span.error {
+  color: #ff7e3f;
+}
+.account .personInfo p {
+  color: #ff7e3f;
+  margin: 0 0 0 80px;
+  display: none;
+}
+.account .personInfo i {
+  font-style: normal;
+  position: relative;
+  left: -244px;
+}
+.account .personInfo input[type="text"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+}
+.account .personInfo .longInput {
+  width: 520px;
+}
+.account .personInfo .shortInput {
+  width: 352px;
+}
+.account .personInfo .shortInputBtn {
+  width: 158px;
+  line-height: 26px;
+  margin-top: -4px;
+  margin-left: 6px;
+}
+.account .personInfo label {
+  font-size: 14px;
+  width: 40px;
+  margin-right: 28px;
+}
+.account .personInfo label.btn {
+  width: 160px;
+  margin: 0 0 0 10px;
+}
+.account .personInfo .mainInfo input {
+  display: none;
+}
+.account .personInfo .mainInfo img {
+  border-radius: 50%;
+}
+.account .personInfo .mainInfo .btn {
+  line-height: 38px;
+  color: #38b3f7;
+  border-color: #38b3f7;
+}
+.account .personInfo .bottomBtn {
+  background: #38b3f7;
+  border-color: #38b3f7;
+  margin-left: 68px;
+  margin-top: 20px;
+  height: 38px;
+  line-height: 26px;
+  width: 500px;
+}
+.account .personInfo .row {
+  margin: 8px 0;
+}
+.account .content.third h3 {
+  margin-bottom: 40px;
+}
+.account .content.third .row {
+  margin: 22px 0;
+}
+.account .content.third span {
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 44px;
+  color: #333333;
+}
+.account .content.third .pull-right {
+  width: 120px;
+  height: 40px;
+  line-height: 28px;
+}
+.account .content.third .msgT {
+  margin: 16px 0 0 0;
+  line-height: 22px;
+}
+.account .content.third .msgT img {
+  margin-right: 20px;
+}
+.account .content.third .msgC {
+  margin: 2px 0 12px 0;
+}
+.account .content.third .msgB .btn-info {
+  margin-right: 24px;
+}
+.account .content.third .msgB button {
+  width: 80px;
+  height: 32px;
+}
+.account .content.password h3 {
+  margin-bottom: 35px;
+}
+.account .content.password label {
+  font-size: 14px;
+  width: 60px;
+  margin-right: 28px;
+}
+.account .content.password p {
+  color: #ff7e3f;
+  margin: 0 0 0 100px;
+  display: none;
+}
+.account .content.password .row {
+  margin: 16px 0;
+}
+.account .content.password input[type="password"] {
+  display: inline;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+  width: 352px;
+}
+.account .content.password .bottomBtn {
+  margin: 0 0 0 90px;
+  background: #38b3f7;
+  border-color: #38b3f7;
+  width: 352px;
+}

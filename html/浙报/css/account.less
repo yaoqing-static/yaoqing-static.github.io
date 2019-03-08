@@ -1,0 +1,147 @@
+@import "accountVar";
+
+.account {
+  .personInfo {
+    span {
+      color: @hintColor;
+      margin-left: 10px;
+      font-size: 12px;
+      position: relative;
+      top: 14px;
+    }
+    span.error {
+      color: @errorColor;
+    }
+    p {
+      color: @errorColor;
+      margin: 0 0 0 80px;
+      display: none;
+    }
+    i {
+      font-style: normal;
+      position: relative;
+      left: -244px;
+    }
+    input[type="text"] {
+      display: inline;
+      line-height: 40px;
+      height: 40px;
+      background: white;
+    }
+    .longInput {
+      width: @longInputWidth;
+    }
+    .shortInput {
+      width: @shortInputWidth;
+    }
+    .shortInputBtn {
+      width: 158px;
+      line-height: 26px;
+      margin-top: -4px;
+      margin-left: 6px;
+    }
+    label {
+      font-size: 14px;
+      width: @contentProjectNameWidth;
+      margin-right: 28px;
+    }
+    label.btn {
+      width: 160px;
+      margin: 0 0 0 10px;
+    }
+    .mainInfo {
+      input {
+        display: none;
+      }
+      img {
+        border-radius: 50%;
+      }
+      .btn {
+        line-height: 38px;
+        color: @uploadBtn;
+        border-color: @uploadBtn;
+      }
+    }
+    .bottomBtn {
+      background: @bottomBtn;
+      border-color: @bottomBtn;
+      margin-left: 68px;
+      margin-top: 20px;
+      height: 38px;
+      line-height: 38-12px;
+      width: 500px;
+    }
+    .row {
+      margin: 8px 0;
+    }
+  }
+  .content.third{
+    h3{
+      margin-bottom: 40px;
+    }
+    .row{
+      margin: 22px 0;
+    }
+    span{
+      margin-left: 20px;
+      font-size: 14px;
+      line-height: 44px;
+      color: @accountSpanColor;
+    }
+    .pull-right{
+      width: 120px;
+      height: 40px;
+      line-height: 28px;
+    }
+    .msgT{
+      margin: 16px 0 0 0;
+      line-height: 22px;
+      img{
+        margin-right: 20px;
+      }
+    }
+    .msgC{
+      margin: 2px 0 12px 0;
+    }
+    .msgB{
+      .btn-info{
+        margin-right: 24px;
+      }
+      button{
+        width: 80px;
+        height: 32px;
+      }
+    }
+  }
+  .content.password{
+    h3{
+      margin-bottom: 35px;
+    }
+    label {
+      font-size: 14px;
+      width: @passwordProjectNameWidth;
+      margin-right: 28px;
+    }
+    p {
+      color: @errorColor;
+      margin: 0 0 0 100px;
+      display: none;
+    }
+    .row{
+      margin:16px 0;
+    }
+    input[type="password"] {
+      display: inline;
+      line-height: 40px;
+      height: 40px;
+      background: white;
+      width: @shortInputWidth;
+    }
+    .bottomBtn{
+      margin: 0 0 0 90px;
+      background: @bottomBtn;
+      border-color:@bottomBtn;
+      width: @shortInputWidth;
+    }
+  }
+}

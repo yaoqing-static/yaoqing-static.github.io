@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/flat/blue.css"/>
+    <link rel="stylesheet" href="css/kaquan.css"/>
+    <link rel="stylesheet" href="css/zstyle.css"/>
+</head>
+<body>
+
+<div class="commonBox organization ">
+
+    <div class="nav">
+        <a href="#" class="head">
+            <img src="images/navHead.png"/>
+        </a>
+        <a href="#">
+        	<i class="Data-report" title="数据报表"></i>
+        </a>
+        <a href="#">
+        	<i class="kq-Edit active" title="卡券编辑"></i>
+        </a>
+        <a href="#">
+        	<i class="kq-Release" title="发布卡券"></i>
+        </a>
+        <a href="#">
+        	<i class="kq-Write-off" title="卡券核销"></i>
+        </a>
+        <a href="#" class="last1">
+        	<i class="Back-off" title="返回"></i>
+        </a>
+    </div>
+
+    <div class="contentBox">
+        <div class="title text-center">
+            新媒体云服务平台-NewMedia
+        </div>
+        <h1>卡券</h1>
+        <div class="coupon-boxw">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table-coupon" style="border-top:0;">
+
+                <!--<tr style="background:#F9F9F9;">
+                    <th>代金券（审核通过)</th>
+                </tr>-->
+                <div class="th_box">
+                    代金券（审核通过)
+                    <input type="checkbox" id="checkbox_c2" class="chk_3" checked /><label for="checkbox_c2"></label>
+                </div>
+                <tr>
+                    <td>卡券名称</td>
+                    <td>中秋节20元代金券</td>
+                    <td>2938份</td>
+                    <td style="padding-right:15px;"><a class="icon" data-toggle="modal" data-target="#myModal"><img src="images/z-icon1.png">
+                        
+                    </a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>卡券名称</td>
+                    <td> 领取后当天生效5天有效</td>
+                    <td>2938份</td>
+                    <td style="padding-right:15px;"><a class="icon" data-toggle="modal" data-target="#myModal"><img src="images/z-icon1.png"></a></td>
+                </tr>
+            </table>
+
+        </div>
+</div>
+<div class="tanc-box modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="overflow: hidden;">
+    <div class="sj_box "><img src="images/z-icon2.png"></div>
+    <div class="wr_box modal-body">
+        <div class="mai_box">
+            <div class="mai_left">
+                <input id="radioAdd" name="validity" type="radio" class="pull-left z-kq-flop" checked/>
+                <label class="fll z-label-text" for="radioAdd">增加</label>
+            </div>
+            <div class="mai_left">
+                <input id="radioReduce" name="validity" type="radio" class="pull-left" checked/>
+                <label class="fll z-label-text" for="radioReduce">减少</label>
+            </div>
+        </div>
+        <div class="mai_box_one" style="margin-top: 15px;">
+            <div class="form-group">
+                <input type="text" class="form-control wi-mi" id="KucunNotNull" placeholder="">
+                <span>份</span>
+            </div>
+            <p id="kucunNull" class="error" style="display: none; margin: 0;">库存不能为空</p>
+        </div>
+        <div class="bt_box" style="margin: 0;">
+            <div id="myButtons1" class="bs-example">
+                <button id="clickQr" type="button" class="btn btn-primary bj_che ">确认</button>
+                <button type="button" class="btn btn-primary bj_qx" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/icheck.min.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script src="js/Validator.js"></script>
+<script>
+    jQuery(function ($) {
+        borderInit();
+    
+    $(".mai_left").click(function(){
+        $(this).find(".radi").toggleClass("zu_radi")
+    })
+    $(':radio').iCheck({
+      radioClass: 'iradio_flat-blue'
+    });
+    
+    
+    var validataFunc = function () {
+        var validator = new Validator();
+        validator.add(document.getElementById('KucunNotNull'), [{
+            strategy: 'isNotEmpty',
+            errorMsg: function () {
+            	$('#kucunNull').show();
+          	}
+        }]);
+           
+        var errorMsg = validator.start();
+        return errorMsg;
+    };
+    var validateBtn = document.getElementById('clickQr');
+    	validateBtn.onclick = function () {
+    		$('.error').hide();
+            var errorMsg = validataFunc();
+            if (errorMsg) {
+            	errorMsg();
+                
+        	} 
+    }
+    });
+</script>
+</body>
+</html>

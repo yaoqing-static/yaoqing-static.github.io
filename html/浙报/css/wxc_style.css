@@ -1,0 +1,185 @@
+.commonBox .nav .w-back{
+	bottom: 50px;
+}
+.commonBox .subNav .Origin {
+    margin-right: 7px;
+    margin-top: -6px;
+}
+.commonBox .w-content{
+	width: 1058px;
+}
+.w-bottom-m-none{
+	margin-bottom: 0;
+}
+.w-download{
+	text-align: right;
+}
+.w-download a{
+	color: #666666;
+	font-size: 14px;
+}
+.w-download .export-wrap{
+	border-right: 1px solid #929292;
+	padding-right: 10px;
+	margin-right: 9px;
+}
+.w-download a .Export{
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	background: url("../images/w_icon6.png") no-repeat;
+	position: static;
+	vertical-align: sub;
+	margin-right: 7px;
+}
+.w-download a .download{
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	background: url("../images/w_icon7.png") no-repeat;
+	position: static;
+	vertical-align: sub;
+	margin-right: 7px;
+}
+.w-flow{
+	overflow: hidden;
+	margin-top: 40px;
+	line-height: 27px;
+}
+.w-flow-left{
+	float: left;
+	width: 50%;
+	background: url("../images/w_line.png") no-repeat right;
+}
+.w-flow-left div{
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+.w-flow-left .w-flow-wrap .w-blue{
+	color: #38b3f7;
+	font-size: 24px;
+}
+.w-flow-left .w-flow-wrap span{
+	display: block;
+	font-size: 14px;
+	margin: 0;
+	color: #666666;
+}
+.w-flow-right{
+	float: left;
+	width: 50%;
+}
+.w-flow-right div{
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+.w-flow-right .w-flow-wrap span{
+	display: block;
+	font-size: 14px;
+	margin: 0;
+	color: #666666;
+}
+.w-flow-right .w-flow-wrap .w-Orange{
+	color: #ff7e3f;
+	font-size: 24px;
+}
+.w-statistics{
+	margin-top: 40px;
+	overflow: hidden;
+}
+.statistics-title{
+	background: #f0f4ff;
+	padding: 13px 18px;
+	border-radius: 3px;
+	margin-bottom: 25px;
+	position: relative;
+	height: 52px;
+}
+.statistics-title span{
+	color: #333333;
+	font-size: 18px;
+}
+.statistics-title select{
+	float: right;
+	font-size: 12px;
+	color: #999999;
+	background: transparent;
+	border: none;
+	margin-top: 3px;
+}
+.w-tab{
+    display: inline-block;
+    float: right;
+}
+.w-tab span{
+    font-size: 14px;
+    color: #333333;
+    padding:0 5px 15px 5px;
+    position: relative;
+}
+.w-tab span.active{
+	border-bottom: 3px solid #38b3f7;
+}
+.w-statistics-wrap{
+	width: 423px;
+	float: left;
+	margin-right: 4px;
+}
+.w-statistics-icon{
+	position: absolute;
+	right: 10px;
+	top: 6px;
+}
+.w-statistics-table{
+	width: 300px;
+	float: left;
+	position: relative;
+}
+.statistics-title .w-span{
+	font-size: 12px;
+	color: #999999;
+}
+.statistics-title .w-span i{
+	font-style: normal;
+}
+.w-margin{
+	margin-left: 15px;
+}
+.statistics-title .select{
+	font-size: 14px;
+	color: #666666;
+	margin: 0;
+}
+.marginNull{
+	margin: 0;
+}
+.w-table-title{
+	background: #f5f5f5;
+	height: 63px;
+	line-height: 63px;
+	position: absolute;
+	top: 52px;
+    width: 100%;
+}
+.w-table-title span{
+	width: 32%;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	color: #666666;
+}
+.w-tab-wrap{
+	height: 260px;
+	overflow-y: scroll;
+}
+.w-tables{
+	margin-top: 70px;
+    text-align: center;
+}
+.w-tables tr td{
+	width: 32%;
+	border-bottom: 1px dashed #cfcfcf;
+	padding: 15px 0;
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+   <link rel="stylesheet" href="css/lyp_style.css">
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navHistory.png"/>
+    </a>
+    <a href="#">
+      <img src="images/lyp_icon_01.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navCard.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navActivity.png"/>
+    </a>
+
+    <a href="#" class="last3">
+      <img src="images/lyp_icon_a.png"/><strong>7</strong>
+    </a>
+    <a href="#" class="last2">
+      <img src="images/lyp_icon_02.png"/>
+    </a>
+    <a href="#" class="last1">
+      <img src="images/navOff.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+        新媒体云服务平台-NewMedia
+    </div>
+    <h1>消息</h1>
+    <div class="subNav">
+        <li>
+            <a href="#"  >
+                <span>系统消息</span><em>1</em>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="actived">
+                <span>组织消息</span>
+            </a>
+
+        </li>
+      <li>
+          <a href="#">
+              <span>场景消息</span><em>2</em>
+          </a>
+      </li>
+    </div>
+
+    <div class="content contentMain">
+      <h3>组织消息</h3>
+        <div class="oPara_m">
+            <p class="oLeft"><strong>Alince</strong><a href="###" class="oName">申请加入，</a>附加消息：程丽</p><span>今天16：45</span>
+        </div>
+        <div class="oParaSize">
+            <h2 class="oTit_a">钱报有礼（100417）</h2>
+            <p class="oSize_A">你被移除该群<span>昨天 16:45</span></p>
+        </div>
+         <div class="oParaSize">
+            <h2 class="oTit_a">新媒体中心（100416）</h2>
+            <p class="oSize_A">张敏 解散组织<span>2015-09-09 16:45</span></p>
+        </div>
+        <div class="oParaSize">
+            <h2 class="oTit_a">新媒体中心（100416）</h2>
+            <p class="oSize_A">Alince 变更管理者为 张敏<span>2015-09-09 16:45</span></p>
+        </div>
+        <div class="oParaSize">
+            <h2 class="oTit_a">新媒体中心（100416）</h2>
+            <p class="oSize_A">你已成功加入该组织<span>2015-09-09 16:45</span></p>
+        </div>
+
+    </div>
+    <div class="errorMsg">
+      <img src="images/i.png"/>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    borderInit();
+
+    $('#inputName').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/32');
+      if($(this).val().length>32 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=32 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    $('#describe').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/120');
+      if($(this).val().length>120 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=120 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    var validataFunc = function () {
+      var validator = new Validator();
+      validator.add(document.getElementById('inputName'), [{
+        strategy: 'isNotEmpty',
+        errorMsg: '创建失败！组织名称不能为空'
+      }, {
+        strategy: 'maxLength:32',
+        errorMsg: '创建失败！组织名称不能超过32个字符'
+      }]);
+      validator.add(document.getElementById('describe'), [{
+        strategy: 'maxLength:120',
+        errorMsg: '创建失败！组织描述不能超过120个字符'
+      }]);
+      var errorMsg = validator.start();
+      return errorMsg;
+    };
+
+    var saveBtn = document.getElementById('saveBtn');
+    saveBtn.onclick = function () {
+      var errorMsg = validataFunc();
+      if (errorMsg) {
+        $('.errorMsg').show().find('span').html(errorMsg);
+        return false;
+      } else {
+        $('.errorMsg').hide();
+        //向后台提交...
+      }
+    }
+  });
+</script>
+</body>
+</html>

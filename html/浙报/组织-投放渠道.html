@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/bootstrap-select.min.css"/>
+  <link rel="stylesheet" href="css/flat/green.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox way">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGInfo.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGMember.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGLog.png"/>
+    </a>
+    <a href="#">
+      <img src="images/NavGWay.png"/>
+    </a>
+
+    <a href="#" class="last1">
+      <img src="images/navBack.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>投放渠道</h1>
+
+    <ul class="subNav">
+      <div>
+        <button class="btn btn-default"><img src="images/subNavOrgCreate.png"/><span>添加分组</span></button>
+        <i>|</i>
+        <button class="btn btn-default"><img src="images/subNavimport.png"/><span>导入我的渠道组</span></button>
+      </div>
+      <a href="#">
+        <li>默认组<span>(13)</span></li>
+      </a>
+      <a href="#" class="actived">
+        <li>组1<span>(13)</span></li>
+      </a>
+      <a href="#">
+        <li>组2<span>(13)</span></li>
+      </a>
+      <a href="#">
+        <li>组3<span>(13)</span></li>
+      </a>
+    </ul>
+
+    <div class="content">
+      <h3><img style="margin: -4px 8px 0 0;" src="images/subNavOrgCreate.png"/>新建渠道</h3>
+      <div class="panel-group" role="tablist">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+            <div class="" role="button" data-toggle="collapse" href="#collapseListGroup1" aria-expanded="true"
+                 aria-controls="collapseListGroup1">
+              <div class="pull-right"><span class="glyphicon glyphicon-triangle-top"></span></div>
+              <span>新渠道</span>
+            </div>
+          </div>
+          <div class="panel-show">
+            <div class="line">
+              <span class="pull-right">万达商业广场1001B，主营女装</span>渠道描述
+            </div>
+          </div>
+          <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel"
+               aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+            <div class="line">
+              <label>渠道名</label>
+              <input class="form-control" type="text"/>
+              <i>0/20</i>
+            </div>
+            <div class="lineTx">
+              <label>渠道描述</label>
+              <textarea class="form-control"></textarea>
+              <i>0/120</i>
+            </div>
+            <div class="line">
+              <label>渠道分组</label>
+              <select style="width: 180px;">
+                <option value="1">默认组</option>
+                <option value="2">组2</option>
+                <option value="3">组3</option>
+              </select>
+            </div>
+            <div class="line">
+              <label>状态</label>
+              <input type="checkbox" checked><b>启用</b>
+              <input type="checkbox"><b>停用</b>
+            </div>
+            <div class="modal-open btns">
+              <button class="btn btn-default pull-right">删除</button>
+              <button class="btn btn-primary pull-right">保存</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/icheck.min.js"></script>
+<script src="js/lib/bootstrap-select.min.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    borderInit();
+    $('select').selectpicker();
+
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
+
+    $('.panel-heading').on('click',function(){
+      $(this).find('.glyphicon').toggleClass('glyphicon-triangle-bottom').toggleClass('glyphicon-triangle-top');
+      $(this).next('.panel-show').toggle();
+    });
+  });
+</script>
+</body>
+</html>

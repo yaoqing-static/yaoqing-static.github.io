@@ -1,0 +1,181 @@
+.blueHover:hover {
+  background: #04a9f4;
+  color: white;
+}
+.grayHover:hover {
+  background: #aaaaaa;
+  color: white;
+}
+.btnHover:hover::after {
+  content: url(images/hover.png);
+}
+.btnHover:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login {
+  min-width: 1020px;
+  cursor: default;
+}
+.login .topBg {
+  background: #0e4c98;
+}
+.login .topBg img {
+  display: block;
+  margin: 0 auto;
+}
+.login .box {
+  width: 312px;
+  margin: 58px auto 80px;
+  font-size: 14px;
+}
+.login .form-group {
+  position: relative;
+}
+.login .form-group .rightBtn {
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  color: #04a9f4;
+}
+.login .form-control {
+  height: 40px;
+}
+.login .btn {
+  line-height: 28px;
+}
+.login .commonBtn {
+  color: #aaaaaa;
+}
+.login .commonBtn:hover::after {
+  content: url(images/hover.png);
+}
+.login .commonBtn:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login .commonBtn:hover {
+  background: #aaaaaa;
+  color: white;
+}
+.login .guideBtn {
+  background: #04a9f4;
+  border-color: #04a9f4;
+  color: white;
+}
+.login .guideBtn:hover::after {
+  content: url(images/hover.png);
+}
+.login .guideBtn:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login .guideA {
+  color: #04a9f4;
+  border-color: #04a9f4;
+}
+.login .guideA:hover::after {
+  content: url(images/hover.png);
+}
+.login .guideA:after {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.login .guideA:hover {
+  background: #04a9f4;
+  color: white;
+}
+.login .footer {
+  color: #aaaaaa;
+}
+.login .footer a {
+  color: #aaaaaa;
+}
+.login .error {
+  display: none;
+  color: #d68a8a;
+  background: #fff7f6;
+}
+.login .wechar,
+.login .qq,
+.login .sina {
+  position: relative;
+  padding-left: 112px;
+  text-align: left;
+}
+.login .wechar img,
+.login .qq img,
+.login .sina img {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+.login .wechar {
+  color: #35bc47;
+  border-color: #35bc47;
+}
+.login .wechar:hover {
+  background: #35bc47;
+}
+.login .wechar:hover::before {
+  content: url(images/wechar.png);
+}
+.login .wechar:before {
+  position: relative;
+  top: 5px;
+  left: 32px;
+}
+.login .qq {
+  color: #3d96d6;
+  border-color: #3d96d6;
+}
+.login .qq:hover {
+  background: #3d96d6;
+}
+.login .qq img {
+  position: absolute;
+  top: 10px;
+  left: 54px;
+}
+.login .qq:hover::before {
+  content: url(images/qq.png);
+}
+.login .qq:before {
+  position: relative;
+  top: 5px;
+  left: 35px;
+}
+.login .sina {
+  color: #e74242;
+  border-color: #e74242;
+}
+.login .sina:hover {
+  background: #e74242;
+}
+.login .sina:hover::before {
+  content: url(images/sina.png);
+}
+.login .sina:before {
+  position: relative;
+  top: 5px;
+  left: 32px;
+}
+.login .eip {
+  color: #2e2e2e;
+  border-color: #2e2e2e;
+}
+.login .eip:hover {
+  background: #2e2e2e;
+}
+.login .eip:hover::before {
+  content: "EIP";
+}
+.login .eip:before {
+  position: relative;
+  left: 43px;
+  color: white;
+}

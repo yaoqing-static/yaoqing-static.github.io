@@ -1,0 +1,17 @@
+.mail .title {
+  color: #2a569a;
+}
+.mail .box {
+  width: 486px;
+  margin: 0 auto;
+  word-break: break-all;
+  font-size: 14px;
+}
+.mail h1 {
+  font-size: 40px;
+  text-align: center;
+  margin: 216px 0 76px;
+}
+.mail a {
+  color: #04a9f4;
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/kaquan.css" /> </head>
+
+<body>
+  <div class="commonBox cardAppend">
+    <div class="nav">
+      <a href="#" class="head">
+        <img src="images/navHead.png" /> </a>
+      <a href="#">
+        <img src="images/zuoq.png" /> </a>
+      <a href="#" class="tuu">
+        <img src="images/zuow.png" /> </a>
+      <a href="#" class="tuu">
+        <img src="images/zuoe.png" /> </a>
+      <a href="#" class="tuu">
+        <img src="images/zuor.png" /> </a>
+      <a href="#" class="last1">
+        <img src="images/zuohui.png" /> </a>
+    </div>
+    <div class="contentBox">
+      <div class="title text-center">新媒体云服务平台-NewMedia</div>
+      <h1>卡券</h1>
+      <div class="cardStyleTitle">选择你要穿创建的卡券类型</div>
+      <div class="cardStyleLine">
+        <input type="radio" name="cardStyle" id="discountCard">
+        <label for="discountCard">折扣券</label>
+        <p>可为用户提供消费折扣</p>
+      </div>
+      <div class="cardStyleLine">
+        <input type="radio" name="cardStyle" id="moneyCard">
+        <label for="moneyCard">代金券</label>
+        <p>可为用户提供抵扣现金服务。可设置成为“满*元，减*元”</p>
+      </div>
+      <div class="cardStyleLine">
+        <input type="radio" name="cardStyle" id="giftCard">
+        <label for="giftCard">礼品券</label>
+        <p>可为用户提供消费送赠品服务</p>
+      </div>
+      <div class="cardStyleLine">
+        <input type="radio" name="cardStyle" id="groupCard">
+        <label for="groupCard">团购券</label>
+        <p>可为用户提供团购套餐服务</p>
+      </div>
+      <div class="cardStyleLine">
+        <input type="radio" name="cardStyle" id="favourableCard">
+        <label for="favourableCard">优惠券</label>
+        <p>即”通用券“，建议当以上四种无法满足需求时采用</p>
+      </div>
+      <div class="cardStyleBtns text-center">
+        <button class="btn btn-primary">确定</button>
+        <button class="btn btn-default">取消</button>
+      </div>
+    </div>
+  </div>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="js/lib/bootstrap-select.min.js"></script>
+  <script>
+    jQuery(function($) {
+      $('select').selectpicker();
+    });
+  </script>
+</body>
+
+</html>

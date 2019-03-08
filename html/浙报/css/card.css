@@ -1,0 +1,82 @@
+.card .panel {
+  width: 920px;
+  height: 620px;
+  margin-left: 40px;
+}
+.card .panel-heading {
+  padding: 0;
+}
+.card .panel-heading a {
+  width: 94px;
+  height: 50px;
+  color: #333;
+  line-height: 50px;
+  font-size: 14px;
+}
+.card .panel-heading a:hover {
+  background: #41b6f7;
+  color: white;
+}
+.card .panel-heading .actived {
+  background: #41b6f7;
+  color: white;
+}
+.card .phoneBox {
+  margin: 0 auto;
+  width: 306px;
+  height: 448px;
+  border: 1px solid #d0d0d0;
+}
+.card .phoneHead {
+  background: #df9d32;
+  height: 162px;
+  color: white;
+}
+.card .phoneHead img {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  margin-right: 10px;
+}
+.card .phoneHead span {
+  font-size: 12px;
+}
+.card .phoneHead .text-left {
+  padding: 18px 0 10px 12px;
+}
+.card .phoneTitle {
+  font-size: 20px;
+}
+.card .phoneSN {
+  font-size: 14px;
+  margin: 6px 0 12px;
+}
+.card .phoneDate {
+  font-size: 14px;
+}
+.card .btn-primary {
+  margin-top: 190px;
+  background: #41b6f7;
+  border-color: #41b6f7;
+}
+.card .phoneExplain {
+  color: #333;
+  font-size: 14px;
+}
+.card .form-group {
+  margin: 10px 0 22px;
+}
+.card .findNothing {
+  padding: 110px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+.card .done {
+  padding: 92px 0 0;
+  color: #666;
+  font-size: 20px;
+}
+.card .done img {
+  display: block;
+  margin: 0 auto 12px;
+}

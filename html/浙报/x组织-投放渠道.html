@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/bootstrap-select.min.css"/>
+  <link rel="stylesheet" href="css/square/blue.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox way">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGInfo.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGMember.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGLog.png"/>
+    </a>
+    <a href="#">
+      <img src="images/NavGWayC.png"/>
+    </a>
+
+    <a href="#" class="last1">
+      <img src="images/navBack.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>投放渠道</h1>
+
+    <ul class="subNav">
+      <div>
+        <button class="btn btn-default" id="addGrop"><img src="images/subNavOrgCreate.png"/><span>添加分组</span></button>
+        <i>|</i>
+        <button class="btn btn-default"><img src="images/subNavimport.png"/><span>导入我的渠道组</span></button>
+      </div>
+      <a href="#">
+        <li><span class="name">默认组</span><span>(13)</span><b class="edit"><img src="images/lyp_icon_10.png"></b><b class="delte"><img src="images/subNavDel.png"></b></li>
+      </a>
+      <a href="#" class="actived">
+        <li><span class="name">组1</span><span>(13)</span><b class="edit"><img src="images/lyp_icon_10.png"></b><b class="delte"><img src="images/subNavDel.png"></b></li>
+      </a>
+      <a href="#">
+        <li><span class="name">组2</span><span>(13)</span><b class="edit"><img src="images/lyp_icon_10.png"></b><b class="delte"><img src="images/subNavDel.png"></b></li>
+      </a>
+      <a href="#">
+        <li><span class="name">组3</span><span>(13)</span><b class="edit"><img src="images/lyp_icon_10.png"></b><b class="delte"><img src="images/subNavDel.png"></b></li>
+      </a>
+    </ul>
+
+    <div class="content">
+      <h3 id="newBtn"><img style="margin: -4px 8px 0 0;" src="images/subNavOrgCreate.png"/>新建渠道</h3>
+
+      <div class="panel-group" role="tablist">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="collapseListGroupHeading0">
+            <div class="collapsed" role="button" data-toggle="collapse" href="#collapseListGroup0" aria-expanded="false"
+                 aria-controls="collapseListGroup1">
+              <div class="pull-right"><span class="glyphicon glyphicon-triangle-bottom"></span></div>
+              <span>新渠道</span>
+            </div>
+          </div>
+          <div class="panel-show" style="display: block;">
+            <div class="line">
+              <span class="pull-right">万达商业广场1001B，主营女装</span>
+              <span>渠道描述</span>
+            </div>
+          </div>
+          <div id="collapseListGroup0" class="panel-collapse collapse" role="tabpanel"
+               aria-labelledby="collapseListGroupHeading0" aria-expanded="false" style="height: 0px;">
+            <div class="line">
+              <label>渠道名</label>
+              <input class="form-control" type="text" maxlength="20">
+              <i>0/20</i>
+              <p id="Title" class="input-text error kq-titleName newddd">卡券名称不能为空</p>
+            </div>
+            <div class="lineTx">
+              <label>渠道描述</label>
+              <textarea class="form-control" maxlength="120" ></textarea>
+              <i>0/120</i>
+              <p id="subTitle" class="input-text error kq-titleName newddd">卡券名称不能为空</p>
+            </div>
+
+            <div class="line">
+              <label>渠道分组</label>
+              <select style="width: 180px;">
+                <option value="1">默认组</option>
+                <option value="2">组2</option>
+                <option value="3">组3</option>
+              </select>
+            </div>
+            <div class="line">
+              <label>状态</label>
+
+              <input type="radio" name="iCheck0" checked><b>启用</b>
+              <input type="radio" name="iCheck0"><b>停用</b>
+            </div>
+            <div class="modal-open btns">
+              <button class="btn btn-default pull-right">删除</button>
+              <button class="btn btn-primary pull-right">保存</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-group" role="tablist">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="collapseListGroupHeading2">
+            <div class="collapsed" role="button" data-toggle="collapse" href="#collapseListGroup2" aria-expanded="false"
+                 aria-controls="collapseListGroup1">
+              <div class="pull-right"><span class="glyphicon glyphicon-triangle-bottom"></span></div>
+              <span>新渠道</span>
+            </div>
+          </div>
+          <div class="panel-show" style="display: block;">
+            <div class="line">
+              <span class="pull-right">万达商业广场1001B，主营女装</span>
+              <span>渠道描述</span>
+            </div>
+          </div>
+          <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel"
+               aria-labelledby="collapseListGroupHeading2" aria-expanded="false" style="height: 0px;">
+            <div class="line">
+              <label>渠道名</label>
+              <input class="form-control" type="text" maxlength="20">
+              <i><span id="line1">0</span>/20</i>
+              <p id="Title" class="input-text error kq-titleName newddd">卡券名称不能为空</p>
+            </div>
+            <div class="lineTx">
+              <label>渠道描述</label>
+              <textarea class="form-control" maxlength="120"></textarea>
+              <p id="subTitle" class="input-text error kq-titleName newddd">渠道描述不能为空</p>
+              <i>0/120</i>
+            </div>
+
+            <div class="line">
+              <label>渠道分组</label>
+              <select style="width: 180px;">
+                <option value="1">默认组</option>
+                <option value="2">组2</option>
+                <option value="3">组3</option>
+              </select>
+            </div>
+            <div class="line">
+              <label>状态</label>
+
+              <input type="radio" name="iCheck2" checked><b>启用</b>
+              <input type="radio" name="iCheck2"><b>停用</b>
+            </div>
+            <div class="modal-open btns">
+              <button class="btn btn-default pull-right">删除</button>
+              <button class="btn btn-primary pull-right">保存</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="msgBox2" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                      <span aria-hidden="true">
+                        &times;
+                      </span>
+                    </button>
+                    <h4 class="modal-title">
+                      警告
+                    </h4>
+                  </div>
+                  <div class="modal-body">
+                    <p class="text17">
+                     是否确定将该活动删除？
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+                      取消
+                    </button>
+                    <button id="yesBtn2" type="button" data-dismiss="modal" aria-label="Close"
+                    class="btn btn-primary">
+                      确定
+                    </button>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<div id="msgBox3" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                      <span aria-hidden="true">
+                        &times;
+                      </span>
+                    </button>
+                    <h4 class="modal-title">
+                      警告
+                    </h4>
+                  </div>
+                  <div class="modal-body">
+                    <p class="text17">
+                     删除按钮，按钮文字“删除”，点击删除该分组，把该组已有渠道全部移动至默认组？
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+                      取消
+                    </button>
+                    <button id="yesBtn3" type="button" data-dismiss="modal" aria-label="Close"
+                    class="btn btn-primary">
+                      确定
+                    </button>
+                  </div>
+                </div>
+              </div>
+</div>
+
+<div id="msgBox" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                      <span aria-hidden="true">
+                        &times;
+                      </span>
+                    </button>
+                    <h4 class="modal-title">
+                      分组名称
+                    </h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      <input type="text" class="form-control" id="nameGrop" style="margin:10px 10px 0px 0px; width:500px" />
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+                      取消
+                    </button>
+                    <button id="yesBtn" type="button" data-dismiss="modal" aria-label="Close"
+                    class="btn btn-primary">
+                      确定
+                    </button>
+                  </div>
+                </div>
+              </div>
+ </div>
+
+
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/icheck.min.js"></script>
+<script src="js/lib/bootstrap-select.min.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+
+
+
+
+  jQuery(function ($) {
+	
+  
+  //新建组	
+  var gropCount=0;
+  $('#addGrop').on('click',function() {
+          $('#msgBox').modal('show');
+		  $('#yesBtn').off().on('click',function() {
+		  var nameGrop=$("#nameGrop").val();
+          var sHtml="<a href='#'><li><span class='name'>"+nameGrop+"</span>><span>("+gropCount+")</span></li></a>";
+		  $(".subNav").append(sHtml);
+          });	
+        });
+		
+  //修改租
+  $('.subNav li .edit').on('click',function() {
+          $('#msgBox').modal('show');
+		  var $this = $(this).parents('a');
+		  $('#yesBtn').off().on('click',function() {
+		     var nameGrop=$("#nameGrop").val();
+             $this.find(".name").text(nameGrop)
+          });	
+        });
+   
+	//删除组	
+	$('.subNav li .delte').on('click',function() {
+          $('#msgBox3').modal('show');
+          var $this = $(this).parents('a');
+          $('#yesBtn3').off().on('click',function() {
+            $this.remove();
+          });
+        });	
+	
+
+    var bindEvent = function ($obj) {
+      $obj.on('hide.bs.collapse', function () {
+        $(this).find('.glyphicon').addClass('glyphicon-triangle-bottom').removeClass('glyphicon-triangle-top');
+        $(this).find('.panel-show').show(200);
+      }).on('show.bs.collapse', function () {
+        $(this).find('.glyphicon').removeClass('glyphicon-triangle-bottom').addClass('glyphicon-triangle-top');
+        $(this).find('.panel-show').hide(200);
+      }).find('.btn-primary').on('click', function () {
+        var theTitle = $(this).parents('.panel-group').find('input[type="text"]').val();
+        var theCont = $(this).parents('.panel-group').find('textarea').val();
+		$(this).parents('.panel-group').find('.newddd').hide();
+		if(theTitle==""){
+			$(this).parents('.panel-group').find('#Title').show();
+			}
+		if(theCont==""){
+			$(this).parents('.panel-group').find('#subTitle').show();
+		}
+		
+		if(theCont!=""&&theTitle!=""){
+			$(this).parents('.panel-collapse').collapse('hide');
+			$(this).parents('.panel-group').find('.panel-show').html('<div class="line"><span class="pull-right">'
+			  + theCont + '</span><span>'
+			  + theTitle
+			  + '</span></div>');
+			alert('提交:'
+			  + theTitle
+			  + theCont
+			);
+		}
+      });
+      $obj.find('.btn-default').on('click', function () {
+		$('#msgBox2').modal('show');  
+        var $this = $(this).parents('.panel-group');
+		$('#yesBtn2').off().on('click',function() {
+            $this.remove();
+          });
+		
+      });
+      $obj.find('input').iCheck({
+        radioClass: 'iradio_square-blue'
+      });
+      $obj.find('select').selectpicker();
+      $obj.find('input[type="text"]').on('keyup', function () {
+        var len = this.value.length;
+        if (len > 20) {
+          $(this).next().text(len + '/20').css('color', '#ff7e3f');
+        } else {
+          $(this).next().text(len + '/20').css('color', '#999');
+        }
+      });
+      $obj.find('textarea').on('keyup', function () {
+        var len = this.value.length;
+        if (len > 120) {
+          $(this).next().text(len + '/120').css('color', '#ff7e3f');
+        } else {
+          $(this).next().text(len + '/120').css('color', '#999');
+        }
+      });
+    };
+
+    bindEvent($('.panel-group'));
+
+    borderInit();
+
+    $('#newBtn').on('click', function () {
+      var count = $('.panel-group').length + 1;
+      var html = $('<div class="panel-group" role="tablist"><div class="panel panel-default"><div class="panel-heading" role="tab" id="collapseListGroupHeading' + count + '"><div class="" role="button" data-toggle="collapse" href="#collapseListGroup' + count + '" aria-expanded="true"aria-controls="collapseListGroup' + count + '"><div class="pull-right"><span class="glyphicon glyphicon-triangle-top"></span></div><span>新渠道</span></div></div><div class="panel-show"><div class="line"><span class="pull-right">万达商业广场1001B，主营女装</span>渠道描述 </div></div><div id="collapseListGroup' + count + '" class="panel-collapse collapse in" role="tabpanel"aria-labelledby="collapseListGroupHeading' + count + '" aria-expanded="true"><div class="line"><label>渠道名</label><input class="form-control" type="text"/><i>0/20</i></div><div class="lineTx"><label>渠道描述</label><textarea class="form-control"></textarea><i>0/120</i></div><div class="line"><label>渠道分组</label><select style="width: 180px;"><option value="1">默认组</option><option value="2">组2</option><option value="3">组3</option></select></div><div class="line"><label>状态</label><input type="radio" name="iCheck' + count + '" checked><b>启用</b><input type="radio" name="iCheck' + count + '"><b>停用</b></div><div class="modal-open btns"><button class="btn btn-default pull-right">删除</button><button class="btn btn-primary pull-right">保存</button></div></div></div></div>');
+      $(this).after(html);
+      bindEvent(html);
+    });
+
+
+  });
+</script>
+</body>
+</html>

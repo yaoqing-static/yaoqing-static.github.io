@@ -1,0 +1,136 @@
+@import "loginVar";
+.login {
+  min-width: 1020px;
+  cursor: default;
+  .topBg {
+    background: #0e4c98;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .box {
+    width: 312px;
+    margin: 58px auto 80px;
+    font-size: 14px;
+  }
+  .form-group{
+    position: relative;
+    .rightBtn{
+      position: absolute;
+      right: 6px;
+      top:8px;
+      color:@rightBtnColor;
+    }
+  }
+  .form-control{
+    height: 40px;
+  }
+  .btn{
+    line-height: 40-12px;
+
+  }
+  .commonBtn{
+    color: @grayColor;
+    .btnHover;
+    .grayHover;
+  }
+  .guideBtn {
+    background: @guideColor;
+    border-color: @guideColor;
+    color: white;
+    .btnHover;
+  }
+  .guideA{
+    color: @guideColor;
+    border-color: @guideColor;
+    .btnHover;
+    .blueHover;
+  }
+  .footer{
+    color:@footColor;
+    a{
+      color: @footColor;
+    }
+  }
+  .error{
+    display: none;
+    color:@errorColor;
+    background: @errorBg;
+  }
+  .wechar,.qq,.sina{
+    position: relative;
+    padding-left: 112px;
+    text-align: left;
+    img{
+      position: absolute;
+      top:10px;
+      left: 50px;
+    }
+  }
+  .wechar{
+    color: @wecharColor;
+    border-color: @wecharColor;
+    &:hover{
+      background: @wecharColor;
+    }
+    &:hover::before{
+      content:url(images/wechar.png);
+    }
+    &:before{
+      position: relative;
+      top: 5px;
+      left: 32px;
+    }
+  }
+  .qq{
+    color: @qqColor;
+    border-color: @qqColor;
+    &:hover{
+      background: @qqColor;
+    }
+    img{
+      position: absolute;
+      top:10px;
+      left: 54px;
+    }
+    &:hover::before{
+      content:url(images/qq.png);
+    }
+    &:before{
+      position: relative;
+      top: 5px;
+      left: 35px;
+    }
+  }
+  .sina{
+    color: @sinaColor;
+    border-color: @sinaColor;
+    &:hover{
+      background: @sinaColor;
+    }
+    &:hover::before{
+      content:url(images/sina.png);
+    }
+    &:before{
+      position: relative;
+      top: 5px;
+      left: 32px;
+    }
+  }
+  .eip{
+    color: @eipColor;
+    border-color: @eipColor;
+    &:hover{
+      background: @eipColor;
+    }
+    &:hover::before{
+      content:"EIP";
+    }
+    &:before{
+      position: relative;
+      left: 43px;
+      color: white;
+    }
+  }
+}

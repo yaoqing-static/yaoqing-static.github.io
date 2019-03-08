@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox account">
+
+    <div class="nav">
+        <a href="#" class="head">
+            <img src="images/navHead.png"/>
+        </a>
+        <a href="#">
+            <img src="images/navHistory.png"/>
+        </a>
+        <a href="#">
+            <img src="images/navOperate.png"/>
+        </a>
+        <a href="#">
+            <img src="images/navCard.png"/>
+        </a>
+        <a href="#">
+            <img src="images/navActivity.png"/>
+        </a>
+
+        <a href="#" class="last3">
+            <img src="images/navMsg.png"/>
+        </a>
+        <a href="#" class="last2">
+            <img src="images/navGroup.png"/>
+        </a>
+        <a href="#" class="last1">
+            <img src="images/navOff.png"/>
+        </a>
+    </div>
+
+    <div class="contentBox">
+        <div class="title text-center">
+            新媒体云服务平台-NewMedia
+        </div>
+        <h1>账户</h1>
+
+        <div class="subNav">
+            <a href="#" class="actived">
+                <img class="subNavPerson" src="images/subNavPerson.png"/>
+                <span>个人信息</span>
+            </a>
+            <a href="#">
+                <img class="subNavPwd" src="images/subNavPwd.png"/>
+                <span>第三方账号</span>
+            </a>
+            <a href="#">
+                <img class="subNavThird" src="images/subNavThird.png"/>
+                <span>修改密码</span>
+            </a>
+        </div>
+
+        <div class="content personInfo">
+            <h3>个人信息</h3>
+
+            <div class="row mainInfo">
+                <label class="text-right">头像</label>
+                <img src="images/myPhoto.png"/>
+                <label for="upload" class="btn btn-default">上传新头像</label>
+                <input type="file" id="upload"/>
+                <span>只支持JPG/PNG/GIF，大小不超过5M</span>
+            </div>
+            <div class="row">
+                <label class="text-right">*姓名</label>
+                <input id="username" class="form-control longInput" type="text"/>
+                <span>0/32</span>
+
+                <p>用户名不能为空或超过32个字符</p>
+            </div>
+            <div class="row">
+                <label class="text-right">公司</label>
+                <input class="form-control longInput" type="text"/>
+                <span>0/32</span>
+
+                <p>不能超过32个字符</p>
+            </div>
+            <div class="row">
+                <label class="text-right">部门</label>
+                <input class="form-control longInput" type="text"/>
+                <span>0/32</span>
+
+                <p>不能超过32个字符</p>
+            </div>
+            <div class="row">
+                <label class="text-right">职位</label>
+                <input class="form-control longInput" type="text"/>
+                <span>0/32</span>
+
+                <p>不能超过32个字符</p>
+            </div>
+            <!--
+            没邮箱
+            <div class="row" id="myMail">
+              <label class="text-right">邮箱</label>
+              <input class="form-control shortInput" type="text"/>
+              <button class="btn btn-default shortInputBtn">发送验证邮件</button>
+              <p></p>
+            </div>
+            -->
+            <!--有邮箱-->
+            <div class="row" id="myMail">
+                <label class="text-right">邮箱</label>
+                <input class="form-control shortInput" type="text" value="aaa@qq.com" readonly/>
+                <button class="btn btn-default shortInputBtn">更改邮箱</button>
+                <i><img src="images/right.png"/>已验证</i>
+
+                <p></p>
+            </div>
+
+
+            <!--
+            没手机
+            <div class="row" id="myPhone">
+              <label class="text-right">手机</label>
+              <input class="form-control shortInput" type="text"/>
+              <button class="btn btn-default shortInputBtn">发送验证码</button>
+              <p></p>
+            </div>
+            -->
+
+            <!--有手机-->
+            <div class="row" id="myPhone">
+                <label class="text-right">手机</label>
+                <input class="form-control shortInput" type="text" value="12345" readonly/>
+                <button class="btn btn-default shortInputBtn">更改号码</button>
+                <i><img src="images/right.png"/>已验证</i>
+
+                <p></p>
+            </div>
+
+            <div class="row hidden" id="myCode">
+                <label class="text-right"></label>
+                <input class="form-control shortInput" type="text" placeholder="请输入验证码"/>
+                <button class="btn btn-default shortInputBtn">确认</button>
+            </div>
+
+            <div class="row">
+                <button id="saveBtn" class="btn btn-primary btn-block bottomBtn">保存</button>
+            </div>
+        </div>
+
+        <div class="errorMsg">
+            <img src="images/i.png"/>
+            <span></span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/jquery.placeholder.min.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/border.js"></script>
+<script>
+    jQuery(function ($) {
+        //fix IE8 placeholder
+        $('input, textarea').placeholder();
+
+        //头像上传前预览IE8需调整安全模式才能兼容,前端无法做
+        //上传完成返回头像url,替换$('.mainInfo img').attr('src')
+
+        borderInit();
+
+        $('.longInput').on('keyup', function () {
+            checkOthers.apply(this);
+        }).eq(0).on('keyup', function () {
+            checkUsername.call(this);
+        });
+
+        $('#myMail button').one('click', function () {
+            $(this).on('click', function () {
+                var theText = $(this).parent().find('input').val();
+                if (!strategies.isMail.call(this, theText, 'error')) {
+                    $('.errorMsg').hide();
+                    timerrunning($(this), theText, 'mail', 60);//重新发送邮箱等待时间
+                } else {
+                    $('.errorMsg').show().find('span').text('请输入正确的邮箱!');
+                }
+            }).parent().find('input').select().removeAttr('readonly').on('keyup', function () {
+                if (!strategies.isMail.call(this, $(this).val(), 'error')) {
+                    $('.errorMsg').hide();
+                    $(this).parent().find('p').hide();
+                } else {
+                    $(this).parent().find('p').show().text('请输入正确的邮箱');
+                }
+            }).next().text('发送验证邮件')
+                    .next().hide();
+
+            validataMail = function () {
+                var validator = new Validator();
+                validator.add($('#myMail input')[0], [{
+                    strategy: 'isNotEmpty',
+                    errorMsg: '邮箱不能为空'
+                }, {
+                    strategy: 'isMail',
+                    errorMsg: '请输入正确的邮箱'
+                }]);
+                var errorMsg = validator.start();
+                return errorMsg;
+            };
+        });
+
+        $('#myPhone button').one('click', function () {
+            $(this).parent().find('input').select().removeAttr('readonly').on('keyup', function () {
+                if (!strategies.isPhone.call(this, $(this).val(), 'error')) {
+                    $('.errorMsg').hide();
+                    $(this).parent().find('p').hide();
+                } else {
+                    $(this).parent().find('p').show().text('请输入正确的手机号');
+                }
+            }).next().text('发送验证码')
+                    .next().hide();
+            $('#myCode').removeClass('hidden');
+
+            $(this).on('click', function () {
+                var theText = $(this).parent().find('input').val();
+                if (!strategies.isPhone.call(this, theText, 'error')) {
+                    $('.errorMsg').hide();
+                    timerrunning($(this), theText, 'phone', 60);//重新发送验证码等待时间
+                    $('#myCode input').val('').focus();
+
+                    $('#myCode button').off().on('click', function () {
+                        var errorMsgForCode = validataCode();
+                        if (errorMsgForCode) {
+                            $('.errorMsg').show().find('span').text(errorMsgForCode);
+                            return false;
+                        } else {
+                            $('.errorMsg').hide();
+                            alert('手机验证成功!');
+                        }
+                    });
+
+                } else {
+                    $('.errorMsg').show().find('span').text('请输入正确的手机号!');
+                }
+            });
+
+            validataPhone = function () {
+                var validator = new Validator();
+                validator.add($('#myPhone input')[0], [{
+                    strategy: 'isNotEmpty',
+                    errorMsg: '手机号不能为空'
+                }, {
+                    strategy: 'isMail',
+                    errorMsg: '请输入正确的手机号'
+                }]);
+                var errorMsg = validator.start();
+                return errorMsg;
+            };
+        });
+
+        var validataCode = function () {
+            var validator = new Validator();
+            validator.add($('#myCode input')[0], [{
+                strategy: 'isNotEmpty',
+                errorMsg: '验证码不能为空'
+            }, {
+                strategy: 'isCode',
+                errorMsg: '验证码错误'
+            }]);
+            var errorMsg = validator.start();
+            return errorMsg;
+        };
+
+
+        var validataFunc = function () {
+            var validator = new Validator();
+            validator.add(document.getElementById('username'), [{
+                strategy: 'isNotEmpty',
+                errorMsg: '用户名不能为空'
+            }, {
+                strategy: 'maxLength:32',
+                errorMsg: '用户名不能超过32个字符'
+            }]);
+            var errorMsg = validator.start();
+            return errorMsg;
+        };
+
+        var validataMail = function () {
+            return false;
+        };
+
+        var validataPhone = function () {
+            return false;
+        };
+
+        var saveBtn = document.getElementById('saveBtn');
+        saveBtn.onclick = function () {
+            checkUsername.call(document.getElementById('username'));
+            var errorMsg = validataFunc();
+            var errorMsgForMail = validataMail();
+            var errorMsgForPhone = validataPhone();
+            if (errorMsg) {
+                $('.errorMsg').show().find('span').text(errorMsg);
+                return false;
+            } else if (errorMsgForMail) {
+                $('.errorMsg').show().find('span').text(errorMsgForMail);
+                return false;
+            } else if (errorMsgForPhone) {
+                $('.errorMsg').show().find('span').text(errorMsgForPhone);
+                return false;
+            } else {
+                $('.errorMsg').hide();
+                alert('提交成功');
+                //向后台提交...
+            }
+        };
+
+        function checkOthers() {
+            if (this.value.length > 32) {
+                $(this).next().text(this.value.length + '/32').addClass('error');
+                $(this).parent().find('p').show();
+            } else {
+                $(this).next().text(this.value.length + '/32').removeClass('error');
+                $(this).parent().find('p').hide();
+            }
+        };
+
+        function checkUsername() {
+            if (this.value.length > 32 || this.value.length === 0) {
+                $(this).next().text(this.value.length + '/32').addClass('error');
+                $(this).parent().find('p').show();
+            } else {
+                $(this).next().text(this.value.length + '/32').removeClass('error');
+                $(this).parent().find('p').hide();
+            }
+        };
+
+        function timerrunning(obj, sendMsg, sendType, sec) {
+            var sec = sec;
+            obj.attr('disabled', '');
+            (function a() {
+                setTimeout(function () {
+                    sec--;
+                    if (sec !== -1) {
+                        obj.html(sec + '秒');
+                        a();
+                        //向后台请求验证码...
+                        if (sendType = "phone") {
+                            //手机号:sendMsg
+
+                            //为验证码赋值
+                            window.codeCanUse = true;
+                            window.codeValue = 123456;
+                            //验证码失效时间
+                            setTimeout(function () {
+                                window.codeCanUse = false;
+                                window.codeValue = '';
+                            }, 300000);//验证码有效期
+                        } else {
+                            //邮箱:sendMsg
+
+                        }
+
+                    } else {
+                        obj.html('获取验证码').removeAttr('disabled');
+                    }
+                }, 1000);
+            })();
+        };
+    });
+</script>
+</body>
+</html>
