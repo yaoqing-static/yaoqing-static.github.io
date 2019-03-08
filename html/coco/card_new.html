@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>100人以上摇</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+
+<!--浮层-->
+<div class="bgcolor1">
+	<div class="layer"><strong>很遗憾你来晚了<br>
+赠饮券已被领取！</strong></div>
+</div>
+<!--topLogo-->
+<div class="hsLogo"><img src="images/coco/topcard.jpg"></div>
+
+<div class="card">
+	<dd>
+    	<div class="img"><img src="images/coco/img.png"></div>
+        <div class="con"><p>【可口可乐】赠饮券<br>
+          一张（9安士（266ml）/杯）<br>
+        </p>
+      <a href="#" id="Give"><img src="images/coco/but2.png"></a><br><span>有效期：领取后10天内有效</span></div>
+    </dd>
+</div>
+
+<div class="cardfoot">
+	<div class="cardfootF">
+	<img src="images/coco/card1.png">
+    </div>
+</div>
+
+<script>
+$(function(){
+	$("#Give").click(function(){
+		$(".bgcolor1").show();
+		})
+	$(".bgcolor1").click(function(){
+		$(".bgcolor1").hide();
+		})
+	})
+</script>
+</body>
+</html>

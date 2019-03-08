@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>100人以上摇</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+
+<!--topLogo-->
+<div class="hsLogo"><img src="images/coco/top.jpg"></div>
+<!--Time-->
+<div class="time">本轮活动结束倒计时<br>
+  <strong id="times"></strong></div>
+<div class="number"><a>已有00006位</a></div>
+<div class="text1 yhj">你是第<strong>86</strong>位！<br>
+  <strong>恭喜你获得可口可乐赠饮券一张！</strong><br>
+  即9安士（266ml）/杯</div>
+
+
+<div class="but">
+	<a href="NotSatrt.html">自己领取</a><br><a href="hdgz_new.html">赠送好友</a><br><a href="card_new.html">卡卷</a>
+</div>
+
+
+<div class="Prompt two">&nbsp;&nbsp;提示：<br>
+  ●前100位可以领取礼品，每周每位用户只能参与一次。<br>
+  ●兑换赠饮后可继续扫杯底码参与后续精彩活动<br>
+</div>
+<script>
+	//计时器
+    var endtime = new Date("2015/09/24,14:30:12");
+    var startDate = new Date("2015/09/22,11:29:11");
+    var tempS = 0;
+    function fresh() {
+        var leftsecond = parseInt((endtime.getTime() - startDate.getTime()) / 1000 - tempS),
+                d = parseInt(leftsecond / 3600 / 24),
+                h = parseInt((leftsecond / 3600) % 24),
+                m = parseInt((leftsecond / 60) % 60),
+                s = parseInt(leftsecond % 60);
+	    if(h<10) h="0"+h;if(m<10) m="0"+m;if(s<10) s="0"+s;
+        $("#times").html(h + ":" + m + ":" + s);
+        if (leftsecond <= 0) {
+            $("#times").html("活动已结束");
+            clearInterval(sh);
+        }
+        tempS++;
+    }
+    fresh();
+    var sh = setInterval(fresh, 1000);
+
+</script>
+
+
+</body>
+</html>

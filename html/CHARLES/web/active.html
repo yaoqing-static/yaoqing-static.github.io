@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+<div class="bodyN">
+<div class="loading">
+	<div class="swip">
+   		 <img class="one1" src="images/loading.png"> <img class="one2" src="images/loading2.png"> 
+    </div>
+</div>
+
+<article class="opacity1_1">
+<div class=""><!--addbg-->
+</div>
+</article>
+
+
+<div class="ac1">
+	<div class="relative2">
+    	<div class="text">
+        	<dd class="L"><strong>15</strong></dd><dd class="R"><span>点亮<br><strong>2016</strong></span></dd>
+        </div>
+    	<img class="a1" src="images/p4_1.png"><img class="a2" src="images/p4_2.png">
+        <a class="active"><img src="images/p4_3.png"></a>
+        <div class="min"><img class="a3" src="images/new2.png"></div>
+    </div>
+</div>
+
+
+<!--music-->
+<audio id="media1" preload=""  src="images/continuous.mp3" controls style="display:none">您的浏览器不支持</audio>
+<audio id="media2" preload=""  src="images/Prompt.wav" controls style="display:none">您的浏览器不支持</audio>
+
+</div>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script>
+$('body').on('touchmove', function (event) {
+    event.preventDefault();
+});
+window.onload=function(){
+	$(".loading").hide();//
+	var time=15;
+	var clickCount=0;
+    var hasReduce = false;
+	var frequency=0;//点击频率
+	var opacity=0;
+	function reduce(){
+		hasReduce = true;
+		isckick=false
+		time--;
+		if(time<10)
+		  time="0"+time;
+		$(".text .L strong").html(time);
+		
+		if(time=="00"){
+		  window.location.href="Result1.html";
+		  $("#media1").get(0).pause();
+		  //alert(clickCount)后台ajax传值
+		  //hasReduce = false;
+		  return false
+		}		
+		setTimeout(reduce,1000);		
+     }
+    
+	var ldjj;
+	//减少亮度
+    function reduceOpacity(){
+	  $("#media1").get(0).pause();
+	  opacity=opacity-ldjj;	
+	  $(".ac1 .relative2 .a2").css("opacity",opacity);
+    }
+	var timeout;
+	$(".active").off().on("touchstart",function(e){
+		$(".ac1 .relative2 .min").hide();
+		if(!hasReduce){
+		  reduce();
+		}
+		if(time>0){
+			var mins=15-time;
+			frequency=clickCount/mins;
+			opacity=clickCount/70;
+			ldjj=opacity/mins;
+			//console.log(clickCount/mins) <!--记录频率-->
+			$(".ac1 .relative2 .a2").show().css("opacity",opacity);
+		    if(timeout){
+		  	  clearInterval(timeout);
+		    }
+            timeout=setInterval(reduceOpacity,1000);
+			
+			clickCount++;
+			$(".text .R span").html(clickCount);
+			$("#media1").get(0).play();
+			if(clickCount%10==0){
+				$("#media2").get(0).play();
+			}			
+		}		
+  })		
+}
+</script>
+</body>
+</html>

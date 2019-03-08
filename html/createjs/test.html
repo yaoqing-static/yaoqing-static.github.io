@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" style="background-color: transparent;">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="lib/preloadjs.min.js"></script>
+
+
+</head>
+<body>
+
+<script>
+    //定义相关JSON格式文件列表
+    var manifest = [{
+        src:  "http://chuanboweb.com/image/web/aa1.jpg",
+        id:"logo"
+    },
+        {
+            src:  "http://chuanboweb.com/image/web/aa1.jpg",
+            id:"image"
+        },
+        {
+            src:"http://chuanboweb.com/html/mm.mp4",
+            id:"mp4"
+        }
+    ];
+
+
+    function preloadModel(data,callback) {
+        var queue = new createjs.LoadQueue(true);
+        queue.installPlugin(createjs.Sound);
+        queue.on("fileload", handleFileLoad);
+        queue.on("progress", handleFileProgress);
+        queue.on("complete", loadComplete);
+        queue.on("error", loadError);
+        queue.loadManifest(manifest);
+    }
+
+    var queue = new createjs.LoadQueue(true);
+    queue.installPlugin(createjs.Sound);
+    queue.on("fileload", handleFileLoad);
+    queue.on("progress", handleFileProgress);
+    queue.on("complete", loadComplete);
+    queue.on("error", loadError);
+    queue.loadManifest(manifest);
+
+
+
+    //处理单个文件加载
+    function handleFileLoad(event) {
+        console.log("文件类型: " + event.item.type);
+        if(event.item.id == "logo"){
+            console.log("logo图片已成功加载");
+        }
+    }
+
+    //处理加载错误：大家可以修改成错误的文件地址，可在控制台看到此方法调用
+    function loadError(evt) {
+        console.log("加载出错！",evt.text);
+    }
+
+    //已加载完毕进度
+    function handleFileProgress(event) {
+        var text = "已加载 " + (queue.progress*100|0) + " %";
+        console.log(text)
+    }
+
+    //全度资源加载完毕
+    function loadComplete(event) {
+        console.log("已加载完毕全部资源");
+        var image = queue.getResult("image").src;
+        console.log(queue.getResult("image"))
+        $("body").append(image)
+        $("body").append(queue.getResult("mp4"))
+
+    }
+
+</script>
+
+</body>
+</html>

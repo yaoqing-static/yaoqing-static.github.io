@@ -1,0 +1,281 @@
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td{ -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; -webkit-tap-highlight-color:rgba(0,0,0,0); font-size: 1em; font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti; color: #4c4948; }
+html,body{ height:100%; position: relative;}
+input[type=button], input[type=submit], input[type=file], input[type=text], input[type=tel], button,textarea { margin: 0; padding: 0; resize:none; border:none; outline:none;cursor: pointer; -webkit-appearance: none; -webkit-appearance:none; /*去除input默认样式*/-webkit-border-radius:0px ;} 
+img,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;-webkit-appearance:none; /*去除input默认样式*/-webkit-border-radius:0px ;} 
+ol,ul { list-style:none; } 
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus{ outline:none; }
+
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+a{ text-decoration:none}
+
+/*phone*/
+body,html{
+	/*background-color: -moz-linear-gradient(top, #eee, #aaa); 
+	background-color: -webkit-gradient(linear, 0 0, 0 100%, from(#eee), to(#aaa));*/
+	background-color:#122434; overflow-y:auto; overflow-x:hidden; height:100%
+
+}
+.bodyN{width: 640px;
+	margin: auto; position:relative; min-height:100%}
+article{
+	width: 640px;
+	margin: auto;
+	position: absolute;
+	height: 100%;
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center top; background-size:100% auto; z-index:-1px; position:fixed
+}
+.addbg{
+	width: 640px;
+	margin: auto;
+	position:relative;
+	height: 100%;
+	background-image: url(../images/bg2.jpg);
+	background-repeat: no-repeat;
+	background-position: center top; background-size:100% auto;
+	}
+.relative1{ position:relative}
+.dp3 .relative1 a{ position:absolute; color:#FFF; z-index:11; width:106px; right:50px; text-align:right; top:-30px; font-size:1.1em}
+
+
+.dp1{ width:70%; position:absolute; z-index:2; top:-40px; left:-30px}
+.dp2{ width:70%; position:absolute; z-index:2; top:-40px; right:-10px}
+.dp3{ width:14%; position:absolute; z-index:2; top:-40px; right:0px}
+.wztop{width:100%; position:absolute; z-index:77; text-align:center; padding:15px 0 0 0}
+.wztop img{ width:66%}
+.bottom{ position:absolute; width:100%; text-align:center; bottom:40px}
+.bottom a{ font-size:1.2em; color:#FFF; font-weight:bold}
+.dp1.op2,.dp2.op2,.dp2.op3{opacity:0;}
+.loading{ background-color:#FFF; position:absolute; width:100%; height:100%; z-index:1111;}
+.loading .swip{ width:55%; margin:auto; position:relative; margin-top:50%}
+.loading .swip img{width:100%; position:absolute; z-index:1;}
+.loading .swip .one1{ -webkit-animation:opacity1_0_1 2s 0s ease both infinite;
+-moz-animation:opacity1_0_1 3s .2s ease both infinite;}
+.loading .swip .one2{opacity:0;-webkit-animation:opacity0_1_0 2s 0s ease both infinite;
+-moz-animation:opacity0_1_0 3s .2s ease both infinite;}
+.content{ position:relative; z-index:222; height:100%;}
+.content .gz1{ background-color:rgba(254,254,254,0.5); margin:0 20px; margin-top:20px; padding:15px; color:#FFF; font-size:13px; padding-bottom:40px; line-height:21px; height:55%; overflow-y:auto}
+.content .gz1 p{ color:#FFF; font-size:20px; text-align:center; margin-bottom:20px;line-height:26px}
+.content .gz1 strong{ color:#81191E}
+.content .d1{ text-align:center; color:#FFF; font-size:14px; padding:30px 0 10px 0}
+.content .d1 input{ vertical-align:middle; margin:0 5px 0 0; background-color:#FFF; border-radius:0px; color:#FFF}
+.content .but{ text-align:center; padding:20px 0 0 0}
+.content .but img{ width:20px; vertical-align:middle; margin:0 10px 0 0}
+
+.ac1{width:70%; position:absolute; z-index:2; top:-20px; left:50%; transform:translateX(-51%);-moz-transform:translateX(-51%); -ms-transform:translateX(-51%); -o-transform:translateX(-51%); -webkit-transform:translateX(-51%)}
+.relative2{ position:relative}
+.ac1 .relative2 .a2{ display:none}
+.ac1 .relative2 .active{ text-align:center; display:block; position:relative; top:-40px; z-index:3333 }
+.ac1 .relative2 .text{ position:absolute; z-index:111;color:#FFF; top:12.5%; font-size:21px; text-align:center; width:100%}
+.ac1 .relative2 .text,.ac1 .relative2 .text span{ color:#FFF}
+.ac1 .relative2 .text span{ display:inline-block}
+.ac1 .relative2 .text dd{ color:#FFF; float:left; width:50%; text-align:right}
+.ac1 .relative2 .text .R{text-align:left; font-size:0.9em; line-height:20px}
+.ac1 .relative2 .text .R span{ display:inline-block; padding-left:17px}
+.ac1 .relative2 .text .L strong{ font-size:2.2em; font-weight:normal; line-height:39px}
+.ac1 .relative2 .text .R span strong{font-weight:normal;font-size:0.88em}
+.ac1 .relative2 .a2{ position:absolute; z-index:11; top:0px; left:0px; opacity:0}
+.ac1 .relative2 .re1{ position:absolute; z-index:11;width:100%; text-align:center }
+.ac1 .relative2 .re1 img{width:70%}
+.ac1.wi100 .relative2 .hh{ height:68px}
+.ac1 .relative2 .reCon{background-color:rgba(254,254,254,0.21);  padding:53% 20px 20px 20px; text-align:center; color:#FFF; font-size:1em; font-weight:bold; letter-spacing:2px;}
+.ac1.wi100{ width:100%}
+.ac1.wi100 .relative2{ margin:0 20px;}
+.ac1.wi100 .relative2 .reCon p{ width:75%; margin:auto}
+.ac1.wi100 .relative2 .reCon a{ display:inline-block; border:1px solid #FFF; padding:0 20px; line-height:40px; font-size:1.1em; margin-top:10px; color:#FFF}
+.content .but a{ color:#FFF; font-size:1.1em; vertical-align:middle; display:inline-block;border:1px solid #FFF;padding:0 20px 0 15px;line-height:40px; font-weight:bold }
+.ac1.wi100 .relative2 .again{ text-align:center; color:#FFF; font-weight:bold; font-size:1em; padding:20px 0 20px 0}
+.ac1.wi100 .relative2 .again a{ color:#FFF}
+.share{ background-color:rgba(254,254,254,0.94); position:absolute; width:100%; height:100%; z-index:1111; text-align:center}
+.share img{ width:60%; position:relative; margin-top:20%;
+-webkit-animation:translate1_1 3s  ease both infinite;
+-moz-animation:translate1_1 3s  ease both infinite;
+
+ }
+.ac1.two{ width:100%; top:-40px}
+.ac1.two .relative2{ width:65%; margin:auto}
+.ac1.two .relative2 .a2{ display:block; opacity:1}
+.ac1.two .relative2 .cont{ color:#FFF; text-align:center}
+.ac1.two .relative2 .cont{ position:absolute; width:100%; text-align:center; bottom:20px; height:38%}
+.butaNew{ color:#FFF; margin:0 20px}
+.ac1.two .butaNew dd{ width:60%; display:inline-block}
+.ac1.two .butaNew dd a{ font-weight:bold; color:#FFF; font-size:1em;border:1px solid #FFF; line-height:21px; width:180px; text-align:center; display:inline-block; margin-bottom:20px; padding:10px 0}
+.ac1.two .butaNew dd .fontsize14{ font-size:13px}
+.ac1.two .butaNew .rr{ width:38%}
+.ac1.two .butaNew .rr a{ line-height:21px; width:120px}
+.ac1.two .butaNew .rr{ text-align:right}
+.ac1.two .butaNew .new{ text-align:center; width:100%}
+.ac1.two .butaNew .new a{ width:200px}
+.ac1.two .relative2 .cont span{ font-size:1.1em; display:inline-block; padding:10px 0}
+.ac1.two .butaNew .new{ color:#FFF}
+.ac1.two .relative2 .cont.wx img{ width:47%}
+.ac1.two .relative2 .cont.wx{ height:40%}
+.ac1 .relative2 .min{ position:relative}
+.ac1 .relative2 .min .a3{ position:absolute; width:40%; top:-180px; right:-40px;-webkit-animation:flipInY 2s .2s ease both infinite;
+-moz-animation:flipInY 2s .2s ease both infinite;}
+.ac1 .relative2 .text .R .count{ text-align:center; font-size:0.9em; padding-left:10px}
+/*---滚动条默认显示样式--*/  
+.content .gz1::-webkit-scrollbar-thumb{  
+   background-color:#FFF;  
+   height:50px;  
+ 
+   -webkit-border-radius:14px;  
+
+} 
+/*---鼠标点击滚动条显示样式--*/  
+.content .gz1::-webkit-scrollbar-thumb:hover{  
+   height:50px;
+   cursor:pointer;
+   -webkit-border-radius:4px;  
+}  
+/*---滚动条大小--*/  
+.content .gz1::-webkit-scrollbar{  
+   width:3px;  
+   height:3px; 
+}  
+/*---滚动框背景样式--*/  
+.content .gz1::-webkit-scrollbar-track-piece{  
+   background-color:transparent;  
+   -webkit-border-radius:0;  
+
+} 
+
+
+
+/*动画*/
+.dp1.op1{animation: opacity1_0 2s 0s ease both;-webkit-animation: opacity1_0 2s 0s ease both;}
+.dp1.op2{animation: opacity0_1 2s 0s ease both;-webkit-animation: opacity0_1 2s 0s ease both;}
+
+.dp2.op1{animation: opacity1_0 2s 1s ease both;-webkit-animation: opacity1_0 2s 1s ease both;}
+.dp2.op2{animation: opacity0_1 2s 1s ease both;-webkit-animation: opacity0_1 2s 1s ease both;}
+.dp2.op3{animation: opacity0_1 2s 1s ease both;-webkit-animation: opacity0_1 2s 1s ease both;}
+
+.opacity1_1{animation: opacity1_1 3s ease both infinite;-webkit-animation: opacity1_1 3s ease both infinite;}
+
+
+
+@-webkit-keyframes translate1_1 {
+      0% {-webkit-transform:translate(0px,0px)}
+	  50%{-webkit-transform:translate(60px,-60px)}	
+	  100%{-webkit-transform:translate(0px,0px)}
+    }
+@-moz-keyframes translate1_1 {
+      0% {-webkit-transform:translate(0px,0px)}
+	  50%{-webkit-transform:translate(60px,-60px)}	
+	  100%{-webkit-transform:translate(0px,0px)}
+    }	
+@-webkit-keyframes opacity1_1 {
+      0% {opacity:1;}
+      50% {opacity:0.5;}
+	  100%{opacity:1;}
+    }
+@-webkit-keyframes opacity0_1 {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+@-webkit-keyframes opacity1_0 {
+      0% {opacity:1;}
+      100% {opacity:0;}
+    }
+
+@-webkit-keyframes opacity1_0_1 {
+      0% {opacity:1;}
+      50% {opacity:0;}
+	  100%{opacity:1;}
+    }
+@-webkit-keyframes opacity0_1_0 {
+      0% {opacity:0;}
+      50% {opacity:1;}
+	  100%{opacity:0;}
+    }
+
+
+
+@-webkit-keyframes flipInY{
+0%,50%,100%{ -webkit-transform-origin:bottom center}	
+0%{-webkit-transform:perspective(400px) rotate(0deg);}
+50%{-webkit-transform:perspective(400px) rotate(10deg);}
+100%{-webkit-transform:perspective(400px) rotate(0deg);}
+
+}
+@-moz-keyframes flipInY{
+0%,50%,100%{ -webkit-transform-origin:bottom center}	
+0%{-webkit-transform:perspective(400px) rotate(0deg);}
+50%{-webkit-transform:perspective(400px) rotate(10deg);}
+100%{-webkit-transform:perspective(400px) rotate(0deg);}
+}
+
+.swing{
+-webkit-animation:swing 3s .2s ease both infinite;
+-moz-animation:swing 3s .2s ease both infinite;}
+@-webkit-keyframes swing{
+20%,40%,60%,80%,100%{-webkit-transform-origin:top right}
+20%{-webkit-transform:rotate(1deg)}
+40%{-webkit-transform:rotate(-1deg)}
+60%{-webkit-transform:rotate(1deg)}
+80%{-webkit-transform:rotate(-1deg)}
+100%{-webkit-transform:rotate(0deg)}
+}
+@-moz-keyframes swing{
+20%,40%,60%,80%,100%{-moz-transform-origin:top right}
+20%{-webkit-transform:rotate(1deg)}
+40%{-webkit-transform:rotate(-1deg)}
+60%{-webkit-transform:rotate(1deg)}
+80%{-webkit-transform:rotate(-1deg)}
+100%{-webkit-transform:rotate(0deg)}
+}
+
+.swing2{
+-webkit-animation:wobble 4s .2s ease both;
+-moz-animation:wobble 4s .2s ease both;}
+@-webkit-keyframes wobble{
+0%{-webkit-transform:translateX(0%)}
+15%{-webkit-transform:translateX(-15%) rotate(-5deg)}
+30%{-webkit-transform:translateX(10%) rotate(3deg)}
+45%{-webkit-transform:translateX(-5%) rotate(-3deg)}
+60%{-webkit-transform:translateX(10%) rotate(2deg)}
+75%{-webkit-transform:translateX(-5%) rotate(-1deg)}
+100%{-webkit-transform:translateX(0%)}
+}
+@-moz-keyframes wobble{
+0%{-moz-transform:translateX(0%)}
+15%{-moz-transform:translateX(-25%) rotate(-5deg)}
+30%{-moz-transform:translateX(20%) rotate(3deg)}
+45%{-moz-transform:translateX(-15%) rotate(-3deg)}
+60%{-moz-transform:translateX(10%) rotate(2deg)}
+75%{-moz-transform:translateX(-5%) rotate(-1deg)}
+100%{-moz-transform:translateX(0%)}
+}
+
+/*动画结束*/
+
+
+
+@media screen and (max-width : 640px) {	
+	article,.bodyN{ width:100%}
+	.addbg{ width:100%}
+	img{ width:100%}
+	.ac1 .relative2 .active img{width:60%}
+}
+
+@media screen and (max-height : 600px) {	}
+	
+
+@media screen and (max-width : 320px) {	
+.content .gz1{ height:50%}
+.ac1.wi100 .relative2 .hh{ height:58px}
+.ac1 .relative2 .reCon{ font-size:0.8em; letter-spacing:1px}
+.ac1.two .relative2 .cont{font-size:0.9em; }
+.ac1.two .butaNew dd a{ font-size:14px; width:140px}
+.ac1.two .butaNew dd .fontsize14{ font-size:12px}
+.ac1.two .butaNew .rr a{ line-height:21px; width:100px}
+.ac1 .relative2 .min .a3{ top:-160px}
+	
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+<div class="bodyN">
+<div class="loading">
+	<div class="swip">
+   		 <img class="one1" src="images/loading.png"> <img class="one2" src="images/loading2.png"> 
+    </div>
+</div>
+
+<article class="opacity1_1">
+</article> 
+
+<div class="content">
+	<div class="gz1">
+    	<p>点亮2016<br>游戏规则和条例</p>
+        在“15秒”内连续点击屏幕下方的发电机,<br />
+点亮你的2016小灯泡。<br />
+点击速度越快，传输的能量值越高，灯泡就越亮。<br /><br />
+“15秒”后，发电机不再运作，游戏结束。同时，<br />
+你能获取本次点击的魅力能量值。并，<br />
+获取一个CHARLES &amp; KEITH给你的<strong>专属红包</strong>。<br />
+另外，还能获得等额与魅力能量值20%的<strong>分享红包</strong>。<br />
+可以分享给你的小伙伴。<br /><br />
+所有红包均为代金券形式。<br />
+领取后存入你的微信卡券中。你可以打开微信卡券查看。<br />
+代金券有一定有效期，过期将无法使用（至卡券查看详情）<br />
+代金券仅限CHARLES &amp; KEITH官方APP及官网使用。<br />
+线下门店、天猫旗舰店、京东旗舰店无法使用该券。
+    </div>
+    
+  <div class="d1"><input checked type="checkbox"  name="check" id="check" /><label for="check">我同意，我已认真阅读以上条款，了解规则</label></div>
+    <div class="but"><a><img src="images/but1.png">开始游戏</a></div>
+
+</div>
+
+
+
+</div>
+
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script>
+window.onload=function(){
+	$(".loading").hide();//
+		$(".content .but a").on("touchstart",function(e){
+			if($(".content .d1 #check").is(":checked")){
+				window.location.href="active.html";
+			}
+			})
+
+	
+	
+	}
+</script>
+
+</body>
+</html>

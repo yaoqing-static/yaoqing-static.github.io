@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>100人以上摇</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+<!--oLogo-->
+<p class="oLogo"><img src="images/logo.png"></p>
+<!--oRuleBtn-->
+<p class="oRuleBtn"><img src="images/logo2.png"><a href="为出行加油－活动规则.html">活动规则</a></p>
+ 
+<!--oSucess_01-->
+<div class="oSucess_01">
+	<h2 class="oTit_a">加油站遍历店查询</h2>
+	<div class="oSucessShop">
+    	<ul>
+        	<li><a><strong>+</strong>中国石化油</a>
+            	<div class="list"><span>--北京</span>
+                <span>--上海</span>
+                <span>--广州</span>
+                <span>--成都</span>
+                <span>--深圳</span>
+                <span>--大连</span>
+                <span>--青岛</span></div>
+            </li>
+            <li><a><strong>+</strong>壳牌</a><div class="list"><span>--北京</span></div></li>
+            <li><a><strong>-</strong>中石油</a></li>
+            <li><a><strong>+</strong>BP</a></li>
+            <li><a><strong>+</strong>道尔夫</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+//菜单展开脚本
+    $(function () {
+		
+        $(".oSucessShop ul li a").click(function () {
+            if ($(this).next(".list").children("span").length > 0) {
+                if ($(this).next(".list").css("display") == "block") {
+                    $(".oSucessShop ul li .list").hide();
+                    $(this).children("strong").html("+");
+                }
+                else {
+                    $(".oSucessShop ul li .list").hide();
+                    $(this).next(".list").show();
+                    $(".oSucessShop ul li").find(".list").siblings("a").children("strong").html("+");
+                    $(this).children("strong").html("-");
+                }
+            }
+        })
+		
+    })
+
+</script>
+
+</body>
+</html>
