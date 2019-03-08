@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>可口可乐欧尚CNY活动</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+<article>
+<!--oLogo-->
+<img class="oLogo" src="images/logo.png"><img class="oLogo2" src="images/dl.png">
+<a href="规则.html" class="gzbut"><img src="images/gz1.png"></a>
+<div class="content">
+  <!--photoDetails-->
+<div class="photoDetails">
+  <p class="oPhoto"><span>
+请拍摄活动期间内的收银条，确保图片完整，包含购物日期、单号、可口可乐系列产品！<br><br>
+温馨提醒：<br>
+如遇网络不通畅，请耐心等待；您也可以在有 Wi-Fi 的环境下上传收银条照片；大小控制在2兆以内。
+</span></p>
+  <p class="oBtn_c"><span onClick="oFile.click()">上 传</span>
+    <input name="" type="file" id="oFile" style="display:none;">
+  </p>
+  <p class="oInput_c">您已输入过此收银条号码，请勿重复输入。<br>
+    <input type="text" placeholder="请输入单号后6位" class="oText">
+  </p>
+  <p class="oInput_c">
+    <input type="text" placeholder="请输入手机号" class="oText">
+  </p>
+<div class="para_0a oAddress new">
+    <div class="oSelect_01">
+      <p class="oSelect">
+        <select name="">
+          <option>省</option>
+        </select>
+        <em></em> </p>
+      <p class="oSelect r">
+        <select name="">
+          <option>市</option>
+        </select>
+        <em></em> </p>
+        <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+<p class="oBtn_01 top30 new"><a href="第1-4次成功上传.html" class="oClick_02">确 定</a></p>
+
+
+<!--弹框1-->
+<div class="popup" id="popup1"><b class="close">X</b>
+	<div class="table">
+    	
+    </div>
+</div>
+
+
+<script>
+$(function(){
+	$(".popup .close").click(function(){
+		$(".popup").hide();
+		})
+	$(".oClick_02").click(function(){
+		var errorHtml1=$("<p>谢谢您对本活动的支持！<br />本周的参与次数已用完。</p>");
+		var errorHtml2=$("<p>谢谢您对本活动的支持！<br />您上传的内容格式不对,<br />请选择正确图片上传。</p>");
+		var errorHtml3=$("<p>谢谢您对本活动的支持！<br />您上传的内容大小超过了2兆。<br/>请上传2兆以内小票照片 。</p>");
+		var errorHtml4=$("<p>谢谢您对本活动的支持！<br />由于未知原因，图片上传失败，<br />请稍后再试。</p>");
+		$(".content .table").html(errorHtml1);
+		$("#popup1").show();
+		})
+	
+	})
+</script> 
+
+</div>
+
+</article>
+</body>
+</html>

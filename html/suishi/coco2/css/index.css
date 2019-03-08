@@ -1,0 +1,184 @@
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td{ -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; -webkit-tap-highlight-color:rgba(0,0,0,0); font-size: 1em; font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti; color: #4c4948; }
+html,body{ height:100%; position:relative}
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;} 
+ol,ul { list-style:none; } 
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus{ outline:none; }
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+a{ color: #4c4948; text-decoration: none; }
+
+/*phone*/
+body{
+	
+}
+article{ position:relative;min-height:100%; width:640px; margin:auto;background-color: #e0051c;
+	text-align: justify;
+	text-justify: inter-ideograph;
+	background-image: url(../images/bg1.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0px; background-size:100% 100%}
+.oLogo{ width:33%;position:absolute; top:0px; right:13%; z-index:999}
+.oLogo2{ width:23%;position:absolute; top:5%; left:0px;z-index:777}
+.gzbut{display:inline-block; position:absolute; top:28px; left:15%;z-index:999}
+.bg3Stars{ width:75%;position:absolute; top:75px; left:20%;z-index:777}
+.gzbut img{ width:75%}
+img{ width:80%}
+.content{ position:relative; height:100%; z-index:888}
+.content .year1{  margin:auto;  padding:0 0 0 70px;padding-top:100px;}
+.content .but{ text-align:center; padding:20px 0 0 0}
+.content .but img{ width:70%; margin:10px 0 0 0}
+.content .con1{ margin:0 30px; color:#FFF; font-size:1em; padding-top:20px}
+.content .con1 a img{ width:16px; vertical-align:middle; margin:0 0 0 10px}
+.content .con1 a{
+	color: #fad75c;
+	text-decoration: underline blink
+}
+.content .year1.op0{ opacity:0}
+.content .con1.mgtop1{ padding-top:52%}
+.content .con1.mgtop1 strong{ color:#fbdb6b}
+.content .con1.mgtop1 .end{ text-align:center; padding-top:20%; color:#FFF; font-size:1.4em}
+
+
+/*photoDetails*/
+.photoDetails{padding-top:28%;}
+.photoDetails .oPhoto{ color:#838383; font-size:0.7em; background:#fff; width:180px; height:180px; text-align:left; border:2px solid #fbe000; position:relative; left:50%; margin-left:-80px;}
+.oBtn_c{ text-align:center; margin-top:20px; margin-bottom:21px;}
+.oBtn_d{ margin-top:-22px;}
+.oBtn_e{ margin-top:0px;}
+.oBtn_c span{
+	display: inline-block;
+	font-size: 1em;
+	width: 106px;
+	height: 34px;
+	line-height: 34px;
+	background-size: 100% 100%;
+	text-align: center;
+	color: #e0051c;
+	font-weight: bold;
+	background-image: url(../images/but.png);
+	background-repeat: no-repeat;
+	font-weight: bold;
+	box-shadow: 0px 1px 5px  rgba(0,0,0,.2)
+}
+.oBtn_c .oShure{ width:120px; height:38px; line-height:38px;background-size:100% 100%; font-size:1em;}
+.oInput_c{ text-align:center; margin-top:12px;}
+.oInput_c .oText{ width:230px; height:28px; line-height:28px;color:#828282; font-size:0.9em; padding:0 0px; width:100%; margin-top:10px; border:1px solid #8cac99}
+.photoDetails .oPhoto span{ display:inline-block; padding:10px 5px 0 5px}
+.oBtn_01.top30{ margin-top:0px; padding-bottom:20px}
+.cd{ margin:0 0 10px 0}
+.cd img{ width:100%}
+.content .photoDetails .oInput_c{ color:#FFF; font-size:0.8em; text-align:left;width:80%; margin:auto}
+/*oBtn_01*/
+.oBtn_01{ text-align:center; padding-top:50px; padding-bottom:30px} 
+.oBtn_01 .oClick_02{ width:120px; height:36px; line-height:36px; text-align:center; color:#e0051c; font-weight:bold; font-size:1.1em; display:inline-block;background-image: url(../images/but.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px; background-size:100% 100%;box-shadow: 0px 1px 5px  rgba(0,0,0,.2)}
+/*popup*/
+.popup{ background:rgba(0,0,0,0.8); position:fixed; width:90%; left:5%; height:200px; top:50%; margin-top:-100px; border-radius:10px; display:none}
+.popup .table{ height:200px; display:table; text-align:center; width:100%}
+.popup .table p{ color:#fefefe; font-size:16px; vertical-align:middle; display:table-cell; line-height:24px}
+.popup .close{ position:absolute; width:25px; height:25px; border-radius:50%; color:#FFF; right:10px; top:10px; border:2px solid #FFF; text-align:center; font-weight:normal; line-height:25px}
+/*infoWrite*/
+.infoWrite{ padding:20px 50px;padding-top:120px; }
+.infoWrite .oTitle_02{ text-align:center; color:#fbe000; margin-bottom:35px; font-size:1.3em}
+.para_0a{ position:relative; overflow:hidden; margin-bottom:15px;}
+.para_0a label{width:28%; text-align:left; padding-right:10px; color:#fff; font-size:0.9em; position: absolute; left: 0; top: 2px;}
+.para_0a label em{ display:inline-block; width:15px;}
+.para_0a .oText{  height:28px; line-height:28px;padding:0 5px;-webkit-appearance: none;}
+.para_0a .oText_01{width: 100%; color:#818181; font-size:0.8em;height:25px; line-height:25px;margin-left: 80px; border-radius:0px}
+.para_0a .oHide{visibility: hidden;}
+.oAddress{}
+.oAddress .oSelect_01{ margin-left:80px;}
+.oAddress .oSelect{ background:#fff; position:relative; height:25px; width:31%; float:left; margin-right:3%;}
+.oAddress .oSelect:last-child{ margin-right:0;}
+.oAddress .oSelect select{width: 96%; -webkit-appearance: none; color:#646464; margin-left: 2px; margin-top:5px;}
+.oAddress .oSelect em{ display:inline-block; width:9px; height:8px; background:url(../images/down.jpg) no-repeat; background-size:100% 100%; position:absolute; right:5px; top:8px;}
+.new11{ font-size:0.8em; display:inline-block; padding-top:10px; font-weight:normal}
+.hdgz1{ color:#fdfbe0; font-size:14px; padding-bottom:40px}
+.font18{ font-size:18px}
+.font14{ font-size:14px; color:#fff799}
+.paddingL10{ display:inline-block; font-weight:normal; padding-left:0px}
+.content .photoDetails .para_0a.oAddress.new .oSelect_01 .oSelect{ width:47%; margin-right:0px }
+.content .photoDetails .para_0a.oAddress.new .oSelect_01{margin-left:0px; width:80%; margin:auto; margin-top:10px}
+.content .photoDetails .para_0a.oAddress.new .oSelect_01 .oSelect.r{ float:right}
+
+/*Luck*/
+.Luck{margin:0 20%; padding-top:30%; }
+.Luck .oTitle_03{margin-bottom:20px; font-size:1.6em; color:#fbdb6b; text-align:center;}
+.Luck .d1{
+	color: #FFF;
+	line-height: 24px;
+	background-image: url(../images/img2.png);
+	background-repeat: no-repeat;
+	background-position: 0px 8px; padding-left:20px; background-size:10px auto
+}
+.Luck .oTitle_03.fontsmal{ font-size:17px; border-top:1px dashed #FFF; margin-top:15px; padding-top:15px; color:#FFF}
+.Luck .oTitle_03.fontsmal b{ color:#fbe000; font-size:21px}
+.paddingtop0{ padding-top:0px}
+.Luck1 .Luck.paddingtop0{ margin:0 10%;}
+.fcPage1{padding-top:50%;
+    }
+.fcPage1 p{font-weight: bold;
+    font-size: 1.3em;
+    color: #fff;
+    text-align: center; color:#FFF}
+
+
+/*store*/
+.content .Luck .store{  font-size:1.2em; text-align:center; padding-bottom:30px}
+.content .Luck .store a{color:#FFF; text-decoration:underline; display:inline-block; margin-bottom:10px}
+.content .Luck.new{ margin:0px}
+
+/*productList*/
+.productList{ overflow:hidden; border-bottom:1px dashed #FFF; margin:0 30px ; padding:50px 0 0 0}
+.productList dt{ background:#e0051c; width:62px; height:26px; line-height:26px; text-align:center; color:#fff; overflow:hidden; border-radius:5px; font-size:1em; margin:10px 0;}
+.productList dd{ margin-bottom:15px; height: 35px; float:left; margin-right:11px}
+.productList dd .oImg_c{ width:35px; float:left;}
+.productList dd .oImg_c img{ width:100%;}
+.productList dd  span{ font-size:0.8em; color:#FFF; margin-left:2px; line-height:36px}
+.oCnt .productList{ overflow:hidden; border-bottom:1px dashed #a0a0a0;}
+.subname{ text-align:center; color:#FFF; padding:20px 0}
+
+.content .Luck.new .oTitle_03.new2{ padding-top:20%}
+.content .but a{ display:inline-block;width:250px; height:40px; line-height:40px; text-align:center; color:#e0051c; font-weight:bold; font-size:1.1em; display:inline-block;background-image: url(../images/new1.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px; background-size:100% 100%;box-shadow: 0px 1px 5px  rgba(0,0,0,.2); margin-bottom:20px; border-radius:6px}
+.content .oBtn_01.top30.new{ margin-top:0px; padding-top:30px}
+.content .year1 img{ width:90%}
+.content .Luck .store dd{ color:#FFF; font-size:14px; text-align:left; padding-bottom:10px}
+.content .con1.mgtop1.nn p{ color:#FFF; font-size:14px}
+.content .con1.mgtop1.nn ol li{ color:#FFF; font-size:14px}
+.content .con1.mgtop1.nn{ padding-top:22%; position:relative; }
+.content .con1.mgtop1.nn .ivvv{overflow-y:auto; padding:20px; background-color:rgba(255,255,255,0.2); border-radius:10px}
+
+@media screen and (max-width : 640px) {	
+
+article{ width:100%}
+}
+
+@media screen and (max-height : 600px) {	
+
+}
+
+@media screen and (max-width : 320px) {
+	.content .photoDetails .oInput_c{ font-size:0.6em;}
+	.Luck{ font-size:0.8em}
+	.Luck .oTitle_03.fontsmal{ font-size:1.2em}
+	.infoWrite{ padding:20px 30px; padding-top:120px}
+
+
+}
+
+
+@media screen and (max-height : 480px) {
+	.content .but{ padding-top:0px}
+	.content .con1{ font-size:0.8em; padding:0px 0 0 0}
+	.oBtn_01{ padding-top:0px}
+	.infoWrite{ padding-bottom:0px; padding-top:80px}
+	
+
+}

@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Language" content="zh-CN"/>
+	<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+		  name="viewport"/>
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+    <meta name="msapplication-tap-highlight" content="no">
+	<link rel="stylesheet" type="text/css" href="css/siste.css">
+	<title></title>
+
+</head>
+<body style="overflow:hidden">
+<article class="active1">
+	<div class="Elog"><img src="image/logo.png"></div>
+	<div class="galsscon new1">
+		<div class="Etag Mtag"><img src="image/sm-tag.png"></div>
+
+		<div class="tigerNew">
+			<div class="sm-container">
+				<div class="item-container">
+					<div id="slotMachine" class="clearfix machines">
+						<div class="machine"></div>
+						<div class="machine"></div>
+						<div class="machine"></div>
+					</div>
+					<div class="mask"></div>
+				</div>
+				<div id="SMRocker" class="rocker">
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="remarks new"><img src="image/text3.png"></div>
+</article>
+
+</body>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/JicemoonMobileTouch.min.js"></script>
+<script src="js/jquery.slotmachine.js"></script>
+<script>
+	$(function () {
+		$("body").on("touchstart", function (ev) {
+			ev.preventDefault();
+		})
+		$("body").height($(window).height())
+
+		// 奖品信息
+		// src:图片地址
+		// chance:获得此奖品的概率
+		// text: 获得此奖品后的提示文本
+		var imagesArr = [{src:"image/sm-icon0.png",chance:1, text:"M"},
+			{src:"image/sm-icon1.png",chance:1, text:"汉堡"},
+			{src:"image/sm-icon2.png",chance:1, text:"春卷"},
+			{src:"image/sm-icon3.png",chance:1, text:"粥"}];
+		//获奖概率
+		var winningChance = 0;//0是不中奖 1是中奖其中一个
+
+		var chanceArr = [];
+		var machine;
+		init(imagesArr);
+
+		function init(arr) {
+			var lens = arr.length;
+			var $machine = $("#slotMachine .machine");
+			var tempStr = "";
+			tempStr += '<div class="slot" data-index="' + (lens-1) + '" data-text="' + arr[lens-1].text + '" style="background-image:url('+arr[lens-1].src + ');"></div>';
+			for (var i = 0; i < lens; i++) {
+				tempStr += '<div class="slot" data-index="' + i + '" data-text="' + arr[i].text + '" style="background-image:url('+arr[i].src + ');"></div>';
+				if (i == 0) {
+					chanceArr[0] = arr[i].chance;
+				}
+				else {
+					chanceArr[i] = chanceArr[i - 1] + arr[i].chance;
+				}
+			}
+			tempStr += '<div class="slot" data-index="' + 0 + '" data-text="' + arr[0].text + '" style="background-image:url('+arr[0].src + ');"></div>';
+			$machine.html(tempStr);
+			machine = $machine.slotMachines({
+				active: 1,
+				delay: 800
+			});
+
+			var scale = $(window).width() / $(window).height();
+			if (scale < 640 / 1000) {
+				scale = $(window).width() / 640;
+			}
+			else {
+				scale = $(window).height() / 1000;
+			}
+			$(".sm-container").css({
+				"transform": "scale(" + scale + ")",
+				"-moz-transform": "scale(" + scale + ")",
+				"-webkit-transform": "scale(" + scale + ")",
+				"-ms-transform": "scale(" + scale + ")"
+			});
+		}
+		//老虎机动画结束
+		function onComplete(active) {
+			var win = true;
+			for(var i = 1; i < active.length; i++){
+				if(active[i].index != active[i-1].index){
+					win = false;
+				}
+			}
+			if(win){
+				var index = $(active[0].el).attr("data-index");
+				console.log("恭喜您获得 " + $(active[0].el).attr("data-text") + " 一个");
+				//获得奖品
+				//alert("恭喜您获得 " + $(active.el).attr("data-text") + " 一个");
+			}
+			else{
+				//没有获得奖品
+				console.log("很遗憾， 您没有获得到奖品");
+			}
+		};
+		function getRandomResult(){
+			var lens = chanceArr.length;
+			var msize = machine.size();
+			var rtn = [];
+			if(Math.random() < winningChance){
+				//中奖
+				var rnd = Math.random() * chanceArr[lens - 1];
+				for(var i = 0; i < lens; i++){
+					if(rnd < chanceArr[i]){
+						for(var j = 0; j < msize; j++){
+							rtn[j] = i + 1;
+						}
+						return rtn;
+					}
+				}
+			}
+			else{
+				//不中奖
+				var type = false;
+				for(var j = 0; j < msize; j++){
+					rtn[j] = 1+Math.floor(Math.random()*lens);
+					if(j>0&&rtn[j] != rtn[j-1]){
+						type = true;
+					}
+				}
+				if(!type){
+					rtn[0] = (rtn[0] % lens)+1;
+				}
+				return rtn;
+			}
+
+			return rtn;
+		}
+		var mytimeout, end;
+		$("#SMRocker").addTouchEvent("tap touchEnd", function (evt) {
+			if(!machine || machine.isRunning()){
+				return;
+			}
+			var count = 1;
+			end = getRandomResult(); //Math.floor(Math.random() * 4);
+			if(end.length == machine.size()){
+				$("div", evt.target).addClass("animate");//.animate({top:"50%"},)
+				if(mytimeout > -1){
+					clearTimeout(mytimeout);
+				}
+				mytimeout = setTimeout(function (){
+					if($("div", evt.target).hasClass("animate")){
+						$("div", evt.target).removeClass("animate")
+					}
+					mytimeout = -1;
+				}, 1000);
+				machine.shuffle(end, onComplete, count);
+			}
+
+		});
+	})
+</script>
+</html>

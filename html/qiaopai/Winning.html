@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>壳牌</title>
+    <link rel="stylesheet" href="Public/css/public.css"/>
+    <link rel="stylesheet" href="Public/css/style.css"/>
+    <script src="Public/js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+<div id="container" class="container">
+  <div class="page page-1">
+        <div class="list-wrap">
+            <div class="top-text">
+                <img class="logo" src="Public/images/logo.png"/>
+                <img class="index-img" src="Public/images/index_img.png" width="100%"/>
+            </div>
+            
+        </div>
+    
+    <div class="Line winning"><h1 class="winning1">恭喜您获得免费洗车券一张</h1>
+    	<div class="ticket">
+        	<div class="lin"><h1>发动机厂清洗</h1><span>使用时间:2015X月X日-<br>2015X月X日</span></div>
+        </div>
+		
+        <div class="FLayer" id="share"> 拼手气的时候到啦，<br />
+赶快告知小伙伴！
+		</div> 
+    </div>
+    
+    <div class="newsbname">
+    <a href="http://yz.app.socialjia.com/shell/www/web.php?callbackUrl=http%253A%252F%252Fyz.app.socialjia.com%252Fshell%252Fwww%252Fweb.php%253Fa%253DStore%2526m%253Dindex&a=Index&m=city">以上优惠券适用门店查询>></a><br>
+您也可以请在壳牌020微信账号【购买服务】【门店查询】菜单内查询。
+    </div>
+    
+    
+    
+    <div class="yqhy"><a href="javascript:void(0)"><img src="Public/images/but2.png"></a>　<a id="shareclick" href="javascript:void(0)"><img src="Public/images/close.png"></a></div>    
+        
+        
+  </div>
+</div>
+
+
+<script>
+$(function(){
+	var windowH=$(window).height();
+	$(".page").css("min-height",windowH);
+	var lotteryw=$(".lottery").width();
+	$(".lottery").height(lotteryw);
+	
+	$("#shareclick").click(function(){
+		$("#share").show()
+		})
+	$(".FLayer").click(function(){
+		$("#share").hide()
+		})
+	
+	})
+
+</script>
+
+
+</body>
+</html>

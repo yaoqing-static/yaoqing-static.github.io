@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>壳牌</title>
+    <link rel="stylesheet" href="Public/css/public.css"/>
+    <link rel="stylesheet" href="Public/css/style.css"/>
+    <script src="Public/js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+<div id="container" class="container">
+  <div class="page page-1">
+        <div class="list-wrap">
+            <div class="top-text">
+                <img class="logo" src="Public/images/logo.png"/>
+                <img class="index-img" src="Public/images/index_img.png" width="100%"/>
+            </div>
+        </div>
+    
+    <div class="Line">
+    	<div class="ticket">
+        	<div class="lin"><h1>洗车券</h1><span>使用时间:2015X月X日-2015X月X日</span></div>
+        </div>
+    	
+        <div class="FLayer">确定使用吗？<br>
+（请在门店人员指导下使用）<br>
+			<a href="#" class="dq">确 定</a><a id="close" href="#">取 消</a>
+		</div>
+        
+    </div>
+    
+    <div class="yqhy"><a id="buttom" href="javascript:void(0)"><img src="Public/images/but2.png"></a></div>    
+        
+        
+  </div>
+</div>
+
+
+<script>
+$(function(){
+	var windowH=$(window).height();
+	$(".page").height(windowH);
+	var lotteryw=$(".lottery").width();
+	$(".lottery").height(lotteryw);
+	
+	$("#buttom").click(function(){
+		$(".FLayer").show();
+		})
+	$("#close,.FLayer .dq").click(function(){
+		$(".FLayer").hide();
+		})
+
+
+	
+	})
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+<article>
+<div class="top-img"><img src="image/750x750-a@2x.png" width="100%"/></div>
+<div class="text1"></div>
+<div class="content1">
+    <div class="name">一人e灯LED健康智能台灯</div>
+    <div class="a1">产品价格：1699元<br /><br />
+        产品类别：智能台灯</div>
+    <div class="a2"><img src="image/led+.png" width="100%"/></div>
+    <div class="a1">试用数量：5台<br /><br />
+        可申请区域：全市<br /><br />
+        试用申请时间：2017-05-08~2017-05-12<br /><br />
+        报告提交时间：2017-05-17~2017-05-31</div>
+</div>
+    <div class="content1 new">
+    <div class="name2">试用规则：</div>
+    <div class="a3">
+        1、申请流程：
+        点击我要申请，填写相关资料<br /><br />
+        2、服务流程：<br /><br />
+        <span class="wid37">（1）</span><span class="left38">试用用户名单将于5月15日在孩子通微信公众号进行公布</span>
+    </div>
+    <div class="ewm"><img src="image/u26.jpg" height="140"/><br />转发至微信，长按加关注</div>
+        <div class="a3">
+            <span class="wid37">（2）</span><span class="left38">送货方式：顺丰速递</span><br /><br />
+            <span class="wid37">（3）</span><span class="left38">提交试用报告：试用报告要求将发送至预留的邮箱，根据试用报告要求填写、上传图片，回复邮件即可</span>
+        </div>
+</div>
+
+<div class="but">
+<a>我要申请</a>
+</div>
+
+<div class="text2_sub">
+    注意事项：<br /><br />
+    免费申请，试用过程无需支付任何费用
+    收到货后您须在约定时间内如实提交真实的试用报告，无需返还试用品
+    优秀报告可提升您下一次申请成功几率，劣质报告将导致您被限制申请
+</div>
+
+<div class="img-list">
+    <img src="image/2.jpg"/>
+    <img src="image/3.jpg"/>
+    <img src="image/4.jpg"/>
+    <img src="image/5.jpg"/>
+    <img src="image/6.jpg"/>
+    <img src="image/7.jpg"/>
+    <img src="image/8.jpg"/>
+    <img src="image/9.jpg"/>
+    <img src="image/10.jpg"/>
+    <img src="image/11.jpg"/>
+</div>
+
+
+
+</article>
+<script src="js/zepto.min.js"></script>
+<script>
+    $(function () {
+        var url="http://bossbang.cc/f/58f08d06bb7c7c62b1646e5d";
+        var dqTime=(new Date(new Date())).getTime();
+        var startTime=(new Date("2017/05/08 00:00:00")).getTime();
+        var endTime=(new Date("2017/05/12 23:59:59")).getTime();
+
+        var text1="";
+        if(dqTime<startTime){
+            text1="距离活动开始还有"+Math.ceil((startTime-dqTime)/(24*60*60*1000))+"天";
+            $(".but").addClass("end").find("a").html("活动未开始")
+        }
+        if(dqTime>=startTime&&dqTime<=endTime){
+            text1="距离活动结束还有"+Math.ceil((endTime-dqTime)/(24*60*60*1000))+"天";
+            $(".but a").attr("href",url)
+        }
+        if(dqTime>endTime){
+            text1="活动已结束";
+            $(".but").addClass("end").find("a").html("活动已结束")
+        }
+        $(".text1").html(text1)
+        console.log()
+    })
+
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒i
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* ======================================
+ * Filename:             style.css
+ * Description:          壳牌
+ * Version:              1.0.0(2015-4-29)
+ * Author:               吴晓辰
+ ====================================== */
+
+/*    公共样式
+----------------------------------------*/
+body{
+    background-size:100%;font-family:"微软雅黑"; background-color:#f7d13f
+}
+.yellow{
+    background: #f7d13f;
+}
+.page{
+    background: #f7d13f;
+    overflow: hidden;
+    position: relative;
+}
+
+.top-text{
+    background: rgba(246,228,161,0.7);
+    padding:0px 5px;
+}
+.logo{
+    position: absolute;
+    top: 0px;
+    left: -55px; width:110px
+}
+.index-img{
+    margin-top:0px;
+}
+.rule{
+    text-align: center;
+    background: rgba(246,228,161,0.7);
+    margin-top: 15px;
+}
+.rule a{
+    color: #000000;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+}
+.question-wrap{
+    padding: 70px 5px 10px 5px;
+}
+.question h2{
+    font-weight: bold;
+    margin-top: 10px;
+}
+.question-list{
+    margin-top: 30px;
+}
+.question-list p{
+    font-weight: bold;
+    text-align: center;
+    padding:6px 10px;
+    border: 1px solid #ffffff;
+    margin-top: 6%;
+}
+.question-list .active{
+    color: #e42020;
+    background: #f6de84;
+    border: 1px solid #f6de84;
+}
+.btn{
+    margin-top: 25px;
+}
+.submit{
+    width: 100%;
+    background: #e42020;
+    box-sizing: border-box;
+    padding: 6px;
+    border: 1px solid #e42020;
+    border-radius: 0;
+    color: #fff;
+    font-weight: bold;
+    -webkit-appearance: none;
+}
+.arrow{
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+}
+.Not-text{
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+}
+.question-wrap2{
+    padding: 70px 15px 10px 15px;
+}
+.line2{
+    margin-top: 20px;
+}
+.btn1{
+    text-align: center;
+    margin-top: 70%;
+}
+.btn2{
+    text-align: center;
+    margin-top: 30%;
+}
+.btn1 span{
+    background: #e42020;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.btn2 span{
+    background: #e42020;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+
+/* 弹框 */
+.Eject{ z-index:111; background-color:#312a0d; position:absolute; width:100%; top:50px; display:none}
+.Eject p{ font-size:14px; color:#FFF; font-family:"微软雅黑"; padding:20px 10px 0 10px; position:relative}
+.Eject p a{ display:block; text-align:center; padding:20px 0 10px 0}
+
+/* 抽奖 */
+.lottery{
+	margin: 30px;
+	background-image: url(../images/kuang.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size:100% 100%; margin-top:30px
+}
+.list-wrap{
+    margin: 55px 30px 0px 55px;
+    position: relative;
+}
+#lottery table td.active .lis{border:3px solid #f7d13f}
+#lottery table tr td img{}
+#lottery table{ padding:20px 10px 10px 20px}
+.lottery table tr td{ width:33%; height:33%; text-align:center; padding-bottom:10px}
+.lottery-unit .lis{ background-color:#e42020; height:100%; margin-right:10px; vertical-align:middle}
+.lottery table tr td a{background-color:#990d22; height:100%; margin-right:10px; display:block; border:3px solid #f7d13f}
+.lottery img{ width:80%}
+.lottery-unit-0 .lis img{ margin:7% 0 0 0}
+.lottery-unit-2 .lis img{ margin:8% 0 0 0;width:67%}
+.lottery-unit-3 .lis img{margin:8% 0 0 0;width:98%}
+.lottery-unit-5 .lis img{margin:8% 0 0 0;width:67%}
+.lottery-unit-6 .lis img{margin:7% 0 0 0}
+.lottery-unit-1 .lis img,.lottery-unit-7 .lis img,.lottery-unit-4 .lis img{ margin:22% 0 0 0;width:50%}
+.start img{ margin:18% 0 0 0}
+.gz{ text-align:center; color:#323232; font-family:"微软雅黑"; font-size:16px; margin-top:20px}
+.gz img{ width:55%; padding:30px 0 0 0; margin-bottom:20px}
+.gz.nowin img{ width:86%}
+.gz.nowin{ padding:0 0 0px 0}
+.yqhy{ text-align:center; margin-top:30px; padding-bottom:20px}
+.yqhy img{ width:120px}
+.Line{ margin:0 45px 0 50px; padding-top:30px; position:relative}
+.ticket{
+	background-image: url(../images/pp.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px; background-size:100% 100%; width:98%; margin:auto; padding:8px 15px; margin-bottom:20px
+}
+.ticket .lin{ border:2px solid #FFF; padding:0 10px}
+.ticket .lin h1{
+	color: #FFF;
+	text-align: center;
+	border-bottom: 1px dashed #FFFFFF;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 50px;
+	letter-spacing: 1px;font-family: "微软雅黑";
+}
+.ticket .lin span{ font-size:12px; color:#FFF; display:block; line-height:18px;font-family: "微软雅黑"; padding:10px 0}
+.FLayer{ position:absolute; z-index:11;  width:109%; top:0px; padding:40px 0; background:rgba(0,0,0,0.8); color:#FFF;font-family: "微软雅黑"; text-align:center; font-size:18px; line-height:26px; display:none}
+.FLayer a{ display:inline-block; font-size:18px; background-color:#aaaaaa;font-family: "微软雅黑"; line-height:30px; width:80px; text-align:center; border-radius:6px; color:#FFF;  margin:0 18px;margin-top:30px;}
+.FLayer .dq{background:#f6db76;; color:#e42020}
+.winning1{
+	font-family: "微软雅黑";
+	font-size: 21px;
+	line-height: 28px; text-align: center; font-weight:bold; padding:20px 0
+}
+.Line.winning{
+	margin: 0 0px;
+	padding-top: 0px;
+	
+}
+.Line.winning .ticket{background-image: url(../images/pp2.png); width:auto}
+.Line.winning .ticket .lin{ margin:0 42px 0 50px}
+#container .page.page-1 .Line.winning .FLayer{ width:70%; left:50%; margin-left:-35%; padding:70px 0; line-height:30px}
+.Line.winning .ticket{ padding-top:15px; padding-bottom:10px}
+#share{ background:rgba(0,0,0,0.7); top:30px}
+.newsbname{font-family: "微软雅黑";
+	font-size: 14px; width:68%; margin:auto}
+.newsbname a{ color:#F00;font-family: "微软雅黑";
+	}
+.FLayersas{  width: 80%;
+  left: 50%;
+  margin-left: -40%;
+  padding: 70px 0;
+  line-height: 30px;  background: rgba(0,0,0,0.7); position:absolute; text-align:center;color: #FFF;
+  font-family: "微软雅黑";
+  text-align: center;
+  font-size: 18px; top:100px}
+/* 宽度控制 */
+@media screen and (min-width: 1024px){
+    .container{
+        width: 640px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-height: 480px){
+	
+	.Eject p{padding:20px 10px 0 10px; font-size:12px}
+    .list-wrap{margin: 15px 30px 0px 55px;}
+	.lottery{ margin-top:20px}
+	.yqhy{ margin-top:20px}
+	
+}
+
+
+@media screen and (min-width: 375px){
+	.Line{ margin:0 55px 0 55px; padding-top:60px}
+	.Line.winning .ticket .lin{ margin:0 13% 0 16%}
+}
+

@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title>Swiper中文网基础演示(www.swiper.com.cn)</title>
+<script src="js/zepto.min.js"></script>
+
+
+
+<link rel="stylesheet" href="css/swiper.min.css">
+<!--Swiper3.0.4-->
+<style>
+html, body {
+        position: relative;
+        height: 100%;
+    }
+* {
+	margin: 0;
+	padding: 0;
+}
+.swiper-container {
+    width: 100%; height:100%
+}
+.blue-slide {
+	background: #4390EE;
+}
+.red-slide {
+	background: #CA4040;
+}
+.orange-slide, .swiper-slide {
+	background: #FF8604;
+}
+.swiper-slide {
+	line-height: 100px;
+	color: #fff;
+	font-size: 36px;
+	text-align: center;
+}
+.dhfix{position:fixed; top:0px; left:0px; z-index:111}
+.dhfix a{ display:inline-block; margin:0 10px; background-color:#CCC}
+</style>
+</head>
+<body style="overflow:hidden">
+<div class="dhfix">
+	<a>1</a><a>2</a><a>3</a><a>4</a><a>5</a><a>6</a><a>7</a>
+</div>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" data-hash="slide1"><h1>1111</h1></div>
+    <div class="swiper-slide" data-hash="slide2"><h1>2222</h1></div>
+    <div class="swiper-slide" data-hash="slide3"><h1>3333</h1></div>
+  </div>
+</div>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+  var page = 0;
+  var pressX = 0;
+  var pageindex = new Array("1.html","2.html","3.html","4.html","5.html","6.html","7.html");
+  var mySwiper = new Swiper('.swiper-container',{
+	/*onInit: function(swiper) {
+	//初始化
+		},  */
+	onTransitionStart: function(swiper,even){
+      swiper.detachEvents();
+    },
+    onTransitionEnd: function(swiper,even){
+      swiper.attachEvents();
+    },
+	onSlideChangeEnd: function(swiper){
+		
+		if (swiper.activeIndex >= swiper.previousIndex) {
+			page++;
+			if (page > pageindex.length - 1) {
+				page = pageindex.length - 1;
+			};
+		} else {
+			page--;
+			if (page < 0) {
+				page = 0
+			};
+		};
+		console.log("page:-->"+page)
+		if (swiper.isEnd && page < pageindex.length - 1) {
+			if (swiper.slides.length == 3) {
+					swiper.removeSlide(0);
+				};
+			swiper.appendSlide('<div class="swiper-slide" style="text-align: center;background:#4390EE"><i class="uk-icon-spinner uk-icon-spin uk-icon-large"></i> 加载中 ...</div>');
+				$.ajax({
+					url: pageindex[parseInt(page) + 1],
+					dataType:'html',
+					success: function(content) {
+						swiper.removeSlide(swiper.slides.length - 1);
+						swiper.appendSlide(content);
+						
+					
+		}
+				});	
+		
+			
+		}else if(swiper.isBeginning && page > 0) {
+			if (swiper.slides.length == 3) {
+				swiper.removeSlide(swiper.slides.length - 1);
+			};
+			swiper.prependSlide('<div class="swiper-slide" style="text-align: center;background:#4390EE"><i class="uk-icon-spinner uk-icon-spin uk-icon-large"></i> 加载中 ...</div>');
+			$.ajax({
+				url: pageindex[parseInt(page) - 1],
+				dataType:'html',
+				success: function(content) {
+					swiper.removeSlide(0);
+					swiper.prependSlide(content);
+				}
+			});
+		}	
+    },
+	onTouchStart: function(swiper, event) {
+		
+		if (swiper.slides.length == 1 && event.targetTouches.length == 1) {
+			var touch = event.targetTouches[0];
+			pressX = event.targetTouches[0].pageX;
+		}
+	},
+	onTouchEnd: function(swiper) {
+		if (swiper.slides.length == 1) {
+			if (swiper.touches['currentX'] - pressX < -10) {
+				
+				if (parseInt(page) + 1 < pageindex.length) {
+					swiper.appendSlide('<div class="swiper-slide" style="text-align: center;background:#4390EE"><i class="uk-icon-spinner uk-icon-spin uk-icon-large"></i> 加载中 ...</div>');
+					$.ajax({
+						url: pageindex[parseInt(page) + 1],
+						success: function(content) {
+							swiper.removeSlide(1);
+							swiper.appendSlide(content);
+							swiper.slideNext();
+						}
+					});
+				};
+			};
+			if (swiper.touches['currentX'] - pressX > 10) {
+				if (parseInt(page) - 1 >= 0) {
+					swiper.prependSlide('<div class="swiper-slide" style="text-align: center;background:#4390EE"><i class="uk-icon-spinner uk-icon-spin uk-icon-large"></i> 加载中 ...</div>');
+					$.ajax({
+						url: pageindex[parseInt(page) - 1],
+						success: function(content) {
+							swiper.prependSlide(content);
+							swiper.removeSlide(1);
+							swiper.slidePrev();
+						}
+					});
+				};
+			};
+		};
+	},
+	
+	
+
+  });
+  
+  
+  
+  //目录点击后处理事件
+$('.dhfix a').click(function(e) {
+	var pagecounter = $(this).index();
+		
+	if (pagecounter != page) {
+		jumpToPage(mySwiper, pagecounter);
+	};
+	page = pagecounter;
+	console.log("page:-->"+page)
+});
+
+function jumpToPage(objSwiper, jumpIndex) {
+	objSwiper.removeAllSlides();
+
+	objSwiper.appendSlide('<div class="swiper-slide" style="text-align: center;background:#4390EE"><i class="uk-icon-spinner uk-icon-spin uk-icon-large"></i> 加载中 ...</div>');
+	$.ajax({
+		url: pageindex[jumpIndex],
+		success: function(content) {
+			objSwiper.removeSlide(0);
+			objSwiper.appendSlide(content);
+		}
+	});
+};
+  
+  
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+<title></title>
+
+</head>
+<body>
+<article class="active1">
+  <div class="Elog"><img src="image/logo.png"></div>
+  
+<div class="galsscon new1">  
+  <div class="Etag"><img id="Etag" src="image/tag1.png"></div>
+  <div class="galss">
+  		<dd class=""><img class="bz" src="image/glass1.png"><br /><b><img style="visibility:hidden" class="cp" src="image/hb.png"></b></dd>
+        <dd class=""><img class="bz" src="image/glass1.png"><br /><b><img style="visibility:visible" class="cp" src="image/hb.png"></b></dd>
+        <dd class=""><img class="bz" src="image/glass1.png"><br /><b><img style="visibility:hidden" class="cp" src="image/hb.png"></b></dd>
+        <div class="clearfix"></div>
+  </div>
+</div>
+  
+  <div class="remarks new"><img src="image/text2.png"></div>
+</article>
+</body>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script>
+$(function(){
+	
+	var active=false;
+	var TimeFunction;
+	$(".galss dd .bz").addClass("active")
+	$("#Etag").addClass("active")
+	var time=setTimeout(function(){
+		$(".galss dd").addClass("start");
+		$(".galss dd .cp").css("visibility","hidden");	
+		},1000)
+	var time2=setTimeout(function(){
+		$(".galss dd").removeClass("start");
+		active=true;	
+		},3000)
+	
+	$(".galss dd").on("click",function(){
+		if(!active)
+			return;
+		var activeIndex=$(this).index();
+		
+		myClickHandle(activeIndex);
+		active=false;
+		});
+	
+	//抽取事件方法
+	function myClickHandle(activeIndex){
+		clearTimeout(TimeFunction);
+		$(".galss dd .bz").removeClass("active");
+		$("#Etag").removeClass("active");
+		//var percent = [33.3,33.3,33.4];
+		var percent=90;//中奖概率
+		var percentIndex=[0,1,2];
+		var cjindex=Math.floor(Math.random() * 100);
+		percentIndex.splice(activeIndex,1)
+		console.log(cjindex)
+		if(cjindex<percent){
+			$(".galss dd .cp").eq(activeIndex).css("visibility","visible");
+			TimeFunction=setTimeout(function(){
+			alert("恭喜您获得了奖品")
+			},700)
+		}
+		else{
+			$(".galss dd .cp").eq(percentIndex[Math.floor(Math.random() * 2)]).css("visibility","visible");
+			TimeFunction=setTimeout(function(){
+			alert("很遗憾你没获得商品")
+			},700)
+		}
+
+		}	
+	
+
+})
+</script>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>壳牌</title>
+    <link rel="stylesheet" href="Public/css/public.css"/>
+    <link rel="stylesheet" href="Public/css/style.css"/>
+    <script src="Public/js/jquery-1.9.1.min.js"></script>
+    <script src="Public/js/min.slip.js"></script>
+</head>
+<body>
+<div id="container" class="container">
+    <div class="page page-1">
+        <div class="list-wrap">
+            <div class="top-text">
+                <img class="logo" src="Public/images/logo.png" width="55"/>
+                <img class="index-img" src="Public/images/index_img.png" width="100%"/>
+            </div>
+            <div class="rule">
+                <a href="javascript:void(0)">活动规则</a>
+            </div>
+            
+            <div class="Eject">
+            	<p>1、本次“答问卷免费领电影票红包”<br>
+            	  活动周期为：2015年7月24日-2015年7月31日<br><br>
+            	  2、微信电影票红包有效期为：领取后两周有效，过期无效。<br><br>
+            	  3、微信电影票红包仅限在微信电影票使用，【否】限影片、版本；<br><br>
+            	  4、微信电影票红包仅用于选座购票影院，不支持兑换券；<br><br>
+           	    5、票价满30元方可使用微信电影票红包。
+                <a><img src="Public/images/close.png"></a>
+                </p>
+            </div>
+            
+        </div>
+        <div class="arrow">
+            <img src="Public/images/arrow.png" width="20"/>
+        </div>
+    </div>
+    <div class="page page-2">
+        <div class="list-wrap">
+            <div class="question-wrap">
+                <img class="logo" src="Public/images/logo.png" width="55"/>
+                <div class="question">
+                    <h2>1,请问您对壳牌喜力润滑油的喜爱程度？</h2>
+                    <div class="question-list">
+                        <p class="active">非常喜欢</p>
+                        <p>比较喜欢</p>
+                        <p>无所谓</p>
+                        <p>不太喜欢</p>
+                        <p>很不合适</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow">
+            <img src="Public/images/arrow.png" width="20"/>
+        </div>
+    </div>
+    <div class="page page-3">
+        <div class="list-wrap">
+            <div class="question-wrap">
+                <img class="logo" src="Public/images/logo.png" width="55"/>
+                <div class="question">
+                    <h2>2,壳牌喜力润滑油是否了解并适合您的需求？</h2>
+                    <div class="question-list">
+                        <p>非常喜欢</p>
+                        <p>比较喜欢</p>
+                        <p>无所谓</p>
+                        <p>不太喜欢</p>
+                        <p>很不合适</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow">
+            <img src="Public/images/arrow.png" width="20"/>
+        </div>
+    </div>
+    <div class="page page-4">
+        <div class="list-wrap">
+            <div class="question-wrap">
+                <img class="logo" src="Public/images/logo.png" width="55"/>
+                <div class="question">
+                    <h2>3,壳牌喜力润滑油是否具有创新性？</h2>
+                    <div class="question-list">
+                        <p>非常喜欢</p>
+                        <p>比较喜欢</p>
+                        <p>无所谓</p>
+                        <p>不太喜欢</p>
+                        <p>很不合适</p>
+                    </div>
+                    <div class="btn">
+                        <input class="submit" type="submit" value="确认提交"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow">
+            <img src="Public/images/arrow.png" width="20"/>
+        </div>
+    </div>
+</div>
+<script>
+    //滑屏js
+    var container = document.getElementById('container');
+    var pages = document.querySelectorAll('.page');
+    var slip = Slip(container, 'y').webapp(pages);
+    Slip(document.getElementById('container'), 'y').webapp();
+
+    $(function(){
+	$(".list-wrap .rule a").on("click",function(){
+			$(".list-wrap .Eject").css("display","block");
+			})
+		$(".list-wrap .Eject p a").on("click",function(){
+			$(".list-wrap .Eject").css("display","none");
+			})
+		
+        $(".page-2 .question-list p").on("touchstart",function(){
+            $(".page-2 .question-list p").removeClass("active");
+            $(this).addClass("active");
+        })
+        $(".page-3 .question-list p").on("touchstart",function(){
+            $(".page-3 .question-list p").removeClass("active");
+            $(this).addClass("active");
+        })
+        $(".page-4 .question-list p").on("touchstart",function(){
+            $(".page-4 .question-list p").removeClass("active");
+            $(this).addClass("active");
+        })
+    })
+</script>
+</body>
+</html>

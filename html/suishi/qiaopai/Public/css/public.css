@@ -1,0 +1,77 @@
+/*    public
+----------------------------------------*/
+/* 重置 */
+*{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div,body,select,h1,h2,h3,h4,h5,h6,p,label,
+ul,li,ol,table,form,input,textarea,th,td,tr{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+img{
+    border:0;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i,em{
+    font-style:normal;
+}
+
+/* 字号 */
+.font-size16{
+    font-size: 16px;
+}
+
+/* 字体色 */
+.red{
+    color: #ff0000;
+}
+
+
+/* 定位 */
+.relative{
+    position: relative;
+}
+.center{
+    text-align: center;
+}
+
+
+/* 背景and背景色 */
+.b1{
+    background: #def590;
+}
+.b2{
+    background: #cae66a;
+}
+.b3{
+    background: #d1ec77;
+}
+.bg-yellow{
+    background: -webkit-gradient(linear, left top, 0 100%, from(#ffdfa4), to(#ffd14a));
+    background:-moz-linear-gradient(top, #ffdfa4,#ffd14a);
+}
+
+
+/* 外边距/内边距 */
+.margin10{
+    margin: 10px;
+}
+.margin15{
+    margin: 15px;
+}
+.margin20{
+    margin: 20px;
+}
+.margin30{
+    margin: 30px;
+}

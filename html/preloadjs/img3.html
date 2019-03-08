@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" style="background-color: transparent;">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="lib/preloadjs.min.js"></script>
+
+   <style>
+       #fullVideo{ position: absolute; width: 100%; height: 100%; left: 0px; top: 140px}
+   </style>
+</head>
+<body>
+<div class="progess"></div>
+
+<script>
+    //定义相关JSON格式文件列表
+    var manifest = [
+        {
+            src:  "file/test.png",
+            id:"image"
+        }
+    ];
+
+
+    var queue = new createjs.LoadQueue(true);   //如果要加载外部资源改成false  内部资源为true
+    queue.installPlugin(createjs.Sound);
+    queue.loadManifest(manifest);
+    queue.on("fileload", handleFileLoad,this);
+    queue.on("progress", handleFileProgress,this);
+    queue.on("complete", loadComplete,this);
+    queue.on("error", loadError,this);
+
+
+
+
+    //处理单个文件加载
+    function handleFileLoad(event) {
+        console.log("文件类型: ", event.item);
+
+        if(event.item.id == "logo"){
+            console.log("logo图片已成功加载");
+        }
+    }
+
+    //处理加载错误：大家可以修改成错误的文件地址，可在控制台看到此方法调用
+    function loadError(evt) {
+        console.log("加载出错！",evt);
+    }
+
+    //已加载完毕进度
+    function handleFileProgress(event) {
+        var text = "已加载 " + (queue.progress*100|0) + " %";
+        $(".progess").text(text)
+        console.log(text)
+    }
+
+    //全度资源加载完毕
+    function loadComplete(event) {
+        console.log("已加载完毕全部资源");
+        var image = queue.getResult("image");
+       console.log(image)
+
+        $(".progess").append(image)
+
+    }
+
+
+</script>
+
+</body>
+</html>

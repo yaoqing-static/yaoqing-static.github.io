@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+<title></title>
+<style>
+body,html{ overflow:hidden}
+</style>
+
+</head>
+<body>
+<article class="active1">
+  <div class="Elog"><img src="image/logo.png"></div>
+<div class="galsscon">  
+  <div class="Etag"><img src="image/tag.png"></div>
+  <div class="ly-plate">
+	<div class="rotate-bg"><img id="lotteryBtn" src="image/ly-plate1.png"></div>
+	<div class="lottery-star"><img class="bg" src="image/staticbg.png"><img class="lotteryBtn" src="image/static.png"><img class="text" src="image/staticText.png"></div>
+  </div>
+</div>
+  <div class="remarks"><img src="image/text1.png"></div>
+</article>
+</body>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jQueryRotate.2.2.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+
+<script>
+$(function(){
+	var sal=-15;
+	//$("#lotteryBtn").rotate(-15)///在这里改比
+	
+	function percentToInt(arr)
+	{
+		var i = 0;
+		var total = 0;
+		var tempArr = [];
+		for(i = 0; i < arr.length; i++)
+		{
+			total += arr[i];
+			tempArr[i] = total;
+		}
+		var rand = Math.floor(Math.random() * total);
+		for(i = 0; i < tempArr.length; i++)//判断随机数字在哪个区间
+		{
+			if(rand < tempArr[i])
+				return i;
+		}
+		
+	}
+	
+	var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+		$('#lotteryBtn').stopRotate();
+		$("#lotteryBtn").rotate({
+			angle:0, 
+			duration: 5000, 
+			animateTo: angle+1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+			callback:function(){
+				console.log(awards)//这里写数据库对接
+				alert(text)
+			}
+		}); 
+	};
+
+	$(".lotteryBtn").rotate({ 
+	   bind: 
+		 { 
+			click: function(){
+//				var time = [0,1];
+//					time = time[Math.floor(Math.random()*time.length)];
+				var time = 1;
+				if(time==0){
+					timeOut(); //网络超时
+				}
+				if(time==1){
+					var data = [1,2,3,4,5,0]; //返回的数组
+					var percent = [1,1,1,1,1,100];//对应出现的概率比
+						//data = data[Math.floor(Math.random()*data.length)];
+					data = data[percentToInt(percent)];
+					if(data==1){
+						rotateFunc(1,-22.5,'培根蛋麦煎饼')//
+					}
+					if(data==2){
+						rotateFunc(2,-67.5,'拿下今天')//
+					}
+					if(data==3){
+						rotateFunc(3,-157.5,'巨无霸汉堡')
+					}
+					if(data==4){
+						rotateFunc(4,-247.5,'祝您好运')
+					}
+					if(data==5){
+						rotateFunc(5,-292.5,'恭喜您抽中玉米杯')
+					}
+					if(data==0){
+						var angle = [-112.5,-202.5,-337.5];
+							angle = angle[Math.floor(Math.random()*angle.length)]
+						rotateFunc(0,angle,'麦当劳log')
+					}
+				}
+			}
+		 } 
+	   
+	});
+		
+	
+})
+</script>
+</html>

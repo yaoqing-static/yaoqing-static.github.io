@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" style="background-color: transparent;">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="lib/preloadjs.min.js"></script>
+
+    <style>
+        * {
+            padding: 0px
+        }
+
+        #fullVideo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px
+        }
+
+        #play {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            background: #fff;
+            z-index: 888
+        }
+        .video{ display: none}
+        .audio-button{
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            position: fixed;
+            top: 1.4rem;
+            right: 0rem;
+            z-index: 999;
+            border: none;
+           border-radius: 50%;
+            left: auto;
+            -o-background-size: cover;
+            background-size: cover;
+            overflow: hidden;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="progess"></div>
+
+<div class="video">
+    <div id="play">播放</div>
+    <div class="audio-button"></div>
+    <video id="fullVideo" preload="auto" style=" object-fit: fill; background:gray " x-webkit-airplay="true" airplay="allow"
+           webkit-playsinline="true" playsinline="true" poster="" x5-video-player-type="h5"
+           x5-video-player-fullscreen="true" x5-playsinline=""></video>
+</div>
+<script>
+    window.onload=init;
+    var queue;
+    //定义相关JSON格式文件列表
+    var manifest = [
+        {
+            src: "file/timg.jpg",
+            id: "myImage",
+            type: createjs.AbstractLoader.IMAGE
+        },
+        {
+            src: "file/mm.mp4",
+            id: "mmP41",
+            type : createjs.AbstractLoader.BINARY
+        }
+    ];
+
+    function init(){
+        queue = new createjs.LoadQueue(); //如果要加载外部资源改成false  内部资源为true
+        queue.installPlugin(createjs.Sound);
+        queue.loadManifest(manifest);
+        queue.on("fileload", handleFileLoad, this);
+        queue.on("progress", handleFileProgress, this);
+        queue.on("complete", loadComplete, this);
+        queue.on("error", loadError, this);
+    }
+
+
+
+    //处理单个文件加载
+    function handleFileLoad(event) {
+        console.log("文件类型: ", event.item);
+    }
+
+    //处理加载错误：大家可以修改成错误的文件地址，可在控制台看到此方法调用
+    function loadError(evt) {
+        console.log("加载出错！", evt.text);
+    }
+
+    //已加载完毕进度
+    function handleFileProgress(event) {
+        var text = "已加载 " + (queue.progress * 100 | 0) + " %";
+        $(".progess").text(text)
+        console.log(text)
+    }
+
+    //全度资源加载完毕
+    function loadComplete(event) {
+        console.log("已加载完毕全部资源");
+
+        // Insert Image
+        var image = queue.getResult("myImage");
+        $("body").append(image);
+
+
+        $(".progess").hide();
+        $(".video").show();
+        var video = queue.getResult("mmP41");
+        var blob = new Blob( [ video ], { type: "video/mp4" } );
+        var urlCreator = window.URL || window.webkitURL;
+        var objUrl = urlCreator.createObjectURL( blob );
+        $("#fullVideo").attr("src",objUrl)
+    }
+
+
+    $("#play").click(function () {
+
+        $("#fullVideo").get(0).play();
+        $("#play").hide();
+    })
+
+</script>
+
+
+
+
+</body>
+</html>

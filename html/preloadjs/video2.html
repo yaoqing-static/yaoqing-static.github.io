@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" style="background-color: transparent;">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="lib/preloadjs.min.js"></script>
+
+    <style>
+        * {
+            padding: 0px
+        }
+
+        #fullVideo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px
+        }
+
+        #play {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            background: #fff;
+            z-index: 888
+        }
+        .video{ display: none}
+        .audio-button{
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            position: fixed;
+            top: 1.4rem;
+            right: 0rem;
+            z-index: 999;
+            border: none;
+           border-radius: 50%;
+            left: auto;
+            -o-background-size: cover;
+            background-size: cover;
+            overflow: hidden;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Preload video & image files  (preload.js)</h1>
+    <p class="preload-counter">
+    </p>
+    <div class="video-holder"></div>
+    <div class="img-holder"></div>
+</div>
+<script>
+    $(document).ready(function() {
+        function preLoadAssets(){
+            // create queue
+            var queue = new createjs.LoadQueue();
+            var videosTarget = null;
+
+            queue.on("complete", handleComplete, this);
+
+            // create manifest for files to load
+            queue.loadManifest([
+                {id:'myImage', src:'http://webh5-hz.oss-cn-hangzhou.aliyuncs.com/person/Zenon.gif', type: createjs.AbstractLoader.IMAGE},
+                {id:'myVideo', src : 'https://vjs.zencdn.net/v/oceans.mp4',type : createjs.AbstractLoader.BINARY}
+            ]);
+
+            // handle  & show progress
+            queue.on("progress", function(evt){
+                var p = queue.progress * 100;
+                document.querySelector('.preload-counter').textContent = " "+Math.round(p)+"%";
+            });
+            function handleComplete() {
+                // Insert Image
+                var image = queue.getResult("myImage");
+                $('.img-holder').append(image);
+
+                // Insert Video
+                var videosTarget = queue.getResult("myVideo");
+                var $video = $('<video controls muted autoplay />');
+                var $source = $('<source type="video/mp4"/>');
+                var src = videosTarget;
+                var blob = new Blob( [ src ], { type: "video/mp4" } );
+                var urlCreator = window.URL || window.webkitURL;
+                var objUrl = urlCreator.createObjectURL( blob );
+                $source.attr('src', objUrl);
+                $video.append($source);
+                $('.video-holder').append($video);
+            }
+        }
+
+
+        /*****************************************
+         Init functions
+         ******************************************/
+        function init(){
+            preLoadAssets();
+        }
+        init();
+
+    }); // end ready
+</script>
+
+
+
+
+</body>
+</html>

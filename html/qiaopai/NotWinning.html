@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>壳牌</title>
+    <link rel="stylesheet" href="Public/css/public.css"/>
+    <link rel="stylesheet" href="Public/css/style.css"/>
+    <script src="Public/js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+<div id="container" class="container">
+  <div class="page page-1">
+        <div class="list-wrap">
+            <div class="top-text">
+                <img class="logo" src="Public/images/logo.png"/>
+                <img class="index-img" src="Public/images/index_img.png" width="100%"/>
+            </div>
+        </div>
+      <div class="FLayersas" id="share" style="top:100px"> 拼手气的时候到啦，<br />
+赶快告知小伙伴！
+	  </div>    
+    <div class="gz nowin"><img src="Public/images/nowin.png"></div>
+    <div class="yqhy" id="shareclick"><a href="#"><img src="Public/images/close.png"></a></div>    
+        
+        
+  </div>
+</div>
+
+
+<script>
+$(function(){
+	var windowH=$(window).height();
+	$(".page").height(windowH);
+	var lotteryw=$(".lottery").width();
+	$(".lottery").height(lotteryw);
+	
+	$("#shareclick").click(function(){
+		$("#share").show()
+		})
+	$(".FLayersas").click(function(){
+		$("#share").hide()
+		})
+	
+	})
+
+</script>
+
+
+</body>
+</html>
