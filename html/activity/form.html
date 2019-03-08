@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="zh-CN" />
+  <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    var phoneWidth = parseInt(window.screen.width)
+    var phoneScale = phoneWidth / 640
+    var ua = navigator.userAgent
+    if (/Android (\d+\.\d+)/.test(ua)) {
+      var version = parseFloat(RegExp.$1)
+      if (version > 2.3) {
+        document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">')
+      } else {
+        document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">')
+      }
+    } else {
+      document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">')
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <article>
+    <a class="logo">
+      <img src="images/logo.png" />
+    </a>
+    <div class="text1">
+      <img src="images/text.png" />
+    </div>
+    <div class="form-box">
+        <dd>
+          <span>公司名称</span>
+          <div class="in"><input type="text" /></div>
+        </dd>
+        <dd>
+          <span>地址</span>
+          <div class="in"><textarea></textarea></div>
+        </dd>
+        <dd>
+          <span>姓名</span>
+          <div class="in"><input type="text" /></div>
+        </dd>
+        <dd>
+          <span>电话</span>
+          <div class="in"><input type="number" /></div>
+        </dd>
+        <dd>
+          <span>邮箱</span>
+          <div class="in"><input type="text" /></div>
+        </dd>
+        <div class="but"><a href="end.html"><img src="images/but2.png" /></a></div>
+    </div>
+
+    <div class="bottom"><img src="images/bottom.png" /></div>
+
+ 
+
+
+
+  </article>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript">
+
+
+
+
+  </script>
+</body>
+
+</html>

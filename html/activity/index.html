@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="zh-CN" />
+  <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    var phoneWidth = parseInt(window.screen.width)
+    var phoneScale = phoneWidth / 640
+    var ua = navigator.userAgent
+    if (/Android (\d+\.\d+)/.test(ua)) {
+      var version = parseFloat(RegExp.$1)
+      if (version > 2.3) {
+        document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">')
+      } else {
+        document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">')
+      }
+    } else {
+      document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">')
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <article>
+    <a class="logo">
+      <img src="images/logo.png" />
+    </a>
+    <div class="text1">
+      <img src="images/text.png" />
+    </div>
+
+
+    <div class="box">
+      <div class="lottery-box">
+        <div id="lottery">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="lottery-unit lottery-unit-0">
+                <img src="images/ico3.png" />
+              </td>
+              <td class="lottery-unit lottery-unit-1"></td>
+              <td class="lottery-unit lottery-unit-2"></td>
+              <td class="lottery-unit lottery-unit-3">
+                <img src="images/ico3.png" />
+              </td>
+            </tr>
+            <tr>
+              <td class="lottery-unit lottery-unit-11"></td>
+              <td colspan="2" rowspan="2">
+                <a href="javascript:;;"></a>
+              </td>
+              <td class="lottery-unit lottery-unit-4"></td>
+            </tr>
+            <tr>
+              <td class="lottery-unit lottery-unit-10"></td>
+              <td class="lottery-unit lottery-unit-5"></td>
+            </tr>
+            <tr>
+              <td class="lottery-unit lottery-unit-9">
+                <img src="images/ico3.png" />
+              </td>
+              <td class="lottery-unit lottery-unit-8"></td>
+              <td class="lottery-unit lottery-unit-7"></td>
+              <td class="lottery-unit lottery-unit-6">
+                <img src="images/ico3.png" />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="end-box">
+        <div class="a1">
+          <div class="text">
+            <span>恭喜你获得精美礼品！</span>
+            <br>
+            <strong>U盘一个</strong>
+            <br>
+            <a href="form.html">
+              <img src="images/but1.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="time">活动日期：2018年3月4日-6日</div>
+    <div class="text3">
+       <div><img src="images/a1.png" /></div>
+       <div class="a1">
+        1.单个用户（同一设备、同一手机号、同一身份证号、满足前述任一条件均视为同一用户）最多只可领取1份奖品，益升华有权拒绝单个用户的超额兑换。<br/>
+        2.本次活动的奖品为实物奖品单个用户填写完整信息后可在活动截止日期前领取奖品，但奖品不能兑换现金。<br/>
+        3.本次活动截止时间为，逾期所得奖品将自动失效<br/>
+        <lable class=""><i>&nbsp;</i>我已阅读并遵守本次活动规则</lable> <br/>
+       </div>
+    </div>
+
+
+
+  </article>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript">
+   
+    var isBool=false;
+    $(".text3 lable").click(function(){
+      if($(this).hasClass("checked")){
+        $(this).removeClass("checked");
+        isBool=false;
+      }else{
+        $(this).addClass("checked");
+        isBool=true;
+      }
+    })
+
+
+
+    var selectIndex = 1;
+    var lottery = {
+      index: -1,	//当前转动到哪个位置，起点位置
+      count: 0,	//总共有多少个位置
+      timer: 0,	//setTimeout的ID，用clearTimeout清除
+      speed: 20,	//初始转动速度
+      times: 0,	//转动次数
+      cycle: 50,	//转动基本次数：即至少需要转动多少次再进入抽奖环节
+      prize: -1,	//中奖位置
+      init: function (id) {
+        if ($("#" + id).find(".lottery-unit").length > 0) {
+          $lottery = $("#" + id);
+          $units = $lottery.find(".lottery-unit");
+          this.obj = $lottery;
+          this.count = $units.length;
+          $lottery.find(".lottery-unit-" + this.index).addClass("active");
+        };
+      },
+      roll: function () {
+        var index = this.index;
+        var count = this.count;
+        var lottery = this.obj;
+        $(lottery).find(".lottery-unit-" + index).removeClass("active");
+        index += 1;
+        if (index > count - 1) {
+          index = 0;
+        };
+        $(lottery).find(".lottery-unit-" + index).addClass("active");
+        this.index = index;
+        return false;
+      },
+      stop: function (index) {
+        this.prize = index;
+        alert(index)
+        return false;
+      }
+    };
+
+
+
+    function roll() {
+      lottery.times += 2;
+      lottery.roll();
+      if (lottery.times > lottery.cycle + 10 && lottery.prize == lottery.index) {
+        clearTimeout(lottery.timer);
+        lottery.prize = -1;
+        lottery.times = 0;
+        setTimeout(function(){
+          ReturnDescription();//结果方法
+        },500)
+
+       
+        //alert(ReturnDescription())
+        click = false;
+      } else {
+        if (lottery.times < lottery.cycle) {
+          lottery.speed -= 10;
+        }/*else if(lottery.times==lottery.cycle) {
+     var index =5; //Math.random()*(lottery.count);
+     lottery.prize = index;
+     }*/else {
+          if (lottery.times > lottery.cycle + 10 && ((lottery.prize == 0 && lottery.index == 7) || lottery.prize == lottery.index + 1)) {
+            lottery.speed += 110;
+          } else {
+            lottery.speed += 20;
+          }
+
+        }
+        if (lottery.speed < 40) {
+          lottery.speed = 40;
+        };
+        //console.log(lottery.times+'^^^^^^'+lottery.speed+'^^^^^^^'+lottery.prize);
+        lottery.timer = setTimeout(roll, lottery.speed);
+      }
+
+      return false;
+    }
+
+    var click = false;
+
+    window.onload = function () {
+      lottery.init('lottery');
+      $("#lottery a").click(function () {
+        if (click) {
+          return false;
+        } else {
+          if(isBool){
+            getJsonType();
+            lottery.speed = 100;
+            lottery.prize = selectIndex;//转到的位置
+            roll();
+            click = true;
+            return false;
+          }else{
+            alert("请同意活动规则！")
+          }
+          
+        }
+      });
+    };
+
+    function getJsonType() {
+      var states = 1;//是否中奖 0是不中奖
+      if (states == 0) {
+        var NotWinning = [0, 3, 6, 9];
+        selectIndex = NotWinning[Math.floor(Math.random() * NotWinning.length)];
+      }
+      else {
+        var Winning = [1, 2, 4, 5, 7, 8, 10, 11];
+        selectIndex = Winning[Math.floor(Math.random() * Winning.length)];
+      }
+    }
+
+
+
+    function ReturnDescription() {
+      switch (selectIndex) {
+        case 1:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品1！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        case 2:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品2！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        case 4:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品4！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        case 5:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品5！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        case 7:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品7！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        case 8:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品8！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        case 10:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品10！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        case 11:
+          $(".end-box .a1 span").html('恭喜你获得精美礼品11！');
+          $(".end-box .a1 strong").html('U盘一个');
+          break;
+        default:
+          break;
+
+      }
+      $(".end-box").show();
+    }
+
+
+
+  </script>
+</body>
+
+</html>

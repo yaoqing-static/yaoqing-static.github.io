@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5100</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<style>
+*{ padding:0px; margin:0px}
+article{ width:640px; margin:auto}
+img{ vertical-align:top; display:block; width:100%}
+body{ background-color:#d7ecf6}
+@media screen and (max-width : 640px) {	
+	article{ width:100% }
+
+}
+</style>
+<script>
+
+var phoneWidth = parseInt(window.screen.width)
+var phoneScale = phoneWidth/640
+var ua = navigator.userAgent
+if (/Android (\d+\.\d+)/.test(ua)){
+var version = parseFloat(RegExp.$1)
+if(version>2.3){
+document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">')
+}else{
+document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">')
+}
+} else {
+document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">')
+}
+</script>
+
+
+</head>
+<body>
+<article>
+<img src="img/a1.jpg" />
+<img src="img/a2.jpg" />
+<img src="img/a3.jpg" usemap="#Map" />
+<map name="Map">
+  <area shape="rect" coords="85,210,281,273" href="#">
+</map>
+<img src="img/a4.jpg" usemap="#Map2" />
+<map name="Map2">
+  <area shape="rect" coords="376,185,574,252" href="#">
+</map>
+<img src="img/a5.jpg" usemap="#Map3" />
+<map name="Map3">
+  <area shape="rect" coords="86,199,283,259" href="#">
+</map>
+<img src="img/a6.jpg" />
+</article>
+</body>
+</html>
