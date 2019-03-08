@@ -1,0 +1,1 @@
+document.write("<style>.page1.bgcol .conter .lis ul li{height:200px;overflow:hidden;}.page3b .conter .js .a2 dd{width: 753px;}.main_visual{width: 1900px;}.page3b .conter .title{padding-top: 150px;}</style>")

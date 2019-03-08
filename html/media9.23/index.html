@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title>2015cmo调研</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/siste.css">
+<!--Swiper3.0.4-->
+<script src="js/zepto.min.js"></script>
+<script>
+  setTimeout(function(){
+			$(".loading-msg").remove();
+			$('.swiper-container').show()
+		},3000)
+</script>
+</head>
+<body style="overflow:hidden">
+
+<div class="loading-msg">
+    <div class="loading1">
+        数据加载中请稍后....
+    </div>
+</div>
+
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide no1"></div>
+    <div class="swiper-slide no2"></div>
+    <div class="swiper-slide no3"></div>
+    <div class="swiper-slide no4"></div>
+    <div class="swiper-slide no5"></div>
+    <div class="swiper-slide no6"></div>
+    <div class="swiper-slide no7"></div>
+    <div class="swiper-slide no8"></div>
+    <div class="swiper-slide no9"></div>
+    <div class="swiper-slide no10"></div>
+    <div class="swiper-slide no11"></div>
+  </div>
+</div>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+  var mySwiper = new Swiper('.swiper-container',{
+    loop: true,
+	//autoplay: 6000,
+	mousewheelControl : true,
+	direction : 'vertical',
+  });
+</script>
+</body>
+</html>

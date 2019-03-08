@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+        position: relative;
+        height: 100%; font-family:"微软雅黑"
+    }
+* {
+	margin: 0;
+	padding: 0;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+/*loading*/
+.loading-msg{color:red;font:16px;text-align:center;background:#fff;width:100%;margin:0 auto;height:100%;position:relative}
+.loading1{padding-top:46%}
+/*loading*/
+
+.swiper-slide {
+	background-size: 100% auto;
+	background-position: center center;
+}
+.swiper-slide.no1{
+	background-image: url(../image/cmo2015/1.jpg);
+}
+.swiper-slide.no2{
+	background-image: url(../image/cmo2015/2.jpg);
+}
+.swiper-slide.no3{
+	background-image: url(../image/cmo2015/3.jpg);
+}
+.swiper-slide.no4{
+	background-image: url(../image/cmo2015/4.jpg);
+}
+.swiper-slide.no5{
+	background-image: url(../image/cmo2015/5.jpg);
+}
+.swiper-slide.no6{
+	background-image: url(../image/cmo2015/6.jpg);
+}
+.swiper-slide.no7{
+	background-image: url(../image/cmo2015/7.jpg);
+}
+.swiper-slide.no8{
+	background-image: url(../image/cmo2015/8.jpg);
+}
+.swiper-slide.no9{
+	background-image: url(../image/cmo2015/9.jpg);
+}
+.swiper-slide.no10{
+	background-image: url(../image/cmo2015/10.jpg);
+}
+.swiper-slide.no11{
+	background-image: url(../image/cmo2015/11.jpg);
+}
+

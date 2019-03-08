@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+
+    <style>
+        *{padding: 0px; margin: 0px; font-family: 微软雅黑; font-size: 14px}
+        img{ vertical-align: top}
+        html { overflow-x:hidden; }
+        #editor{ width: 640px; margin: auto}
+        .sub-name{ padding: 0px 0; font-size: 14px;border-bottom: 16px solid #e6e6e6;}
+        .sub-name .but{ padding: 0 16px; border-bottom: 1px solid #efefef;}
+        .sub-name .but a{ font-size: 20px; color: #cccccc; line-height: 60px; display: inline-block; margin-right: 16px}
+        .sub-name .but .active{ color: #333333;}
+        .sub-name .con{ padding: 26px 16px; line-height: 24px;  position:relative}
+        a{ cursor: pointer}
+        .sub-name .con .t{ overflow: hidden;}
+        .sub-name .but2 img{ width: 18px}
+        .sub-name .but2{ text-align: right; padding: 9px 16px 0px 16px; position: relative}
+        .sub-name .con span{ position: absolute; right: 0px; background: #fff; bottom: 5px; top:-25px;
+            height:22px; font-size: 16px; width: 17px}
+        .sub-name .but a span{ display: block; height: 5px; background: #ffe63c; border-radius: 25px; width: 100%; display: none}
+        .sub-name .but .active span{ display: block}
+        .banner img{ width: 100%}
+        .sub-text{
+	background-image: url(image/p1.png);
+	background-repeat: repeat-x;
+	background-position: center 0px;
+	background-size: auto 100%;
+	padding: 22px 16px 16px 16px
+}
+	.sub-text dd{
+	background-image: url(image/p2.png);
+	background-repeat: no-repeat;
+	background-position: left 0px; line-height:19px; height:19px; background-size:auto 100%; font-size:14px; color:#666666; margin-bottom:15px
+}
+		.sub-text dd span{  color:#FFF; display:inline-block; padding:0 0 0 10px; width:88px}
+		.banner{ position:relative;}
+		.banner span{ position:absolute; width:90%; top:10px; left:5%; font-size:16px; color:#FFF; text-align:center; text-shadow:0px 2px 1px rgba(0,0,2,0.9);text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+		.vote-con{ border-bottom:16px solid #e6e6e6; text-align:center}
+		.audio{ background:#ff96ae; padding:16px; width:240px; height:240px; margin:auto; border-radius:20px; position:relative}
+		.audio img,.vote-con .audio a img{ width:100%; height:100%}
+		.vote-con{ padding:25px 0}
+		.vote-con .audio a{ position:absolute; width:80px; height:80px; top:50%; left:50%; margin:-40px 0 0 -40px; z-index:222}
+		.text3{ font-size:18px; padding:16px 0; color:#333333}
+		.text4{ padding:20px 0 30px 0}
+		.text4 span{ display:inline-block; font-size:14px; color:#666666}
+		.text4 span img{ vertical-align:bottom; width:23px; margin-right:8px}
+		.text4 .a1{ margin-right:50px}
+		.vote-con .but3 a{ display:inline-block; width:168px; line-height:47px; background-color:#ff96ae; font-size:20px; color:#FFF; border-radius:26px}
+		.vote-con.n1{ padding:30px 16px; text-align:left}
+		.vote-con.n1 .a1{ font-size:24px; color:#333333}
+		.vote-con.n1 .a1 span{ font-size:12px; display:inline-block; margin-left:16px;background-color:#ff96ae;border-radius:26px; color:#FFF; line-height:24px; vertical-align:middle; padding:0 10px}
+		.vote-con.n1 .a2 span{ font-size:14px; color:#999999}
+		.vote-con.n1 .a2{ padding:16px 0 16px 0}
+		.vote-con.n1 .a2 span img{ vertical-align:middle; margin:0 10px 0 0}
+		.vote-con.n1 .a3{ position:relative}
+		.vote-con.n1 .a3 .ico{ width:19px; position:absolute; left:0px; top:5px}
+		.clear{ clear:both}
+		.vote-con.n1 .a3 .con{ margin-left:30px;font-size: 14px;color: #999999; word-break:break-all; text-align:justify; text-justify:inter-ideograph }
+		.vote-con.n1.new{ border-bottom:none}
+        .vote-con3{ padding-bottom: 30px}
+        .vote-con3 .a1{    font-size: 24px;
+            color: #333333; padding: 16px; position: relative; border-bottom: 1px solid #e8e8e8}
+        .vote-con3 .a1 span{ position: absolute; right: 20px; color: #999999; top: 22px}
+        .vote-con3 .list dd{ position: relative; border-bottom:1px solid #e8e8e8; padding: 16px 16px 16px 0; margin-left: 16px; overflow: hidden ; min-height: 36px}
+        .vote-con3 .list dd:last-child{ border-bottom: none}
+        .vote-con3 .list dd img{ width: 35px; height: 35px; border-radius: 50%; position: absolute; left: 0px}
+        .vote-con3 .list dd p{ margin-left: 48px}
+        .vote-con3 .list dd p span{ display: block; color: #333333; font-size: 14px}
+        .vote-con3 .list dd p .name{ font-size: 16px; color: #ff6185; padding: 7px 0 13px 0}
+        @media screen and (max-width : 640px) {
+            #editor{ width:100%}
+        }
+    </style>
+</head>
+<body>
+<div id="editor" style="display: none">
+    <!--loop-->
+	<audio style="display: none" id="audio" preload="" v-bind:src="childInformation.mediaUrl"></audio>
+    <div class="banner"><span>{{childInformation.record.title}}</span>
+        <img  v-bind:src="childInformation.record.cover" />
+    </div>
+    <div class="sub-text">
+        <dd><span>时间：</span>11月21日 20:00 - 11月21日 20:00</dd>
+        <dd><span>报名人数：</span>{{childInformation.record.signNum}}</dd>
+    </div>
+
+    <div class="sub-name">
+        <div class="but">
+            <a class="active">活动介绍<span></span></a><a>活动奖品<span></span></a>
+        </div>
+        <div class="con">
+            <div class="t">
+                <div class="cc" v-html="formatText(childInformation.record.desc)"></div>
+            </div>
+            <!--<div class="but2"><a><img src="image/chouti-a@3x.png"></a><span>...</span></div>-->
+        </div>
+
+        <div class="con" style="display: none">
+            <div class="t">
+                <div class="cc" v-html="formatText(childInformation.record.rewards)"></div>
+            </div>
+            <!--<div class="but2"><a><img src="image/chouti-a@3x.png"></a><span>...</span></div>-->
+        </div>
+    </div>
+    
+    
+  <div class="vote-con">
+      <div class="audio">
+        	<a><img class="pause" src="image/pause.png"></a>
+        	<img v-bind:src="childInformation.cover">
+      </div>
+    <div class="text3">{{childInformation.title}}</div>
+    <div class="text4">
+      <span class="a1"><img src="image/ico1.png">{{childInformation.broadcastCount}}</span>
+      <span><img src="image/ico2.png">{{childInformation.upCount}}</span>
+    </div>
+    <div class="but3"><a v-on:click="voteAudio(childInformation.audioId)">为他投一票</a></div>
+  </div>
+  
+  <div class="vote-con n1">
+  	<div class="a1">{{childInformation.kidName}}<span>{{grade[childInformation.grade]}}</span></div>
+    <div class="a2"><span><img width="13" src="image/ico3.png">{{childInformation.cityName}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span><img width="14" src="image/ico4.png">{{childInformation.schoolName}}</span></div>
+  	<div class="a3">
+    	<div class="ico"><img src="image/ico5.png" width="16"></div>
+        <div class="con">
+            {{childInformation.introduction}}
+        </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="vote-con3" v-show="childInformation.commentCount!=0">
+        <div class="a1">评论<span>已有{{childInformation.commentCount}}人评论</span></div>
+        <div class="list">
+            <dd v-for="comment in childInformation.comments">
+                <img v-bind:src="comment.userIcon">
+                <p>
+                    <span class="name">{{comment.userName}}</span>
+                    <span>{{comment.comment}}</span>
+                </p>
+            </dd>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+<script src="js/zepto.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/vue.min.js"></script>
+<script>
+    var serverRootUrl = window.location.origin;
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    var audioId=getQueryString("audioId");
+
+    Vue.filter("formatDate", function(value) {
+        return moment(value).format("YYYY.MM.DD HH:mm")
+    });
+   var vote=new Vue({
+        el: '#editor',
+        data: {
+            childInformation:{
+                record:{},comments:[]
+            },
+            grade:{"1": "大班", "2": "中班", "3": "小班","4":"托班"},
+            timestamp:(new Date(new Date)).getTime()//当前时间
+        },
+        computed: {
+
+        },
+       watch: {
+           childInformation: function (){
+               var that = this;
+//               console.log(this.voteData)
+               that.$nextTick(function (){
+
+                   $("#editor").show()
+                   //暂停播放事件
+                    $(".audio a img").click(function () {
+                        //暂停
+                        if($(this).attr("class")=='pause'){
+                            $(this).attr("src",'image/play.png').attr("class",'play');
+                            $("#audio").get(0).pause();
+                        }else {//播放
+                            $(this).attr("src",'image/pause.png').attr("class",'pause');
+                            $("#audio").get(0).play();
+                        }
+                    })
+                   audioAutoPlay("audio")
+
+                    //音频播放结束
+                     $("#audio").bind('ended',function () {
+                       alert("播放结束了")
+                   });
+
+
+               })
+           }
+       },
+        methods:{
+            GetData: function () {
+                var that=this;
+                data={"title":"123","cover":"image/banner.png","mediaUrl":"Faded.mp3","introduction":"123","grade":3,"len":16,"kidName":"123","schoolName":"123","cityName":"Inner Mongolia","createAt":1492133963439,"creator":"550b8c1fbeb7063c70000003","comments":[],"commentCount":0,"upCount":0,"broadcastCount":3,"audioId":"58f0284b86246948f852acf3","isUp":false,"record":{"title":"VoteMusic","desc":"Just vote music","rewards":"null","cover":"image/banner.png","startTime":1492099200000,"endTime":1503071999000,"signNum":2}}
+                document.title=data.title;
+                return that.childInformation=data;
+            },
+            formatDate:function (data) {
+
+                return moment(data).format("YYYY.MM.DD HH:mm");
+            },
+            formatText:function (data) {
+//                return data.replace('\n','<br/>');
+                if(data!=undefined){
+                    return data.replace('\n','<br/>');
+                }
+
+            },
+            voteAudio:function (id) {
+                var that=this;
+                $.ajax({
+                    type: 'post',
+                    url: 'http://192.168.0.195:3500/2/finder/app/vote/activity/audio/up',
+                    data: {audioId:id},
+                    success: function(data){
+                        alert("投票成功")
+                        that.childInformation.upCount+=1;
+                        console.log(data)
+                    },
+                    error: function(xhr, type){
+                        console.log(JSON.parse(xhr.response))
+                        alert(JSON.parse(xhr.response).msg)
+                    }
+                })
+            }
+        },
+        created:function () {
+            //加载一次
+            this.GetData();
+        }
+    })
+
+    //微信自动播放
+    function audioAutoPlay(id){
+        var audio = document.getElementById(id);
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+    }
+
+    document.addEventListener("touchstart",function () {
+        $("#audio").get(0).play();
+    },false)
+
+
+    $(function () {
+
+        $(".sub-name .but a").click(function () {
+
+            $(".sub-name .but a").removeClass("active")
+            $(this).addClass("active")
+            $(".sub-name .con").hide()
+            $(".sub-name .con").eq($(this).index()).show()
+
+        })
+    })
+
+</script>
+
+</body>
+</html>
