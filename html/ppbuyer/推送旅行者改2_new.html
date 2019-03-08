@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="transaction new511Bg1">
+
+	<!--弹框html-->
+	<div class="bombBox">
+    	<div class="con">
+        	<div class="text"></div>
+            <div class="but"><a class="cancel">取消</a><a class="confirm">确定切换</a></div>
+        </div>
+    </div>
+    <!--弹框html-end-->
+    
+    
+    <!--弹框感谢费-->
+	<div class="bombBox2">
+    	<div class="con new"><a class="close">X</a>
+        	<div class="gx-name">感谢费</div>
+            <div class="money">金额<input type="text" />元</div>
+            <div class="but1"><a href="#">确      定</a></div>
+        </div>
+    </div>
+    <!--弹框html-end-->
+    
+    
+	
+<div id="scrollDiv">
+ <div class="con"> 			
+ 			<div class="userIco"><img src="img/share1.jpg" width="81" height="81" /><br />航天</div>
+        	<dd><span>当地价格</span><strong>40（日币）</strong></dd>
+            <dd><span>当前汇率</span><strong>0.0578</strong></dd>
+            <dd><span>跑腿费</span><strong>价格的10%</strong></dd>
+            <dd><span>国内运费</span><strong>12</strong></dd>
+            <dd><span>行邮税率</span><strong>自行缴税</strong></dd>
+            <dd><span>选择份数</span><strong class="jjj"><img id="b" src="img/addj.png" width="28"/><input id="textvalue" value="1" type="text" /><img id="a" src="img/addjj.png" width="28"/></strong></dd>
+ </div>
+ 
+ <div class="con two">
+ 	<dd><span>感谢费及推送偏好</span></dd>
+ 	<div class="down"><img src="img/jtnew.png" width="35" /></div>
+    
+    <div class="drop-down-con">
+    <dd>
+    	<div class="dggxf">
+        	<p>代购感谢费</p>
+            <h2>感谢费可以增加接单几率，让旅行者更愉快的为您带回商品哦！</h2>
+            <div class="edit">
+            	<span>10元<a></a></span>
+                <span>10元<a></a></span>
+                <span>10元<a></a></span>
+                <span class="qt dq">其它<a>&nbsp;</a></span>
+            </div>
+        </div>
+    </dd>
+    <dd class="new">
+    	<div class="dggxf">
+        	<p>推送偏好</p>
+            <h2>这可以为您推送最适合您的旅行者。</h2>
+            <div class="check">
+            <ul>
+            	<li>同城旅行者 <span class="checkd"><img src="img/cheackd.png" width="32" height="22" /></span></li>
+                <li>最早回国 <span><img src="img/cheackd.png" width="32" height="22" /></span></li>
+                <li>收藏的行程 <span><img src="img/cheackd.png" width="32" height="22" /></span></li>
+            </ul>
+            </div>
+        </div>
+    </dd>
+    
+    <dd class="new">
+    	<div class="dggxf">
+        	<p>备注</p>
+            <div class="textarea">
+           	 <textarea placeholder="您可以备注委托商品的特殊要求，如尺码，色号等"></textarea>
+            </div>
+        </div>
+    </dd>
+    
+    </div>
+    
+    <dd class="text total">总价（人民币）：<strong>100元&nbsp;</strong><br /><span>（包换运费：8元）</span></dd>
+    
+ </div>
+</div>
+    
+  <div class="Pbut"><a>推送旅行者</a></div>
+  
+    
+<script type="text/javascript">
+$(function(){
+	
+	var i=parseInt($("#textvalue").val()); //parseInt()转化为数字
+	$("#a").click(function(){
+		$("#textvalue").val(++i)
+		})
+		
+		$("#b").click(function(){
+			if(i>0){
+				$("#textvalue").val(i--)
+				}
+		})
+
+		$("#textvalue").keyup(function(){
+			var pattern = /(^[1-9]\d+$)|(^\d+\.?\d*$)/;
+			if(!pattern.test($('#textvalue').val())){
+$('#textvalue').val('');
+}
+else if($('#textvalue').val()==0){$('#textvalue').val('');}
+			})
+	
+	
+	
+    /*var windowH = $(window).height();
+	$("#scrollDiv,#scrollDiv li").css("height",windowH);
+	var length=$("#scrollDiv li").length
+	$("#scrollDiv ul").css("height",windowH*2)*/
+	
+})
+</script>
+
+<script>
+$(function(){
+	//切换城市的方法
+	$(".Pbut").click(function(){
+		$(".bombBox .text").html("您当前城市在阿姆斯特丹，是否切换?")
+		$(".bombBox").fadeIn();
+		$(".confirm").addClass("cityConversion")
+		})
+    $(".cityConversion").live("click",function(){
+		  alert('转换成功')
+		})
+	
+	$(".edit span").click(function(){
+		$(".edit span").removeClass("dq");
+		$(this).addClass("dq");
+		})
+	$(".edit span:last").click(function(){
+		$(".bombBox2").fadeIn(200)
+		})
+	$(".bombBox2 .con.new .close").click(function(){
+		$(".bombBox2").fadeOut(200)
+		})
+	$(".check ul li span").click(function(){
+		$(".check ul li span").removeClass("checkd")
+		$(this).addClass("checkd")
+		})
+		
+	$(".con.two .down img").click(function(){
+		if($(".drop-down-con").height()>0){
+		$(".drop-down-con").animate({height:"0px"})
+		$(this).css({"-webkit-transform":"rotate(180deg)","transform":"rotate(180deg)","-moz-transform":"rotate(180deg)"})
+			}
+		else{
+		$(".drop-down-con").animate({height:"1110px"})
+		$(this).css({"-webkit-transform":"rotate(0deg)","transform":"rotate(0deg)","-moz-transform":"rotate(0deg)"})
+		}
+		})	
+		
+		
+		
+	})
+</script>
+
+
+</article>
+</body>
+</html>

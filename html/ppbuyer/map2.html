@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script>
+$(function(){
+	$(".bgmap .title span").click(function(){
+		$(".bgmap").hide()
+		})
+	
+	
+	})
+
+var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+function initialize()
+{
+var mapProp = {
+  center: myCenter,
+  zoom:5,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position: myCenter,
+  title:'Click to zoom'
+  });
+
+marker.setMap(map);
+
+// Zoom to 9 when clicking on marker
+google.maps.event.addListener(marker,'click',function() {
+	alert(1111)
+
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+</script>
+
+
+</head>
+
+<body>
+<article id="googleMap" style=" z-index:11">
+
+
+</article>
+
+
+
+<div class="bgmap1">
+	<div class="open">
+    	<div class="log"><img src="img/open.jpg"/>
+        	<div class="tt">
+            	<h1><img src="img/logo2.jpg" /><br />新宿店</h1>
+            </div>
+        </div>
+        <div class="name">
+        	<dd><img src="img/ddico.png" /></dd>
+            <dd class="rr">新宿地址6-5新宿地址6-5新宿地址6-5
+            	<div class="tag"><a>护肤彩妆</a><a>日常药品</a><a>成人用品</a></div>
+            </dd>
+            <div class="clear"></div>
+        </div>
+        <div class="but">
+        	<a href="#">查看行程</a>
+        </div>
+        
+  </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

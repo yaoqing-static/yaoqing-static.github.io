@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+<style>
+    html,
+    body {
+        background-color: #fff;
+    }
+
+    .table .b {
+        width: 150px
+    }
+</style>
+
+<body>
+    <div class="dilog-box new" id="chat" style="display:none">
+        <div class="con">
+            <p>
+                <span>产品传播次数（次） 2000</span>
+            </p>
+            <div class="echart-box" id="data-graph"></div>
+        </div>
+    </div>
+
+    <div class="dilog-box new2" id="region" style="display:none">
+        <div class="con">
+            <p>
+                <span>地区分布</span>
+            </p>
+            <div class="table">
+                <table class="table table-bordered dilog-box-table">
+                    <tr>
+                        <td class="name">
+                            <span>上海</span>
+                        </td>
+                        <td>30</td>
+                        <td class="name">
+                            <span>上海</span>
+                        </td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                            <td class="name">
+                                <span></span>
+                            </td>
+                            <td></td>
+                            <td class="name">
+                                <span></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                                <td class="name">
+                                    <span></span>
+                                </td>
+                                <td></td>
+                                <td class="name">
+                                    <span></span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                    <td class="name">
+                                        <span></span>
+                                    </td>
+                                    <td></td>
+                                    <td class="name">
+                                        <span></span>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                        <td class="name">
+                                            <span></span>
+                                        </td>
+                                        <td></td>
+                                        <td class="name">
+                                            <span></span>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                            <td class="name">
+                                                <span></span>
+                                            </td>
+                                            <td></td>
+                                            <td class="name">
+                                                <span></span>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                                <td class="name">
+                                                    <span></span>
+                                                </td>
+                                                <td></td>
+                                                <td class="name">
+                                                    <span></span>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                    <td class="name">
+                                                        <span></span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td class="name">
+                                                        <span></span>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <nav class="nav-y">
+        <div class="a1"></div>
+        <div class="logo-img">
+            <img src="image/logo1.png" width="104" height="104">
+            <p>三妆化研后台</p>
+            <a href="#">退出登录</a>
+        </div>
+
+        <div class="link">
+            <a href="index.html">商品</a>
+            <a href="order-manage.html" class="a2">订单管理</a>
+            <a href="statistics.html" class="a3 active">统计</a>
+            <a href="#" class="a4">保证金</a>
+            <a href="#" class="a5">商户收入</a>
+        </div>
+
+
+
+    </nav>
+
+    <div class="app app-header-fixed">
+        <div class="app-right">
+            <div class="user">
+                <img width="40" height="40" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                <a>三妆化研后台</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="content">
+        <div class="c-body">
+            <div class="echarts-con">
+                <div class="model1">
+                    <p>统计</p>
+                </div>
+
+                <div class="a1">
+                    <p>产品传播次数（次） 2000</p>
+                    <div id="main1"></div>
+                </div>
+
+                <div class="a1">
+                    <p>主题传播次数（次） 2000</p>
+                    <div id="main2"></div>
+                </div>
+
+                <div class="clear"></div>
+
+
+
+            </div>
+
+
+            <div class="model1">
+                <p>详细统计</p>
+            </div>
+
+            <div class="table-con1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>商品描述</span>
+                            </th>
+                            <th class="b">
+                                <span>规格</span>
+                            </th>
+                            <th class="b">
+                                <span>浏览次数</span>
+                            </th>
+                            <th class="b">
+                                <span>传播次数</span>
+                            </th>
+                            <th class="b">
+                                <span style="border:none">销售数量</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="pp">
+                        <tr>
+                            <td class="pic">
+                                <div class="b">
+                                    <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                                    <p>
+                                        <span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="b">30ml 白色</div>
+                            </td>
+                            <td>
+                                <div class="b">10000</div>
+                            </td>
+                            <td>
+                                <div class="b">2291
+                                    <br/>
+                                    <a onclick="showChart()">饼状图</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="b">10000
+                                    <br />
+                                    <a onclick="regionShow()">地区分布</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pic">
+                                <div class="b">
+                                    <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                                    <p>
+                                        <span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="b">30ml 白色</div>
+                            </td>
+                            <td>
+                                <div class="b">10000</div>
+                            </td>
+                            <td>
+                                <div class="b">2291
+                                    <br/>
+                                    <a onclick="showChart()">饼状图</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="b">10000
+                                    <br />
+                                    <a onclick="regionShow()">地区分布</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pic">
+                                <div class="b">
+                                    <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                                    <p>
+                                        <span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="b">30ml 白色</div>
+                            </td>
+                            <td>
+                                <div class="b">10000</div>
+                            </td>
+                            <td>
+                                <div class="b">2291
+                                    <br/>
+                                    <a onclick="showChart()">饼状图</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="b">10000
+                                    <br />
+                                    <a onclick="regionShow()">地区分布</a>
+                                </div>
+                            </td>
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/echarts3.min.js"></script>
+    <script src="js/conter.js"></script>
+
+    <script>
+        var myChart1 = echarts.init(document.getElementById('main1'));
+        var myChart2 = echarts.init(document.getElementById('main2'));
+        var hideLabelLine = {
+            normal: {
+                show: false,
+                lineStyle: {
+                    width: 0
+                }
+            }
+        }
+        // 图2
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                triggerOn: 'click'  //触发条件，mousemove，click，mousemove|click，none
+            },
+            color: ["#ffc850", "#ff9052", "#ef5350", "#5a5475", "#075da3", "#0570a5", "#278dad", "#34bbd1", "#ffff8d", "#fff35f"],
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['30%', '60%'], //大小
+                    center: ['50%', '57%'],
+                    hoverAnimation: false,
+                    selectedMode: false,
+                    data: [
+                        { value: 10, name: '微信对话' },
+                        { value: 10, name: '邮件营销', label: hideLabelLine, labelLine: hideLabelLine },
+                        { value: 10, name: '联盟广告1', label: hideLabelLine, labelLine: hideLabelLine },
+                        { value: 10, name: '新浪微博' },
+                        { value: 10, name: '联盟广告3', label: hideLabelLine, labelLine: hideLabelLine },
+                        { value: 10, name: '联盟广告4', label: hideLabelLine, labelLine: hideLabelLine },
+                        { value: 10, name: '朋友圈' },
+                        { value: 10, name: '联盟广告6', label: hideLabelLine, labelLine: hideLabelLine },
+                        { value: 10, name: '联盟广告7', label: hideLabelLine, labelLine: hideLabelLine },
+                        { value: 10, name: '搜索引擎', label: hideLabelLine, labelLine: hideLabelLine }
+                    ],
+                    label: {
+                        normal: {
+                            textStyle: {
+                                fontSize: 12,
+                                color: "#383838"
+                            },
+                            formatter: function (params) {
+                                //console.log(params)
+                                return params.value + "\n" + params.name
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            borderWidth: 3,
+                            borderColor: '#fff'
+                        },
+                        emphasis: {
+                            //                        shadowBlur: 10,
+                            //                        shadowOffsetX: 0,
+                            //                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        myChart1.setOption(option);
+        myChart2.setOption(option);
+        $(window).resize(function () {
+            myChart1.resize()
+            myChart2.resize()
+        })
+
+        function setDataGraph() {
+            var myChart3 = echarts.init(document.getElementById('data-graph'));
+            myChart3.setOption(option);
+            $(window).resize(function () {
+                myChart3.resize()
+            })
+        }
+        function showChart() {
+            $("#chat").show()
+            setDataGraph()
+        }
+
+        function regionShow(){
+            $("#region").show()
+        }
+       // region
+    </script>
+
+
+</body>
+
+</html>

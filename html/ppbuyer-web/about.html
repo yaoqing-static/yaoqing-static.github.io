@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <meta content="telephone=no" name="format-detection" /> 
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<script>
+$(function(){
+	$(".navicon").click(function(){
+		$(this).toggleClass("open");
+		$(".nav-phone").toggleClass("open");
+		})
+	
+	})
+</script>
+<body>
+<div class="nav">
+ <div class="p">
+	<a class="logo"><img src="images/logo.png"></a>
+    <div class="right">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="active">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="">专业代购</a>
+        <a href="overseas.html" class="">海外商户</a> 
+   		<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="">下载APP </a> </div>
+ </div>
+</div>
+
+<div class="navicon">
+    <span class="icon icon-menu"><img src="images/select.png"></span>
+    <span class="icon icon-close">X</span>
+</div>
+<div class="nav-phone">
+	<div class="phone-a">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="active">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="">专业代购</a>
+        <a href="overseas.html" class="">海外商户</a> 
+   		<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="">下载APP </a> </div>
+</div>
+
+
+<div class="box-card1 lis about1">
+	<div class="text-model">
+    	<p class="text1-box2">
+       		 <strong>关于我们</strong> 
+             <div class="text-sub">我们努力打破全世界跨境购物的<br />
+空间壁垒及种种限制
+</div>
+        </p>
+    </div>
+    <img class="img-model" />
+</div>
+
+<div class="box-card2 lis new1">
+  <div class="text-model">
+    	<p class="box-card2-name">关于我们</p>
+   	<div class="about-con">
+        PPbuyer成立于2015年6月,总部位于中国上海市。
+PPBuyer创建了一套全新的去中心化跨境交易模式。通过我们的产品无论是国内或在海外的用户都可以找到全世界的任何一家店铺及浏览店内商品，并实时匹配店铺附近的人购买店内的产品。同时我们也为专业的跨境交易者提供一整套跨境交易的解决产品。
+        </div>
+        <p class="box-card2-name new">我们的远景与使命</p>
+     	<div class="about-con">我们的远景是打破跨境购物的地理壁垒，让跨境购物不再受到线上及线下的束缚。</div>
+        
+    <div class="clear"></div>
+    </div>
+    <img class="img-model" />
+</div>
+
+<div class="box-card3 lis about2">
+	<dd class="box-card3-dd">
+    	<div class="about3">
+        	<p>联系我们</p>
+            公司：上海趣买信息技术有限公司<br />
+地址：中国上海市静安区沪太支路538号 5i-Center 417室<br />
+邮箱：media@ppbuyer.cn
+        </div>
+    </dd>
+    <dd class="box-card3-dd right"></dd>
+    <div class="clear"></div>
+</div>
+
+
+<div class="box5">
+	<p class="logo2"><img src="images/logo2.png"></p>
+    <p class="weixin">
+    	<span><img src="images/weixin.png" usemap="#Map">
+            <map name="Map">
+              <area shape="rect" coords="3,2,34,27" target="_blank" href="http://weibo.com/ppbuyer">
+              <area class="wx" shape="rect" coords="61,3,97,25" href="javascript:void(0)">
+            </map>
+            <img class="ewm-wx" src="images/ewm.jpg"> 
+        </span>
+    </p>
+    <p class="text">Shanghai PPbuyer Information Technology Co., Ltd.     上海趣买信息技术有限公司</p>
+    <p class="text">沪ICP备15014553号     客服电话：<a href="tel:4006965513">4006965513</a></p>
+</div>
+<script>
+$(function(){
+	$(".weixin span map .wx").hover(function(){
+		    $(".ewm-wx").show()
+		},function(){
+			$(".ewm-wx").hide()
+			})
+	$(".weixin span map .wx").click(function(e){
+			e.stopPropagation();
+			$(".ewm-wx").show()
+		})
+	$("body").click(function(){
+		$(".ewm-wx").hide()
+		})	
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="transaction new511Bg1 bg3">
+
+
+ <div class="swiper-container" style="margin-top: 90px;background-color: red">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="http://www.marcom365.com/image/upload_news/News_201608251056227658.png" width="750"/></div>
+            <div class="swiper-slide"><img src="http://img.hb.aicdn.com/f475bd1cd063968bfcbbf73d8153171181860bff641fd-dCuva1_fw658" width="750"/></div>
+            <div class="swiper-slide"><img src="http://www.marcom365.com/image/upload_news/News_201608261136067137.gif" width="750"/></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+ </div>
+<script>
+    $(function () {
+        $(".swiper-slide img").on("load",function () {
+            var w=$(this).width();
+            var h=$(this).height();
+            if(w>h){
+                $(this).css({"height":"auto","width":"100%"})
+            }else {
+                $(this).css({"width":"auto","height":"100%"})
+            }
+        })
+    })
+    
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+</script>    
+<script>
+function add(){
+		var i=parseInt($(".textvalue").val()); //parseInt()转化为数字
+		  $(".textvalue").val(++i)
+		}
+function subtract(){
+		var i=parseInt($(".textvalue").val()); //parseInt()转化为数
+			if(i>1){
+				console.log(i)
+				 $(".textvalue").val(--i)
+				}
+		}
+$(function(){
+	
+	$(".guarantee2017-2-14").click(function () {
+        $(".fixBigFix3").show()
+    })
+	$(".fixBigFix3,.guarantee-con .close a").click(function () {
+        $(".fixBigFix3").hide()
+    })
+ 	$(".fixBigFix3 .guarantee-con").click(function (event) {
+        event.stopPropagation();
+    })
+    $(".fixBigFix2").click(function () {
+		$("#topTransition").addClass("topTransition")
+        $(".fixBigFix2").hide()
+    })
+    $(".shopping-con").click(function (event) {
+        event.stopPropagation();
+    })
+
+
+    $(".shopping-con .address a").click(function(){
+        open($('.ThankMoney'))
+    })
+    $(".ThankMoney").change(function(){
+        var text=$(this).find("option:selected").text();
+        $(".shopping-con .address span").html(text)
+    })
+
+    function open(elem) {
+        if (document.createEvent) {
+            var e = document.createEvent("MouseEvents");
+            e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            elem[0].dispatchEvent(e);
+        } else if (element.fireEvent) {
+            elem[0].fireEvent("onmousedown");
+        }
+    }
+
+
+
+    $(".heart").on("click",function(){
+		$(this).toggleClass("dq")
+
+		})
+		
+	$(".textvalue").keyup(function(){
+			var pattern = /(^[1-9]\d+$)|(^\d+\.?\d*$)/;
+			if(!pattern.test($(this).val())){
+				$(this).val(1);
+				}
+			else if($(this).val()==0){$(this).val(1);}
+			})	
+			
+	$("#confirmS").click(function(){
+
+        $("#topTransition").addClass("topTransition")
+        $("#topTransition").css("display","block")
+		$(".fixBigFix2").hide()
+        setTimeout(function () {
+            $("#topTransition").addClass("dq")
+        },200)
+
+		})	
+			
+	})
+</script>
+
+
+</article>
+
+<script>
+$(function(){
+	
+	$("#goTake").click(function(){
+		$(".fixBigFix").show()
+
+		})
+		
+		
+	$("#goShopping").click(function(){
+		$(".fixBigFix2").show()
+        $("#topTransition").removeClass("dq")
+        $("#topTransition").removeClass("topTransition")
+		})	
+	
+	$(".buttomFixSC").on("click",function(){
+			//取消收藏
+			if($(this).hasClass("dq")){
+				$(this).removeClass("dq")
+				$(this).find("span").html("收藏")
+				}
+			else{//收藏
+				$(this).addClass("dq")
+				$(this).find("span").html("已收藏")
+				}
+		})
+	
+	
+	
+})
+</script>
+</body>
+</html>

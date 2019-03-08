@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <meta content="telephone=no" name="format-detection" /> 
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<script>
+$(function(){
+	$(".navicon").click(function(){
+		$(this).toggleClass("open");
+		$(".nav-phone").toggleClass("open");
+		})
+		
+		
+		
+	$(".bgBox .video .but").click(function(){
+		if($(this).html()=='提交信息'){
+			$(".bgBox .video .form").hide()
+			$(".bgBox .video .cheack").show()
+			$(this).html('关闭')
+			}
+		else{
+			hide()
+			$(".bgBox .video .form").show()
+			$(".bgBox .video .cheack").hide()
+			$(this).html('提交信息')
+			}
+		})
+
+        $(".bgBox").click(function () {
+            $(".bgBox").fadeOut(200)
+        })
+        $(".video").click(function (e) {
+            e.stopPropagation()
+        })
+	
+	})
+	function show(){
+		$(".bgBox").fadeIn(200)
+		}
+	function hide(){
+		$(".bgBox").fadeOut(200)
+		}	
+		
+</script>
+
+<body>
+
+<!--弹框-->
+<div class="bgBox">
+	<div class="video">
+        <div class="close" onClick="hide()"><img src="images/close_03.jpg"></div>
+    	<div class="form">
+        	<p>请提交您的真实信息。稍后会有客服联系您</p>
+            <dd><input type="text" placeholder="　填写您的真实姓名" /></dd>
+            <dd><input type="text" placeholder="　填写您的微信号" /></dd>
+            <dd><input type="text" placeholder="　填写您的手机号" /></dd>
+        </div>
+        <div class="cheack" style="display:none">
+   	    	<img src="images/cheack.png" width="91" height="91"> <br />提交成功，请等待审核
+        </div>
+      <div class="but">提交信息</div>
+  </div>
+</div>
+
+<div class="nav">
+ <div class="p">
+	<a class="logo"><img src="images/logo.png"></a>
+    <div class="right">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="active">专业代购</a>
+        <a href="overseas.html" class="">海外商户</a> 
+   		<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="">下载APP </a> </div>
+ </div>
+</div>
+
+<div class="navicon">
+    <span class="icon icon-menu"><img src="images/select.png"></span>
+    <span class="icon icon-close">X</span>
+</div>
+<div class="nav-phone">
+	<div class="phone-a">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="active">专业代购</a>
+        <a href="overseas.html" class="">海外商户</a> 
+   		<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="">下载APP </a> </div>
+</div>
+
+
+<div class="box-card1 lis traveler zygw1">
+	<div class="text-model">
+    	<p class="text1-box2">
+       		 <strong>代购的未来之路</strong> 
+             <div class="text-sub">为专业跨境代购提供的专业交易工具<a href="javascript:show()">申请下载专业客户端</a>
+</div>
+        </p>
+    </div>
+    <img class="img-model" />
+</div>
+
+<div class="box-card2 lis">
+  <div class="text-model">
+    	<p class="box-card2-name">让代购做更为专业的生意</p>
+      <dd class="box-card2-dd">
+   	    <p><span><img src="images/hwgw1.png"></span>交易自动完成</p>
+          <div class="con">无须人工干预，专业跨境代购就可以利用该产品与社交圈的自有客户完成交易</div>
+    </dd>
+      <dd class="box-card2-dd">
+   	    <p><span><img src="images/hwgw2.png"></span>全程安全保障</p>
+          <div class="con">与第三方合作，提供税险，物险等全程安全保障，确保专业代购与客户之前的交易安全</div>
+    </dd>
+      <dd class="box-card2-dd">
+   	    <p><span><img src="images/hwgw3.png"></span>货源店铺直送</p>
+          <div class="con">与海外店铺合作,支持几千件低利润货源由店铺在国内仓库发出，大幅降低海外代购交易中的直邮成本</div>
+    </dd>
+        
+      <div class="clear"></div>
+  </div>
+    <img class="img-model" />
+</div>
+
+
+<div class="box-card3 lis">
+	<dd class="box-card3-dd">
+    	<div class="text-model">
+        	<p class="box-card3-n1">为代购创造一个专业的未来</p>
+            <div class="box-card3-line1"></div>
+            <p class="box-card3-n2"><span>获得更多的订单</span>
+依托购物者端app,将购物委托订单推送给代购</p>
+			<div class="box-card3-line2"></div>
+        	<p class="box-card3-n2"><span>获得更专业的营销支持</span>
+将视频直播、热门自媒体文与购买融合在一起,让代购的营销推广更为专业</p>
+			<div class="box-card3-line2"></div>
+        	<p class="box-card3-n2"><span>获得更多的线下服务</span>
+从代购专属的商户特惠到代购专属的线下特卖均为代购量身打造</p>
+      </div>
+        <img class="img-model" />
+    </dd>
+    <dd class="box-card3-dd right hwgw4"></dd>
+    <div class="clear"></div>
+</div>
+
+
+<div class="box-card4 lis">
+	<div class="text-model">
+    	<p class="box-card2-name new">用了PPbuyerPro</p>
+        <p class="box-card3-name">我的订单比原来增加了30%，也不用过多的去花费精力时时刻刻做重复劳动</p>
+      	<p class="box-card3-name2"><img src="images/card5c.png"><br />
+      	  知名日本代购  沫子立夏<br>
+      	</p>
+  </div>
+    <img class="img-model" />
+</div>
+
+
+<div class="box5">
+	<p class="logo2"><img src="images/logo2.png"></p>
+    <p class="weixin">
+    	<span><img src="images/weixin.png" usemap="#Map">
+            <map name="Map">
+              <area shape="rect" coords="3,2,34,27" target="_blank" href="http://weibo.com/ppbuyer">
+              <area class="wx" shape="rect" coords="61,3,97,25" href="javascript:void(0)">
+            </map>
+            <img class="ewm-wx" src="images/ewm.jpg"> 
+        </span>
+    </p>
+    <p class="text">Shanghai PPbuyer Information Technology Co., Ltd.     上海趣买信息技术有限公司</p>
+    <p class="text">沪ICP备15014553号     客服电话：<a href="tel:4006965513">4006965513</a></p>
+</div>
+<script>
+$(function(){
+	$(".weixin span map .wx").hover(function(){
+		    $(".ewm-wx").show()
+		},function(){
+			$(".ewm-wx").hide()
+			})
+	$(".weixin span map .wx").click(function(e){
+			e.stopPropagation();
+			$(".ewm-wx").show()
+		})
+	$("body").click(function(){
+		$(".ewm-wx").hide()
+		})	
+})
+</script>
+
+
+</body>
+</html>

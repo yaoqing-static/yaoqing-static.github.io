@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="transaction new511Bg1 bg3" style="background-color:#fff">
+
+
+<div class="tt1226-search">
+	<div class="con">
+    	<div class="name">111111</div>
+        <div class="modc">
+            <div class="regionModle">
+                <a>&nbsp;</a>
+                <input type="text" placeholder="1111" />
+            </div>
+        </div>
+        <div class="list">
+        	啊啊
+        </div>
+        <div class="sj"><img src="img/classify_arrow.5f8b8cfa.png" /></div>
+    </div>
+</div>
+
+
+    <div class="search-link"><a>点击 <img src="img/sanj10.png" width="9" height="19" /></a></div>
+    <script>
+        $(function(){
+            $(".zbBut a").click(function(){
+                $(".zbBut a").removeClass("dq")
+                $(this).addClass("dq")
+                $(".zbConent .list").fadeOut(200)
+                $(".zbConent .list").eq($(this).index()).fadeIn(200)
+
+            })
+
+            $(".search-link a").click(function(){
+                $(".tt1226-search").addClass("open")
+                $("body,html").css("overflow","hidden")
+            })
+            $(".tt1226-search").click(function(){
+                $(".tt1226-search").removeClass("open");
+                $("body,html").css("overflow","inherit")
+            })
+            $(".tt1226-search .con").click(function(e){
+                e.stopPropagation();
+            })
+
+        })
+
+    </script>
+</article>
+</body>
+</html>

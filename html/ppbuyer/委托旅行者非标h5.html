@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="Entrust-article">
+	<div class="box-information">
+    	<div class="dd"><input type="text" placeholder="请输入您的微信号，方便旅行者与您及时联系" class="weixin" /></div>
+        <div class="dd"><input type="number" placeholder="请输入手机号，方便旅行者与您及时联系" class="phone" /></div>
+        <div class="dd"><input type="text" placeholder="请输入商品名称" class="product" /></div>
+        <div class="dd"><span>配送至</span><input id="address" type="text" readonly="" value="请选择" /><input id="value2" type="hidden" /></div>	
+        <div class="name">选择商品份数</div>
+        
+        <div class="dd2"><a class="sub">一</a><input type="number" class="textvalue" value="1" /><a class="add">+</a></div>	
+        
+    </div>
+    
+    <div class="box-Entrust">
+        <div class="but"><a>下一步</a></div>
+ 	</div>
+
+</article>
+<script src="js/LAreaData2.js"></script>
+<script src="js/LArea.js"></script>
+<script>
+
+var area2 = new LArea();
+area2.init({
+	'trigger': '#address',
+	'valueTo': '#value2',
+	'keys': {
+		id: 'value',
+		name: 'text'
+	},
+	'type': 2,
+	'data': [provs_data, citys_data, dists_data]
+});
+
+$(function(){
+		$(".textvalue").keyup(function(){
+			var pattern = /(^[1-9]\d+$)|(^\d+\.?\d*$)/;
+			if(!pattern.test($(this).val())){
+				$(this).val(1);
+				}
+			else if($(this).val()==0){$(this).val(1);}
+			})	
+
+	$(".add").click(function(){
+		  var i=parseInt($(".textvalue").val()); //parseInt()转化为数字
+		  $(".textvalue").val(++i)
+		})
+		
+	$(".sub").click(function(){
+		    var i=parseInt($(".textvalue").val()); //parseInt()转化为数
+			if(i>1){
+				console.log(i)
+				 $(".textvalue").val(--i)
+				}
+		})
+	
+	})
+</script>
+
+</body>
+</html>

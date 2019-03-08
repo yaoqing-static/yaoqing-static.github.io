@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="qh-box">
+    <div class="qh-lis">
+    	<dd>中国　　<span>+86</span></dd>
+        <dd>日本　　<span>+862</span></dd>
+        <dd>韩国　　<span>+863</span></dd>
+        <dd>美国　　<span>+864</span></dd>
+        <dd>中国　　<span>+865</span></dd>
+        <dd>日本　　<span>+866</span></dd>
+        <dd>韩国　　<span>+86</span></dd>
+        <dd>美国　　<span>+861</span></dd>
+        <dd>中国　　<span>+86</span></dd>
+        <dd>日本　　<span>+86</span></dd>
+        <dd>韩国　　<span>+86</span></dd>
+        <dd>美国　　<span>+86</span></dd>
+        <dd>中国　　<span>+86</span></dd>
+        <dd>日本　　<span>+86</span></dd>
+        <dd>韩国　　<span>+86</span></dd>
+        <dd>美国　　<span>+86</span></dd>
+        <dd>中国　　<span>+86</span></dd>
+        <dd>日本　　<span>+86</span></dd>
+        <dd>韩国　　<span>+86</span></dd>
+        <dd>美国　　<span>+86</span></dd>
+        <dd>中国　　<span>+86</span></dd>
+        <dd>日本　　<span>+86</span></dd>
+        <dd>韩国　　<span>+86</span></dd>
+        <dd>美１国　　<span>+86</span></dd>
+    </div>
+</div>
+<article class="yqbox">
+	<div class="a1">
+      	<div class="text">
+   	    	<img src="img/S0001321020151102002.jpg"/>日月当空<br />
+   	    	邀请你加入日本代购联盟,<br />
+   	    	从此不再是孤单一个人!</div>
+    </div>
+    <div class="a2">零门槛加入“日本代购联盟”<br />
+      使用“代购专属APP”<br />
+    尽享诸多福利。<a href="#">关于代购联盟</a>
+    </div>
+    
+  <div class="a3"><a>输入手机号   加入代购联盟</a></div>
+    <div class="a4">代购“朋友圈”和同行一起共享最优货源<br />
+      放心做直邮，被税有保险<br />
+      全球货物直送，热门商品不用自己去跑腿<br />
+    海量新订单，带给你新的客户群</div>
+	
+  <div class="yq-foot"><img src="img/yqlog.png" width="172" height="157" /></div>	
+	
+    
+    
+  <div class="yg-top-bg" style="display:block">
+     <div class="con">
+     	<div class="lis no-1">
+        	<div class="hco">
+            	<div class="title">登 录</div>
+                <div class="input">
+                	<span class="qh">+86</span>
+                	<input id="mobile" type="tel" placeholder="请输入手机号" />
+                </div>
+            </div>
+            <a class="but "  />下一步</a>
+        </div>
+        
+       <div class="lis no-2" style="display:none">
+        	<div class="hco">
+            	<img class="pre" src="img/yqr.png" width="36" height="41" />
+<div class="title">登 录</div>
+                <div class="text2">验证码将发送至 135 8555 5555<br />
+                	<a class="">51s 后重发</a>
+                    <a class="fs" style="display:none">发送验证码</a>
+                </div>
+            </div>
+			<div class="yzm">
+            	<input class="b" type="tel" value="" />
+                <input class="b" type="tel" value="" />
+                <input class="b" type="tel" value="" />
+                <input class="b" type="tel" value="" />
+            </div>
+        </div>
+        
+        <div class="lis no-3" style="display:none">
+        	<div class="hco">
+            	<div class="title">验证成功</div>
+                <div class="a3"><img src="img/cheac.png" width="94" height="94" /></div>
+            </div>
+			
+        </div>
+       
+     </div>
+  </div>
+  
+  <script>
+  	$(".yqbox .a3 a").click(function(){
+		$(".yg-top-bg").show()
+		})
+	$(".yg-top-bg").click(function(){
+		$(".yg-top-bg").hide()
+		})
+		
+				
+  	
+	$("#mobile").keyup(function (event) {
+        event.stopPropagation()
+		var mobile=$("#mobile").val();
+		if(checkMobile(mobile)){
+			$(".yqbox .yg-top-bg .con .but").addClass("active")
+			}
+
+	});
+  
+   $(".yqbox .yg-top-bg .con").click(function (evt){
+      evt.stopPropagation();
+   })
+   
+   $(".hco .pre").click(function(){
+	   $(".con .lis").hide()
+	   var index=$(this).parents(".lis").index()-1;
+      	$(".con .lis").eq(index).show()
+	   
+	   })
+	
+	function checkMobile(s){
+		var regu =/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+		if (regu.test(s)) {
+				return true;
+			}else{
+			   return false;
+			}
+		}
+		
+	function clearNoNum(ob) {
+		if (ob.value.length == 1) {
+				ob.value = ob.value.replace(/[^1-9]/g, '')
+			} else {
+				ob.value = ob.value.replace(/\D/g, '')
+			}
+        }	
+		
+	
+	//下一步验证码	
+	$(".yg-top-bg .con .but").click(function(){
+       if($(this).hasClass("active")) {
+        $(".con .lis").hide()
+        $(".lis.no-2").show()
+       }
+       
+    });	
+	
+	$(".yzm .b").keyup(function (event) {
+	   
+	   clearNoNum($(this).get(0));
+	   var val=$(this).val();
+	   var index=$(this).index()+1;
+	  if(index>1){
+		 if (event.keyCode == 8) { 
+			$(".yzm .b").eq($(this).index()-1).focus().val("") 	 
+			}  
+	   }
+	   if(val!=''){
+		 if(index==4){
+			 console.log("发送")
+			 $(".con .lis").hide()
+       		 $(".lis.no-3").show()
+			 }else{
+			$(".yzm .b").eq(index).focus() 	 
+				 }
+		  
+		   }
+		
+		})
+	
+	
+	//区号
+	
+	$(".input span").click(function(){
+		$(".qh-box").show();
+		$("body").css("overflow-y","hidden")
+		})
+	$(".qh-box dd").click(function(){
+		$(".qh-box").hide();
+		$("body").css("overflow","scroll")
+		var qh=$(this).find("span").html();
+		$(".input span").html(qh)
+		})
+	
+		
+		
+  </script>
+  
+    
+</article>
+</body>
+</html>

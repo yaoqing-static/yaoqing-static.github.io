@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/entry.59251646.css">
+<body>
+<div id="header">
+    <div class="wd-header ng-scope">
+        <div class="header-b" style="background: #222">
+            <div class="header-b-c">
+                <div class="header-b-l">
+                    <a href=""><img class="logo" src="images/logo.png"></a>
+                </div>
+                <div class="header-b-r">
+                    <div class="wealth-tips" ng-show="isShowInfo"><span class="shopLogo"><img alt=""
+                                                                                              src="http://www.chinamedia360.com/media_web/resources/images/index/zy-2.jpg"></span><span
+                            id="hd_u_name" class="ng-binding">甜美衣舍潮流女装中心</span>
+                        <div class="tips-list"><!-- ngIf: !isSA -->
+                            <div class="ng-scope"><a
+                                    href="#">个人资料</a></div>
+                            <!-- end ngIf: !isSA -->
+                            <div>退出账号</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <div id="menu" class="ng-scope">
+        <div class="slider-left ng-scope">
+            <div class="nav-model">
+                <a class="for_gaq " href="index.html"><i class="iconfont icon-IconCopy2"></i>首页</a>
+            </div>
+            <div class="nav-model">
+                <div class="lable">
+                    <i class="iconfont icon-IconCopy18"></i>装修
+                </div>
+                <div class="children">
+                    <a class="for_gaq" href="#">店铺装修</a>
+                    <a class="for_gaq" href="#">店铺装修</a>
+                </div>
+            </div>
+            <div class="nav-model">
+                <div class="lable">
+                    <i class="iconfont icon-CombinedShape"></i>商品
+                </div>
+                <div class="children">
+                    <a class="for_gaq cur" href="commodity-management.html">商品管理</a>
+                    <a class="for_gaq " href="classify-management.html">分类管理</a>
+                </div>
+            </div>
+            <div class="nav-model">
+                <a class="for_gaq" href="#"><i class="iconfont icon-IconCopy3"></i>订单 <i
+                        class="num order-infor ng-binding ng-hide">10</i></a>
+
+            </div>
+            <div class="nav-model">
+                <div class="lable">
+                    <i class="iconfont icon-IconCopy14"></i>设置
+                </div>
+                <div class="children">
+                    <a class="for_gaq" href="#">店铺装修</a>
+                    <a class="for_gaq" href="#">店铺装修</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div ui-view="wrap" id="wrap" class="ng-scope">
+        <div id="right-content" class="cpc-items ng-scope">
+            <div class="cpc-items ng-scope">
+                <div class="cpc-items-header">
+                    <div class="item-title">商品管理</div>
+                    <div class="item-search">
+                        <a>
+                            <div class="search-icon"></div>
+                        </a>
+                        <input type="text" placeholder="商品名称" class="ng-pristine ng-untouched ng-valid ng-empty">
+                    </div>
+                </div>
+
+                <div class="cpc-items-filter-main">
+                    <a href="javascript:void(0)" class="active">全部</a>
+                    <a href="javascript:void(0)">出售中</a>
+                    <a href="javascript:void(0)">已售完</a>
+                    <a href="javascript:void(0)">已下架</a>
+                </div>
+
+                <div class="cpc-items-main-opt">
+                    <a href="javascript:void(0)">批量导出商品</a>
+                    <a href="javascript:void(0)">添加商品</a>
+                </div>
+
+                <div class="cpc-items-filter-sub">
+                    <div class="filter-sub-title">排序</div>
+                    <div class="filter-sub-inner">
+                        <a href="javascript:void(0)" style="padding-right:14px;" class="active">创建时间
+                        </a>
+                        <a href="javascript:void(0)">库存
+                            <span class="icon-angle-up"></span>
+                            <span class="icon-angle-down"></span>
+                        </a>
+                        <a href="javascript:void(0)">销量
+                            <span class="icon-angle-up"></span>
+                            <span class="icon-angle-down"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cpc-items-multi-opt ng-scope" ng-if="!ctrl.itemDisableEdit">
+                    <div class="multi-opt-title">
+                        <input ng-model="ctrl.selectedAll" ng-click="ctrl.clickAll(ctrl.selectedAll, ctrl.items)"
+                               type="checkbox" id="cpc-items-select-all"
+                               class="ng-pristine ng-untouched ng-valid ng-empty">
+                        <label for="cpc-items-select-all" style="margin: 0 0 0 5px;">全选</label>
+                    </div>
+                    <div class="multi-opt-inner">
+                        <a href="javascript:void(0)">批量分类</a>
+                        <a href="javascript:void(0)">批量改价</a>
+                        <a href="javascript:void(0)">批量下架</a>
+                        <a href="javascript:void(0)">批量删除</a>
+                    </div>
+                </div>
+
+                <div class="cpc-item-list">
+                    <div class="cpc-item-list-title">
+                        <div style="width:40%;">商品描述</div>
+                        <div>价格</div>
+                        <div>销量</div>
+                        <div>库存</div>
+                        <div>分类</div>
+                        <div>创建时间</div>
+                        <div class="ng-scope">操作</div>
+                    </div>
+
+                    <div class="list-content-item ng-scope">
+                        <div class="cpc-item-main-con">
+                            <div class="cpc-item-cell" style="width:3%;">
+                                <input type="checkbox" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            </div>
+                            <div class="cpc-item-cell" style="width:37%;">
+                                <a class="cpc-item-image-desc"
+                                   target="_blank" href="">
+                                    <div class="img">
+                                        <img width="100" height="100" src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+                                        <div class="qrcode-con">
+                                            <div class="qrcode-inner">
+                                                <qrcode version="5">
+                                                    <img width="100" height="100" src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+                                                </qrcode>
+                                                <div class="tip1">手机扫描二维码<br>预览商品</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cpc-item-desc">
+                                        <div class="item-name ng-binding">
+                                            2018春季新款女圆领喇叭袖长袖气质甜美蝴蝶结装饰收腰性感连衣裙
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cpc-item-cell"><span class="ng-scope">&nbsp;</span>
+                            </div>
+                            <div class="cpc-item-cell">
+                                <span class="ng-binding">0</span>
+                            </div>
+                            <div class="cpc-item-cell">
+                                <span  class="ng-binding">800</span>
+                            </div>
+                            <div class="cpc-item-cell"><span class="ng-binding ng-scope"></span>
+                            </div>
+                            <div class="cpc-item-cell">
+                                <span class="ng-binding">2018-04-12 11:37:26</span>
+                            </div>
+                            <div class="cpc-item-cell cpc-item-opt ng-scope">
+                                <a href="javascript:void(0)">编辑</a><a href="javascript:void(0)" class="ng-scope">下架</a>
+                                <a href="javascript:void(0)">删除</a>
+                            </div>
+                        </div>
+                        <div class="cpc-item-sku-con ng-scope">
+                            <div class="ng-scope">
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">S;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="ng-scope">
+
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">M;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="ng-scope ng-hide">
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">L;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="ng-scope ng-hide">
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">XL;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)"  class="sku-show-toggle btn ng-scope">
+                            <span class="">共<span class="ng-binding">4</span>个型号，点击展开</span>
+                            <span class="ng-hide">点击收回</span>
+                        </a>
+                    </div>
+
+                    <div class="list-content-item ng-scope">
+                        <div class="cpc-item-main-con">
+                            <div class="cpc-item-cell" style="width:3%;">
+                                <input type="checkbox" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            </div>
+                            <div class="cpc-item-cell" style="width:37%;">
+                                <a class="cpc-item-image-desc"
+                                   target="_blank" href="">
+                                    <div class="img">
+                                        <img width="100" height="100" src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+                                        <div class="qrcode-con">
+                                            <div class="qrcode-inner">
+                                                <qrcode version="5">
+                                                    <img width="100" height="100" src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+                                                </qrcode>
+                                                <div class="tip1">手机扫描二维码<br>预览商品</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cpc-item-desc">
+                                        <div class="item-name ng-binding">
+                                            2018春季新款女圆领喇叭袖长袖气质甜美蝴蝶结装饰收腰性感连衣裙
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cpc-item-cell"><span class="ng-scope">&nbsp;</span>
+                            </div>
+                            <div class="cpc-item-cell">
+                                <span class="ng-binding">0</span>
+                            </div>
+                            <div class="cpc-item-cell">
+                                <span  class="ng-binding">800</span>
+                            </div>
+                            <div class="cpc-item-cell"><span class="ng-binding ng-scope"></span>
+                            </div>
+                            <div class="cpc-item-cell">
+                                <span class="ng-binding">2018-04-12 11:37:26</span>
+                            </div>
+                            <div class="cpc-item-cell cpc-item-opt ng-scope">
+                                <a href="javascript:void(0)">编辑</a><a href="javascript:void(0)" class="ng-scope">下架</a>
+                                <a href="javascript:void(0)">删除</a>
+                            </div>
+                        </div>
+                        <div class="cpc-item-sku-con ng-scope">
+                            <div class="ng-scope">
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">S;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="ng-scope">
+
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">M;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="ng-scope ng-hide">
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">L;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div class="ng-scope ng-hide">
+                                <div class="cpc-item-cell" style="width:37%;margin-left:3%;">
+                                    <span class="ng-binding">XL;杏色</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">103.00</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">0</span>
+                                </div>
+                                <div class="cpc-item-cell">
+                                    <span class="ng-binding">200</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)"  class="sku-show-toggle btn ng-scope">
+                            <span class="">共<span class="ng-binding">4</span>个型号，点击展开</span>
+                            <span class="ng-hide">点击收回</span>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

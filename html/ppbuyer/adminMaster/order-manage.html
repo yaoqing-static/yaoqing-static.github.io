@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+<style>
+html,body {background-color: #fff;
+	}
+
+</style>
+<body>
+
+    <div class="dilog-box" style="display: none;">
+        <div class="con">
+            <p>输入物流信息</p>
+            <dd>
+                <select>
+                    <option>1111</option>
+                </select>
+            </dd>
+            <dd><input placeholder="选择快递公司" type="text" /></dd>
+            <dd class="but"><a href="#"><img src="image/but.png" /></a></dd>
+        </div>
+    </div>
+
+<nav class="nav-y">
+  <div class="a1"></div>
+ 	<div class="logo-img">
+    	<img src="image/logo1.png" width="104" height="104"> 
+    	<p>三妆化研后台</p>
+      <a href="#">切换商户</a> &nbsp;&nbsp; <a href="#">退出登录</a>
+    </div>
+    
+    <div class="link">
+    	<a href="index.html">商品</a>
+    	<a href="order-manage.html" class="a2 active">订单管理</a>
+        <a href="statistics.html" class="a3">统计</a>
+        <a href="#" class="a4">保证金</a>
+        <a href="#" class="a5">商户收入</a>
+    </div>
+    
+    
+    
+</nav>
+
+<div class="app app-header-fixed">
+    <div class="app-right">
+        <div class="user"> <img width="40" height="40" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" /><a>三妆化研后台</a></div>
+    </div>
+
+</div>
+
+
+<div class="content">
+    <div class="c-body">
+       <div class="model1">
+       		<p>订单管理</p>
+           <div class="form">
+              <p>销量查询</p>
+              <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="n">选择商品</span><span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id="product">
+                    <li><a href="#">Action1</a></li>
+                    <li><a href="#">Action2</a></li>
+                </ul>
+              </div>
+                <div class="time">时间</div>
+               <div class="btn-group">
+                <button readonly class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+                  <input type="text" class="datetimepicker">
+                </button>
+              </div>
+              <div class="time" style="margin-left: 5px">-</div>
+              <div class="btn-group">
+                <button readonly class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+                  <input type="text" class="datetimepicker">
+                </button>
+              </div>
+
+              <a class="export">导出excel表格</a>
+
+           </div> 
+
+            <div class="model1-link">
+                 <a href="#" class="active">全部订单</a><a href="#">待付款</a><a href="#">待发货</a><a href="#">待签收</a>	<a href="#">已完成</a>	
+            </div>
+       </div>
+       
+       
+       <div class="table-con1" style="border:none">
+        <table class="table table-bordered" style="border:none">
+          <thead>
+           <tr>
+            <th>订单信息</th>
+            <th class="b">规格份数</th>
+            <th width="280">收货地址</th>
+            <th class="b">操作</th>
+           </tr>
+          </thead>
+          
+          <tbody class="pp list">
+            <tr><td colspan="4" style="padding:3px 0; border:none">&nbsp;</td></tr>
+            <tr class="title">
+           		 <td colspan="4">下单时间：2016-07-12 16:08:13&nbsp; &nbsp;&nbsp;&nbsp;订单号：774581087371681
+                 <span>共1件商品</span>             </td>
+            </tr>
+          	<tr>
+               <td class="pic">
+                   <div class="b">
+                      <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                      <p><span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span></p>
+                   </div>
+               </td>
+               <td><div class="b">白色<br>x1</div></td>
+               <td rowspan="3"><div class="b address">杭霸天 13333333333<br>
+                 上海 徐汇区 天钥桥南路1199弄89号<br>
+                 <span>备注：什么什么什么什么美食</span>
+               </div></td>
+               <td rowspan="3"><div class="b">待付款</div></td>
+            </tr>
+            <tr>
+                <td class="pic">
+                    <div class="b">
+                        <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                        <p><span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span></p>
+                    </div>
+                </td>
+                <td><div class="b">白色<br>x1</div></td>
+            </tr>
+            <tr>
+                <td class="pic">
+                    <div class="b">
+                        <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                        <p><span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span></p>
+                    </div>
+                </td>
+                <td><div class="b">白色<br>x1</div></td>
+            </tr>
+          </tbody>
+          
+          <tbody class="pp list">
+            <tr><td colspan="4" style="padding:3px 0; border:none">&nbsp;</td></tr>
+            <tr class="title">
+           		 <td colspan="4">下单时间：2016-07-12 16:08:13&nbsp; &nbsp;&nbsp;&nbsp;订单号：774581087371681 
+                 <span>共1件商品</span>             </td>
+            </tr>
+          	<tr>
+               <td class="pic">
+                   <div class="b">
+                      <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                      <p><span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span></p>
+                   </div>
+               </td>
+               <td><div class="b">白色<br>x1</div></td>
+               <td><div class="b address">杭霸天 13333333333<br>
+                 上海 徐汇区 天钥桥南路1199弄89号<br>
+                 <span>备注：什么什么什么什么美食</span>
+              </div></td>
+               <td><div class="b"><A>查看物流</A></div></td>
+            </tr>
+          </tbody>
+          
+          <tbody class="pp list">
+            <tr><td colspan="4" style="padding:3px 0; border:none">&nbsp;</td></tr>
+            <tr class="title">
+           		 <td colspan="4">下单时间：2016-07-12 16:08:13&nbsp; &nbsp;&nbsp;&nbsp;订单号：774581087371681 
+                 <span>共1件商品</span>             </td>
+            </tr>
+          	<tr>
+               <td class="pic">
+                   <div class="b">
+                      <img width="99" height="99" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                      <p><span>三粧化研净颜焕彩洁面凝胶30ml深层清洁凝胶面部女去角质啫喱</span></p>
+                   </div>
+               </td>
+               <td><div class="b">白色<br>x1</div></td>
+               <td><div class="b address">杭霸天 13333333333<br>
+                 上海 徐汇区 天钥桥南路1199弄89号<br>
+                 <span>备注：什么什么什么什么美食</span>
+              </div></td>
+               <td><div class="b"><a class="but">输入物流</a></div></td>
+            </tr>
+          </tbody>
+          
+        </table>
+       </div>
+       
+       
+       
+    </div>
+</div>
+
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.datetimepicker.full.js"></script>
+<script src="js/conter.js"></script>
+
+<script>
+   $("#product a").click(function(event) {
+     /* Act on the event */
+     $(this).parents(".btn-group").find(".n").text($(this).text());
+   });
+
+   $.datetimepicker.setLocale('en');
+
+   $('.datetimepicker').datetimepicker({
+    lang:'ch',
+    timepicker:false,
+    format:'Y-m-d',
+    formatDate:'Y-m-d',
+  });
+</script>
+
+</body>
+</html>
+			

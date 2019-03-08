@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/entry.59251646.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+<div class="popover-item-list" style=" position:relative; transform: translate(0,0); -webkit-transform: translate(0,0); -moz-transform: translate(0,0);top: 0px; left: 0px">
+    <div class="search-input">
+        <a class="search-icon">
+        </a>
+        <input type="text" placeholder="搜索商品" name="">
+    </div>
+
+    <div class="list-warp">
+        <section style="display: none" class="no-items ng-hide">暂时没有可添加的商品</section>
+        <section>
+            <div class="checkbox-div">
+                <div class="checkbox-warp active">
+                    <div class="checkbox"></div>
+                </div>
+            </div>
+            <div class="item-img">
+                <img  src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+            </div>
+            <div class="text-div">
+                <div class="title">2018春季新款女圆领喇叭袖长袖气质甜美蝴蝶结装饰收腰性感连衣裙</div>
+                <div class="money">￥103.00</div>
+            </div>
+        </section>
+        <section>
+            <div class="checkbox-div">
+                <div class="checkbox-warp">
+                    <div class="checkbox"></div>
+                </div>
+            </div>
+            <div class="item-img">
+                <img  src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+            </div>
+            <div class="text-div">
+                <div class="title">2018春季新款女圆领喇叭袖长袖气质甜美蝴蝶结装饰收腰性感连衣裙</div>
+                <div class="money">￥103.00</div>
+            </div>
+        </section>
+        <section>
+            <div class="checkbox-div">
+                <div class="checkbox-warp">
+                    <div class="checkbox"></div>
+                </div>
+            </div>
+            <div class="item-img">
+                <img  src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+            </div>
+            <div class="text-div">
+                <div class="title">2018春季新款女圆领喇叭袖长袖气质甜美蝴蝶结装饰收腰性感连衣裙</div>
+                <div class="money">￥103.00</div>
+            </div>
+        </section>
+        <section>
+            <div class="checkbox-div">
+                <div class="checkbox-warp">
+                    <div class="checkbox"></div>
+                </div>
+            </div>
+            <div class="item-img">
+                <img  src="https://si.geilicdn.com/bj-open-160908490-1523504231233-522850434_800_800.jpg?w=200&amp;h=200&amp;cp=1">
+            </div>
+            <div class="text-div">
+                <div class="title">2018春季新款女圆领喇叭袖长袖气质甜美蝴蝶结装饰收腰性感连衣裙</div>
+                <div class="money">￥103.00</div>
+            </div>
+        </section>
+        
+
+
+         <div style="padding: 0 18px" class="pagination-warp" id="biuuu_page"></div>
+    </div>
+
+   
+    
+
+
+</div>
+
+
+
+
+
+
+<script src="js/jquery-1.8.3.min.js" type="application/javascript"></script>
+<script src="laypage/laypage.js" type="application/javascript"></script>
+<script>
+var pages = 10; //得到总页数
+
+//调用分页
+laypage({
+    cont: 'biuuu_page',
+    pages: pages,
+    curr: 2,
+    jump: function(e){ //触发分页后的回调
+        console.log(e.curr)
+       
+    }
+})
+</script>
+</body>
+
+</html>

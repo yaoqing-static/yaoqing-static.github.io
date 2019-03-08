@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <meta content="telephone=no" name="format-detection" /> 
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<script>
+$(function(){
+	$(".navicon").click(function(){
+		$(this).toggleClass("open");
+		$(".nav-phone").toggleClass("open");
+		})
+	
+	})
+</script>
+<body>
+<div class="nav">
+ <div class="p">
+	<a class="logo"><img src="images/logo.png"></a>
+    <div class="right">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="">专业代购</a>
+        <a href="overseas.html" class="">海外商户</a> 
+   		<a href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="active">下载APP </a> 
+    </div>
+ </div>
+</div>
+
+<div class="navicon">
+    <span class="icon icon-menu"><img src="images/select.png"></span>
+    <span class="icon icon-close">X</span>
+</div>
+<div class="nav-phone">
+	<div class="phone-a">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="">专业代购</a>
+        <a href="overseas.html" class="">海外商户</a> 
+   		<a href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="active">下载APP </a> 
+    </div>
+</div>
+
+
+<div class="box">
+	<div class="text-model">
+    	<p class="text1">每个人都能帮你买遍全世界</p>
+    	<p class="text2">Buy Everything By Everyone</p>
+        <p class="but"><a href="#">观看广告影片</a></p>
+    </div>
+    <img class="img-model" />
+</div>
+<div class="box2 lis">
+	<div class="text-model">
+    	<p class="text1-box2">
+       		 <strong>突破边界的跨境购物</strong> 
+             <div class="text-sub">用去中心化的方式，让全世界分布在店铺附近的每一个人<br />
+都成为代购热点，为你完成线下店铺商品的购买</div>
+        </p>
+  </div>
+    <img class="img-model" />
+</div>
+<div class="box3 lis">
+	<div class="text-model">
+    	<p class="text1-box2">
+       		 <strong>让全世界的人光顾你的店铺</strong> 
+             不论商户在世界何方，只要附近有人使用PPbuyer，<br />
+都可以通过这个热点突破地域的限制
+
+        </p>
+  </div>
+    <img class="img-model" />
+</div>
+
+<div class="box4 lis">
+	<div class="text-model">
+    	<p class="text1-box2 new">
+       		 <strong>专业的跨境交易解决方案</strong> 
+             下载专业端APP<br />
+为专业的跨境购物从业者提供基于社交平台交易的整套方案
+        </p>
+    </div>
+    <img class="img-model" />
+</div>
+
+<div class="box5">
+	<p class="logo2"><img src="images/logo2.png"></p>
+    <p class="weixin"><img src="images/weixin.png"></p>
+    <p class="text">Shanghai PPbuyer Information Technology Co., Ltd.     上海趣买信息技术有限公司</p>
+    <p class="text">沪ICP备15014553号     客服电话：<a href="tel:4006965513">4006965513</a></p>
+</div>
+<script>
+$(function(){
+	
+	function size(){
+		var windowWidth=$(window).width();
+		if(windowWidth<960){
+			$(".box").height(windowWidth*0.6)
+			}
+		if(windowWidth<960){
+			$(".box2,.box4").css("background-size","auto 100%")
+			$(".lis").height(windowWidth*0.6)
+			if(windowWidth<650){
+				$(".box2,.box4").css("background-size","100% auto")
+				}
+			}else{
+				$(".box2,.box4").css("background-size","100% auto")
+				}	
+			
+		}
+	size()
+	
+	$(window).resize(function(){
+		size()
+		
+		})
+	
+	
+	})
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="shopping-cart address-management">
+
+    <div class="con">
+        <div class="payment1">
+            <h1>收货人：杭霸天<span>13585622909</span></h1>
+            <p><img src="img/m4.png" width="17" height="22" />收货地址：上海市徐汇区天钥桥南路1199弄89号202室</p>
+        </div>
+     </div>
+
+    <!--无产品状态-->
+    <div class="card-none-product" style="display: none">
+        <img src="img/test2.png" alt=""/><br />购物车内没有商品哦！
+    </div>
+
+   <div class="cart">
+   	 <div class="name"><span class="radioAll"></span><img src="img/man.png" width="20" height="25" />杭霸天  <a>编辑</a></div>
+   	 <div class="product10">
+     	<dd>
+        	<div class="radio201714"></div>
+        	<img src="img/share1.jpg" width="150" height="150" />
+        	<div class="text10">
+            	<p class="a1">royce 苹果蜜饯夹心巧克力苹果蜜饯夹心巧克力苹果蜜饯夹心力</p>
+                <p class="a2">份数 x 1</p>
+                <p class="a3">¥9100.29</p>
+            </div>
+            
+            <div class="edit10">
+                <div class="a10">
+                    <img class="subtract" src="img/djj.png" width="27" height="26" />
+                    <input class="textvalue" value="1" type="text" />
+                    <img class="add" src="img/djjj.png" width="27" height="26" />
+                    <a class="delete">删除</a>  
+                </div>
+                
+          </div>
+          
+          <div class="newCheack">
+            该商品使用拼箱方式运送
+              <div class="po">
+                <label class="cheak-new"><input type="checkbox" class="ios-switch green  bigswitch" checked /><div>  
+                        <div>  
+                        </div>  
+                    </div>  
+                </label> 
+              </div>
+          </div>
+          
+          
+        </dd>
+        
+        <dd>
+        	<div class="radio201714"></div>
+        	<img src="img/share1.jpg" width="150" height="150" />
+        	<div class="text10">
+            	<p class="a1">royce 苹果蜜饯夹心巧克力苹果蜜饯夹心巧克力苹果蜜饯夹心苹果蜜饯夹心巧克蜜饯夹心巧克力</p>
+                <p class="a2">份数 x 1</p>
+                <p class="a3">¥9100.29</p>
+            </div>
+            
+            <div class="edit10">
+                <div class="a10">
+                    <img class="subtract" src="img/djj.png" width="27" height="26" />
+                    <input class="textvalue" value="1" type="text" />
+                    <img class="add" src="img/djjj.png" width="27" height="26" />
+                    <a class="delete">删除</a>  
+                </div>
+                
+          </div>
+        </dd>
+
+        <div class="text11">
+        	共2件商品&nbsp;&nbsp;&nbsp;总价：<span>¥900000</span>&nbsp;&nbsp;&nbsp;(含运费:¥8)
+        </div>
+
+     </div>
+	
+   </div>
+
+   	
+    
+  <div class="height120"></div> 
+ <div class="bottomFixBox new1030 new1714">
+	<span class="radioAll"></span>&nbsp;&nbsp;全选
+    <div class="text11">
+        	合计：<span>¥900000</span>(含运费)
+    </div>
+    <a class="buttomFix new1714" id="goTake">结算</a>
+ </div>
+    
+<script>
+
+$(function(){
+	
+	
+	$(".radioAll").click(function(){
+		
+		//取消全选
+		if($(this).hasClass("active")){
+			$(".radioAll").removeClass("active")
+			$(".product10 .radio201714").removeClass("active")	
+		}
+		else{	//全选
+			$(".radioAll").addClass("active")	
+			$(".product10 .radio201714").addClass("active")	
+				}
+		})
+	
+	//单个选择状态	
+	$(".product10 .radio201714").click(function(){
+		var zCount=$(".product10 .radio201714").length
+		//取消
+		if($(this).hasClass("active")){
+			$(this).removeClass("active")
+		}
+		else{	//选中
+			$(this).addClass("active")
+				}
+		var xzCount=$(".product10 .radio201714.active").length;
+		console.log(zCount+"--"+xzCount)
+		if(xzCount==zCount){
+			$(".radioAll").removeClass("active").addClass("active")	
+			}else{
+				$(".radioAll").removeClass("active")
+				}
+		
+		
+		})
+		
+	
+	
+		
+	$(".shopping-cart .cart .name a").click(function(){
+		if($(this).hasClass("save")){
+			$(this).removeClass("save");
+			$(this).html("编辑")
+			$(".product10 dd .text10").show()
+			$(".product10 dd .edit10").hide()
+		}else{
+			$(this).addClass("save");
+			$(this).html("保存")
+			$(".product10 dd .text10").hide()
+		    $(".product10 dd .edit10").show()	
+			}
+		
+		})	
+		
+	
+		
+	$(".shopping-cart .cart .product10 dd .edit10 .a10 .add").click(function(){
+		  var i=parseInt($(this).siblings(".textvalue").val()); //parseInt()转化为数字
+		  $(this).siblings(".textvalue").val(++i)
+		})
+		
+	$(".product10 dd .edit10 .a10 .subtract").click(function(){
+		    var i=parseInt($(this).siblings(".textvalue").val()); //parseInt()转化为数
+			if(i>1){
+				console.log(i)
+				 $(this).siblings(".textvalue").val(--i)
+				}
+		})
+
+		$(".textvalue").keyup(function(){
+			var pattern = /(^[1-9]\d+$)|(^\d+\.?\d*$)/;
+			if(!pattern.test($(this).val())){
+				$(this).val(1);
+				}
+			else if($(this).val()==0){$(this).val(1);}
+			})
+
+
+	})
+</script>
+    
+</article>
+</body>
+</html>

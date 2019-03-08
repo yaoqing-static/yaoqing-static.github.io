@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <meta content="telephone=no" name="format-detection" /> 
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+<div class="nav">
+ <div class="p">
+	<a class="logo"><img src="images/logo.png"></a>
+    <div class="right">
+    	<a href="#">首页</a>
+        <a href="#">关于我们</a>
+        <a href="#" class="active">购物者</a>
+        <a href="#">旅行者</a>
+        <a href="#">专业代购</a>
+        <a href="#">海外商户</a> 
+   		<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer">下载APP</a> 
+    </div>
+ </div>
+</div>
+
+<div class="box-card1 lis">
+	<div class="text-model">
+    	<p class="text1-box2">
+       		 <strong>买遍四方</strong> 
+             <div class="text-sub">无论您要的产品在全世界哪个角落<br />
+我们都可以实时找到在附近的人，并让他帮您买回来<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer">下载APP</a>
+</div>
+        </p>
+    </div>
+    <img class="img-model" />
+</div>
+
+<div class="box-card2 lis">
+  <div class="text-model">
+    	<p class="box-card2-name">与众不同的购物体验</p>
+      <dd class="box-card2-dd">
+       	  <p><span><img src="images/card2.png"></span>突破束缚</p>
+          <div class="con">购物不再受到地域的限制,也不再受到电商推荐的约束,任何产品皆可发出委托</div>
+      </dd>
+      <dd class="box-card2-dd">
+       	  <p><span><img src="images/card3.png"></span>真实可靠</p>
+          <div class="con">实时匹配真实在店铺附近的人,确保产品的购买过程真实可靠,并提供交易资金的中间保障</div>
+      </dd>
+      <dd class="box-card2-dd">
+       	  <p><span><img src="images/card4.png"></span>海量数据</p>
+          <div class="con">我们拥有全世界最丰富的店铺及商品数据供你购物参考,也可以实时了解到谁在店铺附近</div>
+      </dd>
+        
+      <div class="clear"></div>
+    </div>
+    <img class="img-model" />
+</div>
+
+
+<div class="box-card3 lis">
+	<dd class="box-card3-dd">
+    	<div class="text-model">
+        	<p class="box-card3-n1">共享全球新鲜事物</p>
+            <div class="box-card3-line1"></div>
+            <p class="box-card3-n2"><span>不定期的店内直播</span>
+全世界各地的旅行者会随时直播逛店视频,可以边看直播边下单</p>
+			<div class="box-card3-line2"></div>
+        	<p class="box-card3-n2"><span>旅行者的推荐</span>
+旅行者会推荐他们喜欢采购的商品,您可以跟随购买</p>
+			<div class="box-card3-line2"></div>
+        	<p class="box-card3-n2"><span>全球知名自媒体推荐</span>
+汇聚全球自媒体热门推荐文,可以边看边买</p>
+        </div>
+        <img class="img-model" />
+    </dd>
+    <dd class="box-card3-dd right"></dd>
+    <div class="clear"></div>
+</div>
+
+
+<div class="box-card4 lis">
+	<div class="text-model">
+    	<p class="box-card2-name new">改变中国未来跨境购物的方式之一</p>
+        <p class="box-card3-name">省钱省时也能购买到与众不同的特色产品</p>
+      	<p class="box-card3-name2"><img src="images/card5.png"><br />台湾TVBS "世界翻转中" 栏目报道</p>
+    </div>
+    <img class="img-model" />
+</div>
+
+
+<div class="box5">
+	<p class="logo2"><img src="images/logo2.png"></p>
+    <p class="weixin">
+    	<span><img src="images/weixin.png" usemap="#Map">
+            <map name="Map">
+              <area shape="rect" coords="3,2,34,27" target="_blank" href="http://weibo.com/ppbuyer">
+              <area class="wx" shape="rect" coords="61,3,97,25" href="javascript:void(0)">
+            </map>
+            <img class="ewm-wx" src="images/ewm.jpg"> 
+        </span>
+    </p>
+    <p class="text">Shanghai PPbuyer Information Technology Co., Ltd.     上海趣买信息技术有限公司</p>
+    <p class="text">沪ICP备15014553号     客服电话：<a href="tel:4006965513">4006965513</a></p>
+</div>
+<script>
+$(function(){
+	$(".weixin span map .wx").hover(function(){
+		    $(".ewm-wx").show()
+		},function(){
+			$(".ewm-wx").hide()
+			})
+	$(".weixin span map .wx").click(function(e){
+			e.stopPropagation();
+			$(".ewm-wx").show()
+		})
+	$("body").click(function(){
+		$(".ewm-wx").hide()
+		})	
+})
+</script>
+
+
+
+</body>
+</html>

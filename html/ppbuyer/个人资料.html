@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="personal-information">
+<div class="div-select">
+      <select class="sex">
+      	<option value="1">男</option>
+        <option value="2">女</option>
+      </select>
+</div>
+<div class="inf714-con"><input type="file" style="display:none" id="imgfil" />
+  <div class="inf714-1"><img src="img/img714_3.png" width="125" height="125" onclick="imgfil.click()" /> </div>
+  <div class="inf714-dd" onclick="javascript:window.location.href='输入昵称.html'">昵称<span>shshshnana</span></div>
+  <div class="inf714-dd" id="sex">性别<span>男</span></div>
+  <div class="inf714-dd">电话<span>1356666666</span></div>
+  <div class="inf714-dd" onclick="javascript:window.location.href='设定登录密码.html'">设定登录密码</div>
+  <div class="inf714-dd" onclick="javascript:window.location.href='个人资料输入框2.html'">个人介绍</div>
+  <div class="inf714-dd">微信号</div>
+  <div class="inf714-dd mgtop30">配送地址管理</div>
+</div>  
+</article>
+
+<script>
+$(function(){
+	$("#sex").click(function(){
+			open($('.sex'))
+			$(".sex").change(function(){
+				var text=$(this).find("option:selected").text();
+				$("#sex span").html(text)
+			})	
+		})
+	
+	function open(elem) {
+			if (document.createEvent) {
+				var e = document.createEvent("MouseEvents");
+				e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+				elem[0].dispatchEvent(e);
+			} else if (element.fireEvent) {
+				elem[0].fireEvent("onmousedown");
+			}
+	}
+	
+	})
+</script>
+</body>
+</html>

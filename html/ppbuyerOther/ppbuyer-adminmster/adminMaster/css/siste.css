@@ -1,0 +1,232 @@
+@charset "utf-8";
+* { margin: 0; padding: 0;}
+html,body {
+   position: relative; height: 100%;    background-color: #f1f1f1; font-family: 微软雅黑;
+}
+a:hover{ text-decoration:none; cursor:pointer}
+.nav-y{color: #a6a8b1;
+    background-color: #32323a;width: 300px;min-height: 100%; border-radius: 0px; position:fixed; z-index:1026
+ }
+.nav-y:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: inherit;
+}
+.clear{ clear:both}
+.nav-y .nav{ padding-top: 50px}
+.navbar-brand.text-lt{ float: none; padding: 15px 15px; display: inline-block}
+.nav-top span{    color: #eaebed ;}
+.text-muted.text-xs{padding: 15px; padding-bottom: 5px }
+.nav .individual a{padding: 10px 0 10px 20px;    color: #b4b6bd;  display:block }
+.nav .individual a:hover{ background-color: #32374a;color: #fff}
+.individual a span{ margin-right: 10px; }
+.nav .line.dk {
+    background-color: #2e3344;    position: relative;
+    display: block;    width: 100%;
+    height: 2px;
+    margin: 10px 0;
+    overflow: hidden;
+    font-size: 0;
+}
+.app-header-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;z-index: 1025;height: 55px;    background-color: #fff; padding:5px 0; border-bottom:1px solid #cbcbcb
+}
+.nav-top{width: 200px;background-color: #3a3f51; }
+.app-right{ position: absolute; right: 20px; top: 0px; width:100%; text-align:right}
+.user{ padding: 8px 0 0 0;}
+.user img{ border-radius: 50%; overflow: hidden; margin-left: 6px}
+.app-left{position: absolute; left: 220px; top: 0px}
+.app-left a{ line-height: 50px; display: inline-block; padding: 0 26px; color: #0f0f0f; font-size: 14px}
+
+.content{ margin-left: 315px;}
+.c-body{ padding: 78px 20px 40px 10px; min-width:800px}
+
+
+.login{
+	position: relative;
+	height: 100%;
+	background-image: url(../image/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center center; background-size:cover
+}
+.login .logo{ position:absolute; left:40px; top:20px}
+.login-con{ max-width:370px;  width:100%; margin:auto; position:absolute; left:50%; margin-left:-165px; background-color:rgba(255,255,255,0.7);box-shadow: 0 0px 2px rgba(0, 0, 6, 0.15); padding:20px 30px; top:50%; margin-top:-180px}
+.login-con p{ font-size:25px; color:#3a80bb; padding-bottom:15px; padding-top:20px}
+.login-con p strong{ font-size:18px; color:#b5b5b5; display:inline-block; margin-left:5px; font-weight:normal}
+.login .login-con dd input{
+	display: block;
+	width: 100%;
+	line-height: 30px;
+	height: 40px;
+	padding: 5px;
+	border: 1px solid #cdcdcd;
+	background-image: url(../image/a1.png);
+	background-repeat: no-repeat;
+	background-position: 15px center; padding-left:40px
+}
+.login .login-con dd{ margin-top:15px; position:relative}
+.login .login-con .but{ text-align:center; padding:20px 0 30px 0}
+.nav-y .a1{ height:110px; background-color:#28282e}
+.logo-img{ position:relative; text-align:center}
+.logo-img img{ position:absolute; overflow:hidden; border-radius:50%; border:3px solid #fff; top:-60px; left:95px}
+.nav-y .logo-img p{ color:#fff; font-size:22px; padding-top:55px; margin-bottom:5px}
+.nav-y .logo-img a{ font-size:16px; color:#b7b7b7}
+.nav-y .link{ padding:20px 0 0 0}
+.nav-y .link a{
+	color: #fff;
+	font-size: 16px;
+	line-height: 65px;
+	display: block;
+	border-bottom: 1px solid #535355;
+	padding-left: 125px;
+	background-image: url(../image/ico1.png);
+	background-repeat: no-repeat;
+	background-position: 92px 27px; opacity:0.5
+}
+.nav-y .link .active,.nav-y .link a:hover{opacity:1; background-color:#6f6f6f}
+.nav-y .link .a2{background-position: 92px -39px;}
+.nav-y .link .a3{background-position: 92px -105px;}
+.nav-y .link .a4{background-position: 92px -178px;}
+.nav-y .link .a5{background-position: 92px -248px;}
+.app.app-header-fixed .app-right .user a{
+	font-size: 18px;
+	display: inline-block;
+	margin-left: 15px;
+	vertical-align: middle;
+	color: #616161;
+	background-image: url(../image/sanjiao.png);
+	background-repeat: no-repeat;
+	background-position: right center; padding-right:25px
+}
+.model1 p{ font-size:18px; color:#000000; font-weight:bold}
+.model1-link{ border-bottom:1px solid #dddddd; line-height:45px; position: relative}
+.model1-link a{ font-size:16px; color:#727272; display:inline-block; margin-right:35px}
+.model1-link .active,.model1-link a:hover{ color:#000; font-weight:bold; border-bottom:4px solid #565656}
+.table-con1{ background-color:#fff; margin-top:30px}
+.table thead>tr>th,.table tbody>tr>td{ background-color:#f9f9f9; text-align:center; padding:8px 0; vertical-align:middle}
+.table th span{ display:block; border-right:1px solid #c4c4c4}
+.table .b{ width:110px}
+.table tbody>tr>td{ background-color:#fff}
+
+.table-con1{ border:1px solid #ddd}
+.table thead>tr>th{ border-bottom:none}
+.table thead>tr>th span{ font-size:16px; padding:5px 0}
+.content .c-body .table-con1 .table .pp tr td .b{ display:inline-block; width:100%; max-width:400px}
+.content .c-body .table-con1 .table .pp tr .pic{ padding:30px 0; padding-right:30px; text-align:left}
+.content .c-body .table-con1 .table .pp tr .pic .b{ overflow:hidden; text-align:left; padding-left:30px}
+.content .c-body .table-con1 .table .pp tr .pic .b img{ float:left; margin-right:15px}
+.content .c-body .table-con1 .table .pp tr .pic .b span{ vertical-align:middle;}
+.content .c-body .table-con1 .table .pp tr td .b .but{ display:inline-block; background-color:#56afe7; line-height:30px; width:70px; text-align:center; color:#fff; margin:4px 0; border:1px solid #5092bb}
+.content .c-body .table-con1 .table .pp tr td .b .but.two{ background-color:#ffa73f; border:1px solid #ea9823}
+
+.pp.list .title{ border:1px solid #ddd; }
+.pp.list .title td{ text-align:left;background-color:#f9f9f9; padding-left:30px; color:#000}
+.pp.list .title td span{ float:right; margin-right:20px}
+.b.address{ text-align:left; padding-left:20px}
+.b.address span{ color:#5f5f5f}
+.content .c-body .table-con1 .table.table-bordered thead tr th{ border:none}
+.echarts-con .a1{ width:380px; padding:20px 0px 0 0; border:1px solid #dddddd; position:relative; margin-bottom:20px}
+.echarts-con{ padding-bottom:30px}
+.echarts-con .a1 p{ text-align:center; font-size:16px; position:absolute; width:100%; top:30px}
+#main1,#main2{ height:300px}
+.echarts-con .a1{ float:left; margin-right:20px}
+.model1-link a:hover,.model1-link a:active,.model1-link a:focus{ text-decoration:none}
+.dilog-box{background: rgba(0, 0, 0, 0.4); width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 8888}
+.dilog-box .con{ width: 340px;  position: absolute; background: #fff; left: 50%; top: 50%; margin: -170px 0 0 -130px;
+border: 1px solid #d3d3d3}
+.dilog-box .con p{ font-size: 14px; text-align: center; color: #000000; line-height:30px; padding:15px 0; margin: 0px; padding-bottom: 0px}
+.dilog-box .con dd{ padding: 10px 0 0 0; text-align: center;position: relative;}
+.dilog-box .con dd select,.dilog-box .con dd input{ width: 225px; height: 35px}
+.dilog-box .con .but { padding-top: 18px; padding-bottom: 30px}
+.dilog-box .con dd .jg{ position:absolute;     right: 67px; top: 18px; z-index: 222}
+.bond{ padding: 20px 30px; font-size: 16px; line-height: 33px}
+.bond span{ display: block; padding: 20px 0 20px 0}
+.bond.record1 span{ display: inline-block;padding: 0px; color: #0080c9}
+.bond.record1 p{ font-size: 16px; padding: 15px 0 0 0}
+.bond.record1 p strong{ font-size: 30px; font-weight: normal}
+.bond.record1 p a{ display: inline-block; background: #f3f3f3; border: 1px solid #afafaf; line-height: 26px; font-size: 16px; color: #646464;
+ padding: 0 11px; border-radius: 3px; margin-left: 20px}
+ .bond.record1{padding: 30px 30px;}
+ .model1.record1{ margin-top: 30px;}
+ .table.table-striped tr td, .table.table-striped tr:first-child>th{ padding: 15px 0}
+ .table.table-striped tbody tr:nth-of-type(even) td{ background-color: #f9f9f9; }
+ .model1-link span{ position: absolute; right: 0px; bottom: 0px;cursor: pointer}
+.record2-name{ font-size: 16px; color: #030303; line-height: 65px; border-bottom: 1px solid #ddd; background: #f9f9f9;
+padding-left: 28px
+}
+.record2-name span{ font-size: 27px; color: #ff7200}
+.record2-con{ padding: 20px 0 30px 0}
+.record2-con dd span{ display: inline-block; font-size: 16px; text-align: right; width: 160px; padding-right: 30px}
+.record2-con dd{ padding: 15px 0 0 0}
+.record2-con dd input,.record2-con dd select{width: 350px; height: 40px; line-height: 40px;padding: 10px}
+.record2-con .but { padding: 40px 0 30px 0}
+
+.dilog-box.new .con{ width: 400px;  position: absolute; background: #fff; left: 50%; top: 50%; margin: -170px 0 0 -200px;
+	border: 1px solid #d3d3d3}
+.echart-box{ height: 300px}	
+.dilog-box.new .con p{ position: relative; padding: 0px; height: 20px}
+.dilog-box.new .con span{ position: absolute; bottom: -35px; width: 100%; text-align: center; left: 0px; font-size: 16px }
+.user{ position: relative}
+.select-down{background-image: url(../image/dowm.png); display: none;
+	background-repeat: no-repeat;
+	background-position: 0 0; width: 157px; height: 61px; position: absolute;right: -21px;top: 57px}
+	.app.app-header-fixed .app-right .user .select-down a{ background-image: none; padding: 0px; margin: 0px; text-align: center;
+	display: block; padding-top: 24px; font-size: 16px; color: #000000;
+	}	
+.dilog-box .table{ padding: 0 10px; margin-top: 10px; overflow-y: auto; max-height: 420px}
+.dilog-box-table span{ width: 90px; display: inline-block}
+
+.dilog-box.new2 .con{ width: 400px;  position: absolute; background: #fff; left: 50%; top: 40px; margin: -0px 0 0 -200px;
+	border: 1px solid #d3d3d3}
+.dilog-box.new2 .name{ width: 100px; background-color: #f2f2f2 }	
+.dilog-box.new2 tr td{ padding-top: 12px; padding-bottom: 12px}
+.dilog-box.new2 .con p{ margin-top: 10px}
+.model1 .form{ background-color: #f7f7f7; padding: 15px; padding-bottom: 20px }
+.model1 .form p{ font-size: 16px; color: #373737; padding: 5px 0 2px 0 }
+.model1 .form .btn-default{ border-radius: 0px; padding: 0px; width: 177px; height: 40px; line-height: 40px;text-align: left; position: relative; padding-left: 10px }
+.model1 .form .caret{ position: absolute;right: 10px; color: #9a9a9a; top: 18px; font-size: 12px}
+.model1 .form .dropdown-menu{ min-width: 178px }
+.model1 .form .btn-default:hover,.model1 .form .btn-default:active,.model1 .form .btn-default:visited{ background-color: #fff;
+box-shadow: none;
+	-moz-box-shadow: none
+	-webkit-box-shadow: none
+ }
+.model1 .form .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 5px dashed;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+.model1 .form .time{ display: inline-block; margin-left: 90px; margin-right: 5px }
+.model1 .form .export{ display: inline-block; width: 145px; line-height: 39px; background: #29282e; color: #fff; text-align: center; margin-left: 20px }
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default,.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover{background-color: #fff;
+	box-shadow: none;
+	-moz-box-shadow: none
+	-webkit-box-shadow: none
+}
+.datetimepicker{ width: 150px; line-height: 35px; border: 0px; background: transparent; outline: none; }
+
+.dilog-box2{ display: none; background: rgba(0, 0, 0, 0.4); width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 8888; align-items: center; justify-content: center;}
+.dilog-box2 .con{ background: #fff; display: inline-block; padding: 20px 30px }
+.dilog-box2 .con dd{ width: 180px; display: inline-block;; text-align: center; padding: 30px 0 30px 0 }
+.dilog-box2 .con dd img{ border:5px solid #c9c9c9; border-radius: 50% }
+.dilog-box2 .con dd p{ font-size: 18px; padding: 12px 0 0px 0 }
+.dilog-box2 .con dd a{ display: inline-block; line-height: 30px; width: 70px; text-align: center; background-color: #f1f1f1; color: #676767; font-size: 16px; border: 1px solid #c9c9c9 }
+
+.model1 .form .btn-default .datetimepicker{ position: absolute;; left: 0px; top: 40px }
+
+
+@media only screen and (max-width: 1200px) {
+	.echarts-con .a1{ width:300px}
+	#main1, #main2{ height:230px}
+	.echarts-con .a1 p{ top:22px}
+	
+}

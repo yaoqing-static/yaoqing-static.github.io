@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="transaction new511Bg1 bg3">
+
+	<!--弹框html-->
+	<div class="bombBox">
+    	<div class="con">
+        	<div class="text"></div>
+            <div class="but"><a class="cancel">取消</a><a class="confirm">确定切换</a></div>
+        </div>
+    </div>
+    <!--弹框html-end-->
+    
+    
+    
+<div class="wtfixTop">
+	<a href="#" class="logo"><img src="img/top-logo.png" width="133" height="66" /></a>
+	<div class="dh">
+    	<a href="#">退出账号</a><a class="dd" href="#">我的订单<span>9</span></a><a href="#">打开APP</a>
+    </div>	
+</div>    
+    
+	
+<div id="scrollDiv">
+ <div class="con new"> 			
+ 			<!--<div class="userIco"><img src="img/share1.jpg" width="81" height="81" /><br />航天</div>-->
+     <div class="title714a">订单会推送给<span>正在商户附近的旅行者</span><br />价格等待他们确认后，就可以付款了</div>
+     <div class="ddcon"><img class="left" src="img/img714_1.png" width="16" height="281" />
+     	<dd><span class="black">小林小儿发热贴</span></dd>
+        <dd><span class="black">份数</span><strong class="jjj"><img id="b" src="img/addj.png"/><input id="textvalue" value="1" type="text" /><img id="a" src="img/addjj.png"/></strong></dd>
+        <dd><span>预计到手价</span><strong>11</strong></dd>
+        <dd><span>预计运费</span><strong>22</strong></dd>
+      </div>
+      
+      <div class="but714a">
+      	<a class="a"><span>&nbsp;</span><br />推送偏好</a><a class="b"><span>&nbsp;</span><br />感谢费</a><a  class="c"><span>&nbsp;</span><br />备注</a>
+      </div>
+ </div>
+</div>
+    <select class="ThankMoney">
+      	<option value="11">11</option>
+        <option value="22">22</option>
+        <option value="33">33</option>
+      </select>
+   <div class="moneyCount">159.40<span>元</span><br /><strong></strong></div>  
+  <div class="Pbut" style="display:none"><a>推送旅行者</a></div>
+  <div class="ButModel"><a href="#">确认发出委托</a></div>
+    
+<script type="text/javascript">
+$(function(){
+	
+	var i=parseInt($("#textvalue").val()); //parseInt()转化为数字
+	$("#a").click(function(){
+		$("#textvalue").val(++i)
+		})
+		
+		$("#b").click(function(){
+			if(i>0){
+				$("#textvalue").val(i--)
+				}
+		})
+
+		$("#textvalue").keyup(function(){
+			var pattern = /(^[1-9]\d+$)|(^\d+\.?\d*$)/;
+			if(!pattern.test($('#textvalue').val())){
+$('#textvalue').val('');
+}
+else if($('#textvalue').val()==0){$('#textvalue').val('');}
+			})
+
+	
+})
+</script>
+
+<script>
+$(function(){
+	//切换城市的方法
+	$(".Pbut").click(function(){
+		$(".bombBox .text").html("您当前城市在阿姆斯特丹，是否切换?")
+		$(".bombBox").fadeIn();
+		$(".confirm").addClass("cityConversion")
+		})
+
+		
+	$("#scrollDiv .con.new .but714a .b").click(function(){
+			open($('.ThankMoney'))
+		})
+	$(".ThankMoney").change(function(){
+		var money=$(this).find("option:selected").val();
+		var text="(含感谢费"+money+"元)";
+		$(".moneyCount strong").html(text)
+		})	
+
+	function open(elem) {
+			if (document.createEvent) {
+				var e = document.createEvent("MouseEvents");
+				e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+				elem[0].dispatchEvent(e);
+			} else if (element.fireEvent) {
+				elem[0].fireEvent("onmousedown");
+			}
+	}	
+		
+	})
+</script>
+
+
+</article>
+</body>
+</html>

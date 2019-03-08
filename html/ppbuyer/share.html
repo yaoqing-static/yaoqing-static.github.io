@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+<script type="text/javascript"> 
+//应用
+fgm.on(window, "load", function () {new LazyLoad("box")});
+$(function (){
+  var imgLength=$("#box img").length;
+  var onloadLength=0;	
+  $("#box img").on("load", function (){
+    if($(this).hasClass("loaded")){
+		onloadLength++;
+	}
+	if(onloadLength==imgLength){
+		alert("加载完毕")
+		}
+    
+  });
+});
+</script>
+
+
+</head>
+
+<body>
+<article>
+	<div class="share-top"><img src="img/share1.png" /></div>
+    <div class="user-information">
+    	<img class="ico" src="img/img2.png" width="87" height="87" /><span>杭霸天</span>
+    	<p>我在ppbuyer上发起了去日本的行程，要带货的可以找我哦！<br />
+旅行时间：2016.05.05-2016.05.15
+</p>
+		<div class="img" id="box"><img src="img/loading.png" data-img="http://chuanboweb.com/image/largeImg.jpg" width="690" height="690" /></div>
+        
+        <fieldset class="product-name">
+        	<legend><span>购物计划</span></legend>
+        </fieldset>
+        
+        <div class="shopping">
+        	<a href="#">
+            	<dd><img src="img/share1.jpg" width="347" height="347" />
+                	<h1>白富美专用！参天SANTEN玫瑰眼药水</h1>
+                    <h2>当地店头价：¥78</h2>
+                </dd>
+            </a>
+            
+            <a href="#">
+            	<dd><img src="img/share1.jpg" width="347" height="347" />
+                	<h1>白富美专用！参天SANTEN玫瑰眼药水</h1>
+                    <h2>当地店头价：¥78</h2>
+                </dd>
+            </a>
+            
+            <a href="#">
+            	<dd><img src="img/share1.jpg" width="347" height="347" />
+                	<h1>白富美专用！参天SANTEN玫瑰眼药水</h1>
+                    <h2>当地店头价：¥78</h2>
+                </dd>
+            </a>
+            
+            <a href="#">
+            	<dd><img src="img/share1.jpg" width="347" height="347" />
+                	<h1>白富美专用！参天SANTEN玫瑰眼药水</h1>
+                    <h2>当地店头价：¥78</h2>
+                </dd>
+            </a>
+       		<div class="clear"></div>
+        </div>
+        <div class="ewm">
+	    <img src="img/share2.jpg" width="224" height="229" /><br />
+        长按图片，识别二维码，查看行程详情<br />
+         <a>如无法识别二维码，请下载PPbuyer了解更多</a>
+        </div>
+        
+
+    </div>
+    
+    
+</article>
+</body>
+</html>

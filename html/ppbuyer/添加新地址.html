@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+</head>
+
+<body>
+<article class="address-management">
+<div class="div-select new">
+      
+</div>
+	<!--弹框html-->
+	<div class="bombBox">
+    	<div class="con">
+        	<div class="text"></div>
+            <div class="but"><a class="cancel">取消</a><a class="confirm">确定</a></div>
+        </div>
+    </div>
+    <!--弹框html-end-->
+
+	<div class="con addAddress">
+    	<ul>
+        	<li><b>收货人</b><span><input type="text" /></span></li>
+            <li><b>联系电话</b><span><input type="text" /></span></li>
+            <li class="qy"><b>所在地区</b>
+            <select class="province">
+                <option value="0">选择省份</option>
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+              </select>
+              <select class="city">
+                <option value="0">选择城市</option>
+                <option value="1">城1市</option>
+                <option value="2">城2市</option>
+              </select>
+              <select class="region">
+                <option value="0">选择地区</option>
+                <option value="1">地1区</option>
+                <option value="2">地区2</option>
+           </select>
+            
+            </li>
+            <li class="d"><textarea placeholder="输入具体地址"></textarea></li>
+        </ul>
+    </div>
+    
+    <div class="logistics1"><a href="">上传身份证（选填）</a></div>
+    
+    <div class="default-address">
+		设为默认地址
+    	<label class="cheak-new"><input type="checkbox" class="ios-switch green  bigswitch" checked /><div>  
+                <div>  
+                </div>  
+            </div>  
+        </label> 
+    </div>
+    
+    <div class="emptyHeight"></div>
+    <div class="add-address"><a>添加新地址</a></div>
+    
+<script>
+$(function(){
+	$(".qy .province-text").click(function(){
+		
+			openE($('.province'))
+			$(".province").change(function(){
+				var text=$(this).find("option:selected").text();
+				$(".qy .province-text").html(text)
+			})	
+		})
+	$(".qy .province-city").click(function(){
+			
+			openE($('.city'))
+			$(".city").change(function(){
+				var text=$(this).find("option:selected").text();
+				$(".qy .province-city").html(text)
+			})	
+		})
+	$(".qy .province-region").click(function(){
+			
+			openE($('.region'))
+			$(".region").change(function(){
+				var text=$(this).find("option:selected").text();
+				$(".qy .province-region").html(text)
+			})	
+		})
+
+	function openE(elem) {
+			if (document.createEvent) {
+				var e = document.createEvent("MouseEvents");
+				e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+				elem[0].dispatchEvent(e);
+			} else if (element.fireEvent) {
+				elem[0].fireEvent("onmousedown");
+			}
+	}
+	
+	})
+</script>   
+    
+</article>
+</body>
+</html>

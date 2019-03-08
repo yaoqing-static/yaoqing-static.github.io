@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+
+
+
+
+</head>
+
+<body style="background-color:#f8f8f8">
+<article class="identity">
+ 	<div class="identity-name">直邮商品请上传身份证</div>
+    <div class="identity-input">
+    	<input type="text" placeholder="输入真实姓名" />
+        <input type="text" placeholder="证件号码" />
+    </div>
+    <div class="identity-name new">请保证真实姓名以及身份证为同一人</div>
+    <input type="file" style="display:none" name="file" id="file" />
+  <div class="identity-img">
+    	<div class="name">身份证照片</div>
+        <div class="img">
+        	<dd>
+           	    <a href="javascript:upFile()"></a>
+                <div class="a" style="display:none"><img src="img/S0001321020151102002.jpg" width="750" height="750" /></div>
+              <div class="text">正面</div>
+            </dd>
+            <dd class="fm">
+            	<a href="javascript:upFile()"></a>
+                <div class="text">反面</div>
+            </dd>
+      </div>
+    </div>
+    
+    <div class="identity-but"><a>确 定</a></div>
+    
+    <script>
+		function upFile(){
+			$("#file").click()
+			}
+	</script>	
+    
+</article>
+</body>
+</html>

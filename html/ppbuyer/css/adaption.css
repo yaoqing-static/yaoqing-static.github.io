@@ -1,0 +1,21 @@
+
+@media screen and (max-width : 640px) {	
+
+}
+
+
+
+
+@media screen and (max-width : 400px) {	
+	
+}
+
+@media screen and (max-width : 360px) {	
+
+    .data-ico dd a{ display: block;}
+    .data-ico dd{ text-align: center;}
+    .circel-share-box .tag .a dd {
+        margin-bottom: 5px;
+    }
+}
+

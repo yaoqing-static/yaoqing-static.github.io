@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+    <meta content="telephone=no" name="format-detection" /> 
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<script>
+$(function(){
+	$(".navicon").click(function(){
+		$(this).toggleClass("open");
+		$(".nav-phone").toggleClass("open");
+		})
+		
+		
+		$(".bgBox .video .but").click(function(){
+		if($(this).html()=='提交信息'){
+			$(".bgBox .video .form").hide()
+			$(".bgBox .video .cheack").show()
+			$(this).html('关闭')
+			}
+		else{
+			hide()
+			$(".bgBox .video .form").show()
+			$(".bgBox .video .cheack").hide()
+			$(this).html('提交信息')
+			}
+		})
+        $(".bgBox").click(function () {
+            $(".bgBox").fadeOut(200)
+        })
+        $(".video").click(function (e) {
+            e.stopPropagation()
+        })
+	})
+
+
+	
+	function show(){
+		$(".bgBox").fadeIn(200)
+		}
+	function hide(){
+		$(".bgBox").fadeOut(200)
+		}	
+</script>
+<body>
+
+<!--弹框-->
+<div class="bgBox">
+	<div class="video">
+        <div class="close" onClick="hide()"><img src="images/close_03.jpg"></div>
+    	<div class="form">
+        	<p>请提交您的真实信息。稍后会有客服联系您</p>
+            <dd><input type="text" placeholder="　填写您的真实姓名" /></dd>
+            <dd><input type="text" placeholder="　填写您的微信号" /></dd>
+            <dd><input type="text" placeholder="　填写您的手机号" /></dd>
+        </div>
+        <div class="cheack" style="display:none">
+   	    	<img src="images/cheack.png" width="91" height="91"> <br />提交成功，请等待审核
+        </div>
+      <div class="but">提交信息</div>
+  </div>
+</div>
+
+<div class="nav">
+ <div class="p">
+	<a class="logo"><img src="images/logo.png"></a>
+    <div class="right">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="">专业代购</a>
+        <a href="overseas.html" class="active">海外商户</a> 
+   		<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="">下载APP </a> </div>
+ </div>
+</div>
+
+<div class="navicon">
+    <span class="icon icon-menu"><img src="images/select.png"></span>
+    <span class="icon icon-close">X</span>
+</div>
+<div class="nav-phone">
+	<div class="phone-a">
+    	<a href="index.html">首页</a>
+        <a href="about.html" class="">关于我们</a>
+        <a href="shoppers.html" class="">购物者</a>
+        <a href="traveler.html" class="">旅行者</a>
+        <a href="purchasing.html" class="">专业代购</a>
+        <a href="overseas.html" class="active">海外商户</a> 
+   		<a target="_blank" href="http://sj.qq.com/myapp/detail.htm?apkName=qm.ppbuyer" class="">下载APP </a> </div>
+</div>
+
+<div class="box-card1 lis hw1">
+	<div class="text-model">
+    	<p class="text1-box2">
+       		 <strong>做全世界的生意</strong> 
+             <div class="text-sub">不用电商也可以把货卖到全世界<br /><a href="javascript:show()">申请下载PPbuyerPro</a>
+</div>
+        </p>
+    </div>
+    <img class="img-model" />
+</div>
+
+<div class="box-card2 lis">
+  <div class="text-model">
+    	<p class="box-card2-name">轻松获得海外订单</p>
+      <dd class="box-card2-dd">
+   	    <p><span><img src="images/hw1.png"></span>突破限制</p>
+          <div class="con">只要有人在店铺附近，就有机会通过这个热点将货卖到世界各地<br>
+          </div>
+      </dd>
+      <dd class="box-card2-dd">
+   	    <p><span><img src="images/hw2.png"></span>数据分析</p>
+          <div class="con">精准的判断谁在店铺附近,以及他及社交圈的购买热点,为店铺提供精准的营销合作</div>
+      </dd>
+      <dd class="box-card2-dd">
+   	    <p><span><img src="images/hw3.png"></span>购物指南</p>
+          <div class="con">为游客提供详细的购物指南数据,帮助商户吸引海外入境游客订单</div>
+      </dd>
+        
+      <div class="clear"></div>
+    </div>
+    <img class="img-model" />
+</div>
+
+
+<div class="box-card3 lis">
+	<dd class="box-card3-dd">
+    	<div class="text-model">
+        	<p class="box-card3-n1">让商户突破传统限制</p>
+            <div class="box-card3-line1"></div>
+            <p class="box-card3-n2"><span>顾客不再是单点购买</span>
+将顾客作为热点辐射顾客的社交圈,产生更多的订单,不做电商也能获得海外订单</p>
+			<div class="box-card3-line2"></div>
+        	<p class="box-card3-n2"><span>快速触及海外市场</span>
+无须线上或线下的投入，通过去中心化的方式快速辐射海外市场</p>
+			<div class="box-card3-line2"></div>
+        	<p class="box-card3-n2"><span>精准的营销</span>
+针对海外市场的营销不再是无头苍蝇,第一时间感知海外市场消费热点</p>
+        </div>
+        <img class="img-model" />
+    </dd>
+    <dd class="box-card3-dd right hw1"></dd>
+    <div class="clear"></div>
+</div>
+
+
+<div class="box-card4 lis">
+	<div class="text-model">
+    	<p class="box-card2-name new">通过PPbuyer我们能够获得更多的海外订单</p>
+        <p class="box-card3-name">唐吉诃德 </p>
+   	  <p class="box-card3-name2"><img src="images/card5b.png"><br /></p>
+   	  <p>日本最大型的连锁折扣店</p>
+   	  <p></p>
+    </div>
+    <img class="img-model" />
+</div>
+
+
+<div class="box5">
+	<p class="logo2"><img src="images/logo2.png"></p>
+    <p class="weixin">
+    	<span><img src="images/weixin.png" usemap="#Map">
+            <map name="Map">
+              <area shape="rect" coords="3,2,34,27" target="_blank" href="http://weibo.com/ppbuyer">
+              <area class="wx" shape="rect" coords="61,3,97,25" href="javascript:void(0)">
+            </map>
+            <img class="ewm-wx" src="images/ewm.jpg"> 
+        </span>
+    </p>
+    <p class="text">Shanghai PPbuyer Information Technology Co., Ltd.     上海趣买信息技术有限公司</p>
+    <p class="text">沪ICP备15014553号     客服电话：<a href="tel:4006965513">4006965513</a></p>
+</div>
+<script>
+$(function(){
+	$(".weixin span map .wx").hover(function(){
+		    $(".ewm-wx").show()
+		},function(){
+			$(".ewm-wx").hide()
+			})
+	$(".weixin span map .wx").click(function(e){
+			e.stopPropagation();
+			$(".ewm-wx").show()
+		})
+	$("body").click(function(){
+		$(".ewm-wx").hide()
+		})	
+})
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="Entrust-article">
+	<div class="box-Entrust">
+    	<p class="p1">添加商品图片可以让旅行者更快找到商品哦！</p>
+    	<div class="img"><a><img src="img/fileImg.png" width="155" height="155" /></a></div>
+        <p class="p1 pad10">商品备注</p>
+        <div class="textarea"><textarea placeholder="您可以备注委托商品的特殊要求，如尺码，色号等"></textarea></div>
+        <div class="but"><a>确认委托</a></div>
+ 	</div>
+    
+    
+    <div class="clipBox">
+        <div id="clipArea"></div>
+        <input type="file" id="file" style="display:none">
+        <div class="but">
+          <button id="clockwiseBtn">顺时针</button><button id="antiClockwiseBtn">逆时针</button><button id="clipBtn">截取</button>
+          <button id="replace">更换照片</button>
+     	</div>
+    </div>
+
+</article>
+
+
+<script src="js/iscroll-zoom.js"></script>
+<script src="js/hammer.js"></script>
+<script src="js/jquery.photoClip.js"></script>
+<script>
+//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+$(function(){
+	$(".box-Entrust .img a,#replace").click(function(){
+		$("#file").click()
+		})
+	$("#file").change(function(){
+		$(".clipBox").show()
+		})
+	})
+
+
+$("#clipArea").photoClip({
+	width: 400,
+	height: 400,
+	file: "#file",
+	ok: "#clipBtn",
+	antiClockwiseBtn: "#antiClockwiseBtn",
+    clockwiseBtn: "#clockwiseBtn",
+	loadStart: function() {
+		console.log("照片读取中");
+	},
+	loadComplete: function() {
+		console.log("照片读取完成");
+	},
+	clipFinish: function(dataURL) {
+		//console.log(dataURL);
+		$(".box-Entrust .img a img").attr('src',dataURL)
+		$(".clipBox").hide()
+	}
+});
+</script>
+
+</body>
+</html>

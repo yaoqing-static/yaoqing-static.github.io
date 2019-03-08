@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+
+<body>
+
+    <nav class="nav-y">
+        <div class="a1"></div>
+        <div class="logo-img">
+            <img src="image/logo1.png" width="104" height="104">
+            <p>三妆化研后台</p>
+            <a href="#">切换商户</a> &nbsp;&nbsp; <a href="#">退出登录</a>
+        </div>
+
+        <div class="link">
+            <a href="index.html">商品</a>
+            <a href="order-manage.html" class="a2">订单管理</a>
+            <a href="statistics.html" class="a3">统计</a>
+            <a href="bond.html" class="a4">保证金</a>
+            <a class="active" href="record1.html" class="a5">商户收入</a>
+        </div>
+
+
+
+    </nav>
+
+    <div class="app app-header-fixed">
+        <div class="app-right">
+            <div class="user">
+                <img width="40" height="40" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                <a>三妆化研后台</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="content">
+        <div class="c-body">
+            <div class="model1">
+                <p>商户收入</p>
+            </div>
+
+
+            <div class="table-con1" style="margin-top:20px">
+                <div class="bond record1">
+                    账户余额&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不可提现余额
+                    <span>500.00</span> 元
+                    <p>
+                        <strong>1779.18</strong> 元
+                        <a href="record2.html">提 现</a>
+                    </p>
+                </div>
+            </div>
+
+
+            
+            <div class="model1 record1">
+                <div class="model1-link">
+                    <a href="#" class="active">提现记录</a>
+                    <a href="#">交易记录</a>
+                    <span>更多记录》</span>
+                </div>
+            </div>
+
+            <div class="table-con1 lis">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>描述</th>
+                            <th>提取金额</th>
+                            <th width="20%"> 状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2017.11.11</td>
+                            <td>账户名称账户名称 账户名称账户名称</td>
+                            <td>270元</td>
+                            <td><span style="color:black">处理中</span></td>
+                        </tr>
+                        <tr>
+                            <td>2017.11.11</td>
+                            <td>账户名称账户名称 账户名称账户名称</td>
+                            <td>270元</td>
+                            <td><span style="color:#2570a0">已完成</span></td>
+                        </tr>
+                        <tr>
+                            <td>2017.11.11</td>
+                            <td>账户名称账户名称 账户名称账户名称</td>
+                            <td>270元</td>
+                            <td><span style="color:#d42a46">失败</span></td>
+                        </tr>
+                        <tr>
+                            <td>2017.11.11</td>
+                            <td>账户名称账户名称 账户名称账户名称</td>
+                            <td>270元</td>
+                            <td><span style="color:black">处理中</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-con1 lis" style="display:none">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>商品名称</th>
+                                <th>规格</th>
+                                <th width="15%">份数</th>
+                                <th width="10%">金额</th>
+                                <th width="10%">状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2017.11.11</td>
+                                <td>账户名称账户名称 账户名称账户名称</td>
+                                <td>白色</td>
+                                <td>3</td>
+                                <td>11111</td>
+                                <td><span style="color:black">处理中</span></td>
+                            </tr>
+                            <tr>
+                                    <td>2017.11.11</td>
+                                    <td>账户名称账户名称 账户名称账户名称</td>
+                                    <td>白色</td>
+                                    <td>3</td>
+                                    <td>11111</td>
+                                    <td><span style="color:black">处理中</span></td>
+                                </tr>
+                                <tr>
+                                        <td>2017.11.11</td>
+                                        <td>账户名称账户名称 账户名称账户名称</td>
+                                        <td>白色</td>
+                                        <td>3</td>
+                                        <td>11111</td>
+                                        <td><span style="color:black">处理中</span></td>
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/conter.js"></script>
+    <script>
+        $(".dilog-box").click(function () {
+            $(this).hide()
+        })
+        $(".dilog-box .con").click(function (e) {
+            e.stopPropagation()
+        })
+        $(".model1-link a").click(function(){
+            $(".model1-link a").removeClass("active")
+            $(this).addClass("active")
+            $(".table-con1.lis").hide();
+            $(".table-con1.lis").eq($(this).index()).show()
+        })
+    </script>
+</body>
+
+</html>

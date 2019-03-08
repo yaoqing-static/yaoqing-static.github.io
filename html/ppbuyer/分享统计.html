@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" type="text/css" href="css/date.css"/>
+<link rel="stylesheet" type="text/css" href="css/app.css">
+<link rel="stylesheet" type="text/css" href="css/adaption.css">
+
+</head>
+<body class="monthBg share">
+<article>
+    <div class="share-data">
+       <div class="a1"><img src="img/share621_1.png" />
+        <div class="con">
+            6月，日本代购小能手  杭霸天<br />
+        一共和大家成交了 <span>100</span> 笔代购生意<br />
+        成功完成 <span>20000.00</span> 元的交易<br />
+        在(国别)地区中月交易量超过 <span>90%</span> 的同行
+        </div>
+       </div>
+        <div class="circel-share-box">
+            <div class="circel-share" id="main" ></div>
+            <div class="tag">
+                <p>销售类型top5</p>
+                <div class="a">
+                    <dd><b style="background: #fd9059">&nbsp;</b><span>护肤彩妆</span><strong>51%</strong></dd>
+                    <dd><b style="background: #ef5350">&nbsp;</b><span>护肤彩妆</span><strong>51%</strong></dd>
+                    <dd><b style="background: #fd9059">&nbsp;</b><span>护肤彩妆</span><strong>51%</strong></dd>
+                    <dd><b style="background: #5a5475">&nbsp;</b><span>护肤彩妆</span><strong>51%</strong></dd>
+                    <dd><b style="background: #34bbd1">&nbsp;</b><span>护肤彩妆</span><strong>51%</strong></dd>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-con">
+            <div class="title">
+                <strong>6月剁手榜</strong>
+                <span></span>
+            </div>
+
+            <div class="share-top3">
+                <dd><img class="ico" src="img/share621_2.png" />
+                   <span><img src="img/ico.jpg" /></span>
+                </dd>
+                <dd><img class="ico" src="img/share621_3.png" />
+                    <span><img src="img/ico.jpg" /></span>
+                </dd>
+                <dd><img class="ico" src="img/share621_4.png" />
+                    <span><img src="img/ico.jpg" /></span>
+                </dd>
+            </div>
+
+            <div class="title">
+                <strong>最热卖商品</strong>
+                <span></span>
+            </div>
+
+            <div class="top-list">
+                <dd>
+                    <div class="img">
+                        <img src="img/share1.jpg" />
+                    </div>
+                    <div class="con">
+                        <p>日本Utena 佑天兰玻尿酸/胶原蛋白蜂皇浆黄金果冻面膜艳肌面膜</p>
+                        <div class="tag">本月售出：1000件</div>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="img">
+                        <img src="img/share1.jpg" />
+                    </div>
+                    <div class="con">
+                        <p>日本Utena 佑天兰玻尿酸/胶原蛋白蜂皇浆黄金果冻面膜艳肌面膜</p>
+                        <div class="tag">本月售出：1000件</div>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="img">
+                        <img src="img/share1.jpg" />
+                    </div>
+                    <div class="con">
+                        <p>日本Utena 佑天兰玻尿酸/胶原蛋白蜂皇浆黄金果冻面膜艳肌面膜</p>
+                        <div class="tag">本月售出：1000件</div>
+                    </div>
+                </dd>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="share-wx"><img src="img/sharewx.jpg"><br>识别二维码<br>找我带货吧</div>
+        <div class="share-but"><a>点击找我代购吧</a></div>
+
+         
+    </div>
+
+</article>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/echarts3.min.js"></script>
+<script type="text/javascript" src="js/date.js" ></script>
+<script type="application/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var data=[
+                    {value:10, name:'直接访问'},
+                    {value:10, name:'邮件营销'},
+                    {value:10,name:'联盟广告1'},
+                    {value:10,name:'联盟广告2'},
+                    {value:10,name:'联盟广告3'},
+                    {value:10,name:'联盟广告4'},
+                    {value:10,name:'联盟广告5'},
+                    {value:10,name:'联盟广告6'},
+                    {value:10,name:'联盟广告7'},
+                    {value:10,name:'搜索引擎'}
+                ]
+
+    var option = {
+        tooltip : {
+            trigger: 'item',
+            triggerOn:'click'  //触发条件，mousemove，click，mousemove|click，none
+        },
+        color: ["#ffc850","#ff9052","#ef5350","#5a5475","#075da3","#0570a5","#278dad","#34bbd1","#ffff8d","#fff35f"],
+        series : [
+            {
+                type: 'pie',
+                radius : ['30%', '69%'], //大小
+                center: ['25%', '50%'],
+                hoverAnimation:false,
+                selectedMode:false,
+                data:data,
+                label: {
+                   normal: {
+                       show:false
+                   }
+               },
+                itemStyle: {
+                    normal: {
+                        borderWidth: 3,
+                        borderColor: '#cdeaff'
+                    },
+                    emphasis: {
+//                        shadowBlur: 10,
+//                        shadowOffsetX: 0,
+//                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    $(window).resize(function () {
+        myChart.resize()
+    })
+
+</script>
+
+
+</body>
+</html>

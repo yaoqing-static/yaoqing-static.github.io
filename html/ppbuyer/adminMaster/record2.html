@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+
+<body>
+
+    <nav class="nav-y">
+        <div class="a1"></div>
+        <div class="logo-img">
+            <img src="image/logo1.png" width="104" height="104">
+            <p>三妆化研后台</p>
+            <a href="#">切换商户</a> &nbsp;&nbsp; <a href="#">退出登录</a>
+        </div>
+
+        <div class="link">
+            <a href="index.html">商品</a>
+            <a href="order-manage.html" class="a2">订单管理</a>
+            <a href="statistics.html" class="a3">统计</a>
+            <a href="bond.html" class="a4">保证金</a>
+            <a class="active" href="record1.html" class="a5">商户收入</a>
+        </div>
+
+
+
+    </nav>
+
+    <div class="app app-header-fixed">
+        <div class="app-right">
+            <div class="user">
+                <img width="40" height="40" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" />
+                <a>三妆化研后台</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="content">
+        <div class="c-body">
+            <div class="model1">
+                <p>商户收入</p>
+            </div>
+
+
+            <div class="table-con1" style="margin-top:20px">
+                <div class="record2-name">提取到银行&nbsp;&nbsp;&nbsp;&nbsp;卡余额:
+                    <span>1779.18 </span> 元</div>
+                <div class="record2-con">
+                    <dd>
+                        <span>选择银行卡</span>
+                        <select>
+                            <option></option>
+                        </select>
+                    </dd>
+                    <dd>
+                        <span>取款金额</span>
+                        <input type="text" />
+                    </dd>
+                    <dd>
+                        <span>持卡人姓名</span>
+                        <input type="text" />
+                    </dd>
+                    <dd>
+                        <span>联系电话</span>
+                        <input type="text" />
+                    </dd>
+                    <dd class="but">
+                            <span>&nbsp;</span>
+                            <a href="#"><img src="image/but2.jpg" /></a>    
+                        </dd>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/conter.js"></script>
+    <script>
+        $(".dilog-box").click(function () {
+            $(this).hide()
+        })
+        $(".dilog-box .con").click(function (e) {
+            e.stopPropagation()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+/* Global */
+*{ padding:0px; margin:0px; border:none;font-family:"微软雅黑"; font-size:14px }
+a{ text-decoration:none}
+input{
+appearance:button;
+	-moz-appearance:button; /* Firefox */
+	-webkit-appearance:button; /* Safari 和 Chrome */
+}
+.box{
+	background-image: url(../images/shutterstock_317638472.jpg);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	background-size:100% auto; height:640px; background-color:#CCC; vertical-align:middle; position:relative; text-align:center
+}
+.box-card1{
+	background-image: url(../images/card1.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% auto;
+	height: 550px;
+	background-color: #CCC;	
+}
+.box2{
+	background-image: url(../images/shutterstock_548782909.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% auto;
+	height: 540px;
+	background-color: #CCC;
+	background-attachment: fixed;
+}
+.box3{
+	background-image: url(../images/shutterstock_583091815.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% auto;
+	height: 540px;
+	background-color: #CCC;
+}
+.box4{
+	background-image: url(../images/shutterstock_370872149.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% auto;
+	height: 540px;
+	background-color: #CCC;background-attachment: fixed;
+}
+.box5{ background-color:#33a1db;  padding:0 40px;padding-bottom:40px; border-top:3px solid #FFF}
+.box5 .logo2{ text-align:center; padding:30px 0 30px 0}
+.box5 .weixin{text-align:center; padding:30px 0 30px 0; padding-top:40px}
+.box5 .text{ text-align:center; color:#ffffff; font-family:"微软雅黑"; padding-bottom:10px}
+.nav{
+	position:absolute;
+	width: 100%;
+	
+	left: 0px;
+	background-image: url(../images/boedr.png);
+	background-repeat: repeat-x;
+	background-position: bottom; z-index:111
+}
+.nav .p{padding: 20px 0; position:relative}
+.nav .logo{ display:inline-block; margin-left:20px}
+.nav .right{ float:right; padding:24px 30px 0 0}
+.nav .right a{
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	width: 100px;
+	line-height: 40px;
+	display: inline-block;
+	text-align: center;
+	
+}
+.nav .right .active{background-image: url(../images/boedr.png);
+	background-repeat: repeat; border-radius:6px}
+.img-model{ background-color:transparent; height:100%; width:0px; vertical-align:middle; display: inline-block}
+.text-model{ display:inline-block;vertical-align:middle; width:80%}
+.text1{ text-align:center; font-size:40px; color:#FFF;  padding-top:100px}	
+.text-model .text2{ font-size:21px; color:#FFF; font-style:italic; padding:10px 0 0 0}
+.text-model .but{ padding:20px 0 0 0}
+.text-model .but a{ font-size:14px; color:#FFF; width:160px; line-height:35px; display:inline-block; text-align:center; background-color:#5ca4c5; border-radius:20px}
+.lis{ text-align:center}
+.text1-box2{ font-size:14px; color:#727171; text-align:left;line-height:36px}
+.text1-box2 strong{ font-size:40px; color:#000000; display:block; font-weight:normal; padding-bottom:20px}
+.box3.lis .text-model .text1-box2 strong,.box3.lis .text-model .text1-box2{ color:#FFF}
+.box4.lis .text-model .text1-box2.new{ text-align:right}
+.text-sub{ text-align:left; color:#727171; font-size:14px; line-height:36px  }
+.box-card1.lis .text-model .text1-box2{ margin-top:60px;}
+.box-card1.lis .text-model .text1-box2 strong,.box-card1.lis .text-model .text-sub{ color:#FFF}
+.box-card1.lis .text-model .text-sub a{ font-size:14px; color:#FFF; width:160px; line-height:35px; display:inline-block; text-align:center; background-color:#5ca4c5; border-radius:20px; margin-left:10px}
+.clear{ clear:both}
+.box-card2.lis .text-model{ padding:50px 0 60px 0}
+.box-card2-name{ font-size:30px; padding-bottom:50px}
+.box-card2-dd{ width:33%; float:left; text-align:left}
+.box-card2-dd p{ font-size:16px; color:#000; padding-bottom:15px}
+.box-card2-dd p img{ vertical-align:middle; padding-right:10px}
+.box-card2-dd .con{ color:#727171; line-height:30px; font-size:14px; padding-left:32px}
+.box-card3-dd{ height:483px; width:50%; float:left; background-color:#595757; position:relative}
+.box-card3-dd.right{
+	background-image: url(../images/card2.jpg);
+	background-repeat: repeat-x;
+	background-position: center center;
+	background-size: auto 100%
+}input{outline:none} 
+.box-card3.lis .box-card3-dd .text-model{ text-align:left; color:#FFF}
+.box-card3-n1{ font-size:36px; }
+.box-card3-line1{ width:77px; height:10px; background-color:#FFF; margin:10px 0 13px 0}
+.box-card3-n2,.box-card3-n2 span{ font-size:16px; line-height:26px; color:#9fa0a0; padding-bottom:3px}
+.box-card3-n2 span{ display:block; color:#FFF;font-size:18px; padding-bottom:10px; padding-top:5px}
+.box-card3-line2{ width:77px; height:1px; background-color:#FFF; margin:10px 0 10px 0}
+.box-card4.lis{ padding:50px 0 60px 0}
+.box-card2-name.new{ padding-bottom:10px}
+.box-card3-name{ font-size:21px; color:#727171}
+.box-card3-name2{ padding:40px 0 0 0; color:#727171; font-size:14px}
+.box-card3-name2 img{ margin-bottom:10px; width:93px; height:93px; overflow:hidden; background-color:#c9cacb; border-radius:50%}
+.box5 .text a{ color:#FFF}
+.box-card1.lis.about1{
+	background-image: url(../images/about1.jpg);
+}
+.box-card1.lis.about1 .text-model{ width:60%}
+.box-card2.lis.new1{background-color:#f8f8f8}
+.box-card2.lis.new1 .text-model{ }
+.box-card2.lis.new1 .text-model .about-con{ color:#727171; text-align:left; line-height:36px; width:70% ; margin:auto}
+.box-card2.lis.new1 .text-model .box-card2-name{ padding-bottom:30px}
+.box-card2.lis.new1 .text-model .box-card2-name.new{ padding-top:60px}
+.box-card3.lis.about2 .box-card3-dd.right{
+	background-image: url(../images/about2.jpg);
+}
+.box-card3.lis.about2 .box-card3-dd{
+	background-color: #b9e3f9;
+	background-image: url(../images/about3.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.box-card3.lis.about2 .box-card3-dd .about3{ position:absolute; right:20px; bottom:30px; width:80%; text-align:left; font-size:14px; color:#FFF; line-height:36px}
+.box-card3.lis.about2 .box-card3-dd .about3 p{ font-size:36px; padding-bottom:25px}
+.box-card1.lis.traveler{
+	background-image: url(../images/traveler1.jpg);height:650px
+}
+.box-card3.lis .box-card3-dd.right.d1{
+	background-image: url(../images/d3.jpg);
+}
+.box-card1.lis.hw1{
+	background-image: url(../images/hw1.jpg);
+	}
+.box-card1.lis.hw1 .text-model .text1-box2,.box-card1.lis.hw1 .text-model .text-sub{ text-align:center;}
+.box-card3.lis .box-card3-dd.right.hw1{
+	background-image: url(../images/hw2.jpg);
+}
+.box-card1.lis.zygw1{
+	background-image: url(../images/zydg1.jpg);
+	}
+.box-card3.lis .box-card3-dd.right.hwgw4{background-image: url(../images/hwgw4.jpg);}
+
+/* 手机导航 */
+.navicon {
+    cursor: pointer;
+    height: 45px;
+    position:absolute;
+    right: 10px;
+    top: 10px;
+    width: 45px;
+    z-index: 20000; text-align:center; display:none
+}
+.navicon .icon {
+    color: #fff;
+    font-size: 20px;
+	display:inline-block;
+	line-height:45px;
+    transition: all 0.3s ease 0s;
+}
+.box5 .logo2 img{ width:100px}
+.box5 .weixin img{ width: 100px}
+.navicon .icon.icon-menu img{ padding:13px 0 0 0; height:21px}
+.navicon .icon.icon-close{ font-size:28px; right:15px; font-family:Arial, Helvetica, sans-serif; font-weight:bold}
+.navicon .icon.icon-close{ display:none}
+.navicon.open .icon.icon-menu{ display:none}
+.navicon.open .icon.icon-close{ display:block}
+.nav-phone {
+    background-color: transparent;
+    position: fixed;
+    transition: all 200ms ease 0s;
+    width: 0px; height:0px;
+    z-index: 18000;
+	right: 10px;
+    top: 10px; height: 45px; width:45px; opacity:0; overflow: hidden;
+}
+.nav-phone.open {
+    height: 100%;
+    width: 100%;
+	right: 0px;
+    top: 0px;
+	background-color: #262930;opacity:1
+}
+.nav-phone .phone-a{ padding-top:100px}
+.nav-phone .phone-a a{ font-size:16px; color:#FFF; display:block; text-align:center; line-height:40px}
+.logo img{max-width:130px}
+.bgBox{ background-color:rgba(0,0,0,0.53); position:fixed; width:100%; height:100%; z-index:1111; display: none}
+.bgBox .video{ width:540px; height:480px; position:absolute; left:50%; top:50%; margin:-260px 0 0 -240px;  background-color:#FFF; border:1px solid #5bb5ff}
+.bgBox .video.new{ height: 390px;margin:-200px 0 0 -240px;}
+.bgBox .video .close{ text-align: right; padding: 8px 12px 0 0}
+.bgBox .video .close img{ cursor: pointer}
+.bgBox .video .but{line-height:66px; text-align:center; background-color:#00a0e9; color:#FFF; margin:0 40px; border-radius:10px; font-size:18px; margin-top:20px; cursor:pointer}
+.bgBox .video .embed{ margin:11px 40px 0 40px}
+.bgBox .video .cheack{ text-align:center; padding:105px 0 70px 0; font-size:16px}
+.bgBox .video .cheack img{ padding-bottom:20px}
+.embed iframe{ height:320px}
+.bgBox .video .form{ padding:8px 40px 0 40px; font-size:16px; height:301px}
+.bgBox .video .form p{ padding:10px 0} 
+.bgBox .video .form input{ width:100%; border:1px solid #5bb5ff; line-height:60px; height:60px; border-radius:12px; margin-top:20px; overflow:hidden}
+.box5 .weixin span{ position:relative}
+.ewm-wx{ position:absolute; bottom:0px; right:-120px; display:none}
+
+/* Mobile */
+@media screen and (max-width: 1200px) {
+	.box-card1{
+	background-size:auto 100% ;}
+	.box-card1.lis.traveler{background-size:100% auto ; height:500px}
+}
+@media screen and (max-width: 990px) {
+	.text1-box2{padding-right:0px;}
+	.box4.lis .text-model .text1-box2.new{padding-left:0px}
+	.logo img{ width:130px} 
+	.box-card3-dd{ float:none; width:100%;height:auto; padding:30px 0}
+	.box-card3-dd.right{ height:400px}
+	.nav .right a{ font-size:14px; width:60px; line-height:30px}
+.box-card2.lis.new1 .text-model .about-con{ width:100%}
+.box-card3.lis.about2 .box-card3-dd.right{
+	background-position: center center; background-size:100% auto
+}
+.box-card3.lis.about2 .box-card3-dd .about3{ position:relative; right:0px; padding:40px 0 0 0; width:80%; margin:auto}
+.box-card3.lis.about2 .box-card3-dd{ background-size:auto 100%}
+.box-card1.lis.traveler{background-size:100% auto ; height:400px}
+.box-card1.lis.zygw1{
+	height:360px
+	}
+}
+@media screen and (max-width: 650px) {
+	.text-sub,.box-card2.lis.new1 .text-model .about-con{ line-height:26px}
+	.nav .right{ display:none}
+   .nav .logo img{ width:80px}
+   .text1,.text1-box2 strong{ font-size:18px}
+   .text-model .text2,.text1-box2{ font-size:12px}
+   .text1-box2{ line-height:24px}
+   .text-model .but{ padding-top:10px}
+   .text-model .but a{ font-size:14px; line-height:30px; width:110px}
+   .box5 .logo2 img{ width:80px}
+   .box5 .weixin{ padding-top:0px}
+   .box5 .weixin img{ width:100px}
+   .text-model{ width:88%}
+   .nav .p{ padding:10px 0}
+   .text1{ padding-top:50px}
+   .box2,.box4{
+	background-attachment: scroll;}
+   .box2.lis .text-model .text-sub{ padding-right:45%; font-size:12px; text-align:left; color:#727171}
+   .box-card1{ height:350px;}
+   .box-card1.lis .text-model .text-sub{ font-size:12px}
+   .box-card1.lis .text-model .text-sub a{ width:150px; line-height:30px; margin-top:10px}
+   .box-card2-dd{ float:none; width:100%; padding-bottom:20px}
+   .box-card2-name,.box-card3-n1,.box-card3.lis.about2 .box-card3-dd .about3 p{ font-size:18px}
+   .box-card3-dd.right{ height:250px}
+   .box-card3-line1{ height:2px}
+   .box-card3-n2, .box-card3-n2 span,.box-card2-dd .con,.box-card3-name2{ font-size:12px}
+   .box-card3-n2 span,.box-card3-name{ font-size:14px}
+   .box-card2.lis .text-model,.box-card4.lis{ padding: 30px 0 30px 0;}
+   .box-card3-name2{ padding-bottom:10px}
+   .box-card1.lis.about1 .text-model{ width:80%}
+   .box-card2.lis.new1 .text-model .box-card2-name.new{ padding-top:30px}
+   .box-card2.lis.new1 .text-model .about-con,.box-card3.lis.about2 .box-card3-dd .about3{ font-size:12px}
+   .box-card3.lis.about2 .box-card3-dd {
+    background-size: auto 70%;}
+	.box-card3.lis.about2 .box-card3-dd .about3{ line-height:24px; bottom:10px; padding-top:10px}
+   .box-card3.lis.about2 .box-card3-dd.right{ height:150px}
+   .box5 .text{ line-height:26px}
+   .box-card1.lis.traveler{background-size:auto 100%;}
+   .navicon { display:block}
+   .box-card3-name2 img{ width:60px; height:60px; margin-bottom:0px}
+   
+   .bgBox .video{ width:90%; height:360px; position:absolute; left:5%; top:50%; margin:-180px 0 0 0px;  background-color:#FFF; border:1px solid #5bb5ff}
+.bgBox .video.new{ height: 290px;margin:-180px 0 0 0px;}
+.bgBox .video .but{line-height:50px; text-align:center; background-color:#00a0e9; color:#FFF; margin:0 30px; border-radius:10px; font-size:16px; margin-top:20px; cursor:pointer}
+.bgBox .video .embed{ margin:20px 20px 0 20px}
+.bgBox .video.new .embed{ margin:5px 15px 0 15px}
+.bgBox .video .cheack{ text-align:center; padding:37px 0 43px 0; font-size:16px}
+.embed iframe{ height:240px}
+
+.bgBox .video .form{ padding:15px 30px 0 30px; font-size:16px; height:206px}
+.bgBox .video .form p{ padding:0px 0} 
+.bgBox .video .form input{ width:100%; border:1px solid #5bb5ff; line-height:40px; height:40px; border-radius:8px; margin-top:20px; overflow:hidden}
+.ewm-wx{ width:230px}
+
+}
+
+@media screen and (max-width: 320px) {
+	.bgBox .video .form input{ width:100%; border:1px solid #5bb5ff; line-height:40px; height:40px; border-radius:8px; margin-top:15px; overflow:hidden}
+	}
+
+
+

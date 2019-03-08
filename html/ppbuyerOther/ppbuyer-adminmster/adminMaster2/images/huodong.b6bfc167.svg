@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4,15 L28,15 L28,28 C28,29.1045695 27.1045695,30 26,30 L6,30 C4.8954305,30 4,29.1045695 4,28 L4,15 Z" id="Rectangle-10" fill="#F5534C"></path>
+        <path d="M21.6413109,7.95527245 L28,7.95527245 C29.1045695,7.95527245 30,8.85070295 30,9.95527245 L30,12.9552724 C30,14.0598419 29.1045695,14.9552724 28,14.9552724 L4,14.9552724 C2.8954305,14.9552724 2,14.0598419 2,12.9552724 L2,9.95527245 C2,8.85070295 2.8954305,7.95527245 4,7.95527245 L10.3586891,7.95527245 L8.43204726,6.0286306 C7.51044228,5.10702562 7.51044228,3.61280871 8.43204726,2.69120373 C9.35365224,1.76959876 10.8478691,1.76959876 11.7694741,2.69120373 L16,6.92172962 L20.2305259,2.69120373 C21.1521309,1.76959876 22.6463478,1.76959876 23.5679527,2.69120373 C24.4895577,3.61280871 24.4895577,5.10702562 23.5679527,6.0286306 L21.6413109,7.95527245 Z" id="Combined-Shape" fill="#FF837E"></path>
+        <rect id="Rectangle-12" fill="#FFFFFF" x="14" y="8" width="4" height="7"></rect>
+        <rect id="Rectangle-12-Copy" fill="#FFFFFF" opacity="0.804913949" x="14" y="15" width="4" height="15"></rect>
+    </g>
+</svg>

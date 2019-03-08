@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="transaction new511Bg1 bg3">
+    <select class="ThankMoney">
+        <option value="11">上海</option>
+        <option value="22">北京</option>
+        <option value="33">广州</option>
+    </select>
+<div class="fixBigFix">
+	<div class="con">
+    	<p>您有一个相同商品未支付</p>
+        <a>点击查看</a><a id="cancel">取消</a>
+    </div>
+</div>
+
+    <style>
+        .fixBigFix2 .color{  padding: 0 30px 40px 30px}
+        .fixBigFix2 .color span{
+            display: inline-block; padding: 0 20px; background-color: #ede7e7; margin-right: 20px; border-radius: 5px; line-height: 55px; margin-top: 20px;
+        }
+        .fixBigFix2 .color .active{background-color: #55a4cf; color: #fff}
+    </style>
+
+<div class="fixBigFix2">
+    <div class="shopping-con">
+        <!--<div class="address">配送至：<span>上海市</span> <a>更改</a></div>-->
+        <div class="color">规格：<br /><span class="active">红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span><span>红色</span></div>
+    	<div class="a">购买数量
+        	<div class="addEdit">
+            <input class="textvalue" value="1" type="text" />
+            <img src="img/img171_1.png" width="216" height="64" usemap="#Map" border="0" />
+              <map name="Map" id="Map">
+                <area shape="rect" id="subtract" coords="4,4,67,61" href="javascript:subtract()" />
+                <area shape="rect" id="add" coords="150,3,214,64" href="javascript:add()" />
+              </map>
+        	</div>
+      </div>
+      <div class="b"><a id="confirmS">确定</a></div>
+    </div>
+</div>
+    
+    <script type="text/javascript">
+        $(".fixBigFix2 .color span").click(function () {
+            $(".fixBigFix2 .color span").removeClass("active")
+            $(this).addClass("active")
+        })
+        
+    </script>
+
+
+
+<div class="fixBigFix3">
+    <div class="guarantee-con">
+        <div class="close"><a><img src="img/close.png" alt=""/></a></div>
+    	<p><span>服务保障</span>
+PPbuyer是专业的跨境代购交易服务平台,通过PPbuyer的平台与代购交易可以获取下列服务保障</p>
+		<dd><strong>PPbuyer担保交易</strong><br />
+货款由PPbuyer提供担保,买家确认后再结算给代购.</dd>
+		<dd><strong>被税险</strong><br />
+由代购海外直邮的产品,PPbuyer提供全方位的保护,包括延时保险,被税保险,退运保险等</dd>
+		<dd><strong>微信支付</strong><br />
+支持使用微信支付</dd>
+		
+    </div>
+</div>
+
+
+
+
+
+
+
+    <img src="img/img2.jpg" id="topTransition" class="topTransition" />
+<div class="wtfixTop new1029">
+	<a href="#" class="logo"><img src="img/top-logo.png" width="133" height="66" /></a>
+	<div class="dh new1029">
+    	<a href="#" class="gwc"><img src="img/gwcnew.png"/>&nbsp;&nbsp;购物车&nbsp;&nbsp;<span>9</span></a><a class="dd" href="#">我的订单<span>9</span></a>
+    </div>	
+</div>    <!-- Swiper -->
+
+    <div class="tag1226">
+        <img src="img/img2.jpg" width="61" height="61" />
+        <span>
+                杭霸天<br><a>查看ta的行程</a>
+            </span>
+    </div>
+
+ <div class="swiper-container">
+        <div class="swiper-wrapper" style="margin-top:90px">
+            <div class="swiper-slide"><img src="img/img2.jpg" width="750" height="740" /></div>
+            <div class="swiper-slide"><img src="img/img2.jpg" width="750" height="740" /></div>
+            <div class="swiper-slide"><img src="img/img2.jpg" width="750" height="740" /></div>
+            <div class="swiper-slide"><img src="img/img2.jpg" width="750" height="740" /></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+ </div>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+</script>    
+<script>
+function add(){
+		var i=parseInt($(".textvalue").val()); //parseInt()转化为数字
+		  $(".textvalue").val(++i)
+		}
+function subtract(){
+		var i=parseInt($(".textvalue").val()); //parseInt()转化为数
+			if(i>1){
+				console.log(i)
+				 $(".textvalue").val(--i)
+				}
+		}
+$(function(){
+	
+	$(".guarantee2017-2-14").click(function () {
+        $(".fixBigFix3").show()
+    })
+	$(".fixBigFix3,.guarantee-con .close a").click(function () {
+        $(".fixBigFix3").hide()
+    })
+ 	$(".fixBigFix3 .guarantee-con").click(function (event) {
+        event.stopPropagation();
+    })
+    $(".fixBigFix2").click(function () {
+		$("#topTransition").addClass("topTransition")
+        $(".fixBigFix2").hide()
+    })
+    $(".shopping-con").click(function (event) {
+        event.stopPropagation();
+    })
+
+
+    $(".shopping-con .address a").click(function(){
+        open($('.ThankMoney'))
+    })
+    $(".ThankMoney").change(function(){
+        var text=$(this).find("option:selected").text();
+        $(".shopping-con .address span").html(text)
+    })
+
+    function open(elem) {
+        if (document.createEvent) {
+            var e = document.createEvent("MouseEvents");
+            e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            elem[0].dispatchEvent(e);
+        } else if (element.fireEvent) {
+            elem[0].fireEvent("onmousedown");
+        }
+    }
+
+
+
+    $(".heart").on("click",function(){
+		$(this).toggleClass("dq")
+
+		})
+		
+	$(".textvalue").keyup(function(){
+			var pattern = /(^[1-9]\d+$)|(^\d+\.?\d*$)/;
+			if(!pattern.test($(this).val())){
+				$(this).val(1);
+				}
+			else if($(this).val()==0){$(this).val(1);}
+			})	
+			
+	$("#confirmS").click(function(){
+
+        $("#topTransition").addClass("topTransition")
+        $("#topTransition").css("display","block")
+		$(".fixBigFix2").hide()
+        setTimeout(function () {
+            $("#topTransition").addClass("dq")
+        },200)
+
+		})	
+			
+	})
+</script>
+
+<div class="xccon bottom new2">
+	<div class="name"><strong>日本殿堂级Beauteye玫瑰滴眼液</strong><br />
+12ml 抗衰老疲劳去血丝</div>
+	<div class="cheak"><span class="dq"><img src="img/hg.jpg" width="46" height="30" alt=""/></span>当地店头价</div>
+    <div class="cheak1">¥78</div>
+    
+    <div class="guarantee2017-2-14">
+    	<a><img src="img/guarantee_ico.png"/>PPbuyer担保交易</a>
+        <a><img src="img/guarantee_ico.png"/>被税险</a>
+        <a><img src="img/guarantee_ico.png"/>微信支付</a>
+    </div>
+    
+    <div class="newHeight1226"></div>
+    
+    <div class="tt20161226">
+    	<dd class="a1">代理价: <span>70元</span>   预计利润：<span>7.29元</span><A>提现说明</A></dd>
+        <dd>确认该商品由ppbuyer代理发货
+        	<div class="po">
+        	<label class="cheak-new"><input type="checkbox" class="ios-switch green  bigswitch" checked /><div>  
+                    <div>  
+                    </div>  
+                </div>  
+            </label> 
+            </div>
+        </dd>
+    </div>
+    
+    <div class="newHeight1226"></div> 
+    
+    
+    <div class="brand726">
+    	<div class="name726"><span>品牌</span><a href="#">查看全部<span>10</span>件商品</a></div>
+    	<div class="con726">
+       		 <img src="img/img11.jpg" width="140" height="140" /> <div class="text726">日本著名制药企业。自成立以来，一直以“为消费者提供健康舒适的生活”为企业目标，运用快速的开发体制，不断挑战新的市场，致力于开发生产消费...</div>
+        </div>	
+    </div>
+    <div class="newHeight1226"></div>
+    
+    <div class="cheaktitle">店头价1500円  国内海淘 120元</div>
+    <div class="cheakbut"><a><img src="img/ico7.png" width="35" height="35" />加入购物计划</a></div>
+    <div class="text">友都八喜（Yodobashi；ヨドバシカメラ）日本第三大电器购物平台，仅次于YAMADA电器（ヤマダ电机）和EDION集团（エディオン），于1967年7月成立，总部设在日本东京新宿区，主要提供各种生活电器、电脑、数码相机、摄像机、化妆品、名牌箱包、手表、运动器材、音响、游戏机、软体、DVD/CD、专业摄影器材等电器电子类产品。此外，友都八喜还是海淘圣地，运费包含了关税费用，因此无需在收货时再次支付关税。</div>
+    <div class="dd new12">
+    	<dd><span>品牌</span>滋贺</dd>
+        <dd><span>功效</span>缓解眼疲劳 眼干涩 去红血丝 </dd>
+        <dd><span>清凉度</span>5度</dd>
+        <dd><span>产地</span>日本</dd>
+        <dd><span>净含量</span>15ML</dd>
+    </div>
+    
+</div>
+
+
+<div class="xccon two pad0">
+	<div class="name">相关店铺</div>
+	<div class="list new630">
+   	    <dd><img src="img/banner2.jpg" />
+        	<p>友都八喜yodobashi<br />
+东京地区/电器商店<br />
+<strong>距离您的位置3.2公里</strong></p>
+        </dd>
+        
+        <dd><img src="img/banner2.jpg" />
+        	<p>友都八喜yodobashi<br />
+东京地区/电器商店<br />
+<strong>距离您的位置3.2公里</strong></p>
+        </dd>
+        
+        <dd><img src="img/banner2.jpg" />
+        	<p>友都八喜yodobashi<br />
+东京地区/电器商店<br />
+<strong>距离您的位置3.2公里</strong></p>
+        </dd>
+    </div>
+</div>
+
+
+
+
+<div class="bottomFixBox new1030">
+    <a class="gwc"><img src="img/gwcnew.png"/><br />购物车<span>9</span></a>
+	<!--<a class="zx10"><strong>&nbsp;</strong><br /><span>咨询</span></a>-->
+    <a class="buttomFixSC"><strong>&nbsp;</strong><span>收藏</span></a>
+  	<a class="buttomFix new1 new10a" id="goShopping">加入购物车</a>
+    <a class="buttomFix new1 new10b" id="goTake">找他带货</a>
+</div>
+
+</article>
+
+<script>
+$(function(){
+	
+	$("#goTake").click(function(){
+		$(".fixBigFix").show()
+
+		})
+		
+		
+	$("#goShopping").click(function(){
+		$(".fixBigFix2").show()
+        $("#topTransition").removeClass("dq")
+        $("#topTransition").removeClass("topTransition")
+		})	
+	
+	$(".buttomFixSC").on("click",function(){
+			//取消收藏
+			if($(this).hasClass("dq")){
+				$(this).removeClass("dq")
+				$(this).find("span").html("收藏")
+				}
+			else{//收藏
+				$(this).addClass("dq")
+				$(this).find("span").html("已收藏")
+				}
+		})
+	
+	
+	
+})
+</script>
+</body>
+</html>

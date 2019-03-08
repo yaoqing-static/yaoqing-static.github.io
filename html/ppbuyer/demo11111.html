@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<link rel="stylesheet" href="css/slide2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="transaction new511Bg1 bg3" style="background-color:#fff">
+
+ <div class='animationTop'></div>
+
+
+<div class="Trip">
+
+    
+    <div class="product10" style="margin-top:0px; border-top:10px solid #f8f8f8">
+
+        
+        <div class="zbConent">
+        	<!--<div class="search-link"><a>筛选商品 <img src="img/sanj10.png" width="9" height="19" /></a></div>-->
+            <div class="list">
+                <!--<div class="none-product"><img src="img/none2.png" alt=""/></div>-->
+                <dd><img src="img/.jpg" width="155" height="155" />
+                    <div class="con">
+                        <p class="name">22222222222</p>
+                        <p>3333333333333</p>
+                        <p class="tag331"><span>111111111</span></p>
+                        <p class="rate">111
+                            <span>
+                                <a class="sub" style="display: none">━</a><i style="display: none">0</i><a class="add">+</a>
+                            </span>
+                        </p>
+                    </div>
+                </dd>
+
+                <dd><img src="img/.jpg" width="155" height="155" />
+                    <div class="con">
+                        <p class="name">22222222222</p>
+                        <p>3333333333333</p>
+                        <p class="tag331"><span>111111111</span></p>
+                        <p class="rate">111
+                            <span>
+                                <a class="sub" style="display: none">━</a><i style="display: none">0</i><a class="add">+</a>
+                            </span>
+                        </p>
+                    </div>
+                </dd>
+
+
+            </div>
+        	
+
+
+        </div>
+ 
+    </div>
+    
+    
+     <script>
+ $(function(){
+    $(".rate .add").click(function(){
+        var val1=$(this).siblings('i').html();
+        val1++;
+        $(this).siblings('i').html(val1)
+        if($(this).siblings('i').html()>0){
+            $(this).siblings('i').show()
+            $(this).siblings('.sub').show()
+        }
+
+       var top=$(this).offset().top-$(window).scrollTop();
+       var left=$(this).offset().left
+	   $(this).css("z-index","4444")
+       $(".animationTop").show().css({top:top,left:left})
+       setTimeout(function(){
+         $(".animationTop").animate({top:'19px',left:'510px'},function(){
+			 $(".animationTop").hide()
+			 var c=parseInt($(".gwc span").html())+1
+			 $(".gwc span").html(c)
+			 });
+       },100)
+    })
+
+     $(".rate .sub").click(function(){
+         var val1=$(this).siblings('i').html();
+         val1--;
+         $(this).siblings('i').html(val1)
+         if($(this).siblings('i').html()==0){
+             $(this).siblings('i').hide()
+             $(this).hide()
+         }
+     })
+
+//    $(".zbConent .list dd").each(function () {
+//        if($(this).find('p i').html()==0){
+//            $(this).find('p .sub').hide()
+//            $(this).find('p i').hide()
+//        }
+//    })
+
+
+
+
+
+	 $(".zbBut a").click(function(){
+		 $(".zbBut a").removeClass("dq")
+		 $(this).addClass("dq")
+		 $(".zbConent .list").fadeOut(200)
+		 $(".zbConent .list").eq($(this).index()).fadeIn(200)
+		 
+		 })
+
+     $(".search-link a,.fix-bottom-model .a").click(function(){
+         $(".tt1226-search").css("transition-delay","0s")
+         $(".tt1226-search").addClass("open")
+         $("body,html").css("overflow","hidden")
+     })
+     $(".tt1226-search,.sj").click(function(){
+         $(".tt1226-search").removeClass("open");
+         $(".tt1226-search").css("transition-delay","1s")
+         $("body,html").css("overflow","visible")
+     })
+	$(".tt1226-search .con").click(function(e){
+		 e.stopPropagation();
+		 })
+				 
+	 })
+ 
+ </script>   
+
+
+</div>
+
+    
+
+
+
+</article>
+</body>
+</html>

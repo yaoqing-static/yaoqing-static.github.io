@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" type="text/css" href="css/date.css"/>
+<link rel="stylesheet" type="text/css" href="css/app.css">
+<link rel="stylesheet" type="text/css" href="css/adaption.css">
+
+</head>
+<body class="monthBg">
+<article>
+    <div class="bg-box">
+    	<span></span>
+        <div class="select">
+            <dd class="06/2017/4">2017年06月</dd>
+            <dd class="05/2017/3">2017年05月</dd>
+            <dd class="04/2017/2">2017年04月</dd>
+            <dd class="03/2017/1">2017年03月</dd>
+            <dd class="02/2017/0">2017年02月</dd>
+        </div>
+    </div>
+
+
+    <div class="month-data">
+       <div class="a1">
+          <span>06/2017</span>
+          <div class="rightP">
+              <img src="img/app1.png">
+          </div>
+       </div>
+
+       <div class="a2">
+          <p>6月总交易额</p>
+          <div id="main1"></div>  
+       </div>
+
+       <div class="a2">
+          <p>商品销量</p>
+          <div class="main2">
+                <div id="main2"></div>
+          </div>
+          <div class="data-ico">
+              <dd><span>&nbsp;</span><a>手机数码</a></dd>
+              <dd class="hfcz"><span>&nbsp;</span><a>护肤彩妆</a></dd>
+              <dd class="fzxm"><span>&nbsp;</span><a>服装鞋帽</a></dd>
+              <dd class="xb"><span>&nbsp;</span><a>箱包</a></dd>
+
+              <dd class="sb"><span>&nbsp;</span><a>手表</a></dd>
+              <dd class="zbss"><span>&nbsp;</span><a>珠宝首饰</a></dd>
+              <dd class="tsyx"><span>&nbsp;</span><a>图书音像</a></dd>
+              <dd class="spjl"><span>&nbsp;</span><a>食品酒类</a></dd>
+
+              <dd class="mycp"><span>&nbsp;</span><a>母婴产品</a></dd>
+              <dd class="ydhw"><span>&nbsp;</span><a>运动户外</a></dd>
+              <dd class="jjcp"><span>&nbsp;</span><a>家居产品</a></dd>
+              <dd class="ysp"><span>&nbsp;</span><a>艺术品</a></dd>
+
+              <dd class="jydq"><span>&nbsp;</span><a>家用电器</a></dd>
+              <dd class="rcyp"><span>&nbsp;</span><a>日常药品</a></dd>
+              <dd class="cryp"><span>&nbsp;</span><a>成人用品</a></dd>
+              <dd class="wj"><span>&nbsp;</span><a>玩具</a></dd>
+
+              <dd class="dn"><span>&nbsp;</span><a>电脑</a></dd>
+              <dd class="wj"><span>&nbsp;</span><a>文具</a></dd>
+              <dd class="cwyp"><span>&nbsp;</span><a>宠物用品</a></dd>
+              <dd class="other"><span>&nbsp;</span><a>其他</a></dd>
+          </div>
+       </div> 
+
+       <div class="a2">
+          <p>衣食父母</p>
+          <div class="ysfm">
+             <dd>
+                 <div class="zIco"></div>
+                 <div class="ico"><img class="aa1" src="img/share1.jpg"></div>
+                 <div class="con">杭霸天<span>月消费：40000.00元</span></div>
+             </dd>
+
+             <dd>
+                 <div class="zIco"></div>
+                 <div class="ico"><img class="aa1" src="img/share1.jpg"></div>
+                 <div class="con">杭霸天<span>月消费：40000.00元</span></div>
+             </dd>
+
+             <dd>
+                 <div class="zIco"></div>
+                 <div class="ico"><img class="aa1" src="img/share1.jpg"></div>
+                 <div class="con">杭霸天<span>月消费：40000.00元</span></div>
+             </dd>
+          </div>
+       </div> 
+
+       <div class="a2 noneBottom">
+          <p class="newP">店铺直送销售top 10<a>创造利润</a></p>
+          <div class="ysfm new">
+             <dd>
+                 <div class="ico"><img class="aa1" src="img/share1.jpg"></div>
+                 <div class="con">高丝面膜保湿型保湿型 保湿型7片装<span>4900.23元</span></div>
+             </dd>
+
+             <dd>
+                 <div class="ico"><img class="aa1" src="img/share1.jpg"></div>
+                 <div class="con">高丝面膜保湿型保湿型 保湿型7片装<span>4900.23元</span></div>
+             </dd>
+
+          </div>
+       </div>  
+
+
+    </div>
+    <div id="datePlugin"></div>
+</article>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/echarts3.min.js"></script>
+<script type="text/javascript" src="js/date.js" ></script>
+<script type="text/javascript">
+	var dqMounth={
+                    normal: {
+                        textStyle:{
+                            color: 'red',
+                        }
+                    }
+                }
+
+    var mounthData=['2月', '3月', '4月', '5月', '6月'];            
+    var data1=[5, 10, 3,22, 8]
+    var newData=[5, 10, 3,22, 8]
+    newData[4]={value:data1[4],label:dqMounth}       
+    var myChart = echarts.init(document.getElementById('main1'));
+    var myChart2 = echarts.init(document.getElementById('main2'));
+
+    // 图1
+    var option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c}'
+    },
+    xAxis: {
+        type: 'category',
+        splitLine: {show: false},
+        data:mounthData,
+        boundaryGap: false,
+        axisLine: {
+            show:false,
+        },
+        axisTick: {
+            show:false,
+        },
+        axisLabel:{
+            textStyle:{
+                fontSize:12
+            }
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '8%',
+        bottom: '11%',
+        containLabel: true,
+        axisLine: {onZero: false}
+    },
+    yAxis: {
+        type: 'value',
+        show:false,
+        min:-5
+    },
+    series: [
+        {
+            name: '2的指数',
+            type: 'line',
+            smooth: false,
+            symbolSize:5,
+            data:newData ,
+            itemStyle: {
+                normal: {
+                    color: '#505050',
+                    borderColor:'#4d8fd2',
+                    borderWidth:5
+                }
+            },
+            lineStyle: {
+                normal: {
+                    color: '#4d8fd2',
+                    width: 2
+                }
+            },
+            label: {
+                normal: {
+                    show:true,
+                    textStyle:{
+                        color: '#676767'
+                    }
+                }
+            },
+        }
+    ]
+};
+
+    var hideLabelLine={
+        normal: {
+            show:false,
+            lineStyle:{
+                width:0
+            }
+        }
+    }
+    // 图2
+    var option2 = {
+        tooltip : {
+            trigger: 'item',
+            triggerOn:'click'  //触发条件，mousemove，click，mousemove|click，none
+        },
+        color: ["#ffc850","#ff9052","#ef5350","#5a5475","#075da3","#0570a5","#278dad","#34bbd1","#ffff8d","#fff35f"],
+        series : [
+            {
+                type: 'pie',
+                radius : ['30%', '60%'], //大小
+                center: ['50%', '50%'],
+                hoverAnimation:false,
+                selectedMode:false,
+                data:[
+                    {value:10, name:'直接访问'},
+                    {value:10, name:'邮件营销'},
+                    {value:10,name:'联盟广告1',label:hideLabelLine,labelLine:hideLabelLine},
+                    {value:10,name:'联盟广告2',label:hideLabelLine,labelLine:hideLabelLine},
+                    {value:10,name:'联盟广告3',label:hideLabelLine,labelLine:hideLabelLine},
+                    {value:10,name:'联盟广告4',label:hideLabelLine,labelLine:hideLabelLine},
+                    {value:10,name:'联盟广告5'},
+                    {value:10,name:'联盟广告6',label:hideLabelLine,labelLine:hideLabelLine},
+                    {value:10,name:'联盟广告7',label:hideLabelLine,labelLine:hideLabelLine},
+                    {value:10,name:'搜索引擎',label:hideLabelLine,labelLine:hideLabelLine}
+                ],
+                label: {
+                   normal: {
+                        textStyle:{
+                            fontSize:12,
+                            color:"#383838"
+                        },
+                       formatter: function (params) {
+                        //console.log(params)
+                           return params.value+"\n"+params.name
+                       }
+                   }
+               },
+                itemStyle: {
+                    normal: {
+                        borderWidth: 3,
+                        borderColor: '#fff'
+                    },
+                    emphasis: {
+//                        shadowBlur: 10,
+//                        shadowOffsetX: 0,
+//                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    myChart2.setOption(option2);
+    $(window).resize(function () {
+        myChart.resize()
+        myChart2.resize()
+    })
+
+
+
+$(function(){
+//    $('.month-data .a1 a').date();
+
+	$('.month-data .rightP').click(function(){
+		$("body").bind("touchmove",function(event){event.preventDefault();});
+		$(".bg-box").fadeIn()
+		})
+	
+	$('.bg-box').click(function(){
+		$("body").unbind("touchmove");
+		$(".bg-box").fadeOut()
+		})
+	
+	$('.select dd').click(function(evt){
+		evt.stopPropagation()
+		var date=$(this).attr("class")
+		$(".month-data .a1 span").html(date.substr(0,date.lastIndexOf('/')))
+		$(".bg-box").fadeOut()
+
+        var arr_index=date.split('/')[2]
+        var mounthData=['2月', '3月', '4月', '5月', '6月'];            
+        var d=JSON.parse(JSON.stringify(data1)) ;
+        d[0]=22;//测试用
+        d[arr_index]={value:d[arr_index],label:dqMounth} 
+        option.series[0].data=d;
+        myChart.setOption(option);
+        $("body").unbind("touchmove");
+
+		})
+	
+
+});
+
+
+</script>
+
+
+</body>
+</html>
