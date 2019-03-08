@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>身高体重</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <style>
+    * {
+        padding: 0px;
+        margin: 0px
+    }
+
+    html,
+    body {
+        background-image: none;
+        width: 100%;
+    }
+
+    .box {
+        width: 656px;
+        height: 492px;
+        background: #ACDDFF;
+        /* 一些不支持背景渐变的浏览器 */
+        background: -moz-linear-gradient(top, #ACDDFF, #E9F7FF);
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ACDDFF), to(#E9F7FF));
+        background: -o-linear-gradient(top, #ACDDFF, #E9F7FF);
+        position: relative;
+    }
+
+    .time {
+        font-size: 24px;
+        color: rgba(0, 0, 0, 0.87);
+        letter-spacing: 0;
+        line-height: 24px;
+        position: absolute;
+        top: 24px;
+        left: 48px
+    }
+
+    .time span {
+        width: 48px;
+        height: 48px;
+        background: #FFB40A;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 16px
+    }
+
+    .name {
+        position: absolute;
+        top: 104px;
+        left: 48px;
+        color: rgba(0, 0, 0, 0.87);
+        letter-spacing: 0;
+        line-height: 24px;
+    }
+
+    .name span {
+        display: inline-block;
+        position: relative;
+        padding-left: 31px;
+        margin-right: 28px
+    }
+
+    .name span i {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: #2196F3;
+        vertical-align: middle;
+        border-radius: 50%;
+        position: absolute;
+        ;
+        left: 0px;
+        top: 2px
+    }
+
+    .clock {
+        width: 224px;
+        height: 224px;
+        top: 248px;
+        left: 58px;
+        background: url("image/height-weight/h3.png");
+        position: absolute;
+    }
+
+    .right-bg {
+        width: 220px;
+        height: 304px;
+        top: 161px;
+        left: 348px;
+        background: url("image/height-weight/h1.png");
+        position: absolute;
+    }
+
+    .clock-left-text {
+        font-size: 24px;
+        color: #0ECE9D;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px;
+        top: 280px;
+        right: 585px;
+        position: absolute;
+    }
+
+    .clock-right-text {
+        font-size: 24px;
+        color: #0ECE9D;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px;
+        top: 280px;
+        left: 269px;
+        position: absolute;
+    }
+
+    .clock-bottom-text {
+        font-size: 28px;
+        color: #2196F3;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px;
+        top: 391px;
+        left: 127px;
+        position: absolute;
+        width: 90px;
+        text-align: center;
+    }
+
+    .clock .top {
+        position: absolute;
+        width: 12px;
+        height: 112px;
+        top: 0px;
+        left: 50%;
+        margin-left: -6px;
+        z-index: 999;
+        transform-origin: center bottom;
+        transform: rotate(10deg);
+    }
+
+    .clock .middel {
+        position: absolute;
+        width: 8px;
+        height: 116px;
+        top: -4px;
+        left: 50%;
+        margin-left: -4px;
+        z-index: 99;
+        transform-origin: center bottom;
+        transform: rotate(-10deg);
+    }
+
+    .clock .middel-text {
+        position: absolute;
+        width: 8px;
+        height: 116px;
+        top: -4px;
+        left: 50%;
+        margin-left: -4px;
+        transform-origin: center bottom;
+        transform: rotate(-10deg);
+        z-index: 99999
+    }
+
+    .clock .middel-text span {
+        font-size: 24px;
+        color: #FF8D18;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px;
+        position: absolute;
+        top: 40px;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-46%);
+        width: 80px;
+        text-align: center;
+        transform-origin: 0px top
+    }
+
+    .right-text1 {
+        font-size: 28px;
+        color: #2196F3;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px;
+        position: absolute;
+        top: 240px;
+        left: 348px
+    }
+
+    .right-text2 {
+        position: absolute;
+        top: 240px;
+        width: 44px;
+        height: 32px;
+        right: 88px;
+        top: 260px
+    }
+
+    .right-text2 .re {
+        width: 44px;
+        height: 32px;
+        position: relative;
+        background: #0ECE9D;
+        border-radius: 2px;
+    }
+
+    .tlbz {
+        height: 30px;
+        font-size: 24px;
+        color: #FF8D18;
+        letter-spacing: 0;
+        text-align: right;
+        line-height: 22px;
+        position: absolute;
+        width: 85px;
+        right: 28px
+    }
+
+    .tlbz span {
+        display: inline-block;
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+
+    .tlbz i {
+        display: inline-block;
+        width: 24px;
+        height: 8px;
+        background: #FF8D18;
+        border-radius: 4px;
+        vertical-align: middle;
+    }
+
+    .re-text1 {
+        font-size: 24px;
+        color: #0ECE9D;
+        letter-spacing: 0;
+        line-height: 22px;
+        position: absolute;
+        ;
+        top: -10px;
+        left: 50px;
+        z-index: 222
+    }
+
+    .time strong {
+        font-weight: normal;
+    }
+
+    .middel-text span strong {
+        font-weight: normal;
+        display: inline-block;
+        transform-origin: center center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="time"><span></span>本次测量日期：<strong></strong></div>
+        <div class="name">
+            <span><i></i>我的测量数据</span>
+            <span><i style="background:#FF8D18 "></i>同龄人平均值</span>
+            <span><i style="background:#0ECE9D "></i>国标参考范围</span>
+        </div>
+        <div class="clock-left-text">14.3</div>
+        <div class="clock">
+            <div style="position: relative;width: 224px; height: 224px">
+                <div class="top"><img src="image/height-weight/h4.png" alt=""></div>
+                <div class="middel"><img src="image/height-weight/h2.png" alt=""></div>
+                <div class="middel-text"><span><strong>15.7</strong></span></div>
+            </div>
+        </div>
+        <div class="clock-right-text">14.3</div>
+        <div class="clock-bottom-text">16.5kg</div>
+        <div class="right-bg">
+            <!-- <div style="position: relative; width: 220px; height: 304px">
+            <div class="tlbz"><span>97</span><i>&nbsp;</i></div>
+        </div> -->
+        </div>
+        <div class="right-text1">96cm</div>
+        <div class="right-text2">
+            <div class="re">
+                <div class="tlbz"><span>97</span><i>&nbsp;</i></div>
+                <div class="re-text1 max">98.5</div>
+                <div class="re-text1 min" style="top:20px">95</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/moment.js"></script>
+    <script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
+        var context = "";
+        if (r != null)
+            context = r[2];
+        reg = null;
+        r = null;
+        return context == null || context == "" || context == "undefined" ? "" : context;
+    }
+
+    $.ajax({
+        url: '/1/body/growth/record?gid=' + getQueryString('gid'),
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            data = { 
+                "checkTime": 1526140800000, 
+                "weight": 13, 
+                "height": 207, 
+                "standardHeights": [190, 95.4, 230.3], 
+                "standardWeights": [12.68, 14.15, 15.82], 
+                "allHeightAverage": 208, 
+                "allWeightAverage": 28.21 
+            }
+            var date = moment(data.checkTime).format("YYYY.MM.DD");
+            $(".time strong").text(date);
+            initWeight(data);
+            initHeight(data);
+            console.log(data);
+        },
+        error: function(e, status) {
+            data = { 
+                "checkTime": 1526140800000, 
+                "weight": 13, 
+                "height": 207, 
+                "standardHeights": [190, 95.4, 230.3], 
+                "standardWeights": [12.68, 14.15, 15.82], 
+                "allHeightAverage": 208, 
+                "allWeightAverage": 14.21 
+            }
+            var date = moment(data.checkTime).format("YYYY.MM.DD");
+            $(".time strong").text(date);
+            initWeight(data);
+            initHeight(data);
+        }
+    });
+
+    function initWeight(data) {
+        var myRotate = 0;
+        var weightAverageRotate = 0;
+
+        var standardWeights = data.standardWeights;
+        var standardWeight1 = data.standardWeights[0];
+        var standardWeight2 = data.standardWeights[2];
+
+
+        var oneStandardWeight = (standardWeight2 - standardWeight1) / 120; //计算一度是多少值
+        var discMin = (standardWeight1 - oneStandardWeight * 80); //左边记录的最小值
+        var discMax = (standardWeight2 + oneStandardWeight * 80); //右边记录的最大值
+        console.log("min:" + discMin, "max:" + discMax)
+        var myWeight = data.weight;
+
+        var weightAverage = data.allWeightAverage;
+        $(".clock-left-text").text(standardWeight1);
+        $(".clock-right-text").text(standardWeight2);
+        $(".clock-bottom-text").text(myWeight);
+        $(".middel-text span strong").text(weightAverage);
+        //我的测量
+        if (myWeight <= discMin) {
+            myRotate = -140;
+        } else if (myWeight >= discMax) {
+            myRotate = 140;
+        } else {
+            var differWeightDegrees = (myWeight - discMin) / oneStandardWeight;
+            myRotate = -140 + differWeightDegrees
+            console.log(myRotate)
+        }
+        //同龄平均值
+        if (weightAverage <= discMin) {
+            weightAverageRotate = -140;
+        } else if (weightAverage >= discMax) {
+            weightAverageRotate = 140;
+        } else {
+            var differWeightDegrees2 = (weightAverage - discMin) / oneStandardWeight;
+            weightAverageRotate = -140 + differWeightDegrees2
+            console.log(weightAverageRotate)
+        }
+
+
+        $(".clock .top").css({
+            "transform": "rotate(" + myRotate + "deg)",
+            "-webkit-transform": "rotate(" + myRotate + "deg)",
+            "-moz-transform": "rotate(" + myRotate + "deg)"
+        })
+        $(".clock .middel,.middel-text").css({
+            "transform": "rotate(" + weightAverageRotate + "deg)",
+            "-webkit-transform": "rotate(" + weightAverageRotate + "deg)",
+            "-moz-transform": "rotate(" + weightAverageRotate + "deg)"
+        })
+
+        var textRotate = 0;
+        if (weightAverageRotate > 0) {
+            textRotate = '-' + weightAverageRotate;
+        } else {
+            textRotate = Math.abs(weightAverageRotate)
+        }
+        $(".middel-text span strong").css({
+            "transform": "rotate(" + textRotate + "deg)",
+            "-webkit-transform": "rotate(" + textRotate + "deg)",
+            "-moz-transform": "rotate(" + textRotate + "deg)"
+        })
+
+
+    }
+
+
+
+
+
+
+    function initHeight(data) {
+        var meBoxHeigth = 185;
+        var rulerBoxHeight = 270;
+        var allHeightAverage = data.allHeightAverage; //平均值
+        var standardHeight1 = data.standardHeights[0];
+        var standardHeight2 = data.standardHeights[2];
+        var myHeight = data.height;
+        // allHeightAverage=1
+
+        $(".right-text1").text(myHeight + 'cm');
+        $(".re-text1.min").text(standardHeight1);
+        $(".re-text1.max").text(standardHeight2);
+        $(".tlbz span").text(allHeightAverage);
+        // var onePxHeight=myHeight/meBoxHeigth;
+        // var rulerHeightMax=rulerBoxHeight*onePxHeight;
+        // console.log(rulerHeightMax)
+
+        var top1 = 225;
+        var top2 = 22;
+        if (myHeight < standardHeight1) {
+            top1 = 225;
+        } else if (myHeight == standardHeight1) {
+            top1 = 246;
+        } else if (myHeight == standardHeight2) {
+            top1 = 276;
+        } else if (myHeight > standardHeight2) {
+            top1 = 306;
+        } else if (myHeight > standardHeight1 && myHeight < standardHeight2) {
+            var middelSdHeight = (standardHeight2 - standardHeight1) / 2 + standardHeight1
+            console.log(middelSdHeight)
+            if (myHeight > middelSdHeight) {
+                top1 = 268;
+            } else {
+                top1 = 256;
+            }
+        }
+
+        if (allHeightAverage > standardHeight2) {
+            top2 = -55;
+            if (myHeight < standardHeight1) {
+                top2 =-47;
+            }
+            if (myHeight >standardHeight2&&myHeight>allHeightAverage) {
+                top2 =-26;
+            }
+            if(myHeight==allHeightAverage){
+                top2 = -43;
+            }
+        } else if (allHeightAverage < standardHeight1) {
+            top2 = 30;
+            if (allHeightAverage < myHeight) {
+                top2 = 55;
+            }
+        } else {
+            top2 = -2;
+            if (allHeightAverage < myHeight) {
+                top2 = 11;
+            }
+        }
+
+        console.log($(".right-text1").offset().top)
+
+        $(".right-text2").css("top", top1 + "px");
+        $(".tlbz").css("top", top2 + "px");
+
+
+
+    }
+    </script>
+</body>
+
+</html>

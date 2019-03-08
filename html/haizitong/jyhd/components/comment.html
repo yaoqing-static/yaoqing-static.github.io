@@ -1,0 +1,16 @@
+<style>
+  .commentCtrl{padding: 0 10px; background-color: #fff}
+  .comment-box{ padding-top: 3px}
+  .tag{  border-bottom: 1px solid rgba(0,0,0,0.12); line-height: 30px;padding-bottom: 1px}
+  .tag span{color: #2196F3}
+  .commentCtrl textarea{margin-top: 5px; width: 100%;font-family: '微软雅黑'; height: 140px;  outline: none}
+  .bottom-fixed{height: 50px;width: 100%;position: fixed;left: 0px;bottom: 0px;background: #2196F3; cursor: pointer;text-align: center;font-size: 16px;line-height: 50px; color: #fff}
+</style>
+
+<article class="commentCtrl">
+  <div class="comment-box">
+    <div class="tag" ng-if="type=='reply'">回复<span>张三</span></div>
+    <textarea placeholder="输入评论..."></textarea>
+    <a class="bottom-fixed" ng-click="confirmComment()">确认</a>
+  </div>
+</article>

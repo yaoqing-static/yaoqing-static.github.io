@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="js/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/adaption.css">
+</head>
+<body ng-app="myApp" ng-controller="feedback">
+<div class="loading">
+    <img src="image/loading.gif">
+</div>
+
+<div class="videoBG">
+    <video style="width: 100%; background: #000000; height: 50%;" id="video" src="" controls="controls" autoplay>
+        your browser does not support the video tag
+    </video>
+</div>
+
+
+
+<article style="display: none" class="">
+
+    <div class="feed1">
+        <div class="close-1">
+            <div class="a1 {{allData.kidGender==1?'girl':''}}">
+                <div class="img">
+
+                    <img ng-if="allData.kidIcon" src="{{allData.kidIcon}}">
+                    <img ng-if="!allData.kidIcon" src="{{allData.kidGender==1?'image/girl.png':'image/man.png'}}">
+                </div>
+                <div class="con">
+                    <p ng-bind="allData.kidName">&nbsp;</p>
+                    <span>班级&nbsp;{{allData.className}}</span><span>年龄&nbsp;{{allData.birthDay|getAge}}岁</span><br>
+                    <span ng-if="allData.height">身高&nbsp;{{allData.height.toFixed(2)}}cm</span><span ng-if="allData.weight">体重&nbsp;{{allData.weight.toFixed(2)}}kg</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-but" ng-if="type!=2" ng-show="allData.isMultiple">
+            <div id="header">
+                <div class="swiper-wrapper">
+                    <div ng-click="qualitiesChange(qua,$event)" class="swiper-slide {{$first?'dq':''}}" ng-repeat="qua in qualities" ng-bind="qua.name"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--家长查看老师-->
+    <div class="feed2-text" ng-if="type==2">
+        <dd ng-repeat="da in allData.answersDesc">
+            <p>{{(qualities |  filter:{qualityId:da.qualityId})[0].name}}</p>
+            <div class="li" ng-repeat="standard in da.standards">
+                <span style="color: {{(qualitiesColor.qualityColors |  filter:{qualityId:standard.qualityId})[0].color}}">
+                    {{standard.standardName}}
+                </span>
+                {{standard.desc}}
+            </div>
+
+        </dd>
+
+    </div>
+
+    <!--综合评价-->
+    <div class="feed2" ng-if="type!=2">
+        <div class="a1"><strong>{{textyao}}{{(qualities |  filter:{qualityId:qualityId})[0].name}}</strong><span ng-click="see()" ng-if="allData.status!=1">查看选项</span></div>
+        <div class="a2">
+            <strong style="font-weight: normal" ng-bind="standardRemark"></strong><span>(仅供参考)</span>
+        </div>
+        <div class="a3">
+            <dd class="title">
+                <span class="s1">质量领域</span><span>水平5</span><span>水平3</span><span>水平1</span><span>未观察到</span>
+            </dd>
+            <dd class="dd" ng-repeat="ta1 in chartData">
+                <span class="s1">{{(qualities |  filter:{qualityId:ta1.qualityId})[0].name}}</span><span ng-repeat="ta1_1 in ta1.levelTypes">{{ta1_1.count}}</span>
+            </dd>
+        </div>
+        <div class="tag">
+            <span style="background:#ffb500">&nbsp;</span>水平5<span style="background:#7bc91d">&nbsp;</span>水平3<span>&nbsp;</span>水平1<span style="background:#b4b4b4">&nbsp;</span>未观察到
+        </div>
+
+        <div class="a4">
+            <div class="zk" ng-click="open($event)"><img src="image/zk.png"><span>查看各领域柱状图</span></div>
+            <div class="con">
+                <div class="list">
+
+                    <div class="bar-dd" ng-repeat="ta1 in chartData">
+                        <p>{{(qualities |  filter:{qualityId:ta1.qualityId})[0].name}}</p>
+                        <div class="bar-model">
+                            <div class="bar-box">
+                                <b></b><b></b><b></b><b></b><b></b>
+                                <div class="data-box">
+                                    <img src="">
+                                    <dd ng-repeat="ta1a in ta1.levelTypes" style="height:{{ta1a.count|percent:ta1.levelTypes}}%"><span><i>{{ta1a.count}}</i></span></span></dd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="a5">
+            <div class="con">
+                <div class="list">
+                    <div class="bar-dd" style="margin-bottom: 0px">
+                        <div class="bar-model">
+                            <div class="bar-box">
+                                <b></b><b></b><b></b><b></b><b></b>
+                                <div class="data-box">
+                                    <img src="">
+                                    <dd ng-repeat="ta1a in statisticById.levelTypes" style="height:{{ta1a.count|percent:statisticById.levelTypes}}%"><span><i>{{ta1a.count}}</i></span></span></dd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="circel-share-box">
+                <div class="circel-share" id="main" ></div>
+                <div class="tag">
+                    <div class="a">
+                        <dd><b style="background: #ffb500">&nbsp;</b><span>水平&nbsp;5：</span><strong>{{((statisticById.levelTypes[0].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                        <dd><b style="background: #7bc91d">&nbsp;</b><span>水平&nbsp;3：</span><strong>{{((statisticById.levelTypes[1].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                        <dd><b style="background: #88cfff">&nbsp;</b><span>水平&nbsp;1：</span><strong>{{((statisticById.levelTypes[2].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                        <dd><b style="background: #b4b4b4">&nbsp;</b><span>未观察到：</span><strong>{{((statisticById.levelTypes[3].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <!--评语-->
+    <div ng-if="allData.status!=1" class="feed2 comment">
+        <div class="a1">{{(allData.creatorWho==1||allData.creatorWho==2)?'家长':'老师'}}评语</div>
+        <div class="co1">
+            <img ng-if="allData.creatorIcon" src="{{allData.creatorIcon}}"><img ng-if="!allData.creatorIcon" src="{{allData.creatorWho==10?'image/teacher1.png':(allData.creatorWho==1?'image/dad.png':'image/mon.png')}}">
+            <span ng-bind="allData.creatorName"></span>
+            <!--{{(allData.creatorWho==1||allData.creatorWho==2)?(allData.creatorWho==1?'爸爸':'妈妈'):'老师'}}-->
+        </div>
+        <div class="co2" ng-bind="allData.teacherRemark">
+        </div>
+    </div>
+    <div ng-if="allData.status!=1" class="my-gallery">
+        <figure ng-repeat="video in allData.files">
+            <a ng-show="video.type=='v'" ng-click="preview(video)" ng-style="{'background-image':'url('+video.url+'/i)'}">
+                <div class="video" ng-if="video.type=='v'"><img src="image/video.png"></div>
+            </a>
+            <a ng-show="video.type=='i'" ng-click="preview(video)" ng-style="{'background-image':'url('+video.url+')'}">
+                <div class="video" ng-if="video.type=='v'"><img src="image/video.png"></div>
+            </a>
+        </figure>
+    </div>
+
+
+    <div class="bottom-tag" ng-if="allData.status==2&&(role!=1||role!=2)">等待家长反馈</div>
+    <div class="bottom-tag" ng-if="allData.status==3&&(role==1||role==2)">等待老师确认</div>
+
+    <div template></div>
+
+
+
+</article>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/plugin.min.js"></script>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+<script src="js/photoswipe/photoswipe.min.js"></script>
+<script src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/evaluate.js"></script>
+<script type="text/javascript" src="js/hzt-util.js"></script>
+
+<script type="text/javascript">
+
+    myApp.directive('template', ['$document', function ($document) {
+        return {
+            templateUrl: 'template.html',
+            link: function (scope, element, attr) {
+
+            }
+        };
+    }]);
+    myApp.filter('getAge',function() {
+        return function (arr) {
+            var da=moment().format("YYYY")-moment(arr).format("YYYY");
+            return da;
+        };
+    })
+
+    myApp.filter('percent',function() {
+        return function (da, data) {
+            var max = data[0].count;
+            var len = data.length;
+            for (var i = 1; i < len; i++) {
+                if (data[i].count > max) {
+                    max = data[i].count;
+                }
+            }
+            return  (da/max)*100
+        };
+    })
+
+    window.onload=function () {
+        //console.log(document.body.offsetHeight )
+        callNative("pageInfo", 1, '{"height": '+document.body.offsetHeight +'}',"fun" + Math.random());
+    }
+
+
+</script>
+
+
+</body>
+</html>

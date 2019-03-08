@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+
+    #post-table tr td {
+        vertical-align: middle;
+    }
+
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+
+
+    .btn-group {
+        display: block;
+        margin: 10px 0 10px 0;
+        overflow: hidden;
+    }
+
+    .btn-default, .btn-default:focus, .btn-default:hover {
+        background-color: #1abc9c
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .my-pager {
+        text-align: right
+    }
+
+    .teacherSelet .select2-search-field input[type=text] {
+        color: #B3B0B0;
+        margin-top: 0px
+    }
+    .select{width: 100px; margin-bottom: 0px; min-width: 150px}
+    #tableList tr th{ vertical-align: middle; text-align: center}
+    #tableList tr td{ text-align: center}
+    #tableList tbody{ display: none}
+</style>
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                上海交通大学管理后台
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-th-list menu-title"></span>&nbsp;&nbsp;&nbsp;班级管理
+                        </li>
+                        <li role="presentation" class="menu-item "><a href="ClassinfoNew.html">班级信息</a></li>
+                        <li role="presentation" class="menu-item"><a href="ClassiImport.html">班级导入</a></li>
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-cog menu-title"></span>&nbsp;&nbsp;&nbsp;自评管理
+                        </li>
+                        <li role="presentation" class="menu-item"><a href="MonitoringGroup.html">课程监控小组</a></li>
+                        <li role="presentation" class="menu-item"><a href="Observation.html">观测点管理</a></li>
+                        <li role="presentation" class="menu-item active"><a href="StaffManag.html">观测员工管理</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    观测员工管理
+                    <div class="btn-group" style="text-align: right; margin-top: 0px" role="group" aria-label="...">
+                        <button ng-click="showDataAll($event)" style="border-right: 1px solid #13A7A7; display: inline-block; float: right" type="button" class="btn btn-primary btn-sm font-14 addGroup " ng-click="addGroup()"><span
+                                class="glyphicon glyphicon-refresh"></span>显示全部员工
+                        </button>
+                        </div>
+
+                    <table id="tableList" class="table table-hover table-bordered" style="border:1px solid #CCC">
+                        <thead>
+                        <tr class="catalog-header">
+                            <th width="20%">员工姓名</th>
+                            <th width="20%"><select name="park" class="form-control select select-primary mrs mbm select-sm" ng-click="selectFun($event)">
+                                <option value="0">全部园区</option>
+                                <option value="{{parkM.name}}" ng-repeat="parkM in park">{{parkM.name}}</option>
+                            </select></th>
+                            <th width="20%"><select name="postjob"  class="form-control select select-primary mrs mbm select-sm"  ng-click="selectFun($event)">
+                                <option value="0">全部职务</option>
+                                <option on-finish-render-filters value="{{postjobM.name}}" ng-repeat="postjobM in postjob">{{postjobM.name}}</option>
+                            </select></th>
+                            <th width="20%"><select name="state" data-toggle='select'class="form-control select select-primary mrs mbm select-sm" ng-click="selectFun($event)">
+                                <option value="-1">全部状态</option>
+                                <option value="1">开启</option>
+                                <option value="0">关闭</option>
+                            </select></th>
+                            <th width="20%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="nonelist" style="display: none"><td style="text-align: center" colspan="5">没有符合条件的数据</td></tr>
+                            <tr ng-repeat="staffN in staff.information" on-finish-render-filters>
+                                <td>{{staffN.name}}</td>
+                                <td>{{(park|filter:{id:staffN.park})[0].name}}</td>
+                                <td>{{(postjob|filter:{id:staffN.postjob})[0].name}}</td>
+                                <td>{{staffN.state==0?"关闭":"开启"}}</td>
+                                <td><a ng-click="state(staffN.id)">{{staffN.state==0?"开启":"关闭"}}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="my-pager">
+                    </div>
+                </div>
+                <!-- col-xs-10结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- 以下模态对话框根据需求选择性使用 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div id="myModalContent" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+    var myApp = angular.module('myApp', []);
+    //渲染完成后
+    myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+    myApp.controller('userCtrl', function ($scope, $http, $timeout) {
+        $scope.Aalert = function (n) {
+            alert(n)
+        }
+
+        //ajax获取园林和职务信息
+        function getInformation() {
+
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=park"
+            }).success(function (data) {
+                $scope.park = data;
+
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.get_teacher_data_failed);
+                //TODO 以下为测试代码
+                $scope.park = [
+                    {
+                        id: "park1",
+                        name: "三泉园"
+                    },
+                    {
+                        id: "park2",
+                        name: "平顺园"
+                    }
+                ];
+            });
+
+            //职务
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=postjob"
+            }).success(function (data) {
+                $scope.postjob = data;
+
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.get_class_data_failed);
+                //TODO 以下为测试代码
+                $scope.postjob =[
+                    {
+                        id: "postjob1",
+                        name: "部长"
+                    },
+                    {
+                        id: "postjob2",
+                        name: "教研组长"
+                    },
+                    {
+                        id: "postjob3",
+                        name: "教师"
+                    }
+                ];
+            });
+        }
+        getInformation();
+
+
+        $scope.ClassTable1 = {count: 0, information: []};
+        var classCount = $scope.ClassTable1.count;
+        $scope.getData = function (page) {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=" + page
+            }).success(function (data) {
+                $scope.ClassTable1 = data;
+                resetPage();
+                noDataList();
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.get_class_data_failed);
+                //TODO 以下为测试代码
+                $scope.staff ={
+                    count: 38,
+                    information:[
+                    {
+                        id: "staff1",
+                        name: "张老师",
+                        park:"park1",
+                        postjob:"postjob1",
+                        state:1
+                    },
+                    {
+                        id: "staff2",
+                        name: "李老师",
+                        park:"park2",
+                        postjob:"postjob2",
+                        state:0
+                    },
+                    {
+                        id: "staff3",
+                        name: "周老师",
+                        park:"park2",
+                        postjob:"postjob3",
+                        state:1
+                    }
+                ]};
+                resetPage();
+                noDataList();
+            });
+        }
+
+        function noDataList(){
+            if($scope.staff.information.length==0){
+                $(".nonelist").show()
+            }
+            else{
+                $(".nonelist").hide()
+            }
+        }
+
+        var Nid=0;
+        $scope.state = function (Stateid){
+            Nid=Stateid;
+            var index=$scope.GetIndex(Nid);
+            if($scope.staff.information[index].state==1){
+                initModal(CONFIG.STR.delete_title, CONFIG.STR.StaffManag.Clos_StaffManag, statefun);
+            }else{
+                initModal(CONFIG.STR.delete_title, CONFIG.STR.StaffManag.Open_StaffManag, statefun);
+            }
+
+        }
+        function statefun(){
+
+            var index=$scope.GetIndex(Nid);
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "id=" + Nid
+            }).success(function (data) {
+
+            }).error(function () {
+                //TODO 以下为测试代码
+                if($scope.staff.information[index].state==1){
+
+                        showErrorAlert(CONFIG.STR.StaffManag.Open_StaffManag_error);
+                        $scope.staff.information[index].state=0;
+
+                }else{
+
+                        showErrorAlert(CONFIG.STR.StaffManag.Close_StaffManag_error);
+                        $scope.staff.information[index].state=1;
+
+                }
+                $("#myModal").modal("hide");
+            });
+        }
+
+
+
+        $scope.GetIndex = function (id) {
+            for (var i = 0; i < $scope.staff.information.length; i++) {
+                if ($scope.staff.information[i].id == id) {
+                    return i;
+                    break;
+                }
+            }
+        }
+
+        $scope.getData(1);
+        //调用分页
+        function resetPage() {
+            if (classCount != $scope.staff.count) {
+                classCount = $scope.staff.count;
+                laypage({
+                    cont: $(".my-pager"),
+                    pages: Math.ceil($scope.staff.count / 10),
+                    jump: function (obj, first) {
+                        console.log(obj.curr);
+                        if (!first) {
+                            $scope.getPage(obj.curr);
+                        }
+                    }
+                })
+            }
+        }
+
+        $scope.selectFun= function ($event) {
+            var target=$event.currentTarget;
+            alert($(target).attr("name")+":"+$(target).find("option:selected").val());
+            noDataList();
+        }
+        $scope.showDataAll= function ($event) {
+            var target=$event.currentTarget;
+
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "alldata="
+            }).success(function (data) {
+                $(target).addClass("disabled")
+                $scope.staff=data;  //注意 全部显示的话 把书目count改成1即可
+                resetPage()
+                noDataList();
+            }).error(function () {
+                //TODO 以下为测试代码
+                $(target).addClass("disabled")
+                $scope.staff={count:1,information:[{id:"staff1",name:"张老师",park:"park1",postjob:"postjob1",state:1},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff3",name:"周老师",park:"park2",postjob:"postjob3",state:1},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff3",name:"周老师",park:"park2",postjob:"postjob3",state:1},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff3",name:"周老师",park:"park2",postjob:"postjob3",state:1},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff3",name:"周老师",park:"park2",postjob:"postjob3",state:1},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff3",name:"周老师",park:"park2",postjob:"postjob3",state:1},{id:"staff2",name:"李老师",park:"park2",postjob:"postjob2",state:0},{id:"staff3",name:"周老师",park:"park2",postjob:"postjob3",state:1}]};
+                resetPage();
+                noDataList();
+
+            });
+        }
+
+
+
+        $scope.$on('ngRepeatFinished', function (rfe) {
+            //下面是在table render完成后执行的js
+            //console.log(rfe);
+
+            $("#tableList tbody").show();
+            $(".select").select2();
+        });
+
+        $scope.getPage = function (page) {
+            $scope.getData(page);
+        }
+    })
+
+
+</script>
+</body>
+</html>
+			

@@ -1,0 +1,105 @@
+<!--
+type=1  园所主页
+type=2  班级主页
+type=4  模板部分
+type=5  优点特长
+type=6  身高体重
+-->
+
+<!--封面-->
+<div class="page-box" ng-if="type==0">
+    <div class="book-cover">
+        <div class="book-img" ng-style="{'background-image':'url('+modelData.cover+')'}"></div>
+    </div>
+</div>
+
+
+<!--园所首页部分-->
+<div class="page-box" ng-if="type==1">
+    <div class="home">
+        <div class="img" ng-style="{'background-image':'url('+modelData.schoolPhoto+')'}"></div>
+        <div class="text"><span ng-bind="modelData.schoolMessage">介绍</span></div>
+    </div>
+</div>
+<!--园所首页部分end-->
+
+<!--班级主页-->
+<div class="page-box" ng-if="type==2">
+    <div class="family-portraits">
+        <div class="a1">
+            <div class="bgImg pic" ng-style="{'background-image':'url('+modelData.classPhoto+')'}"></div>
+            <div class="page-title"><strong><font ng-bind="modelData.className+'全家福'">我的成长回忆</font><i></i></strong></div>
+        </div>
+        <div class="a2 clearfix">
+            <div class="left type{{modelData.teachers?(modelData.teachers.length>3?3:modelData.teachers.length):0}}">
+                <div class="bg">
+                    <dd ng-repeat="te in modelData.teachers | limitTo: 3" ng-bind="te">老师名称</dd>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+                <p><span ng-bind="modelData.classMessage">班级介绍</span></p>
+        </div>
+    </div>
+</div>
+<!--班级主页部分end-->
+
+
+<!--模板部分-->
+<div class="page-box" ng-if="type==4">
+    <div class="page{{modelData.detail.tid}}-box top">
+        <div class="page-title"><strong><font
+                ng-bind="modelData.detail.title"></font><i></i></strong></div>
+        <div class="con">
+            <div ng-repeat="img in modelData.detail.fileArr"
+                 class="bgImg page{{modelData.detail.tid}}-img{{$index+1}}"
+                 ng-style="{'background-image':'url('+
+                 (img.videoCover?img.videoCover:(img.type=='i'?img.url:img.url+'/i'))+
+                 ')'}"></div>
+            <a ng-repeat="img in modelData.detail.fileArr"  class="video{{$index+1}}"
+               ng-if="img.type=='v'" ng-click="video(img.url)"><img
+                    src="image/archives/video.png"></a>
+
+            <div class="qrcode-box">
+               <qr-code data="modelData.detail.fileArr"></qr-code>
+            </div>
+            
+            <div class="tag type{{modelData.detail.tag}}" ng-if="modelData.detail.showTag==1"></div>
+            <div class="text{{$index+1}}"
+                 ng-repeat="text in modelData.detail.textArr track by $index">
+                                         <span>
+                                            <font ng-bind="text"></font>
+                                        </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模板end-->
+
+
+<!--优点特长部分-->
+<div class="page-box" ng-if="type==5&&modelData.labels.length>0">
+    <div class="personal-youdian count{{modelData.labels.length}}">
+        <div class="lable type{{$index+1}}" ng-repeat="lable in modelData.labels track by $index">
+             <span ng-bind="lable">我的特长列子</span>
+        </div>
+        <div class="text-jy" ng-bind='modelData.remark'></div>
+    </div>
+</div>
+<!--优点特长end-->
+
+
+<!--身高体重-->
+<div class="page-box" ng-if="type==6">
+    <div class="height-weight">
+        
+    </div>
+</div>
+<!--身高体重end-->
+
+
+
+
+
+
+

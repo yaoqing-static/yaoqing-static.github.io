@@ -1,0 +1,541 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="full-screen" content="yes"/>
+	<script type="text/javascript" src="js/mobile-util.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" href = "css/rank.css" />
+
+	<style type="text/css">
+		/* page */
+		* {margin: 0; padding: 0;}
+		html {font-size: 16px;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;}
+		html * {outline: 0;
+			-webkit-text-size-adjust: none;}
+		html, body {height: 100%; width: 100%; font-family: 微软雅黑, sans-serif;}
+		.container, .row {padding: 0;}
+		.row {margin: 0;}
+
+		.body {position: relative; height: 100%; overflow: hidden;}
+		.wrap {position: relative; height: 100%; margin-top: 0.98889rem;}
+		.main {position: relative; width:100%; min-height: 100%; height: 100%; overflow: hidden;}
+
+
+		@media (min-width: 720px) {
+			.main {width: 720px; min-width: 720px;}
+		}
+
+
+		.left-region, .right-region, .middle-regin {position: absolute; top: 0.5rem; width: 4.5rem; height: 2.5rem; z-index: 1000;}
+		.left-region {left: 1rem;}
+		.middle-regin {left: 5.7rem;}
+		.right-region {right: 1rem;}
+		.col-xs-12 {padding: 0;}
+		.list-wrap {position: absolute; left: 0; top: 0; bottom: 0; width: 100%; overflow: hidden; z-index: 300;}
+		.list-wrap > div {position: absolute; left: 0; top: 0; width: 100%; overflow: hidden; margin-top: -0.5rem; min-height: 100%;}
+		.search-item-layer {margin-top: 3rem; min-height: 100%; margin-bottom: 1rem;}
+		/*.list-wrap {position: absolute; left: 0; top: 2rem; bottom: 0; width: 100%; overflow: hidden;}
+		.list-wrap .scroll-layer {position: absolute; left: 0; top: 0;width: 100%; }*/
+		.item-black { height: 7.13333rem; margin-bottom: -0.5rem; }
+		.item-blue { height: 7.13333rem; margin-bottom: -0.5rem; }
+		.item-red { height: 7.13333rem; margin-bottom: -0.5rem; }
+		.search-item {position: relative; cursor: pointer; height: 7.13333rem; margin-left: -0.5rem; z-index: 300;}
+		.search-item .item-info {position: relative;  width: 17.35556rem; height: 7.13333rem; margin-bottom: -7.13333rem; margin-left: 0.5rem; -webkit-text-size-adjust:none; }
+		.search-item .item-info .title {position: absolute; left: 3.4rem; top: 1.8rem; font-size: 0.5444rem; font-weight: bold;}
+		.search-item .item-info .type {position: absolute; top: 2rem; right: 6.83333rem; font-size: 0.4444rem; font-weight: bold; color: #FFFFFF; padding: 0.06667rem 0.26667rem;}
+		.search-item .item-info .type-experiment {background-color: #10a3f3}
+		.search-item .item-info .type-invention {background-color: #ffa802}
+		.search-item .item-info .type-news {background-color: #f08ec9}
+		.search-item .abstract {position: absolute; width: 7.3rem; left: 3.4rem; top: 2.95444rem; font-size: 0.5444rem; color: #7d7d7d; letter-spacing: 2px;}
+		.search-item .vote-num-layer {position: absolute; width: 9rem; left: 1.76667rem; top: 4.8rem; font-size: 0.4444rem; font-weight: bold;}
+		.search-item .vote-num-layer font {font-size: 0.54444rem;}
+		.item-pic-layer {position: absolute; top: 1.4rem; right: 2.61111rem; width: 3.82222rem; height: 4.48889rem; background: url("img/bg-pic.png"); background-size: 3.82222rem 4.48889rem; background-repeat: no-repeat; 
+		}
+		.item-pic-layer2{
+			top:1.6rem;
+		}
+		.item-pic-layer .tape {position: absolute; left: 1.02222rem; top: -0.11111rem; width: 1.77778rem; height: 0.42222rem;}
+		.item-pic-layer .item-pic {position: absolute; left: 0.17778rem; top: 0.15556rem; width: 3.46667rem; height: 3.46667rem;object-fit:cover;}
+		.search-item:nth-child(even) .item-pic-layer{
+			transform: rotate(-3.1deg) translateZ(0);
+			-ms-transform: rotate(-3.1deg) translateZ(0);		
+			-webkit-transform: rotate(-3.1deg) translateZ(0);	
+			-o-transform: rotate(-3.1deg) translateZ(0);		
+			-moz-transform: rotate(-3.1deg) translateZ(0);	
+		}
+		.search-item:nth-child(odd) .item-pic-layer{
+			transform: rotate(3.1deg) translateZ(0);
+			-ms-transform: rotate(3.1deg) translateZ(0);		
+			-webkit-transform: rotate(3.1deg) translateZ(0);	
+			-o-transform: rotate(3.1deg) translateZ(0);		
+			-moz-transform: rotate(3.1deg) translateZ(0);	
+		}
+		.rank-experiment {z-index: 100;}
+		.rank-invention {z-index: 99;}
+		.rank-news {z-index: 98;}
+		.experiment-bg-pics,.invention-bg-pics,.news-bg-pics{display: none;}
+		/*添加外面框框*/
+		.item-info:before{
+			content:"";
+			background-size: 100% 100%;
+			display:block;
+			width:17.35rem;
+			height: 7.13rem;
+			position: absolute;
+			left:-0.556rem;
+			top:0rem;
+		}
+		.search-item:nth-child(1) .item-info:before{
+			background:url(img/bg-item-red.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		.search-item:nth-child(2) .item-info:before{
+			background:url(img/bg-item-pink.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+			top:0.28rem;
+		}
+		.search-item:nth-child(3) .item-info:before{
+			background:url(img/bg-item-red.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		.search-item:nth-child(4) .item-info:before{
+			background:url(img/bg-item-pink.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		.search-item:nth-child(5) .item-info:before{
+			background:url(img/bg-item-red.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+			top:0.2rem;
+		}
+
+		/*添加奖牌*/
+		.item-info:after{
+		content:"";
+		background-size: 100% 100%;
+		display:block;
+		width: 1.622222rem;
+		height: 2.2rem;
+		position: absolute;
+		left:1.44rem;
+		top:1.7333rem;
+		}
+		.search-item:nth-child(1) .item-info:after{
+		
+			background:url(img/rank/1th.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		.search-item:nth-child(2) .item-info:after {
+
+			background:url(img/rank/2nd.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+			top:1.83rem;
+		}
+		.search-item:nth-child(3) .item-info:after {
+			background:url(img/rank/3rd.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		.search-item:nth-child(4) .item-info:after {
+			height: 1.555rem;
+			background:url(img/rank/4th.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+			top:2.1rem;
+		}
+		.search-item:nth-child(5) .item-info:after {
+			height: 1.555rem;
+			background:url(img/rank/5th.png) no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+			top:2.1rem;
+		}
+		.current{display: block;}
+	</style>
+</head>
+<body>
+<div class="body">
+	<div class="wrap">
+		<div class="container main" style="padding-top: 5px">
+			<header>
+				<div class="return">
+                    <img class="return-img" src="img/return.png">
+				</div>
+				<h1>网络人气榜</h1>
+				<div class="search"></div>
+			</header>
+			<div class="body main">
+				<div class="col-xs-12 list-wrap">
+					<div class="scroll-layer">
+						<div class="rank-experiment">
+							<div class="experiment-bg-pics current">
+								<img src="img/experiment/spacemen.png" class="spaceman-left"/>
+								<img src="img/experiment/star1.png" class="star-center"/>
+								<img src="img/experiment/star2.png" class="star-top"/>
+								<img src="img/experiment/ship2.png" class="airship"/>
+								<img src="img/experiment/ship1.png" class="ship-left"/>
+								<img src="img/experiment/plane-gray.png" class="planet"/>
+								<img src="img/rank/astronaut3.png" class="helmet-incline"/>
+								<img src="img/rank/meteor2.png" class="meteor-star"/>
+								<img src="img/experiment/two-star.png" class="two-star"/>
+							</div>
+							<img class="head" src="img/rank/experiment-fore.png">
+							<div class="content">
+								<div class="bg"></div>
+							</div>
+						</div>
+						<div class="rank-invention">
+							<div class="invention-bg-pics">
+								<img src="img/experiment/car.png" class="car-invention">
+								<img src="img/experiment/plane-gray.png" class="planet-invention">
+								<img src="img/experiment/two-star.png" class="two-invention">
+								<img src="img/experiment/helmet.png" class="helmet-invention">
+								<img src="img/experiment/meteor.png" class="meteor-invention">
+								<img src="img/experiment/ship1.png" class="ship-invention">
+								<img src="img/rank/line-star.png" class="line-invention">
+								<img src="img/experiment/ship2.png" class="airship-invention">
+							</div>
+							<img class="head" src="img/rank/invention-back.png">
+							<div class="content">
+								<div class="bg"></div>
+							</div>
+						</div>
+						<div class="rank-news">
+							<div class="news-bg-pics">
+								<img src="img/rank/car-flat.png" class="car-news">
+								<img src="img/rank/planet-star.png" class="planet-news">
+								<img src="img/experiment/two-star.png" class="two-news">
+								<img src="img/rank/white-star.png" class="white-news">
+								<img src="img/rank/metero3.png" class="meteor-news">
+								<img src="img/rank/line-star.png" class="line-news">
+								<img src="img/experiment/ship2.png" class="airship-news">
+								<img src="img/rank/spaceman-right.png" class="spaceman-news"/>
+								<img src="img/rank/ship-right.png" class="ship-news"/>
+							</div>
+							<img class="head" src="img/rank/news-back.png">
+							<div class="content">
+								<div class="bg"></div>
+							</div>
+						</div>
+						<div class="left-region"></div>
+						<div class="middle-regin"></div>
+						<div class="right-region"></div>
+						<div class="search-item-layer">
+							<div class="search-item" data-id="1">
+						<!-- 		<img class="bg-item item-black center-block"/> -->
+								<div class="item-info center-block">
+									<label class="title">小实验</label>
+								<!-- 	<label class="type type-experiment">小实验</label> -->
+									<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>
+									<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>
+
+									<div class="item-pic-layer">
+										<img class="item-pic" src="img/example.png"/>
+										<img class="tape" src="img/tape.png"/>
+									</div>
+								</div>
+							</div>
+							<div class="search-item" data-id="2">
+								<!-- <img class="bg-item item-blue center-block"/> -->
+								<div class="item-info center-block">
+									<label class="title">阿基米德小实验2</label>
+									<!-- <label class="type type-news">小趣闻</label> -->
+									<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>
+									<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>
+
+									<div class="item-pic-layer item-pic-layer2">
+										<img class="item-pic" src="img/example.png"/>
+										<img class="tape" src="img/tape.png"/>
+									</div>
+								</div>
+							</div>
+							<div class="search-item" data-id="3">
+								<!-- <img class="bg-item item-red center-block"/> -->
+								<div class="item-info center-block">
+									<label class="title">阿基米德小实验3</label>
+									<!-- <label class="type type-invention">小发明</label> -->
+									<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止..</label>
+									<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>
+
+									<div class="item-pic-layer">
+										<img class="item-pic" src="img/example.png"/>
+										<img class="tape" src="img/tape.png"/>
+									</div>
+								</div>
+							</div>
+							<div class="search-item" data-id="4">
+							<!-- 	<img class="bg-item item-black center-block"/> -->
+								<div class="item-info center-block">
+									<label class="title">阿基米德小实验4</label>
+								<!-- 	<label class="type type-experiment">小实验</label> -->
+									<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>
+									<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>
+
+									<div class="item-pic-layer">
+										<img class="item-pic" src="img/example.png"/>
+										<img class="tape" src="img/tape.png"/>
+									</div>
+								</div>
+							</div>
+							<div class="search-item" data-id="4">
+								<!-- <img class="bg-item item-black center-block"/> -->
+								<div class="item-info center-block">
+									<label class="title">阿基米德小实验4</label>
+							<!-- 		<label class="type type-experiment">小实验</label> -->
+									<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>
+									<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>
+
+									<div class="item-pic-layer item-pic-layer2">
+										<img class="item-pic" src="img/example.png"/>
+										<img class="tape" src="img/tape.png"/>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript">
+
+	var currentTab = "experiment",	//tab: experiment, invention, news
+		type="experiment",			//type: experiment, invention, news
+		testId = 0;
+
+	$(document).ready(function() {
+
+		setMinHeightChangeListener(700);
+
+		var listScroller = new IScroll(".list-wrap", {
+			mouseWheel: true
+		});
+
+		mobileClick(".return", function(e) {
+			e.preventDefault();
+			goBack();
+		});
+
+		mobileClick(".left-region", function(e) {
+			console.log("left click");
+			e.preventDefault();
+			if(currentTab !== "experiment") {
+				currentTab = "experiment";
+				$(".rank-experiment .head").attr("src", "img/rank/experiment-fore.png");
+				$(".rank-invention .head").attr("src", "img/rank/invention-back.png");
+				$(".rank-news .head").attr("src", "img/rank/news-back.png");
+				$(".rank-experiment").css("z-index", "100");
+				$(".experiment-bg-pics").css("display", "block");
+				var za, zb;
+				if(parseInt($(".rank-invention").css("z-index")) > parseInt($(".rank-news").css("z-index"))) {
+					za = 99; zb = 98;
+				} else {
+					za = 98; zb = 99;
+				}
+				$(".rank-invention").css("z-index", za);
+				$(".invention-bg-pics").css("display", "none");
+
+				$(".rank-news").css("z-index", zb);
+				$(".news-bg-pics").css("display", "none");
+				//加载热门推荐的数据
+				$(".search-item-layer").html(getTestData(testId++));
+				listScroller.refresh();
+			}
+		});
+
+		mobileClick(".middle-regin", function(e) {
+			console.log("middle click");
+			e.preventDefault();
+			if(currentTab !== "invention") {
+				currentTab = "invention";
+				$(".rank-experiment .head").attr("src", "img/rank/experiment-back.png");
+				$(".rank-invention .head").attr("src", "img/rank/invention-fore.png");
+				$(".rank-news .head").attr("src", "img/rank/news-back.png");
+				$(".rank-invention").css("z-index", "100");
+				$(".invention-bg-pics").css("display", "block");
+				var za, zb;
+				if(parseInt($(".rank-experiment").css("z-index")) > parseInt($(".rank-news").css("z-index"))) {
+					za = 99; zb = 98;
+				} else {
+					za = 98; zb = 99;
+				}
+				$(".rank-experiment").css("z-index", za);
+				$(".experiment-bg-pics").css("display","none");
+				$(".rank-news").css("z-index", zb);
+				$(".news-bg-pics").css("display","none");
+
+
+
+				//加载热门推荐的数据
+				$(".search-item-layer").html(getTestData(testId++));
+				listScroller.refresh();
+			}
+
+		})
+
+		mobileClick(".right-region", function(e) {
+			console.log("right click");
+			e.preventDefault();
+			if(currentTab !== "news") {
+				currentTab = "news";
+				$(".rank-experiment .head").attr("src", "img/rank/experiment-back.png");
+				$(".rank-invention .head").attr("src", "img/rank/invention-back.png");
+				$(".rank-news .head").attr("src", "img/rank/news-fore.png");
+				$(".rank-news").css("z-index", "100");
+				$(".news-bg-pics").css("display","block");
+				// .experiment-bg-pics,.invention-bg-pics,.news-bg-pics{display: none;}
+				var za, zb;
+				if(parseInt($(".rank-invention").css("z-index")) > parseInt($(".rank-experiment").css("z-index"))) {
+					za = 99; zb = 98;
+				} else {
+					za = 98; zb = 99;
+				}
+				$(".rank-invention").css("z-index", za);
+				$(".invention-bg-pics").css("display", "none");
+
+
+
+				$(".rank-experiment").css("z-index", zb);
+				$(".experiment-bg-pics").css("display", "none");
+
+				//加载最新的数据
+				$(".search-item-layer").html(getTestData(testId++));
+				listScroller.refresh();
+			}
+		});
+
+		addItemClickListener();
+
+		// fullScreen();
+	});
+
+	function addItemClickListener() {
+		$(".search-item")
+	        .on("click", function(e) {
+	            e.preventDefault();
+				searchItem($(this).attr("data-id"));
+	        })
+	        .on("touchstart", function(e) {
+	            isTouchItem = true;
+	            contentScroller.refresh();
+	        })
+	        .on("touchmove", function(e) {
+	            isTouchItem = false;
+	        })
+	        .on("touchend", function(e) {
+	            e.preventDefault();
+	            if(isTouchItem) {
+					searchItem($(this).attr("data-id"));
+	            }
+	        });
+	}
+
+	function searchItem(id) {
+		console.log("id=" + id);
+
+		//TODO 请求详情页
+		location.href="detail-vote.html";
+	}
+
+	function getTestData(id) {
+		// return '<div class="search-item" data-id="4">' +
+		// 					'<img class="bg-item item-black center-block" src="img/bg-item-black.png"/>' +
+		// 					'<div class="item-info center-block">' +
+		// 						'<label class="title">阿基米德小实验' + id + '</label>' +
+		// 						// '<label class="type type-experiment">小实验</label>' +
+		// 						'<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止流体中的物体...</label>' +
+		// 						'<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>' +
+		// 						'<div class="item-pic-layer">' +
+		// 							'<img class="item-pic" src="img/example.png"/>' +
+		// 							'<img class="tape" src="img/tape.png"/>' +
+		// 						'</div>' +
+		// 					'</div>' +
+		// 				'</div>';
+		return '<div class="search-item" data-id="4">' +
+				// '<img class="bg-item item-black center-block"/>' +
+				'<div class="item-info center-block">' +
+				'<label class="title">阿基米德小实验' + id + '</label>' +
+					// '<label class="type type-experiment">小实验</label>' +
+				'<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>' +
+				'<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>' +
+				'<div class="item-pic-layer">' +
+				'<img class="item-pic" src="img/example.png"/>' +
+				'<img class="tape" src="img/tape.png"/>' +
+				'</div>' +
+				'</div>' +
+				'</div>'
+				+
+				'<div class="search-item" data-id="4">' +
+				// '<img class="bg-item item-black center-block"/>' +
+				'<div class="item-info center-block">' +
+				'<label class="title">阿基米德小实验' + id + '</label>' +
+					// '<label class="type type-experiment">小实验</label>' +
+				'<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>' +
+				'<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>' +
+				'<div class="item-pic-layer item-pic-layer2">' +
+				'<img class="item-pic" src="img/example.png"/>' +
+				'<img class="tape" src="img/tape.png"/>' +
+				'</div>' +
+				'</div>' +
+				'</div>'
+				+
+				'<div class="search-item" data-id="4">' +
+				// '<img class="bg-item item-black center-block"/>' +
+				'<div class="item-info center-block">' +
+				'<label class="title">阿基米德小实验' + id + '</label>' +
+					// '<label class="type type-experiment">小实验</label>' +
+				'<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>' +
+				'<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>' +
+				'<div class="item-pic-layer">' +
+				'<img class="item-pic" src="img/example.png"/>' +
+				'<img class="tape" src="img/tape.png"/>' +
+				'</div>' +
+				'</div>' +
+				'</div>'
+				+'<div class="search-item" data-id="4">' +
+				// '<img class="bg-item item-black center-block"/>' +
+				'<div class="item-info center-block">' +
+				'<label class="title">阿基米德小实验' + id + '</label>' +
+					// '<label class="type type-experiment">小实验</label>' +
+				'<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>' +
+				'<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>' +
+				'<div class="item-pic-layer">' +
+				'<img class="item-pic" src="img/example.png"/>' +
+				'<img class="tape" src="img/tape.png"/>' +
+				'</div>' +
+				'</div>' +
+				'</div>'
+				+
+				'<div class="search-item" data-id="4">' +
+				// '<img class="bg-item item-black center-block"/>' +
+				'<div class="item-info center-block">' +
+				'<label class="title">阿基米德小实验' + id + '</label>' +
+					// '<label class="type type-experiment">小实验</label>' +
+				'<label class="abstract">流体静力学的一个重要原理，它指出，浸入静止...</label>' +
+				'<label class="vote-num-layer"><font color="#f33b23">100</font> 人投票</label>' +
+				'<div class="item-pic-layer item-pic-layer2">' +
+				'<img class="item-pic" src="img/example.png"/>' +
+				'<img class="tape" src="img/tape.png"/>' +
+				'</div>' +
+				'</div>' +
+				'</div>';
+	}
+</script>
+</html>

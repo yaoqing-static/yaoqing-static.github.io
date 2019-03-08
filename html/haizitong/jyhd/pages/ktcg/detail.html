@@ -1,0 +1,96 @@
+<style>
+    .lists li{ padding: 15px; position: relative; background: #fff; margin-bottom: 8px;border-bottom: 1px solid #eaeaea;}
+    .lists li:last-child{  margin-bottom: 0px}
+    .lists h1{font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+    .lists h1 span{ color: rgba(249,100,103,1); display: inline-block; margin-right: 3px; font-size: 16px }
+    .lists h5{ position: relative; margin: 8px 0 10px 0; }
+    .lists h5 span{letter-spacing: 2px; position: absolute; width: 60px; line-height: 20px; text-align: center; color: rgba(107,211,162,1); border: 1px solid rgba(107,211,162,1); border-radius: 20px; right: 0px; top: 0px}
+    .f-name{font-size: 14px;color: rgba(0,0,0,0.54);background:url('pages/ktcg/images/fjico.png') no-repeat 0 center; background-size: 20px 20px; padding-left: 23px; margin: 11px 0 0 0}
+    .f-img{ width: 120px; height: 88px;background: #F6F6F6; margin-top: 8px}
+    .comment{background: #fff; margin-top: 8px; padding-bottom: 40px}
+    .comment .but{ border-bottom: 1px solid rgba(0,0,0,0.12); line-height:40px; font-size: 14px;  padding: 0 15px; background: #fff; overflow: hidden}
+    .comment .but dd{ text-align: center; display: inline-block; margin-right:30px }
+    .comment .but dd a{ color: rgba(0,0,0,0.54);display: inline-block;line-height: 40px; position: relative }
+    .comment .but dd .active{  color: rgba(0,0,0,0.87); }
+    .comment .but dd .active:before{content: ''; position: absolute; width: 24px; height: 3px; border-radius: 3px;background: #2196F3; bottom: 0px; left: 50%; margin-left: -12px}
+    .comment .imgCover{ width:32px;height: 32px; border-radius: 50%; position: absolute; left: 0px; top: 0px }
+    .comment .con li{margin: 15px;padding-bottom: 16px;    border-bottom: 1px solid rgba(0,0,0,0.12);}
+    .comment .con li:last-child{border-bottom: none}
+    .comment  .a1{ position: relative; min-height: 35px}
+    .comment  .a1 .blue{padding: 3px 0 0 43px;}
+    .comment .gray12{display: block; padding-top: 3px}
+    .comment .a2{padding: 12px 0}
+    .comment-list{background: #F6F6F6;padding: 8px; color: rgba(0,0,0,0.54);}
+    .comment-list dd{ cursor: pointer}
+    .comment-list span{color: #33628B;}
+    .bottom-fixed a{ display: inline-block; width: 50%; text-align: center;font-size: 16px; line-height: 50px;color: #2196F3; border-top:1px solid #2196F3}
+    .bottom-fixed .praise{ background: #2196F3; color: #fff;}
+    .comment .con .page2 li{padding-bottom: 12px; margin-right: 0px; position: relative}
+    .page2 li .tag{ width: 20px;height: 20px;background:url('pages/ktcg/images/z.png') no-repeat 0 center; position: absolute; right: 12px; top: 6px; background-size: 100% 100%}
+ </style>
+
+<article class="topicDetailCtrl" style="background: rgba(246,246,246,1);">
+    <div class="box">
+
+        <div class="lists">
+            <ul>
+                <li>
+                    <h1><span>[市级一等]</span>矫正幼儿任性行为的实践与研究</h1>
+                    <h5 class="gray12">个别化研究小组&nbsp;&nbsp;&nbsp;2018-6-22 <span>课程</span></h5>
+                    <p class="text14" ng-bind="dataTetx"></p>
+                    <div class="file">
+                        <div class="f-name">附件：</div>
+                        <div class="f-img"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="comment">
+            <div class="but">
+                <dd><a class="active" ng-click="switchPage('page1',$event)">评论 24</a></dd>
+                <dd><a ng-click="switchPage('page2',$event)">赞 204</a></dd>
+            </div>
+            <div class="con">
+             <div class="page page1" ng-if="page=='page1'">
+                    <ul>
+                        <li ng-repeat="a in [1,2,3,4,5]">
+                            <div class="a1">
+                                <div class="imgCover" style="background-image: url('http://www.chinamedia360.com/media_web/resources/images/index/zy-3.png')"></div>
+                                <div class="blue">郭晓燕<span class="gray12">2018-6-11 20:24</span></div>
+                            </div>
+                            <div class="text14 a2">
+                                如果你无法简介的表达你的想法，那么只说明你还不够了解它。达你的想法，那么只说明你还不够了解它。达你的想法，那么只说明你还不够了解它不够了。
+                            </div>
+                            <div class="comment-list">
+                                <dd ng-click="addComment(2)"><span class="blue">朗洋：</span>这个评论非常的到位，讲出了我心中所想。</dd>
+                                <dd ng-click="addComment(1)"><span class="blue">王艳丽</span>回复<span>朗洋：</span>这个评论非常的到位，讲出了我心中所想。</dd>
+                                <a class="blue" href="#/topicCommentList/12">共8条回复></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+              <div class="page page2" ng-if="page=='page2'">
+                <ul>
+                  <li ng-repeat="a in [1,2,3,4,5]">
+                    <div class="tag"></div>
+                    <div class="a1">
+                      <div class="imgCover" style="background-image: url('http://www.chinamedia360.com/media_web/resources/images/index/zy-3.png')"></div>
+                      <div class="blue">郭晓燕<span class="gray12">2018-6-11 20:24</span></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="bottom-fixed">
+            <a ng-click="addComment()">评论</a><a class="praise" ng-click="praise()">赞</a>
+        </div>
+
+    </div>
+</article>

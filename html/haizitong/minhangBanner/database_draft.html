@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+    a:hover{ text-decoration: underline}
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+    #post-table tr td {
+        vertical-align: middle;
+    }
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+    .titlenam {
+        overflow: hidden;
+        height: 17px;
+        width: 241px;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .btn-group {
+        display: block;
+        margin: 10px 0 10px 0;
+        overflow: hidden;
+    }
+    .radio, .checkbox {
+        margin-top: 0px
+    }
+    .addname1 {
+        display: inline-block;
+        padding-right: 20px
+    }
+    .btn-group.bootstrap-select {
+        margin-top: 0px
+    }
+    .btn-default, .btn-default:focus, .btn-default:hover {
+        background-color: #1abc9c
+    }
+    a {
+        cursor: pointer;
+    }
+    .marrt {
+       
+    }
+    .my-pager {
+        text-align: right
+    }
+    .teacherSelet .select2-search-field input[type=text] {
+        color: #B3B0B0;
+        margin-top: 0px
+    }
+    .nav-tabs {
+        border: 1px solid #ddd;
+        border-right: none
+    }
+    .nav-tabs > li > a {
+        padding: 0px;
+        border-radius: 0px;
+        border: none;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f4f5f9
+    }
+    .nav-tabs > .active > a {
+        background-color: #fff;
+        margin-left: 0px;
+    }
+    .nav-tabs > li {
+        float: none;
+        margin-bottom: 0px;
+    }
+    .nav-tabs > li > a {
+        margin-right: -1px;
+        color: #555
+    }
+    .addnew .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        border: none
+    }
+    .tab-content {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 626px;
+        float: left;
+        font-size: 14px;
+        min-height: 100px
+    }
+    .newtitle {
+        width: 140px;
+        float: left;
+        font-size: 14px;
+        padding-right: 10px;
+        text-align: right;
+    }
+    .classList {
+        display: inline-block;
+        margin-left: 10px
+    }
+    .selectBut {
+        border-bottom: 1px solid #ddd
+    }
+    .classTable2 {
+        display: none
+    }
+    .classTable2 .name {
+        border-bottom: 1px solid #ddd;
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding: 0 0 10px 20px;
+    }
+    #tableList tbody {
+        display: none
+    }
+    .table > tbody > tr > td {
+        text-align: center;
+        font-size: 12px;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+    .table > tbody > tr > td a{ margin: 3px 0; display: inline-block}
+    .span-a a {
+        padding: 6px 0;
+        max-width: 187px;
+        display: inline-block;
+        color: #337ab7
+    }
+    .marrt {
+        color: red
+    }
+    .title {
+        font-size: 14px;
+        padding: 10px 0
+    }
+    .textarea {
+        width: 495px;
+        height: 200px;
+        font-size: 14px;
+    }
+    .title span {
+        color: #d9d7d6
+    }
+    .dot-div {
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        margin-right: 20px;
+        margin-top: 0px; position: relative; overflow: hidden;
+    }
+    .dot-div .edit { width: 150px; display: block; padding-top: 4px }
+    .dot-div .edit .img { width: 120px; height: 120px; background-color: #d9d7d6; margin: auto; display: block; line-height: 120px }
+    .dot-div .edit .name-new { width: 150px; height: 40px; overflow: hidden; display: block; height: 40px; line-height: 40px; font-size: 12px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .bordr-none, .bordr-none:hover { border-color: #fff }
+</style>
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                闵行管理后台
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-picture menu-title"></span>&nbsp;&nbsp;&nbsp;广告位管理
+                        </li>
+                        <li role="presentation" class="menu-item {{pageType==1?'active':''}}"><a
+                                href="banner.html?type=1">园所端</a></li>
+                        <li role="presentation" class="menu-item {{pageType==2?'active':''}}"><a
+                                href="banner.html?type=2">家长端</a></li>
+                        <li role="presentation" class="menu-title">
+                            <a style="padding-left:31px;" href="teacher_list.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;老师列表</a>
+                        </li>
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-envelope menu-title"></span>&nbsp;&nbsp;&nbsp;资料库管理
+                        </li>
+                        <li role="presentation" class="menu-item "><a href="database_list.html">资料库列表</a>
+                        <li role="presentation" class="menu-item active"><a href="database_draft.html">草稿箱</a>
+                        </li>
+                        <li role="presentation" class="menu-item"><a href="database_tag.html">标签</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <div class="classTable1">
+                        
+                        <table id="tableList" class="table table-hover table-bordered" width="100%">
+                            <thead>
+                            <tr class="catalog-header">
+
+                                <th style="text-align: center; width: 100px;">创建时间</th>
+                                <th style="text-align: center; width: 100px;">最近修改时间</th>
+                                <th style="text-align: center; width: 70px;">标签</th>
+                                <th style="text-align: center; width: 207px;">正文</th>
+                                <th style="text-align: center; width: 100px;">文件</th>
+                                <th style="text-align: center; width: 130px;">可见范围</th>
+                                <th style="text-align: center; width: 60px;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="(pIndex,database) in dataBaseTable.information" on-finish-render-filters>
+                                <td>{{database.addTime}}</td>
+                                <td>{{database.updateTime}}</td>
+                                <td>{{(Tags|filter:{id:database.label})[0].name}}</td>
+                                <td style="text-align: left">{{database.content}}</td>
+                                <td><span class="span-a" ng-bind-html='database.files|getFileName'></span></td>
+                                <td>
+                                    {{(database.visibleRanges|searchArr).join("，")}}
+                                </td>
+                                <td><a
+                                       ng-click="editDataBomBox(database,pIndex)">编辑</a><br />
+                                    <a
+                                       ng-click="publishDataBomBox(database.id,$event)">发表</a><br />
+                                    <a class="marrt"
+                                       ng-click="deleteDataBomBox(database.id,$event)">删除</a>
+                                </td>
+                            </tr>
+                            <tr class="nonelist" style="display: none;">
+                                <td colspan="8" style="text-align:center">没有数据</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="my-pager">
+                        </div>
+                    </div>
+                    <!-- 新建开始-->
+                    <div class="classTable2">
+                        <div class="row addnew" style=" margin: 0 1px;" id="myJurisdiction">
+                            <div class="title">标签</div>
+                            <div style="">
+                                <select style="width: 150px" name="gender"
+                                        class="form-control select1 select select-primary mrs mbm select-sm"
+                                        ng-click="btnProvinceChange($event)" ng-model="editDataBase.label">
+                                    <option value="0">请选择</option>
+                                    <option ng-repeat="tag in Tags" value="{{tag.id}}" ng-selected="editDataBase.label==tag.id">
+                                        {{tag.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="title">正文<span>（选填、可不填写。最多可输入200字）</span></div>
+                            <div style="">
+                    <textarea style="height: 130px" ng-model="editDataBase.content"
+                              class="form-control textarea"></textarea>
+                            </div>
+                            <div class="title">文件<span>（可上传doc、docx、txt、pdf、ppt、pptx、xlsx、mp4）</span></div>
+                            <div style="upfile">
+                                <input type="file"
+                                       style="display: none"
+                                       id="imgfile"/>
+
+                                <div class="dot-div float-left {{editDataBaseFiles==''?'':'bordr-none'}}"
+                                     ng-repeat="editDataBaseFiles in editDataBase.files track by $index">
+                                    <div ng-if="editDataBaseFiles!=''" class="edit">
+                        <span class="glyphicon glyphicon-trash"
+                              style=" position: absolute; right: 21px; top: 10px; cursor: pointer;" ng-click="delteImg($index)"></span>
+                                        <input type="hidden" value="{{editDataBaseFiles}}"/>
+                                        <div class="img">{{((editDataBaseFiles.split("\/")[(editDataBaseFiles.split("\/")).length-1]).split("."))[((editDataBaseFiles.split("\/")[(editDataBaseFiles.split("\/")).length-1]).split(".")).length-1]}}</div>
+                                        <div class="name-new">
+                                            <a href="{{editDataBaseFiles}}"  target='_blank'>{{editDataBaseFiles.split("\/")[(editDataBaseFiles.split("\/")).length-1]}}</a>
+                                        </div>
+                                    </div>
+                                    <div class="add" ng-if="editDataBaseFiles==''">
+                                        <a href="javascript:;" ng-click="imgfile($index)">
+                                            <p style="margin: 0px"><span class="icon-plus glyphicon glyphicon-plus"></span></p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div style="clear: both"></div>
+                            </div>
+                            <div class="title">可见范围</div>
+                            <div style="" class="all-teacher">
+                                <label style="display: inline-block" class="checkbox" for="Allcheck">
+                                    <input type="checkbox" value="" id="Allcheck" class="Allcheck"
+                                           ng-click="allChenckStatu($event)"
+                                           data-toggle="checkbox">
+                                    所有老师
+                                </label>
+
+                                <div class="row addnew" style=" margin: 0 1px; margin-top:0px" id="myclassContent">
+                                    <ul class="nav nav-tabs" style="width: 200px; float: left">
+                                        <li class="classPark_{{teachers.id}}{{SetPermissionsInf.park==teachers.id?' active':''}}"
+                                            on-finish-render-filters ng-repeat="teachers in teacher"
+                                            ng-click="classSwitchBut($index)"><a href="#class{{$index}}"
+                                                                                 data-toggle="tab">{{teachers.name}}</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div ng-repeat="teachers in teacher"
+                                             class="tab-pane fade in{{SetPermissionsInf.park==class.id?' active':''}}"
+                                             id="class_{{class.id}}">
+                                            <div class="selectBut">
+                                                <label class="checkbox classList" for="smallCheak{{teachers.id}}">
+                                                    <input type="checkbox" value="" id="smallCheak{{teachers.id}}"
+                                                           class="smallCheak checkbox_small_{{teachers.id}}"
+                                                           data-toggle="checkbox"
+                                                           ng-click="chenckStatu($event)">
+                                                    所有老师
+                                                </label>
+                                            </div>
+                                            <div class="selectlist">
+                                                <label class="checkbox"
+                                                       for="checkbox_{{teachers.id}}_{{teachers2.id}}"
+                                                       ng-repeat="teachers2 in teachers.teachers"
+                                                       style="display: inline-block; margin-left: 10px">
+                                                    <input class="checkbox_{{teachers.id}}_{{teachers2.id}} teacher-2"
+                                                           ng-click="itemChange($event)"
+                                                           type="checkbox" name="optionsRadios1"
+                                                           id="checkbox_{{teachers.id}}_{{teachers2.id}}"
+                                                           value="{{teachers2.id}}"
+                                                           data-toggle="checkbox">
+                                                    <span class="name2">{{teachers2.name}}</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <!--{{editDataBase}}-->
+                                </div>
+                            </div>
+                            <div class="clearfix" style="height: 50px;"></div>
+                            <div class="gray-border"
+                                 style="text-align: center;border-top: 1px solid #ddd; padding:20px 0">
+                                <button
+                                        class="btn btn-primary btn-sm qdset {{(editDataBase.label==0||editDataBase.files.join().length==2||editDataBase.visibleRanges.length==0)==true?'disabled':''}}"
+                                        ng-click="saveDataBase(0,$event)"
+                                        style="margin-left:10px">&nbsp;&nbsp;保存到草稿箱&nbsp;&nbsp;</button>
+                                <button
+                                        class="btn btn-primary btn-sm qdset {{(editDataBase.label==0||editDataBase.files.join().length==2||editDataBase.visibleRanges.length==0)==true?'disabled':''}}"
+                                        ng-click="saveDataBase(1,$event)"
+                                        style="margin-left:10px">&nbsp;&nbsp;发表&nbsp;&nbsp;</button>
+                                <button class="btn btn-primary btn-sm cancel" style="margin-left:10px">
+                                    &nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- col-xs-10结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- 以下模态对话框根据需求选择性使用 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button style=" " type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div id="myModalContent" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增班级内容信息 -->
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+    var myApp = angular.module('myApp', []);
+    //渲染完成后
+    myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+    myApp.filter("getFileName", function ($sce) {
+        var func = function (input) {
+            var rtn = [];
+            for (var i = 0; i < input.length; i++) {
+                var fn = input[i].split("\/");
+                rtn.push("<a target='_blank' href='" + input[i] + "'>" + fn[fn.length - 1] + "</a>");
+            }
+            return $sce.trustAsHtml(rtn.join("<br />"));
+        }
+        return func;
+    });
+    myApp.filter("searchArr", function () {
+        var func = function (arr) {
+            var rtn = [];
+            for (var i = 0; i < arr.length; i++) {
+                rtn.push(arr[i].name)
+            }
+            return rtn;
+        }
+        return func;
+    });
+    myApp.controller('userCtrl', function ($scope, $http) {
+        var pageCount = 10;
+        var pageIndex = 1;
+        $scope.pageDataBaseType = 1; ///1是管理员 2是老师
+        var $select1 = null;
+        //ajax获取标签
+        function getTag() {
+            $http({
+                url: "aaa",
+                type: "GET"
+            }).success(function (data) {
+                $scope.Tags = data;
+                $select1 = $(".select1").select2();
+            }).error(function () {
+                showErrorAlert("获取失败");
+                //TODO 以下为测试代码
+                $scope.Tags = [
+                    {
+                        id: "tag1",
+                        name: "标签1"
+                    }, {
+                        id: "tag2",
+                        name: "标签2"
+                    }, {
+                        id: "tag3",
+                        name: "标签3"
+                    }
+                ];
+                $select1 = $(".select1").select2();
+            });
+        }
+
+        getTag();
+        //ajax获取老师
+        function getTeacher() {
+            $http({
+                url: "aaa",
+                type: "GET"
+            }).success(function (data) {
+                $scope.teacher = data;
+            }).error(function () {
+                showErrorAlert("获取失败");
+                //TODO 以下为测试代码
+                $scope.teacher = [
+                    {
+                        id: "teacher1",
+                        name: "老师",
+                        teachers: [{id: "teacher1_1", name: "王老师"}, {id: "teacher1_2", name: "李老师"}, {
+                            id: "teacher1_3",
+                            name: "王老师"
+                        }, {
+                            id: "teacher1_4", name: "王老师"
+                        }]
+                    },
+                    {
+                        id: "teacher2",
+                        name: "保健老师",
+                        teachers: [{id: "teacher2_1", name: "保健老师1"}, {
+                            id: "teacher2_2",
+                            name: "保健老师2"
+                        }, {id: "teacher2_3", name: "保健老师3"}, {
+                            id: "teacher2_4", name: "保健老师4"
+                        }]
+                    }
+                ];
+            });
+        }
+
+        getTeacher();
+        $scope.dataBaseTable = {count: 0, information: []};
+        var classCount = $scope.dataBaseTable.count;
+        $scope.getData = function (page) {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=" + page
+            }).success(function (data) {
+                $scope.dataBaseTable = data;
+                resetPage();
+            }).error(function () {
+                showErrorAlert("获取失败");
+                //TODO 以下为测试代码
+                $scope.dataBaseTable = {
+                    count: 138,
+                    information: [
+                        {
+                            id: "a1",
+                            name: "李园长",
+                            state:0,//1是已经发表0是草稿箱
+                            useUrl: "http://www.52ij.com/uploads/allimg/160317/1110104P8-4.jpg",
+                            number: "123456789",
+                            addTime: "2016-11-13 10:00",
+                            updateTime:"2016-12-13 21:00",
+                            label: "tag1",
+                            content: "很张的征的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文",
+                            files: ["http://www.marcom365.com/image/upload_news/PDF_201504071522232514.pdf", "http://www.marcom365.com/image/upload_news/PDF_2015040PDF_20150407152223251471522232514.pdf"],
+                            visibleRanges: [{id: "teacher1_1", name: "王老师"}, {id: "teacher1_2", name: "李老师"}, {id: "teacher1_3", name: "李老师"}]
+                        },
+                        {
+                            id: "a2",
+                            name: "李园长",
+                            state:0,//1是已经发表0是草稿箱
+                            useUrl: "http://www.52ij.com/uploads/allimg/160317/1110104P8-4.jpg",
+                            number: "123456789",
+                            addTime: "2016-11-13 10:00",
+                            updateTime:"2016-12-13 21:00",
+                            label: "tag2",
+                            content: "很张的征征文很张的征文很张的征文很的征文很张的征文很张的征文很张的征文很张的征文",
+                            files: ["http://www.marcom365.com/image/upload_news/PDF_201504071522232514.pdf"],
+                            visibleRanges: [{id: "teacher1_1", name: "王老师"}, {id: "teacher1_2", name: "李老师"}]
+                        },
+                        {
+                            id: "a3",
+                            name: "李园长",
+                            state:0,//1是已经发表0是草稿箱
+                            useUrl: "http://www.52ij.com/uploads/allimg/160317/1110104P8-4.jpg",
+                            number: "123456789",
+                            addTime: "2016-11-13 10:00",
+                            updateTime:"2016-12-13 21:00",
+                            label: "tag3",
+                            content: "很张的征文很张的征文很征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文很张的征文",
+                            files: ["http://www.marcom365.com/image/upload_news/PDF_201504071522232514.pdf", "http://www.marcom365.com/image/upload_news/PDF_201504071522232514.pdf"],
+                            visibleRanges: [{id: "teacher1_1", name: "王老师"}, {id: "teacher1_2", name: "李老师"}]
+                        }
+                    ]
+                };
+                resetPage();
+            });
+        }
+        $scope.getData(1);
+
+        //单个删除
+        $scope.id = 0;
+        $scope.deleteDataBomBox = function (ID, $event) {
+            var taget = $event.currentTarget;
+            var tr = "<tr>" + $(taget).parents("tr").find("td:eq(0)").get(0).outerHTML + $(taget).parents("tr").find("td:eq(1)").get(0).outerHTML + "</tr>"
+            var table = '<table class="table table-hover table-bordered" style="border:1px solid #CCC"><thead><th style="text-align: center;">创建时间</th><th style="text-align: center;">最近修改时间</th></thead>' + tr + "</table>";
+            $scope.id = ID;
+            initModal(CONFIG.CONST_STR.banner_title, CONFIG.CONST_STR.delete_hint + "<br/><br/>" + table, DeleteDataById);
+        }
+        //TODO ajax delete
+        function DeleteDataById() {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "id=" + $scope.id
+            }).success(function (data) {
+                $scope.getPage(pageIndex);//删除成功后获取下当前页面数据
+            }).error(function () {
+                alert($scope.id)
+                $scope.getPage(pageIndex);//删除成功后获取下当前页面数据
+                showErrorAlert(CONFIG.CONST_STR.delete_failed);
+                hideModal();
+                //TODO 以下为测试代码
+            });
+        }
+
+
+        //发表
+        $scope.publishDataBomBox = function (ID, $event) {
+            $scope.id = ID;
+            initModal(CONFIG.CONST_STR.banner_title,"<br/>"+ CONFIG.CONST_STR.publish_news_hint + "<br/><br/>", publishDataById);
+        }
+        //TODO ajax delete
+        function publishDataById() {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "id=" + $scope.id
+            }).success(function (data) {
+                $scope.getPage(pageIndex);//发表成功后获取下当前页面数据
+            }).error(function () {
+                alert($scope.id)
+                $scope.getPage(pageIndex);//发表成功后获取下当前页面数据
+                showErrorAlert(CONFIG.CONST_STR.delete_failed);
+                hideModal();
+                //TODO 以下为测试代码
+            });
+        }
+
+
+
+
+        $scope.editDataBase = {
+            name: "李园长",
+            useUrl: "http://www.52ij.com/uploads/allimg/160317/1110104P8-4.jpg",
+            number: "",
+            addTime: "",
+            updateTime:"",
+            label: "0",
+            content: "",
+            files: ["", "", ""],
+            visibleRanges: []
+        }
+        
+        //保存
+        $scope.saveDataBase = function (type,$event) {//type :0是保存到草稿箱  1是发表
+            var dqtime = (new Date()).Format("yyyy-MM-dd hh:mm");
+            var target=$event.currentTarget;
+            console.log(!$(target).hasClass("disabled"))
+            if($(target).hasClass("disabled")){
+                return
+            }
+            $scope.editDataBase.state=type;
+            if($scope.editDataBase.addType==0){
+                $scope.editDataBase.updateTime=dqtime;
+            }
+            else{
+                $scope.editDataBase.updateTime=dqtime;
+                $scope.editDataBase.addTime=dqtime
+            }
+
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: $scope.editDataBase
+            }).success(function (data) {
+                $scope.getPage(pageIndex);//更新成功后获取下当前页面数据
+            }).error(function () {
+                //TODO 以下为测试代码
+                console.log($scope.editDataBase)
+                $(".classTable1").toggle(100);
+                $(".classTable2").toggle(100);
+                $scope.getPage(pageIndex);//更新成功后获取下当前页面数据
+                showErrorAlert(CONFIG.CONST_STR.delete_failed);
+
+            });
+
+        }
+
+
+        //编辑按钮
+        $scope.editDataBomBox = function (arr,index){
+
+            $scope.editDataBase=arr;
+            $scope.editDataBase.addType=0;//0表示编辑
+
+            if($scope.editDataBase.files.length<3){
+//                var sL=3-$scope.editDataBase.files.length;
+//                for(var k=0;k<sL;k++){
+//                    $scope.editDataBase.files.push("")
+//                }
+                $scope.editDataBase.files=$scope.editDataBase.files.concat("","").slice(0,3)
+            }
+
+            $(".select1").select2("val", $scope.editDataBase.label);
+            //$scope.SetPermissionsInf = null;
+            $(".all-teacher input").removeAttr("checked");
+
+            //老师checked选择赋值
+            for (var i = 0; i < $scope.editDataBase.visibleRanges.length; i++) {
+                var id = $scope.editDataBase.visibleRanges[i].id;
+                $("#myclassContent input[value='" + id + "']").prop("checked", true);
+            }
+            $("#myclassContent .tab-content .fade").each(function () {
+                var teacherLength = $(this).find(".selectlist input").length;
+                var teacherLengthCheck = $(this).find(".selectlist input:checked").length;
+                if (teacherLengthCheck == teacherLength) {
+                    $(this).find(".selectBut input").prop("checked", true);
+                }
+
+            })
+            var pLength = $("#myclassContent").find("input").length;
+            var pLengthCheck = $("#myclassContent").find("input:checked").length;
+            if (pLengthCheck == pLength) {
+                $(".Allcheck").prop("checked", true);
+            }
+            //老师checked选择赋值end
+
+            $(".all-teacher input").change(function(){
+                var selectTrue=[];
+                $(".teacher-2").each(function(){
+                    if($(this).is(":checked")){
+                        var tt={"id":$(this).val(),"name":$(this).siblings(".name2").html()}
+                        selectTrue.push(tt)
+                    }
+                })
+                $scope.$apply(function (){
+                    $scope.editDataBase.visibleRanges=selectTrue;
+                });
+            })
+
+            $(".classTable2 #myteacherContent").show();
+            $(".classTable2 #mySetPermissions").hide();
+            $(".classTable1").toggle(100);
+            $(".classTable2").toggle(100);
+            $("#myteacherContent .nav-tabs li").removeClass("active").eq(0).addClass("active");
+            $("#myteacherContent .tab-content .tab-pane").removeClass("active").eq(0).addClass("active");
+            $("#myclassContent .nav-tabs li").removeClass("active").eq(0).addClass("active");
+            $("#myclassContent .tab-content .tab-pane").removeClass("active").eq(0).addClass("active");
+
+
+        }
+
+
+
+
+        //图片上传
+        $scope.imgfile = function (index) {
+
+            $('#imgfile').click();
+            $('#imgfile').off().bind('change', function () {
+                var strFileName = $("#imgfile").val();
+                var filename = strFileName.replace(/.*(\/|\\)/, ""); //文件名带后缀
+                var wjName = strFileName.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi, "$1");//文件名不带后缀
+                var fileExt = (/[.]/.exec(filename)) ? /[^.]+$/.exec(filename.toLowerCase()) : '';//后缀名
+                if (!/\.(doc|docx|txt|pdf|ppt|pptx|xlsx|mp4)$/.test(strFileName)) {
+                    showErrorAlert("上传文件不正确");
+                    return;
+                }
+                else {
+                    alert(filename)//
+                    //TODO ajax上传图片
+                    $scope.$apply(function (){
+                        $scope.editDataBase.files[index] = filename;
+                    });
+
+                }
+            })
+        }
+
+        //删除图片
+        $scope.delteImg = function (index) {
+
+            //TODO ajax
+            $scope.editDataBase.files[index] = '';
+
+        }
+
+        $scope.getPage = function (page) {
+            $scope.getData(page);
+        }
+        //调用分页
+        function resetPage() {
+            if (classCount != $scope.dataBaseTable.count) {
+                classCount = $scope.dataBaseTable.count;
+                laypage({
+                    cont: $(".my-pager"),
+                    skin: 'molv',
+                    pages: Math.ceil($scope.dataBaseTable.count / pageCount),
+                    jump: function (obj, first) {
+
+                        pageIndex = obj.curr;
+                        if (!first) {
+                            $scope.getPage(obj.curr);
+                        }
+                    }
+                })
+            }
+        }
+
+        //以下是选择效果
+        $scope.chenckStatu = function ($event) {
+            var taget = $event.currentTarget;
+            var pAlllength = $(taget).parents("#myclassContent").find("input[type='checkbox']").length;
+            if ($(taget).is(":checked")) {
+                $(taget).parents(".fade").find(".selectlist input").prop("checked", true);
+                $(taget).parent().siblings("label").find("input").prop("checked", true);
+                var pAllchek = $(taget).parents("#myclassContent").find("input[type='checkbox']:checked").length;
+                if (pAllchek == pAlllength) {
+                    $(".Allcheck").prop("checked", true);
+                }
+            } else {
+                $(taget).parents(".fade").find(".selectlist input").removeAttr("checked");
+                $(taget).parent().siblings("label").find("input").prop("checked", false);
+                $(".Allcheck").prop("checked", false);
+            }
+        };
+        $scope.itemChange = function ($event) {
+            var taget = $event.currentTarget;
+            var Alllength = $(taget).parents(".fade").find(".selectlist input[type='checkbox']").length;
+            var pAlllength = $(taget).parents("#myclassContent").find("input[type='checkbox']").length;
+            if ($(taget).is(":checked")) {
+                var Allchek = $(taget).parents(".fade").find(".selectlist input[type='checkbox']:checked").length;
+                if (Allchek == Alllength) {
+                    $(taget).parents(".fade").find(".selectBut input").prop("checked", true)
+                }
+                var pAllchek = $(taget).parents("#myclassContent").find("input[type='checkbox']:checked").length;
+                if (pAllchek == pAlllength) {
+                    $(".Allcheck").prop("checked", true);
+                }
+            } else {
+                $(taget).parents(".fade").find(".selectBut input").prop("checked", false);
+                $(".Allcheck").prop("checked", false);
+            }
+        };
+        $scope.allChenckStatu = function ($event) {
+            var taget = $event.currentTarget;
+            if ($(taget).is(":checked")) {
+                $("#myclassContent").find("input").prop("checked", true);
+            } else {
+                $("#myclassContent").find("input").prop("checked", false);
+            }
+        };
+        $scope.teacherSwitchBut = function (ID) {
+            $("#myteacherContent .tab-content .tab-pane").removeClass("active")
+            $("#myteacherContent .tab-content .tab-pane").eq(ID).addClass("active")
+        }
+        $scope.classSwitchBut = function (ID) {
+            $("#myclassContent .tab-content .tab-pane").removeClass("active")
+            $("#myclassContent .tab-content .tab-pane").eq(ID).addClass("active")
+        }
+        //下面是在table render完成后执行的js
+        $scope.$on('ngRepeatFinished', function (rfe) {
+            $("[data-toggle='checkbox']").radiocheck();
+            $("[data-toggle='radio']").radiocheck();
+            $("#tableList tbody").show()
+        });
+    })
+    $(function () {
+        $(".cancel").click(function () {
+            $(".classTable1").toggle(100);
+            $(".classTable2").toggle(100);
+        })
+    })
+
+    Date.prototype.Format = function (fmt) {
+        var o = {
+            "y+": this.getFullYear(),
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S+": this.getMilliseconds()             //毫秒
+        };
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                if (k == "y+") {
+                    fmt = fmt.replace(RegExp.$1, ("" + o[k]).substr(4 - RegExp.$1.length));
+                }
+                else if (k == "S+") {
+                    var lens = RegExp.$1.length;
+                    lens = lens == 1 ? 3 : lens;
+                    fmt = fmt.replace(RegExp.$1, ("00" + o[k]).substr(("" + o[k]).length - 1, lens));
+                }
+                else {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            }
+        }
+        return fmt;
+    }
+
+</script>
+</body>
+</html>
+			

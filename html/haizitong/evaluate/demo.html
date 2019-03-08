@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="js/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/adaption.css">
+
+</head>
+<body ng-app="myApp" ng-controller="feedback">
+<div class="loading">
+    <img src="image/loading.gif">
+</div>
+<article style="display: none" class="">
+
+    <div class="feed1">
+        <div class="close-1">
+            <div class="a1 {{useInf.gender==1?'girl':''}}">
+                <div class="img">
+                    <img ng-if="useInf.cover" src="{{useInf.cover}}">
+                    <img ng-if="!useInf.cover" src="{{useInf.gender==1?'image/girl.png':'image/man.png'}}">
+                </div>
+                <div class="con">
+                    <p ng-bind="useInf.firstName">&nbsp;</p>
+                    <span>班级&nbsp;{{className}}</span><span>年龄&nbsp;{{useInf.birthDay|getAge}}岁</span><br>
+                    <span>身高&nbsp;{{useInf.height}}cm</span><span>身高&nbsp;{{useInf.weight}}kg</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="time-search">
+        <div id="header" class="swiper-id">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide {{$first?'dq':''}}" ng-repeat="da in allDataOld">
+                    <input type="hidden" value="{{da.createAt}}">
+                    <span ng-click="timeChange($event,da.createAt)">{{da.createAt|format:'YYYY-MM-DD'}}</span>
+                    <a ng-click="seeFun(da.recordId)">查看</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="analysis-list">
+        <div class="list {{allData.length==1?'':'swiper-list'}}">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide col-xs-1 {{allData.length==1?'':(allData.length==2?'co2':'co3')}}" ng-repeat="data in allData">
+                    <div class="newCon" ng-repeat="statistic in data.statistic">
+                        <div class="bar-model">
+                            <h1>{{(qualities |  filter:{qualityId:statistic.qualityId})[0].name}}</h1>
+                            <p class="time">{{data.createAt|format:'YYYY-MM-DD HH:mm'}}</p>
+                            <p>&nbsp;</p>
+                            <div class="bar-box">
+                                <b></b><b></b><b></b><b></b><b></b>
+                                <div class="data-box">
+                                    <img src="">
+                                    <dd ng-repeat="ta1a in statistic.levelTypes" style="height:{{ta1a.count|percent:statistic.levelTypes}}%">
+                                        <span><i>{{ta1a.count}}</i></span></span>
+                                        <strong>{{levelName[ta1a.levelType]}}</strong>
+                                    </dd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</article>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/plugin.min.js"></script>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+<script src="js/photoswipe/photoswipe.min.js"></script>
+<script src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="js/hzt-util.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+
+<script type="text/javascript">
+    var authInfo='Basic NTkzNTE5YTRiNjIzY2E3OWIzOWE2ZmZjOjlkNDUwYjc4Y2JhNGMzYTI5MGJlMjliNDZkMzI5ZTcy';
+    myApp.filter('getAge',function() {
+        return function (arr) {
+            var da=moment().format("YYYY")-moment(arr).format("YYYY");
+            return da;
+        };
+    })
+
+    myApp.filter('percent',function() {
+        return function (da, data) {
+            var max = data[0].count;
+            var len = data.length;
+            for (var i = 1; i < len; i++) {
+                if (data[i].count > max) {
+                    max = data[i].count;
+                }
+            }
+            return  (da/max)*100
+        };
+    })
+
+    myApp.filter('format',function() {
+        return function (da, str) {
+            return moment(da).format(str);
+        };
+    })
+
+    myApp.controller('feedback', ["$scope", "$http", "$timeout",function ($scope, $http, $timeout) {
+        $scope.levelName={'0':'未达标','1':'水平1','3':'水平3','5':'水平5'}
+        $scope.role=getQueryString('role');
+        $scope.className=getQueryString('className');
+        $scope.CONFIG={
+            whoType: {
+                kid: 0,//孩子
+                dad: 1,//爸爸
+                mom: 2,//妈妈
+                nurseTeacher: 9,//保健老师
+                teacher: 10,//老师
+                master: 11,//园长
+                admin: 12//管理员
+            },
+            gender: {
+                secret: 0,
+                female: 1,
+                male: 2
+            },
+        }
+
+        var mySwiper2;
+
+        //获取质量领域列表
+        $scope.qualities=[{"qualityId":"550b8c21beb7063c7000000d_1","name":"健康与体能","createAt":1498096866524,"schoolId":"550b8c21beb7063c7000000d","icon":"http://static-res.haizitong.com/static/evaluate/quality_icon_1.png","type":2},{"qualityId":"550b8c21beb7063c7000000d_2","name":"习惯与自理","createAt":1498096866524,"schoolId":"550b8c21beb7063c7000000d","icon":"http://static-res.haizitong.com/static/evaluate/quality_icon_2.png","type":1},{"qualityId":"550b8c21beb7063c7000000d_3","name":"自我与社会性","createAt":1498096866525,"schoolId":"550b8c21beb7063c7000000d","icon":"http://static-res.haizitong.com/static/evaluate/quality_icon_3.png","type":1},{"qualityId":"550b8c21beb7063c7000000d_4","name":"语言与交流","createAt":1498096866525,"schoolId":"550b8c21beb7063c7000000d","icon":"http://static-res.haizitong.com/static/evaluate/quality_icon_4.png","type":1},{"qualityId":"550b8c21beb7063c7000000d_5","name":"探究与认知","createAt":1498096866525,"schoolId":"550b8c21beb7063c7000000d","icon":"http://static-res.haizitong.com/static/evaluate/quality_icon_5.png","type":1},{"qualityId":"550b8c21beb7063c7000000d_6","name":"美感与表现","createAt":1498096866525,"schoolId":"550b8c21beb7063c7000000d","icon":"http://static-res.haizitong.com/static/evaluate/quality_icon_6.png","type":1},{"qualityId":"all","name":"综合评价","icon":"http://static-res.haizitong.com/static/evaluate/quality_icon_all.png","createAt":0,"type":0}];
+
+
+        $scope.allDataOld=[];
+        $scope.allData=[];
+        $scope.getDataDetail=function () {
+            var data=[{"createAt":1498447888747,"statistic":[{"qualityId":"550b8c21beb7063c7000000d_1","levelTypes":[{"levelType":5,"count":7},{"levelType":3,"count":13},{"levelType":1,"count":0},{"levelType":0,"count":0}],"standardRemark":"建行小朋友在身心状况方面需要加强与提高，要加油哦，她在动作发展方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_2","levelTypes":[{"levelType":5,"count":6},{"levelType":3,"count":11},{"levelType":1,"count":5},{"levelType":0,"count":2}],"standardRemark":"建行小朋友在生活习惯和能力方面需要加强与提高，要加油哦，她在学习习惯方面需要加强与提高，要加油哦，她在文明习惯方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_3","levelTypes":[{"levelType":5,"count":6},{"levelType":3,"count":18},{"levelType":1,"count":3},{"levelType":0,"count":1}],"standardRemark":"建行小朋友在自我意识方面需要加强与提高，要加油哦，她在人际交往方面需要加强与提高，要加油哦，她在社会适应方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_4","levelTypes":[{"levelType":5,"count":5},{"levelType":3,"count":8},{"levelType":1,"count":2},{"levelType":0,"count":1}],"standardRemark":"建行小朋友在倾听与表达方面需要加强与提高，要加油哦，她在前阅读和前书写方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_5","levelTypes":[{"levelType":5,"count":7},{"levelType":3,"count":11},{"levelType":1,"count":4},{"levelType":0,"count":1}],"standardRemark":"建行小朋友在科学探究方面需要加强与提高，要加油哦，她在数学认知方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_6","levelTypes":[{"levelType":5,"count":5},{"levelType":3,"count":6},{"levelType":1,"count":0},{"levelType":0,"count":2}],"standardRemark":"建行小朋友在感受与欣赏方面需要加强与提高，要加油哦，她在表现与创造方面需要加强与提高，要加油哦"}],"qualityId":"all","recordId":"595080107e7f5c28d64e8eb6"},{"createAt":1498443742950,"statistic":[{"qualityId":"550b8c21beb7063c7000000d_1","levelTypes":[{"levelType":5,"count":6},{"levelType":3,"count":8},{"levelType":1,"count":4},{"levelType":0,"count":2}],"standardRemark":"建行小朋友在身心状况方面需要加强与提高，要加油哦，她在动作发展方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_2","levelTypes":[{"levelType":5,"count":7},{"levelType":3,"count":7},{"levelType":1,"count":8},{"levelType":0,"count":2}],"standardRemark":"建行小朋友在生活习惯和能力方面需要加强与提高，要加油哦，她在学习习惯方面需要加强与提高，要加油哦，她在文明习惯方面值得称赞，请继续保持"},{"qualityId":"550b8c21beb7063c7000000d_3","levelTypes":[{"levelType":5,"count":9},{"levelType":3,"count":11},{"levelType":1,"count":3},{"levelType":0,"count":5}],"standardRemark":"建行小朋友在自我意识方面值得称赞，请继续保持，她在人际交往方面需要加强与提高，要加油哦，她在社会适应方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_4","levelTypes":[{"levelType":5,"count":6},{"levelType":3,"count":6},{"levelType":1,"count":2},{"levelType":0,"count":2}],"standardRemark":"建行小朋友在倾听与表达方面需要加强与提高，要加油哦，她在前阅读和前书写方面值得称赞，请继续保持"},{"qualityId":"550b8c21beb7063c7000000d_5","levelTypes":[{"levelType":5,"count":7},{"levelType":3,"count":7},{"levelType":1,"count":4},{"levelType":0,"count":5}],"standardRemark":"建行小朋友在科学探究方面需要加强与提高，要加油哦，她在数学认知方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_6","levelTypes":[{"levelType":5,"count":2},{"levelType":3,"count":4},{"levelType":1,"count":4},{"levelType":0,"count":3}],"standardRemark":"建行小朋友在感受与欣赏方面需要加强与提高，要加油哦，她在表现与创造方面需要加强与提高，要加油哦"}],"qualityId":"all","recordId":"59506fde7e7f5c28d64e8eaa"},{"createAt":1498114983962,"statistic":[{"qualityId":"550b8c21beb7063c7000000d_1","levelTypes":[{"levelType":5,"count":5},{"levelType":3,"count":7},{"levelType":1,"count":7},{"levelType":0,"count":1}],"standardRemark":"建行小朋友在身心状况方面需要加强与提高，要加油哦，她在动作发展方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_2","levelTypes":[{"levelType":5,"count":7},{"levelType":3,"count":7},{"levelType":1,"count":8},{"levelType":0,"count":2}],"standardRemark":"建行小朋友在生活习惯和能力方面需要加强与提高，要加油哦，她在学习习惯方面需要加强与提高，要加油哦，她在文明习惯方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_3","levelTypes":[{"levelType":5,"count":9},{"levelType":3,"count":13},{"levelType":1,"count":2},{"levelType":0,"count":4}],"standardRemark":"建行小朋友在自我意识方面需要加强与提高，要加油哦，她在人际交往方面需要加强与提高，要加油哦，她在社会适应方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_4","levelTypes":[{"levelType":5,"count":4},{"levelType":3,"count":6},{"levelType":1,"count":3},{"levelType":0,"count":3}],"standardRemark":"建行小朋友在倾听与表达方面需要加强与提高，要加油哦，她在前阅读和前书写方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_5","levelTypes":[{"levelType":5,"count":8},{"levelType":3,"count":8},{"levelType":1,"count":4},{"levelType":0,"count":3}],"standardRemark":"建行小朋友在科学探究方面需要加强与提高，要加油哦，她在数学认知方面需要加强与提高，要加油哦"},{"qualityId":"550b8c21beb7063c7000000d_6","levelTypes":[{"levelType":5,"count":5},{"levelType":3,"count":3},{"levelType":1,"count":3},{"levelType":0,"count":2}],"standardRemark":"建行小朋友在感受与欣赏方面需要加强与提高，要加油哦，她在表现与创造方面需要加强与提高，要加油哦"}],"qualityId":"all","recordId":"594b6ba7070828102957441b"}]
+            $scope.allData=data;
+            if(data.length>2){
+                $scope.allData=[];
+                $scope.allData.push(data[0]);
+                $scope.allData.push(data[1]);
+                $timeout(function () {
+                    $(".swiper-slide").eq(1).addClass("dq")
+                })
+            }
+
+            $scope.allDataOld=data;
+            $timeout(function () {
+                var mySwiper1 = new Swiper('.swiper-id',{
+                    freeMode : true,
+                    slidesPerView : 'auto',
+                });
+                mySwiper2 = new Swiper('.swiper-list',{
+                    freeMode : true,
+                    slidesPerView : 'auto',
+                });
+            })
+        }
+        $scope.getDataDetail()
+
+
+        $scope.useInf={"area":"990101","clsUserId":"55111579718c59334d000004","cover":"http://192.168.0.195:3500/2/i/4fd834f3b77f3cea4b000012","createAt":1456142320516,"dadUserId":"56caf7f0a877fdd972000002","doudouNo":"999913864","firstName":"建行","gender":1,"memo":"建行","momUserId":"56caf7f0a877fdd972000003","school":"550b8c21beb7063c7000000d","schoolArea":"990101","schoolArea_behind":"0101","schoolArea_previous":"99","v":4,"who":0,"height":68,"width":0,"weight":35,"birthDay":1393977600000,"id":"56caf7f0a877fdd972000001","type":1}
+
+
+
+        $scope.timeChange=function (event) {
+
+            var target=event.currentTarget;
+            if($(target).parents('.swiper-slide').hasClass('dq')){//取消
+                if($(target).parents('.swiper-wrapper').find('.dq').length<=1){
+                    return
+                }
+                $(target).parents('.swiper-slide').removeClass("dq")
+            }else {//添加
+                $(target).parents('.swiper-slide').addClass("dq")
+            }
+            $scope.allData=[];
+
+            $('.swiper-slide.dq').each(function () {
+                var time=$(this).find("input").val()
+                for(var i=0;i<$scope.allDataOld.length;i++){
+                    if(time==$scope.allDataOld[i].createAt){
+                        $scope.allData.push($scope.allDataOld[i])
+                        break
+                    }
+                }
+            })
+            $timeout(function () {
+                mySwiper2.init();
+            })
+
+
+
+        }
+
+        $scope.seeFun=function (id) {
+            HztUtil.callFun("open", 1, '{"path": "ktapp://kt.evaluate.detail?id='+id+'&needAuth=1"}',"fun" + Math.random());
+        }
+
+
+        //页面渲染完成
+        $scope.$watch('$viewContentLoaded', function() {
+            $("article").show()
+            $(".loading").hide()
+        });
+
+
+
+    }])
+
+
+
+
+
+
+    window.onload=function () {
+        //console.log(document.body.offsetHeight )
+        callNative("pageInfo", 1, '{"height": '+document.body.offsetHeight +'}',"fun" + Math.random(), NATIVE_IGNORE_ANDROID);
+    }
+
+
+</script>
+
+
+</body>
+</html>

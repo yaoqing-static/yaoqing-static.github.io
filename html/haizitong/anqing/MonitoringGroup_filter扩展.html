@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+    #post-table tr td {
+        vertical-align: middle;
+    }
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+    .titlenam {
+        overflow: hidden;
+        height: 17px;
+        width: 241px;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .btn-group {
+        display: block;
+        margin: 10px 0 20px 0
+    }
+    .radio, .checkbox {
+        margin-top: 0px
+    }
+    .addname1 {
+        display: inline-block;
+        padding-right: 20px
+    }
+    .btn-group.bootstrap-select {
+        margin-top: 0px
+    }
+    .btn-default, .btn-default:focus, .btn-default:hover {
+        background-color: #1abc9c
+    }
+    a {
+        cursor: pointer;
+    }
+    .marrt {
+        margin-right: 10px
+    }
+    .my-pager {
+        text-align: right
+    }
+    .teacherSelet .select2-search-field input[type=text] {
+        color: #B3B0B0;
+        margin-top: 0px
+    }
+    .nav-tabs {
+        border: 1px solid #ddd;
+        border-right: none
+    }
+    .nav-tabs > li > a {
+        padding: 0px;
+        border-radius: 0px;
+        border: none;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f4f5f9
+    }
+    .nav-tabs > .active > a {
+        background-color: #fff;
+        margin-left: 0px;
+    }
+    .nav-tabs > li {
+        float: none;
+        margin-bottom: 0px;
+    }
+    .nav-tabs > li > a {
+        margin-right: -1px;
+        color: #555
+    }
+    .addnew .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        border: none
+    }
+    .tab-content {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 626px;
+        float: left;
+        font-size: 14px;
+        min-height: 100px
+    }
+    .newtitle {
+        width: 140px;
+        float: left;
+        font-size: 14px;
+        padding-right: 10px; text-align: right;
+    }
+    .classList {
+        display: inline-block;
+        margin-left: 10px
+    }
+    .selectBut {
+        border-bottom: 1px solid #ddd
+    }
+    .classTable2 { display: none }
+</style>
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                上海交通大学管理后台
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+                        <li role="presentation" class="menu-item"><a style="padding-left:31px;" href="#"><span
+                                class="glyphicon glyphicon-cog "></span>&nbsp;&nbsp;&nbsp;班级管理</a></li>
+                        <li role="presentation" class="menu-item "><a href="ClassinfoNew.html">班级信息</a></li>
+                        <li role="presentation" class="menu-item"><a href="ClassiImport.html">班级导入</a></li>
+                        <li role="presentation" class="menu-item"><a style="padding-left:31px;" href="#"><span
+                                class="glyphicon glyphicon-cog "></span>&nbsp;&nbsp;&nbsp;自评管理</a></li>
+                        <li role="presentation" class="menu-item active"><a href="MonitoringGroup.html">课程监控小组</a></li>
+                        <li role="presentation" class="menu-item"><a href="MonitoringGroup.html">观测点管理</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    课程监控小组
+                    <div class="classTable1">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn-group btn-group-xs font-14 addGroup"><span
+                                    class="glyphicon glyphicon-plus"></span>新增组员
+                            </button>
+                            <button type="button" class="btn-group btn-group-xs font-14" ng-click="DelteAll($event)">
+                                批量删除
+                            </button>
+                        </div>
+                        <table id="tableList" class="table table-hover table-bordered">
+                            <thead>
+                            <tr class="catalog-header">
+                                <th width="50"><label style="margin-top: -20px" class="checkbox"><input
+                                        ng-click="SelectAll($event)" type="checkbox" data-toggle="checkbox"
+                                        id="imglibrary-select-all"></label></th>
+                                <th width="20%" style="text-align: center;">员工姓名</th>
+                                <th colspan="2" style="text-align: center;">评定范围</th>
+                                <th width="130" style="text-align: center;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="user in ClassTable1.information" on-finish-render-filters>
+                                <td width="50"><label class="checkbox"><input type="checkbox" data-toggle="checkbox"
+                                                                              id="imglibrary-pic-{{user.id}}"></label>
+                                </td>
+                                <td>{{(((teacher1|filter:{id:user.park})[0].teacher)|filter:{id:user.name})[0].name}}</td>
+                                <!--                                 <td>{{ user.classname.park }}</td>
+                                                                 -->
+                                <td>{{(class1|filter:{id:user.classname.park})[0].park}}</td>
+                                <td>
+                                    {{(((class1|filter:{id:user.classname.park})[0].class)|searchArr:user.classname.class:'id':'name').join(',')}}
+                                </td>
+                                <!-- <td>{{ user.classname.class.join(",") }}</td> -->
+                                <td><a class="marrt" ng-click="add(user.id,1)">设置权限</a><a class="marrt"
+                                                                                          ng-click="deleteID(user.id)">删除</a>
+                                </td>
+                            </tr>
+                            <tr class="nonelist" style="display: none;">
+                                <td colspan="8" style="text-align:center">没有数据</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="my-pager">
+                        </div>
+                    </div>
+                    <!-- 新建开始-->
+                    <div class="classTable2" style="padding-top: 20px">
+                        <div class="row addnew" style=" margin: 0 1px" id="myteacherContent">
+                            <div class="newtitle">选择员工：</div>
+                            <ul class="nav nav-tabs" style="width: 200px; float: left">
+                                <li class="teacherPark_{{teacher.id}}" on-finish-render-filters ng-repeat="teacher in teacher1"
+                                    ng-click="teacherShow($index)"><a href="#teacher{{$index}}"
+                                                                      data-toggle="tab">{{teacher.park}}</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div on-finish-render-filters ng-repeat="teacher in teacher1"
+                                     class="tab-pane fade in active" id="#teacher{{$index}}">
+                                    <label class="radio" for="radio_{{teacher.id}}_{{teacher2.id}}"
+                                           ng-repeat="teacher2 in teacher.teacher"
+                                           style="display: inline-block; margin-left: 10px">
+                                        <input type="radio" name="optionsRadios1"
+                                               value="{{teacher2.name}}"
+                                               id="radio_{{teacher.id}}_{{teacher2.id}}" data-toggle="radio">
+                                        {{teacher2.name}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row addnew" style=" margin: 0 1px; margin-top: 30px" id="myclassContent">
+                            <div class="newtitle" style="">请选择评定范围：</div>
+                            <ul class="nav nav-tabs" style="width: 200px; float: left">
+                                <li class="classPark_{{class.id}}" on-finish-render-filters ng-repeat="class in class1"
+                                    ng-click="classShow($index)"><a href="#class{{$index}}" data-toggle="tab">{{class.park}}</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div on-finish-render-filters ng-repeat="class in class1"
+                                     class="tab-pane fade in active" id="#class{{$index}}">
+                                    <div class="selectBut">
+                                        <label class="checkbox classList" for="Allcheck{{class.id}}">
+                                            <input type="checkbox" value="" id="Allcheck{{class.id}}" class="Allcheck"
+                                                   data-toggle="checkbox">
+                                            全部
+                                        </label>
+                                        <label class="checkbox classList" for="smallCheak{{class.id}}">
+                                            <input type="checkbox" value="" id="smallCheak{{class.id}}" class="smallCheak"
+                                                   data-toggle="checkbox">
+                                            小班
+                                        </label>
+                                        <label class="checkbox classList" for="inCheak{{class.id}}">
+                                            <input type="checkbox" value="" id="inCheak{{class.id}}" class="inCheak"
+                                                   data-toggle="checkbox">
+                                            中班
+                                        </label>
+                                        <label class="checkbox classList" for="largeCheak{{class.id}}">
+                                            <input type="checkbox" value="" id="largeCheak{{class.id}}" class="largeCheak"
+                                                   data-toggle="checkbox">
+                                            大班
+                                        </label>
+                                    </div>
+                                    <div class="selectlist">
+                                        <label class="checkbox" for="checkbox_{{class2.type}}_{{class.id}}_{{class2.id}}"
+                                               ng-repeat="class2 in class.class"
+                                               style="display: inline-block; margin-left: 10px">
+                                            <input type="checkbox" name="optionsRadios1"
+                                                   value="{{class2.name}}"
+                                                   id="checkbox_{{class2.type}}_{{class.id}}_{{class2.id}}"
+                                                   data-toggle="checkbox">
+                                            {{class2.name}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row addnew" style=" margin: 0 1px; margin-top: 30px" id="myJurisdiction">
+                            <div class="newtitle" style=" padding-top: 8px">查看全园统计权限：</div>
+                            <div style="float: left; width: 400px;">
+                                <label class="radio" for="noReception" style="display: inline-block; margin-left: 10px">
+                                    <input CHECKED type="radio" name="optionsRadios11" value="noReception"
+                                           id="noReception" data-toggle="radio">
+                                    不可查看
+                                </label>
+                                <label class="radio" for="Reception" style="display: inline-block; margin-left: 10px">
+                                    <input type="radio" name="optionsRadios11" value="Reception" id="Reception"
+                                           data-toggle="radio">
+                                    可查看
+                                </label>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="gray-border"
+                                 style="text-align: center;border-top: 1px solid #ddd; padding:20px 0">
+                                <button class="btn btn-primary btn-sm cancel" style="margin-left:10px">
+                                    &nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                                <button class="btn btn-primary btn-sm qdset" ng-click="saveGroup()" style="margin-left:10px">&nbsp;&nbsp;确认添加&nbsp;&nbsp;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- col-xs-10结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- 以下模态对话框根据需求选择性使用 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div id="myModalContent" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增班级内容信息 -->
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+    var myApp = angular.module('myApp', []);
+    //渲染完成后
+    myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+    myApp.filter("searchArr", function ($filter) {
+        var func = function (input, arr, attr, dis) {
+            var rtn = [];
+            for (var i = 0; i < arr.length; i++) {
+                var obj = {};
+                obj[attr] = arr[i];
+                rtn = rtn.concat($filter("filter")(input, obj));
+            }
+            if(dis){
+                for(i = 0; i < rtn.length; i++){
+                    rtn[i] = rtn[i][dis];
+                }
+            }
+            return rtn;
+        }
+        return func;
+    });
+    myApp.controller('userCtrl', function ($scope, $http, $timeout) {
+        $scope.Aalert = function (n) {
+            alert(n)
+        }
+        //全选
+        $scope.SelectAll = function ($event) {
+            var target = $event.currentTarget;
+            if ($(target).is(":checked")) {
+                $("input[id^='imglibrary-pic-']").prop("checked", true);
+            } else {
+                $("input[id^='imglibrary-pic-']").removeAttr("checked");
+            }
+        }
+        //批量删除按钮
+        $scope.DelteAll = function ($event) {
+            var target = $event.currentTarget;
+            var deleteId = [];
+            $("input[id^='imglibrary-pic-']").each(function () {
+                if ($(this).is(":checked")) {
+                    deleteId.push($(this).attr("id").split("-")[2])
+                }
+            })
+            alert(deleteId)
+        }
+        $scope.ClassTable1 = {count: 0, information: []};
+        var classCount = $scope.ClassTable1.count;
+        $scope.getData = function (page) {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=" + page
+            }).success(function (data) {
+                $scope.ClassTable1 = data;
+                resetPage();
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.get_class_data_failed);
+                //TODO 以下为测试代码
+                $scope.ClassTable1 = {
+                    count: 38,
+                    information: [
+                        {
+                            id: "a1",
+                            name: "1",
+                            park: "park1",
+                            classname: {"park": "park1", "class": ["1", "2"]}
+                        }, {
+                            id: "a2",
+                            name: "22",
+                            park: "park2",
+                            classname: {"park": "park2", "class": ["11", "22"]}
+                        }, {
+                            id: "a3",
+                            name: "33",
+                            park: "park2",
+                            classname: {"park": "park2", "class": ["33", "44"]}
+                        }]
+                };
+                resetPage();
+            });
+        }
+        $scope.getData(1);
+        //单个删除
+        $scope.deleteID = function (ID) {
+            if (confirm("确定是否删除")) {
+                $http({
+                    url: "aaa",
+                    type: "GET",
+                    data: "id=ID"
+                }).success(function (data) {
+                    $scope.ClassTable1 = data;
+                }).error(function () {
+                    console.log(ID)
+                    showErrorAlert("删除失败");
+                    //TODO 以下为测试代码
+                });
+            }
+        }
+        $scope.teacher1 = [
+            {
+                id: "park1",
+                park: "平顺园",
+                teacher: [{id: "1", name: "王老师"}, {id: "2", name: "李老师"}, {id: "3", name: "王老师"}, {
+                    id: "4",
+                    name: "王老师"
+                }]
+            },
+            {
+                id: "park2",
+                park: "三泉园",
+                teacher: [{id: "11", name: "王老师"}, {id: "22", name: "李老师"}, {id: "33", name: "王老2师"}, {
+                    id: "44",
+                    name: "王3老师"
+                }]
+            }
+        ];
+        $scope.class1 = [
+            {
+                id: "park1",
+                park: "平顺园",
+                class: [{id: "1", name: "小班", type: "small"}, {id: "2", name: "中班", type: "in"}, {
+                    id: "3",
+                    name: "小班",
+                    type: "small"
+                }, {id: "4", name: "大班", type: "large"}, {id: "5", name: "大班", type: "large"}]
+            },
+            {
+                id: "park2",
+                park: "三泉园",
+                class: [{id: "11", name: "小班2", type: "small"}, {id: "22", name: "中班2", type: "in"}, {
+                    id: "33",
+                    name: "小班2",
+                    type: "small"
+                }, {id: "44", name: "大班2", type: "large"}, {id: "55", name: "大班2", type: "large"}]
+            }
+        ];
+        $(document).on("change", ".Allcheck", function () {
+            if ($(this).is(":checked")) {
+                $(this).parents(".fade").find(".selectlist input").prop("checked", true);
+            } else {
+                $(this).parents(".fade").find(".selectlist input").removeAttr("checked");
+            }
+        })
+        $(document).on("change", ".smallCheak", function () {
+            if ($(this).is(":checked")) {
+                $(this).parents(".fade").find("input[id^='checkbox_small_']").prop("checked", true);
+            } else {
+                $(this).parents(".fade").find("input[id^='checkbox_small_']").removeAttr("checked");
+            }
+        })
+        $(document).on("change", ".inCheak", function () {
+            if ($(this).is(":checked")) {
+                $(this).parents(".fade").find("input[id^='checkbox_in_']").prop("checked", true);
+            } else {
+                $(this).parents(".fade").find("input[id^='checkbox_in_']").removeAttr("checked");
+            }
+        })
+        $(document).on("change", ".largeCheak", function () {
+            if ($(this).is(":checked")) {
+                $(this).parents(".fade").find("input[id^='checkbox_large_']").prop("checked", true);
+            } else {
+                $(this).parents(".fade").find("input[id^='checkbox_large_']").removeAttr("checked");
+            }
+        })
+        //保存
+        $scope.saveGroup = function () {
+            var myteacherCheak1 = $("#myteacherContent .tab-content .active input:checked").attr("id");
+            console.log(myteacherCheak1)
+            var myclassCheak = $("#myclassContent .tab-content .active .selectlist input:checked");
+            var myclassId = [];
+            if (myteacherCheak1 == undefined || myteacherCheak1 == '') {
+                showErrorAlert("请选择至少1名员工");
+                return
+            }
+            if (myclassCheak.length == 0) {
+                showErrorAlert("请选择至少1个班级");
+                return
+            }
+            myclassCheak.each(function () {
+                if ($(this).is(":checked")) {
+                    myclassId.push($(this).attr("id"))
+                }
+            })
+            var saveObj = {
+                id: "",//数据库来
+                name: "",
+                park: "",
+                classname: {}
+            }
+            saveObj.name =
+                    console.log(myclassId)
+        }
+        $scope.getPage = function (page) {
+            $scope.getData(page);
+        }
+        //调用分页
+        function resetPage() {
+            if (classCount != $scope.ClassTable1.count) {
+                classCount = $scope.ClassTable1.count;
+                laypage({
+                    cont: $(".my-pager"),
+                    pages: Math.ceil($scope.ClassTable1.count / 10),
+                    jump: function (obj, first) {
+                        console.log(obj.curr);
+                        if (!first) {
+                            $scope.getPage(obj.curr);
+                        }
+                    }
+                })
+            }
+        }
+
+        $scope.teacherShow = function (ID) {
+            $("#myteacherContent .tab-content .tab-pane").removeClass("active")
+            $("#myteacherContent .tab-content .tab-pane").eq(ID).addClass("active")
+        }
+        $scope.classShow = function (ID) {
+            $("#myclassContent .tab-content .tab-pane").removeClass("active")
+            $("#myclassContent .tab-content .tab-pane").eq(ID).addClass("active")
+        }
+        $scope.$on('ngRepeatFinished', function (rfe) {
+
+
+            //下面是在table render完成后执行的js
+            $("[data-toggle='checkbox']").radiocheck();
+            $("#myteacherContent .nav-tabs li").eq(0).addClass("active")
+            $("#myteacherContent .tab-content .tab-pane").removeClass("active")
+            $("#myteacherContent .tab-content .tab-pane").eq(0).addClass("active")
+            $("#myclassContent .nav-tabs li").eq(0).addClass("active")
+            $("#myclassContent .tab-content .tab-pane").removeClass("active")
+            $("#myclassContent .tab-content .tab-pane").eq(0).addClass("active")
+        });
+    })
+    $(function () {
+        $(".addGroup").click(function () {
+            $(".classTable1").toggle(100);
+            $(".classTable2").toggle(100);
+        })
+        $(".cancel").click(function () {
+            $(".classTable1").toggle(100);
+            $(".classTable2").toggle(100);
+        })
+    })
+</script>
+</body>
+</html>
+			

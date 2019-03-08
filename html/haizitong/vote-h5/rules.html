@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="full-screen" content="yes"/>
+	<script type="text/javascript" src="js/mobile-util.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<style type="text/css">
+		/* page */
+		* {margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+    	html * {outline: 0; -webkit-text-size-adjust: none; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+		html, body {height: 100%; width: 100%; font-family: 微软雅黑, sans-serif; background: url('img/background.png') no-repeat; background-size: 100% 100%;}
+
+		.container, .row {padding: 0;}
+		.row {margin: 0;}
+
+		.body {height: 100%;}
+		.body {position: relative; height: 100%;}
+		.wrap {position: relative; height: 100%;margin-top: 0.98889rem}
+		.main {position: relative; width:100%; min-height: 100%; height: 100%; overflow: hidden; }
+
+		@media (min-width: 720px) {
+			.main {width: 720px; min-width: 720px;}
+			.footer {width: 720px; min-width: 720px;}
+		}
+
+		/* iphone 6 */
+		@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+			.main {width: 100%; min-width: 100%;}
+		}
+		/* iphone6 plus */
+		@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+			.main {width: 100%; min-width: 100%;}
+		}
+
+        .content-wrap {position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden;}
+        .content-wrap .content-scroller {position: absolute; left: 0; top: 0; width: 100%; min-height: 100%; overflow: hidden;}
+
+        /*.bg-imgs {position: absolute; height: 100%;}*/
+        .content-layer {position: relative; width: 100%; height: 100%;}
+
+        .return-wrapper {position: absolute; width: 1.55556rem; height: 0.93333rem; top: 0.55556rem; left: 0.31111rem; cursor: pointer;}
+        .return {position: absolute; width: 0.55556rem; top: 0; left: 0;}
+		.moon2 {position:absolute; width: 0.93333rem; height: 0.93333rem; top: 1.73333rem; left: 0.71111rem;}
+		.star1-1 {position:absolute; width: 0.75556rem; height: 0.71111rem; top: 2.8rem; left: 3.33333rem;}
+		.multi-star1 {position:absolute; width: 1.28889rem; height: 1.86667rem; top: 3.28889rem; left: 0;}
+		.multi-star3 {position:absolute; width: 2.62222rem; height: 0.71111rem; top: 5.15556rem; left: 1.28889rem;}
+		.mountain {position:absolute; width: 3.77778rem; height: 1.88889rem; top: 5.64444rem; left: 0;}
+		.multi-star5 {position:absolute; width: 2.44444rem; height: 1.73333rem; top: 0; right: 0;}
+		.plane1 {position:absolute; width: 1.28889rem; height: 1.62222rem; top: 2.04444rem; right: 2.8rem;}
+		.cloud2 {position:absolute; width: 0.88889rem; height: 0.62222rem; top: 4.13333rem; right: 0;}
+		.cloud1 {position:absolute; width: 0.88889rem; height: 0.62222rem; top: 4.82222rem; right: 1.64444rem;}
+		.star1-2 {position:absolute; width: 0.75556rem; height: 0.71111rem; top: 5.71111rem; right: 0.84444rem;}
+
+		.content-header {position: relative; width: 100%; height: 7.95556rem;}
+		.phone {position:absolute; width: 12.22222rem; height: 7.33333rem; top: 0.88889rem; right: 0;}
+		.content-head-bg {position:absolute; width: 16rem; height: 2.4rem; top: 5.55556rem; right: 0;}
+		.finger {position:absolute; width: 2.22222rem; height: 1.73333rem; top: 5.28889rem; right: 10.31111rem;}
+		.content-bg {position: absolute; width: 16rem; height: 100rem; top: 7.95555rem; right: 0; background-color: #334B95;}
+		.astronaut2 {position: absolute; width: 2.22222rem;  height: 2.44444rem;  top: 17.62222rem;  left: -0.74074rem;}
+		.multi-star4 {position: absolute; width: 1.55556rem;  height: 2.22222rem;  top: 28.46667rem;  left: 0;}
+		.plane2 {position: absolute; width: 1.02222rem;  height: 1.02222rem;  top: 7.53333rem;  right: 1.91111rem;}
+		.plane3 {position: absolute; width: 1.33333rem;  height: 1.33333rem;  top: 12.82222rem;  right: -0.26667rem;}
+		.multi-star2 {position: absolute; width: 1.46667rem;  height: 2.08889rem;  top: 20.77778rem;  right: 0;}
+		.star1-3 {position:absolute; width: 0.75556rem; height: 0.71111rem; top: 29.22222rem; right: 0.88889rem;}
+
+		.content {position: relative; top: 0; left: 0; height: 100%; margin-left: 1.33333rem;  margin-right: 1.33333rem;}
+		.content h3 {font-size: 0.577778rem; color: #ffd300; border-left: 0.17778rem solid #ffd300; padding-left: 0.47778rem; margin-bottom: 0.5rem;}
+		.content p {font-size: 0.41270rem; color: #FFF; letter-spacing: 0.05rem; line-height: 0.74rem; margin-bottom: 1.2rem;}
+	</style>
+</head>
+<body>
+<div class="body">
+	<div class="wrap">
+		<div class="container main" style="padding-top: 5px">
+			<div class="bg-imgs">
+				<img class="moon2" src="img/rules/moon2.png">
+				<img class="star1-1" src="img/rules/star1.png">
+				<img class="multi-star1" src="img/rules/multi-star1.png">
+				<img class="multi-star3" src="img/rules/multi-star3.png">
+				<img class="mountain" src="img/rules/mountain.png">
+				<img class="multi-star5" src="img/rules/multi-star5.png">
+				<img class="plane1" src="img/rules/plane1.png">
+				<img class="cloud2" src="img/rules/cloud2.png">
+				<img class="cloud1" src="img/rules/cloud1.png">
+				<img class="star1-2" src="img/rules/star1.png">
+			</div>
+			<div class="content-layer main">
+                <div class="content-wrap">
+                    <div class="content-scroller">
+						<div class="content-header">
+							<div class="return-wrapper"><img class="return" src="img/btn-return.png"></div>
+							<img class="phone" src="img/rules/phone.png">
+							<img class="content-head-bg" src="img/rules/content-head-bg.png">
+							<img class="finger" src="img/rules/finger.png">
+							<div class="content-bg"></div>
+							<img class="astronaut2" src="img/rules/astronaut2.png">
+							<img class="multi-star4" src="img/rules/multi-star4.png">
+							<img class="plane2" src="img/rules/plane2.png">
+							<img class="plane3" src="img/rules/plane3.png">
+							<img class="multi-star2" src="img/rules/multi-star2.png">
+							<img class="star1-3" src="img/rules/star1.png">
+						</div>
+						<div class="content">
+							<h3>活动引言</h3>
+							<p>
+								随着社会文化的不断提高。当代大学生的数量急剧上升， 而青年大学生又是21世纪的领军人物，社会主义建设的伟大宏图就完全寄托在这支主力军上，所以青年大学生的茁壮成长决定着我们民族和国家的未来。5月25日是我国的“全国大学生心理健康日”。“5.25”取谐音“我爱我”。意为要认识自我、接纳自我，能体验到自己的存在价值，乐观自信。
+							</p>
+							<h3>作品要求</h3>
+							<p>
+								1、比赛类别分毛笔（软笔书法）、钢笔（硬笔书法）及粉笔字三个类别。初赛需参赛选手在规定时间上交毛笔书法作品和钢笔书法作品各一件，粉笔字提交JPG电子档格式。</br>
+								2、毛笔书法作品大小不超过4尺整张，钢笔书法作品不小于A4纸，书写格式及字体由选手自定。</br>
+								3、作品要求健康向上，书写内容须选自中华经典诗文作品，句意应保持完整，字数不限。</br>
+								4、作品须使用规范汉字书写，如使用繁体字、异体字、“二简”字、自造字和出现错别字，取消作品参赛资格。</br>
+								5、来稿请在作品背面右下角用铅笔正楷写明姓名、性别、年级、学院、专业、联系电话
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		setMinHeightChangeListener(300);
+
+		var contentScroller = new IScroll(".content-wrap", {
+			mouseWheel: true
+		});
+
+		mobileClick(".return-wrapper", function(e) {
+			e.preventDefault();
+			// history.go(-1);
+			// history.back();
+			goBack();
+		})
+	});
+
+</script>
+</html>

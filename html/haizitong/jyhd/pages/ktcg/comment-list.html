@@ -1,0 +1,51 @@
+<style>
+    .comment{background: #fff;  padding-bottom: 0px}
+    .comment .imgCover{ width:32px;height: 32px; border-radius: 50%; position: absolute; left: 0px; top: 0px }
+    .comment .con li{margin: 15px;padding-bottom: 0px;    border-bottom: 1px solid rgba(0,0,0,0.12); margin-right: 0px; padding-right: 15px}
+    .comment .con li:last-child{border-bottom: none}
+    .comment  .a1{ position: relative; min-height: 35px}
+    .comment  .a1 .blue{padding: 3px 0 0 43px;}
+    .comment .gray12{display: block; padding-top: 3px}
+    .comment .a2{padding: 10px 0 12px 0}
+    .comment-list span{color: #33628B;}
+
+    .bottom-fixed{ cursor: pointer}
+    .bottom-fixed a{ display: inline-block; width: 50%; text-align: center;font-size: 16px; line-height: 50px;color: #2196F3; border-top:1px solid #2196F3}
+    .comment .con li:first-child{ margin-left: 0px; padding-left: 15px; border-bottom: 8px solid rgba(246,246,246,1); position: relative; margin-top: 0px; padding-top: 15px}
+    .comment .con li:first-child .a1{ min-height: 50px}
+    .comment .con li:first-child .imgCover{ width: 50px; height: 50px}
+    .comment .con li:first-child .a1 .blue{padding-left: 60px}
+    .comment .con li:first-child .blue{ font-size: 16px;color: rgba(0,0,0,0.87);line-height: 16px;padding-top: 8px}
+    .bottom-fixed{background-color:  #F6F6F6;border-top: 1px solid rgba(0,0,0,0.12);}
+    .comment .con li:first-child:before{content: ''; position: absolute; background: rgba(0,0,0,0.12); height: 1px; width: 100%; left: 0px; bottom:0px }
+    .bottom-fixed span{ display: block; line-height: 30px; background-color: #fff;border: 1px solid rgba(0,0,0,0.12);border-radius: 4px;color: rgba(0,0,0,0.38); padding: 0 0 0 10px; margin:9px 50px 0 15px; }
+    .bottom-fixed img{ width: 24px;height: 24px; position: absolute; right:15px; top: 13px }
+ </style>
+
+<article class="topicCommentListCtrl" style="background: rgba(246,246,246,1);">
+    <div class="box">
+        <div class="comment">
+            <div class="con">
+             <div class="page page1">
+                    <ul>
+                        <li ng-repeat="a in [1,2,3,4,5]">
+                            <div class="a1">
+                                <div class="imgCover" style="background-image: url('http://www.chinamedia360.com/media_web/resources/images/index/zy-3.png')"></div>
+                                <div class="blue">郭晓燕<span class="gray12">2018-6-11 20:24</span></div>
+                            </div>
+                            <div class="text14 a2">
+                                如果你无法简介的表达你的想法，那么只说明你还不够了解它。达你的想法，那么只说明你还不够了解它。达你的想法，那么只说明你还不够了解它不够了。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-fixed" ng-click="goComment()">
+            <span>写评论...</span>
+            <img src="pages/ktcg/images/plxq.png">
+        </div>
+
+    </div>
+</article>

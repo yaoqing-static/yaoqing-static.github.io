@@ -1,0 +1,84 @@
+ <style>
+   *{ box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+   html, body, .view{ background-color: #fff}
+  .but{ border-bottom: 1px solid rgba(0,0,0,0.12); line-height:40px; font-size: 14px;  padding: 0 15px; background: #fff; overflow: hidden;display: flex; align-items: center; justify-content: center}
+  .but dd{ text-align: center; display: inline-block; margin: 0 24px  }
+  .but dd a{ color: rgba(0,0,0,0.54);display: inline-block;line-height: 40px; position: relative }
+  .but dd .active{  color: rgba(0,0,0,0.87); }
+  .but dd .active:before{content: ''; position: absolute; width: 40px; height: 3px; border-radius: 3px;background: #2196F3; bottom: 0px; left: 50%; margin-left: -20px}
+  .img-box a{display: block; width: 50%; float: left;padding:7px}
+  .img-box{ overflow: hidden; padding:7px }
+  .img-box .bg-img-model{padding-bottom: 64%;}
+  .img-box .bg-img-model span{ position: absolute; line-height: 24px; color: #fff; width: 100%; left: 0px; bottom: 0px; padding-left: 5px;
+    background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9)); /* 标准的语法 */
+  }
+   .img-box p{ display: -webkit-box;
+     -webkit-box-orient: vertical; word-break: break-all;
+     -webkit-line-clamp: 2;
+     overflow: hidden; margin-top: 8px; height: 41px;color: rgba(0,0,0,0.87); width: 100%}
+ </style>
+
+<article class="practiceIndexCtrl" style="background: #fff;">
+    <div class="box">
+      <div class="but">
+        <dd><a class="active" ng-click="getData(1)" ng-class="{'active':type==1}">课程实践</a></dd>
+        <dd><a ng-click="getData(2)" ng-class="{'active':type==2}">课题实践</a></dd>
+      </div>
+
+      <div class="img-box">
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼践够了矫正幼了够矫正幼践够了矫正幼了够矫正幼践够了矫正幼了够矫正幼践够了矫正幼了够矫正幼践够了矫正幼了够矫正幼践够了矫正幼了够矫正幼践够了矫正幼了够</p>
+        </a>
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼儿任性行为的实践与研究矫正幼儿任性行为的实践与研究矫正幼儿任性行为的实践与研究矫正幼儿任性行为的实践与研究矫正幼儿任性行为的实践与研究矫正幼儿任性行为的实践与研究</p>
+        </a>
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼践够了矫正幼儿任性行为的实践与够了</p>
+        </a>
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼践够了矫正幼儿任性行为的实践与够了</p>
+        </a>
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼践够了矫正幼儿任性行为的实践与够了</p>
+        </a>
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼儿任性行为的实践与研究你还不够了够了矫正幼儿任性行为的实践与研究你还不够了够了矫正幼儿任性行为的实践与研究你还不够了够了</p>
+        </a>
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼儿任性行为的实践与研究你还不够了够了矫正幼儿任性行为的实践与研究你还不够了够了矫正幼儿任性行为的实践与研究你还不够了够了</p>
+        </a>
+        <a href="#/practiceDetail">
+          <div class="bg-img-model" style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')">
+            <span>99</span>
+          </div>
+          <p>矫正幼儿任性行为的实践与研究你还不够了够了矫正幼儿任性行为的实践与研究你还不够了够了矫正幼儿任性行为的实践与研究你还不够了够了</p>
+        </a>
+      </div>
+
+
+    </div>
+</article>

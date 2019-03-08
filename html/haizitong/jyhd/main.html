@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title></title>
+    <link rel="stylesheet" href="static/css/layer.css" />
+    <link rel="stylesheet" href="static/css/public.css" />
+    <script type="text/javascript" src="static/js/zepto.min.js"></script>
+    <script type="text/javascript" src="static/js/plug-in.js"></script>
+    <script src="static/js/angular.min.js"></script>
+    <script src="static/js/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="static/js/common.js"></script>
+    <script src="route.config.js"></script>
+    <script type="text/javascript" src="static/js/hzt-util.js"></script>
+
+    <style>
+        *{padding: 0px; margin: 0px}
+        html,body,.view{position: relative; height: 100%; background: #F6F6F6}
+        article{ min-height: 100%; position: relative; }
+    </style>
+</head>
+
+<body>
+    <div class="view" ng-view="" autoscroll="true">
+    </div>
+</body>
+</html>

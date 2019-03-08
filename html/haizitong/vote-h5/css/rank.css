@@ -1,0 +1,264 @@
+html{font-size: 45px;}
+img{display: block;}
+i{font-style: normal;}
+html,body{width: 100%;height: 100%;font-family: 微软雅黑, sans-serif;}
+body{
+	/*font-family:;*/
+	background: url("../img/background.png") no-repeat;
+	background-size:100% 100%;
+	height: 100%;
+	margin: 0;
+}
+.main {position: relative; min-height: 100%; height: 100%;}
+@media (min-width: 720px) {
+	.main {width: 720px; min-width: 720px;}
+}
+.clearfix{
+	clear:both;
+}
+header{position:relative;}
+header h1{
+	text-align: center;
+	line-height: 0.755rem;
+	font-size:0.755rem;
+	letter-spacing: 0.266rem;
+	color: #FFF;
+}
+header .return{
+    width:1.89rem;
+    height: 0.89rem;
+    position: absolute;
+    float: left;
+    cursor: pointer;
+}
+header .return-img{
+    width:0.89rem;
+    height: 0.89rem;
+    margin-left: 0.3rem;
+    float: left;
+}
+header .search{
+    width:2.02222rem;
+    height:1.04444rem;
+    position: absolute;
+    top:0;
+    right: 0rem;
+    float: right;
+    cursor: pointer;
+}
+header .search-img{
+    width:1.02222rem;
+    height:1.04444rem;
+    position: absolute;
+    top:0;
+    right: 0.3rem;
+    float: right;
+}
+
+.spaceman-left,.star-center,.star-top,.ship-left,.planet,.helmet-incline,.meteor-star,.two-star,.airship{
+	position: absolute;
+	z-index:200;
+	
+}
+.spaceman-left{
+	left:0;
+	top:8.8rem;
+	width:2.4rem;
+	height: 2.9333rem;
+}
+.star-top{
+	top:17.22rem;
+	left:0;
+	width:2.62rem;
+	height:3.04rem; 
+}
+.star-center{
+	right:0;
+	top:7.9rem;
+	width:2.42rem;
+	height: 2.86rem;
+}
+.airship{
+	width:1.777rem;
+	height: 1.8222rem;
+	right: 0.488rem;
+	top:17rem;
+}
+.ship-left{
+	left:1.24rem;
+	top:24rem;
+	width:1.6rem;
+	height: 1.622rem;
+}
+.planet{
+	width:1.5111rem;
+	height:1.1555rem;
+	left:1.0667rem;
+	top:31rem;
+}
+.helmet-incline{
+	width:1.777rem;
+	height: 1.2444rem;
+	left: 0;
+	bottom:1rem;
+}
+.meteor-star{
+	width:1.9555rem;
+	height: 1.777rem;
+	top:31rem;
+	right:0;
+}
+.two-star{
+	width:1.2rem;
+	height: 1.0222rem;
+	bottom:1rem;
+	right:0;
+}
+
+.car-invention,.planet-invention,.two-invention,.helmet-invention,.meteor-invention,.ship-invention,.line-invention,.airship-invention{
+	position: absolute;
+	z-index:200;
+}
+.car-invention{
+	width:3.133rem;
+	height:2.266rem;
+	top:9.85rem;
+	left:0;
+}
+.two-invention{
+	width:1.2rem;
+	height: 1.0222rem;
+	right:0;
+	top:9rem;
+}
+.planet-invention{
+	width:1.5111rem;
+	height:1.1555rem;
+	left:1.11rem;
+	top:17rem;
+}
+
+.helmet-invention{
+	width:1.5111rem;
+	height:1.9777rem;
+	left:0;
+	top:23.5rem;
+}
+.meteor-invention{
+	width:2.6222rem;
+	height: 2.4rem;
+	right:0;
+	top:23rem;
+
+}
+.ship-invention{
+	width:1.6rem;
+	height: 1.622rem;
+	left:0.6667rem;
+	top:31rem;
+}
+.line-invention{
+	width:2.71rem;
+	height:0.977rem;
+	left:0;
+	bottom:1rem;
+}
+.airship-invention {
+	width: 1.777rem;
+	height: 1.822rem;
+	right: 0;
+	bottom: 0.66rem;
+}
+.car-news,.planet-news,.two-news,.white-news,.meteor-news,.line-news,.airship-news,.spaceman-news,.ship-news{
+	position: absolute;
+	z-index: 200;
+}
+.car-news{
+	width:2.444rem;
+	height: 1.288rem;
+	right:0;
+	bottom:1rem;
+}
+.planet-news{
+	width:2.0444rem;
+	height:1.333rem;
+	right:0.288rem;
+	top:31.37rem;
+}
+.two-news{
+	width:1.2rem;
+	height:1.02rem;
+	right:0.844rem;
+	top:9rem;
+}
+.white-news{
+	width:1.555rem;
+	height: 1.6rem;
+	right:0;
+	top:23.44rem;
+}
+.meteor-news{
+	width:1.866rem;
+	height:2.622rem;
+	left:0;
+	top:16.2rem;
+}
+.line-news{
+	width:2.711rem;
+	height:0.977rem;
+	left:0;
+	bottom:1rem;
+}
+.airship-news{
+	width:1.777rem;
+	height: 1.822rem;
+	left:0;
+	top:9rem;
+}
+.spaceman-news{
+	width:2.622rem;
+	height:3.244rem;
+	left:0;
+	top:24.1rem;
+}
+.ship-news{
+	width:1.288rem;
+	height: 1.6rem;
+	right:0;
+	top:16.3rem;
+}
+
+
+.body{position: relative;}
+.rank-experiment,.rank-invention,.rank-news{
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.rank-experiment .head,.rank-invention .head,.rank-news .head {
+	height: 4.44444rem;
+	width: 100%;
+
+}
+.rank-experiment .content,.rank-invention .content,.rank-news .content{
+	width:100%;
+	height: 100%;
+	position: relative;
+}
+
+.rank-experiment .content{
+	background: url(../img/rank/experiment-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.rank-invention .content{
+	background: url(../img/rank/invention-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.rank-news .content{
+	background: url(../img/rank/news-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+
+

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+    #post-table tr td {
+        vertical-align: middle;
+    }
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+    .titlenam {
+        overflow: hidden;
+        height: 17px;
+        width: 241px;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .btn-group {
+        display: block;
+        margin: 10px 0 20px 0
+    }
+    .radio, .checkbox {
+        margin-top: 0px
+    }
+    .addname1 {
+        display: inline-block;
+        padding-right: 20px
+    }
+    .btn-group.bootstrap-select {
+        margin-top: 0px
+    }
+    .btn-default, .btn-default:focus, .btn-default:hover {
+        background-color: #1abc9c
+    }
+    a {
+        cursor: pointer;
+    }
+    .marrt {
+        margin-right: 10px
+    }
+    .my-pager {
+        text-align: right
+    }
+    .teacherSelet .select2-search-field input[type=text] {
+        color: #B3B0B0;
+        margin-top: 0px
+    }
+    .table-bordered>tbody.ji-observation tr td{
+        padding: 0;
+        vertical-align: middle;
+    }
+    .table-bordered>tbody.ji-observation>tr>td table{
+        width: 100%;
+        height: 100%;
+    }
+    .table-bordered>tbody.ji-observation>tr>td tr{
+        border: 1px solid #dddddd;
+        border-right: none;
+    }
+    .table-bordered>tbody.ji-observation>tr>td tr.plate{
+        border-left: none;
+    }
+    .table-bordered>tbody.ji-observation>tr>td tr:last-child{
+        border-bottom: none;
+    }
+    .table-bordered>tbody.ji-observation>tr>td tr:first-child{
+        border-top: none;
+    }
+    .table-bordered>tbody.ji-observation div.content{
+        padding: 8px;
+    }
+     .content a{ display: inline-block; margin-left: 10px; display: none}
+     .content:hover a{ display: inline-block}
+    .textarea{ width: 561px; height: 150px; font-size: 14px }
+    textarea.form-control{height: 150px;}
+    #tableList tbody{ display: none}
+</style>
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                上海交通大学管理后台
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+                        <li role="presentation" class="menu-title"><span class="glyphicon glyphicon-th-list menu-title"></span>&nbsp;&nbsp;&nbsp;班级管理</li>
+                        <li role="presentation" class="menu-item "><a href="ClassinfoNew.html">班级信息</a></li>
+                        <li role="presentation" class="menu-item"><a href="ClassiImport.html">班级导入</a></li>
+                        <li role="presentation" class="menu-title"><span class="glyphicon glyphicon-cog menu-title"></span>&nbsp;&nbsp;&nbsp;自评管理</li>
+                        <li role="presentation" class="menu-item"><a href="MonitoringGroup.html">课程监控小组</a></li>
+                        <li role="presentation" class="menu-item active"><a href="MonitoringGroup.html">观测点管理</a></li>
+                        <li role="presentation" class="menu-item"><a href="StaffManag.html">观测员工管理</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    观测点管理
+                    <div style=" padding: 20px 0">
+                        <table id="tableList" class="table  table-bordered">
+                            <thead>
+                            <tr class="catalog-header">
+                                <th width="20%" style="text-align: center;">自评分类</th>
+                                <th width="20%" style="text-align: center;">自评板块</th>
+                                <th width="25%" style="text-align: center;">具体内容</th>
+                                <th width="35%" style="text-align: center;">自评观测点</th>
+                            </tr>
+                            </thead>
+                            <tbody class="ji-observation">
+                            <tr>
+                                <td>
+                                    <div class="content">{{Observation.classification}}</div>
+                                </td>
+                                <td colspan="3">
+                                    <table>
+                                        <tbody>
+                                        <tr class="plate" ng-repeat="tab1 in Observation.plate" on-finish-render-filters>
+                                            <td style="width: 22.33333%">
+                                                <div class="content">{{tab1.content}}</div>
+                                            </td>
+                                            <td style="width: 66.66666%">
+                                                <table>
+                                                    <tbody>
+                                                    <tr class="sfc" ng-repeat="sfc in tab1.specificContent">
+                                                        <td style="width: 241px;">
+                                                            <div class="content"><span>{{sfc.content}}</span><a ng-click="edit(sfc.id,$event)">编辑</a></div>
+                                                        </td>
+                                                        <td style="">
+                                                            <table>
+                                                                <tbody>
+                                                                <tr class="svp" ng-repeat="svp in sfc.SelfViewpoint">
+                                                                    <td>
+                                                                        <div class="content"><span>{{svp.content}}</span><a ng-click="edit(svp.id,$event)">编辑</a></div>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- col-xs-10结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- 以下模态对话框根据需求选择性使用 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div id="myModalContent" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+    var myApp = angular.module('myApp', []);
+    //渲染完成后
+    myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+    myApp.controller('userCtrl', function ($scope, $http, $timeout) {
+        $scope.Aalert = function (n) {
+            alert(n)
+        }
+        $scope.Observation = {};
+        $scope.getData = function () {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page="
+            }).success(function (data) {
+                $scope.ClassTable1 = data;
+                resetPage();
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.get_class_data_failed);
+                //TODO 以下为测试代码
+                $scope.Observation = {
+                    classification: "专业素养与研究",
+                    plate: [
+                        {
+                            id: "a1",
+                            content: "师幼互动",
+                            specificContent: [
+                                {
+                                    id: "a1_s1",
+                                    content: "与幼儿建立平等、信任的关系。能尊重与倾听幼儿。满足不同个体幼儿发展的需要。",
+                                    SelfViewpoint: [
+                                        {
+                                            id: "a1_s1_sv1",
+                                            content: "语言、动作能让孩子接受和喜欢1"
+                                        },
+                                        {
+                                            id: "a1_s1_sv2",
+                                            content: "语言、动作能让孩子接受和喜2欢"
+                                        },
+                                        {
+                                            id: "a1_s1_sv3",
+                                            content: "语言、动作能让孩子接受3和喜欢"
+                                        }
+                                    ]
+                                }, {
+                                    id: "s2",
+                                    content: "与幼儿建立平等、信任的关系。能尊重444与倾听幼儿。满足不同个体幼儿发展的需要。",
+                                    SelfViewpoint: [
+                                        {
+                                            id: "a1_s2_sv1",
+                                            content: "语言、动作能让孩子接55受和喜欢"
+                                        },
+                                        {
+                                            id: "a1_s2_sv2",
+                                            content: "语言、动作能让孩子接受和喜欢"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, {
+                            id: "a2",
+                            content: "观察与评估",
+                            specificContent: [
+                                {
+                                    id: "a2_s1",
+                                    content: "与幼儿建立平等、信任的关系。能尊重与倾听幼儿。满足不同个体幼儿发展的需要。",
+                                    SelfViewpoint: [
+                                        {
+                                            id: "a2_s1_sv1",
+                                            content: "语言、动作能让孩子接受和喜欢"
+                                        },
+                                        {
+                                            id: "a2_s1_sv2",
+                                            content: "语言、动作能让孩子接受和喜欢"
+                                        },
+                                        {
+                                            id: "a2_s1_sv3",
+                                            content: "语言、动作能让孩子接受和喜欢"
+                                        },
+                                        {
+                                            id: "a2_s1_sv4",
+                                            content: "语言、动作能让孩子接受和喜欢"
+                                        }
+                                    ]
+                                }, {
+                                    id: "a2_s2",
+                                    content: "与幼儿建立平等、信任的关系。能尊重与倾听幼儿。满足不同个体幼儿发展的需要。",
+                                    SelfViewpoint: [
+                                        {
+                                            id: "a2_s2_sv1",
+                                            content: "语言、动作能让孩子接受和喜欢"
+                                        },
+                                        {
+                                            id: "a2_s2_sv2",
+                                            content: "语言、动作能让孩子接受和喜欢"
+                                        }]
+                                }
+                            ]
+                        }]
+                };
+            });
+        }
+        $scope.getData(1);
+
+        $scope.editID;
+        $scope.edit=function(id,$event){
+            $scope.editID=id;
+            var textarea=$('<textarea class="form-control textarea"></textarea>');
+            textarea.on("keyup",function(){
+               if($(this).val()==""){
+                   $(this).parents(".modal-content").find("#btn-modal-confirm").addClass("disabled")
+               }
+                else{
+                   $(this).parents(".modal-content").find("#btn-modal-confirm").removeClass("disabled")
+               }
+            })
+            var target=$event.currentTarget;
+            textarea.val($(target).parents(".content").find("span").html())
+
+
+
+            initModal("编辑", textarea, saveObjfun);
+        }
+
+
+        function editIdVal(id,newVal){
+            for(var i=0;i<$scope.Observation.plate.length;i++){
+                var specificContent=$scope.Observation.plate[i].specificContent;
+                if($scope.Observation.plate[i].id==id){
+                    $scope.Observation.plate[i].content=newVal
+                    break;
+                }
+                for(var j=0;j<specificContent.length;j++){
+                    var SelfViewpoint=specificContent[j].SelfViewpoint;
+                    if(specificContent[j].id==id){
+                        specificContent[j].content=newVal
+                        break;
+                    }
+                    for(var k=0;k<SelfViewpoint.length;k++){
+                        if(SelfViewpoint[k].id==id){
+                            SelfViewpoint[k].content=newVal
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        function saveObjfun(){
+
+           var saveObj={"id":$scope.editID,"content":$(".modal-content textarea").val()}
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "id=" + $scope.editID
+            }).success(function (data) {
+
+                editIdVal($scope.editID,saveObj.content);
+                $("#myModal").modal("hide");
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.ADD_GROUP.Save_GROUP_error);
+
+                //TODO 以下为测试代码
+                editIdVal($scope.editID,saveObj.content);
+                console.log(saveObj)
+                $("#myModal").modal("hide");
+
+
+            });
+        }
+
+
+        //下面是在table render完成后执行的js
+        $scope.$on('ngRepeatFinished', function (rfe) {
+
+            $("#tableList tbody").show()
+        });
+
+    })
+</script>
+</body>
+</html>
+			

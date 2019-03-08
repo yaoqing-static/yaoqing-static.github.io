@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/laypage.css">
+  <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <style type="text/css">
+    #gender-td .select2-container {
+      margin-bottom: 0;
+    }
+    #post-table tr td {
+      vertical-align: middle;
+    }
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+      padding-top: 15px;
+    }
+    .quiz-op-item div {
+      margin-right: 10px;
+      line-height: 30px;
+      display: inline-block
+    }
+    .titlenam {
+      overflow: hidden;
+      height: 17px;
+      width: 241px;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .btn-group {
+      display: block;
+      margin: 10px 0 10px 0;
+      overflow: hidden;
+    }
+    .btn-group.bootstrap-select {
+      margin-top: 0px
+    }
+    .btn-default, .btn-default:focus, .btn-default:hover {
+      background-color: #1abc9c
+    }
+    a {
+      cursor: pointer;
+    }
+    .table-bordered > tbody.ji-observation tr td {
+      padding: 10px 0;
+      vertical-align: middle;
+      text-align: center;
+      border-right: 1px solid #dddddd;
+    }
+    .table-bordered > tbody.ji-observation > tr > td table {
+      width: 100%;
+      height: 100%;
+    }
+    .table-bordered > tbody.ji-observation > tr > td tr {
+      border: 1px solid #dddddd;
+      border-right: none;
+      border-left: none;
+    }
+    .table-bordered > tbody.ji-observation > tr > td tr.plate {
+      border-left: none;
+    }
+    .table-bordered > tbody.ji-observation > tr > td tr:last-child {
+      border-bottom: none;
+    }
+    .table-bordered > tbody.ji-observation > tr > td tr:first-child {
+      border-top: none;
+    }
+    .table-bordered > tbody.ji-observation div.content {
+      padding: 8px;
+    }
+    .content a {
+      display: inline-block;
+      margin-left: 10px;
+      display: none
+    }
+    .content:hover a {
+      display: inline-block
+    }
+    .textarea {
+      width: 561px;
+      height: 150px;
+      font-size: 14px
+    }
+    textarea.form-control {
+      height: 150px;
+    }
+    #tableList tbody {
+      display: none
+    }
+    .teacher-select .select2-search-field input[type=text] {
+      color: #B3B0B0;
+      margin-top: 0px
+    }
+    #tableList tbody {
+      display: none
+    }
+    .link {
+      display: inline-block;
+      margin: 0 5px;
+      color: #0066cc;
+      vertical-align: middle
+    }
+    .color1 {
+      color: red
+    }
+    .color0 {
+      color: #00AA91
+    }
+    .span1 {
+      display: inline-block;
+      margin: 0 5px;
+      vertical-align: middle; width: 50px;
+    }
+    .span1 a {
+      color: #333
+    }
+    .classTable2 .name {
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 0 0 10px 0px;
+    }
+    .select { min-width: auto }
+    .bottomBorder { border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 20px }
+    .border_bottom {
+      border-bottom: 1px solid #ddd; color: #000;
+    }
+    .list.checkbox { overflow: hidden; }
+    .border_bottom label { font-weight: bold; }
+    .checkbox_list { padding-bottom: 5px }
+  </style>
+  <body ng-app="myApp" ng-controller="userCtrl">
+    <nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+      <div class="navbar-inner">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            上海交通大学管理后台
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+          <div class="pull-right">
+            <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+            <div>
+              <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="body">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-2">
+              <ul class="nav nav-pills nav-stacked menu">
+                <li role="presentation" class="menu-title"><span
+                    class="glyphicon glyphicon-cog menu-title"></span>&nbsp;&nbsp;&nbsp;广告位管理
+                </li>
+                <li role="presentation" class="menu-item active"><a href="banner.html">家长端</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-10">
+              <!--列表显示-->
+              <div class="classTable1" style=" padding: 20px 0; padding-top: 0px; ">
+                广告位管理
+                <div class="btn-group" style="text-align: right; margin-top: 0px" role="group" aria-label="...">
+                  <button ng-click="addBannerBomBox()"
+                          style="border-right: 1px solid #13A7A7; display: inline-block; float: right"
+                          type="button" class="btn btn-primary btn-sm font-14 addGroup">新增广告位
+                  </button>
+                </div>
+                <table id="tableList" class="table  table-bordered">
+                  <thead>
+                    <tr class="catalog-header">
+                      <th width="10%" style="text-align: center;">显示位置</th>
+                      <th width="10%" style="text-align: center;">排列顺序</th>
+                      <th width="20%" style="text-align: center;">广告封面</th>
+                      <th width="10%" style="text-align: center;">状态</th>
+                      <th width="15%" style="text-align: center;">发布/保存时间</th>
+                      <th width="15%" style="text-align: center;">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody class="ji-observation">
+                    <tr ng-repeat="banner in bannerList" on-finish-render-filters>
+                      <td width="10%">
+                        {{bannerType[banner.type]}}
+                      </td>
+                      <td width="90%" colspan="5" style=" padding: 0px;">
+                        <table style="width: 100%;">
+                          <tbody>
+                            <tr ng-repeat="bannertab in (bannerL=(banner.lists|orderBy:'sort'))">
+                              <!--<tr ng-repeat="bannertab in banner.lists|orderBy:'sort'">-->
+                              <td width="9.9%">{{$index+1}}</td>
+                              <td width="20%"><img width="150" height="50" src="{{bannertab.coverImg}}">
+                              </td>
+                              <td width="10%">{{bannertab.state==0?"停用":"启用"}}</td>
+                              <td width="15%">{{bannertab.addTime}}</td>
+                              <td width="15%">
+                                <a class="link" ng-click="editBanner(bannertab.id,bannerL,$index)">编辑</a>
+                                <a class="link color{{bannertab.state}}" ng-click="stateBannerBut(bannerL,$index)">{{bannertab.state==0?"启用":"停用"}}</a>
+                                <span class="span1">
+                                  <a ng-click="changeIndex(bannerL, $index, -1)" ng-hide="$first">上移动</a>
+                                  <a ng-click="changeIndex(bannerL, $index, +1)" ng-hide="$last">下移动</a>
+                                </span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--列表显示end-->
+              <!--新建star-->
+              <div class="classTable2" style=" padding: 20px 0; padding-top: 0px;display: none">
+                <div class="name">园所端-通知-1</div>
+                <div class="row addnew" style=" margin: 0 1px" id="myteacherContent">
+                  <div class="bottomBorder">
+                    <div class="font-14" style="width: 100px; float: left; padding-top: 10px">广告封面：</div>
+                    <div class="nav" style="width: 400px; float: left"><input type="file" style="display: none"
+                                                                              id="imgfile"/>
+                      <img width="150" height="50" src="{{editBannerObe.coverImg}}">
+                      <input class="img-url" type="hidden" value="{{editBannerObe.coverImg}}"></input>
+                      <button onclick="imgfile.click()" style="border-right: 1px solid #13A7A7" type="button"
+                              class="btn btn-primary btn-sm font-14"><span class="glyphicon glyphicon-plus"></span>添加封面
+                      </button>
+                    </div>
+                    <div style="clear: both"></div>
+                  </div>
+                  <div class="bottomBorder">
+                    <div class="font-14" style="width: 100px; float: left; padding-top: 10px">广告链接：</div>
+                    <div class="nav" style="width: 400px; float: left">
+                      <input value="{{editBannerObe.link}}" type="text" placeholder="URL" class="form-control"
+                             id="urlLink"/>
+                    </div>
+                    <div style="clear: both"></div>
+                  </div>
+                  <div class="bottomBorder">
+                    <div class="font-14" style="width: 100px; padding-top: 10px; padding-bottom: 10px">发布学校：</div>
+                    <div class="nav">
+                      <div style="width: 200px; float: left">
+                        <select style="width: 150px" ng-model="provinceId" name="province" data-toggle="select" class="form-control select-province select select-primary mrs mbm select-sm">
+                          <option value="0">选择省份</option>
+                          <option ng-repeat="province in provinceCity" value="{{province.id}}">{{province.name}}</option>
+                        </select>
+                      </div>
+                      <div style="width: 200px; float: left">
+                        <select style="width: 150px" name="city" data-toggle="select" class="form-control select-city select select-primary mrs mbm select-sm" ng-click="btnCity($event)">
+                          <option value="0">选择城市</option>
+                          <option ng-repeat="city in cities=((provinceCity | filter:{id:provinceId})[0].city)|ngRepeatFinishEveryTime" value="{{city.id}}">{{city.name}}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="Districtschool"
+                           style="width: 200px; float: left;border: 1px solid #ddd; padding:0 10px; max-height: 200px; overflow-y: auto;">
+                        <div class="checkbox_list" ng-repeat="District in Districtschool" on-finish-render-filters>
+                          <div class="border_bottom">
+                            <label class="checkbox" for="checkbox-{{District.id}}">
+                              <input type="checkbox" value="" id="checkbox-{{District.id}}" ng-model="Allcheckbox" data-toggle="checkbox">
+                              {{District.name}}
+                            </label>
+                          </div>
+                          <label class="list checkbox" for="checkbox-{{District.id}}-{{school1.id}}" ng-repeat="school1 in District.schools">
+                            <input ng-click="chenckStatu($event)" type="checkbox" ng-checked="Allcheckbox" value="" id="checkbox-{{District.id}}-{{school1.id}}" data-toggle="checkbox">
+                            {{school1.name}}
+                          </label>
+                        </div>
+                      </div>
+                      <div style="clear: both"></div>
+                    </div>
+                    <div style="clear: both"></div>
+                  </div>
+                  <div class="gray-border"
+                       style="text-align: center;padding:20px 0; margin-top: 30px">
+                    <button class="btn btn-primary btn-sm cancel" style="margin-left:10px">
+                      &nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                    <button class="btn btn-primary btn-sm qdset" ng-click="saveGroup()"
+                            style="margin-left:10px">&nbsp;&nbsp;发布&nbsp;&nbsp;</button>
+                  </div>
+                </div>
+                <!--新建end-->
+              </div>
+              <!-- col-xs-10结束 -->
+            </div>
+          </div>
+        </div>
+        <!-- 以下模态对话框根据需求选择性使用 -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div id="myModalContent" class="modal-body"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/flat-ui.min.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/spin.min.js"></script>
+    <script type="text/javascript" src="js/jquery.spin.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/laypage.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script>
+      var myApp = angular.module('myApp', []);
+      //渲染完成后
+      myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+          restrict: 'A',
+          link: function (scope, element, attr) {
+            if (scope.$last === true) {
+              $timeout(function () {
+                scope.$emit('ngRepeatFinished', element);
+              });
+            }
+          }
+        };
+      });
+      myApp.filter('ngRepeatFinishEveryTime', function($timeout){
+        return function(data){
+          var me = this;
+          var flagProperty = '__finishedRendering__';
+          if(!data) data = {};
+          if(!data[flagProperty]){
+            Object.defineProperty(data,flagProperty,{enumerable:false, configurable:true, writable: false, value:{}});
+            $timeout(function(){
+              delete data[flagProperty];
+              me.$emit('ngRepeatFinishEveryTime');
+            },0,false);
+          }
+          return data;
+        };
+      })
+      myApp.controller('userCtrl', function ($scope, $http, $timeout) {
+        $scope.bannerType = {"1": "通知", "2": "今日园所", "7": "家长", "8": "班级", "11": "保健"}
+        //获取广告位列表
+        $http({
+          url: "aaa",
+          type: "GET"
+        }).success(function (data) {
+          $scope.bannerList = data;
+        }).error(function () {
+          //TODO 以下为测试代码
+          $scope.bannerList = [
+            {
+              id: "banner1",
+              type: "1",
+              lists: [
+                {
+                  id: "banner1_1",
+                  coverImg: "https://ss3.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/abpic/item/0ff41bd5ad6eddc4e7a9a1b438dbb6fd52663336.jpg",
+                  state: 1,//0是停用，1是启用,
+                  sort: 1,
+                  addTime: "2016-02-28 16:00",
+                  link: "http://www.baidu.com",
+                  province: "province2",
+                  city: "province2_city1",
+                  county: ["11_2_3", "11_2_4", "11_2_5"],
+                  school: ["第一个幼儿园", "第一个幼儿园", "第一个幼儿园"]
+                }, {
+                  id: "banner1_2",
+                  coverImg: "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1226023342,2802447958&fm=58",
+                  state: 0,//0是停用，1是启用，
+                  sort: 2,
+                  addTime: "2016-02-28 16:00",
+                  link: "http://www.baidu.com",
+                  province: "province1",
+                  city: "province1_city1",
+                  county: ["11_2_3", "11_2_4", "11_2_5"],
+                  school: ["第一个幼儿园", "第一个幼儿园", "第一个幼儿园"]
+                }, {
+                  id: "banner1_3",
+                  coverImg: "https://ss3.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/abpic/item/964b2e4e92017e92d1c86adc.jpg",
+                  state: 1,//0是停用，1是启用，
+                  sort: 3,
+                  addTime: "2016-02-28 16:00",
+                  link: "http://www.baidu.com",
+                  province: "province2",
+                  city: "province2_city2",
+                  county: ["11_2_3", "11_2_4", "11_2_5"],
+                  school: ["第一个幼儿园", "第一个幼儿园", "第一个幼儿园"]
+                }
+              ]
+            },
+            {
+              id: "banner2",
+              type: "2",
+              lists: [
+                {
+                  id: "banner2_4",
+                  coverImg: "https://ss3.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/abpic/item/0ff41bd5ad6eddc4e7a9a1b438dbb6fd52663336.jpg",
+                  state: 1,//0是停用，1是启用，
+                  sort: 1,
+                  addTime: "2016-02-28 16:00",
+                  link: "http://www.baidu.com",
+                  province: "province1",
+                  city: "province1_city1",
+                  county: ["11_2_3", "11_2_4", "11_2_5"],
+                  school: ["第一个幼儿园", "第一个幼儿园", "第一个幼儿园"]
+                }, {
+                  id: "banner2_5",
+                  coverImg: "https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=4527ffbc15dfa9ece22e511752d1f754/c75c10385343fbf205e53b83b47eca8064388f41.jpg",
+                  state: 1,//0是停用，1是启用，
+                  sort: 2,
+                  addTime: "2016-02-28 16:00",
+                  link: "http://www.baidu.com",
+                  province: "province2",
+                  city: "province2_city3",
+                  county: ["11_2_3", "11_2_4", "11_2_5"],
+                  school: ["第一个幼儿园", "第一个幼儿园", "第一个幼儿园"]
+                }, {
+                  id: "banner2_6",
+                  coverImg: "https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=ccb17e18d03f8794ccff4f2ee21a0ead/a8773912b31bb051a6ed2e88327adab44bede041.jpg",
+                  state: 1,//0是停用，1是启用，
+                  sort: 3,
+                  addTime: "2016-02-28 16:00",
+                  link: "http://www.baidu.com",
+                  province: "province1",
+                  city: "province1_city1",
+                  county: ["11_2_3", "11_2_4", "11_2_5"],
+                  school: ["第一个幼儿园", "第一个幼儿园", "第一个幼儿园"]
+                }
+              ]
+            }
+          ];
+        });
+        //获取省份和城市
+        $http({
+          url: "aaa",
+          type: "GET"
+        }).success(function (data) {
+          $scope.provinceCity = data;
+        }).error(function () {
+          //TODO 以下为测试代码
+          $scope.provinceCity = [
+            {
+              id: "province1",
+              name: "上海",
+              city: [
+                {
+                  id: "province1_city1",
+                  name: "上海"
+                }
+              ]
+            },
+            {
+              id: "province2",
+              name: "安徽",
+              city: [
+                {
+                  id: "province2_city1",
+                  name: "合肥"
+                }, {
+                  id: "province2_city2",
+                  name: "芜湖"
+                }, {
+                  id: "province2_city3",
+                  name: "安庆"
+                }
+              ]
+            }
+          ];
+        });
+        //获取区和学校
+        function getDistrictSchool(cityId) {
+          $http({
+            url: "aaa?cityId=" + cityId,
+            type: "GET"
+          }).success(function (data) {
+            $scope.Districtschool = data;
+          }).error(function () {
+            //TODO 以下为测试代码
+            $scope.Districtschool = [
+              {
+                id: "District1",
+                name: "静安区",
+                schools: [
+                  {
+                    id: "District1_school1",
+                    name: "学校1"
+                  }, {
+                    id: "District1_school2",
+                    name: "学校2"
+                  }, {
+                    id: "District1_school3",
+                    name: "学校3"
+                  }
+                ]
+              },
+              {
+                id: "District2",
+                name: "普陀区",
+                schools: [
+                  {
+                    id: "District2_school1",
+                    name: "学校4"
+                  }, {
+                    id: "District2_school2",
+                    name: "学校5"
+                  }
+                ]
+              }
+            ];
+          });
+        }
+
+        $scope.Districtschool = [];
+        $scope.provinceId = "";
+//        $scope.btnProvinceChange = function ($event) {
+//          var taget = $event.currentTarget;
+//          console.log("provinceName: " + $(taget).find("option:checked").val());
+//          $scope.provinceId = $(taget).find("option:checked").val();
+//        }
+        $scope.btnCity = function ($event) {
+          $(".Districtschool").show();
+          var taget = $event.currentTarget;
+          var cityId = $(taget).find("option:checked").val();
+          console.log("cityName: " + cityId);
+          getDistrictSchool(cityId)
+        }
+        //以下是选择效果
+        $scope.chenckStatu = function ($event) {
+          var taget = $event.currentTarget;
+          var ptahet = $(taget).parents(".checkbox_list").find(".border_bottom input");
+          var length = $(taget).parents(".checkbox_list").find(".list").length;
+          var cheakLength = $(taget).parents(".checkbox_list").find(".list input:checked").length;
+          if ($(taget).is(":checked") && cheakLength == length) {
+            $(taget).parents(".checkbox_list").find(".border_bottom input").prop("checked", true);
+          } else {
+            $(taget).parents(".checkbox_list").find(".border_bottom input").prop("checked", false);
+          }
+        };
+        $scope.addBannerBomBox = function () {
+          var option = "";
+          $.each($scope.bannerType, function (key) {
+            option += "<option value='" + key + "' >" + $scope.bannerType[key] + "</option>"
+          });
+          var content = "选择显示位置<br />" + "<select style='margin-top: 10px; width: 250px' class='select2-container form-control select select-primary mrs mbm select-sm bannerType'><option value='0'>请选择</option> " + option + "</select>";
+          initModal(CONFIG.CONST_STR.ADD_BANNER.add_banner_title, content, addBanner, null, "305px");
+          $(".modal .select").select2();
+        }
+        function addBanner() {
+          $scope.addObj = {
+            type: "0",
+            list: {
+              id: "banner2_1",
+              coverImg: "http://img4.duitang.com/uploads/blog/201310/08/20131008131446_RsePm.thumb.224_0.gif",
+              state: 0,//0是停用，1是启用
+              sort: -1,
+              addTime: "",
+              link: "",
+              province: "",
+              city: "",
+              county: [],
+              school: []
+            }
+          }
+          $scope.addObj.type = $(".bannerType option:selected").val();
+          var dqtime = (new Date()).Format("yyyy-MM-dd hh:mm");
+          $scope.addObj.list.addTime = dqtime;
+          if ($scope.addObj.type == 0) {
+            showErrorAlert(CONFIG.CONST_STR.ADD_BANNER.empty_type);
+            return
+          }
+          $http({
+            url: "add",
+            type: "POST",
+            data: $scope.addObj
+          }).success(function (data) {
+            hideModal();
+          }).error(function () {
+            showErrorAlert(CONFIG.CONST_STR.ADD_BANNER.save_banner_title);
+            //TODO 以下为测试代码
+            var bannerListIndex = $scope.getBannerTypeIndex($scope.addObj.type);
+            if (bannerListIndex != undefined) {
+              var bannerId = Math.floor(1000000 * Math.random());
+              $scope.addObj.list.id = "banner_" + bannerId;
+              $scope.addObj.list.sort = $scope.bannerList[bannerListIndex].lists.length + 1;
+              $scope.bannerList[bannerListIndex].lists.push($scope.addObj.list);
+            }
+            else {
+              var bannerId = Math.floor(1000000 * Math.random());
+              $scope.addObj.list.id = "banner_" + bannerId;
+              $scope.addObj.list.sort = 1;
+              $scope.bannerList.push({
+                type: $scope.addObj.type,
+                lists: [$scope.addObj.list]
+              })
+            }
+            console.log($scope.bannerList)
+            hideModal();
+          });
+        }
+
+        $scope.getBannerTypeIndex = function (id) {
+          for (var i = 0; i < $scope.bannerList.length; i++) {
+            if ($scope.bannerList[i].type == id) {
+              return i;
+            }
+          }
+        }
+        $scope.getBannerIndex = function (id) {
+          for (var i = 0; i < $scope.bannerList.lists.length; i++) {
+            if ($scope.bannerList.lists[i].type == id) {
+              return i;
+            }
+          }
+        }
+        //编辑
+        $scope.editBannerObe = {};
+        $scope.editBanner = function (id, arr, index) {
+          $(".classTable1").toggle(100);
+          $(".classTable2").toggle(100);
+          $scope.editBannerObe = arr[index];
+          $scope.provinceId = $scope.editBannerObe.province;
+          $(".select-province").select2("val", $scope.editBannerObe.province);
+        }
+        //开启关闭
+        var stateObj = {};
+        var dqBanerrObj = {};
+        $scope.stateBannerBut = function (arr, index) {
+          var dqBanerr = arr[index];
+          dqBanerrObj = dqBanerr;
+          var id = dqBanerr.id;
+          stateObj.id = id;
+          if (dqBanerr.state == 1) {
+            initModal(CONFIG.CONST_STR.banner_title, CONFIG.CONST_STR.ADD_BANNER.close_banner_hint + "<br /><br />", stateBaneerButConfirm);
+            stateObj.state = 0;
+          } else {
+            initModal(CONFIG.CONST_STR.banner_title, CONFIG.CONST_STR.ADD_BANNER.open_banner_hint + "<br /><br />", stateBaneerButConfirm);
+            stateObj.state = 1;
+          }
+        }
+        //状态数据对接
+        function stateBaneerButConfirm() {
+          console.log(stateObj)
+          $http({
+            url: "state",
+            type: "GET",
+            data: stateObj
+          }).success(function (data) {
+            dqBanerrObj.state = stateObj.state
+          }).error(function () {
+            //TODO 以下为测试代码
+            dqBanerrObj.state = stateObj.state
+            hideModal();
+          });
+        }
+
+        $scope.changeIndex = function (arr, index, up) {
+          var temp;
+          temp = arr[index].sort;
+          arr[index].sort = arr[index + up].sort;
+          arr[index + up].sort = temp;
+          console.log(arr[index].id + "-->" + arr[index].sort)
+          console.log(arr[index + up].id + "-->" + arr[index + up].sort)
+          return false;
+        }
+        //图片上传
+        $("#imgfile").on("change", function () {
+          var strFileName = $("#imgfile").val();
+          var wjName = strFileName.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi, "$1");
+          var strtype = strFileName.substring(strFileName.length - 3, strFileName.length);
+          if (strtype == "jpg" || strtype == "png" || strtype == "jpeg" || strtype == "gif") {
+            alert(strFileName)
+          }
+          else {
+            showErrorAlert("上传文件格式不是为图片");
+            return;
+          }
+        })
+//下面是在table render完成后执行的js
+        $scope.$on('ngRepeatFinished', function (rfe, ele) {
+          $("#tableList tbody").show()
+          $("[data-toggle='checkbox']").radiocheck();
+        });
+        $scope.$on("ngRepeatFinishEveryTime", function (rfe){
+          $(".select-city").select2("val", $scope.editBannerObe.city);
+        });
+      })
+      $(function () {
+        $(".cancel").click(function () {
+          $(".classTable1").toggle(100);
+          $(".classTable2").toggle(100);
+        })
+      })
+      Date.prototype.Format = function (fmt) {
+        var o = {
+          "y+": this.getFullYear(),
+          "M+": this.getMonth() + 1,                 //月份
+          "d+": this.getDate(),                    //日
+          "h+": this.getHours(),                   //小时
+          "m+": this.getMinutes(),                 //分
+          "s+": this.getSeconds(),                 //秒
+          "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+          "S+": this.getMilliseconds()             //毫秒
+        };
+        for (var k in o) {
+          if (new RegExp("(" + k + ")").test(fmt)) {
+            if (k == "y+") {
+              fmt = fmt.replace(RegExp.$1, ("" + o[k]).substr(4 - RegExp.$1.length));
+            }
+            else if (k == "S+") {
+              var lens = RegExp.$1.length;
+              lens = lens == 1 ? 3 : lens;
+              fmt = fmt.replace(RegExp.$1, ("00" + o[k]).substr(("" + o[k]).length - 1, lens));
+            }
+            else {
+              fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+          }
+        }
+        return fmt;
+      }
+    </script>
+  </body>
+</html>
+			

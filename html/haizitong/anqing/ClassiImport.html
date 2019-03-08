@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
+<style type="text/css">
+
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+
+    #post-table tr td {
+        vertical-align: middle;
+    }
+
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+
+    .gray-border {
+        border: 1px solid #DDD;
+        font-size: 14px;
+        color: #666;
+        padding: 30px;
+    }
+    .panel-body{ min-height: 300px}
+
+</style>
+<body>
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+
+    <div class="navbar-inner">
+        <div class="navbar-header">
+
+
+            <a class="navbar-brand" href="#">
+                上海交通大学管理后台
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="self-nav">
+
+
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+
+<div class="body">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+                        <li role="presentation" class="menu-title"><span class="glyphicon glyphicon-th-list menu-title"></span>&nbsp;&nbsp;&nbsp;班级管理</li>
+                        <li role="presentation" class="menu-item "><a href="ClassinfoNew.html">班级信息</a></li>
+                        <li role="presentation" class="menu-item active"><a href="ClassiImport.html">班级导入</a></li>
+                        <li role="presentation" class="menu-title"><span class="glyphicon glyphicon-cog menu-title"></span>&nbsp;&nbsp;&nbsp;自评管理</li>
+                        <li role="presentation" class="menu-item"><a href="MonitoringGroup.html">课程监控小组</a></li>
+                        <li role="presentation" class="menu-item"><a href="Observation.html">观测点管理</a></li>
+                        <li role="presentation" class="menu-item"><a href="StaffManag.html">观测员工管理</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10" >
+                    请选择要上传的文件<br /><br />
+                    <div class="gray-border"style="text-align: center">
+                        <input type="file" id="filUpload" style="display: none">
+                        <div class="nameFil" style="text-align: center; padding-bottom: 20px">asasasas</div>
+                    <button class="btn btn-primary btn-sm" style="margin-left:10px" onclick="filUpload.click()">&nbsp;&nbsp;选择文件&nbsp;&nbsp;</button>
+                    <button class="btn btn-primary btn-sm qdset" style="margin-left:10px">&nbsp;&nbsp;确认上传&nbsp;&nbsp;</button>
+                    </div>
+                </div>
+                <!-- col-xs-10结束 -->
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.js"></script>
+<script>
+    var wjName='';
+    function check_file()
+    {
+        var strFileName=$("#filUpload").val();
+
+        wjName=strFileName.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi,"$1");
+        console.log(wjName)
+        if (strFileName=="")
+        {
+            alert("请选择要上传的文件");
+            return false;
+        }
+        var strtype=strFileName.substring(strFileName.length-3,strFileName.length);
+        wjName+="."+strtype;
+        strtype=strtype.toLowerCase();
+        if (strtype=="xls"||strtype=="csv")
+            return true;
+        else{
+            alert("这种文件类型不允许上传！支持xls和csv格式的文件,请选择别的文件并重新上传。");
+            return false;
+        }
+    }
+
+    $(function(){
+        $(".qdset").click(function(){
+
+            if(check_file()){
+                alert("上次成功")
+
+                $(".nameFil").html(wjName)
+            }
+        })
+
+    })
+</script>
+
+</body>
+</html>
+			

@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="full-screen" content="yes"/>
+    <script type="text/javascript" src="js/mobile-util.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" href = "css/detail-vote.css" />
+    <style type="text/css">
+        /* page */
+
+        .main {margin-top: 0.98889rem;}
+        .content-wrap {position: absolute; left: 0; top: 1.5rem; bottom: 0; width: 100%; height: 100%; overflow: hidden;}
+        .content-wrap > div {position: absolute;  margin-top: 0.5rem; left: 0; top: 0; width: 100%; overflow: hidden;}
+        .content-footer-split-line {height: 2rem;}
+        .content-layer {height: 100%;}
+        .content {padding-bottom: 2rem;}
+        /* iphone 6 */
+        @media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+            .main {width: 100%; min-width: 100%;}
+        }
+        /* iphone6 plus */
+        @media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+            .main {width: 100%; min-width: 100%;}
+        }
+    </style>
+</head>
+<body>
+<div class="body">
+    <div class="wrap">
+        <div class="container main">
+            <header>
+                <div class="return">
+                    <img class="return-img" src="img/return.png">
+                </div>
+                <h1>详情</h1>
+                <!-- <div class="share"></div> -->
+                <div class="search"><img class="search-img" src="img/search.png"></div>
+            </header>
+            <div class="content-layer">
+                <div class="content-wrap">
+                    <div class="content-scroller">
+                        <div class="head1"></div>
+                        <div class="content">
+                            <div class="content-head">阿基米德小实验</div>
+                            <div class="content-tag">
+                                <!-- 小实验：tag-experiment; 小发明: tag-invention; 小趣闻: tag-news; -->
+                                <span class="tag-invention"></span>
+                                <span class="content-date">10-7</span>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="content-article">
+                                <p>我们拥有科学而系统的课程模块。游戏、运动、音乐、艺术、社交构成我们丰富多样的早教课程模式，透过专业的指导和启发，让婴幼儿在课程模块中寓教于乐，协助婴幼儿全方位的潜能发展。</p>
+                                <p>我们拥有贴近幼儿的主题式课程。</p>
+                                <img src="img/boy.png"/>
+                                <p>我们拥有贴近幼儿的主题式课程222。</p>
+                                    <!-- android 格式: ogg -->
+                                    <!-- ios 格式: mp4 -->
+                                    <!-- poster是视频的第一帧截图 -->
+                                <video controls="controls" poster="http://photocdn.sohu.com/20151209/Img430590578.jpeg">
+                                    <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg"> 
+                                    <source src="http://www.w3school.com.cn/i/movie.mp4" type="video/mp4">
+                                    您的浏览器不支持视频播放
+                                </video>
+                                <p>我们拥有贴近幼儿的主题式课程222。</p>
+                                <p>入O2O无疑是个不错的主意，但如果想成为继打车市场后的下一个爆发点并颠覆的消费模式，还要从增加优质用户粘性以及打通支付交易环节处着手，在给商家带来潜力客户的同时，也让消费者享受到好的服务和体验。</p>
+                            </div>
+                            <div class="content-footer-split-line"></div>
+                           <div class="content-footer content-footer-vote">
+                            <p>期待您的投票</p>
+                           </div>
+
+                            <div class="content-footer content-footer-icon">
+                                <div class="icon"></div>
+                            </div>
+
+                            <div class="content-footer content-footer-voted">
+                                    已有<span class="vote-num">101</span>人投票
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<!-- <script type="text/javascript" src="js/clipboard.min.js"></script> -->
+<script type="text/javascript">
+    var contentScroller = null,
+        isPreview = getParam("t") === "preview",
+        articleId = 0,
+        cookieKey = "voted" + "-" + articleId,
+        isTouchVideo = false,
+        isVoted = false,  //TODO 需要初始化这个变量，确定是否可以投票
+        isVoteEnded = false;
+
+
+    $(document).ready(function() {
+
+        checkIsVotedFromLocalDB();
+
+        if(isPreview) {
+            $(".return").hide();
+            $(".share").hide();
+            $(".content-footer").hide();
+        }
+
+        mobileClick(".search", function(e) {
+            e.preventDefault();
+            location.href="search.html";
+        })
+
+/*        mobileClick(".share", function(e) {
+            e.preventDefault();
+            //TODO 下面要加type参数
+            copyToClipboard(".share");
+        });*/
+
+        mobileClick(".return", function(e) {
+            e.preventDefault();
+            // history.go(-1);
+            // history.back();
+            goBack();
+        });
+
+        contentScroller = new IScroll(".content-wrap", {
+            mouseWheel: true
+        });
+
+        $("video")
+        .on("click", function(e) {
+            e.preventDefault();
+            this.play();
+            contentScroller.refresh();
+        })
+        .on("touchstart", function(e) {
+            isTouchVideo = true;
+            contentScroller.refresh();
+        })
+        .on("touchmove", function(e) {
+            isTouchVideo = false;
+        })
+        .on("touchend", function(e) {
+            e.preventDefault();
+            if(isTouchVideo) {
+                this.play();
+                contentScroller.refresh();
+            }
+        });
+
+        if(isVoteEnded) {
+            setVoteEndedImg();
+        } else if(isVoted) {
+            setVoteImg();
+        } else {
+
+            $('.icon').click(function(){
+                vote();
+            });
+
+            $('.icon').on("touchend", function(e){
+                e.preventDefault();
+                vote();
+            });
+        }
+
+        preloadImg(
+            "img/voted.png"
+            );
+
+        setTimeout(function() {contentScroller.refresh()}, 200);
+    });
+
+    function checkIsVotedFromLocalDB() {
+        // 读取本地是否投票的配置
+        if(window.localStorage) {
+            //如果本地存储可用，则使用本地存储
+            var storage = window.localStorage;
+            var voted = storage.getItem(cookieKey)
+            if(!voted) {
+                isVoted = false;
+            } else {
+                isVoted = true;
+            }
+        } else {
+            //本地存储不可用则用cookie
+            if(checkCookieEnable()) {
+                if(!getCookie(cookieKey)) {
+                    isVoted = false;
+                } else {
+                    isVoted = true;
+                }
+            }
+        }
+    }
+
+    function setVotedToLocalDB() {
+        if(window.localStorage) {
+            var storage = window.localStorage;
+            storage.setItem(cookieKey, "true");
+        } else {
+            if(checkCookieEnable) {
+                setCookie(cookieKey, "true");
+            }
+        }
+    }
+
+
+    function vote() {
+        /*$.ajax({
+            url: '',
+            data: '',
+            type: "POST",
+            success: function(newNum) {
+                //成功以后调用下面代码,numNum是服务器返回的最新的投票总人数
+                setVoteImg();
+                $(".vote-num").html(newNum);
+                setVotedToLocalDB();
+                alert("投票成功");
+            },
+            error: function() {
+                alert("投票失败");
+            }
+        });*/
+
+        //以下是测试代码，需要删除
+        var newNum = 102;
+        setVoteImg();
+        $(".vote-num").html(newNum);
+    }
+
+    function setVoteImg(isVoteByUser) {
+        $(".content-footer-vote p").html("感谢您的宝贵一票");
+        $('.icon').css('background','url(img/voted.png)');
+        $('.icon').css('background-size','100% 100%');
+    }
+
+    function setVoteEndedImg() {
+        $('.icon').css('background','url(img/vote-ended.png)');
+        $('.icon').css('background-size','100% 100%')
+    }
+
+    function getParam(key) {
+        var uri = window.location.search;
+        var re = new RegExp("" + key + "\=([^\&\?]*)", "ig");
+        return ((uri.match(re)) ? (uri.match(re)[0].substr(key.length + 1)) : null);
+    }
+
+</script>
+</html>

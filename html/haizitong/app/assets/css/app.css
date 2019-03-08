@@ -1,0 +1,41 @@
+@charset "utf-8";
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td,figure { -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; -webkit-tap-highlight-color:rgba(0,0,0,0);  font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti; color: #4c4948; }
+html,body{ height:100%; }
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;} 
+input[type=button], input[type=submit], input[type=file], input[type=text], button,textarea { margin: 0; padding: 0; resize:none; border:none; outline:none;cursor: pointer; -webkit-appearance: none; -webkit-appearance:none; /*去除input默认样式*/-webkit-border-radius:0px ;} 
+img,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;-webkit-appearance:none; /*去除input默认样式*/-webkit-border-radius:0px ;} 
+ol,ul { list-style:none; } 
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus{ outline:none; }
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+a{ color: #4c4948; text-decoration: none; }
+body,html{ position: relative;min-height: 100%;background: #f2f2f2; text-align: justify; text-justify: inter-ideograph}
+body{}
+article{ position: relative; height: 100%; max-width: 750px; margin: auto; background: #f2f2f2; font-size: 14px; }
+.loading{ position: fixed; width: 100%; height: 100%; z-index: 222; background: #fff;}
+.loading img{ width: 50px; position: absolute; top: 50%;left: 50%; margin: -50px 0 0 -25px;}
+
+/*phone*/
+.video-box{ position:fixed; z-index:99999; height:100%; width:100%; background:rgba(0,0,0,1); top:0px; left:0px}
+.video-box .close{background-color: rgba(0, 0, 0, 0.5);  position: absolute;
+    left: 0;
+    top: 0;
+    height: 44px;
+    width: 100%;
+    z-index:999999;}
+
+
+.video-box .close span{ background-image: url("http://192.168.0.195:3500/2/share/app/assets/js/photoswipe/default-skin/default-skin.svg");background-position: 0 -44px;    background-size: 264px 88px;
+    width: 44px;
+    height: 44px;    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    float: right;
+    opacity: 0.75;}
+
+.scale-model{ width: 750px; transform-origin: 0 0;-ms-transform-origin: 0 0;-moz-transform-origin: 0 0; -webkit-transform-origin: 0 0;-o-transform-origin: 0 0; overflow-x: hidden }

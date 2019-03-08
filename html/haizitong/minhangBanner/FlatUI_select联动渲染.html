@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/laypage.css">
+  <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+
+  <body ng-app="myApp" ng-controller="userCtrl">
+
+  <select style="width: 150px" ng-model="provinceId" name="province" data-toggle="select" class="form-control select-province select select-primary mrs mbm select-sm" ng-change="selectP()">
+      <option value="0">选择省份</option>
+      <option ng-repeat="province in provinceCity" value="{{province.id}}">{{province.name}}</option>
+  </select>
+  <br /><br />
+
+  <select style="width: 150px" name="province" data-toggle="select" class="form-control select-city select select-primary mrs mbm select-sm">
+      <option value="0">选择省份</option>
+      <option ng-repeat="city in cities=((provinceCity | filter:{id:provinceId})[0].citys)|ngRepeatFinishEveryTime" value="{{city.id}}">{{city.name}}
+  </select>
+  <br /><br />
+  <a class="link" ng-click="edit()">编辑</a>
+
+
+  <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/flat-ui.min.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/spin.min.js"></script>
+    <script type="text/javascript" src="js/jquery.spin.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/laypage.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script>
+      var myApp = angular.module('myApp', []);
+
+      //渲染完成后
+      myApp.directive('onFinishRenderFilters', function ($timeout) {
+          return {
+              restrict: 'A',
+              link: function (scope, element, attr) {
+                  if (scope.$last === true) {
+                      $timeout(function () {
+                          scope.$emit('ngRepeatFinished', element);
+                      });
+                  }
+              }
+          };
+      });
+
+      myApp.filter('ngRepeatFinishEveryTime', function($timeout){
+        return function(data){
+          var me = this;
+          var flagProperty = '__finishedRendering__';
+          if(!data) data = {};
+          if(!data[flagProperty]){
+            Object.defineProperty(data,flagProperty,{enumerable:false, configurable:true, writable: false, value:{}});
+            $timeout(function(){
+              delete data[flagProperty];
+              me.$emit('ngRepeatFinishEveryTime');
+            },0,false);
+          }
+          return data;
+        };
+      })
+      myApp.controller('userCtrl', function ($scope, $http, $timeout) {
+          $scope.provinceId = "0";
+          $scope.provinceCity = [
+              {
+                  id:"id1",
+                  name:"上海",
+                  citys:[
+                      {
+                          id:"city1",
+                          name:"普陀"
+                      },{
+                          id:"city2",
+                          name:"徐汇"
+                      }
+
+                  ]
+              },{
+                  id:"id2",
+                  name:"安徽",
+                  citys:[
+                      {
+                          id:"city11",
+                          name:"合肥"
+                      },{
+                          id:"city22",
+                          name:"安庆"
+                      }
+
+                  ]
+              }
+
+          ]
+          $scope.selectP = function () {
+              $scope.$on("ngRepeatFinishEveryTime", function (rfe){
+                  $(".select-city").select2("val", "0");
+              });
+          }
+
+          $scope.edit = function () {
+              $scope.provinceId = "id2";
+              $(".select-province").select2("val", "id2");
+              $scope.$on("ngRepeatFinishEveryTime", function (rfe){
+                  $(".select-city").select2("val", "city11");
+              });
+          }
+
+
+
+
+      })
+
+    </script>
+  </body>
+</html>
+			

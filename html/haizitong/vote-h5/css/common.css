@@ -1,0 +1,6 @@
+label {font-weight: inherit;}
+
+#modalTitle {font-size: 0.8rem;}
+#modalBody {margin: 0 auto; text-align: center;}
+#modalBody, .modal-footer button {font-size: 0.5rem;}
+.share-selection {width: 100%; font-size: 0.5rem; border: 0px #FFF;}

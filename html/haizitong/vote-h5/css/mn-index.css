@@ -1,0 +1,151 @@
+*{padding:0;margin:0;}
+html {font-size: 45px;}
+html,body{
+	width:100%;
+	height: 100%;
+}
+.clearfix{overflow: auto;}
+@media (min-width: 720px) {
+	.main {width: 720px; min-width: 720px;}
+		}
+body{
+    /*background: url() no-repeat;*/
+    /*background-size:100% 100%;*/
+    /*color:#fff;*/
+}
+.share{
+	position: absolute;
+	width:5.64rem;
+	height:0.844rem;
+	top:1.2rem;
+	right:0.55rem;
+	cursor: pointer;
+	z-index: 100;
+}
+.flyship{
+	position: absolute;
+	width:1.51rem;
+	height:2.04rem;
+	top:2.5rem;
+	left:1.2rem;
+
+}
+.rank-btn {
+	position:absolute;
+	width:4.57778rem;
+	height:2.8rem;
+	top:10.5rem;
+	left:1.05rem;
+	z-index: 100;
+}
+.rule{
+	position:absolute;
+	width:3.02222rem;
+	height:2.08889rem;
+	top:13rem;
+	left:1.05rem;
+	z-index: 100;
+}
+/*.invention{
+	position:absolute;
+	width:5.77rem;
+	height:5.77rem ;
+	z-index: 100;
+	left:0.5rem;
+	top:15rem;
+}
+.smexperiment{
+	position:absolute;
+	width: 4.2rem;
+	height: 4.26rem;
+	top:12rem;
+	right:0.8rem ;
+	z-index: 100;
+
+}
+.news{
+	position:absolute;
+	width: 4.53rem;
+	height:3.8rem;
+	right:2.8rem;
+	top:20rem;
+	z-index: 100;
+
+}
+.words1{
+	position: absolute;
+	width:12.15rem;
+	height:6.62rem;
+	top:3rem ;
+	right:1.7rem;
+}
+.words2{
+	position: absolute;
+	top:10rem;
+	right:3.24rem;
+	width:9.13rem;
+	height: 1.11rem;
+
+}*/
+.invention{
+	position:absolute;
+	width:6.28889rem;
+	height:5.88889rem ;
+	left:0.88889rem;
+	top:15.31111rem;
+	z-index: 100;
+}
+.smexperiment{
+	position:absolute;
+	width: 4.82222rem;
+	height: 4.53333rem;
+	top:12.37778rem;
+	right:0.93333rem ;
+	z-index: 100;
+
+}
+.news{
+	position:absolute;
+	width: 4.97778rem;
+	height:4.08889rem;
+	right:2.93333rem;
+	top:20.42222rem;
+	z-index: 100;
+}
+.words1{
+	position: absolute;
+	width:10.6rem;
+	height:5.91111rem;
+	top:3.97778rem ;
+	left:2.75556rem;
+}
+.words2{
+	position: absolute;
+	top:9.73333rem;
+	left: 3.48889rem;
+	width:9.33333rem;
+	height: 1.33333rem;
+}
+.redcloud{
+	position: absolute;
+	width:4.08rem;
+	height: 3.86rem;
+	top:13.11rem;
+	right:1.88rem;
+}
+.bluecloud{
+	position: absolute;
+	right:4.6rem;
+	top:20.5rem;
+	width:2.97rem;
+	height:3.64rem;
+	
+}
+.purplecloud{
+	position: absolute;
+	left:1rem;
+	top:16rem;
+	width:6.15rem;
+	height: 5.51rem;
+
+}

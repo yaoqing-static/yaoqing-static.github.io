@@ -1,0 +1,7 @@
+display:flex;
+flex-wrap:wrap 换行
+
+align-items: center; 垂直居中
+align-content:space-between;
+
+overflow: hidden; white-space: nowrap; text-overflow: ellipsis;限制字数

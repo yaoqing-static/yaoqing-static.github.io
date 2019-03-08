@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+    a:hover{ text-decoration: underline}
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+    #post-table tr td {
+        vertical-align: middle;
+    }
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+    .titlenam {
+        overflow: hidden;
+        height: 17px;
+        width: 241px;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .btn-group {
+        display: block;
+        margin: 10px 0 10px 0;
+        overflow: hidden;
+    }
+    .btn-group.bootstrap-select {
+        margin-top: 0px
+    }
+    .btn-default, .btn-default:focus, .btn-default:hover {
+        background-color: #1abc9c
+    }
+    a {
+        cursor: pointer;
+    }
+    .marrt {
+        margin-right: 10px
+    }
+    .my-pager {
+        text-align: right
+    }
+    .teacherSelet .select2-search-field input[type=text] {
+        color: #B3B0B0;
+        margin-top: 0px
+    }
+    .nav-tabs > li > a {
+        padding: 0px;
+        border-radius: 0px;
+        border: none;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f4f5f9
+    }
+    .nav-tabs > .active > a {
+        background-color: #fff;
+        margin-left: 0px;
+    }
+    .nav-tabs > li {
+        float: none;
+        margin-bottom: 0px;
+    }
+    .nav-tabs > li > a {
+        margin-right: -1px;
+        color: #555
+    }
+    .addnew .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        border: none
+    }
+    .classTable2 .name {
+        border-bottom: 1px solid #ddd;
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding: 0 0 10px 20px;
+    }
+    #tableList tbody {
+        display: none
+    }
+    .table > tbody > tr > td {
+        text-align: center;
+
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+    .span-a a {
+        padding: 6px 0;
+        max-width: 187px;
+        display: inline-block;
+        color: #0d1e9a
+    }
+    .marrt {
+        color: red
+    }
+
+    .title span {
+        color: #d9d7d6
+    }
+
+    .dot-div .edit { width: 150px; display: block; padding-top: 4px }
+    .dot-div .edit .img { width: 120px; height: 120px; background-color: #d9d7d6; margin: auto; display: block; line-height: 120px }
+    .dot-div .edit .name-new { width: 150px; height: 40px; overflow: hidden; display: block; height: 40px; line-height: 40px; font-size: 12px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+</style>
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                闵行管理后台
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-picture menu-title"></span>&nbsp;&nbsp;&nbsp;广告位管理
+                        </li>
+                        <li role="presentation" class="menu-item {{pageType==1?'active':''}}"><a
+                                href="banner.html?type=1">园所端</a></li>
+                        <li role="presentation" class="menu-item {{pageType==2?'active':''}}"><a
+                                href="banner.html?type=2">家长端</a></li>
+                        <li role="presentation" class="menu-title ">
+                            <a style="padding-left:31px;" href="teacher_list.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;老师列表</a>
+                        </li>
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-envelope menu-title"></span>&nbsp;&nbsp;&nbsp;资料库管理
+                        </li>
+                        <li role="presentation" class="menu-item"><a href="database_list.html">资料库列表</a>
+                        </li>
+                        <li role="presentation" class="menu-item"><a href="database_draft.html">草稿箱</a></li>
+                        <li role="presentation" class="menu-item active"><a href="database_tag.html">标签</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <div class="classTable1">
+                        <div class="btn-group" role="group" aria-label="...">
+
+                            添加标签&nbsp;&nbsp;&nbsp;<span><input type="text" class="form-control tag" placeholder="" style="display: inline-block; width: 200px" /></span>&nbsp;&nbsp;&nbsp;
+                            <button style="border-right: 1px solid #13A7A7; float: none" type="button"
+                                    class="btn btn-primary btn-sm font-14 " ng-click="addTagsBomBox()">&nbsp;&nbsp;&nbsp;添加&nbsp;&nbsp;&nbsp;
+                            </button>
+                        </div>
+                        <table id="tableList" class="table table-hover table-bordered" width="100%">
+                            <thead>
+                            <tr class="catalog-header">
+                                <th style="text-align: center; ">标签名字</th>
+                                <th style="text-align: center;">消息数</th>
+                                <th ng-if="pageDataBaseType==1" style="text-align: center;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="Tag in Tags.information" on-finish-render-filters>
+                                <td>{{Tag.name}}</td>
+                                <td>{{Tag.newsCount}}</td>
+                                <td ng-if="pageDataBaseType==1"><a class="marrt"
+                                       ng-click="deleteTagBomBox(Tag,$event)">删除</a><a
+                                                                                       ng-click="editTagBomBox(Tag,$index)">编辑</a></td>
+                            </tr>
+                            <tr class="nonelist" style="display: none;">
+                                <td colspan="8" style="text-align:center">没有数据</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="my-pager">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- col-xs-10结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- 以下模态对话框根据需求选择性使用 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button style=" " type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div id="myModalContent" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增班级内容信息 -->
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+    var myApp = angular.module('myApp', []);
+    //渲染完成后
+    myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+
+    myApp.controller('userCtrl', function ($scope, $http) {
+        var pageCount = 10;
+        var pageIndex = 1;
+        $scope.pageDataBaseType = 1; ///1是管理员 2是老师
+        //ajax获取标签
+
+        $scope.Tags = {count: 0, information: []};
+        var classCount = $scope.Tags.count;
+        $scope.getData = function (page) {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=" + page
+            }).success(function (data) {
+                $scope.Tags = data;
+                resetPage();
+            }).error(function () {
+                showErrorAlert("获取失败");
+                //TODO 以下为测试代码
+                $scope.Tags = {
+                    count: 138,
+                    information: [
+                        {
+                            id: "tag1",
+                            name: "标签1",
+                            newsCount:0
+                        }, {
+                            id: "tag2",
+                            name: "标签2",
+                            newsCount:0
+                        }, {
+                            id: "tag3",
+                            name: "标签3",
+                            newsCount:20
+                        }
+                    ]
+
+                }
+                resetPage();
+            });
+        }
+        $scope.getData(1);
+
+        $scope.getPage = function (page) {
+            $scope.getData(page);
+        }
+        //调用分页
+        function resetPage() {
+            if (classCount != $scope.Tags.count) {
+                classCount = $scope.Tags.count;
+                laypage({
+                    cont: $(".my-pager"),
+                    skin: 'molv',
+                    pages: Math.ceil($scope.Tags.count / pageCount),
+                    jump: function (obj, first) {
+                        console.log(obj.curr);
+                        pageIndex = obj.curr;
+                        if (!first) {
+                            $scope.getPage(obj.curr);
+                        }
+                    }
+                })
+            }
+        }
+
+
+        //添加标签
+        $scope.addTagsBomBox = function () {
+            var text=$(".tag").val();
+            if(text.length>8){
+                showErrorAlert(CONFIG.CONST_STR.tags_max_length);
+                return;
+            }
+            if(text==""){
+                showErrorAlert(CONFIG.CONST_STR.empty_tags_name);
+                return;
+            }
+            var tagsHtml="确定添加标签：<br />"+text+"?"
+            initModal(CONFIG.CONST_STR.banner_title,tagsHtml, addTags);
+            console.log(text)
+        }
+        //TODO ajax delete
+        function addTags() {
+            var text=$(".tag").val();
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: text
+            }).success(function (data) {
+                $scope.getPage(pageIndex);//添加成功后获取下当前页面数据
+                $(".tag").val('')
+            }).error(function () {
+                $scope.getPage(pageIndex);//添加成功后获取下当前页面数据
+                $(".tag").val('')
+                showErrorAlert(CONFIG.CONST_STR.delete_failed);
+                hideModal();
+                //TODO 以下为测试代码
+            });
+        }
+
+
+        //单个删除
+        $scope.arr = 0;
+        $scope.deleteTagBomBox = function (arr, $event) {
+            var taget = $event.currentTarget;
+            var tr = "<tr>" + $(taget).parents("tr").find("td:eq(0)").get(0).outerHTML + $(taget).parents("tr").find("td:eq(1)").get(0).outerHTML + "</tr>"
+            var table = '<table class="table table-hover table-bordered" style="border:1px solid #CCC"><thead><th style="text-align: center;">标签名字</th><th style="text-align: center;">消息数</th></thead>' + tr + "</table>";
+            $scope.arr = arr;
+            if(arr.newsCount==0){
+                initModal(CONFIG.CONST_STR.banner_title, "确定删除标签：" + "<br/><br/>" + table, deleteTagById);
+            }else{
+                initModal(CONFIG.CONST_STR.banner_title, "该标签下有"+arr.newsCount+"条消息，请删除全部消息后再删除标签" + "<br/><br/>" + table, deleteTagById);
+            }
+
+
+        }
+        //TODO ajax delete
+        function deleteTagById() {
+            if($scope.arr.newsCount!=0){
+                hideModal();
+                return
+            }
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "id=" + $scope.arr.id
+            }).success(function (data) {
+                $scope.getPage(pageIndex);//删除成功后获取下当前页面数据
+            }).error(function () {
+                alert($scope.arr.id)
+                $scope.getPage(pageIndex);//删除成功后获取下当前页面数据
+                showErrorAlert(CONFIG.CONST_STR.delete_failed);
+                hideModal();
+                //TODO 以下为测试代码
+            });
+        }
+
+
+        //编辑
+        $scope.editTags=[];
+        $scope.editTagBomBox = function (arr, index) {
+
+            $scope.editTags=arr;
+            $scope.editTags.index=index;
+            var inputHml='<input type="text" class="form-control edit-tag" placeholder="" style="display: inline-block; width: 260px" />';
+            initModal(CONFIG.CONST_STR.banner_title, "<div style=' text-align: center'>"+inputHml+"</div>", editTag, null, "355px");
+            $(".edit-tag").val(arr.name)
+
+        }
+        function editTag(){
+            var text=$(".edit-tag").val();
+            if(text.length>8){
+                showErrorAlert(CONFIG.CONST_STR.tags_max_length);
+                return;
+            }
+            if(text==""){
+                showErrorAlert(CONFIG.CONST_STR.empty_tags_name);
+                return;
+            }
+            $scope.editTags.name=text;
+            console.log($scope.editTags)
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: $scope.editTags
+            }).success(function (data) {
+                $scope.Tags.information[$scope.editTags.index].name=$scope.editTags.name//编辑保存成功执行这个更新显示数据
+            }).error(function () {
+                $scope.Tags.information[$scope.editTags.index].name=$scope.editTags.name//编辑保存成功执行这个更新显示数据
+                showErrorAlert(CONFIG.CONST_STR.delete_failed);
+                hideModal();
+                //TODO 以下为测试代码
+            });
+
+        }
+
+
+        
+
+        //下面是在table render完成后执行的js
+        $scope.$on('ngRepeatFinished', function (rfe) {
+
+            $("#tableList tbody").show()
+        });
+
+    })
+
+</script>
+</body>
+</html>
+			

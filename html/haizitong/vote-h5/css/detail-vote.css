@@ -1,0 +1,185 @@
+
+* {margin: 0; padding: 0;}
+
+html{font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;}
+html * {outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);}
+img{display: block;}
+i{font-style: normal;}
+html,body{width: 100%; height: 100%; font-family: 微软雅黑, sans-serif}
+body{
+    background: url("../img/background.png") no-repeat;
+    background-size:100% 100%;
+    overflow: hidden;
+    padding-top: 0.46667rem;
+}
+.container, .row {padding: 0;}
+.row {margin: 0;}
+.body {position: relative; height: 100%; color:#fff;}
+.wrap {position: relative; height: 100%;}
+.main {position: relative; width:100%; min-height: 100%; height: 100%; overflow: hidden;}
+@media (min-width: 1023px) {
+    .main {width: 720px; min-width: 720px;}
+    .footer {width: 720px; min-width: 720px;}
+}
+
+.clearfix{
+    clear:both;
+}
+header{
+    position:relative;
+}
+header h1{
+    text-align: center;
+    font-size:0.755rem;
+    letter-spacing: 0.266rem;
+    margin-top: 0.2rem;
+}
+header .return{
+    width:1.89rem;
+    height: 0.89rem;
+    position: absolute;
+    float: left;
+    cursor: pointer;
+}
+header .return-img{
+    width:0.89rem;
+    height: 0.89rem;
+    margin-left: 0.3rem;
+    float: left;
+}
+header .search{
+    width:2.02222rem;
+    height:1.04444rem;
+    position: absolute;
+    top:0;
+    right: 0rem;
+    float: right;
+    cursor: pointer;
+}
+header .search-img{
+    width:1.02222rem;
+    height:1.04444rem;
+    position: absolute;
+    top:0;
+    right: 0.3rem;
+    float: right;
+}
+header .share{
+    width:2.73333rem;
+    height:0.88889rem;
+    position: absolute;
+    top:0;
+    right: 0.3rem;
+    background:url(../img/share.png) no-repeat;
+    float: right;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+/*上面公用的*/
+
+
+
+
+
+
+.head1{
+    background:url(../img/background2.png) no-repeat;
+    background-size:100% 100%;
+    height: 3.6rem;
+    width: 100%;
+    margin-top: -1rem;
+}
+.content{
+    background: url(../img/line.png) repeat-y;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width:100%;
+}
+.content-head{
+    font-size:1rem;
+    margin-left:0.68889rem;
+}
+.content-tag{
+/*    margin:1.3rem 0 2.35rem 1.35rem;*/
+    font-size:14pt;
+
+}
+.content-tag span:first-child{
+    width:2.93333rem;
+    height:0.93rem;
+    color:#3FA8FF;
+  /*  padding:0.1rem 0.5rem;*/
+    display: inline-block;
+    margin-left: 0.68889rem;
+    margin-top: 0.577rem;
+    margin-bottom: 1.04rem;
+    float: left;
+    background-size:100% 100%;
+}
+
+.content-tag span.tag-invention {
+    background:url("../img/invention.png") no-repeat;
+    background-size:100% 100%;
+}
+
+.content-tag span.tag-experiment {
+    background:url("../img/experiment.png") no-repeat;
+    background-size:100% 100%;
+}
+
+.content-tag span.tag-news {
+    background:url("../img/news.png") no-repeat;
+    background-size:100% 100%;
+}
+
+.content-tag span:nth-child(2){
+   float: left;
+   margin-top: 0.7rem;
+   margin-left: 0.31rem;
+   font-size: 0.6rem;
+}
+
+.content-article{
+    height: 100%;
+    font-size:0.5rem;
+    margin-left: 0.68889rem;
+    margin-right:0.68889rem;
+    line-height: 1rem;
+}
+.content-footer-vote,.content-footer-icon,.content-footer-voted{
+    font-size:12pt;
+    width: 100%;
+    text-align: center;
+
+}
+.content-footer-vote p{
+    font-size: 0.5rem;
+    margin-bottom: -0.7rem;
+}
+/*图片是靠margin挤出来的*/
+.content-article img, .content-article video, .content-article audio{
+    margin:1rem 1.3rem 1rem 0rem;
+    width:100%;
+    height:auto;
+}
+.content-footer-icon .icon{
+    background:url("../img/buttonpress.png") no-repeat;
+    background-position: center;
+    width:5.11rem;
+    height:5.11rem ;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 100% 100%;
+
+}
+.content-footer-voted{
+    margin-top:-0.7rem ;
+    height: 2.75rem;
+    color:#3fb4fe;
+    margin-bottom: 0.68889rem;
+    font-size: 0.5rem;
+}

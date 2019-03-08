@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" style="background-color: transparent;">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="assets/js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="assets/js/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/archives.css">
+    <link rel="stylesheet" href="assets/css/prismplayer.css"/>
+    <style>
+        article{ overflow-y: hidden}
+        .page-dd{ margin-top: 0px; width: 750px}
+        .page-dd{transform-origin: 0 0;-ms-transform-origin: 0 0;-moz-transform-origin: 0 0; -webkit-transform-origin: 0 0;-o-transform-origin: 0 0; transform:scale(0.40);-webkit-transform:scale(0.40);-moz-transform:scale(0.4);-ms-transform:scale(0.4);-o-transform:scale(0.4)}
+        .swiper-slide{ width: 300px; height: 500px;background-image: url("image/archives/bg.png"); background-size: auto;  border-radius: 10px; padding: 20px 0; overflow: hidden   }
+        .swiper-container-3d .swiper-slide-shadow-left,.swiper-container-3d .swiper-slide-shadow-right{ background-image: none}
+        body, html{background-image: none}
+        .page1-box{width: 714px; margin: auto; margin-left: 20px}
+        .page2-box,.page4-box,.page5-box{ width: 726px}
+        .page3-box{ width: 718px}
+        .page6-box,.page8-box{ width: 722px}
+        .page7-box,.page9-box{ width: 750px}
+        .swiper-container-3d{ overflow: inherit}
+        .page9-box .bg1{ background-image: url("image/archives/ceping_12.png"); margin-top: 0px}
+        .swiper-slide.modelData9{ padding-top: 0px}
+        .page2-box {margin-top: 0px;}
+
+    </style>
+</head>
+<body style="overflow-x: hidden; background-color: transparent;">
+<div id="loading-div" style="text-align: center;opacity: 1;color:white; position: absolute; width: 100%; top: 50%; margin-top: -16px;">
+    正在加载...
+</div>
+
+<article ng-app="myApp" ng-controller="growthArchives" style="background-color: transparent; visibility: hidden;">
+    <!--<a id="video">视频</a>-->
+    <!--<a id="pic">照片</a>-->
+
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="padding-top: 0px" ng-click="viewGAItem(1, 0)">
+                    <div class="page-dd">
+                    <div class="personal-information" ng-style="{'background-image':'url('+(perInfImg?'image/archives/inf2.png':'image/archives/inf1.png')+')'}">
+                        <div class="bgImg child-pic" ng-if="data.kidIcon" ng-style="{'background-image':'url('+data.kidIcon+'/t)'}"></div>
+                        <div class="bgImg child-pic" ng-if="!data.kidIcon" ng-style="{'background-image':'url('+(data.kidGender==1?'image/archives/girl.png':'image/archives/boy.png')+')'}"></div>
+                        <div style="height: 253px"></div>
+                        <div class="name" ng-bind="data.kidName" style="height: 21px">美美美美</div>
+                        <div class="name" style="margin:105px 0 0 522px; height: 40px;padding: 0px"><span ng-bind="data.birthDay|getAge"></span></div>
+                        <div class="name" ng-bind="data.className" style="padding:32px 0 0 373px">快乐成长班级</div>
+                        <div class="name" style="margin:320px 0 0 158px;padding: 0px; height: 40px" ng-cloak>
+                            <span style="display: inline-block; width: 175px" ng-cloak><font ng-if="data.height" ng-bind="data.height.toFixed(2)+'cm'"></font></span><font ng-if="data.weight" ng-bind="data.weight.toFixed(2)+'kg'"></font>
+                        </div>
+                        <div class="name" style="padding:0px;margin:84px 0 0 159px;padding: 0px; height: 40px" ng-cloak>
+                            <span style="display: inline-block; width: 175px" ng-cloak><font ng-if="data.leftEye" ng-bind="data.leftEye.toFixed(2)"></font></span><font ng-if="data.rightEye" ng-bind="data.rightEye.toFixed(2)"></font>
+                        </div>
+                        <div class="name" style="padding:70px 0 0 159px" ng-cloak><font ng-if="data.hematin" ng-bind="data.hematin+'q/ml'"></font></div>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide modelData{{modelData.tid}}" data-tid="{{modelData.tid}}"
+                     ng-repeat="modelData in modularData track by $index"
+                     ng-click="viewGAItem(2, $index + 1)">
+                    <span class="but1 {{'relate' + themeId}}" ng-click="relateGAStudent($index + 1,$event)" ng-if="modelData.detail.tid!=9">关联学生</span>
+                    <span class="but2 {{modelData.replyTime ? ('replied' + themeId): (modelData.inviteTime ? 'invited' : ('invite' + themeId))}}"  ng-click="inviteAction(modelData, $index, $event)">{{modelData.replyTime ? '已回复': (modelData.inviteTime ? "已邀请" : "邀请家长")}}</span>
+                    <div class="page-dd">
+                        <!--&lt;!&ndash; 模板1 -8&ndash;&gt;-->
+                        <div class="page{{modelData.detail.tid}}-box" ng-if="modelData.detail.tid!=9">
+                            <div class="page-title"><strong><font ng-bind="modelData.detail.title"></font><i></i></strong></div>
+                            <div class="con">
+                                <div ng-repeat="img in modelData.detail.fileArr" class="bgImg page{{modelData.detail.tid}}-img{{$index+1}}" ng-style="{'background-image':'url('+(img.type=='i'?img.url+'/m':img.url+'/i')+')'}"></div>
+                                <a ng-repeat="img in modelData.detail.fileArr" class="video{{$index+1}}" ng-if="img.type=='v'" ng-click="video(img.url)"><img src="image/archives/video.png"></a>
+                                <div class="tag" ng-if="modelData.detail.showTag==1">
+                                    <img ng-if="modelData.detail.tag==1" src="image/archives/tag1.png">
+                                    <img ng-if="modelData.detail.tag==2" src="image/archives/tag2.png">
+                                </div>
+                                <div class="text{{$index+1}}" ng-repeat="text in modelData.detail.textArr track by $index">
+                                    <span ng-bind="text"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--&lt;!&ndash; 模板9 &ndash;&gt;-->
+                        <div class="page{{modelData.detail.tid}}-box" ng-if="modelData.detail.tid==9">
+                            <div class="bg{{$index+1}}" ng-repeat="img in modelData.detail.fileArr track by $index">
+                                <div class="bgImg img"  ng-style="{'background-image':'url('+(img.type=='i'?img.url+'/m':img.url+'/i')+')'}"></div>
+                                <a class="video" ng-if="img.type=='v'" ng-click="video(img.url)"><img src="image/archives/video.png"></a>
+                                <div class="path1" ng-if="$index==2&&modelData.detail.fileArr.length==4"><img src="image/archives/Path1.png"></div>
+                                <div class="path1" ng-if="$index==3&&modelData.detail.fileArr.length==5"><img src="image/archives/Path2.png"></div>
+                                <div class="path1" ng-if="$index==4&&modelData.detail.fileArr.length==6"><img src="image/archives/Path3.png"></div>
+                            </div>
+
+                            <div class="text{{$index+1}}" ng-repeat="text in modelData.detail.textArr track by $index">
+                                <img src="image/archives/sanjiao.png">
+                                <span ng-bind="text"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide new1 create-story-container import-eval" ng-click="viewGAItemAddStory()">
+                    <span class="but2 {{'import' + themeId}}" ng-click="toAddGAEval($event)">导入测评</span>
+                    <a id="creat-story" class="creat-story">创建</a>
+                    <div class="text"><span ng-bind="data.kidName"></span>的成长故事</div>
+                </div>
+
+                <div class="swiper-slide new1 add-remark {{(data.remark||data.labels)?'no-img':'new2'}}" ng-click="viewGAItemRemark(data,$event)">
+                    <div ng-if="!(data.remark||data.labels)">
+                        <a id="creat-story2" class="creat-story2">创建</a>
+                        <div class="text"><span ng-bind="data.kidName"></span>的期末寄语</div>
+                    </div>
+
+                    <div class="page-dd" ng-if="data.remark||data.labels">
+                        <div class="personal-youdian" ng-if="data.labels.length>0">
+                            <div class="bg">
+                                <div class="a1">
+                                    <div class="n1 no{{$index+1}}" ng-repeat="lable in data.labels track by $index" ng-bind="lable">我的特长列子</div>
+                                </div>
+                                <div class="a2" ng-if="data.labels==0"><img src="image/archives/kong.png"></div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="text1">
+                                <img src="image/archives/sanjiao.png">
+                                {{data.remark}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <!-- Add Pagination -->
+        </div>
+
+
+
+</article>
+
+<div template></div>
+
+
+
+<script type="text/javascript" src="assets/js/archives-android.js"></script>
+<script type="text/javascript" src="assets/js/hzt-util.js"></script>
+<script type="text/javascript" src="assets/js/moment.js"></script>
+<script type="text/javascript" src="assets/js/angular.min.js"></script>
+<script type="text/javascript" src="assets/js/prismplayer.js"></script>
+<script type="text/javascript" src="assets/js/photoswipe/photoswipe.min.js"></script>
+<script type="text/javascript" src="assets/js/photoswipe/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/swiper.min.js"></script>
+
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script>
+
+</script>
+<script type="text/javascript">
+    var bgColor=window.themeColor;
+    var THEME_ORANGE = 0;
+    var THEME_BLUE = 1;
+    if(bgColor && bgColor.length > 7) {
+        bgColor = "#" + bgColor.substring(3);
+    } else {
+        bgColor = "#FF5722";
+    }
+    bgColor = bgColor.toUpperCase();
+
+    $("article").css("background-color",bgColor);
+    //计算年龄
+    function getAgeMonth(str) {
+        var da = str.split("-");
+        var nowD = new Date();  //
+        var rtn = {};
+        rtn.year = nowD.getFullYear() - da[0];
+        rtn.month = nowD.getMonth() + 1 - da[1];
+        if (rtn.month < 0) {
+            rtn.year--;
+            rtn.month += 12;
+        }
+        return rtn;
+    }
+    myApp.directive('template', ['$document', function ($document) {
+        return {
+            templateUrl: 'assets/template.html',
+            link: function (scope, element, attr) {
+
+            }
+        };
+    }]);
+
+    myApp.filter('imgFile', function () {
+        return function (arr) {
+            var da = arr+'/m';
+            return da;
+        };
+    })
+
+    myApp.filter('getAge',function() {
+        return function (arr) {
+            var str='';
+            //var dqDate=moment().format("YYYY-MM-DD");
+            var birthDay=moment(arr).format("YYYY-MM-DD");
+            var d=getAgeMonth(birthDay)
+            if(d.year!=0){
+                str+= d.year+"岁";
+
+            }
+            if(d.month!=0){
+                str+= d.month+"月";
+            }
+            return str;
+        };
+    })
+
+    myApp.controller('growthArchives', function ($scope, $http, $timeout,$compile,$document) {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            spaceBetween : 20,
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto'
+        });
+        $scope.perInfImg=true;
+
+        $scope.themeId = bgColor == "#FF5722" ? THEME_ORANGE : THEME_BLUE;
+
+        $scope.loadData = function () {
+            $.ajax({
+                url: "/2/s/archive/student/record/detail?studentRecordId="+getQueryString('studentRecordId')+"&t="+getQueryString('t'),
+                type: 'GET',
+                dataType: 'json',
+                async:false,
+                headers: {
+                    "Authorization": window.authInfo
+                },
+                success: function(data) {
+
+                    function isEmptyStr(v) {return v == undefined || v == null || $.trim(v) == "" || v == 0;}
+                    data = data.data;
+                    console.log(data);
+                    $scope.data=data;
+                    $scope.modularData=[];
+                    for(var i=0;i<data.stories.length;i++){
+                        $scope.modularData.push(data.stories[i]);
+                        var detail = JSON.parse(data.stories[i].detail);
+                        data.stories[i].detail = detail;
+//                    if(data.stories[i].parentDetail&&data.stories[i].parentDetail!=""){
+//                        $scope.modularData.push(JSON.parse(data.stories[i].parentDetail));
+//                    }
+                    }
+                    $scope.$apply();
+                    ///height  weight leftEye rightEye hematin
+                    if(isEmptyStr($scope.data.height)&&isEmptyStr($scope.data.weight)&&isEmptyStr($scope.data.leftEye)&&isEmptyStr($scope.data.rightEye)&&isEmptyStr($scope.data.hematin)){
+                        $scope.perInfImg=false;
+                    }
+                    console.log($scope.modularData);
+                    $scope.resetItemStyle(true);
+                },
+                error: function(e,status) {
+                    if(e.status==401){
+                        HztUtil.callFun("tokenExpire", 1, {},"fun" + Math.random());
+                    }
+
+                }
+            });
+        }
+
+        $scope.resetItemStyle=function(isInit) {
+            $timeout(function () {
+                var w=$(window).width() - 60;
+                var h=$(window).height();
+                var ratio = 600/964;
+                var setWidth = h * ratio;
+                var setHeight = w / ratio;
+
+                var targetHeight = setHeight;
+                var targetWidth = w;
+                if(setHeight > h) {
+                    targetHeight = h;
+                    targetWidth = setWidth;
+                }
+                $(".swiper-slide").css({"width":targetWidth,"height":targetHeight})
+                var innerRatio=targetWidth/750;
+                $(".page-dd").css({
+                    "transform": "scale(" + innerRatio + ")",
+                    "-ms-transform": "scale(" + innerRatio + ")",
+                    "-moz-transform": "scale(" + innerRatio + ")",
+                    "-webkit-transform": "scale(" + innerRatio + ")",
+                    "-o-transform": "scale(" + innerRatio + ")"
+                });
+
+                if(isInit) {
+                    swiper.init();
+                    var index = $scope.modularData ? $scope.modularData.length : 0;
+                    swiper.slideTo(index, 0, false);
+                    $("#loading-div").css("display", "none");
+                    $("article").css("visibility", "visible");
+                }
+            })
+        }
+
+        $scope.loadData();
+
+
+        $scope.toAddGAEval=function (event) {
+            event.stopPropagation();
+            callNative('toAddGAEval', 1, $(".import-eval").index());
+        }
+        $scope.relateGAStudent=function (index,event) {
+            event.stopPropagation();
+            callNative('relateGAStudent', 1, index)
+        }
+        $scope.inviteGAParent=function(index, event) {
+            event.stopPropagation();
+            console.log("index=" + index);
+            callNative('inviteGAParent', 1, index);
+        }
+        $scope.viewGAItem=function(type, position) {
+//            alert(position)
+            console.log("type=" + type + " position=" + position);
+            callNative('viewGAItem', 1, JSON.stringify({type: type, position: position}));
+        }
+        $scope.viewGAItemAddStory=function() {
+            var position = $(".create-story-container").index();
+            console.log("type=" + 5 + " position=" + position);
+            callNative('viewGAItem', 1, JSON.stringify({type: 5, position: position}));
+        }
+        $scope.viewGAItemRemark=function(data,event) {
+            event.stopPropagation();
+            var position = $(".add-remark").index();
+//            alert(position)
+            console.log("type=" + 6 + " position=" + position);
+            if(data.remark || data.labels) {
+                $scope.viewGAItem(3, position);
+            } else {
+                $scope.viewGAItem(6, position);
+            }
+        }
+        $scope.inviteAction=function(modelData, index, event) {
+//            console.log("type=" + type + " position=" + position);
+//            callNative('viewGAItem', 1, {type: type, position: position});
+            event.stopPropagation();
+            if(modelData.replyTime) {
+                $scope.viewGAItem(4, index + 1);
+            } else if(modelData.inviteTime) {
+
+            } else {
+                callNative("inviteGAParent", 1, index + 1);
+            }
+        }
+    })
+
+    function modifyGAItem(result) {
+        if(result.type == 1) {
+            //修改学生信息
+            setBabyInfo(result.data);
+        } else if(result.type == 2) {
+            //修改故事
+            setStory(result.data);
+        } else if(result.type == 3) {
+            //修改期末寄语
+            setRemark(result.data, true);
+        } else if(result.type == 6) {
+            //添加期末寄语
+            setRemark(result.data, false);
+        }
+    }
+
+    function setBabyInfo(babyInfo) {
+        var appElement = document.querySelector('[ng-controller=growthArchives]');
+        var $scope = angular.element(appElement).scope();
+        $.each(babyInfo,function (key,val) {
+            $scope.data[key]=val;
+        })
+        $scope.$apply();
+    }
+
+    function setStory(story) {
+        var appElement = document.querySelector('[ng-controller=growthArchives]');
+        var $scope = angular.element(appElement).scope();
+//        alert(JSON.stringify(story.data));
+        $scope.modularData[story.position-1]=story.data;
+        var detail = JSON.parse(story.data.detail);
+        story.data.detail = detail;
+
+        $scope.$apply();
+
+    }
+
+    function setRemark(remark, isModify) {
+//        alert(JSON.stringify(remark));
+        var appElement = document.querySelector('[ng-controller=growthArchives]');
+        var $scope = angular.element(appElement).scope();
+        $.each(remark,function (key,val) {
+            $scope.data[key]=val;
+        })
+        $scope.$apply();
+    }
+
+    function addGAQiMoJiYu(remark) {
+        var result = {};
+        result.type = 6;
+        result.data = remark;
+        modifyGAItem(result);
+
+        var appElement = document.querySelector('[ng-controller=growthArchives]');
+        var $scope = angular.element(appElement).scope();
+        $scope.resetItemStyle(false);
+    }
+
+    function refreshAll() {
+        var appElement = document.querySelector('[ng-controller=growthArchives]');
+        var $scope = angular.element(appElement).scope();
+
+        $scope.loadData();
+    }
+
+</script>
+
+</body>
+</html>

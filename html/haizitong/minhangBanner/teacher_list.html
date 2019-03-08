@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+    a:hover{ text-decoration: underline}
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+    #post-table tr td {
+        vertical-align: middle;
+    }
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+
+    .btn-group {
+        display: block;
+        margin: 10px 0 10px 0;
+        overflow: hidden;
+    }
+
+    .btn-group.bootstrap-select {
+        margin-top: 0px
+    }
+    .btn-default, .btn-default:focus, .btn-default:hover {
+        background-color: #1abc9c
+    }
+    a {
+        cursor: pointer;
+    }
+
+    .my-pager {
+        text-align: right
+    }
+    .teacherSelet .select2-search-field input[type=text] {
+        color: #B3B0B0;
+        margin-top: 0px
+    }
+
+    .nav-tabs > li > a {
+        padding: 0px;
+        border-radius: 0px;
+        border: none;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f4f5f9
+    }
+    .nav-tabs > .active > a {
+        background-color: #fff;
+        margin-left: 0px;
+    }
+    .nav-tabs > li {
+        float: none;
+        margin-bottom: 0px;
+    }
+    .nav-tabs > li > a {
+        margin-right: -1px;
+        color: #555
+    }
+    .addnew .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        border: none
+    }
+    .classTable2 .name {
+        border-bottom: 1px solid #ddd;
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding: 0 0 10px 20px;
+    }
+    #tableList tbody {
+        display: none
+    }
+    .table > tbody > tr > td {
+        text-align: center;
+
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+    .span-a a {
+        padding: 6px 0;
+        max-width: 187px;
+        display: inline-block;
+        color: #0d1e9a
+    }
+
+    .title span {
+        color: #d9d7d6
+    }
+
+    .dot-div .edit { width: 150px; display: block; padding-top: 4px }
+    .dot-div .edit .img { width: 120px; height: 120px; background-color: #d9d7d6; margin: auto; display: block; line-height: 120px }
+    .dot-div .edit .name-new { width: 150px; height: 40px; overflow: hidden; display: block; height: 40px; line-height: 40px; font-size: 12px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+</style>
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                闵行管理后台
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-picture menu-title"></span>&nbsp;&nbsp;&nbsp;广告位管理
+                        </li>
+                        <li role="presentation" class="menu-item {{pageType==1?'active':''}}"><a
+                                href="banner.html?type=1">园所端</a></li>
+                        <li role="presentation" class="menu-item {{pageType==2?'active':''}}"><a
+                                href="banner.html?type=2">家长端</a></li>
+                        <li role="presentation" class="menu-title active">
+                            <a style="padding-left:31px;" href="teacher_list.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;&nbsp;老师列表</a>
+                        </li>
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-envelope menu-title"></span>&nbsp;&nbsp;&nbsp;资料库管理
+                        </li>
+                        <li role="presentation" class="menu-item"><a href="database_list.html">资料库列表</a>
+                        </li>
+                        <li role="presentation" class="menu-item"><a href="database_draft.html">草稿箱</a></li>
+                        <li role="presentation" class="menu-item"><a href="database_tag.html">标签</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <div class="classTable1">
+                        <div class="btn-group" role="group" aria-label="...">
+
+                        </div>
+                        <table id="tableList" class="table table-hover table-bordered" width="100%">
+                            <thead>
+                            <tr class="catalog-header">
+                                <th style="text-align: center; ">姓名</th>
+                                <th style="text-align: center;">孩子通账号</th>
+                                <th style="text-align: center;">资源库权限</th>
+                                <th style="text-align: center;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="teacher in teachers.information" on-finish-render-filters>
+                                <td>{{teacher.name}}</td>
+                                <td>{{teacher.number}}</td>
+                                <td>{{teacher.resourcesState==0?'*关闭':'已开启'}}</td>
+                                <td><a ng-click="updateTeacherBomBox(teacher,$index,$event)">{{teacher.resourcesState==1?'关闭':'开启'}}</a></td>
+                            </tr>
+                            <tr class="nonelist" style="display: none;">
+                                <td colspan="8" style="text-align:center">没有数据</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="my-pager">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- col-xs-10结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- 以下模态对话框根据需求选择性使用 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button style=" " type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div id="myModalContent" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增班级内容信息 -->
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+    var myApp = angular.module('myApp', []);
+    //渲染完成后
+    myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+
+    myApp.controller('userCtrl', function ($scope, $http) {
+        var pageCount = 10;
+        var pageIndex = 1;
+        //ajax获取老师
+        $scope.teachers = {count: 0, information: []};
+        var classCount = $scope.teachers.count;
+        $scope.getData = function (page) {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=" + page
+            }).success(function (data) {
+                $scope.teachers = data;
+                resetPage();
+            }).error(function () {
+                showErrorAlert("获取失败");
+                //TODO 以下为测试代码
+                $scope.teachers = {
+                    count: 138,
+                    information: [
+                        {
+                            id: "teacher1",
+                            name: "王老师",
+                            number: "123456789",
+                            resourcesState:0//0是关闭1是开启
+                        }, {
+                            id: "teacher2",
+                            name: "王老师222",
+                            number: "123456789",
+                            resourcesState:1//0是关闭1是开启
+                        }, {
+                            id: "teacher3",
+                            name: "王老师33",
+                            number: "123456789",
+                            resourcesState:0//0是关闭1是开启
+                        }
+                    ]
+
+                }
+                resetPage();
+            });
+        }
+        $scope.getData(1);
+
+        $scope.getPage = function (page) {
+            $scope.getData(page);
+        }
+        //调用分页
+        function resetPage() {
+            if (classCount != $scope.teachers.count) {
+                classCount = $scope.teachers.count;
+                laypage({
+                    cont: $(".my-pager"),
+                    skin: 'molv',
+                    pages: Math.ceil($scope.teachers.count / pageCount),
+                    jump: function (obj, first) {
+                        console.log(obj.curr);
+                        pageIndex = obj.curr;
+                        if (!first) {
+                            $scope.getPage(obj.curr);
+                        }
+                    }
+                })
+            }
+        }
+
+
+
+        //更新状态
+        $scope.updateState = [];
+        $scope.updateTeacherBomBox = function (arr, index,$event) {
+            var taget = $event.currentTarget;
+            $scope.updateState=arr;
+            $scope.updateState.index=index;
+            var tr = "<tr>" + $(taget).parents("tr").find("td:eq(0)").get(0).outerHTML + $(taget).parents("tr").find("td:eq(1)").get(0).outerHTML + "</tr>"
+            var table = '<table class="table table-hover table-bordered" style="border:1px solid #CCC"><thead><th style="text-align: center;">姓名</th><th style="text-align: center;">孩子通账号</th></thead>' + tr + "</table>";
+            if($scope.updateState.resourcesState==0){
+                initModal(CONFIG.CONST_STR.banner_title, CONFIG.CONST_STR.open_teacher_resources_hint+"<br /><br />"+table, updateTeacher);
+            }
+            else{
+                initModal(CONFIG.CONST_STR.banner_title, CONFIG.CONST_STR.close_teacher_resources_hint+"<br /><br />"+table, updateTeacher);
+            }
+
+
+        }
+        //TODO ajax delete
+        function updateTeacher() {
+            $scope.updateState.resourcesState==0?$scope.updateState.resourcesState=1:$scope.updateState.resourcesState=0;
+            console.log($scope.updateState)
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: $scope.updateState
+            }).success(function (data) {
+                $scope.teachers.information[$scope.updateState.index].resourcesState=$scope.updateState.resourcesState;//更新数据状态显示
+            }).error(function () {
+                alert($scope.updateState.id)
+                $scope.teachers.information[$scope.updateState.index].resourcesState=$scope.updateState.resourcesState;//更新数据状态显示
+                showErrorAlert(CONFIG.CONST_STR.delete_failed);
+                hideModal();
+                //TODO 以下为测试代码
+            });
+        }
+
+
+
+
+        
+
+        //下面是在table render完成后执行的js
+        $scope.$on('ngRepeatFinished', function (rfe) {
+
+            $("#tableList tbody").show()
+        });
+
+    })
+
+</script>
+</body>
+</html>
+			

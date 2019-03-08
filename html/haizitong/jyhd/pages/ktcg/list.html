@@ -1,0 +1,42 @@
+ <style>
+        .but{ width: 100%; z-index: 99; border-bottom: 1px solid rgba(0,0,0,0.20); line-height:40px; font-size: 14px; text-align: center; overflow: hidden; padding: 0 10px; background: #fff; position: fixed; top: 0px; left: 0px}
+        .but dd{ width: 33.333%; float: left; text-align: center}
+        .but dd a{ color: rgba(0,0,0,0.54);display: inline-block;line-height: 40px; position: relative }
+        .but dd .active{ color: rgba(0,0,0,0.87);}
+        .but dd .active:before{content: ''; position: absolute; width: 100%; height: 3px; border-radius: 3px;background: #2196F3; bottom: 0px; left: 0; }
+        .lists{ padding-top: 42px}
+        .lists li{ padding: 15px; position: relative; background: #fff; margin-bottom: 8px;border-bottom: 1px solid #eaeaea;}
+        .lists li:last-child{  margin-bottom: 0px}
+        .lists h1{font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+        .lists h1 span{ color: rgba(249,100,103,1); display: inline-block; margin-right: 3px; font-size: 16px }
+        .lists h5{ position: relative; margin: 8px 0 10px 0; }
+        .lists h5 span{letter-spacing: 2px; position: absolute; width: 60px; line-height: 20px; text-align: center; color: rgba(107,211,162,1); border: 1px solid rgba(107,211,162,1); border-radius: 20px; right: 0px; top: 0px}
+        .lists .count{text-align: right; margin-top: 10px;color:#888383;background:  no-repeat center center; background-size: 100% 100%}
+        .lists p{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;word-break: break-all;}
+        .lists .count span{ font-size: 12px; color: rgba(0,0,0,0.54); display: inline-block; padding-left: 23px;background: no-repeat 0 center; background-size: 20px 20px; margin-left: 13px }
+    </style>
+
+<article class="topicListCtrl">
+    <div class="box">
+        <div class="but">
+            <dd><a ng-click="getData(1)" class="active" ng-class="{'active':type==1}">全部</a></dd>
+            <dd><a ng-click="getData(2)" ng-class="{'active':type==2}">课题</a></dd>
+            <dd><a ng-click="getData(3)" ng-class="{'active':type==3}">征文</a></dd>
+        </div>
+        <div class="lists">
+            <ul>
+                <li ng-repeat="da in dataList" ng-click="goNext(12)">
+                    <h1><span>[市级一等]</span>矫正幼儿任性行为的实践与研究</h1>
+                    <h5 class="gray12">个别化研究小组&nbsp;&nbsp;&nbsp;2018-6-22 <span>课程</span></h5>
+                    <p class="text14" ng-bind="dataTetx"></p>
+                    <!--<p  ng-bind="dataTetx | interceptText:160"></p>-->
+                    <div class="count">
+                        <span class="a1" style="background-image: url('pages/ktcg/images/ck1.png')">200</span>
+                        <span class="a2" style="background-image: url('pages/ktcg/images/plcg.png')">200</span>
+                        <span class="a3" style="background-image: url('pages/ktcg/images/praise.png')">200</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>

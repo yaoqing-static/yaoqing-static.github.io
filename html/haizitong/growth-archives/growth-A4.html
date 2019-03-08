@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>模板截图</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="assets/js/photoswipe/default-skin/default-skin.css">
+    <link id="css" rel="stylesheet" type="text/css" href="assets/css/app-v2.css">
+  
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <style>
+        html, body {
+            background-image: none;
+            width: 100%;
+        }
+
+        .page-box,.body {
+            transform-origin: 0 0;
+            -moz-transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+            -o-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+        }
+
+        .qrcode-box {
+            display: block;
+        }
+        .body{display: none}
+    </style>
+
+</head>
+<body ng-app="myApp" ng-controller="feedback">
+
+
+<div class="body" id="body">
+
+</div>
+
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+        var context = "";
+        if (r != null)
+            context = r[2];
+        reg = null;
+        r = null;
+        return context == null || context == "" || context == "undefined" ? "" : context;
+    }
+    var pageType=getQueryString("type");
+    var pageSubId=getQueryString("subId");
+    var cssName="archives-v2";
+    if(pageSubId!=1){
+       cssName="archives-v2-theme"+pageSubId;
+    }
+    $("#css").after('<link rel="stylesheet" type="text/css" href="assets/css/'+cssName+'.css">')
+    
+
+
+    if (pageType == 'infor') {//个人信息
+        $(".body").html('<my-information data="modelData"></my-information>');
+    }else{
+        var type=-1;
+        switch (pageType) {
+            case 'cover'://封面
+                type=0;
+                break;
+            case 'yuan'://园所首页
+                type=1;
+                break;
+            case 'class'://班级首页
+                type=2;
+                break;
+            case 'story'://故事
+                type=4;
+                break;
+            case 'jy'://老师寄语
+                type=5;
+                break;                      
+            default:
+                // statements_def
+                break;
+        }
+        $(".body").html('<template-mould type="'+type+'" model-data="modelData"></template-mould>');
+    }
+
+
+
+
+
+
+
+</script>
+
+
+<script type="text/javascript" src="assets/js/moment.js"></script>
+<script type="text/javascript" src="assets/js/angular.min.js"></script>
+<script type="text/javascript" src="assets/js/qrcode.min.js"></script>
+<script type="text/javascript">
+    var myApp = angular.module('myApp', []);
+    function isEmptyStr(v) {
+        return v == undefined || v == null || $.trim(v) == "" || v == 0;
+    }
+
+    //计算年龄
+    function getAgeMonth(str) {
+        var da = str.split("-");
+        var nowD = new Date();  //
+        var rtn = {};
+        rtn.year = nowD.getFullYear() - da[0];
+        rtn.month = nowD.getMonth() + 1 - da[1];
+        if (rtn.month < 0) {
+            rtn.year--;
+            rtn.month += 12;
+        }
+        return rtn;
+    }
+
+
+
+    myApp.directive('qrCode', ['$document', function ($document) {
+        return {
+            restrict: 'AE',
+            scope: {
+                data: '=data',
+                width: '=width'
+            },
+            template:'<div class="code qrcode" style="display:none"><i></i></div>',
+            link: function (scope, element, attr) {
+
+                var color=[
+                    {
+                        color:"#FF6A0C",
+                        width:64
+                    },
+                    {
+                        color:"#98E5FF",
+                        width:72
+                    }
+                 ]
+                 scope.$watch('data',function(newValue,oldValue){
+                    if(newValue){
+                        var url="show-video.html?bid="+getQueryString('bid')+"&sid="+getQueryString('sid')
+                        console.log(scope.data)
+                         for(var i=0;i<scope.data.length;i++){
+                            if(scope.data[i].type=='v'){
+                                element.find('.code').show();
+                                new QRCode(element.find('.code i').get(0), {
+                                    text: url,
+                                    width: color[pageSubId-1].width,
+                                    height: color[pageSubId-1].width,
+                                    colorDark: color[pageSubId-1].color,
+                                    colorLight: '#ffffff',
+                                    correctLevel:QRCode.CorrectLevel.L
+                                });
+                                return false;
+                            }
+                        }
+                    }
+                    
+                 },true)
+              
+                
+
+                
+                
+            }
+        };
+    }]);
+
+    myApp.directive('templateMould', ['$document',"$timeout", function ($document,$timeout) {
+        return {
+            restrict: 'AE',
+            scope: {
+                type: '=type',
+                modelData: '=modelData'
+            },
+            templateUrl: 'components/template-archives.html',
+            link: function (scope, element, attr) {
+              
+               $timeout(function(){
+                  scope.$parent.reset();
+               },0) 
+                
+             
+            }
+        };
+    }]);
+
+    myApp.directive('myInformation', ['$document',"$timeout", function ($document,$timeout) {
+        return {
+            restrict: 'AE',
+            scope: {
+                data: '=data'
+            },
+            templateUrl: 'components/my-information.html',
+            link: function (scope, element, attr) {
+                scope.perInfImg=false;
+                console.log(scope.data)
+                 if (isEmptyStr(scope.data.fruit) && isEmptyStr(scope.data.color) && isEmptyStr(scope.data.toy) && isEmptyStr(scope.data.cartoon) && isEmptyStr(scope.data.hobby)) {
+                       scope.perInfImg=true;
+                    }
+
+                $timeout(function(){
+                  scope.$parent.reset();
+                },0) 
+            }
+        };
+    }]);
+    myApp.filter('formatStr', function () {
+        return function (arr) {
+            return moment(arr).format("YYYY-MM-DD");
+        };
+    })
+
+
+    myApp.filter('imgFile', function () {
+        return function (arr) {
+            var da = arr + '/m';
+            return da;
+        };
+    })
+    myApp.filter('getAge', function () {
+        return function (arr) {
+            var str = '';
+            var birthDay = moment(arr).format("YYYY-MM-DD");
+            var d = getAgeMonth(birthDay)
+            if (d.year != 0) {
+                str += d.year + "岁";
+            }
+            if (d.month != 0) {
+                str += d.month + "月";
+            }
+            return str;
+        };
+    })
+
+    myApp.controller('feedback', function ($scope, $http, $timeout, $compile, $document) {
+            
+        var data = {
+            "storyId": "52885f8d25a541d3ab656596c2d1cdac",
+            "noteId": "58ef4e5ca3177a5a79554f2e",
+            "createAt": "2018-03-26T08:08:22.113Z",
+            "detail": "{\"title\":\"成长故事的名称最长的字数\",\"tag\":1,\"showTag\":1,\"tid\":7,\"fileArr\":[{\"type\":\"i\",\"url\":\"http://192.168.0.195:3500/2/i/58ef4e5ba3177a5a79554f28\"},{\"type\":\"i\",\"url\":\"http://192.168.0.195:3500/2/i/58ef4e5ba3177a5a79554f2a\"},{\"type\":\"i\",\"url\":\"http://192.168.0.195:3500/2/i/58ef4e5ca3177a5a79554f2c\"}],\"textArr\":[\"文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字\",\"文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字\",\"文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字\"]}"
+        };
+        data.detail = JSON.parse(data.detail);
+        $scope.modelData = data;
+        //测试用的代码
+        if(getQueryString('tid')){
+            $scope.modelData.detail.tid=getQueryString('tid')
+        }
+        if(getQueryString('fileType')){
+            for(var j=0;j<$scope.modelData.detail.fileArr.length;j++){
+                $scope.modelData.detail.fileArr[j].type=getQueryString('fileType')
+            }
+        }
+         if (pageType != 'story') {//园所首页
+             $scope.modelData ={"studentRecordId":"5ab0b8b5270c9278e966a0b4","classRecordId":"5ab0b8b5270c9278e966a0b3","className":"国际经济","teachers":["李老师"],"classMessage":"xxx班是个快乐的大家庭，我们一起生活，一起游戏，一起茁壮成长！“一切为了孩子”是我班的宗旨，“以幼儿为本”是我班的教育理念。为幼儿营造一种利于其积极探索、主动学习的环境，让幼儿在“玩中学、学中玩”的愉快环境中得到全面发展。","photo":"http://udev.haizitong.com/2/ali/i/39409337bfa4471483c4385872d5d9b2","schoolPhoto":"http://min.haizitong.com/2/ali/i/3206b7e4c9e3478d9bfb0aca400c0a82","schoolMessage":"测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是","labels":[1,2,3,4],"remark":"测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是","message":"测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是测试是飒飒飒飒是","kidName":"展示",birthDay:1393977600000,fruit:"水果",color:"123",toy:"玩具",hobby:"爱好",cartoon:"动画片"};
+         }
+
+
+
+         // $scope.modelData={};
+         // if (pageType != 'story') {
+         //     $http.get('/1/archive/info?bid='+getQueryString("bid")+"&type="+pageType).success(function (data) {
+         //        console.log(data)
+         //        $scope.modelData =data;
+         //     }).error(function (e) {
+         //        console.log(e)
+         //     });
+         // }else {
+         //    $http.get('/1/archive/story?bid='+getQueryString("bid")+"&sid="+getQueryString("sid")).success(function (data) {
+         //        $scope.modelData ={detail:data};
+         //        console.log($scope.modelData)
+         //     }).error(function (e) {
+         //        console.log(e)
+         //     }); 
+         // }
+
+        
+
+        //A4大小2480 3508    实际切图750  1061
+        // var innerRatio = 2480 / 750;
+        var innerRatio = $(window).width() / 750;
+
+         $scope.reset =function(){
+           $timeout(function(){
+              $(".page-box").css({
+                    "transform": "scale(" + innerRatio + ")",
+                    "-ms-transform": "scale(" + innerRatio + ")",
+                    "-moz-transform": "scale(" + innerRatio + ")",
+                    "-webkit-transform": "scale(" + innerRatio + ")",
+                    "-o-transform": "scale(" + innerRatio + ")"
+               }); 
+                $(".body").show();
+            },0) 
+        }
+      
+
+
+    })
+
+
+</script>
+
+</body>
+</html>

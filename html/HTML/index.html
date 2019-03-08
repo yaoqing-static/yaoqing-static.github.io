@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>壳牌</title>
+    <link rel="stylesheet" href="Public/css/public.css"/>
+    <link rel="stylesheet" href="Public/css/style.css"/>
+    <script src="Public/js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+<div id="container" class="container">
+    <div class="page page-1">
+        <div class="list-wrap">
+            <div class="top-text">
+                <img class="logo" src="Public/images/logo.png"/>
+                <img class="index-img" src="Public/images/index_img.png" width="100%"/>
+            </div>
+        </div>
+        
+            <div id="lottery" class="lottery">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+                    <tr>
+                        <td class="lottery-unit lottery-unit-0"><div class="lis"><img src="Public/images/l1.png"></div></td>
+                        <td class="lottery-unit lottery-unit-1"><div class="lis"><img src="Public/images/l2.png"></div></td>
+                        <td class="lottery-unit lottery-unit-2"><div class="lis"><img src="Public/images/l3.png"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="lottery-unit lottery-unit-7"><div class="lis"><img src="Public/images/l2.png"></div></td>
+                        <td><a href="#" class="start"><img src="Public/images/l7.png"></a></td>
+                        <td class="lottery-unit lottery-unit-3"><div class="lis"><img src="Public/images/l4.png"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="lottery-unit lottery-unit-6"><div class="lis"><img src="Public/images/l6.png"></div></td>
+                        <td class="lottery-unit lottery-unit-5"><div class="lis"><img src="Public/images/l5.png"></div></td>
+                        <td class="lottery-unit lottery-unit-4"><div class="lis"><img src="Public/images/l2.png"></div></td>
+            
+                    </tr>
+                </table>
+            </div>
+        
+    </div>
+</div>
+
+
+<script>
+$(function(){
+	var windowH=$(window).height();
+	$(".page").height(windowH);
+	var lotteryw=$(".lottery").width();
+	$(".lottery").height(lotteryw);
+	})
+
+</script>
+
+<script type="text/javascript">
+
+var jsonstr = '{"data":{"msg":"您已经中过奖，每人只有一次中奖的机会！","status":1,"prize_id":1,"prize_name":"动平衡"},"error":1,"msg":"ok"}';
+var json = JSON.parse(jsonstr);
+
+
+var selectIndex=1;
+
+var lottery={
+	index:-1,	//当前转动到哪个位置，起点位置
+	count:0,	//总共有多少个位置
+	timer:0,	//setTimeout的ID，用clearTimeout清除
+	speed:20,	//初始转动速度
+	times:0,	//转动次数
+	cycle:30,	//转动基本次数：即至少需要转动多少次再进入抽奖环节
+	prize:1,	//中奖位置
+	init:function(id){
+		if ($("#"+id).find(".lottery-unit").length>0) {
+			$lottery = $("#"+id);
+			$units = $lottery.find(".lottery-unit");
+			this.obj = $lottery;
+			this.count = $units.length;
+			$lottery.find(".lottery-unit-"+this.index).addClass("active");
+		};
+	},
+	roll:function(){
+		var index = this.index;
+		var count = this.count;
+		var lottery = this.obj;
+		$(lottery).find(".lottery-unit-"+index).removeClass("active");
+		index += 1;
+		if (index>count-1) {
+			index = 0;
+		};
+		$(lottery).find(".lottery-unit-"+index).addClass("active");
+		this.index=index;
+		return false;
+	},
+	stop:function(index){
+		this.prize=index;
+		return false;
+	}
+};
+
+function roll(){
+	lottery.times += 2;
+	lottery.roll();
+	if (lottery.times > lottery.cycle+10 && lottery.prize==lottery.index) {
+		clearTimeout(lottery.timer);
+		lottery.prize=-1;
+		lottery.times=0;
+		ReturnDescription();//跳转页面方法
+		//alert(ReturnDescription())
+		click=false;
+	}else{
+		if (lottery.times<lottery.cycle) {
+			lottery.speed -= 10;
+		}/*else if(lottery.times==lottery.cycle) {
+			var index =5; //Math.random()*(lottery.count);
+			lottery.prize = index;		
+		}*/else{
+			if (lottery.times > lottery.cycle+10 && ((lottery.prize==0 && lottery.index==7) || lottery.prize==lottery.index+1)) {
+				lottery.speed += 110;
+			}else{
+				lottery.speed += 20;
+			}
+			
+		}
+		if (lottery.speed<40) {
+			lottery.speed=40;
+		};
+		//console.log(lottery.times+'^^^^^^'+lottery.speed+'^^^^^^^'+lottery.prize);
+		lottery.timer = setTimeout(roll,lottery.speed);
+	}
+	
+	return false;
+}
+
+var click=false;
+window.onload=function(){
+	lottery.init('lottery');
+	$("#lottery a").click(function(){
+		if (click) {
+			return false;
+		}else{
+			getJsonType();//跳转位置设置
+			lottery.speed=200;
+			lottery.prize=selectIndex;//转到的位置
+			roll();
+			
+			click=true;
+			return false;
+		}
+	});
+};
+
+function getJsonType(){
+	var states=json.data.status;
+	if(states==0){
+		var NotWinning=[1,4,7];
+		selectIndex=NotWinning[Math.floor(Math.random()*NotWinning.length)];
+		
+	}
+	else{
+		var Winning=[0,2,3,5,6];
+		selectIndex=Winning[Math.floor(Math.random()*Winning.length)];
+	}
+	alert(selectIndex)
+	}
+
+
+
+function ReturnDescription(){
+	switch(selectIndex)
+	{
+		case 0:
+	  		//return  "空调清洗套餐"
+			window.location.href="Winning.html"; 
+	 		break;
+		case 1:
+	  		//return  "谢谢参与"
+			window.location.href="NotWinning.html"; 
+		    break;
+		case 7:
+			window.location.href="NotWinning.html"; 
+	  		//return  "谢谢参与"
+		    break;
+		case 4:
+	  		//return  "谢谢参与"
+			window.location.href="NotWinning.html"; 
+		    break;
+		case 2:
+	  		//return  "洗车券"
+			window.location.href="Winning.html"; 
+		    break;
+		case 3:
+	  		//return  "轮毂清洗"
+			window.location.href="Winning.html"; 
+		    break;
+		case 5:
+	  		//return  "动平衡"
+			window.location.href="Winning.html"; 
+		    break;
+		case 6:
+	  		//return  "发动机舱 清洗"
+			window.location.href="Winning.html"; 
+		    break;
+		default:
+			break;
+	  
+	}	
+	}
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

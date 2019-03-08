@@ -1,0 +1,13 @@
+*{padding:0;margin:0; box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box; font-size: 14px; }
+body{ max-width: 750px; margin: auto}
+h1,h2,h3,h4,h5{ font-weight: normal}
+li{list-style-type: none; padding: 0px; margin: 0px}
+input,textarea{border:none;box-shadow:none}
+body{font-size: 14px; color: rgba(0,0,0,0.87);line-height: 21px;}
+a{ cursor: pointer; text-decoration: none}
+.imgCover{background:#f7f7f7 no-repeat center center; background-size: cover;}
+.gray12{font-size: 12px;color: rgba(0,0,0,0.38);}
+.text14{font-size: 14px; color: rgba(0,0,0,0.87);line-height: 21px;}
+.blue{font-size: 14px;color: #33628B;letter-spacing: 0.21px;line-height: 14px}
+.bottom-fixed{ height: 50px; width: 100%; position: fixed; left: 0px; bottom: 0px; background: #fff}
+.bg-img-model{height: 0px;display: block; position: relative; padding-bottom: 100%;background: #f7f7f7 no-repeat center center;background-size: cover; }

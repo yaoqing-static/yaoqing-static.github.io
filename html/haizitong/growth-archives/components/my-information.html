@@ -1,0 +1,33 @@
+<div class="page-box">
+    <div style="position: relative; z-index: 99">
+<div class="personal-information type{{perInfImg?1:2}}">
+    <div class="bgImg child-pic" ng-if="data.kidIcon"
+         ng-style="{'background-image':'url('+data.kidIcon+'/t)'}"></div>
+    <div class="bgImg child-pic" ng-if="!data.kidIcon"
+         ng-style="{'background-image':'url('+(data.kidGender==1?'image/archives/girl.png':'image/archives/boy.png')+')'}"></div>
+    <div class="name kidName" ng-bind="data.kidName">美美美美</div>
+    <div class="name age"><span ng-bind="data.age"></span></div>
+    <div class="name birthDay" ng-bind="data.birthDay|formatStr">生日</div>
+
+    <div class="name text-overflow fruit" ng-if="data.fruit">
+        <span ng-bind="data.fruit"></span>
+    </div>
+
+    <div class="name text-overflow color" ng-if="data.color">
+        <span ng-bind="data.color"></span>
+    </div>
+
+    <div class="name text-overflow toy" ng-if="data.toy">
+        <span ng-bind="data.toy"></span>
+    </div>
+
+    <div class="name text-overflow hobby" ng-if="data.hobby">
+        <span ng-bind="data.hobby"></span>
+    </div>
+
+    <div class="name text-overflow cartoon" ng-if="data.cartoon">
+        <span ng-bind="data.cartoon"></span>
+    </div>                                                                                                                                     
+</div>
+</div>
+</div>

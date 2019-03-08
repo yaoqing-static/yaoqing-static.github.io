@@ -1,0 +1,18 @@
+
+.page2-img1{ width: 426px; height: 426px; z-index: -1; position: absolute; top: 25px; left: 47px; border-radius: 14px;
+    transform-origin:0 0;
+    transform: rotate(-3deg);-webkit-transform:rotate(-3deg);-ms-transform:rotate(-3deg);-moz-transform:rotate(-3deg);-o-transform:rotate(-3deg);
+}
+.page2-img2{ width: 282px; height: 282px; z-index: -1; position: absolute; top: 292px; left: 413px; border-radius: 14px;
+    transform-origin:0 0;
+    transform: rotate(4deg);-webkit-transform:rotate(4deg);-ms-transform:rotate(4deg);-moz-transform:rotate(4deg);-o-transform:rotate(4deg);
+}
+.page3-img1{ width: 624px; height: 468px; z-index: -1; position: absolute; top: 24px;left: 44px; border-radius: 14px; transform-origin:0 0; transform: rotate(2deg);-webkit-transform:rotate(2deg);-ms-transform:rotate(2deg);-moz-transform:rotate(2deg);-o-transform:rotate(2deg);}
+.page3-img2{ width: 294px; height: 392px; z-index: -1; position: absolute; bottom: 34px;right: 33px;  }
+.page5-img1{ width: 330px; height: 440px; z-index: -1; position: absolute; top: 22px;left: 40px; border-radius: 14px;
+    transform-origin:0 0;
+    transform: rotate(-2deg);-webkit-transform:rotate(-2deg);-ms-transform:rotate(-2deg);-moz-transform:rotate(-2deg);-o-transform:rotate(-2deg);}
+.page5-img2{ width: 330px; height: 440px; z-index: -1; position: absolute; bottom: 45px;right: 40px; border-radius: 14px; overflow: hidden;
+    transform-origin:0 0;
+    transform: rotate(4deg);-webkit-transform:rotate(4deg);-ms-transform:rotate(4deg);-moz-transform:rotate(4deg);-o-transform:rotate(4deg);
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">-->
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        article{ padding: 16px 30px}
+        .swiper-container {
+            width: 100%;
+        }
+        .swiper-container  img{ width: 100%}
+
+
+    </style>
+</head>
+<body>
+
+<article>
+    <div style="font-size: 16px; padding-bottom: 16px">1.添加园所首页，为全园所所有学生的成长档案添加一份园所介绍，只需添加一次全园所共用</div>
+    <div class="swiper-container" id="swiper-container1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                    <img src="image/growthArchivesYz/ad1.1.png">
+                </p>
+            </div>
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                    <img src="image/growthArchivesYz/ad1.2.png">
+                </p>
+            </div>
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                    <img src="image/growthArchivesYz/ad1.3.png">
+                </p>
+            </div>
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                    <img src="image/growthArchivesYz/ad1.4.png">
+                </p>
+            </div>
+            <div class="swiper-slide">
+                <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0s">
+                    <img src="image/growthArchivesYz/ad1.5.png">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div style="font-size: 16px; padding: 16px 0">2.查看档案与完成进度</div>
+    <div class="swiper-container" id="swiper-container2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <p>
+                    <img src="image/growthArchivesYz/ad2.1.png">
+                </p>
+            </div>
+            <div class="swiper-slide">
+                <p>
+                    <img src="image/growthArchivesYz/ad2.3.png">
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<!--<script src="assets/js/swiper.animate1.0.2.min.js"></script>-->
+<script type="text/javascript">
+
+
+
+    var mySwiper = new Swiper ('#swiper-container1', {
+        autoplay: 1500,//可选选项，自动滑动
+        direction : 'horizontal',
+        speed:1,
+        autoplayDisableOnInteraction : false,
+        loop: true,
+
+    })
+    var mySwiper2 = new Swiper ('#swiper-container2', {
+        autoplay: 1500,//可选选项，自动滑动
+        direction : 'horizontal',
+        autoplayDisableOnInteraction : false,
+        speed:1,
+    })
+
+
+
+
+</script>
+</body>
+</html>

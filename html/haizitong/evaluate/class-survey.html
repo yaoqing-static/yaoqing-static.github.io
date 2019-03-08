@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="js/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="js/photoswipe/default-skin/default-skin.css">
+<link rel="stylesheet" type="text/css" href="css/app.css">
+<link rel="stylesheet" type="text/css" href="css/adaption.css">
+
+</head>
+<body ng-app="myApp" ng-controller="feedback">
+<div class="loading">
+    <img src="image/loading.gif">
+</div>
+<article style="display: none" class="">
+    <!--综合评价-->
+    <div class="feed2">
+        <div class="a3">
+            <dd class="title">
+                <span class="s1">质量领域</span><span>水平5</span><span>水平3</span><span>水平1</span><span>未观察到</span>
+            </dd>
+            <dd class="dd" ng-repeat="ta1 in chartData">
+                <span class="s1">{{(qualities |  filter:{qualityId:ta1.qualityId})[0].name}}</span><span ng-repeat="ta1_1 in ta1.levelTypes">{{ta1_1.count}}项</span>
+            </dd>
+        </div>
+        <div class="tag">
+            <span style="background:#ffb500">&nbsp;</span>水平5<span style="background:#7bc91d">&nbsp;</span>水平3<span>&nbsp;</span>水平1<span style="background:#b4b4b4">&nbsp;</span>未观察到
+        </div>
+
+        <div class="a4">
+            <div class="zk"><img src="image/zk.png"><span>查看各领域柱状图</span></div>
+            <div class="con">
+                <div class="list">
+
+                    <div class="bar-dd" ng-repeat="ta1 in chartData">
+                        <p>{{(qualities |  filter:{qualityId:ta1.qualityId})[0].name}}</p>
+                        <div class="bar-model">
+                            <div class="bar-box">
+                                <b></b><b></b><b></b><b></b><b></b>
+                                <div class="data-box">
+                                    <img src="">
+                                    <dd ng-repeat="ta1a in ta1.levelTypes" style="height:{{ta1a.count|percent:ta1.levelTypes}}%"><span><i>{{ta1a.count}}</i></span></span></dd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="a5">
+            <div class="con">
+                <div class="list">
+                    <div class="bar-dd" style="margin-bottom: 0px">
+                        <div class="bar-model">
+                            <div class="bar-box">
+                                <b></b><b></b><b></b><b></b><b></b>
+                                <div class="data-box">
+                                    <img src="">
+                                    <dd ng-repeat="ta1a in statisticById.levelTypes" style="height:{{ta1a.count|percent:statisticById.levelTypes}}%"><span><i>{{ta1a.count}}</i></span></span></dd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="circel-share-box">
+                <div class="circel-share" id="main" ></div>
+                <div class="tag">
+                    <div class="a">
+                        <dd><b style="background: #ffb500">&nbsp;</b><span>水平&nbsp;5：</span><strong>{{((statisticById.levelTypes[0].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                        <dd><b style="background: #7bc91d">&nbsp;</b><span>水平&nbsp;3：</span><strong>{{((statisticById.levelTypes[1].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                        <dd><b style="background: #88cfff">&nbsp;</b><span>水平&nbsp;1：</span><strong>{{((statisticById.levelTypes[2].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                        <dd><b style="background: #b4b4b4">&nbsp;</b><span>未观察到：</span><strong>{{((statisticById.levelTypes[3].count/levelTypesCount)*100).toFixed(0)}}%</strong></dd>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+</article>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/plugin.min.js"></script>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+<script src="js/photoswipe/photoswipe.min.js"></script>
+<script src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/hzt-util.js"></script>
+
+<script type="text/javascript">
+  //  var authInfo='Basic NTkzNTE5YTRiNjIzY2E3OWIzOWE2ZmZjOjlkNDUwYjc4Y2JhNGMzYTI5MGJlMjliNDZkMzI5ZTcy';
+    myApp.directive('template', ['$document', function ($document) {
+        return {
+            templateUrl: 'template.html',
+            link: function (scope, element, attr) {
+
+            }
+        };
+    }]);
+    myApp.filter('getAge',function() {
+        return function (arr) {
+            var da=moment().format("YYYY")-moment(arr).format("YYYY");
+            return da;
+        };
+    })
+
+    myApp.filter('percent',function() {
+        return function (da, data) {
+            var max = data[0].count;
+            var len = data.length;
+            for (var i = 1; i < len; i++) {
+                if (data[i].count > max) {
+                    max = data[i].count;
+                }
+            }
+            if(max==0){
+                return 0
+            }else {
+                return  (da/max)*100
+            }
+
+        };
+    })
+
+    myApp.controller('feedback', ["$scope", "$http", "$timeout",function ($scope, $http, $timeout) {
+
+        var openPhotoSwipe = function(items) {
+            var pswpElement = document.querySelectorAll('.pswp')[0];
+            // build items array
+            // define options (if needed)
+            //按钮样式设置
+            var options = {
+                // history & focus options are disabled on CodePen
+                index:1,//控制打开的一张图片
+                history: false,
+                focus: false,
+                closeEl:true,
+                barsSize:{top:0,bottom:0},
+                captionEl:false,
+                fullscreenEl:false,
+                shareEl:false,
+                bgOpacity:0.85,
+                tapToClose:true,
+                tapToToggleControls:false,
+                showAnimationDuration: 0,
+                hideAnimationDuration: 0,
+                indexIndicatorSep: ' / ',
+
+            };
+            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery.init();
+        };
+
+
+
+        $(".feed2 .a4 .zk").click(function () {
+            var addH=parseInt($(".feed2 .a4 .con .list").height())+20;
+            if($(this).parents('.a4').hasClass("open")){
+                $(this).parents('.a4').removeClass("open")
+                $(".feed2 .a4 .zk span").html('查看各领域柱状图');
+            }else {
+                $(this).parents('.a4').addClass("open")
+                $(".feed2 .a4 .zk span").html('隐藏各领域柱状图')
+                console.log(document.body.offsetHeight+addH )
+            }
+        })
+
+
+        //全局配置
+        $scope.qualityId='all';
+        $scope.statisticById={};
+        var barData=[];
+
+
+        var option = {
+            tooltip : {
+                trigger: 'item',
+                triggerOn:'click',  //触发条件，mousemove，click，mousemove|click，none
+                show:false
+            },
+            color: ["#ffb500","#7bc91d","#88cfff","#b4b4b4"],
+            series : [
+                {
+                    type: 'pie',
+                    radius : ['40%', '70%'], //大小
+                    center: ['70%', '50%'],
+                    hoverAnimation:false,
+                    selectedMode:false,
+                    data:barData,
+                    label: {
+                        normal: {
+                            show:false
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                        },
+                        emphasis: {
+                        }
+                    }
+                }
+            ]
+        };
+
+        //获取质量领域列表
+        $.ajax({
+            url: '/2/s/evaluate/quality/list',
+            type: 'GET',
+            dataType: 'json',
+            async:false,
+            headers: {
+                "Authorization": window.authInfo
+            },
+            success: function(data) {
+                $scope.qualities=data.data;
+                $timeout(function () {
+                    var mySwiper1 = new Swiper('#header',{
+                        freeMode : true,
+                        slidesPerView : 'auto',
+                    });
+                })
+
+            },
+            error: function(e,status) {
+                if(e.status==401){
+                    callNative("tokenExpire", 1, {}, "fun" + Math.random());
+                    alert("no auth");
+                }
+
+            }
+        });
+        $scope.chartData=[];
+        $scope.getDetail=function () {
+            $.ajax({
+                url: '/2/s/evaluate/statistic/class/total?classId='+getQueryString('classId'),
+                type: 'GET',
+                dataType: 'json',
+                async:false,
+                headers: {
+                    "Authorization": window.authInfo
+                },
+                success: function(data) {
+                    if(data.code==0){
+                        $scope.allData=data.data;
+                        $scope.standardRemark=$scope.allData.standardRemark
+                        $scope.chartData=$scope.allData.statistic;
+                    }else {
+                        $scope.allData=[];
+                        alert(data.msg)
+                    }
+
+                },
+                error: function(e,status) {
+                    if(e.status==401){
+                        callNative("tokenExpire", 1, {},"fun" + Math.random(), true);
+                        alert("no auth");
+                    }
+
+                }
+            });
+        }
+        $scope.getDetail();
+
+
+        //页面渲染完成
+        $scope.$watch('$viewContentLoaded', function() {
+            $("article").show()
+            $(".loading").hide()
+        });
+
+
+
+    }])
+
+
+
+    
+</script>
+
+
+</body>
+</html>

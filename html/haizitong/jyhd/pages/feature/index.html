@@ -1,0 +1,90 @@
+ <style>
+  .top-illustrate{ background: #EEF6FC; min-height: 100px; position: relative; padding:0 0 15px 15px; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box }
+  .top-illustrate img{ width: 93px; height: auto; float: left; margin: 12px 16px 0 0px}
+  .top-illustrate .right{ padding: 17px 15px 0 0;color: rgba(0,0,0,0.54);}
+  .top-illustrate .right h1{ font-size: 16px; margin-bottom: 8px; color: #000000}
+  .top-illustrate p{ position: relative;}
+  .top-illustrate .ellipsis2{display: -webkit-box;overflow: hidden;text-overflow: ellipsis;word-wrap: break-word;word-break: break-all;white-space: normal !important;-webkit-line-clamp: 2;-webkit-box-orient: vertical; }
+  .top-illustrate p img{width: 18px; height: 18px; margin: 0px}
+  .top-illustrate p a{ display: inline-block;vertical-align: middle; cursor: pointer; position: absolute; right: 0px; bottom: 0px; background-color: #EEF6FC}
+  .ellipsis2.open a{transform:rotate(180deg);-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);  position: relative}
+  .top-illustrate .ellipsis2.open{ display: inline}
+  .but{ border-bottom: 1px solid rgba(0,0,0,0.12); line-height:40px; font-size: 14px;  padding: 0 15px; background: #fff; overflow: hidden;display: flex; align-items: center; justify-content: space-between}
+  .but dd{ text-align: center; display: inline-block;  }
+  .but dd a{ color: rgba(0,0,0,0.54);display: inline-block;line-height: 40px; position: relative }
+  .but dd .active{  color: rgba(0,0,0,0.87); }
+  .but dd .active:before{content: ''; position: absolute; width: 40px; height: 3px; border-radius: 3px;background: #2196F3; bottom: 0px; left: 50%; margin-left: -20px}
+
+  .lists li{ padding: 15px; position: relative; background: #fff; margin-bottom: 8px;border-bottom: 1px solid rgba(0,0,0,0.12);}
+  .lists li:last-child{  margin-bottom: 0px}
+  .lists h1{font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+  .lists h1 span{ color: rgba(249,100,103,1); display: inline-block; margin-right: 3px; font-size: 16px }
+  .lists h5{ position: relative; margin: 8px 0 10px 0; }
+  .lists p{display: -webkit-box;overflow: hidden;text-overflow: ellipsis;word-wrap: break-word;word-break: break-all;white-space: normal !important;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+  .img dd{ width:calc((100% - 24px) / 3); background: #f7f7f7 no-repeat center center; max-width: 200px }
+  .img dd span{height: 0px;display: block;  position: relative; padding-bottom: 100%;background: #f7f7f7 no-repeat center center;background-size: cover;}
+  .img{padding-top: 12px; display: flex; align-items: center; justify-content: space-between}
+  .img.two dd{width:calc((100% - 12px) / 2);  max-width: 100% }
+  .img.two dd span{ padding-bottom:65%;background-size: cover; }
+  .img.one dd{ width: 100%; max-width: 100%}
+  .img.one dd span{padding-bottom:46%;background-size: cover; }
+ </style>
+
+<article class="featureIndexCtrl" style="background: #F6F6F6;">
+    <div class="box">
+      <div class="top-illustrate">
+        <img src="pages/feature/images/yj1.png">
+        <div class="right">
+          <h1>我们的研究</h1>
+          <p class="ellipsis2" ng-class="{'open':aa}">
+            <span ng-bind="dataTetx"></span>
+            <a ng-show="textMore"><img src="pages/feature/images/zk.png" ng-click="aa = !aa"></a>
+          </p>
+        </div>
+      </div>
+      <div class="but">
+        <dd><a class="active" ng-click="getData(1)" ng-class="{'active':type==1}">项目研究</a></dd>
+        <dd><a ng-click="getData(2)" ng-class="{'active':type==2}">实践活动</a></dd>
+        <dd><a ng-click="getData(3)" ng-class="{'active':type==3}">对外展示</a></dd>
+        <dd><a ng-click="getData(4)" ng-class="{'active':type==4}">家长参与</a></dd>
+      </div>
+
+      <div class="lists">
+        <ul>
+          <li ng-click="goDetail()">
+            <h1>矫正幼儿任性行为的实践与研究</h1>
+            <h5 class="gray12">个别化研究小组&nbsp;&nbsp;&nbsp;2018-6-22</h5>
+            <p class="text14">付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款付款</p>
+            <div class="img">
+              <dd><span style="background-image: url('http://event.haizitong.com/hola/image/hola7.png')"></span></dd>
+              <dd><span style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')"></span></dd>
+              <dd><span style="background-image: url('http://event.haizitong.com/hola/image/hola7.png')"></span></dd>
+            </div>
+          </li>
+
+          <li ng-click="goDetail()">
+            <h1>矫正幼儿任性行为的实践与研究</h1>
+            <h5 class="gray12">个别化研究小组&nbsp;&nbsp;&nbsp;2018-6-22</h5>
+            <p class="text14">如果你无法简介的表达你的想法，那么只说明你还不够了解它。达你的想法，那么只说明你还不够了解它。达你的想法
+              ，那么只说明你还不够了解它不够了达你的想法，那么只说明你还不够了解它不够了达你的想法，那么只说明你还不够了解它不够了</p>
+            <div class="img two">
+              <dd><span style="background-image: url('http://event.haizitong.com/hola/image/hola1new.jpg')"></span></dd>
+              <dd><span style="background-image: url('http://www.chinamedia360.com/media_web/resources/images/index/zy-3.png')"></span></dd>
+            </div>
+          </li>
+
+          <li ng-click="goDetail()">
+            <h1>矫正幼儿任性行为的实践与研究</h1>
+            <h5 class="gray12">个别化研究小组&nbsp;&nbsp;&nbsp;2018-6-22</h5>
+            <p class="text14">如果你无法简介的表达你的想法，那么只说明你还不够了解它。达你的想法，那么只说明你还不够了解它。达你的想法
+              ，那么只说明你还不够了解它不够了达你的想法，那么只说明你还不够了解它不够了达你的想法，那么只说明你还不够了解它不够了</p>
+            <div class="img one">
+              <dd><span style="background-image: url('http://event.haizitong.com/hola/image/hola7.png')"></span></dd>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+</article>

@@ -1,0 +1,311 @@
+<div class="body-archives">
+    <!--模板1-->
+    <div class="page" id="page-model">
+        <div class="page-dd" data-tid="{{modelData.tid}}" ng-repeat="modelData in modularDataBase track by $index">
+
+            <!--&lt;!&ndash; 模板1 -8&ndash;&gt;-->
+            <div class="page{{modelData.tid}}-box" ng-if="modelData.tid!=9">
+                <div class="page-title"><strong><font ng-bind="modelData.title"></font><i></i></strong></div>
+                <div class="con">
+                    <div ng-repeat="img in modelData.fileArr" class="bgImg page{{modelData.tid}}-img{{$index+1}}" ng-style="{'background-image':'url('+(img.type=='i'?img.url+'/m':img.url+'/i')+')'}"></div>
+                    <a ng-repeat="img in modelData.fileArr" class="video{{$index+1}}" ng-if="img.type=='v'" ng-click="video(img.url)"><img src="image/archives/video.png"></a>
+                    <div class="tag" ng-if="modelData.showTag==1">
+                        <img ng-if="modelData.tag==1" src="image/archives/tag1.png">
+                        <img ng-if="modelData.tag==2" src="image/archives/tag2.png">
+                    </div>
+                    <div class="text{{$index+1}}" ng-repeat="text in modelData.textArr track by $index">
+                        <span ng-bind="text"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!--&lt;!&ndash; 模板9 &ndash;&gt;-->
+            <div class="page{{modelData.tid}}-box" ng-if="modelData.tid==9">
+                <div class="bg{{$index+1}}" ng-repeat="img in modelData.fileArr track by $index">
+                    <div class="bgImg img"  ng-style="{'background-image':'url('+(img.type=='i'?img.url+'/m':img.url+'/i')+')'}"></div>
+                    <a class="video" ng-if="img.type=='v'" ng-click="video(img.url)"><img src="image/archives/video.png"></a>
+                    <div class="path1" ng-if="$index==2&&modelData.fileArr.length==4"><img src="image/archives/Path1.png"></div>
+                    <div class="path1" ng-if="$index==3&&modelData.fileArr.length==5"><img src="image/archives/Path2.png"></div>
+                    <div class="path1" ng-if="$index==4&&modelData.fileArr.length==6"><img src="image/archives/Path3.png"></div>
+                </div>
+
+                <div class="text{{$index+1}}" ng-repeat="text in modelData.textArr track by $index">
+                    <img src="image/archives/sanjiao.png">
+                    <span ng-bind="text"></span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--&lt;!&ndash;模板2&ndash;&gt;-->
+    <!--<div class="page" id="page2">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page2-box">-->
+                <!--<div class="page-title"><strong>成长故事的名称最长的字数<i></i></strong></div>-->
+                <!--<div class="con">-->
+                    <!--<div class="bgImg page2-img1"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<div class="bgImg page2-img2"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video1"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video2"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="tag"><img src="image/archives/tag1.png"></div>-->
+                    <!--<div class="text1">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;模板3&ndash;&gt;-->
+    <!--<div class="page" id="page3">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page3-box">-->
+                <!--<div class="page-title"><strong>成长故事的名称最长的字数<i></i></strong></div>-->
+                <!--<div class="con">-->
+                    <!--<div class="bgImg page3-img1"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<div class="bgImg page3-img2"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video1"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video2"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="tag"><img src="image/archives/tag1.png"></div>-->
+                    <!--<div class="text1">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;模板4&ndash;&gt;-->
+    <!--<div class="page" id="page4">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page4-box">-->
+                <!--<div class="page-title"><strong>成长故事的名称最长的字数<i></i></strong></div>-->
+                <!--<div class="con">-->
+                    <!--<div class="bgImg page4-img1"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<div class="bgImg page4-img2"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video1"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video2"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="tag"><img src="image/archives/tag2.png"></div>-->
+                    <!--<div class="text1">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+                    <!--<div class="text2">-->
+                         <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;模板5&ndash;&gt;-->
+    <!--<div class="page" id="page5">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page5-box">-->
+                <!--<div class="page-title"><strong>成长故事的名称最长的字数<i></i></strong></div>-->
+                <!--<div class="con">-->
+                    <!--<div class="bgImg page5-img1"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<div class="bgImg page5-img2"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video1"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video2"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="tag"><img src="image/archives/tag2.png"></div>-->
+                    <!--<div class="text1">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+                    <!--<div class="text2">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;模板6&ndash;&gt;-->
+    <!--<div class="page" id="page6">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page6-box">-->
+                <!--<div class="page-title"><strong>成长故事的名称最长的字数<i></i></strong></div>-->
+                <!--<div class="con">-->
+                    <!--<div class="bgImg page6-img1"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<div class="bgImg page6-img2"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<a class="video1"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video2"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="tag"><img src="image/archives/tag2.png"></div>-->
+                    <!--<div class="text1">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;模板7&ndash;&gt;-->
+    <!--<div class="page" id="page7">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page7-box">-->
+                <!--<div class="page-title"><strong>成长故事的名称最长的字数<i></i></strong></div>-->
+                <!--<div class="con">-->
+                    <!--<div class="bgImg page7-img1"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<div class="bgImg page7-img2"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<div class="bgImg page7-img3"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<a class="video1"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video2"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video3"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="tag"><img src="image/archives/tag2.png"></div>-->
+                    <!--<div class="text1">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;模板8&ndash;&gt;-->
+    <!--<div class="page" id="page8">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page8-box">-->
+                <!--<div class="page-title"><strong>成长故事的名称最长的字数<i></i></strong></div>-->
+                <!--<div class="con">-->
+                    <!--<div class="bgImg page8-img1"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<div class="bgImg page8-img2"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<div class="bgImg page8-img3"-->
+                         <!--style="background-image: url('https://www.haizitong.com/image/holabanner.png')">-->
+                    <!--</div>-->
+                    <!--<a class="video1"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video2"><img src="image/archives/video.png"></a>-->
+                    <!--<a class="video3"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="tag"><img src="image/archives/tag2.png"></div>-->
+                    <!--<div class="text1">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+                    <!--<div class="text2">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+                    <!--<div class="text3">-->
+                        <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                            <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                        <!--</span>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;模板9&ndash;&gt;-->
+    <!--<div class="page" id="page9">-->
+        <!--<div class="page-dd">-->
+            <!--<div class="page9-box">-->
+                <!--<div class="bg1">-->
+                    <!--<div class="bgImg img" style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video"><img src="image/archives/video.png"></a>-->
+                <!--</div>-->
+
+                <!--<div class="bg2">-->
+                    <!--<div class="bgImg img" style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video"><img src="image/archives/video.png"></a>-->
+                <!--</div>-->
+
+                <!--<div class="bg3">-->
+                    <!--<div class="bgImg img" style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="path1"><img src="image/archives/Path1.png"></div>-->
+                <!--</div>-->
+
+                <!--<div class="bg4">-->
+                    <!--<div class="bgImg img" style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="path1"><img src="image/archives/Path2.png"></div>-->
+                <!--</div>-->
+
+                <!--<div class="bg5">-->
+                    <!--<div class="bgImg img" style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video"><img src="image/archives/video.png"></a>-->
+                    <!--<div class="path1"><img src="image/archives/Path3.png"></div>-->
+                <!--</div>-->
+
+                <!--<div class="bg6">-->
+                    <!--<div class="bgImg img" style="background-image: url('https://www.haizitong.com/image/holabanner.png')"></div>-->
+                    <!--<a class="video"><img src="image/archives/video.png"></a>-->
+                <!--</div>-->
+
+                <!--<div class="text1">-->
+                    <!--<img src="image/archives/sanjiao.png">-->
+                    <!--<span>文字文字文字文字文字文字文字文字文字文字文字文字-->
+                    <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                    <!--文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字-->
+                    <!--</span>-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+
+
+
+
+
+
+</div>
+
+

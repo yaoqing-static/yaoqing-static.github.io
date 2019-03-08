@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="js/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/adaption.css">
+
+</head>
+<body ng-app="myApp" ng-controller="feedback">
+<div class="loading">
+    <img src="image/loading.gif">
+</div>
+<article style="display: none" class="">
+
+    <div class="feed1">
+        <div class="close-1">
+            <div class="a1 {{useInf.gender==1?'girl':''}}">
+                <div class="img">
+                    <img ng-if="useInf.cover" src="{{useInf.cover}}">
+                    <img ng-if="!useInf.cover" src="{{useInf.gender==1?'image/girl.png':'image/man.png'}}">
+                </div>
+                <div class="con">
+                    <p ng-bind="useInf.firstName">&nbsp;</p>
+                    <span>班级&nbsp;{{className}}</span><span>年龄&nbsp;{{useInf.birthDay|getAge}}岁</span><br>
+                    <span>身高&nbsp;{{useInf.height}}cm</span><span>身高&nbsp;{{useInf.weight}}kg</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="time-search">
+        <div id="header" class="swiper-id">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide {{$first?'dq':''}}" ng-repeat="da in allDataOld">
+                    <input type="hidden" value="{{da.createAt}}">
+                    <span ng-click="timeChange($event,da.createAt)">{{da.createAt|format:'YYYY-MM-DD'}}</span>
+                    <a ng-click="seeFun(da.recordId)">查看</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="analysis-list">
+        <div class="list {{data.statistic.length==1?'':'swiper-list'}}" ng-repeat="data in allData" style="background: #fff">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide col-xs-1 {{data.statistic.length==1?'':(data.statistic.length==2?'co2':'co3')}}" ng-repeat="statistic in data.statistic">
+                    <div class="bar-model">
+                        <h1>{{(qualities |  filter:{qualityId:statistic.qualityId})[0].name}}</h1>
+                        <p class="time">{{data.createAt|format:'YYYY-MM-DD HH:mm'}}</p>
+                        <p>&nbsp;</p>
+                        <div class="bar-box">
+                            <b></b><b></b><b></b><b></b><b></b>
+                            <div class="data-box">
+                                <img src="">
+                                <dd ng-repeat="ta1a in statistic.levelTypes" style="height:{{ta1a.count|percent:statistic.levelTypes}}%">
+                                    <span><i>{{ta1a.count}}</i></span></span>
+                                    <strong>{{levelName[ta1a.levelType]}}</strong>
+                                </dd>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</article>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/plugin.min.js"></script>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+<script src="js/photoswipe/photoswipe.min.js"></script>
+<script src="js/photoswipe/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+
+<script type="text/javascript">
+    var authInfo='Basic NTkzNTE5YTRiNjIzY2E3OWIzOWE2ZmZjOjlkNDUwYjc4Y2JhNGMzYTI5MGJlMjliNDZkMzI5ZTcy';
+    myApp.filter('getAge',function() {
+        return function (arr) {
+            var da=moment().format("YYYY")-moment(arr).format("YYYY");
+            return da;
+        };
+    })
+
+    myApp.filter('percent',function() {
+        return function (da, data) {
+            var max = data[0].count;
+            var len = data.length;
+            for (var i = 1; i < len; i++) {
+                if (data[i].count > max) {
+                    max = data[i].count;
+                }
+            }
+            return  (da/max)*100
+        };
+    })
+
+    myApp.filter('format',function() {
+        return function (da, str) {
+            return moment(da).format(str);
+        };
+    })
+
+    myApp.controller('feedback', ["$scope", "$http", "$timeout",function ($scope, $http, $timeout) {
+        $scope.levelName={'0':'未达标','1':'水平1','3':'水平3','5':'水平5'}
+        $scope.role=getQueryString('role');
+        $scope.className=getQueryString('className');
+        $scope.CONFIG={
+            whoType: {
+                kid: 0,//孩子
+                dad: 1,//爸爸
+                mom: 2,//妈妈
+                nurseTeacher: 9,//保健老师
+                teacher: 10,//老师
+                master: 11,//园长
+                admin: 12//管理员
+            },
+            gender: {
+                secret: 0,
+                female: 1,
+                male: 2
+            },
+        }
+
+        var mySwiper2;
+
+        //获取质量领域列表
+        $.ajax({
+            url: '/2/s/evaluate/quality/list',
+            type: 'GET',
+            dataType: 'json',
+            async:false,
+            headers: {
+                "Authorization": window.authInfo
+            },
+            success: function(data) {
+                $scope.qualities=data.data;
+            },
+            error: function(e,status) {
+                if(e.status==401){
+                    console.log("no auth");
+                    HztUtil.callFun("tokenExpire", 1, {}, "fun" + Math.random());
+                }
+
+            }
+        });
+
+        $scope.allDataOld=[];
+        $scope.allData=[];
+        $scope.getDataDetail=function () {
+            $.ajax({
+                url: '/2/s/evaluate/statistic/student/quality/record?userId='+getQueryString('userId')+'&qualityId='+getQueryString('qualityId'),
+                type: 'GET',
+                dataType: 'json',
+                async:false,
+                headers: {
+                    "Authorization": window.authInfo
+                },
+                success: function(data) {
+                    $scope.allData=data.data;
+                    if(data.data.length>2){
+                        $scope.allData=[];
+                        $scope.allData.push(data.data[0]);
+                        $scope.allData.push(data.data[1]);
+                        $timeout(function () {
+                            $(".swiper-slide").eq(1).addClass("dq")
+                        })
+                    }
+
+                    $scope.allDataOld=data.data;
+                    $timeout(function () {
+                        var mySwiper1 = new Swiper('.swiper-id',{
+                            freeMode : true,
+                            slidesPerView : 'auto',
+                        });
+                        mySwiper2 = new Swiper('.swiper-list',{
+                            freeMode : true,
+                            slidesPerView : 'auto',
+                        });
+                    })
+
+
+
+                },
+                error: function(e,status) {
+                    if(e.status==401){
+                        console.log("no auth");
+                        HztUtil.callFun("tokenExpire", 1, {}, "fun" + Math.random());
+                    }
+
+                }
+            });
+        }
+        $scope.getDataDetail()
+
+
+        $.ajax({
+            url: '/2/s/batch/user',
+            type: 'post',
+            dataType: 'json',
+            data:{id:getQueryString('userId')+'.0'},
+            async:false,
+            headers: {
+                "Authorization": window.authInfo
+            },
+            success: function(data) {
+                $scope.useInf=data.data[0]
+            },
+            error: function(e,status) {
+                if(e.status==401){
+                    console.log("no auth");
+                    HztUtil.callFun("tokenExpire", 1, {}, "fun" + Math.random());
+                }
+
+            }
+        });
+
+
+        $scope.timeChange=function (event) {
+
+            var target=event.currentTarget;
+            if($(target).parents('.swiper-slide').hasClass('dq')){//取消
+                if($(target).parents('.swiper-wrapper').find('.dq').length<=1){
+                    return
+                }
+                $(target).parents('.swiper-slide').removeClass("dq")
+            }else {//添加
+                $(target).parents('.swiper-slide').addClass("dq")
+            }
+            $scope.allData=[];
+
+            $('.swiper-slide.dq').each(function () {
+                var time=$(this).find("input").val()
+                for(var i=0;i<$scope.allDataOld.length;i++){
+                    if(time==$scope.allDataOld[i].createAt){
+                        $scope.allData.push($scope.allDataOld[i])
+                        break
+                    }
+                }
+            })
+            $timeout(function () {
+                $timeout(function () {
+                    mySwiper2.init();
+                })
+            })
+
+
+
+        }
+
+        $scope.seeFun=function (id) {
+            HztUtil.callFun("open", 1, '{"path": "ktapp://kt.evaluate.detail?id='+id+'"}',"fun" + Math.random());
+        }
+
+
+        //页面渲染完成
+        $scope.$watch('$viewContentLoaded', function() {
+            $("article").show()
+            $(".loading").hide()
+        });
+
+
+
+    }])
+
+
+
+
+
+
+    window.onload=function () {
+        //console.log(document.body.offsetHeight )
+        HztUtil.callFun("pageInfo", 1, '{"height": '+document.body.offsetHeight +'}',"fun" + Math.random());
+    }
+
+
+</script>
+
+
+</body>
+</html>

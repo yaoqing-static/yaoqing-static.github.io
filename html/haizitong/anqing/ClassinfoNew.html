@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/laypage.css">
+<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+    #gender-td .select2-container {
+        margin-bottom: 0;
+    }
+
+    #post-table tr td {
+        vertical-align: middle;
+    }
+
+    #post-table tr:nth-child(2) td:first-child, #post-table tr:nth-child(2) td:last-child {
+        padding-top: 15px;
+    }
+
+    .quiz-op-item div {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block
+    }
+
+    .titlenam {
+        overflow: hidden;
+        height: 17px;
+        width: 241px;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .btn-group {
+        display: block;
+        margin: 10px 0 10px 0;
+        overflow: hidden;
+    }
+
+    .radio, .checkbox {
+        margin-top: 0px
+    }
+
+    .addname1 {
+        display: inline-block;
+        padding-right: 20px
+    }
+
+    .btn-group.bootstrap-select {
+        margin-top: 0px
+    }
+
+    .btn-default, .btn-default:focus, .btn-default:hover {
+        background-color: #1abc9c
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .marrt {
+        margin-right: 10px
+    }
+
+    .my-pager {
+        text-align: right
+    }
+
+    .teacherSelet .select2-search-field input[type=text] {
+        color: #B3B0B0;
+        margin-top: 0px
+    }
+   #tableList tbody{ display: none}
+</style>
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="navbar navbar-default" role="navigation" data-target="#self-nav">
+    <div class="navbar-inner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                上海交通大学管理后台
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="self-nav">
+            <div class="pull-right">
+                <img class="head-icon" src="http://minhang.haizitong.com/2/app/images/icon_mh.png">
+
+                <div>
+                    <a href="#">吴长朋</a><span class="my-tips">&nbsp;|&nbsp;</span><a href="#">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-2">
+                    <ul class="nav nav-pills nav-stacked menu">
+
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-th-list menu-title"></span>&nbsp;&nbsp;&nbsp;班级管理
+                        </li>
+                        <li role="presentation" class="menu-item active"><a href="ClassinfoNew.html">班级信息</a></li>
+                        <li role="presentation" class="menu-item"><a href="ClassiImport.html">班级导入</a></li>
+                        <li role="presentation" class="menu-title"><span
+                                class="glyphicon glyphicon-cog menu-title"></span>&nbsp;&nbsp;&nbsp;自评管理
+                        </li>
+                        <li role="presentation" class="menu-item"><a href="MonitoringGroup.html">课程监控小组</a></li>
+                        <li role="presentation" class="menu-item"><a href="Observation.html">观测点管理</a></li>
+                        <li role="presentation" class="menu-item"><a href="StaffManag.html">观测员工管理</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    班级信息
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button style="border-right: 1px solid #13A7A7" ng-click="add(user.id,0)" type="button"
+                                class="btn btn-primary btn-sm font-14"><span
+                                class="glyphicon glyphicon-plus"></span>新增
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm font-14" ng-click="delteAll($event)">批量删除
+                        </button>
+                    </div>
+                    <table id="tableList" class="table table-hover" style="border:1px solid #CCC">
+                        <thead>
+                        <tr class="catalog-header">
+                            <th width="50"><label style="margin-top: -20px" class="checkbox"><input
+                                    ng-click="SelectAll($event)" type="checkbox" data-toggle="checkbox"
+                                    id="imglibrary-select-all"></label></th>
+                            <th width="20%">所属园区</th>
+                            <th>班级名称</th>
+                            <th>所属年级</th>
+                            <th>负责老师</th>
+                            <th width="100">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="user in ClassTable1.information" on-finish-render-filters>
+                            <td width="50"><label class="checkbox"><input type="checkbox" data-toggle="checkbox"
+                                                                          id="imglibrary-pic-{{user.id}}"></label></td>
+                            <td>{{ user.park}}</span></td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.grade}}</td>
+                            <td>{{ user.teacher }}</td>
+                            <td><a class="marrt" ng-click="add(user.id,1)">编辑</a><a class="marrt"
+                                                                                    ng-click="deleteID(user.id)">删除</a>
+                            </td>
+                        </tr>
+                        <tr class="nonelist" style="display: none;">
+                            <td colspan="8" style="text-align:center">没有数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="my-pager">
+                    </div>
+                </div>
+                <!-- col-xs-10结束 -->
+            </div>
+        </div>
+    </div>
+    <!-- 以下模态对话框根据需求选择性使用 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div id="myModalContent" class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <span><button type="button" class="btn btn-primary" id="btn-modal-confirm">确认</button></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增班级内容信息 -->
+    <div id="myStatucModle" class="hidden">
+        <div class="con">
+            <div class="col-sm-12"><span class="addname1">所属园区</span>
+                <select name="park" class="form-control select select-primary mrs mbm select-sm park"
+                        style="width: 300px;">
+                    <option value="0">请选择</option>
+                    <option value="{{parkM.name}}" ng-repeat="parkM in park">{{parkM.name}}</option>
+                </select>
+            </div>
+            <div class="col-sm-12"><span class="addname1">班级名称</span>
+                <input type="text" maxlength="10" style="width: 300px; display: inline-block"
+                       class="form-control className" name="picName" value="">
+            </div>
+            <div class="col-sm-12" style="margin-top: 10px"><span class="addname1">所属年级</span>
+                <select name="grade" class="form-control select select-primary mrs mbm select-sm grade"
+                        style="width: 300px;">
+                    <option value="0">请选择</option>
+                    <option value="{{gradeM.name}}" ng-repeat="gradeM in grade">{{gradeM.name}}</option>
+                </select>
+            </div>
+            <div class="col-sm-12" style="margin-top: 10px"><span class="addname1">负责老师</span>
+
+                <div style="width: 300px; display: inline-block" class="teacherSelet">
+                    <select multiple class="form-control select multiselect multiselect-primary mrs mbm"
+                            placeholder="请选择" style="width: 300px;">
+                        <option value="{{teacherM.name}}" ng-repeat="teacherM in teacher">{{teacherM.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/flat-ui.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/jquery.spin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/laypage.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+    var myApp = angular.module('myApp', []);
+    //渲染完成后
+    myApp.directive('onFinishRenderFilters', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+    myApp.controller('userCtrl', function ($scope, $http, $timeout,$compile) {
+        $scope.Aalert = function (n) {
+            alert(n)
+        }
+        $scope.park = [
+            {
+                id: "1",
+                name: "三泉园"
+            },
+            {
+                id: "2",
+                name: "平顺园"
+            }
+        ];
+        $scope.grade = [
+            {
+                id: "1",
+                name: "小班"
+            },
+            {
+                id: "2",
+                name: "中班"
+            },
+            {
+                id: "3",
+                name: "大班"
+            }
+        ];
+        $scope.teacher = [
+            {
+                id: "1",
+                name: "王老师"
+            },
+            {
+                id: "2",
+                name: "张老师"
+            },
+            {
+                id: "3",
+                name: "李老师"
+            }
+        ];
+        //$timeout(function () {
+        $scope.ClassTable1 = {count: 0, information: []};
+        var classCount = $scope.ClassTable1.count;
+        $scope.getData = function (page) {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "page=" + page
+            }).success(function (data) {
+                $scope.ClassTable1 = data;
+                resetPage();
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.get_class_data_failed);
+                //TODO 以下为测试代码
+                $scope.ClassTable1 = {
+                    count: 38,
+                    information: [
+                        {
+                            id: "a1",
+                            park: "平顺园",
+                            name: "小一班1",
+                            grade: "小班",
+                            teacher: "王老师，李老师"
+                        }, {
+                            id: "a2",
+                            park: "三泉园",
+                            name: "小一班2",
+                            grade: "中班",
+                            teacher: "李老师，张老师"
+                        }, {
+                            id: "a3",
+                            park: "三泉园",
+                            name: "小一班3",
+                            grade: "大班",
+                            teacher: "王老师，张老师"
+                        }]
+                };
+                resetPage();
+            });
+        }
+        $scope.getData(1);
+
+        //全选
+        $scope.SelectAll = function ($event) {
+            var target = $event.currentTarget;
+            if ($(target).is(":checked")) {
+                $("input[id^='imglibrary-pic-']").prop("checked", true);
+            } else {
+                $("input[id^='imglibrary-pic-']").removeAttr("checked");
+            }
+        }
+        //批量删除按钮
+        var deleteId = [];
+        $scope.delteAll = function ($event) {
+            var target = $event.currentTarget;
+            deleteId=[];
+            $("input[id^='imglibrary-pic-']").each(function () {
+                if ($(this).is(":checked")) {
+                    deleteId.push($(this).attr("id").split("-")[2])
+                }
+            })
+            if (deleteId.length == 0) {
+                showErrorAlert("请选择删除班级");
+                return;
+            }
+            initModal(CONFIG.STR.delete_title, CONFIG.STR.delete_class_hint, delteAllfun);
+        }
+        function delteAllfun(){
+            alert(deleteId)
+            $("#myModal").modal("hide");
+        }
+        $scope.resetBut = function(){
+            $(".modal-footer span").html(
+                    $compile(
+                            $("#btn-modal-confirm").get(0).outerHTML
+                    )($scope)
+            )
+        }
+
+        //单个删除
+
+        $scope.deleteID = function (ID) {
+            $scope.ID=ID;
+            initModal(CONFIG.STR.delete_title, CONFIG.STR.delete_class_hint, "DeleteIDfun('"+ID+"')");
+            $scope.resetBut();
+        }
+        $scope.DeleteIDfun= function (ID) {
+            $http({
+                url: "aaa",
+                type: "GET",
+                data: "id="+ID
+            }).success(function (data) {
+                $scope.ClassTable1 = data;
+                $("#myModal").modal("hide");
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.delete_class_failed);
+                //TODO 以下为测试代码
+                alert(ID)
+                $scope.ClassTable1 = {
+                    count: 10,
+                    information: [
+                        {
+                            id: "a1",
+                            park: "平顺园",
+                            name: "小一班1",
+                            grade: "小班",
+                            teacher: "王老师，张老师"
+                        }, {
+                            id: "a2",
+                            park: "三泉园",
+                            name: "小一班2",
+                            grade: "中班",
+                            teacher: "王老师，张老师"
+                        }]
+                };
+                $("#myModal").modal("hide");
+            });
+        }
+
+
+
+
+        //编辑
+        $scope.type = 0;
+
+        $scope.add = function (ID, type) {//type默认是新建1是编辑
+            var $model = $("#myStatucModle .con").clone(false);
+            initModal(CONFIG.STR.ADD_CLASS.add_class_title, $model,"addSet('"+ID+"')");
+            $scope.resetBut();
+            $(".modal .park  option").removeAttr("selected");
+            $(".modal .grade  option").removeAttr("selected");
+            $(".modal .park  option[value='0'] ").attr("selected", true)
+            $(".modal .grade  option[value='0'] ").attr("selected", true)
+            //编辑
+            if (type == 1) {
+                $scope.type = 1;
+                var thiseq = $scope.GetIndex(ID);
+                $(".modal .className").val($scope.ClassTable1.information[thiseq].name);
+                $(".modal .park  option[value='" + $scope.ClassTable1.information[thiseq].park + "'] ").attr("selected", true)
+                $(".modal .grade  option[value='" + $scope.ClassTable1.information[thiseq].grade + "'] ").attr("selected", true);
+                var StrTeacher = $scope.ClassTable1.information[thiseq].teacher.split("，");
+                $(".teacherSelet select option").prop("selected", false);
+                for (var i = 0; i < StrTeacher.length; i++) {
+                    //console.log(StrTeacher[i])
+
+                    $(".teacherSelet select option[value='" + StrTeacher[i] + "'] ").prop("selected", true);
+                }
+            }
+            $model.find(".select").select2();
+        }
+        $scope.GetIndex = function (id) {
+            for (var i = 0; i < $scope.ClassTable1.information.length; i++) {
+                if ($scope.ClassTable1.information[i].id == id) {
+                    return i;
+                    break;
+                }
+            }
+        }
+        $scope.getPage = function (page) {
+            $scope.getData(page);
+        }
+        $scope.$on('ngRepeatFinished', function (rfe) {
+            //下面是在table render完成后执行的js
+            //console.log(rfe);
+            $("[data-toggle='checkbox']").radiocheck();
+            $("#tableList tbody").show()
+        });
+        //调用分页
+        function resetPage() {
+            if (classCount != $scope.ClassTable1.count) {
+                classCount = $scope.ClassTable1.count;
+                laypage({
+                    cont: $(".my-pager"),
+                    pages: Math.ceil($scope.ClassTable1.count / 10),
+                    jump: function (obj, first) {
+                        console.log(obj.curr);
+                        if (!first) {
+                            $scope.getPage(obj.curr);
+                        }
+                    }
+                })
+            }
+        }
+
+        //添加确定方法
+        $scope.addSet = function (userId) {
+            console.log("addSet - userId: " + userId);
+            var name = $(".modal .className").val();
+            var park = $(".modal .park option:selected").text();
+            var grade = $(".modal .grade option:selected").text();
+            var teacher = [];
+            for (var i = 0; i < $(".modal .teacherSelet select option:selected").length; i++) {
+                teacher.push($(".modal .teacherSelet select option:selected").eq(i).text())
+            }
+            console.log($(".modal .teacherSelet select option:selected").length)
+            if (name == '') {
+                showErrorAlert(CONFIG.STR.ADD_CLASS.empty_class_name);
+                return
+            }
+            if (name.length > 10) {
+                showErrorAlert(CONFIG.STR.ADD_CLASS.reach_max_len_class_name);
+                return
+            }
+            if (park == "请选择") {
+                showErrorAlert(CONFIG.STR.ADD_CLASS.empty_park);
+                return
+            }
+            if (grade == "请选择") {
+                showErrorAlert(CONFIG.STR.ADD_CLASS.empty_grade);
+                return
+            }
+            if (teacher == "") {
+                showErrorAlert(CONFIG.STR.ADD_CLASS.empty_teacher);
+                return
+            }
+            if (teacher.length > 3) {
+                showErrorAlert(CONFIG.STR.ADD_CLASS.reach_max_len_teacher_num);
+                return
+            }
+            var sendInf = {"name": name, "park": park, "grade": grade, "teacher": teacher};
+            if ($scope.type == 1) {
+                sendInf.id = userId;
+            }
+
+
+            $http({
+                url: "aaa",
+                type: "POST",
+                data: "sendInf=" + sendInf
+            }).success(function (data) {
+                showErrorAlert(CONFIG.STR.ADD_GROUP.Save_GROUP_title);
+                var userIndex=$scope.GetIndex(data.userId);
+                if ($scope.type != 1) {
+                    $scope.getData(1);//新建的话重新获取下第一页数据
+                } else {
+                    //编辑的更改数据显示
+                    $scope.ClassTable1.information[userIndex].park=data.park;
+                    $scope.ClassTable1.information[userIndex].name=data.name;
+                    $scope.ClassTable1.information[userIndex].grade=data.grade;
+                    $scope.ClassTable1.information[userIndex].teacher=data.teacher.join(",");
+                }
+                $("#myModal").modal("hide");
+            }).error(function () {
+                showErrorAlert(CONFIG.STR.ADD_GROUP.Save_GROUP_error);
+                //TODO 以下为测试代码
+                var userIndex=$scope.GetIndex(userId);
+                if ($scope.type != 1) {
+                    $scope.getData(1);//新建的话重新获取下第一页数据
+                } else {
+                    //编辑的更改数据显示
+                    $scope.ClassTable1.information[userIndex].park=sendInf.park;
+                    $scope.ClassTable1.information[userIndex].name=sendInf.name;
+                    $scope.ClassTable1.information[userIndex].grade=sendInf.grade;
+                    $scope.ClassTable1.information[userIndex].teacher=sendInf.teacher.join("，");
+                }
+                $("#myModal").modal("hide");
+                console.log($scope.ClassTable1)
+            });
+
+            console.log(sendInf)
+
+        }
+    })
+
+
+</script>
+</body>
+</html>
+			

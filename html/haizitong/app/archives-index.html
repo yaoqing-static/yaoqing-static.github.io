@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="assets/js/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="assets/js/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/archives.css">
+    <link rel="stylesheet" href="assets/css/prismplayer.css"/>
+
+</head>
+<body ng-app="myApp" ng-controller="feedback" style="overflow-x: hidden">
+<img src="image/archives/top2.png" style="display: none">
+<div class="music" ng-show="data.musicUrl">
+    <img class="animate" src="image/archives/yingyue.png">
+</div>
+<article>
+    <!--<a id="video">视频</a>-->
+    <!--<a id="pic">照片</a>-->
+    <div class="scale-model">
+        <script type="text/javascript" src="assets/js/jquery.js"></script>
+        <script>
+            $(window).resize(function () {
+                resize()
+            })
+            function resize() {
+                var phoneWidth = parseInt($(window).width())
+                var phoneScale = phoneWidth / 750;
+                if (phoneWidth < 750) {
+                    $(".scale-model").css({
+                        "transform": "scale(" + phoneScale + ")",
+                        "-ms-transform": "scale(" + phoneScale + ")",
+                        "-moz-transform": "scale(" + phoneScale + ")",
+                        "-webkit-transform": "scale(" + phoneScale + ")",
+                        "-o-transform": "scale(" + phoneScale + ")"
+                    });
+                } else {
+                    $(".scale-model").css({
+                        "transform": "scale(1)",
+                        "-ms-transform": "scale(1)",
+                        "-moz-transform": "scale(1)",
+                        "-webkit-transform": "scale(1)",
+                        "-o-transform": "scale(1)",
+                    });
+                }
+            }
+            resize()
+        </script>
+
+
+
+
+        <div class="top-img"><img src="image/archives/caihongtiao.png"></div>
+
+        <!--首页 园所  ng-if="data.schoolMessage"-->
+        <div class="home" ng-if="data.schoolPhoto">
+            <div class="mo1">
+                <div class="img1" ng-style="{'background-image':'url('+data.schoolPhoto+'/m)'}"></div>
+            </div>
+            <div class="mo2">
+                <img src="image/archives/top1.png">
+                <div class="text">
+                    <span ng-bind="data.schoolMessage">介绍</span>
+                </div>
+                <img class="bot" src="image/archives/top3.png">
+            </div>
+        </div>
+
+        <!--全家福 班级-->
+        <div class="family-portraits" ng-if="data.photo||data.photo==''">
+            <div class="a1">
+                <div class="bgImg pic" ng-style="{'background-image':'url('+data.photo+'/m)'}"></div>
+                <div class="title">
+                      <p>
+                          <span ng-bind="data.className+'全家福'">成长快乐班</span>
+                          <i></i>
+                      </p>
+                </div>
+            </div>
+            <div class="a2 clearfix">
+                <div class="left"
+                     ng-style="{'background-image':'url(image/archives/banjiquanjiafu_laoshi'+(data.teachers.length>3?3:data.teachers.length)+'.png)'}">
+                    <div class="bg">
+                        <dd ng-repeat="te in data.teachers | limitTo: 3" ng-bind="te">老师名称</dd>
+                    </div>
+                </div>
+                <div class="right">
+                    <p ng-bind="data.message">班级介绍</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="line1" ng-if="data.photo"><img src="image/archives/line1.png"></div>
+
+        <!--个人信息-->
+        <div class="personal-information" ng-style="{'background-image':'url('+(perInfImg?'image/archives/inf2.png':'image/archives/inf1.png')+')'}">
+            <div class="bgImg child-pic" ng-if="data.kidIcon" ng-style="{'background-image':'url('+data.kidIcon+'/t)'}"></div>
+            <div class="bgImg child-pic" ng-if="!data.kidIcon" ng-style="{'background-image':'url('+(data.kidGender==1?'image/archives/girl.png':'image/archives/boy.png')+')'}"></div>
+            <div style="height: 253px"></div>
+            <div class="name" ng-bind="data.kidName" style="height: 21px">美美美美</div>
+            <div class="name" style="margin:105px 0 0 522px; height: 40px;padding: 0px"><span ng-bind="data.birthDay|getAge"></span></div>
+            <div class="name" ng-bind="data.className" style="padding:32px 0 0 373px">快乐成长班级</div>
+            <div class="name" style="margin:320px 0 0 158px;padding: 0px; height: 40px" ng-cloak>
+                <span style="display: inline-block; width: 175px" ng-cloak><font ng-if="data.height" ng-bind="data.height.toFixed(2)+'cm'"></font></span><font ng-if="data.weight" ng-bind="data.weight.toFixed(2)+'kg'"></font>
+            </div>
+            <div class="name" style="padding:0px;margin:84px 0 0 159px;padding: 0px; height: 40px" ng-cloak>
+                <span style="display: inline-block; width: 175px" ng-cloak><font ng-if="data.leftEye" ng-bind="data.leftEye.toFixed(2)"></font></span><font ng-if="data.rightEye" ng-bind="data.rightEye.toFixed(2)"></font>
+            </div>
+            <div class="name" style="padding:70px 0 0 159px" ng-cloak><font ng-if="data.hematin" ng-bind="data.hematin+'q/ml'"></font></div>
+        </div>
+        <div class="line1" ng-if="(modularData.length>0)||(data.labels.length>0)"><img src="image/archives/line2.png"></div>
+
+        <!--模块部分-->
+        <div class="modular" ng-if="modularData.length>0">
+            <div class="content"></div>
+            <div class="img" ng-if="data.labels.length>0"><img src="image/archives/line3.png"></div>
+        </div>
+
+
+        <!--我的优点-->
+        <div id="yd"></div>
+        <div class="personal-youdian" ng-if="data.labels.length>0">
+            <div class="bg">
+                <div class="a1">
+                    <div class="n1 no{{$index+1}}" ng-repeat="lable in data.labels track by $index" ng-bind="lable">我的特长列子</div>
+                    <!--<div class="n1 no2"><span>我的特长列子</span></div>-->
+                    <!--<div class="n1 no3">我的特长列子</div>-->
+                    <!--<div class="n1 no4"><span>我的特长列子</span></div>-->
+                </div>
+                <div class="a2" ng-if="data.labels==0"><img src="image/archives/kong.png"></div>
+            </div>
+            <div style="clear: both"></div>
+            <div class="text1">
+                <img src="image/archives/sanjiao.png">
+                {{data.remark}}
+            </div>
+
+
+        </div>
+
+
+        <div class="top-img" style="padding-top: 80px;"><img style="vertical-align: bottom" src="image/archives/caihongtiao.png"></div>
+    </div>
+
+
+
+    <audio loop="loop" style="display: none" id="audio" preload="" ></audio>
+</article>
+
+<div class="video-box" style="display:none">
+    <a class="close"><span></span></a>
+    <div style="position: absolute; width: 100%; left: 0px;bottom: 0"><div id="J_prismPlayer" class="prism-player"></div></div>
+
+</div>
+
+<div template></div>
+
+<script type="text/javascript" src="assets/js/archives-android.js"></script>
+<script type="text/javascript" src="assets/js/hzt-util.js"></script>
+<script type="text/javascript" src="assets/js/moment.js"></script>
+<script type="text/javascript" src="assets/js/angular.min.js"></script>
+<script type="text/javascript" src="assets/js/prismplayer.js"></script>
+<script type="text/javascript" src="assets/js/photoswipe/photoswipe.min.js"></script>
+<script type="text/javascript" src="assets/js/photoswipe/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript">
+
+    //计算年龄
+    function getAgeMonth(str) {
+        var da = str.split("-");
+        var nowD = new Date();  //
+        var rtn = {};
+        rtn.year = nowD.getFullYear() - da[0];
+        rtn.month = nowD.getMonth() + 1 - da[1];
+        if (rtn.month < 0) {
+            rtn.year--;
+            rtn.month += 12;
+        }
+        return rtn;
+    }
+    myApp.directive('template', ['$document', function ($document) {
+        return {
+            templateUrl: 'assets/template.html',
+            link: function (scope, element, attr) {
+
+            }
+        };
+    }]);
+
+    myApp.filter('imgFile', function () {
+        return function (arr) {
+            var da = arr+'/m';
+            return da;
+        };
+    })
+
+    myApp.filter('getAge',function() {
+        return function (arr) {
+            var str='';
+            //var dqDate=moment().format("YYYY-MM-DD");
+            var birthDay=moment(arr).format("YYYY-MM-DD");
+            var d=getAgeMonth(birthDay)
+            if(d.year!=0){
+                str+= d.year+"岁";
+
+            }
+            if(d.month!=0){
+                str+= d.month+"月";
+            }
+            return str;
+        };
+    })
+
+    myApp.controller('feedback', function ($scope, $http, $timeout,$compile,$document) {
+        var pageIndex=1;
+        var pageCount=5;
+        $("#video").click(function () {
+            video("http://minhang.haizitong.com/2/ali/v/8bfab1521ed840fa81acde86cab1822a");
+        })
+        $("#pic").click(function () {
+            var image = new Image();
+            image.src = "image/archives/test1.jpg";
+            image.onload = function () {
+                var items = [
+                    {
+                        src: "image/archives/test1.jpg",
+                        w: image.width,
+                        h: image.height
+                    }
+                ];
+                openPhotoSwipe(items)
+            }
+        })
+
+
+        function isEmptyStr(v) {return v == undefined || v == null || $.trim(v) == "" || v == 0;}
+
+        //start 音乐播放
+        var isPlaying = true;
+        var container = document.querySelector('.music');
+        var image = container.querySelector('img');
+        image.addEventListener('click', function bindEvent() {
+            isPlaying ? pause() : play();
+        });
+        function pause() {
+            isPlaying = false;
+            $(".music img").attr("src","image/archives/jingyin.png")
+            $("#audio").get(0).pause();
+            var iTransform = getComputedStyle(image).transform;
+            var cTransform = getComputedStyle(container).transform;
+            container.style.transform = cTransform === 'none'
+                ? iTransform
+                : iTransform.concat(' ', cTransform);
+            image.classList.remove('animate');
+        }
+
+        function play() {
+            isPlaying = true;
+            $(".music img").attr("src","image/archives/yingyue.png")
+            $("#audio").get(0).play();
+            image.classList.add('animate');
+        }
+        //微信自动播放
+        function audioAutoPlay(id){
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        //end 音乐播放
+
+        function getModularPage() {
+            $http.get("template-archives.html").success(function (data) {
+                var $Template=$(data);
+                var page=$compile($Template.find("#page-model").html())($scope)
+                $(".modular .content").append(page)
+            }).error(function (e) {
+                console.log(e)
+            })
+        }
+        $scope.studentRecordId=getQueryString('studentRecordId');
+
+        $scope.perInfImg=true;
+
+        $http.get("/2/archive/student/record/show?studentRecordId="+$scope.studentRecordId+"&t="+getQueryString('t')).success(function (data) {
+            getData(data);
+        }).error(function(e,status) {
+            e.status=status;
+           console.log(e)
+        });
+
+
+
+
+        function getData(data) {
+            if(data.musicUrl!=undefined&&data.musicUrl!=''){
+                $("#audio").attr("src",data.musicUrl)
+                audioAutoPlay("audio")//音乐播放
+                callNative('hasAudio', 1, "audio");
+            }
+//            console.log(data)
+            $scope.data=data;
+            $scope.modularDataBase=[];
+            $scope.modularData=[];
+            for(var i=0;i<data.stories.length;i++){
+
+                $scope.modularData.push(JSON.parse(data.stories[i].detail));
+                if(data.stories[i].parentDetail&&data.stories[i].parentDetail!=""){
+                    $scope.modularData.push(JSON.parse(data.stories[i].parentDetail));
+                }
+            }
+            ///height  weight leftEye rightEye hematin
+            if(isEmptyStr($scope.data.height)&&isEmptyStr($scope.data.weight)&&isEmptyStr($scope.data.leftEye)&&isEmptyStr($scope.data.rightEye)&&isEmptyStr($scope.data.hematin)){
+                $scope.perInfImg=false;
+            }
+            console.log($scope.modularData)
+
+//            $scope.modularData.unshift({
+//                tid:9,
+//                textArr:['111111111'],
+//                fileArr:[
+//                    {type:"i",url:"http://udev.haizitong.com/2/ali/i/579665a87932496eb6f58431b49479c1"},
+//                    {type:"i",url:"http://udev.haizitong.com/2/ali/i/579665a87932496eb6f58431b49479c1"},
+//                    {type:"i",url:"http://udev.haizitong.com/2/ali/i/579665a87932496eb6f58431b49479c1"}
+//                    ]
+//            })
+            getModularPage();
+        }
+
+        var data=data1;
+        getData(data);
+
+
+
+
+        //$compile($Template)($scope)
+
+        function pageHtml() {
+            var end=pageCount*(pageIndex-1)
+            $scope.modularDataBase=$scope.modularData.slice(0,pageCount*pageIndex);
+
+        }
+        
+        $(".music").click(function () {
+
+        })
+
+        $timeout(function () {
+            $(window).scroll(function () {
+                if($scope.modularDataBase.length==$scope.modularData.length){
+                    $(window).unbind('scroll')
+                }
+                var scrtop=$(window).scrollTop();
+                var modelTop=$("#yd").offset().top-1500;
+                if(scrtop>modelTop){
+                    pageHtml()
+                    pageIndex++
+                    $scope.$apply()
+                }
+            })
+        })
+
+
+
+        // 初始化播放器
+        var flashPlayer = new prismplayer({
+            id: "J_prismPlayer", // 容器id
+            source: "",        // 视频url
+            width: "100%",       // 播放器宽度
+            height: "90%",     // 播放器高度
+            playsinline:true,
+            autoplay: false
+        });;
+        $scope.video=function (url) {
+            flashPlayer.dispose();
+            $('#J_prismPlayer').empty();
+            flashPlayer= new prismplayer({
+                id: "J_prismPlayer", // 容器id
+                source: url,        // 视频url
+                width: "100%",       // 播放器宽度
+                height: "90%",     // 播放器高度
+                playsinline:true,
+                autoplay: false
+            });
+
+            $("#audio").get(0).pause();
+            $(".video-box").show()
+            flashPlayer.play();
+        }
+        $(".video-box .close").click(function () {
+            flashPlayer.pause();
+            $(".video-box").hide()
+        })
+
+
+
+
+    
+
+    })
+
+
+
+</script>
+
+</body>
+</html>
