@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<title> - </title>
+<meta name="Copyright" content="mbaobao.com" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="areadata.js"></script>
+<script type="text/javascript" src="live_to_payment.js"></script>
+</head>
+<body>
+<table align="center" border="0" cellpadding="0" cellspacing="0"  style="width:600px">
+            <tr>
+                <td align="left"  height="30" style="vertical-align: bottom;" colspan="2">&nbsp;货到付款范围查询：</td>
+            </tr>
+			<tr><td colspan="2" height="38" width="600">请选择您所在的区域：</td>
+			</tr>
+            <tr>
+                <td width="600" height="34" colspan="2" align="left">省份
+                  <select id="Select1" name="Select1" style="width:120px"></select>
+				<span></span>
+				城市
+				<select id="Select2" name="Select2" style="width:120px"></select>
+				区县<span></span>
+				<select id="Select3" name="Select3" onchange="show(this.value)" style="width:120px"></select>	
+              </td>
+            </tr>
+			<tr><td colspan="2" height="19" width="600"></td>
+			</tr>
+            <tr>
+                <td valign="top" colspan="2" height="6" width="600">
+				    <hr style="color: #808080; text-align: center; text-indent: 8px;"  width="100%" />
+                </td>
+            </tr>
+            <tr>
+                <td width="150" height="28" valign="top" style="color: #FF0000"><span>邮编：</span></td>
+                <td width="350" id="postcode"></td>
+            </tr>
+        </table>
+		</body>
+		</html>
+    

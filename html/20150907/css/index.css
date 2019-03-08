@@ -1,0 +1,71 @@
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td{ -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; -webkit-tap-highlight-color:rgba(0,0,0,0); font-size: 1em; font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti; color: #4c4948; }
+html,body{ min-height:100%; }
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;} 
+ol,ul { list-style:none; } 
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus{ outline:none; }
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+a{ color: #4c4948; text-decoration: none; }
+
+/*phone*/
+body{
+	margin: auto;
+	/*背景  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8AB9EB), color-stop(40%,#5C9DDC), color-stop(100%,#2374C5));
+    background: -moz-linear-gradient(top, #8AB9EB, #5C9DDC, #2374C5);*/
+	background-color:#efeff0;
+	background-image: url(../images/bg.jpg);
+	background-repe at: no-repeat;
+	background-position: 0 0; background-size:100% 100%; position:relative;
+}
+article{ margin:0 30px; margin-top:20px}
+.top{width:100%; display:block}
+.card{ background-color:#ecac16; border-radius:6px; margin-top:10px; padding-top:10px; padding-bottom:50px; position:relative}
+.logo{ display:block; float:left; margin:10px 10px 0 12px; width:70px}
+.card .text h5{ color:#FFF; padding:16px 0 0 0;}
+.card .text h2{ color:#FFF; padding:0px 0 0 0; font-size:24px}
+.time{
+	position: absolute;
+	width: 100%;
+	background-color: #dda216;
+	bottom: 0px;
+	height: 30px;
+	line-height: 30px;
+	background-image: url(../images/mm1.png);
+	background-repeat: repeat-x;
+	background-position: top; text-align:right; font-size:12px; color:#FFF; padding-top:5px
+}
+.link{ text-align:center; padding:30px 0 0 0}
+.link a{ display:inline-block; background-color:#ecac16; line-height:35px; width:125px; text-align:center; font-size:16px; border-radius:4px; color:#FFF; box-shadow:0 1px 1px #666}
+.toptext{ text-align:center; color:#FFF; font-size:23px; padding:30px 0 30px 0}
+.top2{width:100%; display:block; margin-bottom:30px}
+.card.new{ text-align:center; color:#FFF; font-size:18px; padding:30px 0 60px 0}
+.dd{ padding:0 10px 0 0}
+.BgNone{ background-color:#f0eff4; background-image:none}
+.BgNone article{ margin-left:0px; margin-right:0px}
+.name{ margin:0 20px; margin-bottom:15px; color:#666666}
+.text2{ background-color:#FFF; padding:15px 20px; font-size:14px; color:#000; line-height:26px; margin-bottom:10px}
+.text2.padding{ padding:0px 20px}
+.text2.padding a{
+	display: block;
+	padding: 10px 0px;
+	background-image: url(../images/sanj.png);
+	background-repeat: no-repeat;
+	background-position: right center; background-size:16px auto
+}
+.text3{ text-align:center; padding:20px 0 20px 0; color:#000}
+.link.new a{ background-color:#0cb212; border:none; width:80%; box-shadow:none}
+@media screen and (max-width : 640px) {	
+	.logo{ display:block; float:left; margin:10px 10px 0 12px; width:60px}
+	.card .text h2{ font-size:18px;}
+}
+
+@media screen and (min-height : 600px) {	
+	.toptext{ padding-top:60px}
+}
+
+

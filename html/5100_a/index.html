@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>绑定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="oForm">
+  <div class="oPara">
+    <label>姓<em></em>名：</label>
+    <div class="oText">
+        <p class="oBorder_01"><input type="text" class="oText_a"></p>
+    </div>
+  </div>
+  <div class="oPara">
+    <label>姓<em></em>别：</label>
+    <div class="oSexSelect">
+        <p class="oMan">
+            <span class="oMan_01"></span> 女
+        </p>
+        <p class="oMan">
+            <span class="oMan_02"></span> 男
+        </p>
+    </div>
+  </div>
+  <div class="oPara">
+    <label class="oL_v">所 在 地：</label>
+    <div class="oText oText_mn">
+       <div class="oText_mb">
+           <div class="oSelect">
+               <select name="" class="oSelect_a">
+                   <option>上海</option>
+                   <option></option>
+               </select>
+               <b></b>
+           </div>
+       </div>
+        <div class="oText_mb">
+            <div class="oSelect">
+                <select name="" class="oSelect_a">
+                    <option>上海</option>
+                    <option></option>
+                </select>
+                <b></b>
+            </div>
+
+        </div>
+        <div class="oText_mb">
+            <div class="oSelect">
+                <select name="" class="oSelect_a">
+                    <option>上海</option>
+                    <option></option>
+                </select>
+                <b></b>
+            </div>
+        </div>
+
+    </div>
+  </div>
+  <div class="oPara">
+    <label class="oHidden">姓<em></em>名：</label>
+    <div class="oText oText_lk">
+        <p class="oBorder_01">
+              <input type="text" class="oText_a oText_b">
+        </p>
+     </div>
+  </div>
+  <div class="oPara">
+    <label  class="oL_v">生<em></em>日：</label>
+      <div class="oText oText_mn">
+          <div class="oText_mb">
+              <div class="oSelect">
+                  <select name="" class="oSelect_a">
+                      <option>XXXX</option>
+                      <option></option>
+                  </select>
+                  <b></b>
+              </div>
+
+          </div>
+          <div class="oText_mb">
+              <div class="oSelect">
+                  <select name="" class="oSelect_a">
+                      <option>XX</option>
+                      <option></option>
+                  </select>
+                  <b></b>
+              </div>
+          </div>
+          <div class="oText_mb">
+              <div class="oSelect">
+                  <select name="" class="oSelect_a">
+                      <option>XX</option>
+                      <option></option>
+                  </select>
+                  <b></b>
+              </div>
+          </div>
+      </div>
+
+  <div class="oPara">
+    <label>职<em></em>业：</label>
+    <div class="oText">
+        <p class="oBorder_01">
+             <input type="text" class="oText_a" value="XXXXXXXXX">
+        </p>
+     </div>
+  </div>
+  <div class="oPara">
+    <label>联系电话：</label>
+    <div class="oText">
+        <p class="oBorder_01 oWidth_01">
+          <input type="text" class="oText_a" value="XXXXXXXXX">
+        </p>
+        <span class="oEdite">更改</span>
+    </div>
+  </div>
+  <div class="oPara">
+    <label>身份证号：</label>
+    <div class="oText">
+        <p class="oBorder_01">
+             <input type="text" class="oText_a" value="XXXXXXXXX">
+        </p>
+    </div>
+  </div>
+  <div class="oPara">
+     <div class="oArea_01"> <textarea name="" cols="" rows="" class="oArea">为什么想做合伙人：</textarea></div>
+  </div>
+</div>
+<p class="oBtn"><span>完善信息</span></p>
+<!--pop-->
+<div class="pop" style=" display: ;">
+  <div class="oCnt">
+    <div class="oMain">
+      <p class="oPopInput">
+        <input type="text" placeholder='手机号' class="oText_01">
+      </p>
+      <p class="oPopInput">
+        <input type="text" class="oText_01 oText_02">
+        <span class="oCode_01">验证码</span> </p>
+      <p class="oBtn"><span>确 定</span></p>
+    </div>
+  </div>
+</div>
+    <div class="pop" style="display:none;">
+        <div class="oCnt">
+            <div class="oMain">
+                <p class="oSize">亲，您已经申请成功啦<br>
+                    请耐心等待审核结果</p>
+                <p class="oBtn"><span>返 回</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+$(function(){
+$(":input").focus(function(){
+		  if($(this).val() ==this.defaultValue){
+			  $(this).val("");
+		  }
+	}).blur(function(){
+		 if ($(this).val() == '') {
+			$(this).val(this.defaultValue);
+		 }
+	});
+
+})
+$('.oPara .oMan').click(function(){
+    $(this).find('span').addClass('oMan_01').removeClass('oMan_02').parent().siblings().find('span').removeClass('oMan_01').addClass('oMan_02');
+})
+</script>

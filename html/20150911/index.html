@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="JicemoonMobileTouch.js"></script>
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .swipeTest{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.41);
+            width: 500px;
+            max-width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .swipeTest ul{
+            position: relative;
+            overflow: hidden;
+            top:0;
+            left: 0;
+        }
+        .swipeTest ul li{
+            float: left;
+            list-style: none;
+        }
+        .swipeTest ul li img{
+            width: 100%;vertical-align:middle;
+        }
+        .swipeTest div.nav{
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .swipeTest div.nav span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            background-color: #366097;
+        }
+        .swipeTest div.nav span:last-child{
+            margin-right: 0;
+        }
+        .swipeTest div.nav span.active{
+            background-color: #fa7000;
+        }
+        .tapTest{
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px;
+            background-color: #fa7000;
+            color: #ffffff;
+            display: inline-block;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="layoutRoot">
+    <div id="swipeTest" class="swipeTest">
+        <ul>
+            <li><img src="images/0.jpg" alt=""/></li>
+            <li><img src="images/1.jpg" alt=""/></li>
+            <li><img src="images/2.jpg" alt=""/></li>
+            <li><img src="images/3.jpg" alt=""/></li>
+            <li><img src="images/4.jpg" alt=""/></li>
+            <li><img src="images/5.jpg" alt=""/></li>
+            <li><img src="images/6.jpg" alt=""/></li>
+            <li><img src="images/7.jpg" alt=""/></li>
+            <li><img src="images/8.jpg" alt=""/></li>
+            <li><img src="images/9.jpg" alt=""/></li>
+        </ul>
+        <div class="nav"></div>
+    </div>
+    <span class="tapTest">点击</span>
+</div>
+<script>
+    $(function (){
+        //swipe测试
+        swipeTest(true);
+        //tap测试
+        //$(".tapTest").addTap(tapHandle);
+        //(new JicemoonMobileTouch($(".tapTest")[0])).tap(tapHandle);
+        new JicemoonMobileTouch($(".tapTest")[0], {tap:tapHandle});
+        function tapHandle(evt){
+            alert(evt.target.outerHTML);
+        }
+        function swipeTest(isCircle){
+            var liLens = $(".swipeTest ul li").size();
+            $(".swipeTest ul").css("width", (100*liLens)+"%");
+            $(".swipeTest ul li").css("width", (100/liLens)+"%");
+            var current = 0;
+            var tempStr = "";
+            var canSwipe = true;
+            for(var i = 0; i < liLens; i++){
+                if(i == current){
+                    tempStr += "<span class='active'></span>";
+                }
+                else{
+                    tempStr += "<span></span>";
+                }
+            }
+            $(".swipeTest div.nav").empty();
+            $(".swipeTest div.nav").append(tempStr);
+
+            //jquery
+            //$(".swipeTest").addTouchEvent("swipe", swipeHandle);
+            //原生态的两种方式
+            //new JicemoonMobileTouch(document.getElementById("swipeTest"), {swipe: swipeHandle});
+            ///*
+            var jmt = new JicemoonMobileTouch(document.getElementById("swipeTest"));
+            // var jmt = new JicemoonMobileTouch($(".swipeTest")[0]);
+            jmt.swipe(swipeHandle);
+            jmt.touchMove(function (evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+            })
+            function swipeHandle(evt){
+                if(!canSwipe)
+                    return;
+                var temp = current;
+                console.log(evt.screenX);
+                switch (evt.direction){
+                    case "left":
+                        temp++;
+                        changeImage(temp);
+                        break;
+                    case "right":
+                        temp--;
+                        changeImage(temp);
+                        break;
+                }
+                evt.preventDefault();
+                evt.stopPropagation();
+            }
+            function changeImage(temp){
+                if(isCircle){
+                    temp = (temp + liLens) % liLens;
+                }
+                else{
+                    temp = Math.min(liLens-1, Math.max(0, temp));
+                }
+                if(current != temp) {
+                    canSwipe = false;
+                    current = temp;
+                    $(".swipeTest ul").animate({"left": -100 * current + "%"}, function () {
+                        canSwipe = true;
+                        $(".swipeTest div.nav span").removeClass("active").eq(current).addClass("active");
+                    });
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

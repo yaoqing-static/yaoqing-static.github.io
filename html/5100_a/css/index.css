@@ -1,0 +1,132 @@
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td{ -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; -webkit-tap-highlight-color:rgba(0,0,0,0); font-size: 1em; font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti; color: #4c4948; }
+html,body{ min-height:100%; }
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;} 
+ol,ul { list-style:none; } 
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus{ outline:none; }
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+a{ color: #4c4948; text-decoration: none; }
+
+/*phone*/
+body{ background:url("../images/index/bg.jpg") no-repeat; background-size: 100% 100%;}
+/*oBtn*/
+.oBtn{ text-align:center; margin:17px 0;}
+.oBtn span{ color:#fff; display:inline-block; font-size:1em; border-radius:5px; width:50%; height:33px; line-height:33px; text-align:center; background:#487bb6;
+ font-weight:bold; background-size:100% 100%;}
+.oBtn_v{ margin-bottom:60px;}  
+.oBtn_v span{ height:45px; line-height:45px; width:75%;}
+/*oPara*/
+.oForm{ margin:20px;}
+.oPara{ position:relative; font-size:0.8em; overflow:hidden;}
+.oPara .oSexSelect{margin-left:65px;margin-bottom: 10px; overflow: hidden;}
+.oPara .oMan{ float: left; margin-right: 30px; color: #487bb6;}
+.oPara .oMan .oMan_01{ display: inline-block; width: 18px; height: 18px; background: url("../images/index/radio_01.png") no-repeat; background-size: 100%;
+position: relative; top: 5px; margin-right:5px;}
+.oPara .oMan .oMan_02{ display: inline-block; width: 18px; height: 18px; background: url("../images/index/radio_02.png") no-repeat; background-size: 100%;
+    position: relative; top: 5px; margin-right:5px;}
+.oPara label{ position:absolute; left:0; top:0;}
+.oPara label.oL_v{ top: 10px;}
+.oPara label em{ display:inline-block; width:24px;}
+.oPara .oText{ margin-left:65px;margin-bottom: 10px; overflow: hidden;}
+.oPara .oText .oBorder_01{border: 1px solid #7ca0ca;overflow: hidden; border-radius:5px; }
+.oPara .oText .oBlock_a{float:left; width: 40%; margin-right: 5px;}
+.oPara .oText_a{width:100%; color: #636363; float:left; height:23px; line-height:23px;padding:0 5px;}
+.oPara .oStart{ display:inline-block; margin-top:8px; width:10px; height:10px; background:url(../images/index/icon.jpg) no-repeat; background-size:100% 100%; margin-left:5px;}
+.oPara .oSelect{margin-left:65px; border:1px solid #7ca0ca; width:20%; margin-right: 5px; height:23px; line-height:23px; border-radius:5px; padding:0 5px; background:#fff; position:relative; float:left;}
+.oPara .oSelect_a{ width:90%;-webkit-appearance: none; color: #636363;}
+.oPara .oSelect b{ background: url(../images/index/down.png) no-repeat; display:inline-block; width:10px; height:8px;background-size:100% 100%; border-radius:3px; position:absolute; right:5px; top:9px;}
+.oPara .oBlock_a .oText_a{width: 62%; float: left;}
+.oPara .oBlock_a span{float:left; margin-right:5px; margin-top:3px;}
+.oPara .oText_mn{ width:100%;margin-top: 10px;}
+.oPara .oText_mb{}
+.oPara .oText_mb .oSelect{ margin-left: 0;}
+.oPara .oWidth_01{ float: left; width:65%;}
+.oPara .oEdite{ float: left; background:#487bb6; height: 24px; line-height:24px; border-radius: 5px; margin-left: 10px; width: 50px; text-align: center; font-size: 0.9em; color: #fff;}
+.oPara .oText_lk{ margin-bottom: 0;}
+.oPara .oHidden{ visibility:hidden;}
+.oPara .oText span,.oPara .oYear span{ float:left; margin-right:5px;}
+.oPara .oText span b{ display:inline-block; width:5px;}
+.oPara .oText_b{ width:100%;}
+.oPara .oText_v{ width:57%;}
+.oPara .oYear span{ margin-left:65px;}
+.oPara .oYear .oSelect{ margin-left:0;}
+.oPara .oYear{ overflow:hidden; margin-bottom:10px;}
+.oPara .oArea{ float:left; height:70px; color:#a5a5a5; font-size:0.8em; padding:5px; width:100%;}
+.oPara  .oArea_01{ border:1px solid #7ca0ca; border-radius:5px; overflow: hidden;}
+.oPara .oSelect_v{ margin-bottom:10px;}
+.oPara .oSelect_v .oSelect_a{ width:70%;}
+.oPara .oSelect_v b{ width:50px; text-align:center; color:#fff; font-weight:normal;}
+/*oLogo*/
+.oLogo{ width:142px; position:relative; left:50%; margin-left:-71px; margin:50px 0 40px -71px;}
+.oLogo img{ width:100%;}
+/*oRecord*/
+.oRecord{ border:1px solid #b8b9b9; border-radius:5px; margin:0 20px; background:#fff; margin-bottom:60px;}
+.oRecord .oPara_A{ color:#333333; border-bottom:1px solid #b8b9b9; height:40px; line-height:40px; padding-left:10px;}
+.oRecord .oPara_A em{ display:inline-block; width:30px;}
+.oRecord .oPara_A:last-child{ border-bottom:0;}
+/*pop*/
+.pop{}
+.pop .oCnt{ }
+.pop .oMain{ background:#fff; border-radius:5px; margin:40px; text-align:center; padding-bottom:10px; margin-top:60px;background:#000;
+opacity:0.8;position:fixed;top: 50px; width: 90%; left: 50%; margin-left: -45%;}
+.pop  .oMain_v{ margin:60px;}
+.pop .oSize{ color:#fff; font-size:0.9em; line-height:23px; padding-top:20px;}
+.pop .oBtn span{ width:35%; height:30px; line-height:30px;}
+.pop .oPopInput{ margin:0 20px; padding-top:20px; font-size:0.9em; overflow:hidden; width: 240px; margin-left: -70px; position: relative; left: 50%;}
+.pop .oPopInput .oText_01{ border:1px solid #669d60; height:24px; line-height:24px; width:65%; border-radius:5px; padding:0 5px; float:left;
+/*position: relative;left: 50%;margin-left: -40%;*/}
+.pop .oPopInput .oText_02{ width:38%;}
+.pop .oPopInput .oCode_01{ display:inline-block; background:#a0a0a0; width:56px; height:26px; line-height:26px; color:#fff; text-align:center;
+background-size:100% 100%; float:left; font-size:0.9em; margin-left: 10px; border-radius: 5px;}
+.pop .oSize_01{ color:#669d60; text-align:center; padding:50px 0; font-size:0.9em;}
+/*oExplain*/
+.oExplain{ width:75px; height:26px; line-height:24px; margin-top:10px; padding-left:5px; background:url(../images/share/btn.jpg) no-repeat; background-size:100% 100%; color:#fff; font-size:0.9em; float:right; text-align:center;}
+/*oCode*/
+.oBg{  width:160px; background:#fff;  position:relative; left:50%; margin-left:-80px; margin-top:40px;}
+.oCode{ padding:10px; position: relative;box-shadow: 0px 2px 5px #B4B4B4;}
+.oCode img{ width:100%;}
+.oCode span{ display: inline-block; width: 32px; height: 32px; border: 1px solid #090305; border-radius: 5px; position: absolute; left: 50%; margin-left: -16px; top: 50%; margin-top: -16px;}
+/*oSize_a*/
+.oSize_a{ color:#487bb6; border-bottom: 1px solid #487bb6; padding-bottom: 0px; text-align:center; margin:10px 15px 10px 15px; }
+/*oAddress*/
+.oAddress{ border:1px solid #d3d3d3; border-radius:5px; background:#fff; margin:10px;overflow: hidden; margin-top: 40px;}
+.oAddress .oPara_01{ position: relative; border-bottom:1px solid #d3d3d3; height: 36px; line-height: 36px; padding: 0 5px;}
+.oAddress .oPara_01:last-child{ border-bottom:0;}
+.oAddress .oPara_01 span{ display:inline-block; margin-left: 25px; color:#333333; font-size:0.9em; float:left;}
+.oAddress .oPara_01 em{ display:inline-block; float:right; color:#666666; font-size:0.8em;}
+.oAddress .oPara_01 em b{ display:inline-block; width:10px; height:13px; background:url(../images/share/icon.jpg) no-repeat;background-size:100% 100%; margin-left:5px; position:relative; top:2px;}
+.oAddress .oPara_01 .oIcon_01{ width: 12px; height: 13px; display: inline-block; background: url("../images/share/icon_01.png") no-repeat; background-size: 100% 100%;
+float: left; position: absolute; left: 10px; top: 12px;}
+.oAddress .oPara_01 .oIcon_02{ width: 17px; height: 17px; display: inline-block; background: url("../images/share/icon_02.png") no-repeat; background-size: 100% 100%;
+float: left; position: absolute; left: 10px; top: 10px;}
+.oAddress .oPara_01 .oIcon_03{ width: 8px; height: 18px; display: inline-block; background: url("../images/share/icon_03.png") no-repeat; background-size: 100% 100%;
+float: left; position: absolute; left: 10px; top: 10px;}
+.oAddress .oPara_01 .oIcon_04{ width: 16px; height: 13px; display: inline-block; background: url("../images/share/icon_04.png") no-repeat; background-size: 100% 100%;
+ float: left; position: absolute; left: 10px; top: 10px;}
+/*oBanner_01*/
+.oBanner_01{ width: 158px; position: relative; left: 50%; margin-left: -79px;}
+.oBanner_01 img{ width: 100%;}
+/*oLogo_a*/
+.oLogo_a{ margin-bottom:50px;}
+/*oRuleTit*/
+.oRuleTit{ margin:10px;}
+.oRuleTit .oTit_01{ width:288px; position:relative; left:50%; margin-left:-144px; margin-bottom:10px; margin-top:10px;}
+.oRuleTit .oTit_01 img{ width:100%; display:block;}
+.oRuleTit .oSize_v{ font-size:0.8em; text-indent:2em; color:#010101; margin-bottom:5px;}
+.oRuleTit .oList_01{background: #fff; padding: 10px; line-height: 23px; border: 1px solid #afb0b0; border-radius: 5px;}
+.oRuleTit .oList_01 li{ color:#505050; font-size:0.8em; /*list-style-type: decimal; margin-left: 20px;*/ margin-bottom:10px;}
+.oRuleTit .oList_01 li span{ display:inline-block; width:18px; height:18px; background:#487bb6; color:#fff; text-align:center; line-height:18px; border-radius:50%; margin-right:5px;}
+
+
+.newAbsolute{ position:absolute; width:100%; bottom:0px}
+.newP{ position:relative}
+.newAbsolute .oSize_a{ border-bottom:none}
+
+
+@media screen and (min-width: 11370px){
+  .newAbsolute{ margin-top:460px}
+}
