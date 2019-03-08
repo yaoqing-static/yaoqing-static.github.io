@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="edge"/>
+  <script src="angular/angular.min.js"></script>
+  <title></title>
+</head>
+<body ng-app="svgApp">
+<div class="layoutRoot" ng-controller="myController">
+  <dl>
+    <dt>姓名: </dt>
+    <dd>{{obj.name}}</dd>
+    <dt>年龄: </dt>
+    <dd>{{obj.age}}</dd>
+  </dl>
+  <br/>
+  <div my-test user-info="obj"></div>
+</div>
+<script>
+    //console.log((1+Math.cos(Math.PI / 6))*0.5);
+    //console.log((1-Math.cos(Math.PI / 6))*0.5);
+    //console.log((Math.sin(Math.PI / 10)));
+    console.log(1.0/Math.sqrt(3)* 0.5);
+    console.log((2-Math.sqrt(3))/4);
+    console.log((2+Math.sqrt(3))/4);
+    console.log((Math.sqrt(3))/3);
+    //console.log(1-0.3090169943749474);
+  var myApp = angular.module("svgApp", []);
+  myApp.controller("myController", function ($scope) {
+    $scope.obj = {
+      name: "",
+      age: ""
+    }
+  });
+  myApp.directive("myTest",function (){
+    return {
+      restrict:"A",
+      scope:{
+        userInfo:"="
+      },
+      templateUrl:"jsTemp.html"
+    }
+  });
+</script>
+</body>
+</html>

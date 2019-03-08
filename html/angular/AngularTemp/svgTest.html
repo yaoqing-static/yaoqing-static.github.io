@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="edge"/>
+    <link rel="stylesheet" href="spectrum/spectrum.css"/>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="spectrum/spectrum.js"></script>
+    <script src="angular/angular.min.js"></script>
+    <title></title>
+    <style>
+        html,body,body>div.layoutRoot{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        select{
+            margin-left: -8px;
+        }
+        .layoutRoot{
+            padding: 0;
+            background-color: #cccccc;
+            text-align: center;
+        }
+        .layoutRoot>div.controller{
+            height: 100%;
+            display: inline-block;
+        }
+        .layoutRoot .add-container{
+            background-color: #eeeeee;
+            padding: 8px 10px;
+            margin-bottom: 2px;
+        }
+        .layoutRoot .add-container select{
+            width: 100px;
+            margin-right: 15px;
+        }
+        .layoutRoot .add-container button{
+            margin: 0 15px;
+            padding: 2px 15px;
+            cursor: pointer;
+        }
+        .layoutRoot .svg-container{
+            width: 600px;
+            height: 90%;
+            margin-right: 2px;
+            float: left;
+            position: relative;
+            padding: 10px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #eeeeee;
+        }
+        .layoutRoot .svg-attr{
+            width: 500px;
+            float: left;
+            background-color: #eeeeee;
+        }
+        .layoutRoot .svg-container .single{
+            display: inline-block;
+            position: absolute;
+            cursor: pointer;
+            border:1px solid transparent;
+            padding:2px;
+        }
+        .layoutRoot .svg-container .single>div{
+            overflow: hidden;
+        }
+        .layoutRoot .svg-container .single>div>div{
+             position: relative;
+         }
+        .layoutRoot .svg-container .single>div>div svg{
+            position: absolute;
+            left:0;
+            top:0;
+         }
+        .layoutRoot .svg-container .single.active{
+            border-color:#ff00ff;
+        }
+        .layoutRoot .svg-container .single .close{
+            font-size:12px;
+            color:#ffffff;
+            background-color:#ff0000;
+            border-radius:10px;
+            text-align:center;
+            line-height:20px;
+            width:20px;
+            height:20px;
+            position:absolute;
+            top:-10px;
+            right:-10px;
+        }
+        .layoutRoot .svg-attr dl{
+            margin: 15px 0 2px;
+        }
+        .layoutRoot .svg-attr ul{
+            margin: 0;
+            list-style: none;
+            padding:15px 0;
+            background-color: #eeeeee;
+        }
+        .layoutRoot .svg-attr dt{
+            padding: 8px 10px;
+            background-color: #666666;
+            color: #ffffff;
+            border-bottom: 1px solid #969696;
+        }
+        .layoutRoot .svg-attr dd{
+            margin: 0;
+        }
+        .layoutRoot .svg-attr ul li{
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .layoutRoot .svg-attr .attr-title{
+            background-color: #91765d;
+            padding: 8px 0px;
+            text-align: left;
+        }
+        .layoutRoot .svg-attr label{
+            display: inline-block;
+            width: 160px;
+            text-align: right;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="layoutRoot" ng-app="svgApp">
+    <div class="controller" ng-controller="svgController">
+        <div class="add-container">
+            <select class="svg-type">
+                <option value="line" selected>直线</option>
+                <option value="ellipse">椭圆</option>
+                <option value="triangle">三角形</option>
+                <option value="rectangularTriangle">直角三角形</option>
+                <option value="rectangle">矩形</option>
+                <option value="diamond">菱形</option>
+                <option value="pentagon">五边形</option>
+                <option value="hexagon">六边形</option>
+                <option value="star">星形</option>
+            </select>
+            <label>名称:<input class="name" type="text" placeholder="请输入组件名称"/></label>
+            <button ng-click="addSVG($event)">添加</button>
+        </div>
+        <div class="svg-container">
+            <div ng-repeat="svg in svgs track by $index" ng-click="checkThis($index)" ng-class="{'active':svg.isActive==true}" ng-mousedown="dragThis($event,$index)" ng-attr-style="top:{{svg.top}}px;left:{{svg.left}}px;" class="single">
+                <div ng-attr-style="background-color:{{svg.backgroundColor}};padding:{{svg.paddingHeight}}px {{svg.paddingWidth}}px;border:{{svg.borderWidth}}px {{svg.borderStyle}} {{svg.borderColor}};border-radius:{{svg.borderRadius}}px;width:{{svg.width}}px;height:{{svg.type!=='line'?svg.height:svg.strokeWidth}}px;">
+                    <div>
+                        <!--椭圆 ellipse-->
+                        <svg ng-if="svg.type==='ellipse'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <ellipse ng-attr-cx="{{svg.width/2}}" ng-attr-cy="{{svg.height/2}}" ng-attr-rx="{{svg.width/2 - svg.strokeWidth/2}}" ng-attr-ry="{{svg.height/2 - svg.strokeWidth/2}}"
+                                     ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}" ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}"
+                                     ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></ellipse>
+                        </svg>
+                        <!-- 矩形 rectangle-->
+                        <svg ng-if="svg.type==='rectangle'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <rect ng-attr-x="{{svg.strokeWidth/2}}" ng-attr-y="{{svg.strokeWidth/2}}" ng-attr-width="{{svg.width-svg.strokeWidth}}" ng-attr-height="{{svg.height-svg.strokeWidth}}" ng-attr-rx="{{svg.strokeRadius}}" ng-attr-ry="{{svg.strokeRadius}}"
+                                  ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}"
+                                  ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></rect>
+                        </svg>
+                        <!--直角三角形 rectangularTriangle-->
+                        <svg ng-if="svg.type==='rectangularTriangle'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <polygon ng-attr-points="{{svg.strokeWidth/2}},{{svg.strokeWidth/2*2.414213562373095*svg.height/svg.width}} {{svg.width-svg.strokeWidth/2*2.414213562373095}},{{(svg.width-svg.strokeWidth/2)*svg.height/svg.width}} {{svg.strokeWidth/2}},{{(svg.width-svg.strokeWidth/2)*svg.height/svg.width}}"
+                              ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}" stroke-linejoin="miter" stroke-linecap="square"
+                                     ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></polygon>
+                        </svg>
+                        <!--三角形 triangle-->
+                        <svg ng-if="svg.type==='triangle'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <!-- {{svg.width*0.5}},0 {{svg.width*0.9330127018922194}},{{svg.width*0.75}} {{svg.width*0.06698729810778065}},{{(svg.width*0.75)}}-->
+                            <polygon ng-attr-points="{{(svg.width*0.5)}},{{(svg.strokeWidth*1.118033988749895)*svg.height/svg.width}} {{(svg.width-svg.strokeWidth*1.118033988749895*0.8)}},{{(svg.width-svg.strokeWidth*0.5)*svg.height/svg.width}} {{(svg.strokeWidth*1.118033988749895*0.8)}},{{(svg.width-svg.strokeWidth*0.5)*svg.height/svg.width}}"
+                                     ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}" stroke-linejoin="miter" stroke-linecap="square"
+                                     ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></polygon>
+                        </svg>
+                        <!--菱形 diamond-->
+                        <svg ng-if="svg.type==='diamond'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <polygon ng-attr-points="{{svg.width/2}},{{(svg.strokeWidth*0.7071067811865475)*svg.height/svg.width}} {{svg.width-svg.strokeWidth*0.7071067811865475}},{{(svg.width/2)*svg.height/svg.width}} {{svg.width/2}},{{(svg.width-svg.strokeWidth*0.7071067811865475)*svg.height/svg.width}} {{(svg.strokeWidth*0.7071067811865475)}},{{(svg.width/2)*svg.height/svg.width}}"
+                                     ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}" stroke-linejoin="miter" stroke-linecap="square"
+                                     ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></polygon>
+                        </svg>
+                        <!--五边形 pentagon -->
+                        <svg ng-if="svg.type==='pentagon'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <polygon ng-attr-points="{{svg.width/2}},{{(svg.strokeWidth/2/0.6909830056250525)*svg.height/svg.width}} {{svg.width/2+(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.9510565162951535}},{{(svg.width/2-(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.3090169943749474)*svg.height/svg.width}} {{svg.width/2+(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.5877852522924731}},{{(svg.width/2+(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.8090169943749475)*svg.height/svg.width}} {{svg.width/2-(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.5877852522924731}},{{(svg.width/2+(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.8090169943749475)*svg.height/svg.width}} {{svg.width/2-(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.9510565162951535}},{{(svg.width/2-(svg.width/2-svg.strokeWidth/2/0.6909830056250525)*0.3090169943749474)*svg.height/svg.width}}"
+                                  ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}"
+                                  ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></polygon>
+                        </svg>
+                        <!--六边形 hexagon -->
+                        <svg ng-if="svg.type==='hexagon'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <polygon ng-attr-points="{{(svg.width*0.25+svg.strokeWidth * 0.2886751345948129)}},{{(svg.width*0.0669872981077807+svg.strokeWidth*0.5)*svg.height/svg.width}} {{(svg.width*0.75-svg.strokeWidth * 0.2886751345948129)}},{{(svg.width*0.0669872981077807+svg.strokeWidth*0.5)*svg.height/svg.width}} {{(svg.width-svg.strokeWidth*0.5773502691896257)}},{{0.5*svg.height}} {{(svg.width*0.75-svg.strokeWidth * 0.2886751345948129)}},{{(svg.width*0.9330127018922193-svg.strokeWidth*0.5)*svg.height/svg.width}} {{(svg.width*0.25+svg.strokeWidth * 0.2886751345948129)}},{{(svg.width*0.9330127018922193-svg.strokeWidth*0.5)*svg.height/svg.width}} {{(svg.strokeWidth*0.5773502691896257)}},{{(svg.height*0.5)}}"
+                                     ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}"
+                                     ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></polygon>
+                        </svg>
+                        <!--五角星 star-->
+                        <svg ng-if="svg.type==='star'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.height}}">
+                            <path ng-attr-d="M{{svg.width/2}},{{(svg.strokeWidth/2/0.3090169943749474)*svg.height/svg.width}} L{{svg.width/2+(svg.width/2*0.3090169943749474-svg.strokeWidth/2)*0.7265425280053608}},{{(svg.width/2+svg.strokeWidth/2-svg.width/2*0.3090169943749474)*svg.height/svg.width}} L{{svg.width/2+(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.9510565162951535}},{{(svg.width/2-(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.3090169943749474)*svg.height/svg.width}} L{{svg.width/2+(svg.width/2*0.3090169943749474-svg.strokeWidth/2)/0.8090169943749475*0.9510565162951535}},{{(svg.width/2+(svg.width/2*0.3090169943749474-svg.strokeWidth/2)/0.8090169943749475*0.3090169943749474)*svg.height/svg.width}} L{{svg.width/2+(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.5877852522924731}},{{(svg.width/2+(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.8090169943749475)*svg.height/svg.width}} L{{svg.width/2}},{{(svg.width/2+(svg.width/2*0.3090169943749474-svg.strokeWidth/2)/0.8090169943749475)*svg.height/svg.width}} L{{svg.width/2-(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.5877852522924731}},{{(svg.width/2+(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.8090169943749475)*svg.height/svg.width}} L{{svg.width/2-(svg.width/2*0.3090169943749474-svg.strokeWidth/2)/0.8090169943749475*0.9510565162951535}},{{(svg.width/2+(svg.width/2*0.3090169943749474-svg.strokeWidth/2)/0.8090169943749475*0.3090169943749474)*svg.height/svg.width}} L{{svg.width/2-(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.9510565162951535}},{{(svg.width/2-(svg.width/2-svg.strokeWidth/2/0.3090169943749474)*0.3090169943749474)*svg.height/svg.width}} L{{svg.width/2-(svg.width/2*0.3090169943749474-svg.strokeWidth/2)*0.7265425280053608}},{{(svg.width/2-(svg.width/2*0.3090169943749474-svg.strokeWidth/2))*svg.height/svg.width}} L{{svg.width/2}},{{(svg.strokeWidth/2/0.3090169943749474)*svg.height/svg.width}} Z"
+                                  ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}"
+                                  ng-attr-fill="{{svg.fill}}" ng-attr-fill-opacity="{{svg.fillOpacity}}"></path>
+                        </svg>
+                        <!--心形 heart-->
+                        <!--矩形对话框 rectangularDialog-->
+                        <!--圆形对话框 circularDialog-->
+                        <!--直线 line-->
+                        <svg ng-if="svg.type==='line'" ng-attr-width="{{svg.width}}" ng-attr-height="{{svg.strokeWidth}}">
+                            <path ng-attr-d="M0,{{svg.strokeWidth*0.5}} L{{svg.width}},{{svg.strokeWidth*0.5}}"
+                                  ng-attr-stroke="{{svg.stroke}}" ng-attr-stroke-width="{{svg.strokeWidth}}" ng-attr-stroke-opacity="{{svg.strokeOpacity}}"  ng-attr-stroke-dasharray="{{svg.strokeFill}},{{svg.strokeSpace}}"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div ng-show="svg.isActive" ng-click="deleteActiveItem($index)" class="close">&times;</div>
+            </div>
+        </div>
+        <div class="svg-attr">
+            <div class="attr-title"><label for="inputName">当前所选对象名称: </label><input type="text" ng-model="svg.name" name="inputName" id="inputName"/></div>
+            <dl>
+                <dt>背景属性</dt>
+                <dd>
+                    <ul class="back-attr">
+                        <li><label for="inputBackgroundColor">背景颜色: </label><input class="color" type="text" ng-model="svg.backgroundColor" name="inputBackgroundColor" id="inputBackgroundColor"/></li>
+                      <li><label for="inputBorderWidth">边框宽度: </label><input type="number" ng-model="svg.borderWidth" ng-attr-value="{{svg.borderWidth}}" min="0" step="1" name="inputBorderWidth" id="inputBorderWidth"/></li>
+                        <li>
+                            <label for="inputBorderStyle">边框样式: </label>
+                            <select ng-model="svg.borderStyle" name="inputBorderStyle" id="inputBorderStyle" ng-attr-value="{{svg.borderStyle}}">
+                                <option value="none" selected>无</option>
+                                <option value="solid">实线</option>
+                                <option value="dashed">虚线</option>
+                                <option value="dotted">点线</option>
+                                <option value="double">双线</option>
+                            </select>
+                        </li>
+                        <li><label for="inputBorderColor">边框颜色: </label><input class="color" type="text" ng-model="svg.borderColor" name="inputBorderColor" id="inputBorderColor"/></li>
+                        <li><label for="inputBorderRadius">圆角弧度: </label><input type="number" ng-model="svg.borderRadius" ng-attr-value="{{svg.borderRadius}}" min="0" step="1" name="inputBorderRadius" id="inputBorderRadius"/></li>
+                        <li><label for="inputPaddingWidth">留白宽度: </label><input type="number" ng-model="svg.paddingWidth" ng-attr-value="{{svg.paddingWidth}}" min="0" step="1" name="inputPaddingWidth" id="inputPaddingWidth"/></li>
+                        <li><label for="inputPaddingHeight">留白高度: </label><input type="number" ng-model="svg.paddingHeight" ng-attr-value="{{svg.paddingHeight}}" min="0" step="1" name="inputBorderWidth" id="inputPaddingHeight"/></li>
+                    </ul>
+                </dd>
+                <dt>尺寸属性</dt>
+                <dd style="display: none">
+                    <ul>
+                        <li><label for="inputLeft">X: </label><input type="number" ng-model="svg.left" ng-attr-value="{{svg.left}}" step="1" name="inputLeft" id="inputLeft"/></li>
+                        <li><label for="inputTop">Y: </label><input type="number" ng-model="svg.top" ng-attr-value="{{svg.top}}" step="1" name="inputTop" id="inputTop"/></li>
+                        <li><label for="inputWidth">宽: </label><input type="number" ng-model="svg.width" ng-attr-value="{{svg.width}}" min="10" step="1" name="inputWidth" id="inputWidth"/></li>
+                        <li ng-show="svg.type!=='line'"><label for="inputHeight">高: </label><input type="number" ng-model="svg.height" ng-attr-value="{{svg.height}}" min="10" step="1" name="inputHeight" id="inputHeight"/></li>
+                        <li ng-show="svg.strokeRadius>-1"><label for="inputStrokeRadius">圆角弧度: </label><input type="number" ng-model="svg.strokeRadius" ng-attr-value="{{svg.strokeRadius}}" min="10" step="1" name="inputStrokeRadius" id="inputStrokeRadius"/></li>
+                    </ul>
+                </dd>
+                <dt ng-show="svg.type!=='line'">填充属性</dt>
+                <dd ng-show="svg.type!=='line'" style="display: none">
+                    <ul>
+                        <li><label for="inputFill">填充颜色: </label><input class="color noAlpha" type="text" ng-model="svg.fill" name="inputFill" id="inputFill"/></li>
+                        <li><label for="inputFillOpacity">填充透明度: </label><input type="number" ng-model="svg.fillOpacity" ng-attr-value="{{svg.fillOpacity}}" max="1" min="0" step="0.01" name="inputFillOpacity" id="inputFillOpacity"/></li>
+                    </ul>
+                </dd>
+                <dt>描边属性</dt>
+                <dd style="display: none">
+                    <ul>
+                        <li><label for="inputStroke">描边颜色: </label><input class="color noAlpha" type="text" ng-model="svg.stroke" name="inputStroke" id="inputStroke"/></li>
+                        <li><label for="inputStrokeWidth">描边宽度: </label><input type="number" ng-model="svg.strokeWidth" ng-attr-value="{{svg.strokeWidth}}" ng-attr-max="{{svg.height/2}}" min="0" step="1" name="inputStrokeWidth" id="inputStrokeWidth"/></li>
+                        <li><label for="inputStrokeOpacity">描边透明度: </label><input type="number" ng-model="svg.strokeOpacity" ng-attr-value="{{svg.strokeOpacity}}" max="1" min="0" step="0.01" name="inputStrokeOpacity" id="inputStrokeOpacity"/></li>
+                        <li><label for="inputStrokeFill">描边填充长度: </label><input type="number" ng-model="svg.strokeFill" ng-attr-value="{{svg.strokeFill}}" min="0" step="1" name="inputStrokeFill" id="inputStrokeFill"/></li>
+                        <li><label for="inputStrokeSpace">描边空白长度: </label><input type="number" ng-model="svg.strokeSpace" ng-attr-value="{{svg.strokeSpace}}" min="0" step="1" name="inputStrokeSpace" id="inputStrokeSpace"/></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<script>
+    angular.module("svgApp",[]).controller("svgController", function ($scope){
+        var svgDefaultAttr = {
+            id:"0",
+            isActive:false,
+            name:"",
+            type:"",
+            top:0,
+            left:0,
+            backgroundColor:"#bbbbbb",
+            borderStyle:"none",
+            borderColor:"",
+            borderWidth:0,
+            borderRadius:0,
+            paddingWidth:0,
+            paddingHeight:0,
+            width:60,
+            height:60,
+            strokeRadius:-1,
+            strokeWidth:1,
+            stroke:"#ff7e00",
+            strokeOpacity:1.0,
+            fill:"#999999",
+            fillOpacity:1.0,
+            strokeFill:0,
+            strokeSpace:0
+        }
+        $scope.svgs=[];
+        $scope.svg=svgDefaultAttr;
+        $scope.getNewSVGID=function (){
+            var lens = $scope.svgs.length;
+            var maxID=0;
+            for(var i = 0; i < lens;i++){
+                var temp = parseInt($scope.svgs[i].id);
+                if(maxID < temp){
+                    maxID = temp;
+                }
+            }
+            return maxID+1;
+        }
+        $scope.checkThis = function ($index){
+            if($scope.svg){
+                if($scope.svg.id == $scope.svgs[$index].id){
+                    return;
+                }
+                $scope.svg.isActive = false;
+            }
+            $scope.svg = $scope.svgs[$index];
+            $(".svg-attr dl input.color").each(function (){
+                var that = $(this);
+                that.spectrum("set",$scope.svg[that.attr("ng-model").split(".")[1]]);
+            })
+            $scope.svg.isActive = true;
+        }
+        $scope.addSVG = function ($event){
+            var type = $($event.currentTarget).parent().find("select.svg-type").val();
+            if(type != "none"){
+                var data = JSON.parse(JSON.stringify(svgDefaultAttr));
+                data.top = Math.floor(540*Math.random());
+                data.left = Math.floor(540*Math.random());
+                data.type = type;
+                if(data.type == "rectangle")
+                    data.strokeRadius = 0;
+                data.id = $scope.getNewSVGID();
+                data.name = $($event.currentTarget).parent().find("input.name").val();
+                if(!data.name)
+                    data.name = "组件" + data.id;
+                $scope.svgs.push(data);
+                $scope.checkThis($scope.svgs.length-1);
+            }
+        }
+        $scope.deleteActiveItem = function ($index){
+            $scope.svgs.splice($index, 1);
+        }
+        $scope.dragThis = function ($event, $index){
+            var mouse = {x:$event.pageX, y:$event.pageY};
+            var temp = {left:$scope.svgs[$index].left,top:$scope.svgs[$index].top};
+            var target = $($event.currentTarget);
+            $(document).on("mousemove.svgmove", function (evt){
+                $scope.svgs[$index].left = temp.left+evt.pageX - mouse.x;
+                $scope.svgs[$index].top = temp.top+evt.pageY - mouse.y;
+                target.css({left:($scope.svgs[$index].left)+"px",top:($scope.svgs[$index].top)+"px"});
+            });
+            $(document).on("mouseup.svgmove", function (evt){
+                $scope.svgs[$index].left = temp.left+evt.pageX-mouse.x;
+                $scope.svgs[$index].top = temp.top+evt.pageY-mouse.y;
+                target.css({left:($scope.svgs[$index].left)+"px",top:($scope.svgs[$index].top)+"px"});
+                $(document).off("mousemove.svgmove");
+                $(document).off("mouseup.svgmove");
+            });
+        }
+        function documentInit(){
+            $(".svg-attr dl dt").on("click", function (){
+                $(".layoutRoot .svg-attr dd").hide();
+                $(this).next().slideDown();
+            });
+            $(".svg-attr dl input.color").each(function (){
+                var that = $(this);
+                that.spectrum({
+                    preferredFormat: "rgb",
+                    chooseText: "确定",
+                    cancelText: "取消",
+                    showAlpha:!that.hasClass("noAlpha"),
+                    showInitial:true,
+                    change:function (color){
+                        that.val(color);
+                    }
+                })
+                that.on("change",function (){
+                    console.log("color change");
+                    console.log(that.val());
+                    that.spectrum("set",that.val());
+                });
+            })
+        }
+        documentInit();
+    });
+</script>
+</body>
+</html>
