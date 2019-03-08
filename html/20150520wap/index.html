@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article>
+<div class="topbanner"><b><img src="img/close.png" width="24" height="24" /></b><a href="#"><img src="img/app.jpg" width="640" height="84" /></a> </div>
+<nav>
+<a></a>中国箱包之都<a href="个人中心.html" class="l"></a>
+</nav>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper" id="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#"><img src="img/1.jpg" alt="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/2.jpg" alt="" title="詹姆斯变形的脚趾 风光十足背后的"伤""></a>                
+        </div>
+		<div class="swiper-slide">
+            <a href="#"><img src="img/1.jpg" alt="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/2.jpg" alt="" title="詹姆斯变形的脚趾 风光十足背后的"伤""></a>                
+        </div>
+                
+    </div>   
+   <!-- <span class="swiper_title"></span>   -->       
+    <div class="pagination"><!--右下角圆点标示--></div>  
+    
+<script type="text/javascript">        
+ var newSlideSize = function slideSize(){
+	$(".swiper-container,.swiper-wrapper,.swiper-slide").height(179); 
+ };
+ newSlideSize();
+ $(window).resize(function(){
+   newSlideSize();
+ });
+</script>
+
+<!--首页焦点图  触屏滑动 鼠标拖拽-->
+<script type="text/javascript">
+$(function(){
+	var oDetail = $(".swiper_title");
+	oDetail.text($(".swiper-slide a img").eq(0).attr("title"));
+	var mySwiper = new Swiper('.swiper-container',{   
+		pagination: '.pagination',
+		loop:true,
+		autoplay:3000,	
+		paginationClickable: true,
+		onSlideChangeStart: function(){
+		   oDetail.text($(".swiper-slide a img").eq(mySwiper.activeIndex).attr("title"))
+		}
+	}); 
+	  
+});
+
+$(function(){
+	  $(".kxtable").each(function(index) {
+        var len=$(".kxtable").eq(index).find("li").length;
+		if(len>4)
+		{
+			$(".kxtable").eq(index).find("li").slice(4).css("display","none")
+			$(".kxtable").eq(index).find(".title a").click(function(){
+				
+				if($(this).html()=="更多")
+				{
+					$(".kxtable").eq(index).find("li").slice(0).css("display","block")
+					$(this).html("收起")
+				}
+				else
+				{
+					$(".kxtable").eq(index).find("li").slice(4).css("display","none")
+					$(this).html("更多")
+				}
+				
+				})
+		}
+
+    });
+}); 
+ 
+</script>   
+</script>          
+</div>
+
+
+<div class="index">
+<ul>
+	<li><a href="login.html"><p><img src="img/q1.png"/></p>政务平台</a></li>
+    <li><a href="本地生活.html"><p><img src="img/q2.png"/></p>本地生活</a></li>
+    <li><a href="产业联盟.html"><p><img src="img/q3.png"/></p>产业联盟</a></li>
+    <li><a href="房产频道.html"><p><img src="img/q4.png"/></p>房产频道</a></li>
+    <li><a href="供求二级.html"><p><img src="img/q5.png"/></p>供求二级</a></li>
+    <li><a href="专题.html"><p><img src="img/q6.png"/></p>专题</a></li>
+     <div class="clear"></div>
+</ul>
+</div>
+
+<div class="sy2">
+	<div class="sytitle"><strong>最新上传</strong><a>更多</a></div>
+<ul>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<div class="clear"></div>
+</ul>
+</div>
+
+
+<div class="sy3">
+	<div class="sy3link"><a class="dq">供</a><a>求</a></div>
+	<ul>
+    	<li><a href="商城首页.html"><strong>供</strong>商城首页</a></li>
+        <li><a href="企业首页.html"><strong>供</strong>企业首页</a></li>
+        <li><a href="信息生活二级.html"><strong>供</strong>信息生活二级</a></li>
+        <li><a href="#"><strong>供</strong>奢华男士公文挎</a></li>
+        <li><a href="#"><strong>供</strong>奢华男士公文挎</a></li>
+    </ul>
+    <ul style="display:none">
+    	<li><a href="#"><strong>求</strong>奢华男士公文挎</a></li>
+        <li><a href="#"><strong>求</strong>奢华男士公文挎</a></li>
+        <li><a href="#"><strong>求</strong>奢华男士公文挎</a></li>
+        <li><a href="#"><strong>求</strong>奢华男士公文挎</a></li>
+        <li><a href="#"><strong>求</strong>奢华男士公文挎</a></li>
+    </ul>
+</div>
+
+
+<div class="sy4">
+	<a href="#"><img src="img/img2.png" width="290" height="160" /></a>
+<a href="#"><img src="img/img3.png" width="290" height="160" /></a>
+</div>
+
+
+<div class="sy2">
+	<div class="sytitle"><strong>电商TOP20</strong></div>
+<ul>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<li><a href="#"><p><img src="img/img1.png" width="155" height="108" /></p>
+波士顿单肩手<br /> 提女包</a></li>
+<div class="clear"></div>
+<div class="more2"><a>加载更多</a></div>
+</ul>
+</div>
+
+<div class="sy5">
+<a href="#"><img src="img/img4.jpg" width="290" height="216" /></a>
+<a href="#"><img src="img/img5.jpg" width="290" height="99" /></a>
+<a href="#"><img src="img/img6.jpg" width="290" height="99" /></a>
+<div class="clear"></div>
+</div>
+
+
+<div class="sy2 new1">
+	<div class="sytitle"><strong>本地生活</strong><a>更多</a></div>
+<ul>
+<li><a href="#"><p><img src="img/i1.png" width="100" height="100" /></p>
+吃在白沟</a></li>
+<li><a href="#"><p><img src="img/i2.png" width="100" height="100" /></p>
+住在白沟</a></li>
+<li><a href="#"><p><img src="img/i3.png" width="100" height="100" /></p>
+行在白沟</a></li>
+<li><a href="#"><p><img src="img/i4.png" width="100" height="100" /></p>
+游在白沟</a></li>
+<li><a href="#"><p><img src="img/i5.png" width="100" height="100" /></p>
+购在白沟</a></li>
+<li><a href="#"><p><img src="img/i6.png" width="100" height="100" /></p>
+娱在白沟</a></li>
+<li><a href="#"><p><img src="img/i7.png" width="100" height="100" /></p>
+白沟房产</a></li>
+<li><a href="#"><p><img src="img/i8.png" width="100" height="100" /></p>
+白沟地图</a></li>
+<div class="clear"></div>
+</ul>
+</div>
+
+<div class="sy5">
+<a href="#"><img src="img/img4.jpg" width="290" height="216" /></a>
+<a href="#"><img src="img/img5.jpg" width="290" height="99" /></a>
+<a href="#"><img src="img/img6.jpg" width="290" height="99" /></a>
+<div class="clear"></div>
+</div>
+
+
+<div class="kxtable new5">
+<div class="title"><strong>信息生活</strong><a>更多</a></div>
+		<ul>
+			<li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="110" /></div>
+				<div class="b">
+					<h1>10元上网套餐</h1>
+					<h2><span>02月11日15:13</span> <strong>22</strong></h2>
+				</div>
+				</a>
+			</li>
+            <li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="110" /></div>
+				<div class="b">
+					<h1>10元上网套餐</h1>
+					<h2><span>02月11日15:13</span> <strong>22</strong></h2>
+				</div>
+				</a>
+			</li>
+            <li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="110" /></div>
+				<div class="b">
+					<h1>10元上网套餐</h1>
+					<h2><span>02月11日15:13</span> <strong>22</strong></h2>
+				</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+<div class="sy2 new1 new2">
+	<div class="sytitle"><strong>资讯分类</strong></div>
+<ul>
+<li><a href="#"><p><img src="img/qq1.png" width="70" height="76" /></p>
+通知公告</a></li>
+<li><a href="#"><p><img src="img/qq2.png" width="70" height="76" /></p>
+政策法规</a></li>
+<li><a href="#"><p><img src="img/qq3.png" width="70" height="76" /></p>
+经济运行</a></li>
+<li><a href="#"><p><img src="img/qq4.png" width="70" height="76" /></p>
+项目申报</a></li>
+<li><a href="#"><p><img src="img/qq5.png" width="70" height="76" /></p>
+全民创业</a></li>
+<li><a href="#"><p><img src="img/qq6.png" width="70" height="76" /></p>
+统计信息</a></li>
+<li><a href="#"><p><img src="img/qq7.png" width="70" height="76" /></p>
+重点工程</a></li>
+<li><a href="#"><p><img src="img/qq8.png" width="70" height="76" /></p>
+部门职能</a></li>
+<div class="clear"></div>
+</ul>
+</div>
+
+
+<div class="kxtable new5">
+<div class="title"><strong>资讯列表</strong><a>更多</a></div>
+		<ul>
+			<li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="110" /></div>
+				<div class="b">
+					<h1>10元上网套餐</h1>
+					<h2><span>02月11日15:13</span> <strong>22</strong></h2>
+				</div>
+				</a>
+			</li>
+            <li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="110" /></div>
+				<div class="b">
+					<h1>10元上网套餐</h1>
+					<h2><span>02月11日15:13</span> <strong>22</strong></h2>
+				</div>
+				</a>
+			</li>
+            <li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="110" /></div>
+				<div class="b">
+					<h1>10元上网套餐</h1>
+					<h2><span>02月11日15:13</span> <strong>22</strong></h2>
+				</div>
+				</a>
+			</li>
+		</ul>
+</div>
+
+
+<div class="sy6">
+<div class="sytitle"><strong>产业联盟 </strong><a>更多</a></div>
+	<ul>
+   	  <li><A href="#">· 中国流行色协会</A></li>
+        <li><A href="#">· 江苏省音像制品分销协会</A></li>
+        <li><A href="#">· 江苏省音像制品分销协会</A></li>
+        <li><A href="#">· 中国流行色协会</A></li>
+        <li><A href="#">· 中国流行色协会</A></li>
+    </ul>
+</div>
+
+<div class="banner"><a href="#"><img src="img/banner.png" width="600" height="140" /></a></div>
+
+
+
+<footer>
+	<a href="#">客户端</a><a href="#">触平版</a><a href="#">电脑版</a>
+    <div class="a">Copyright © 2015 中国箱包之都 版权所有</div>
+</footer>
+
+
+</article>
+</body>
+</html>

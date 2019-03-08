@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article>
+<div class="topbanner"><b><img src="img/close.png" width="24" height="24" /></b><a href="#"><img src="img/app.jpg" width="640" height="84" /></a> </div>
+<nav>
+<a class="return"></a>供求详情 <a href="" class="l" style="background:url(img/s1.png) 0 0 no-repeat"></a></nav>
+
+
+<div class="swiper-container">
+    <div class="swiper-wrapper" id="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#"><img src="img/1a.jpg" alt="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/1a.jpg" alt="" title="詹姆斯变形的脚趾 风光十足背后的"伤""></a>                
+        </div>
+		<div class="swiper-slide">
+            <a href="#"><img src="img/1a.jpg" alt="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/1a.jpg" alt="" title="詹姆斯变形的脚趾 风光十足背后的"伤""></a>                
+        </div>
+                
+    </div>   
+   <!-- <span class="swiper_title"></span>   -->       
+    <div class="pagination"><!--右下角圆点标示--></div>  
+    
+<script type="text/javascript">        
+ var newSlideSize = function slideSize(){
+	$(".swiper-container,.swiper-wrapper,.swiper-slide").height(432); 
+ };
+ newSlideSize();
+ $(window).resize(function(){
+   newSlideSize();
+ });
+</script>
+
+<!--首页焦点图  触屏滑动 鼠标拖拽-->
+<script type="text/javascript">
+$(function(){
+	var oDetail = $(".swiper_title");
+	oDetail.text($(".swiper-slide a img").eq(0).attr("title"));
+	var mySwiper = new Swiper('.swiper-container',{   
+		pagination: '.pagination',
+		loop:true,
+		autoplay:3000,	
+		paginationClickable: true,
+		onSlideChangeStart: function(){
+		   oDetail.text($(".swiper-slide a img").eq(mySwiper.activeIndex).attr("title"))
+		}
+	}); 
+	  
+});
+
+$(function(){
+	  $(".kxtable").each(function(index) {
+        var len=$(".kxtable").eq(index).find("li").length;
+		if(len>4)
+		{
+			$(".kxtable").eq(index).find("li").slice(4).css("display","none")
+			$(".kxtable").eq(index).find(".title a").click(function(){
+				
+				if($(this).html()=="更多")
+				{
+					$(".kxtable").eq(index).find("li").slice(0).css("display","block")
+					$(this).html("收起")
+				}
+				else
+				{
+					$(".kxtable").eq(index).find("li").slice(4).css("display","none")
+					$(this).html("更多")
+				}
+				
+				})
+		}
+
+    });
+}); 
+ 
+</script>   
+       
+</div>
+
+
+<div class="gjsj">
+	<h1>盛达瑞斯拖轮包<span>会员</span></h1>
+	<div class="a1">商家：高碑店市盛达瑞斯皮革制品有限公司<br />
+	 <span>联系方式：</span><img style="margin:0 11px 0 6px" src="img/ww1.png" width="19" height="27" />13888888888<br />
+	<span>&nbsp;</span><img style="margin:0 11px 0 0px" src="img/ww2.png" width="28" height="28" />18484848 </div>
+	<div class="a2">
+		<span>供求类型：</span><b>供</b><br />
+		<span>发布时间：</span>2015-04-09 10:30:17<br />
+		<span>有效期限：</span>2015-04-09 10:30:17<br />
+		<span>关注次数：</span>56<br />
+		<div class="a2a">相关要求：</div>
+		<div class="a2b"><img src="img/img12.png" width="414" height="190" /><br />
+						布料，要无明显的色差、无脱色、无划<br />
+						痕、色泽和质地都是要相符，网料也是<br />
+						要好的，要有弹性、受力好的、不易拉<br />
+						断，最主要是就是拉杆箱的拉杆和轮子，拉杆最好就是全铁或是全铝的，还有就是拉杆固定的箱包上是否牢固。</div>
+		<div class="clear"></div>
+	</div>
+
+</div>
+
+<div class="gqsj2">
+是否参与（虚拟交易） <a href="#">参加</a>
+</div>
+<div class="sy4">
+	<a href="#"><img src="img/img2.png" width="290" height="160" /></a>
+<a href="#"><img src="img/img3.png" width="290" height="160" /></a>
+</div>
+
+
+<div class="kxtable new5 fz nbt" style="padding-bottom:0px; margin-top:10px">
+<div class="sytitle"><strong>相关延伸 </strong></div>
+		<ul>
+			<li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="130" /></div>
+				<div class="b">
+					<h1>广东省浙江商会荣获第</h1>
+					<h2><span class="noimg">2015-04-14　　<b>13</b></span></h2>
+				</div>
+				</a>
+			</li>
+			
+			<li>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="130" /></div>
+				<div class="b">
+					<h1>广东省浙江商会荣获第</h1>
+					<h2><span class="noimg">2015-04-14　　<b>13</b></span></h2>
+				</div>
+				</a>
+			</li>
+
+           
+		</ul>	
+	
+</div>
+
+
+
+
+<footer>
+	<a href="#">客户端</a><a href="#">触平版</a><a href="#">电脑版</a>
+    <div class="a">Copyright © 2015 中国箱包之都 版权所有</div>
+</footer>
+
+
+</article>
+</body>
+</html>

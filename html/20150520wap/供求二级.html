@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript">
+window.onload = function ()
+{
+	var aForm = document.getElementById("selectN");
+	//多个表单
+	WellForm(aForm);
+};
+// 获取class
+function getClass(sClass, oParent)
+{
+	var aClass = [];	
+	var reClass = new RegExp("(^| )" + sClass + "( |$)");
+	var aElem = (oParent || document).getElementsByTagName("*");
+	for (var i = 0; i < aElem.length; i++) reClass.test(aElem[i].className) && aClass.push(aElem[i]);
+	return aClass
+}
+// class是否存在
+function hasClass(obj, sClass)
+{
+	var reg = new RegExp("(^|\\s)" + sClass + "(\\s|$)");
+	return reg.test(obj.className)
+}
+// 添加class
+function addClass(obj, sClass)
+{
+	hasClass(obj, sClass) || (obj.className += " "+sClass)
+}
+// 删除class
+function removeClass(obj, sClass)
+{
+	if (hasClass(obj, sClass))
+	{
+		var reg = new RegExp("(^|\\s)" + sClass + "(\\s|$)");
+		obj.className = obj.className.replace(reg, "");
+	}
+}
+// 上一个元素
+function prevElement(obj)
+{
+	return obj.previousSibling || obj.previousElementSibling || null	
+}
+// 下一个元素
+function nextElement(obj)
+{
+	return obj.nextSibling || obj.nextElementSibling || null	
+}
+// 自定义表单函数
+function WellForm(form)
+{
+	var i = 0;
+	var zIndex = 1;
+	var aInput = form.getElementsByTagName("input");	
+	var aSelect = form.getElementsByTagName("select");
+	var aTextArea = form.getElementsByTagName("textarea");
+	form.className = "WellForm";
+
+	/* 按钮 */
+	var aButton = [];
+	for (i = 0; i < aInput.length; i++) (aInput[i]["type"] == "button" || aInput[i]["type"] == "submit") && aButton.push(aInput[i]);
+	
+	for (i = 0; i < aButton.length; i++)
+	{
+		var oBtnL = document.createElement("div");
+		var oBtnR = document.createElement("div");		
+		oBtnL.className = "ButtonL";
+		oBtnR.className = "ButtonR";		
+		aButton[i].className = "WellButton";
+		aButton[i].parentNode.insertBefore(oBtnL, aButton[i]);
+		aButton[i].parentNode.insertBefore(oBtnR, nextElement(aButton[i]));
+		//鼠标移入
+		aButton[i].onmouseover = function ()
+		{
+			addClass(this, "WellButtonH");
+			addClass(prevElement(this), "ButtonLH");
+			addClass(nextElement(this), "ButtonRH");	
+		};
+		//鼠标移出
+		aButton[i].onmouseout = function ()
+		{
+			removeClass(this, "WellButtonH");
+			removeClass(prevElement(this), "ButtonLH");
+			removeClass(nextElement(this), "ButtonRH");	
+		}
+	}
+	
+	/* 下拉菜单 */
+	for (i = 0; i < aSelect.length; i++)
+	{
+		var oFragment = document.createDocumentFragment();
+		var oSelectL = document.createElement("div");
+		var oSelectR = document.createElement("div");
+		var oWellSelect = document.createElement("div");
+		var oEm = document.createElement("em");
+		var oUl = document.createElement("ul");
+		oSelectL.className = "SelectL";
+		oSelectR.className = "SelectR";
+		oWellSelect.className = "WellSelect";		
+		//插入结构
+		aSelect[i].parentNode.insertBefore(oSelectL, aSelect[i]);
+		aSelect[i].parentNode.insertBefore(oSelectR, nextElement(aSelect[i]));
+		
+		
+		for (var j = 0; j < aSelect[i].options.length; j++)
+		{
+			var oLi = document.createElement("li");
+			oLi.innerHTML = aSelect[i].options[j].text;
+			oLi["sValue"] = aSelect[i].options[j].value;
+			oFragment.appendChild(oLi);
+			aSelect[i].options[j].selected && (oEm.innerHTML = aSelect[i].options[j].text)
+		}
+		oUl.appendChild(oFragment);
+		oWellSelect.appendChild(oEm);
+		oWellSelect.appendChild(oUl);
+		aSelect[i].parentNode.insertBefore(oWellSelect, aSelect[i]);
+		oWellSelect.appendChild(aSelect[i]);
+		
+		oWellSelect.onclick = oSelectR.onclick = function (event)
+		{
+			var o = this.getElementsByTagName("ul")[0] || prevElement(this).getElementsByTagName("ul")[0];
+			var aUl = form.getElementsByTagName("ul");
+			this.parentNode.style.position = "relative";
+			this.parentNode.style.zIndex = zIndex++;
+			o.style.display = o.style.display == "block" ? "none" : "block";
+			for (i = 0; i < aUl.length; i++)
+			{
+				if (o == aUl[i]) continue;
+				aUl[i].style.display = "none";
+			}
+			var aLi = o.getElementsByTagName("li");
+			
+			for (i = 0; i < aLi.length; i++)
+			{
+				aLi[i].onmouseover = function ()
+				{
+					this.className = "hover"	
+				};
+				aLi[i].onmouseout = function ()
+				{
+					this.className = ""	
+				};
+				aLi[i].onclick = function ()
+				{
+					prevElement(this.parentNode).innerHTML = this.innerHTML;
+					nextElement(this.parentNode).value = this.sValue
+				}
+			}
+			
+			(event || window.event).cancelBubble = true;
+			
+			document.onclick = function ()
+			{
+				o.style.display = "none"	
+			}
+		}
+	}
+}
+</script>
+
+
+<style type="text/css">
+*{ padding:0px; margin:0px}
+/*WellSelect*/
+.SelectL,.SelectR,.WellSelect{float:left;height:21px;}
+.SelectL{}
+.SelectR{
+	width: 46px;
+	cursor: pointer;
+	height: 80px;
+	background-image: url(img/san1.png);
+	background-repeat: no-repeat;
+	background-position: center center; display:none
+}
+.WellSelect{position:relative;cursor:pointer; width:124px; text-align:center}
+.WellSelect select{display:none;}
+.WellSelect em{position:absolute;top:0;color: #7a8389;height:43px;display:block;line-height:43px;font-style:normal; text-align:center;line-height:80px; height:80px;background-image: url(img/san1.png);
+	background-repeat: no-repeat; padding:0 25px 0 0;
+	background-position: right center; }
+.WellSelect ul{list-style-type:none;position:absolute;top:63px;left:0;z-index:1000;display:none;width:84px}
+.WellSelect ul li {color:#000;height:24px;cursor:pointer;line-height:24px; text-align:center; font-size:14px}
+.WellSelect ul li:hover{ background-color:#CCC}
+.item44{ background-color:#e6e6e6; height:43px}
+</style>
+
+
+</head>
+
+<body>
+<form>
+<article>
+<div class="topbanner"><b><img src="img/close.png" width="24" height="24" /></b><a href="#"><img src="img/app.jpg" width="640" height="84" /></a> </div>
+<nav>
+<a class="return"></a>供求 </nav>
+
+
+
+<div class="kxtable new5 fz nbt" style="padding-bottom:0px; margin-top:0px">
+<div class="newbtitle">
+  <div class="nbtnew" id="selectN">
+  	<select><option>箱包成品</option></select> 
+	<A class="AA">销量优先</A>
+	<select><option>类别</option></select>
+	<A class="AA2">供求</A>
+  </div>
+  
+  <div class="bgxzz" style="display:none">
+  　&nbsp;&nbsp;切换供求搜索条件 <span><a class="dq">求</a><a>供</a></span>
+  </div>
+  
+</div>  
+<script>
+$(function(){
+	$(".kxtable.new5.fz.nbt ul li .sc").click(function(){
+		$(this).parents("li").find(".top").css("display","block");
+		})
+	
+	$(".kxtable.new5.fz.nbt ul li .top .retive a").click(function(){
+		$(this).parents("li").find(".top").css("display","none");
+		})	
+	$(".newbtitle .bgxzz span a").click(function(){
+		$(".newbtitle .bgxzz span a").removeClass("dq")
+		$(this).addClass("dq")
+		})
+	$(".kxtable.new5.fz.nbt .newbtitle #selectN .AA2").click(function(){
+		$(this).toggleClass("dq")
+		$(".bgxzz").toggle()
+		})
+	
+	})
+</script>
+		<ul>
+			<li>
+			    <a class="zd" href="#">顶置</a>
+				<a class="sc"><img src="img/dd.png" width="26" height="6" /></a>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="130" /></div>
+				<div class="b">
+					<h1>广东省浙江商会荣获第</h1>
+					<h2><span class="noimg">2015-04-14　　<b>13</b></span></h2>
+                    <h3><span href="#" class="sxs">搜相似</span></h3>
+				</div>
+				</a>
+				<div class="top">
+					<div class="retive">
+					    <a><img src="img/sc.png" width="56" height="91" /></a>
+						<p>锤子科技官方旗舰店</p>
+						<div class="xxx"><b style="width:100px"></b><img src="img/xxxx.png" width="131" height="22" /></div>
+					</div>
+				</div>
+			</li>
+			
+			<li>
+				<a class="sc"><img src="img/dd.png" width="26" height="6" /></a>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="130" /></div>
+				<div class="b">
+					<h1>【安吉辣辣】恶搞小香果冻包</h1>
+					<h2><span class="noimg">2015-04-14　　<b>13</b></span></h2>
+                    <h3><span href="#" class="sxs">搜相似</span></h3>
+				</div>
+				</a>
+				<div class="top">
+					<div class="retive">
+					    <a><img src="img/sc.png" width="56" height="91" /></a>
+						<p>锤子科技官方旗舰店</p>
+						<div class="xxx"><b style="width:120px"></b><img src="img/xxxx.png" width="131" height="22" /></div>
+					</div>
+				</div>
+			</li>
+			
+			<li>
+				<a class="sc"><img src="img/dd.png" width="26" height="6" /></a>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="130" /></div>
+				<div class="b">
+					<h1>【安吉辣辣】恶搞小香果冻包</h1>
+					<h2><span class="noimg">2015-04-14　　<b>13</b></span></h2>
+                    <h3><span href="#" class="sxs">搜相似</span></h3>
+				</div>
+				</a>
+				<div class="top">
+					<div class="retive">
+					    <a><img src="img/sc.png" width="56" height="91" /></a>
+						<p>锤子科技官方旗舰店</p>
+						<div class="xxx"><b style="width:120px"></b><img src="img/xxxx.png" width="131" height="22" /></div>
+					</div>
+				</div>
+			</li>
+			
+			<li>
+				<a class="sc"><img src="img/dd.png" width="26" height="6" /></a>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="130" /></div>
+				<div class="b">
+					<h1>【安吉辣辣】恶搞小香果冻包</h1>
+					<h2><span class="noimg">2015-04-14　　<b>13</b></span></h2>
+                    <h3><span href="#" class="sxs">搜相似</span></h3>
+				</div>
+				</a>
+				<div class="top">
+					<div class="retive">
+					    <a><img src="img/sc.png" width="56" height="91" /></a>
+						<p>锤子科技官方旗舰店</p>
+						<div class="xxx"><b style="width:120px"></b><img src="img/xxxx.png" width="131" height="22" /></div>
+					</div>
+				</div>
+			</li>
+			
+			<li>
+				<a class="sc"><img src="img/dd.png" width="26" height="6" /></a>
+				<a href="#">
+				<div class="a"><img src="img/img1.jpg" width="160" height="130" /></div>
+				<div class="b">
+					<h1>【安吉辣辣】恶搞小香果冻包</h1>
+					<h2><span class="noimg">2015-04-14　　<b>13</b></span></h2>
+                    <h3><span href="#" class="sxs">搜相似</span></h3>
+				</div>
+				</a>
+				<div class="top">
+					<div class="retive">
+					    <a><img src="img/sc.png" width="56" height="91" /></a>
+						<p>锤子科技官方旗舰店</p>
+						<div class="xxx"><b style="width:120px"></b><img src="img/xxxx.png" width="131" height="22" /></div>
+					</div>
+				</div>
+			</li>
+
+           
+		</ul>	
+<div class="more2"><a>加载更多</a></div>		
+</div>
+
+
+<footer>
+	<a href="#">客户端</a><a href="#">触平版</a><a href="#">电脑版</a>
+    <div class="a">Copyright © 2015 中国箱包之都 版权所有</div>
+</footer>
+
+
+</article>
+</form>
+</body>
+</html>

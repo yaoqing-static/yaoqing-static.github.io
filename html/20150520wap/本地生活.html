@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article>
+<div class="topbanner"><b><img src="img/close.png" width="24" height="24" /></b><a href="#"><img src="img/app.jpg" width="640" height="84" /></a> </div>
+<nav>
+<a class="return"></a>本地生活
+</nav>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper" id="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#"><img src="img/1.jpg" alt="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/2.jpg" alt="" title="詹姆斯变形的脚趾 风光十足背后的"伤""></a>                
+        </div>
+		<div class="swiper-slide">
+            <a href="#"><img src="img/1.jpg" alt="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/2.jpg" alt="" title="詹姆斯变形的脚趾 风光十足背后的"伤""></a>                
+        </div>
+                
+    </div>   
+   <!-- <span class="swiper_title"></span>   -->       
+    <div class="pagination"><!--右下角圆点标示--></div>  
+    
+<script type="text/javascript">        
+ var newSlideSize = function slideSize(){
+	$(".swiper-container,.swiper-wrapper,.swiper-slide").height(179); 
+ };
+ newSlideSize();
+ $(window).resize(function(){
+   newSlideSize();
+ });
+</script>
+
+<!--首页焦点图  触屏滑动 鼠标拖拽-->
+<script type="text/javascript">
+$(function(){
+	var oDetail = $(".swiper_title");
+	oDetail.text($(".swiper-slide a img").eq(0).attr("title"));
+	var mySwiper = new Swiper('.swiper-container',{   
+		pagination: '.pagination',
+		loop:true,
+		autoplay:3000,	
+		paginationClickable: true,
+		onSlideChangeStart: function(){
+		   oDetail.text($(".swiper-slide a img").eq(mySwiper.activeIndex).attr("title"))
+		}
+	}); 
+	  
+});
+
+$(function(){
+	  $(".kxtable").each(function(index) {
+        var len=$(".kxtable").eq(index).find("li").length;
+		if(len>4)
+		{
+			$(".kxtable").eq(index).find("li").slice(4).css("display","none")
+			$(".kxtable").eq(index).find(".title a").click(function(){
+				
+				if($(this).html()=="更多")
+				{
+					$(".kxtable").eq(index).find("li").slice(0).css("display","block")
+					$(this).html("收起")
+				}
+				else
+				{
+					$(".kxtable").eq(index).find("li").slice(4).css("display","none")
+					$(this).html("更多")
+				}
+				
+				})
+		}
+
+    });
+}); 
+ 
+</script>   
+</script>          
+</div>
+
+
+
+<div class="sy2 new1" style="margin-top:0px; padding-top:20px">
+<ul>
+<li><a href="#"><p><img src="img/i1.png" width="100" height="100" /></p>
+吃在白沟</a></li>
+<li><a href="#"><p><img src="img/i2.png" width="100" height="100" /></p>
+住在白沟</a></li>
+<li><a href="#"><p><img src="img/i3.png" width="100" height="100" /></p>
+行在白沟</a></li>
+<li><a href="#"><p><img src="img/i4.png" width="100" height="100" /></p>
+游在白沟</a></li>
+<li><a href="#"><p><img src="img/i5.png" width="100" height="100" /></p>
+购在白沟</a></li>
+<li><a href="#"><p><img src="img/i6.png" width="100" height="100" /></p>
+娱在白沟</a></li>
+<li><a href="#"><p><img src="img/i7.png" width="100" height="100" /></p>
+白沟房产</a></li>
+<li><a href="#"><p><img src="img/i8.png" width="100" height="100" /></p>
+白沟地图</a></li>
+<div class="clear"></div>
+</ul>
+</div>
+
+
+<div class="bdsh">
+	<div class="bdsh1" onClick="window.open('https://www.baidu.com')">
+    	<p><span>主题酒店</span><br />出行住宿两不误</p>
+   	<img src="img/img7.jpg" width="320" height="192" />    </div>
+	
+    <div class="bdsh2">
+   	  <div class="link1" onClick="window.open('https://www.baidu.com')">
+       	<p><span>天天美食</span><br />白沟美食汇</p>
+       	<img src="img/img8.jpg" width="150" height="140" />        </div>
+		<div class="link1" style="border:none" onClick="window.open('https://www.baidu.com')">
+       	<p><span>旅游攻略</span><br />
+       					游玩这里看</p>
+       	<img src="img/img9.jpg" width="150" height="140" />        </div>  
+    </div>
+	<div class="clear"></div>
+</div>
+
+<div class="sy5">
+<a href="#"><img src="img/img4.jpg" width="290" height="216" /></a>
+<a href="#"><img src="img/img5.jpg" width="290" height="99" /></a>
+<a href="#"><img src="img/img6.jpg" width="290" height="99" /></a>
+<div class="clear"></div>
+</div>
+
+
+<footer>
+	<a href="#">客户端</a><a href="#">触平版</a><a href="#">电脑版</a>
+    <div class="a">Copyright © 2015 中国箱包之都 版权所有</div>
+</footer>
+
+
+</article>
+</body>
+</html>

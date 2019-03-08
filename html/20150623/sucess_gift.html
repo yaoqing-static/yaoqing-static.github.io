@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>绑定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+</head>
+<body style="background:url(images/conversion/bg.jpg) no-repeat; background-size:100% 100%;">
+<!--head_a-->
+<div class="head_a">
+  <h2 class="oTitl oTit_l">您当前积分为XX分</h2>
+  <span class="oImg_v oImg_p"><img src="images/use/icon_01.png"></span> </div>
+<!--giftCnt   扫杯饮可乐 兑换礼品 -->
+<div class="giftCnt">
+  <div id="picScroll" class="picScroll">
+    <div class="hd"> <span class="next"></span>
+      <ul>
+      </ul>
+      <span class="prev"></span> </div>
+    <div class="bd">
+      <ul>
+        <li><a href="#"><img _src="images/use/img_01.jpg"src="images/blank.png" /></a></li>
+      </ul>
+      <ul>
+        <li><a href="#"><img _src="images/use/img_01.jpg"src="images/blank.png" /></a></li>
+      </ul>
+      <ul>
+        <li><a href="#"><img _src="images/use/img_01.jpg"src="images/blank.png" /></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="priceCnt">
+    <p class="oSize_r">可口可乐皮肤衣<br>
+      兑换：16积分</p>
+    <p class="oText_c">
+      <input type="text" value="1">
+      件</p>
+  </div>
+  <div class="address_a">
+    <h2 class="oTitl_op">邮寄地址</h2>
+    <p class="oPara">
+      <label>姓名：</label>
+      <input type="text" class="oText">
+    </p>
+    <p class="oPara">
+      <label>电话：</label>
+      <input type="text" class="oText">
+    </p>
+    <p class="oPara">
+      <label>地址：</label>
+      <input type="text" class="oText oText_lp oTextW" value="" placeholder='省份'>
+      <input type="text" class="oText oText_lp oTextW" value=""  placeholder='城市'>
+    </p>
+    <p class="oPara">
+      <label></label>
+      <input type="text" class="oText oText_lp" value="" placeholder='详细地址'>
+    </p>
+    <p class="oBtn_lp">确认兑换</p>
+  </div>
+</div>
+<div class="oBtottomLogo">
+  <div class="oPosition">
+    <p class="oImg_01"><img src="images/conversion/logo.jpg"></p>
+    <p class="oImg_02 oImg_03"><img src="images/use/img_01.png"></p>
+  </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+TouchSlide({ 
+	slideCell:"#picScroll",
+	titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+	autoPage:true, //自动分页
+	pnLoop:"false", // 前后按钮不循环
+	switchLoad:"_src" //切换加载，真实图片路径为"_src"
+});
+</script>

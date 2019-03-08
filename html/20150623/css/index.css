@@ -1,0 +1,193 @@
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td{ -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; -webkit-tap-highlight-color:rgba(0,0,0,0); font-size: 1em; font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti; color: #4c4948; }
+html,body{ min-height:100%; }
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;} 
+ol,ul { list-style:none; } 
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus{ outline:none; }
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+a{ color: #4c4948; text-decoration: none; }
+
+/*phone*/
+body{ background:#f4f4f4 url(../images/index/bg_01.jpg) no-repeat;background-size:100% 100%; }
+/*第1杯第二次扫描*/
+/*banner*/
+.banner{}
+.banner img{ width:100%; display:block;}
+/*codeCnt*/
+.codeCnt{overflow:hidden; padding-bottom:60px;}
+.codeCnt .oCode{ margin-top:40px; width:260px; position:relative; left:50%; margin-left:-130px; overflow:hidden;}
+.codeCnt .oImg_A{ float:left; width:105px;}
+.codeCnt .oImg_A img{ width:100%;}
+.codeCnt .oSize{ float:left; color:#e61c2a; margin-left:28px; font-weight:bold; margin-top:30px; text-align:center;}
+/*oNotice*/
+.oNotice{ text-align:center; font-size:1.1em; color:#515151; overflow:hidden; font-weight:bold; margin-top:50px;}
+.oNotice a{ color:#e61c2a; text-decoration:underline;}
+
+.oNotice_v{ font-size:1em; margin-top:20px;}
+/*codeCnt_A  扫杯饮可乐 第10杯*/
+.codeCnt_A{ padding-bottom:50px;}
+.codeCnt_A .oRight{ overflow:hidden;width: 320px; position: relative; left: 50%; margin-left: -160px; margin-top:15px; margin-bottom:20px;}
+.codeCnt_A .oImgL{ display:inline-block; width:104px; float:left; margin-left:20px;}
+.codeCnt_A .oImg_ml{width: 93px;margin-left: 10px;}
+.codeCnt_A .oImgL img,.codeCnt_A  .oRight_a em img{ width:100%; display:block;}
+.codeCnt_A  .oRight_a{ float:left; margin-left:20px; margin-top:30px;}
+.codeCnt_A .oRight_l{ margin-top:50px;}
+.codeCnt_A  .oRight_a em{ display:block; width:140px; position: relative; left: 50%; margin-left: -70px; margin-bottom:5px;}
+.codeCnt_A .oColor{ color:#e61c2a; text-align:center;}
+.codeCnt_A .oColor_lk{ font-size:0.9em;}
+.codeCnt_A .oColor_01{ color:#57585a; text-align:center;}
+/*oBtn*/
+.oBtn{ text-align:center; margin-bottom:20px;}
+.oBtn span{ width:120px; display: inline-block;height:32px; line-height:32px; text-align:center; color:#fff; background:url(../images/second/btn_01.png) no-repeat;background-size:100% 100%;}
+/*oNotice_b*/
+.oNotice_b{ margin-top:0;}
+/*pop 弹框*/
+.pop{}
+.pop .popCnt{ background-color:rgba(0,0,0,0.8); width:100%; height:100%; left:0; top:0; position:fixed;}
+.pop .popCnt .oImg{ width:210px; position: relative; left:50%; margin-left:-105px; margin-top:30px;}
+.pop .popCnt .oImg img{ width:100%; display:block;} 
+.pop .popCnt .oImg_a{ margin-top:40%;}
+
+/*oBtn_l*/
+.oBtn_l{ position:relative; width:320px; left: 50%; margin-left: -160px;}
+.oBtn_l .oBtn{ margin-bottom:10px;}
+.oBtn_l .oNum{ font-size:0.7em; color:#57585a; position: absolute; right: 15px;}
+.oBtn_l .oNum em{display:inline-block; width:15px; margin-right:5px; height:15px; background:url(../images/pop/icon.png) no-repeat;background-size:100% 100%; position:relative; top:3px;}
+/*convert   扫杯饮可乐 点击兑换*/
+.convert{ width:142px; position:relative; left:50%; margin-left:-71px; margin-top:60px; margin-bottom:30px;}
+.convert img{ width:100%;}
+/*oBtn_mn*/
+.oBtn_mn{ text-align:center;}
+.oBtn_mn .oIcon_lk{ display:inline-block; background:url(../images/conversion/btn.png) no-repeat; width:81px; height:30px; line-height:30px; text-align:center;background-size:100% 100%; color:#fff;}
+/*oSize_c*/
+.oSize_c{ text-align:center; color:#e61c2a; font-size:0.7em; line-height:23px; margin-top:5px;}
+/*oBtottomLogo*/
+.oBtottomLogo{ position: fixed; bottom:0; left:0;width: 100%;}
+.oBtottomLogo .oPosition{ position:relative;}
+.oBtottomLogo .oImg_01{}
+.oBtottomLogo .oImg_01 img,.oBtottomLogo .oImg_02 img{ width:100%; display:block;}
+.oBtottomLogo .oImg_02{  width:124px; position: absolute; bottom: 0; right: 10px;}
+.oBtottomLogo .oImg_03{ width:72px;}
+/*扫杯饮可乐 点击使用 head_a*/
+.head_a{ background:url(../images/use/headBg.jpg) no-repeat; height:70px; width:100%;background-size:100% 100%; }
+.head_a .oTitl{color:#fff; margin-left:30px; padding-top:15px; float:left;}
+.head_a .oTit_l{ margin-top:10px;}
+.head_a .oImg_v{ display:inline-block; float: right; width:42px; margin-right:20px;}
+.head_a .oImg_p{ width:44px; margin-right:50px; margin-top:7px;}
+.head_a .oImg_v img{ width:100%; display:block; margin-top:3px;}
+.head_a .oRule{ text-align:center; color:#fff; font-size:1.2em; padding-top:15px; font-weight:bold;}
+.head_a .oRule span{ display:inline-block; width:20px; height:26px; background:url(../images/use/icon_a.png) no-repeat;background-size:100% 100%; margin-right:5px; position:relative; top:5px;}
+/*head_m*/
+.head_m{}
+.head_m .oImg_v{ width:50px; margin-top:7px;}
+.head_m  .oTitl{ font-size:1.3em; margin-top:5px; font-weight:bold;}
+
+
+
+/*btn_use*/
+.btn_use{ width:186px; margin-top:140px; height:42px; line-height:42px; text-align:center; background:url(../images/use/btn.jpg) no-repeat;background-size:100% 100%; color:#fff; font-size:1.1em; font-weight:bold; position:relative; left:50%; margin-left:-93px;}
+/*扫杯饮可乐 礼品兑换商城用 sucessCnt*/
+.sucessCnt{}
+.sucessCnt .oImg_n{ width:156px; border:1px solid #f50011; border-radius:5px; position:relative; left:50%; margin-left:-78px; margin-top:15px;}
+.sucessCnt .oImg_n img,.sucessCnt .oImg_lo img{ width:100%; display:block;}
+.sucessCnt .oImg_lo{ width:90px; position:relative; left:50%; margin-left:-45px; margin-top:15px; margin-bottom:5%;}
+.sucessCnt .oSize_lk{ text-align:center; color:#57585a;} 
+/*giftCnt  扫杯饮可乐 兑换礼品 */
+.giftCnt{}
+.picScroll{ margin:10px auto; text-align:center; position:relative; width:320px;}
+.picScroll .bd ul{ width:100%;  float:left; padding-top:10px;  }
+.picScroll .bd li{ width:156px; float:left; font-size:14px; text-align:center; border: 1px solid #f50011;  border-radius: 5px;  position: relative;  left: 50%;  margin-left: -78px; }
+.picScroll .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */ }
+.picScroll .bd li img{ width:100%; height:142px;  background:url(images/loading.gif) #fff center center no-repeat;  }
+.picScroll .hd{}
+.picScroll .hd ul{ float:right; padding-top:16px; display:none;}	
+.picScroll .hd li{ float:left; width:8px; height:0px; background: none; margin:0 5px; overflow:hidden; 
+-webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; 
+}
+.picScroll .hd .on{}
+.picScroll .prev,.picScroll .next{ display:block;}
+.picScroll .prev{width:21px; height:43px; background:url(../images/use/right.png) no-repeat; display:inline-block;background-size:100% 100%; position: absolute; right: 19%; top: 38%}
+.picScroll .next{ width:21px; height:43px; background:url(../images/use/left.png) no-repeat; display:inline-block;background-size:100% 100%; position: absolute; left: 20%; top: 38%;}
+.picScroll .prevStop{ width:21px; height:43px; background:url(../images/use/right.png) no-repeat; display:inline-block;background-size:100% 100%;position: absolute; right: 19%; top: 38%;}
+.picScroll .nextStop{width:21px; height:43px; background:url(../images/use/left.png) no-repeat; display:inline-block;background-size:100% 100%; position: absolute; left: 20%; top: 38%;}
+.priceCnt{ text-align:center;}
+.priceCnt .oSize_r{ color:#e61c2a; margin-bottom:5px;}
+.priceCnt .oText_c{ text-align:center;}
+.priceCnt .oText_c input{ width:25px; border:1px solid #959595; text-align:center; border-radius:3px; margin-right:5px;}
+/*address_a*/
+.address_a{ margin:15px 30px; padding-bottom:50px;}
+.address_a .oTitl_op{ color:#57585a; font-weight:bold; font-size:1.1em; text-align:center; margin-bottom:10px;}
+.address_a .oPara{ position:relative; overflow:hidden; margin-bottom:10px;}
+.address_a .oPara label{ color:#57585a; position:absolute; left:0; top:0;}
+.address_a .oPara .oText{ border:1px solid #959595; height:27px; line-height:27px; border-radius:3px; margin-left: 50px; width:75%; padding-left:5px;}
+.address_a .oText_lp{ color:#979797; padding-left:5px;}
+.address_a .oPara  .oTextW{ float:left; width:25%; text-align:center}
+.address_a .oPara  .oTextW:last-child{ margin-left:10px;}
+.address_a .oBtn_lp{ width:114px; height:30px; line-height:30px; text-align:center; background:url(../images/use/btn.jpg) no-repeat;background-size:100% 100%; position: relative; left:50%; margin-left:-57px; color:#fff;
+ margin-top:15px;}
+
+/*oRule_c   扫杯饮可乐 活动规则*/
+.oRule_c{ margin:15px; padding-bottom:60px;}
+.oRule_c .oMain{ height:265px; border:2px solid #e61c2a; border-radius:5px; padding:10px; line-height:23px;overflow-y: auto; color:#505050; font-size:0.9em;}
+.oRule_c .oCheck{ margin-top:10px;font-size: 0.9em;}
+.oRule_c .oCheck label{ color:#5a5a5a;}
+.oRule_c .oCheck a{ float:right; text-decoration:underline;}
+.oRule_c .oBtn_lp{ width:132px; height:30px; line-height:30px; text-align:center; color:#fff; background:url(../images/use/btn.jpg) no-repeat;background-size:100% 100%; position:relative;
+left:50%; margin-left:-66px; margin-top:10px;}
+/*shopCnt  扫杯饮可乐 积分商城*/
+.shopCnt{ margin:10px; padding-bottom:50px;}
+.shopPara{ overflow:hidden; position:relative; background:url(../images/shop/bg.jpg) no-repeat; width:100%;background-size:100% 100%; margin-bottom:5px; padding-bottom:2px;}
+.shopPara .oImg_l{ position:absolute; left:0; top:0px; width:114px; height:100px;border:2px solid #be1421; border-radius:5px;}
+.shopPara .oImg_l img{ display:block; width:100%;}
+.shopPara .shopExplain{ margin-left:122px; margin-top:10px; margin-bottom:10px; position:relative;}
+.shopPara .oTitle{ color:#e61c2a; font-weight:bold; font-size:14px; text-align:center;}
+.shopPara .oTitle em{ font-size:0.7em;}
+.shopPara .oBtnC{ text-align:center; margin:4px 0;}
+.shopPara .oBtnC .oBtn_mk{ display:inline-block; width:81px; height:28px; line-height:28px; text-align:center; background:url(../images/shop/btn_01.png) no-repeat;background-size:100% 100%; color:#fff;
+font-size: 14px;}
+.shopPara .oBtnC .oBtn_ml{ background:url(../images/shop/btn_03.png) no-repeat;background-size:100% 100%;}
+.shopPara .oBtnC .oBtn_mr{ background:url(../images/conversion/btn_03.png) no-repeat;background-size:100% 100%; text-align:left; padding-left:15px; width:65px;}
+.shopPara .oSize_mj{ color:#5e5e60; font-size:12px;}
+ /*oBtn_lr*/
+ .oBtn_lr{ width: 146px; display:block; margin-bottom:15px; height:31px; line-height:31px; background:url(../images/shop/btn_02.png) no-repeat;background-size:100% 100%; text-align:right; padding-right: 30px;position: relative; left: 50%; margin-left: -73px;}
+.oC_lp{ text-align:center; margin-top:60px;}
+/*shopPara_lp*/
+.shopPara_lp{}
+.shopPara_lp .oImg_l{ border:0;}
+
+/*oIndex*/
+.oIndex{}
+.oIndex .oImg_c{}
+.oIndex .oImg_c img{ display:block; width:100%;}
+
+/*oMain_op*/
+.oMain_op{ text-align:center; padding-bottom:40px;}
+.oMain_op .oTitl_a{ color:#e61c2a; font-weight:bold; font-size:2em;}
+.oMain_op .oSize_d{ color:#e61c2a; margin-top:5px;}
+.oMain_op .oTime{ color:#57585a; font-size:0.8em; margin-top:25px; text-align:left; width:200px; position:relative; left:50%; margin-left:-100px;}
+
+
+
+
+
+
+
+
+
+/*bottom*/
+.bottom{ position:fixed; left:0; bottom:0; width:100%; text-align:center;}
+.bottom a{ background:url(../images/index/btn.png) no-repeat; height:38px; line-height:40px; width:33.3%;background-size:100% 100%; display:inline-block; float: 
+left;box-sizing: border-box;box-shadow: 1px 1px 1px #b5b6b7; border-right: 1px solid #b5b6b7; border-radius:5px;}
+.bottom a.oHover{ background:url(../images/index/btn_01.png) no-repeat;background-size:100% 100%; color:#fff;}
+.bottom a:last-child{ border-right:0;}
+.bottom .oIcon_A{ display:inline-block; width:17px; height:17px; background:url(../images/index/icon_02.png) no-repeat;background-size:100% 100%; position:relative; top:3px;}
+.bottom .oIcon_B{ width:14px; height:17px; display:inline-block; background:url(../images/index/icon_03.png) no-repeat;background-size:100% 100%; position:relative; top:3px;}
+.bottom .oIcon_C{ display:inline-block; width:18px; height:20px; background:url(../images/index/icon_01.png) no-repeat;background-size:100% 100%; position:relative; top:3px;}
+.bottom .oIcon_D{ background:url(../images/index/icon_04.png) no-repeat;background-size:100% 100%; }
+
+
+
