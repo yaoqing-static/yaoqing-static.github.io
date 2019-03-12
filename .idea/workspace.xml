@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d538413e-1653-4ff7-9f3f-c958a0c42eea" name="Default Changelist" comment="静态文件">
-      <change afterPath="$PROJECT_DIR$/html/WorldX/img/qrcord.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/WorldX/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/angular.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/angular.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/angular/AngularTemp/angular/angular.min.js.gzip" afterDir="false" />
@@ -396,270 +394,6 @@
       <change afterPath="$PROJECT_DIR$/html/wdhpyzz/ranking.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/wdhpyzz/sign-up.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/wdhpyzz/submit-works.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/media.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/share.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/slide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/ad-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/ad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/ad_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/amazon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/arr-down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/arr-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/arr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/arrh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/bg-fade-bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/btns.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/face.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/faceh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/foot.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/foot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/graybg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/hg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/hgbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/hgbgh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/hotlist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/icon1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/icon1h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/img-gray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/img_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/img_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/img_04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/imggray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/jd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/line0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/line1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/line2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/more.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/moreh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/nav-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/nav-bgh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/nav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/navh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/navsprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/num.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/pic_top.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/search-btn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/shadow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/talk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/title.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/top-nav.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/vedio-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/img/weibo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/js/AsideNav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/js/all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/js/channel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/js/com.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/js/jquery-1.10.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web/web/js/swiper-2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/css/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/css/slide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/a9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/aa1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/arrowicon.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/b1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/b2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/b3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/b4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/b5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/b6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/baneer1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/banner2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/banner3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/banner4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/ico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/ico1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/ico2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/ico3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/ico4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/ico5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/iconew1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/iconew2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/iconew3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/iconnew4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/new1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/newxx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/rlbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/uer1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/userbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/img/userbg2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/js/jQuery-1.7.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/js/jquery.datePicker-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/js/swiper-2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/js/zepto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/下次接种.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/下次接种2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/下次接种信息.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/东城区朝阳社区.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/接种本1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/接种预约.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/疫苗百事通-详情.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/疫苗百事通.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web1/绑定宝宝信息.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/banner1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/but.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/down.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/gg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/img1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/img2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/img3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/img4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/img5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/images/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/js/zepto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－ 购买抽奖－浮层1,2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－先到先得.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－加油站粉丝-小奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－提交成功.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－无奖品.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－查看中奖名单.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－活动结束.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－活动规则.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－第1-3次抽奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－购买抽奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－赢大奖.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－输入信息.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/web9.21/为出行加油－非加油站扫码.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/Children.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/Parents.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/css/Site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/help.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/app.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/dhbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/ico1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img3a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/img8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/p1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/p2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/p3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/p4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/pic1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/image/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/js/jquery-1.8.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/js/jquery.easing.1.3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/js/jquery.scrollify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew12.5/js/jquery.scrollify.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/css/Site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/banner1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/banner2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/banner3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/banner4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/bg2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/dh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/dhbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/dt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/img2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/img3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/img4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/img5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/img6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/img7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/new1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/new2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/new3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/new4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/new5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/new6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/p1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/image/qq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/js/jquery-1.8.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/js/jquery.easing.1.3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/js/jquery.scrollify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/js/jquery.scrollify.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/js/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/page2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/page3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/webnew3.11/page4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/.idea/html.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/.idea/workspace(1).xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/bgLogin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/but.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/i1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/i2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/i3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/i4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/ico1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/pwd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/qrcod.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/qrcod2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/topLogin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/topLogin2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/img/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/js/jquery-2.1.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/whd/login.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/woooodi/fangdong/css/site.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/woooodi/fangdong/css/swiper.min.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/woooodi/fangdong/img/img1.png" afterDir="false" />
@@ -1556,27 +1290,6 @@
       <change afterPath="$PROJECT_DIR$/html/woooodi/www122/js/video.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/woooodi/www122/js/weixin.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/woooodi/www122/teacher_apply.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/css/jquery.fullPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/1a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/a1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/a2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/a3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/a4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/downdh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/p1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/p2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/p3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/images/wx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/js/jquery-1.8.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/js/jquery.flexslider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/js/jquery.fullPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/www1225/js/jquery.fullPage.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/浙报/ZeroClipboard.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/浙报/ZeroClipboard.swf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/浙报/bower_components/bootstrap/.bower.json" afterDir="false" />
@@ -2203,7 +1916,6 @@
       <change afterPath="$PROJECT_DIR$/html/浙报/运营－自定义菜单-添加一级菜单.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/浙报/运营－自定义菜单-添加二级菜单.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/html/浙报/运营－自定义菜单-默认状态.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -2377,7 +2089,7 @@
       <workItem from="1552016553774" duration="8309000" />
       <workItem from="1552025281506" duration="1463000" />
       <workItem from="1552026949805" duration="5955000" />
-      <workItem from="1552354266291" duration="260000" />
+      <workItem from="1552354266291" duration="515000" />
     </task>
     <task id="LOCAL-00001" summary="1111">
       <created>1552016367595</created>
@@ -2547,11 +2259,39 @@
       <option name="project" value="LOCAL" />
       <updated>1552354514696</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="静态文件">
+      <created>1552354604749</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1552354604749</updated>
+    </task>
+    <task id="LOCAL-00026" summary="静态文件">
+      <created>1552354670688</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1552354670688</updated>
+    </task>
+    <task id="LOCAL-00027" summary="静态文件">
+      <created>1552354724393</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1552354724393</updated>
+    </task>
+    <task id="LOCAL-00028" summary="静态文件">
+      <created>1552354782443</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1552354782443</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16221000" />
+    <option name="totallyTimeSpent" value="16476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />

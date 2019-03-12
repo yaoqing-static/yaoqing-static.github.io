@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>无标题文档</title>
+
+
+<script type="text/javascript" src="http://www.chinamedia360.com/UserDefined/js/jquery-1.9.1.min.js"></script>
+
+<script>
+$(function(){
+
+$("#pp").click(function(){
+	copyToClipboard("1234");
+	
+	})
+	
+	
+})
+
+
+function copyToClipboard(maintext){
+  if (window.clipboardData){
+    window.clipboardData.setData("Text", maintext);
+    }else if (window.netscape){
+      try{
+        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+    }catch(e){
+        alert("该浏览器不支持一键复制！n请手工复制文本框链接地址～");
+    }
+
+    var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+    if (!clip) return;
+    var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+    if (!trans) return;
+    trans.addDataFlavor('text/unicode');
+    var str = new Object();
+    var len = new Object();
+    var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+    var copytext=maintext;
+    str.data=copytext;
+    trans.setTransferData("text/unicode",str,copytext.length*2);
+    var clipid=Components.interfaces.nsIClipboard;
+    if (!clip) return false;
+    clip.setData(trans,null,clipid.kGlobalClipboard);
+  }
+  alert("以下内容已经复制到剪贴板nn" + maintext);
+}
+</script>
+
+
+</head>
+
+<body>
+<p id="pp">1111</p>
+</body>
+</html>

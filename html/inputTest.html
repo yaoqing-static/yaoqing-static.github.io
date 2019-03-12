@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://chuanboweb.com/js/jquery-1.8.2.min.js"></script>
+<title>无标题文档</title>
+<script type="text/javascript">
+
+    $(function(){
+        $("body").on("change","input",function(){
+            alert(111)
+            var kid = $(this).attr("data-val");
+            alert(222)
+            alert(kid)
+        });
+
+    });
+
+
+
+</script>
+</head>
+
+<body>
+<input name="radio" type="radio" id="a1" data-val="1"/>
+<input name="radio" type="radio" id="a2" data-val="2"/>
+</body>
+</html>

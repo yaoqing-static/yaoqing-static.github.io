@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>WeUI</title>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <style>
+        .content dd{  line-height: 50px; background-color: grey; margin-bottom: 10px}
+    </style>
+</head>
+<body >
+
+<div class="content">
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">1111</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">2222</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">3333</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">4444</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">5555</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">6666</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">7777</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">8888</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">9999</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">10</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">11</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">12</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">13</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">14</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">15</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">16</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">17</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">18</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">19</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">20</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">21</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">22</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">23</dd>
+    <dd onclick="window.location.href='http://code.ciaoca.com/'">24</dd>
+</div>
+
+
+
+
+
+<script type='text/javascript'>
+    alert(11)
+    $(".content dd").click(function () {
+        var top=$(this).offset().top;
+        var dataObj={};
+        dataObj.top=top;
+        dataObj.index=$(this).index()+1;
+        sessionStorage.setItem('page1',JSON.stringify(dataObj))
+        console.log(top)
+    })
+
+
+   function  intScrool() {
+       var dataObj=sessionStorage.getItem('page1');
+       if(dataObj){
+           var ob=JSON.parse(dataObj);
+           $("html,body").animate({"scrollTop": ob.top+"px"}, 110);
+       }
+   }
+    intScrool()
+
+</script>
+</body>
+</html>
