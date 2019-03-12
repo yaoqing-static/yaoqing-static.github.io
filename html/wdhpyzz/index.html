@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <style>
+        body{background-color: #91E0FF}
+    </style>
+    <link rel="stylesheet" href="css/app.less">
+</head>
+<body >
+<article>
+    <div class="banner"><img src="images/banner.png"></div>
+    <div class="home-item">
+        <div class="but">
+            <div class="left"><img src="images/home-left.png"></div>&nbsp;
+            <a href="sign-up.html"><img src="images/but.png"></a>&nbsp;
+            <div class="right"><img src="images/home-right.png"></div>
+        </div>
+        <div class="search">
+            <input type="text" />
+            <input type="submit" value="搜索" />
+        </div>
+
+        <div class="content">
+            <div class="but">
+                <a class="active" href="index.html">最新参赛</a><a href="ranking.html">投票排行</a>
+            </div>
+            <div class="page__bd page__bd_spacing">
+                <div class="weui-flex">
+                    <div class="weui-flex__item" onclick="window.location.href='detail.html'">
+                        <div class="placeholder">
+                            <div class="img" style="background-image: url('https://i1.mifile.cn/a4/xmad_15123939053142_dFlAw.jpg')"></div>
+                            <div class="name">03边小六</div>
+                            <div class="ticket">20231票</div>
+                            <div class="ticket-but"><a>投票</a></div>
+                        </div>
+                    </div>
+                    <div class="weui-flex__item" onclick="window.location.href='detail.html'">
+                        <div class="placeholder">
+                            <div class="img" style="background-image: url('https://i1.mifile.cn/a4/xmad_15123939053142_dFlAw.jpg')"></div>
+                            <div class="name">01王小新</div>
+                            <div class="ticket">20231票</div>
+                            <div class="ticket-but"><a>投票</a></div>
+                        </div>
+                    </div>
+                    <div class="weui-flex__item" onclick="window.location.href='detail.html'">
+                        <div class="placeholder">
+                            <div class="img" style="background-image: url('https://i1.mifile.cn/a4/xmad_15123939053142_dFlAw.jpg')"></div>
+                            <div class="name">01王小新</div>
+                            <div class="ticket">20231票</div>
+                            <div class="ticket-but"><a>投票</a></div>
+                        </div>
+                    </div>
+                    <div class="weui-flex__item" onclick="window.location.href='detail.html'">
+                        <div class="placeholder">
+                            <div class="img" style="background-image: url('https://i1.mifile.cn/a4/xmad_15123939053142_dFlAw.jpg')"></div>
+                            <div class="name">01王小新</div>
+                            <div class="ticket">20231票</div>
+                            <div class="ticket-but"><a>投票</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="loading">数据加载中</div>
+</article>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+
+    $(window).unbind('scroll').on('scroll',function () {
+        // console.log(11);
+        var scTop = $(window).scrollTop() + $(window).height();
+        var cHeight = $("article").height();
+
+        if ((cHeight - scTop) <= 0) {
+
+            loadMore();
+        }
+    });
+
+    function loadMore() {
+        var isLoadMore = $(".loading").attr("data-loadMore");
+        if (isLoadMore != "true") {
+
+            $(".more-add").attr("data-loadMore", "true");
+            $(".loading-data").show();
+            $.ajax({
+                url: '',
+                type: 'GET',
+                error: function () {
+                    alert("错误")
+                    $(".loading").attr("data-loadMore", "false");
+                    $(".loading").hide();
+                    //测试用
+                    addHtml();
+                },
+                success: function (data) {
+                    $(".loading").attr("data-loadMore", "false");
+                    addHtml();
+                }
+            });
+        }
+    }
+    function addHtml() {
+        for(var i=0;i<10;i++){
+            var listStr="<div class=\"weui-flex__item\" onclick=\"window.location.href='detail.html'\">\n" +
+                "                        <div class=\"placeholder\">\n" +
+                "                            <div class=\"img\" style=\"background-image: url('https://i1.mifile.cn/a4/xmad_15123939053142_dFlAw.jpg')\"></div>\n" +
+                "                            <div class=\"name\">"+i+"边小六</div>\n" +
+                "                            <div class=\"ticket\">20231票</div>\n" +
+                "                            <div class=\"ticket-but\"><a>投票</a></div>\n" +
+                "                        </div>\n" +
+                "                    </div>";
+           $(".weui-flex").append(listStr)
+        }
+    }
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <style type="text/css">
+        body{background-color: #fff}
+    </style>
+</head>
+<body >
+<article>
+    <div class="file-item">
+        <div class="weui-uploader__input-box">
+            <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+            <strong>点击上传作品</strong>
+        </div>
+        <div class="form">
+            <div class="form-item">
+                <div class="form-name">小盆友的名字</div>
+                <div class="form-input"><input type="text" /></div>
+            </div>
+            <div class="form-item">
+                <div class="form-name">小盆友的年龄</div>
+                <div class="form-input"><input type="text" /></div>
+            </div>
+            <div class="form-item">
+                <div class="form-name">家长联系电话</div>
+                <div class="form-input"><input type="tel" /></div>
+            </div>
+
+            <div class="agreement-item">
+                <div class="weui-cells_checkbox">
+                    <label class="weui-cell weui-check__label" for="s11">
+                        <div class="weui-cell__hd">
+                            <input type="checkbox" class="weui-check" name="checkbox1" id="s11" checked="checked">
+                            <i class="weui-icon-checked"></i>
+                        </div>提交并同意
+                    </label>
+                </div>
+                <div class="agreement">《我的好朋友左左隐私协议》</div>
+            </div>
+            <div class="but" onclick="window.location.href='submit-works.html'"><input type="submit" value="提交作品"></div>
+        </div>
+    </div>
+
+
+    <div class="fixed-box" style="display: none;">
+        <div class="agreement">
+            <div class="title">《我的好朋友左左隐私政策》</div>
+            <div class="content">
+                欢迎您使用我的好朋友左左服务（下称：本服务），您在使用本服务前请认真阅读以下协议（下称：本协议）。<br />
+                <strong>一、我的好朋友左左使用协议的接受</strong><br />
+                当您在注册程序过程中在“已阅读，同意本《我的好朋友左左隐私政策》”处打勾“✓”并按照注册程序成功注册为我的好朋友左左用户，或您以其他我的好朋友左左允许的方式实际使用我的好朋友左左服务时，即表示您已充分阅读、理解并接受本协议的全部内容，并与我的好朋友左左达成协议<br />
+                <strong>二、本协议的变更和修改</strong><br />
+                我的好朋友左左有权随时对本协议进行修改，并且一旦发生协议条款的变动，我的好朋友左左将在相关页面上提示修改的内容；用户如果不同意本协议的修改，可以放弃使用或访问本网站或取消已经获得的服务；如果用户选择在本协议变更后继续访问或使用本网站，则视为用户已经接受本协议的修改。<br />
+                <strong>三、服务说明</strong><br />
+                1、我的好朋友左左绘画征集活动是一个向广大用户征集绘画作品，供用户上传、分享的交流平台。<br />
+                2、我的好朋友左左运用自己的系统通过互联网向用户提供服务，除非另有明确规定，增强或强化目前服务的任何新功能，包括新产品以及新增加的服务，均无条件地适用本协议。<br />
+                <strong>四、用户行为</strong><br />
+                用户需要认证完成账号注册，才能正常使用网站提供的服务。任何机构或个人注册和使用的互联网用户账号名称，必须符合《互联网用户账号名称管理规定》，用户必须承诺遵守法律法规、社会主义制度、国家利益、公民合法权益、公共秩序、社会道德风尚和信息真实性等七条底线。<br />
+                1、用户帐号、密码和安全
+            </div>
+            <div class="close"><img src="images/delete.png"></div>
+        </div>
+    </div>
+
+</article>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+    $(".close").click(function () {
+        $(".fixed-box").hide()
+    })
+    $(".file-item .agreement").click(function () {
+        $(".fixed-box").css("display","flex")
+    })
+</script>
+
+</body>
+</html>

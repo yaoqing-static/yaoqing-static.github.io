@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+
+</head>
+<body >
+<article>
+    <div class="banner"><img src="images/banner.png"></div>
+    <div class="home-item ranking">
+        <div class="but">
+            <div class="left"><img src="images/home-left.png"></div>&nbsp;
+            <a><img src="images/but.png"></a>&nbsp;
+            <div class="right"><img src="images/home-right.png"></div>
+        </div>
+        <div class="search">
+            <input type="text" />
+            <input type="submit" value="搜索" />
+        </div>
+
+        <div class="content">
+            <div class="but">
+                <a href="index.html">最新参赛</a><a class="active" href="ranking.html">投票排行</a>
+            </div>
+            <div class="periods-item">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active">第1期</div>
+                    <div class="swiper-slide">第1期</div>
+                    <div class="swiper-slide">第1期</div>
+                    <div class="swiper-slide">第1期</div>
+                    <div class="swiper-slide">第1期</div>
+                    <div class="swiper-slide">第1期</div>
+                </div>
+            </div>
+            <div class="page__bd page__bd_spacing ranking">
+                <div class="top3">
+                    <img class="bg" src="images/paihang.png">
+                    <div class="p1">
+                        <div class="img" style="background-image: url('http://min.haizitong.com/2/ali/i/25babd5b60c54d4684ccc08b757e1ce2/m')"></div>
+                        <div class="name">周莘羽</div>
+                        <div class="count">523457票</div>
+                    </div>
+                    <div class="p1 p2">
+                        <div class="img" style="background-image: url('http://min.haizitong.com/2/ali/i/25babd5b60c54d4684ccc08b757e1ce2/m')"></div>
+                        <div class="name">周莘羽</div>
+                        <div class="count">523457票</div>
+                    </div>
+                    <div class="p1 p3">
+                        <div class="img" style="background-image: url('http://min.haizitong.com/2/ali/i/25babd5b60c54d4684ccc08b757e1ce2/m')"></div>
+                        <div class="name">周莘羽</div>
+                        <div class="count">523457票</div>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <div class="placeholder">
+                            <div class="ranking-item">
+                                <div class="index">4</div>
+                                <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                <div class="name">龚刚</div>
+                                <div class="ticket">20231票</div>
+                            </div>
+                            <div class="ranking-item">
+                                <div class="index">5</div>
+                                <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                <div class="name">龚刚</div>
+                                <div class="ticket">20231票</div>
+                            </div>
+                            <div class="ranking-item">
+                                <div class="index">6</div>
+                                <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                <div class="name">龚刚</div>
+                                <div class="ticket">20231票</div>
+                            </div>
+                            <div class="ranking-item">
+                                <div class="index">7</div>
+                                <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                <div class="name">龚刚</div>
+                                <div class="ticket">20231票</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="loading">数据加载中</div>
+</article>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script>
+    var mySwiper1 = new Swiper('.periods-item',{
+        freeMode : true,
+        slidesPerView : 'auto',
+    });
+
+
+    $(window).unbind('scroll').on('scroll',function () {
+        // console.log(11);
+        var scTop = $(window).scrollTop() + $(window).height();
+        var cHeight = $("article").height();
+
+        if ((cHeight - scTop) <= 0) {
+            loadMore();
+        }
+    });
+
+    function loadMore() {
+        var isLoadMore = $(".loading").attr("data-loadMore");
+        if (isLoadMore != "true") {
+
+            $(".more-add").attr("data-loadMore", "true");
+            $(".loading-data").show();
+            $.ajax({
+                url: '',
+                type: 'GET',
+                error: function () {
+                    alert("错误")
+                    $(".loading").attr("data-loadMore", "false");
+                    $(".loading").hide();
+                    //测试用
+                    addHtml();
+                },
+                success: function (data) {
+                    $(".loading").attr("data-loadMore", "false");
+                    addHtml();
+                }
+            });
+        }
+    }
+    function addHtml() {
+        for(var i=0;i<10;i++){
+            var listStr="   <div class=\"ranking-item\">\n" +
+                "                                <div class=\"index\">7</div>\n" +
+                "                                <div class=\"ico\" style=\"background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')\"></div>\n" +
+                "                                <div class=\"name\">龚刚</div>\n" +
+                "                                <div class=\"ticket\">20231票</div>\n" +
+                "                            </div>";
+            $(".placeholder").append(listStr)
+        }
+    }
+</script>
+
+</body>
+</html>

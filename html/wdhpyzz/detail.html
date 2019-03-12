@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <style>
+        body{background: #91E0FF}
+    </style>
+</head>
+<body>
+<article>
+    <div class="banner"><img src="images/banner.png"></div>
+    <div class="home-item">
+        <div class="but">
+            <div class="left"><img src="images/home-left.png"></div>&nbsp;
+            <a><img src="images/but.png"></a>&nbsp;
+            <div class="right"><img src="images/home-right.png"></div>
+        </div>
+
+        <div class="content" style="padding-top: 20px">
+            <div class="detail">
+                <div class="text">投票截止时间于：2019年1月5号 19:00:07结束</div>
+                <div class="page__bd page__bd_spacing">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">
+                            <div class="placeholder">
+                                <div class="img" style="background-image: url('https://i1.mifile.cn/a4/xmad_15123939053142_dFlAw.jpg')"></div>
+                                <div class="name">03边小六</div>
+                                <div class="ticket">20231票</div>
+                                <div class="ticket-but"><a>投票</a></div>
+                                <div class="remarks">*一个微信号每天只能投3票</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a class="but" onclick="showHistory()"><span class="a1">历史记录</span></a>
+        <a class="but"><span class="a2">当前排名</span></a>
+        <a class="but" onclick="showRule()"><span class="a3">活动规则</span></a>
+    </footer>
+
+</article>
+
+<div class="fixed-box" id="rule" style="display: none">
+    <div class="agreement gz">
+        <div class="title">•&nbsp;活动规则&nbsp;•</div>
+        <div class="content">
+            1、投票通道将于X月X日晚23：59分关闭<br>
+            2、每人每天限投3票<br>
+            3、如发现恶意刷票，将取消相应选手参与资格<br>
+            4、本活动为长期活动，可多次参与，每
+            天只可上传1次作品，如上传错误可联系
+            工作人员进行调整<br>
+            5、不可上传同样的作品及非作品类图片
+            参与投票<br>
+            <br>
+            联系电话：021-65126633<br>
+            联系邮箱：2801262204@qq.com<br>
+        </div>
+        <div class="close" onclick="hideRule()"><img src="images/delete.png"></div>
+    </div>
+</div>
+
+<div class="fixed-box" id="history" style="display: none">
+    <div class="agreement gz">
+        <div class="title">•&nbsp;历史记录&nbsp;•</div>
+        <div class="content">
+            <div class="home-item ranking">
+                <div class="content">
+                    <div class="page__bd page__bd_spacing ranking">
+                        <div class="weui-flex">
+                            <div class="weui-flex__item">
+                                <div class="placeholder">
+                                    <div class="ranking-item">
+                                        <div class="ranking-index">第1期</div>
+                                        <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                        <div class="name">龚刚<br /><span>第25名</span></div>
+                                        <div class="ticket">20231票</div>
+                                        <div class="tag ok">获奖</div>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-index">第1期</div>
+                                        <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                        <div class="name">龚刚<br /><span>第25名</span></div>
+                                        <div class="ticket">20231票</div>
+                                        <div class="tag">未获奖</div>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-index">第1期</div>
+                                        <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                        <div class="name">龚刚<br /><span>第25名</span></div>
+                                        <div class="ticket">20231票</div>
+                                        <div class="tag">未获奖</div>
+                                    </div>
+                                    <div class="ranking-item">
+                                        <div class="ranking-index">第1期</div>
+                                        <div class="ico" style="background-image: url('http://image.haizitong.com/25babd5b60c54d4684ccc08b757e1ce2?x-oss-process=image/resize,h_720')"></div>
+                                        <div class="name">龚刚<br /><span>第25名</span></div>
+                                        <div class="ticket">20231票</div>
+                                        <div class="tag">未获奖</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close" onclick="hideHistory()"><img src="images/delete.png"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+    function hideRule() {
+        $("#rule").fadeOut(200)
+    }
+    function showRule() {
+        $("#rule").fadeIn(200)
+    }
+
+    function hideHistory() {
+        $("#history").fadeOut(200)
+    }
+    function showHistory() {
+        $("#history").fadeIn(200)
+    }
+</script>
+
+</body>
+</html>

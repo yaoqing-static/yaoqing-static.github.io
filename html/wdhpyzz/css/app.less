@@ -1,0 +1,210 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,table,tbody,p,th,td,figure { -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none; -webkit-tap-highlight-color:rgba(0,0,0,0);  font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti; color: #4c4948; }
+html,body{ height:100%; }
+img,input,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;}
+input[type=button], input[type=submit],input[type=tel],  input[type=file], input[type=text], button,textarea { margin: 0; padding: 0; resize:none; border:none; outline:none;cursor: pointer; -webkit-appearance: none; -webkit-appearance:none; /*去除input默认样式*/-webkit-border-radius:0px ;}
+img,button,a,select,textarea{ margin: 0; padding: 0; resize:none; border:none; outline:none;-webkit-appearance:none; /*去除input默认样式*/-webkit-border-radius:0px ;}
+ol,ul { list-style:none; }
+h1,h2,h3,h4,h5,h6,p,em{ font-size:100%; word-wrap:break-word; font-weight: normal; font-style: normal; }
+a:active, a:focus{ outline:none; }
+button::-moz-focus-inner,input::-moz-focus-inner{ padding:0; border:0; }
+table{ border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0; }
+.clearfix{ zoom:1; }
+article{
+   max-width: 750px; margin: auto; font-size: 14px;
+  .banner img{ width: 100%}
+}
+body{background: #E9F1FC; min-height: 100%}
+img{ vertical-align: middle}
+.home-item{
+  background:#91E0FF; min-height: 200px;
+  .but{
+    text-align: center; position: relative; padding-top: 10px;
+    a img{ width: 130px}
+    .left,.right {
+      display: inline-block;
+      img{ width: 84px}
+    }
+  }
+  .search{
+     margin: 0 50px;border: 2px solid #FFFFFF; border-radius: 50px; height: 40px; margin-top: 25px; overflow: hidden; position: relative;
+     input[type='text']{height: 40px; line-height: 40px; color: #fff; font-size: 14px; display: block;border-radius: 50px; border: none; background-color: transparent; outline: none; margin-left: 20px; width: calc(100% - 90px)}
+     input[type='submit']{background: #2196F3; position: absolute; top: 0px; right: 0px; border: none; display: block;height: 40px; line-height: 40px; color: #fff; font-size: 15px; width: 65px; text-align: center }
+  }
+  .content{
+    padding:30px 0 0 0 ;
+    .but{
+      padding-bottom:20px ;
+      a{background: #55B4EE;border-radius: 30px; width: 106px; color: #fff; text-align: center; display: inline-block; line-height: 40px; margin: 0 18px}
+      a.active{background: #2196F3; font-size: 16px;}
+    }
+    .page__bd{padding: 0 10px}
+    .weui-flex{flex-wrap: wrap}
+    .weui-flex__item{ width: 50%; flex: none;-webkit-flex: none;-moz-flex: none; margin-bottom: 10px }
+    .placeholder{ background: #fff;  margin: 0 10px; border-radius: 4px; padding: 5px; text-align: center;color: rgba(0,0,0,0.65);
+      .img{position: relative;height: 0px;width: 100%; padding-bottom: 133.3333%; background: no-repeat center 0px; background-size: cover }
+      .name{ padding: 2px 0 0 0; height: 22px; overflow: hidden;}
+      .ticket{color: #FF6224; font-size: 16px}
+      .ticket-but{padding: 5px 10px}
+      .ticket-but a{background: #FF6224; border-radius: 20px; display: block; line-height: 32px; text-align: center; font-size: 16px; color: #fff}
+    }
+    .ranking{
+        padding: 0px;
+      .top3{
+        width: 350px; margin: auto; position: relative; padding-bottom: 10px;
+        .bg{position:relative; z-index: 222; width:100%}
+        .p1{
+           width: 75px; position: absolute; top: 41px; left: 142px; z-index: 9999; font-size: 14px; color: rgba(0,0,0,0.65); text-align: center; z-index: 1;
+          .img{width: 75px; height: 75px;background:#E9F1FC no-repeat center 0px; background-size: cover;}
+          .name{ padding-top: 20px; overflow: hidden; text-overflow: ellipsis;white-space: nowrap}
+          .count{overflow: hidden; text-overflow: ellipsis;white-space: nowrap}
+          &.p2{ left: 31px; top: 76px;
+            .img{width: 76px; height: 70px; margin: auto}
+            .name{padding-top: 22px;}
+          }
+          &.p3{ left: 250px; top: 76px;
+            .img{width: 70px; height: 70px; margin: auto}
+            .name{padding-top: 22px;}
+          }
+        }
+      }
+      .placeholder{padding: 0px}
+      .weui-flex{background: #E9F1FC; padding: 10px 0 0 0}
+      .weui-flex__item{width: 100%}
+      .ranking-item{text-align: left; position: relative; padding: 20px; min-height: 51px;
+        div{display: inline-block; vertical-align: middle}
+        .index{font-weight: bold; margin-right: 15px}
+        .ico{width: 50px; height: 50px; border-radius: 50%; margin-right:10px;background:#E9F1FC no-repeat center 0px; background-size: cover}
+        .ticket{ position: absolute; right: 30px; top: 34px}
+      }
+      .ranking-item:before{content: ''; position: absolute; bottom: 0px; right: 0px; height: 1px; background-color: rgb(235, 236, 238); width: calc(100% - 40px)}
+      .ranking-item:last-child{ border-bottom: none}
+    }
+    .periods-item{
+      width: 100%; overflow: hidden; padding: 10px 0;
+      .swiper-slide{
+        border: 2px solid #2196F3;
+        border-radius: 20px; width: 80px; text-align: center; line-height: 32px;color: #2196F3; margin: 0 10px;
+        &.active{
+          background: #2196F3; color: #fff;border: 2px solid #2196F3;
+        }
+      }
+
+    }
+  }
+}
+
+.file-item{
+   text-align: center; width: 100%; padding-top: 30px;
+  .weui-uploader__input-box{position: relative; margin: 0px; border-radius: 4px; display: inline-block; float: none; width: 200px; height: 200px; background:#DEE1E7 url("../images/pic.png") no-repeat center 55px; background-size: 60px 60px;
+    strong{ position: absolute;font-size: 15px;color: #8C9FB5; width: 100%; text-align: center; left: 0px; top: 120px}
+  }
+  .weui-uploader__input-box:before,.weui-uploader__input-box:after{display: none}
+  .form{text-align: left; padding:30px 20px}
+  .form-name{font-size: 14px;color: rgba(0,0,0,0.65); display: inline-block; width: 95px;}
+  .form-input{ width: calc(100% - 105px);display: inline-block; margin-bottom: 20px;
+    input{
+      background: #EDEEF0;
+      border: 1px solid #DDDDDD;
+      border-radius:4px; display: block; width: 100%; line-height: 40px; height: 40px;
+    }
+  }
+  .weui-cell{padding: 0px}
+  .weui-cells_checkbox{ display: inline-block}
+  .agreement{ display: inline-block;color: #FF6224;}
+  .agreement-item{ text-align: center; padding-top: 20px}
+  [class*=" weui-icon-"], [class^=weui-icon-]{ position: relative; top: -2px }
+  .but{
+    padding-top: 15px;
+    input{background: #FF6224;
+      border-radius: 50px; line-height: 50px; text-align: center; width: 100%; border: none;font-size: 18px;
+      color: #FFFFFF;}
+  }
+  .share-item{
+    text-align: center;
+    img{ width: 151px}
+  }
+  .share-text{text-align: center;color: rgba(0,0,0,0.65); padding-bottom: 40px;
+    p{ font-size: 16px;color: #FF6224; padding: 10px 0 5px 0}
+  }
+}
+
+
+.weui-cells_checkbox .weui-icon-checked:before{ font-size: 17px; }
+.weui-cells_checkbox .weui-check:checked+.weui-icon-checked:before{color: #FF6224}
+
+@media screen and (max-width: 330px) {
+  .home-item .content .ranking .top3{ left: -15px}
+}
+.share-fixed{
+  position: fixed; width: 100%; height: 100%; left: 0px; top: 0px;background: rgba(0,0,0,0.45); display: none; z-index: 999;
+  .arrow{ text-align: right; padding-right: 30px; padding-top: 10px; padding-bottom: 10px;
+    img{ width: 65px}
+  }
+  .text{color: #fff; text-align: right; padding-right: 30px; font-size: 18px}
+}
+
+.fixed-box{
+  position: fixed; width: 100%; height: 100%; left: 0px; top: 0px;background: rgba(0,0,0,0.45); display: flex; justify-content: center; align-items: center; z-index: 9999;border-radius: 5px;
+  .agreement{
+    position: relative; background-color: #fff; width: calc(100% - 60px); margin-top: -30px;border-radius: 5px;
+    .title{
+      background: #DEE1E7;font-size: 18px;color: rgba(0,0,0,0.65); line-height: 42px; text-align: center; font-weight: bold;border-top-left-radius: 5px;border-top-right-radius: 5px;
+    }
+    .content{
+      font-size: 12px;color: rgba(0,0,0,0.65); padding: 20px; max-height: 400px; overflow-y: auto;
+    }
+    .close{ position:absolute; width: 25px; height: 25px; bottom: -40px; left: 50%; margin-left: -10px;
+      img{ width: 100%; height: 100%}
+    }
+    &.gz{
+      .title{ background: #86D8FE; }
+    }
+
+  }
+}
+
+.detail{
+  padding-bottom: 100px;
+  .text{
+    font-size: 15px;
+    color: #F86E60; text-align: center; padding-bottom: 20px;
+  }
+  .con{padding: 0 20px}
+
+}
+.home-item .content .detail .weui-flex__item{ width: 100%}
+.home-item .content .detail .page__bd{ padding: 0 40px}
+.home-item .content .detail .placeholder .name{ font-size: 18px; height: 30px; margin-top: 10px}
+.home-item .content .detail .placeholder .ticket{ font-size: 24px;padding: 10px 0 10px 0px}
+.home-item .content .detail .placeholder .ticket-but a{ line-height: 50px; border-radius: 30px}
+.detail .remarks{font-size: 13px;
+  color: #9B9B9B; padding: 10px 0 10px 0}
+.home-item .content .detail .placeholder{ padding: 15px; padding-bottom: 5px}
+
+footer{
+  height: 20px; padding: 15px 0;background: #F7F8FA; position: fixed; width: 100%; left: 0px; bottom: 0px;color: rgba(0,0,0,0.5); display: flex;
+  a{
+    display: block; width: 33.3333%; text-align: center; border-right: 1px solid #D8D8D8;
+    &:last-child{ border: none}
+    span{display: inline-block; background: url("../images/ls.png") no-repeat 0 center; background-size: 18px 18px; padding-left: 19px}
+    .a2{background: url("../images/pm.png") no-repeat 0 center; background-size: 18px 18px;}
+    .a3{background: url("../images/gz.png") no-repeat 0 center; background-size: 18px 18px;}
+  }
+}
+
+
+#history .agreement .content{ padding: 0px;}
+#history .home-item .content .ranking .weui-flex{ background-color: #fff; padding-top: 0px}
+#history .home-item .content .ranking .ranking-item{ padding: 5px 0px 10px 0}
+ .home-item .content .ranking .ranking-item:before{width: calc(100% - 10px);}
+#history{
+  .home-item .content .ranking .ranking-item .ico{ width: 44px; height: 44px}
+  .home-item .content .placeholder .name{ height: auto}
+  .home-item .content .ranking .ranking-item .ticket{ right: auto; left: 100px; top:34px; font-size: 16px;left: 140px}
+  .tag{ position: absolute; right: 10px; top: 37px; width: 40px; text-align: center}
+  .ranking-index{display: block; font-size: 14px; padding-bottom: 2px}
+  .tag.ok{color: #FF6224;}
+}
+.loading{ text-align: center; padding: 10px 0 10px 0}
+

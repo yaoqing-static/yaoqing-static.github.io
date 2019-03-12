@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="css/weui.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <style type="text/css">
+        body{background-color: #fff}
+    </style>
+</head>
+<body >
+<article>
+    <div class="file-item">
+        <div class="form">
+            <div class="share-item"><img src="images/tjcg.png"></div>
+            <div class="share-text">
+                <p>作品提交成功</p>
+                获奖会尽快和您联系请耐心等待
+            </div>
+            <div class="but"><input type="submit" value="分享作品"></div>
+        </div>
+    </div>
+
+    <div class="share-fixed">
+        <div class="arrow"><img src="images/share.png"></div>
+        <div class="text">点击右上角 “···”分享至朋友圈<br />
+            拉你的好朋友参与投票吧！
+        </div>
+    </div>
+
+</article>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+    $(".share-fixed").click(function () {
+        $(this).hide()
+    })
+    $(".but input").click(function () {
+        $(".share-fixed").show()
+    })
+</script>
+
+</body>
+</html>

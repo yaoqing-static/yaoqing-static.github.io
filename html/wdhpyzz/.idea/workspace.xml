@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e1cd1826-4b87-430d-8d47-b7e5d7955f58" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1192383414">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="7" />
+          <entry key="html" value="23" />
+          <entry key="less" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="7" />
+          <entry key="HTML" value="23" />
+          <entry key="Less" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="1537" />
+          <entry key="less" value="3310" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="1537" />
+          <entry key="Less" value="3310" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sign-up.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="44" column="77" selection-start-line="44" selection-start-column="77" selection-end-line="44" selection-end-column="77" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/app.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="192" column="48" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
+              <folding>
+                <element signature="e#993#1085#0" />
+                <element signature="e#1284#1369#0" />
+                <element signature="e#1997#2003#0" />
+                <element signature="e#3734#3748#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>class-box</find>
+      <find>operation</find>
+      <find>.class-administration .cheack</find>
+      <find>.join-input .weui-input</find>
+      <find>.nav-my-ld.new a span</find>
+      <find>.parent-activity .administration-box.list .weui-cell_access .weui-cell__ft</find>
+      <find>flowplayer</find>
+      <find>.fp-time</find>
+      <find>.audio-detail .pro.new</find>
+      <find>key</find>
+      <find>m.haizitong.com</find>
+      <find>con</find>
+      <find>.class-user-list .con dd span</find>
+      <find>.flowplayer .fp-fullscreen, .flowplayer .fp-unload, .flowplayer .fp-close</find>
+      <find>.prism-player .prism-fullscreen-btn</find>
+      <find>dialog-box</find>
+      <find>.navigation .weui-grid__icon img</find>
+      <find>WriteCookieGoUrl</find>
+      <find>.search</find>
+      <find>.weui-flex__item</find>
+      <find>home-item</find>
+      <find>file-item</find>
+      <find>ranking</find>
+      <find>but</find>
+      <find>&amp;</find>
+      <find>share-fixed</find>
+      <find>fixed-box</find>
+      <find>.fixed-box</find>
+      <find>.content</find>
+      <find>.home-item .content .placeholder .name</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\hzt-123\Desktop\books</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index-more.html" />
+        <option value="$PROJECT_DIR$/more-comment.html" />
+        <option value="$PROJECT_DIR$/书评.html" />
+        <option value="$PROJECT_DIR$/图书详情.html" />
+        <option value="$PROJECT_DIR$/录音信息-关联图书-选择.html" />
+        <option value="$PROJECT_DIR$/我的主页.html" />
+        <option value="$PROJECT_DIR$/我的资料.html" />
+        <option value="$PROJECT_DIR$/视频评论回复.html" />
+        <option value="$PROJECT_DIR$/图书详情2.html" />
+        <option value="$PROJECT_DIR$/书城.html" />
+        <option value="$PROJECT_DIR$/js/common.js" />
+        <option value="$PROJECT_DIR$/书评评论回复.html" />
+        <option value="$PROJECT_DIR$/书评评论回复l-new.html" />
+        <option value="$PROJECT_DIR$/学校专区-选择身份.html" />
+        <option value="$PROJECT_DIR$/学校专区-园长和管理员创建.html" />
+        <option value="$PROJECT_DIR$/学校专区-输入邀请码.html" />
+        <option value="$PROJECT_DIR$/学校专区-班级童声管.html" />
+        <option value="$PROJECT_DIR$/学校专区-选择班级.html" />
+        <option value="$PROJECT_DIR$/js/weui.min.js" />
+        <option value="$PROJECT_DIR$/学校专区-创建班级.html" />
+        <option value="$PROJECT_DIR$/css/prismplayer.css" />
+        <option value="$PROJECT_DIR$/js/prismplayer.js" />
+        <option value="$PROJECT_DIR$/录音信息-关联图书-选择.html" />
+        <option value="$PROJECT_DIR$/学校专区-班级主页.html" />
+        <option value="$PROJECT_DIR$/学校专区-园长和管理员.html" />
+        <option value="$PROJECT_DIR$/学校专区-园长权限.html" />
+        <option value="$PROJECT_DIR$/学校专区-学生邀请.html" />
+        <option value="$PROJECT_DIR$/学校专区-加入成功.html" />
+        <option value="$PROJECT_DIR$/学校专区-家长活跃度.html" />
+        <option value="$PROJECT_DIR$/学校专区-班级活跃度.html" />
+        <option value="$PROJECT_DIR$/js/flowplayer/skin/functional.css" />
+        <option value="C:/Windows/System32/drivers/etc/hosts" />
+        <option value="$PROJECT_DIR$/学校专区-班级列表.html" />
+        <option value="$PROJECT_DIR$/学校专区-班级信息.html" />
+        <option value="$PROJECT_DIR$/audio-detail-视频.html" />
+        <option value="$PROJECT_DIR$/搜索-关联图书.html" />
+        <option value="$PROJECT_DIR$/我的朗读.html" />
+        <option value="$PROJECT_DIR$/audio-detail.html" />
+        <option value="$PROJECT_DIR$/audio-detail.html" />
+        <option value="$PROJECT_DIR$/../../AngularJS/select2.html" />
+        <option value="$PROJECT_DIR$/audio-detail-视频2.html" />
+        <option value="$PROJECT_DIR$/css/app.css" />
+        <option value="$PROJECT_DIR$/css/app.css" />
+        <option value="$PROJECT_DIR$/../../AngularJS/demo111.html" />
+        <option value="$PROJECT_DIR$/submit-works.html" />
+        <option value="E:/haizitong.com/我的好朋友左左/index.html" />
+        <option value="$PROJECT_DIR$/ranking.html" />
+        <option value="$PROJECT_DIR$/css/app.less" />
+        <option value="$PROJECT_DIR$/detail.html" />
+        <option value="$PROJECT_DIR$/sign-up.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="app.less" type="620a8d5e:NestingTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/vue/后台系统/admin" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\haizitong\Desktop\我的好朋友左左-H5-1\web" />
+      <recent name="C:\Users\haizitong\Desktop\我的好朋友左左-H5-1\web\images" />
+      <recent name="W:\workspace\server\mh_server_code\server\public\share\books\images" />
+      <recent name="W:\workspace\server\mh_server_code\server\public\share\books" />
+      <recent name="C:\Users\hzt-123\Desktop\books" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1cd1826-4b87-430d-8d47-b7e5d7955f58" name="Default" comment="" />
+      <created>1511934758646</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1511934758646</updated>
+      <workItem from="1511934760353" duration="13426000" />
+      <workItem from="1512009001652" duration="47374000" />
+      <workItem from="1512351097938" duration="40488000" />
+      <workItem from="1512527867040" duration="19180000" />
+      <workItem from="1512616973410" duration="10248000" />
+      <workItem from="1512631034368" duration="32684000" />
+      <workItem from="1512958195792" duration="58000" />
+      <workItem from="1512958290571" duration="3363000" />
+      <workItem from="1512961791248" duration="33620000" />
+      <workItem from="1513073326410" duration="43185000" />
+      <workItem from="1513301645401" duration="2426000" />
+      <workItem from="1513304115811" duration="8621000" />
+      <workItem from="1513316494898" duration="15398000" />
+      <workItem from="1513562209953" duration="46660000" />
+      <workItem from="1514173153399" duration="42005000" />
+      <workItem from="1545035443615" duration="41568000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="400304000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18914647" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49578503" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.23076923" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50421494" side_tool="true" visible="true" weight="0.31019524" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.23076923" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/学校专区-园长和管理员.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-加入成功.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-家长活跃度.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-班级活跃度.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-选择身份.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-选择班级.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-输入邀请码.html" />
+    <entry file="file://$PROJECT_DIR$/../product/assets/flowplayer/index.html" />
+    <entry file="file://$PROJECT_DIR$/../product/assets/flowplayer/test.html" />
+    <entry file="file://$PROJECT_DIR$/js/flowplayer/skin/functional.css" />
+    <entry file="file://$PROJECT_DIR$/../../flowplayer-7.0.4/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/prismplayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret column="2300" selection-start-column="2300" selection-end-column="2300" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/flowplayer/flowplayer.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="2775" column="38" selection-start-line="2775" selection-start-column="38" selection-end-line="2775" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Windows/System32/drivers/etc/hosts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../product/symfollies/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/common.js" />
+    <entry file="file://$PROJECT_DIR$/../../flowplayer/index.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-班级主页.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-创建班级.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-班级信息.html" />
+    <entry file="file://$PROJECT_DIR$/images/class1.png" />
+    <entry file="file://$PROJECT_DIR$/学校专区-班级列表.html" />
+    <entry file="file://$PROJECT_DIR$/audio-detail-视频.html" />
+    <entry file="file://$PROJECT_DIR$/搜索-关联图书.html" />
+    <entry file="file://$PROJECT_DIR$/我的书架.html" />
+    <entry file="file://$PROJECT_DIR$/我的朗读.html" />
+    <entry file="file://$PROJECT_DIR$/index-more.html" />
+    <entry file="file://$PROJECT_DIR$/more-comment.html" />
+    <entry file="file://$PROJECT_DIR$/书评.html" />
+    <entry file="file://$PROJECT_DIR$/书评评论回复.html" />
+    <entry file="file://$PROJECT_DIR$/../../AngularJS/select2.html" />
+    <entry file="file://$PROJECT_DIR$/audio-detail-视频2.html" />
+    <entry file="file://$PROJECT_DIR$/audio-detail.html" />
+    <entry file="file://$PROJECT_DIR$/../../demo.html" />
+    <entry file="file://$PROJECT_DIR$/../../AngularJS/demo111.html" />
+    <entry file="file://$PROJECT_DIR$/学校专区-园长权限.html" />
+    <entry file="file://$PROJECT_DIR$/../../点击加1-不能输入数字.html" />
+    <entry file="file://$PROJECT_DIR$/../../限制小数点后2位.html" />
+    <entry file="file://$PROJECT_DIR$/js/audioplayer.js" />
+    <entry file="file://E:/NET/vs2013/vote/server/Views/web/users/oauth2.aspx.cs" />
+    <entry file="file://$PROJECT_DIR$/../../moment时间相距多少.html" />
+    <entry file="file://$PROJECT_DIR$/css/prismplayer.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../资料/swiper/菜单.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="41" column="2" lean-forward="true" selection-start-line="41" selection-start-column="2" selection-end-line="44" selection-end-column="7" />
+          <folding>
+            <element signature="e#531#589#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/haizitong.com/我的好朋友左左/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="93" column="14" lean-forward="true" selection-start-line="93" selection-start-column="14" selection-end-line="93" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="91" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#2;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5552">
+          <caret line="268" column="1" selection-start-line="268" selection-end-line="268" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/app.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="192" column="48" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
+          <folding>
+            <element signature="e#993#1085#0" />
+            <element signature="e#1284#1369#0" />
+            <element signature="e#1997#2003#0" />
+            <element signature="e#3734#3748#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1968#1974#0" expanded="true" />
+            <element signature="e#1978#1984#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2599#2605#0" expanded="true" />
+            <element signature="e#2609#2615#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/submit-works.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sign-up.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="44" column="77" selection-start-line="44" selection-start-column="77" selection-end-line="44" selection-end-column="77" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#2;n#div#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
