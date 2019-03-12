@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #main
+        {
+            width:220px;
+            border:1px solid black;
+            display:flex;
+        }
+
+        #main div
+        {
+            flex:1;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    1111
+</div>
+
+<script>
+  $.ajax({
+    type: "GET",
+    url: "/api/kuaidi",
+    dataType: "json",
+    success: function (data) {
+      console.log(data)
+    },
+    error: function () {
+    }
+  })
+  var loginData={name:"787333868@qq.com",pwd:"yQ19881018"};
+  $.ajax({
+    type: "post",
+    url: "/api/yao/login",
+    dataType: "json",
+    data: {data:JSON.stringify(loginData)},
+    success: function (data) {
+      console.log(data)
+    },
+    error: function () {
+    }
+  })
+
+</script>
+</body>
+</html>

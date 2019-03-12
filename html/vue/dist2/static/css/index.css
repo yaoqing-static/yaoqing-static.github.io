@@ -1,0 +1,10 @@
+*{padding: 0px; margin: 0px}
+body,html{ height: 100%; position: relative; overflow: hidden}
+.header a{ font-size: 16px; display: inline-block; margin: 0 10px}
+.content{ padding: 100px 0}
+.nav-item{ display: inline-block; padding: 0 15px}
+.nav-wrapper ul {
+  min-width: 101%;
+  white-space: nowrap; text-align: left;
+}
+.swiper-slide.is-selected{ color: red}
