@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+
+
+</head>
+
+<body>
+<article>
+	<div class="Conversation"><div class="close"><span>X</span></div>
+    	<div class="setText">
+        	<div class="contenteditable" contenteditable="true"></div><a>发送</a>
+        </div>
+    <ul class="content-reply-box mg10">
+            <li class="odd">
+                <a class="user ui-link" href="#"><img class="img-responsive avatar_" src="http://www.17sucai.com/preview/32226/2014-03-08/bootstrap/images/avatar-1.png" alt=""><span class="user-name">奔波儿灞</span></a>
+                <div class="reply-content-box">
+                	<span class="reply-time">03-08 15：00</span>
+                    <div class="reply-content pr">
+                    	<span class="arrow">&nbsp;</span>
+                    	为什么小鑫的名字里有三个金呢？
+                    </div>
+                </div>
+            </li>
+            <li class="even">
+                <a class="user ui-link" href="#"><img class="img-responsive avatar_" src="http://www.17sucai.com/preview/32226/2014-03-08/bootstrap/images/avatar-1.png" alt=""><span class="user-name">灞波儿奔</span></a>
+                <div class="reply-content-box">
+                	<span class="reply-time">03-08 15：10</span>
+                    <div class="reply-content pr">
+                    	<span class="arrow">&nbsp;</span>
+                    	他命里缺金，所以取名叫鑫，有些人命里缺水，就取名叫淼，还有些人命里缺木就叫森。
+                    </div>
+                </div>
+            </li>
+            <li class="odd">
+                <a class="user ui-link" href="#"><img class="img-responsive avatar_" src="http://www.17sucai.com/preview/32226/2014-03-08/bootstrap/images/avatar-1.png" alt=""><span class="user-name">奔波儿灞</span></a>
+                <div class="reply-content-box">
+                	<span class="reply-time">03-08 15：20</span>
+                    <div class="reply-content pr">
+                    	<span class="arrow">&nbsp;</span>
+                    	那郭晶晶命里缺什么？
+                    </div>
+                </div>
+            </li>
+            <li class="even">
+                <a class="user ui-link" href="#"><img class="img-responsive avatar_" src="http://www.17sucai.com/preview/32226/2014-03-08/bootstrap/images/avatar-1.png" alt=""><span class="user-name">灞波儿奔</span></a>
+                <div class="reply-content-box">
+                	<span class="reply-time">03-08 15：30</span>
+                    <div class="reply-content pr">
+                    	<span class="arrow">&nbsp;</span>
+                    	此处省略一百字...
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+
+	<div class="Inbox">
+		<dd>
+        	<p><img src="img/share1.jpg" width="100" height="100" /><span>1</span></p>
+            <div class="con">
+            	<strong>杭霸天</strong><br />
+                去日本的话帮我带两件小孩的衣服，<br />尺寸大概是90CM
+            </div>
+            <span class="time">21:30</span>
+        </dd>
+        <dd>
+        	<p><img src="img/share1.jpg" width="100" height="100" /><span>22</span></p>
+            <div class="con">
+            	<strong>杭霸天</strong><br />
+                去日本的话帮我带两件小孩的衣服，<br />尺寸大概是90CM
+            </div>
+            <span class="time">21:30</span>
+        </dd>
+	</div>
+</article>
+
+<script>
+$(function(){
+	$(".Inbox dd").click(function(){
+		$(".Conversation").show();
+		})
+	$(".Conversation .close span").click(function(){
+		$(".Conversation").hide();
+		})
+	})
+</script>
+</body>
+</html>

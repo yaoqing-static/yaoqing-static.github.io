@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+<article> <!--行程-->
+ <div class="listcon">
+<div class="xccon">
+    <div class="listNew" style=" border-top:0px">
+    	<dd>大阪</dd>
+        <dd>东京</dd>
+        <dd>广岛</dd>
+        <dd>福冈</dd>
+        <dd>名古屋</dd>
+    </div>
+ </div>
+ </div>
+ 
+ <!--最近的店铺-->
+ <div class="listcon" style="display:none">
+ 	<div class="dpname">“离他最近的店铺”</div>
+    <div class="xccon">
+    <ul>
+    	<li><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>東京都新宿区西新宿1-11-1</strong></div>
+			<span><img src="img/ico5.png" width="19" height="19" />1.1KM</span>
+        </li>
+        <li><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>東京都新宿区西新宿1-11-1</strong></div>
+			<span><img src="img/ico5.png" width="19" height="19" />1.1KM</span>
+        </li>
+        <li><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>東京都新宿区西新宿1-11-1</strong></div>
+			<span><img src="img/ico5.png" width="19" height="19" />1.1KM</span>
+        </li>
+        <li><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>東京都新宿区西新宿1-11-1</strong></div>
+			<span><img src="img/ico5.png" width="19" height="19" />1.1KM</span>
+        </li>
+    </ul>
+    </div>
+ </div>
+ 
+ 
+ <!--购物计划-->
+ <div class="listcon" style="display:none">
+ 	<div class="dpname gwjh">添加购物计划<img src="img/ico8.png" width="33" height="32" /></div>
+    <div class="xccon">
+    <ul>
+    	<li class="gwjh"><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>￥48</strong></div>
+			<span><img src="img/gwc.png" />跟单</span>
+        </li>
+        <li class="gwjh"><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>￥48</strong></div>
+			<span><img src="img/gwc.png" />跟单</span>
+        </li>
+        <li class="gwjh"><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>￥48</strong></div>
+			<span><img src="img/gwc.png" />跟单</span>
+        </li>
+        <li class="gwjh"><img class="logo" src="img/img4.png" width="109" height="109" />
+        	<div class="rl"><p>Yodabashi旗舰店</p>
+东京秋叶原地区<br />
+<strong>￥48</strong></div>
+			<span><img src="img/gwc.png" />跟单</span>
+        </li>
+       
+    </ul>
+    </div>
+ </div>
+</article>
+
+
+<script>
+$(function(){
+	$(".heart").on("click",function(){
+		$(this).toggleClass("dq")
+		})
+	
+	$(".but a").on("click",function(){
+		$(".but a").find("b").removeClass("dq");
+		$(".listcon").fadeOut(200);
+		$(this).find("b").addClass("dq");
+		$(".listcon").eq($(this).index()).fadeIn(200);
+		})
+	
+	})
+
+</script>
+
+</body>
+</html>

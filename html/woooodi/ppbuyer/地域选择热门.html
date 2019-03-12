@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+
+
+
+</head>
+
+<body style="background-color:#f8f8f8">
+<article>
+ <div class="search new1 new2">
+    <div class="regionModle">
+    	<a>&nbsp;</a>
+    	<input type="text" placeholder="输入城市名称" />
+    </div>
+ </div>
+ <div class="cityshow">
+ 	<img src="img/i1.png" width="21">上海 GPS定位 <a>重新定位</a>
+ </div>
+ 
+ <div class="cityProduct">
+ 	<div class="but">
+    	<a class="dq">热门</a><a class="right">全部</a>
+    </div>
+    <div class="con">
+ 		<dd onclick="javascript:window.location.href=''"><span><strong>Tokyo</strong><br />
+	  东京</span><img src="img/img7.jpg" width="198" height="271" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span><strong>Tokyo</strong><br />
+	  东京</span><img src="img/img7.jpg" width="198" height="271" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span><strong>Tokyo</strong><br />
+	  东京</span><img src="img/img7.jpg" width="198" height="271" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span><strong>Tokyo</strong><br />
+	  东京</span><img src="img/img7.jpg" width="198" height="271" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span><strong>Tokyo</strong><br />
+	  东京</span><img src="img/img7.jpg" width="198" height="271" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span><strong>Tokyo</strong><br />
+	  东京</span><img src="img/img7.jpg" width="198" height="271" /></dd>
+      <div class="clear"></div>
+    </div>
+    <div class="con no2" style="display:none">
+ 		<dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+      <dd onclick="javascript:window.location.href=''"><span>韩国<br />
+	  Korea</span><img src="img/img7a.jpg" width="348" height="429" /></dd>
+     
+      <div class="clear"></div>
+      
+      <div class="qtdglist">
+    	<h1>其他代购地<A>按字母排序</A></h1>
+    	<div class="lis">
+        	<a>爱尔兰<span>Ireland</span></a>
+            <a>爱尔兰<span>Ireland</span></a>
+            <a>爱尔兰<span>Ireland</span></a>
+            <a>爱尔兰<span>Ireland</span></a>
+            <a>爱尔兰<span>Ireland</span></a>
+            <a>爱尔兰<span>Ireland</span></a>
+            <a>爱尔兰<span>Ireland</span></a>
+            <a>爱尔兰<span>Ireland</span></a>
+        </div>
+ 	  </div>
+      
+      
+    </div>
+ 	<div class="clear"></div>
+    
+   
+    
+    
+    
+ </div>
+</article>
+
+
+<script>
+$(function(){
+		$(".cityProduct .but a").click(function(){
+				$(".cityProduct .but a").removeClass("dq");
+				$(".cityProduct .but a").eq($(this).index()).addClass("dq")
+				$(".cityProduct .con").fadeOut(200)
+				$(".cityProduct .con").eq($(this).index()).fadeIn(200)
+			})
+	})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+@charset "gb2312";
+/*
+  pchome 
+  Web by:yunfei
+*/
+*{ padding:0px; margin:0px}
+.d810_1 img{ float:left; margin:45px 30px 0 0}
+.d810_1{ padding:20px 40px 20px 50px; font-size:20px; overflow:hidden}
+.d810_1 .con{font-size:26px; color:#898989; line-height:36px; float:left; width:450px}
+.d810_1 .con p{ color:#595757; font-size:30px; padding-bottom:10px}
+.d810_1.right{ background-color:#efeff0}
+.d810_1.right img{margin:45px 0px 0 30px}
+.d810_1.right .con{ text-align:right}
+.d810_1.new img{ margin-left:50px}
+.d810_1.right.new2 .con p{ padding-top:30px}
+.d810_2{ padding:25px 40px 25px 25px; font-size:26px}
+.d810_2 dd{color:#797978; margin-bottom:20px;font-size:26px }
+.d810_2 dd p{ color:#595757; margin:5px 0 4px 0;font-size:26px }
+.d810_2 dd b{ display:block; width:75px; height:8px; background-color:#81c7ef}
+.d810_3{ padding:50px 0; text-align:center; background-color:#108ccf}

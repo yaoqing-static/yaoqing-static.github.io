@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>无标题文档</title>
+    <link href="js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/slide.css" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+	
+
+</head>
+
+<body>
+<!--弹框html-->
+	<div class="bombBox new2" style="display:block;">
+    	<div class="con">
+        	<div class="text">1111111111</div>
+            <div class="but"><a class="cancel">取消</a><a class="confirm">确定</a></div>
+        </div>
+    </div>
+
+
+<article class="StatisticsBG">
+
+    <div class="Statistics">
+        <div class="s1">当前汇率：0.0064<br/>最后更新时间 2016.8.5 13:50<span>最近10天汇率走势</span></div>
+        <div id="morris-line-chart" style="width: 110%; height: 250px;"></div>
+        <div class="default-address new88">
+		允许根据汇率浮动调整商品价格
+    	<label class="cheak-new"><input type="checkbox" class="ios-switch green  bigswitch" checked /><div>  
+                <div>  
+                </div>  
+            </div>  
+        </label> 
+    </div>
+        
+    </div>
+
+</article>
+<!-- Morris Chart Js -->
+<script type="text/javascript" src="js/echarts-2.2.7/echarts.js"></script>
+<script type="text/javascript" src="js/echarts-2.2.7/echartConfig.js"></script>
+<script type="text/javascript">
+    require(requireDemo,
+            function requireCallback(ec) {
+                var myChart2 = ec.init(document.getElementById('morris-line-chart'));
+                option2 = {
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: ['16.7.27','16.7.27','16.7.27','16.7.27']
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    series: [
+                        {
+                            type: 'line',
+                            data: [0.063, 0.073, 0.093, 0.163]
+                        }
+                    ]
+                };
+
+                myChart2.setOption(option2);
+            })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" /> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/imgload.js"></script>
+
+
+
+</head>
+
+<body>
+<article class="transaction new511Bg address-management">
+
+	<!--弹框html-->
+	<div class="bombBox">
+    	<div class="con">
+        	<div class="text"></div>
+            <div class="but"><a class="cancel">取消</a><a class="confirm">确定</a></div>
+        </div>
+    </div>
+    <!--弹框html-end-->
+
+	<div class="tag">
+    	<div class="d1"><b class="line"></b>
+        	<dd class="dq">待确认<br /><span></span></dd>
+            <dd class="b">待付款<br /><span></span></dd>
+            <dd class="c">待发货<br /><span></span></dd>
+            <dd class="d">待签收<br /><span></span></dd>
+            <dd class="end">完成<br /><span></span></dd>
+      
+        </div>
+        <div class="d2">
+        	<h1>旅行者已接单，等待对方确认价格</h1>
+            <h2>旅行者确认价格后，您就可以付款了</h2>
+        </div>
+    </div>
+    
+    <div class="user">
+    	<img src="img/img2.png" width="81" height="81" /><span class="new713">杭霸天<br />日本 2016.9.30 回国</span>
+        <a><img src="img/tr2.png" width="69" height="69" /></a>
+    </div>
+    
+    <div class="gwc511List new715"><span class="count">1份</span>
+    	<a href="#">
+          <div class="con">
+            <img src="img/share1.jpg" width="155" height="155" />
+            <h1>uno男士磨砂洗面奶</h1>
+            <h2>当地价：¥100</h2>
+            <h2 class="a">服务费及运费待确认</h2>
+            <h3 class="gray">服务费及运费待确认</h2>
+          </div>  
+          <div class="but"><span>取消订单</span></div>
+            <!--<div class="but"><b>总价200</b></div>-->
+        </a>
+    </div>
+    
+    <div class="prInf"><dd><span>订单编号</span><b>20393010290101</b></dd>
+        <dd><span>商品品牌</span><b>松下</b></dd>
+        <dd><span>商品类型</span><b>数码电器</b></dd>
+        <dd><span>份数</span><b>1</b></dd>
+        <dd><span>详情备注</span><div class="last"><b>详情备注详情备注详情备注详情备注详情备注详情备注详情备注详情备注详情备注详情备注详情备注详情备注详情备注详情备注</b></div></dd>
+    </div>
+    <div class="emptyHeight"></div>
+    <div class="add-address payment new715"><span>总价：待确认</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">确认付款</a></div>
+   
+    
+<script>
+$(function(){
+	$(".Pbut").click(function(){
+		$(".bombBox .text").html("确定取消订单吗？")
+		$(".bombBox").fadeIn();
+		$(".confirm").addClass("cancelOrder")
+		})
+    $(".cancelOrder").live("click",function(){
+		  alert('取消成功')
+		})
+	
+		
+	})
+</script>
+    
+</article>
+</body>
+</html>
