@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<meta name="format-detection" content="telephone=no" />
+<title></title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script>
+$(function(){
+	var width=$(window).width();
+	var isScrolling=true;
+	var menu1='.menu ,.but';
+
+	function isScrollingFun(){
+			if(width<800){
+				isScrolling=false;
+				$(".fp-tableCell,.section").css("height","auto");
+				$(".section").eq(1).height($(window).width()/1.8);  <!--控制地图高度-->
+			}	
+			else{
+				isScrolling=true;
+			}
+		}
+	function dhwidth(){
+			var ssw=$(".head .re .right a").width();
+			if(width<768){
+				$(".head .re .right a").height(ssw)
+				$(".head .re .right a span").css("line-height",ssw+"px")
+			}
+		}
+	dhwidth();
+	isScrollingFun();
+	fullpageFun();	
+	$(window).resize(function(){
+			isScrollingFun();
+			dhwidth()
+		})
+	
+	
+	function fullpageFun(){
+		$('#dowebok').fullpage({
+			navigation:true,
+			autoScrolling:isScrolling,
+
+		});
+	}
+	
+	if(width<800){
+				$(".fp-tableCell,.section").css("height","auto");
+				$(".section").eq(1).height($(window).width()/1.8); <!--控制地图高度-->
+			}
+	
+	
+	 $('.flexslider').flexslider({
+        animation: "slide",
+    });
+	
+	$(".flexslider").css("max-height",$(window).height());
+	
+	$(".navicon").click(function(){
+		$(this).toggleClass("open");
+		$(".nav").toggleClass("open");
+		})
+
+	
+	
+
+});
+
+</script>
+</head>
+
+<body>
+
+<div class="head">
+ <div class="re">
+ 	<a class="logo"><img src="images/logo.png"></a><span><img src="images/wx.png"></span>
+    <div class="right menu">
+    	<a data-menuanchor="page1" href="javascript:;" class="d1 active"><img src="images/p3.png"><span>小 哥</span></a>
+        <a data-menuanchor="page2" href="javascript:;" class="d2"><img src="images/p1.png"><span>师 傅</span></a>
+        <a data-menuanchor="page3" href="javascript:;" class="d3"><img src="images/p2.png"><span>站 务</span></a>
+    </div>	
+ </div>
+</div>
+
+
+<div class="navicon">
+    <span class="icon icon-menu"><img src="images/downdh.png"></span>
+    <span class="icon icon-close">X</span>
+</div>
+<div class="nav">
+    <div class="contentNa">
+    	<h2 class="heading">ALIBABA GROUP 2015 ANNUAL REPORT</h2>
+        <div class="scroll">
+            <ul class="menu">
+                <li class="selected"><a href="javascript:;">小哥</a></li>
+                <li>
+                    <a href="javascript:;">师傅</a>
+                
+                    <ul class="pull-menu">
+                        <li><a href="javascript:;">
+                            Letter from Executive Chairman Jack Ma
+                        </a></li>
+                        <li><a href="javascript:;">
+                            Letter from CEO Daniel Yong Zhang
+                        </a></li>
+                        <li><a href="javascript:;">
+                            Mission, Leadership and Governance
+                        </a></li>
+                        <li><a href="javascript:;">
+                            Financial and Operational Highlights
+                        </a></li>
+                        <li><a href="javascript:;" target="_blank">
+                            Download our 20-F <span class="icon icon-download"></span>
+                        </a></li>
+                     </ul> 
+                </li>
+        
+                <li><a href="javascript:;">站务</a></li>
+             
+            </ul>
+            <div class="share">
+                <div class="share-titles">
+                    <span class="share-title">Share</span>
+                    <span class="share-title share-story-title">Share this story</span>
+                </div>
+                <div class="share-links">
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Far.alibabagroup.com%2F2015%2F&amp;title=Alibaba Defined" target="_blank">
+                        <span class="icon icon-linkedin"></span> 
+                        <span>linkedin</span>
+                    </a>
+                    <a href="http://twitter.com/share?text=Alibaba Defined&amp;url=http%3A%2F%2Far.alibabagroup.com%2F2015%2F" target="_blank">
+                        <span class="icon icon-twitter"></span> 
+                        <span>twitter</span>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Far.alibabagroup.com%2F2015%2F&amp;t=Alibaba Defined" target="_blank">
+                        <span class="icon icon-facebook"></span> 
+                        <span>facebook</span>
+                    </a>
+                    <a href="http://service.weibo.com/share/share.php?url=http%3A%2F%2Far.alibabagroup.com%2F2015%2F&amp;title=Alibaba Defined" target="_blank">
+                        <span class="icon icon-weibo"></span> 
+                        <span>weibo</span>
+                    </a>
+                </div>		
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dowebok">
+	<div class="section">
+		<div class="slider">
+            <div class="container">
+                <div class="row">
+                    <div class="span10 offset1">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="1">
+                                    <img src="images/1.jpg">
+                                    <div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>We‘re coming... ^-^</h1>
+                                                <p>屋滴技术信息股份有限公司登陆上海，
+第一家大数据邻里服务中心站点于2015年12月22日顺利开幕！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-thumb="2">
+                                    <img src="images/1.jpg">
+                                    <div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>We‘re coming... ^-^</h1>
+                                                <p>屋滴技术信息股份有限公司登陆上海，
+第一家大数据邻里服务中心站点于2015年12月22日顺利开幕！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-thumb="3">
+                                <div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>We‘re coming... ^-^</h1>
+                                                <p>屋滴技术信息股份有限公司登陆上海，
+第一家大数据邻里服务中心站点于2015年12月22日顺利开幕！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="images/1.jpg">
+                                </li>
+                                <li data-thumb="4">
+                                <div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>We‘re coming... ^-^</h1>
+                                                <p>屋滴技术信息股份有限公司登陆上海，
+第一家大数据邻里服务中心站点于2015年12月22日顺利开幕！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="images/1.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    
+    
+    <div class="section">
+
+	</div>
+    
+    
+	<div class="section">
+		<div class="slider">
+            <div class="container">
+                <div class="row">
+                    <div class="span10 offset1">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="1">
+                                	<div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>智能空气净化器</h1>
+                                                <p>想不出说啥，用点假字代替，字数不够再写点。
+下面需要写的更多才好看，心好累，怎么办还得再编一点够了。</p>
+												<p><A href="#">详情请点击</A></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="images/1a.jpg">
+                                </li>
+                                <li data-thumb="2">
+                                <div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>We‘re coming... ^-^</h1>
+                                                <p>屋滴技术信息股份有限公司登陆上海，
+第一家大数据邻里服务中心站点于2015年12月22日顺利开幕！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="images/1a.jpg">
+                                </li>
+                                <li data-thumb="3">
+                                <div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>We‘re coming... ^-^</h1>
+                                                <p>屋滴技术信息股份有限公司登陆上海，
+第一家大数据邻里服务中心站点于2015年12月22日顺利开幕！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="images/1a.jpg">
+                                </li>
+                                <li data-thumb="4">
+                                <div class="nam">
+                                    	<div class="table">
+                                        	<div class="tablecell">
+                                            	<h1>We‘re coming... ^-^</h1>
+                                                <p>屋滴技术信息股份有限公司登陆上海，
+第一家大数据邻里服务中心站点于2015年12月22日顺利开幕！</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="images/1a.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    
+
+  <div class="section">
+		<div class="cooperation">
+        	<ul>
+            	<li><a><img src="images/a1.png"></a></li>
+                <li><a><img src="images/a2.png"></a></li>
+                <li><a><img src="images/a3.png"></a></li>
+                <li><a><img src="images/a4.png"></a></li>
+                <li><a><img src="images/a1.png"></a></li>
+                <li><a><img src="images/a2.png"></a></li>
+                <li><a><img src="images/a3.png"></a></li>
+                <li><a><img src="images/a4.png"></a></li>
+            </ul>
+            <div class="clear"></div>
+      </div>
+        
+      <div class="foot">
+      	<h1><a href="tel:400-0646-515">400-0646-515</a> |
+<a href="/site/job" style="color: #969696; font-size: 20px;">加入屋滴</a></h1>
+        关于屋滴 服务协议 联系邮箱<br>
+Copyright © 2015-2018 Wooodi. All Rights Reserved. 沪ICP备15053204号-1
+      </div> 
+        
+	</div>
+
+</div>
+
+
+
+
+</body>
+</html>
