@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>绑定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body style="background:#e6e6e6;">
+<!--oNav_kl-->
+<p class="oNav_kp"><b>退款订单</b><br>
+  <span>订单号：E20150319110055243</span></p>
+<div class="oProduct oProduct_mk">
+  <p class="oImg_a"><img src="images/order/img_01.jpg"></p>
+  <div class="oNum_02">
+    <p class="oSize_a">龙头花盏10克礼盒<span>¥ 350.00</span></p>
+    <p class="oNum_03"><em></em>1</p>
+  </div>
+</div>
+<!--oExplain-->
+<div class="oExplain">
+	<h2 class="oTit_01">退款说明</h2>
+	<textarea name="" cols="" rows="" class="oArea_02"></textarea>
+	<p class="oSize_er">如退款过程中有任何疑问请拨打400 889 2525<br>
+(周一至周五 09:00 - 18:00)</p>
+
+</div> 
+<!--oBtn_po-->
+<p class="oBtn_po"><a href="###" class="oClick_03">确认退款</a></p>
+</body>
+</html>
+<script src="js/TouchSlide.1.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(":input").focus(function(){
+		  if($(this).val() ==this.defaultValue){  
+			  $(this).val("");           
+		  } 
+	}).blur(function(){
+		 if ($(this).val() == '') {
+			$(this).val(this.defaultValue);
+		 }
+	});
+})
+</script>

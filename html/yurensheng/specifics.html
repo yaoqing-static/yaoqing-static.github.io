@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>绑定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div id="slideBox" class="slideBox">
+  <p class="oIcon"><img src="images/details/icon_02.png"></p>
+  <div class="bd">
+    <ul>
+      <li> <a class="pic" href="#"><img src="images/details/banner.jpg" /></a> </li>
+      <li> <a class="pic" href="#"><img src="images/details/banner.jpg" /></a> </li>
+      <li> <a class="pic" href="#"><img src="images/details/banner.jpg" /></a> </li>
+      <li> <a class="pic" href="#"><img src="images/details/banner.jpg" /></a> </li>
+      <li> <a class="pic" href="#"><img src="images/details/banner.jpg" /></a> </li>
+    </ul>
+  </div>
+  <div class="hd">
+    <ul>
+    </ul>
+  </div>
+</div>
+<!--oDetails_D-->
+<div class="oDetails_D">
+  <div class="oPara">
+    <h2 class="oTit_2">龙头花盏10克礼盒</h2>
+    <p class="oNum_01"><b>¥ 350</b><span>¥ 480</span></p>
+  </div>
+  <p class="oSize_d">净含量：10克<br>
+    剩余：50<br>
+    运费：免运费</p>
+  <div class="oClick_01"> <em></em>余仁生商城
+    <p class="oClick_v">进入店铺<span></span></p>
+  </div>
+  <p class="introduce">产品介绍</p>
+  <p class="oImg_02"><img src="images/details/img_01.jpg"></p>
+  <!--oBtn_c-->
+  <p class="oBtn_c"> <a href="###" class="oSize">立即购买</a><a href="###">加入购物车</a> </p>
+</div>
+<p class="oCar"><img src="images/index/car.png"></p>
+</body>
+</html>
+<script src="js/TouchSlide.1.1.js"></script>
+<script type="text/javascript">
+TouchSlide({ 
+	slideCell:"#slideBox",
+	titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+	mainCell:".bd ul",
+	effect:"leftLoop", 
+	autoPage:true,//自动分页
+	autoPlay:true //自动播放
+	});
+</script>
