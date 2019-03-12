@@ -1,0 +1,50 @@
+@charset "gb2312";
+/* CSS Document */
+
+
+	
+@media screen and (min-width: 1000px) {
+	body { font-size: 13px; }
+/*	.navWrap .nav { background: #000; }
+*/	}
+@media screen and (max-width: 1000px) and (min-width: 801px) {
+	body { font-size: 13px; }
+/*	.navWrap .nav { background: #CCC; }
+*/	}
+@media screen and (max-width: 800px) and (min-width: 641px) {
+	body { font-size: 12px; }
+/*	.navWrap .nav { background: #F60; }
+*/	#h-t-con .p-l-100-140 li { width: 16%; margin: 0 2% 20px; }
+	.p-l-180-130 li { width: 22%; margin: 0 1.5% 25px; }
+	}
+@media screen and (max-width: 640px) and (min-width: 481px) {
+	body { font-size: 12px; }
+/*	.navWrap .nav { background: #FF0; }
+*/	.top-news .w100p { overflow: hidden; height: 195px; }
+	.top-news .w47p { width: 100%; }
+	#h-t-con .p-l-100-140 li { width: 21%; margin: 0 2% 20px; }
+	.p-l-180-130 li { width: 22%; margin: 0 1.5% 25px; }
+	.game-pics .title li { padding: 0; width: 25%; text-align: center; }
+	.info .w100p { overflow: hidden; height: 200px; }
+	}
+@media screen and (max-width: 480px) and (min-width: 361px) {
+	body { font-size: 12px; }
+/*	.navWrap .nav { background: #F0F; }
+*/	.top-news .w100p { overflow: hidden; height: 195px; }
+	.top-news .w47p { width: 100%; }
+	#h-t-con .p-l-100-140 li { width: 26%; margin: 0 3.66% 20px; }
+	.p-l-180-130 li { width: 28%; margin: 0 2.66% 25px; }
+	.game-pics .title li { padding: 0; width: 25%; text-align: center; }
+	.info .w100p { overflow: hidden; height: 200px; }
+	}
+@media screen and (max-width: 360px) {
+	body { font-size: 12px; }
+/*	.navWrap .nav { background: #0F0; }
+*/	.top-news .w100p { overflow: hidden; height: 195px; }
+	.top-news .w47p { width: 100%; }
+	.p-l-210-150 li { width: 42%; margin: 0 4% 20px; }
+	#h-t-con .p-l-100-140 li { width: 42%; margin: 0 4% 20px; }
+	.p-l-180-130 li { width: 42%; margin: 0 4% 25px; }
+	.game-pics .title li { padding: 0; width: 25%; text-align: center; }
+	.info .w100p { overflow: hidden; height: 200px; }
+	}

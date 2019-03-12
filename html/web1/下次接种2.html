@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/slide.css" type="text/css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/jQuery-1.7.1.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.datePicker-min.js"></script>
+<link type="text/css" href="css/datepicker.css" rel="stylesheet" />
+<style>
+
+div.dp-popup h2{ font-size:24px; color:#2ca0ea; font-weight:normal; height:90px; line-height:90px}
+div.dp-popup td{ font-size:24px}
+table.jCalendar td{ background-color:#FFF; color:#888}
+table.jCalendar th{ text-align:center; color:#3f3f3f; background-color:#f6f7f9; line-height:45px; font-size:21px}
+table.jCalendar td.today,table.jCalendar td.selected, table.jCalendar td.selected.dp-hover{
+	background-color: transparent;
+	background-image: url(img/rlbg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+table.jCalendar td.other-month{background-color: transparent; color:#4d4c4c }
+table.jCalendar td.dp-hover,table.jCalendar tr.activeWeekHover td{background-image: url(img/rlbg.png);
+	background-repeat: no-repeat;
+	background-position: center;background-color: transparent; color:#4d4c4c}
+div.dp-popup a#dp-nav-next-year,div.dp-popup a#dp-nav-prev-year{ display:none}
+div.dp-popup a#dp-nav-prev-month.disabled,div.dp-popup a#dp-nav-prev-month{
+	background-image: url(img/iconew2.png);
+	background-repeat: no-repeat;
+	background-position: 0px -70px;; width:34px; height:44px
+}
+div.dp-popup div.dp-nav-prev,div.dp-popup div.dp-nav-next{ top:18px}
+div.dp-popup a#dp-nav-next-month{background-image: url(img/iconew2.png);
+	background-repeat: no-repeat;
+	background-position: 0px -150px;; width:34px; height:44px}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".datepicker").datePicker({
+		inline:true,
+		selectMultiple:false
+	});
+	
+	$("#datepicker").datePicker({
+		clickInput:true,
+
+	});
+	
+});
+</script>
+</head>
+
+<body>
+<article>
+<div class="user1 page2"><a class="home" href="index.html">&nbsp;</a><a class="setup" href="绑定宝宝信息.html">&nbsp;</a>
+	<div class="img"><img src="img/uer1.png" width="104" height="104" /> <strong>小宝</strong><br />2岁 2个月 2天<br />距下一次接种还有xx天<div class="clear"></div></div>
+	<div class="a"><div class="a1">北京大德社区卫生服务中心</div></div>
+</div>
+
+<div class="userpage3">
+
+<div class="userpage4a">
+  <div class="a1"><dd><span class="a1">卡介苗</span><span class="a2">第一计</span><span class="a4"><a>收</a></span><span class="a5"><a>已替代</a></span></dd></div>
+  <div class="a2"><a name="AA" href="#" class="aa1">知情同意书</a><a href="#" class="aa2">相关产品</a><a href="#">常见问题</a></div>
+  
+</div>
+
+<div class="userpage4b" style="border-bottom:none">
+	<div class="a1"><a href="下次接种.html#AA">已接种</a><a class="dq">忽略疫苗</a></div>
+    <div class="liscon"><div class="co">备注：我已经了解此疫苗，并不愿意接种。<br />
+点击确认，系统将不再下次接种中提醒此疫苗</div></div>
+</div>
+
+
+<div class="userbut" style="padding-top:0px; background-color:#FFF; border-top:none">
+	<a href="#" style="background-color:#68c4d2; border:1px solid #57b8c7">取消忽略</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">确认</a>
+</div>
+
+
+</div>
+
+
+
+<div class="userbot">备注：本备注为接种部门添加</div>	
+	<div class="bannerBottom"><a href="#"><img src="img/baneer1.jpg" width="640" height="123" /></a></div>
+	
+
+</article>
+</body>
+</html>

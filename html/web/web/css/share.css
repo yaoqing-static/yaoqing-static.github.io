@@ -1,0 +1,172 @@
+@charset "gb2312";
+/* 
+  PChome web
+  by:yunfei
+  time:2013-09-30
+*/
+
+/* 空格 */
+.clear{ height:40px;background:#F8F8F8; border-top:1px #DCDCDC solid; margin:0 auto; border-bottom:1px #DCDCDC solid;}
+/* hover */
+.pingceList li a:hover{ color:#167AD2; text-decoration:underline;}
+.pinpList dl dd a:hover,.slideList dl dd ul li a:hover,.ProductList ul li a:hover{color:#167AD2; text-decoration:none;}
+/* 参数页面 */
+.canshuList{ background:#F8F8F8;}
+.canshuList li{ padding:0.6em 0 0.5em 8%;border-bottom:1px #CACACA solid;line-height:1.45em; font-size:1.40em;width:92%;}
+.canshuList li span{ float:left;}
+.canshuList li span.name{ max-width:35%; color:#9D9D9D;}
+.canshuList li span.value{ width:65%; color:#373737;}
+.canshuList li span.value a{ float:right; color:#167AD2; text-decoration:underline;}
+/* 评测列表 */
+.pingceList{ background:#F8F8F8; padding-top:0.1em;}
+.pingceList li{ padding-left:11%; border-bottom:1px #CACACA solid; background:url(../pics/liBg.png) 32px 32px no-repeat;}
+.pingceList li a{ font-size:1.4em; line-height:2.5em; text-align:left; display:block; height:2.5em;width:93%; overflow:hidden;}
+/* 高级筛选 */
+.selectList{ background:#F8F8F8;}
+.selectList ul li{ border-bottom:1px #D2D2D2 solid; border-top:1px #FFF solid; padding:5px 0 5px 8%; width:92%;}
+.selectList ul li label{ color:#464646; font-size:1.3em; line-height:2.5em;}
+.selectList ul li .selInfo{ height:1.3em; font:400 1.3em/1.3em 'microsoft yahei'; color:#9E9E9E; background:#F8F8F8; margin:2.2% 8% 0 0; display:block; width:8em;float:right; border:none;}
+
+
+/* 品牌列表 */
+.ppNav{ background:#E3E3E3; z-index:5000;min-width:320px;}
+.ppNav a{ display:block; width:25%; float:left; padding:0.5em 0; font-size:1.5em; text-align:center;}
+.ppNav a.selhover{ background:#F8F8F8;}
+.pinpList{ background:#F8F8F8;}
+.pinpList dl{ margin:0; width:100%; border-bottom:1px #CACACA solid; padding:0.3em 0 0.5em 0; height:6em;}
+.pinpList dl dt{ float:left;width:25%; margin:1% 2% 0 3%; height:100%; text-align:center; overflow:hidden;}
+.pinpList dl dt img{ max-width:100%; box-shadow:0 0 5px gray;}
+.pinpList dl dd{ width:70%; float:left; margin:0; height:100%;}
+.pinpList dl dd a{ display:block; width:95%; font-size:1.4em; height:2.9em; overflow:hidden; line-height:1.45em; margin-bottom:0.1em;}
+.pinpList dl dd span{ color:#CC0003;font-size:1.4em;}
+/* 评测新闻页 */
+.fenxiang{ height:2em;padding:1em 0; margin-bottom:1em;}
+.fenxiang span{ display:block; float:left;}
+.fenxiang .zan{width:3.8em;background:url(../pics/zanBg.png) 63px 3px no-repeat;font-size:1.5em; line-height:1.5em; margin:0 7% 0 10%; cursor:pointer;}
+.fenxiang .fenxInner{font-size:1.5em; line-height:1.5em;}
+.fenxiang .fenxInner a{display:inline-block;vertical-align:middle; padding:0.8em; margin:-0.4em 1em 0 0;}
+.fenxiang .fenxInner a.sina{ background:url(../pics/sina.png) no-repeat center;  background-size:cover;}
+.fenxiang .fenxInner a.tencent{ background:url(../pics/tencent.png) no-repeat center; background-size:cover;}
+.Reply dl{background:#F8F8F8;padding:0.8em 1em; border-top:1px #CACACA solid;}
+.Reply dl dt span{ color:#9D9D9D; font-size:1.05em; display:block;}
+.Reply dl dt span.Reply_Name{ float:left;}
+.Reply dl dt span.Reply_Time{ float:right;}
+.Reply dl dd p{ color:#424242; text-indent:0;}
+/* 评论 */
+.remark ul{ padding:0.5em 1em; background:#F8F8F8; }
+.remark ul.borderBot{border-bottom:1px #CACACA solid;}
+.remark ul li{ padding-left:6%; margin-bottom:0.2em; float:left; width:94%;}
+.remark ul li h2{ margin-bottom:5px; font:400 1.5em/1.5em 'microsoft yahei'; color:#D01214;}
+.remark ul li span{ float:left; width:15%; font-size:1.3em; margin-top:0.1em; color:#A3A3A3;}
+.remark ul li p{ padding:0; width:85%; float:left; text-indent:0; color:#4A4A4A; line-height:1.6em;}
+/* 全部分类 */
+.slideList{ background:#F8F8F8; }
+.slideList dl dt{ height:3.2em; border-bottom:1px #CACACA solid; padding-left:1.8em;}
+.slideList dl dt h3{ float:left; font:400 1.45em/2.2em 'microsoft yahei';}
+.slideList dl dt span{ float:right; margin:1% 8% 0 0; height:2.5em; width:2.5em;color:#A9A9A9; background:url(../pics/SlideDown.png) center center no-repeat; background-size:auto 25%;}
+.slideList dl dt span.hoverBg{ background:url(../pics/SlideUp.png) center center no-repeat;background-size:auto 25%;}
+.slideList dl dd{ background:#E1E1E1; padding:0.2em 5%; display:none;}
+.slideList dl dd h3{ font-size:1.44em; color:#0958C1; font-weight:400; margin:10px 0;}
+.slideList dl dd ul li{ width:23%; float:left; text-align:center; background:#FFF; margin:0 2% 10px 0;}
+.slideList dl dd ul li a{ height:2.3em; display:block; line-height:2.3em; font-size:1.2em;}
+/* 带序号价格排行 */
+.ProductList{ background:#F8F8F8;}
+.Product_Title{ padding:10px 0; border-bottom:1px #D1D1D1 solid;}
+.Product_Title span{ display:block; float:left;color:#A1A1A1; font-size:1.15em;}
+.Product_Title span.Product_Num{ margin:0 3% 0 8.5%;}
+.Product_Title span.Product_Name{ margin-right:50%;}
+.ProductList ul li{ float:left; border-bottom:1px #D1D1D1 solid; width:100%; padding:0.7em 0;}
+.ProductList ul li a,.ProductList ul li em,.ProductList ul li span{ display:block; float:left; overflow:hidden;}
+.ProductList ul li em{ height:1.5em; width:1.5em; margin-top:1.1%;line-height:1.5em; text-align:center; margin-left:8.5%; color:#FFF;}
+.ProductList ul li em.numRed{ background:#CC0001;}
+.ProductList ul li em.numOrange{ background:#E85B00;}
+.ProductList ul li em.numYellow{ background:#FF9934;}
+.ProductList ul li em.numGray{ background:#9D9D9D;}
+.ProductList ul li a{ color:#434343; width:60%; margin-left:5%;font-size:1.4em; height:1.4em;}
+.ProductList ul li span{ font-size:1.4em; color:#CD0000; width:4em; text-align:center; overflow:hidden; height:1.4em;}
+/* 首页焦点图 */
+#scroll{overflow:hidden; margin-bottom:20px; margin:0 auto;}
+.img_ad{width:100%; margin:0 auto; overflow:hidden;position:relative;}
+.img_ad img{width:100%;}
+.img_ad_titleP1{ text-transform:uppercase; margin-right:20px;}
+.img_wrap{position:absolute;left:0; top:0; width:20%; background:#666;}
+.img_wrap ul{position:absolute; left:0px;}
+.img_wrap ul li{ float:left;display:inline; width:20%;}
+.img_wrap ul li span{width:100%;height:2em;line-height:200%;background-color:rgba(0,0,0,0.5);position:absolute;display:block;bottom:0;color:#FFF;text-indent:10px;}
+.imgFlashIco{width:25%;overflow:hidden;position:relative;top:-1.8em; text-align:center;left:75%;}
+.imgFlashIco li{display:inline-block;width:0.5em;height:0.5em; cursor:pointer;background:#7B7774;border-radius:50%;}
+.imgFlashIco li.on{ background:#487ED4;}
+.imgFlashSpan{ display:inline-block; height:26px;line-height:26px;  color:#F00;overflow:hidden;margin-left:8px; cursor:pointer;}
+/* 搜索产品报价列表 */
+.resultNum{background:#F8F8F8; font-size:1.5em; line-height:1.5em; padding:0.5em 0; text-indent:2.5%;}
+.resultNum span{ color:#CD0000;}
+/* 综述电商报价 */
+.Quotation_list{ background:#F8F8F8;}
+.Quotation_Title{ padding:0.7em 1em; border-bottom:1px #9E9E9E dashed;}
+.Quotation_Title span{ display:block; float:left;font-size:1.2em; color:#9E9E9E; text-align:center;}
+.Quotation_Title span.Quotation_Type{ width:20%;margin:0 5% 0 2%;}
+.Quotation_Title span.Quotation_Pre{  width:20%; margin-right:3%;}
+.Quotation_Title span.Quotation_Evn{ width:26%;margin-right:3%;}
+.Quotation_Title span.Quotation_Buy{ width:18%;}
+.Quotation_list ul{}
+.Quotation_list ul li{ border-bottom:1px #9E9E9E dashed; padding:0 1em; height:3.2em;}
+.Quotation_list ul li a,.Quotation_list ul li span{float:left;overflow:hidden;display:block;text-align:center;font-size:1.3em;text-align:center;}
+.Quotation_list ul li a.Qu_Type,.Quotation_list ul li span.Qu_pre,.Quotation_list ul li span.Qu_Evn{height:2.5em; line-height:2.5em;}
+.Quotation_list ul li a.Qu_Type{ margin:0 5% 0 2%; width:20%; color:#646464; }
+.Quotation_list ul li span.Qu_pre{ width:20%; margin-right:3%; color:#CB0101}
+.Quotation_list ul li span.Qu_Evn{ width:26%; margin-right:3%;color:#646464;}
+.Quotation_list ul li a.Qu_Go{ width:18%; background:#FF8A16; border-radius:5px; color:#FFF; height:1.5em; line-height:1.7em; margin-top:0.45em;}	
+/* 图赏正文 */
+.activeImg{ width:23em; height:15em;overflow:hidden;position:relative;margin:0 auto;background:url(../pics/imgBorderBg.png) no-repeat; background-size:contain; padding:0.72em 0.7em 2.2em 0.7em;}
+.activeImg a{ display:block; position:relative; height:15.3em; width:100%; overflow:hidden;}
+.activeImg span{ padding:0.1em 0.9em; font-size:1.25em; bottom:0; right:0; position:absolute; color:#FFF;background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);}
+.activeImg img{width:100%;}
+
+/* 编辑评分 */
+.title .subMark { font-size:0.7em; color:#777777; margin-right:0.4em;}
+.title .subMark em{color:#CC0000; margin-right:0.3em; font-weight:700;}
+
+.borderBot li b{ font-weight:400; float:right; }	
+.borderBot li i,.borderBot li b{ padding:0.5em 0.01;display:block;  font-size:1.1em;}
+
+@media only screen and (min-width: 1280px){
+.clear{ width:1280px;}
+.ProductList ul li a{ margin-left:4%; width:56%;}
+#scroll{ width:1280px;}
+}
+@media only screen and (min-width: 640px) and (max-width: 1279px){
+.clear{ width:640px;}
+#scroll{ width:640px;}
+}
+@media only screen and (min-width: 480px) and (max-width: 639px){
+.pingceList li{ background-position:25px 25px; background-size:6px 6px;padding-left:8%;}	
+.selectList ul li select{height:33px;margin:1.8% 8% 0 0;}
+.fenxiang .zan{ background-position:53px 0; margin:0 5% 0 15%;}
+.remark ul li span{ width:18%;}
+.remark ul li p{ width:82%;}
+.clear{ width:100%}
+.pinpList dl{ padding:20px 0;}
+}
+@media only screen and (min-width: 360px) and (max-width: 479px){
+.pingceList li{ background-position:20px 20px; background-size:5px 5px;padding-left:9%;}
+.selectList ul li select{height:28px;margin:1.5% 8% 0 0;}	
+.fenxiang .zan{ background-position:45px 0px; margin:0 4.8% 0 10%;background-size:39% 81%;height:1.5em; line-height:1.6em;}
+.Reply dl dd p{ line-height:35px;}
+.remark ul li span{ width:18%; margin-top:4px;}
+.remark ul li p{ width:82%; line-height:30px;}
+.clear{ height:30px; width:100%}
+.pinpList dl{ padding:20px 0;}
+}
+@media only screen and (max-width: 360px){
+.pingceList li{ background-position:10px 18px; background-size:4px 4px;padding-left:8%;}
+.selectList ul li select{height:25px;margin:1.5% 8% 0 0;}
+.fenxiang{ text-align:right;}
+.fenxiang span{ display:inline-block; float:none;}
+.fenxiang .zan{ background-position:33px 0px; margin:1% 2% 0 7%; text-align:left; width:3.5em; background-size:35% 70%;height:1.5em; line-height:1.2em;}
+.Reply dl dd p{ line-height:30px;}
+.remark ul li span{ width:18%; margin-top:3px;}
+.remark ul li p{ width:82%; line-height:25px;}
+.clear{ height:20px; width:100%;}
+.pinpList dl{ padding:15px 0;}
+.activeImg{padding:0.72em 0.5em 2.5em 0.5em;}
+}

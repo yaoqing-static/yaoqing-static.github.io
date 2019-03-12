@@ -1,0 +1,895 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>gamespot首页</title>
+<meta name="keywords" content="gamespot首页" />
+<meta name="description" content="gamespot首页" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
+<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/channel.js"></script>
+<script language="javascript" type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/com.js"></script>
+<link rel="icon" href="http://images.pchome.net/gamespot/img/favicon.ico" type="image/icon" />
+<link rel="shortcut icon" href="http://images.pchome.net/gamespot/img/favicon.ico" type="image/icon" />
+<link rel="stylesheet" href="css/share.css"/>
+<link rel="stylesheet" href="css/slide.css"/>
+<link rel="stylesheet" href="css/all.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/media.css">
+
+</head>
+
+<body>
+<a href="javascript:" id="gotop" name="gotop">&nbsp;</a>
+<!--导航栏-->
+<div class="top-nav navWrap">
+    <div class="nav" style="position: fixed; top: 0px;"> <a href="#" class="logo" title="">gameSpot</a> <span id="ClickMenu"><!--隐藏菜单标签--></span>
+        <div class="navInner clearfix" style="display: none;">
+            <div class="navMargin">
+                <a href="http://www.gamespot.com.cn">首页</a><i>|</i><a href="http://ol.gamespot.com.cn">网络</a><i>|</i><a href="http://pc.gamespot.com.cn">单机</a><i>|</i><a href="http://tv.gamespot.com.cn">电视</a><i>|</i><a href="http://mobile.gamespot.com.cn">手机</a><i>|</i><a href="http://pic.gamespot.com.cn/list_all_0_0_0_0_.html" class="hover">图库</a><i>|</i><a href="http://product.gamespot.com.cn">游戏库</a><i>|</i><a href="http://dnf.gamespot.com.cn/" class="hover">DNF</a><i>|</i><a href="http://chinajoy.gamespot.com.cn/">ChinaJoy</a><i>|</i><a href="http://weekly.gamespot.com.cn" class="hover">周刊</a> 
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("#ClickMenu").click(function(){
+		 $(this).next(".navInner").toggle();
+	});	
+	function showNav(){	
+			var oH = $(window).width();			
+			if(oH >= 960){
+				$(".navInner").show(10);
+			}
+			else{
+				$(".navInner").hide(10);
+			}								
+	};	
+	showNav();			
+	$(window).scroll( function() { 
+		scrll();
+	});	
+	$(window).resize(function(){	  
+	   scrll();		
+	   showNav();	  
+	});			
+	scrll();	
+	function scrll(){	
+	   var ww = $(document).width();	 
+	   if(ww < 960)	{		 
+		   $(".nav").css({"position":"fixed","top":0});	
+		   if(ww <= 320){		 
+			  $(".nav").css({"position":"fixed","top":0,"minWidth":320+'px'});		   
+		   }
+	   }
+	   else{
+		   $(".nav").css({"position":"relative"});		  
+	   } 	 	 
+	};
+});
+</script>
+
+<!--焦点图-->
+<div class="swiper-container">
+    <div class="swiper-wrapper" id="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#"><img src="img/1.jpg" alt="" title="NBA最强壮15人：詹姆斯榜首 魔兽次席保罗第4"></a>                   
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/2.jpg" alt="" title="詹姆斯变形的脚趾 风光十足背后的"伤""></a>                
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/3.jpg" alt="" title="韦德穿拳王潮T摆酷 与女友甜蜜亮相电影节"></a>                  
+        </div>
+        <div class="swiper-slide">
+            <a href="#"><img src="img/4.jpg" alt="" title="穿拳王潮T摆酷 与女友甜蜜亮相电影节"></a>                  
+        </div>                   
+    </div>   
+    <span class="swiper_title"><!--图片标题--></span>             
+    <div class="pagination"><!--右下角圆点标示--></div>        
+</div>
+<script type="text/javascript">        
+ var newSlideSize = function slideSize(){
+	var w = Math.ceil($(".swiper-container").width()/1.7);
+	$(".swiper-container,.swiper-wrapper,.swiper-slide").height(w); 
+ };
+ newSlideSize();
+ $(window).resize(function(){
+   newSlideSize();
+ });
+</script>
+
+<!--内容-->
+<div class="wrap content">
+<!--新闻头条+广告-->  
+    <div class="container top-news">
+        <div class="title mgb10">
+            <ul class="clearfix">
+                <li class="current">新闻头条</li>
+            </ul>
+        </div>
+        <div class="w100p clearfix mgb10">
+            <ul class="w47p fl">
+                <li class="mgb5"><h3><a href="#">《大闹天宫OL》七大圣变身玩法全攻略变身玩法全攻略</a></h3></li>
+                <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币</a><span>[10/15]</span></li>
+                <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点</a><span>[10/15]</span></li>
+                <li><a href="#">怒发冲冠 《武易》横扫千军必杀计</a><span>[10/15]</span></li>
+                <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼</a><span>[10/15]</span></li>
+            </ul>
+            <div class="w6p fl"></div>
+            <ul class="w47p fl">
+                <li class="mgb5"><h3><a href="#">《大闹天宫OL》七大圣变身玩法全攻略变身玩法全攻略</a></h3></li>
+                <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币</a><span>[10/15]</span></li>
+                <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点</a><span>[10/15]</span></li>
+                <li><a href="#">怒发冲冠 《武易》横扫千军必杀计</a><span>[10/15]</span></li>
+                <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼</a><span>[10/15]</span></li>
+            </ul>
+        </div>
+        <p align="center">
+            <a href="#" class="bl-more">查看更多新闻头条>></a>
+        </p>
+    </div>
+<!--热门游戏+大家来吐槽+酒馆+大家都在玩-->
+	<div class="container hot-new">
+        <div class="title mgb20">
+            <ul class="clearfix" id="h-t-tab">
+                <li class="current">热门游戏</li>
+                <li>最新游戏</li>
+            </ul>
+        </div>
+        <div id="h-t-con">
+            <div>
+                <ul class="pic-list2 p-l-100-140 clearfix">
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL大闹天宫OL大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="pic-list2 p-l-100-140 clearfix">
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">6</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                    <li>
+                        <a href="#" class="aBlock"></a>
+                        <img src="img/img_01.jpg">
+                        <i class="score">8</i>
+                        <i class="shadow"></i>
+                        <div class="txt"><h4><s>角色扮演</s></h4><s>手游</s></div>
+                        <span>大闹天宫OL</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p align="center">
+        	<a href="#" class="bl-more">查看更多热门游戏>></a><a href="#" class="bl-more">查看更多最新游戏>></a>
+        </p>
+    </div>
+  
+<!--热门专区+专访-->
+	<div class="container hot">
+        <div class="title mgb30">
+            <ul class="clearfix" id="h-t-tab">
+                <li class="current">热门专区</li>
+            </ul>
+        </div>
+        <ul class="pic-list2 p-l-210-150 clearfix">
+            <li>
+                <a href="#">
+                    <img src="img/img_02.jpg">
+                    <i class="img-bg"></i>
+                    <i class="score">9</i>
+                    <div class="txt">觉醒的火焰火焰</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/img_02.jpg">
+                    <i class="img-bg"></i>
+                    <i class="score">9</i>
+                    <div class="txt">觉醒的火焰火焰</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/img_02.jpg">
+                    <i class="img-bg"></i>
+                    <i class="score">7</i>
+                    <div class="txt">觉醒的火焰火焰</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/img_02.jpg">
+                    <i class="img-bg"></i>
+                    <i class="score">6</i>
+                    <div class="txt">觉醒的火焰火焰</div>
+                </a>
+            </li>
+        </ul>
+        <p align="center">
+            <a href="#" class="bl-more">查看更多热门专区>></a>
+        </p>
+    </div>
+<!--游戏图片四屏切换-->
+	<div class="container game-pics">
+    	<div class="title mgb20">
+            <ul class="clearfix" id="g-p-tab">
+                <li class="current">游戏图片</li>
+                <li>Cosplay</li>
+                <li>游戏原画</li>
+                <li>游戏壁纸</li>
+            </ul>
+        </div>
+        <div id="g-p-con">
+        	<div>
+            	<ul class="pic-list p-l-180-130 clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+            	<ul class="pic-list p-l-180-130 clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+            	<ul class="pic-list p-l-180-130 clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+            	<ul class="pic-list p-l-180-130 clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/img_02.jpg">
+                            <i class="img-bg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p align="center">
+        	<a href="#" class="bl-more">查看更多游戏图片>></a><a href="#" class="bl-more">查看更多Cosplay>></a><br />
+            <a href="#" class="bl-more">查看更多游戏原画>></a><a href="#" class="bl-more">查看更多游戏壁纸>></a>
+        </p>
+    </div>
+<!--资讯三屏切换-->
+	<div class="container top-news info">
+        <div class="title mgb10">
+            <ul class="clearfix" id="info-tab">
+                <li class="current">网游资讯</li>
+                <li>页游资讯</li>
+                <li>手游资讯</li>
+            </ul>
+        </div>
+        <div class="w100p clearfix mgb10" id="info-con">
+        	<div>
+            	<ul class="w47p fl">
+                    <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                    <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼全新酷炫月之翼</a></li>
+                </ul>
+                <div class="w6p fl"></div>
+                <ul class="w47p fl">
+                	<li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                    <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼全新酷炫月之翼</a></li>
+                </ul>
+            </div>
+            <div>
+            	<ul class="w47p fl">
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                    <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                	<li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼全新酷炫月之翼</a></li>
+                </ul>
+                <div class="w6p fl"></div>
+                <ul class="w47p fl">
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                    <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                	<li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼全新酷炫月之翼</a></li>
+                </ul>
+            </div>
+            <div>
+            	<ul class="w47p fl">
+                	<li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                	<li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                    <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                	<li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼全新酷炫月之翼</a></li>
+                </ul>
+                <div class="w6p fl"></div>
+                <ul class="w47p fl">
+                	<li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                	<li><a href="#">怒发冲冠 《武易》横扫千军必杀计横扫千军必杀计</a></li>
+                    <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币野兽大围剿 银币</a></li>
+                    <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                	<li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点技能统盘点</a></li>
+                    <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼全新酷炫月之翼</a></li>
+                </ul>
+            </div>
+        </div>
+		<p align="center">
+            <a href="#" class="bl-more">查看更多网游资讯>></a><a href="#" class="bl-more">查看更多页游资讯>></a><a href="#" class="bl-more">查看更多手游资讯>></a>
+        </p>        
+    </div>
+<!--kds内容-->
+	<div class="container top-news kds">
+        <div class="title mgb10">
+            <ul class="clearfix">
+                <li class="current">论坛热帖</li>
+            </ul>
+        </div>
+        <div class="w100p clearfix mgb10">
+            <ul class="w47p fl">
+                <li class="mgb5"><h3><a href="#">《大闹天宫OL》七大圣变身玩法全攻略变身玩法全攻略</a></h3></li>
+                <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币</a><span>[10/15]</span></li>
+                <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点</a><span>[10/15]</span></li>
+                <li><a href="#">怒发冲冠 《武易》横扫千军必杀计</a><span>[10/15]</span></li>
+                <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼</a><span>[10/15]</span></li>
+            </ul>
+            <div class="w6p fl"></div>
+            <ul class="w47p fl">
+                <li class="mgb5"><h3><a href="#">《大闹天宫OL》七大圣变身玩法全攻略变身玩法全攻略</a></h3></li>
+                <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币</a><span>[10/15]</span></li>
+                <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点</a><span>[10/15]</span></li>
+                <li><a href="#">怒发冲冠 《武易》横扫千军必杀计</a><span>[10/15]</span></li>
+                <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼</a><span>[10/15]</span></li>
+            </ul>
+        </div>
+		<p align="center">
+            <a href="#" class="bl-more">查看更多论坛热帖>></a>
+        </p>        
+    </div>
+<!--专访-->  
+    <div class="container top-news zhuanfang mgb10">
+        <div class="title mgb10">
+            <ul class="clearfix">
+                <li class="current">专访</li>
+            </ul>
+        </div>
+        <div class="w100p clearfix mgb10">
+            <ul class="w47p fl">
+                <li class="mgb5"><h3><a href="#">《大闹天宫OL》七大圣变身玩法全攻略变身玩法全攻略</a></h3></li>
+                <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币</a><span>[10/15]</span></li>
+                <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点</a><span>[10/15]</span></li>
+                <li><a href="#">怒发冲冠 《武易》横扫千军必杀计</a><span>[10/15]</span></li>
+                <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼</a><span>[10/15]</span></li>
+            </ul>
+            <div class="w6p fl"></div>
+            <ul class="w47p fl">
+                <li class="mgb5"><h3><a href="#">《大闹天宫OL》七大圣变身玩法全攻略变身玩法全攻略</a></h3></li>
+                <li><a href="#">《烈焰》BOSS荒蛮野兽大围剿 银币</a><span>[10/15]</span></li>
+                <li><a href="#">上古恶龙祸人间 《大黑龙》技能统盘点</a><span>[10/15]</span></li>
+                <li><a href="#">怒发冲冠 《武易》横扫千军必杀计</a><span>[10/15]</span></li>
+                <li><a href="#">流光溢彩 《屠龙传说》全新酷炫月之翼</a><span>[10/15]</span></li>
+            </ul>
+        </div>
+        <p align="center">
+            <a href="#" class="bl-more">查看更多专访>></a>
+        </p>  
+    </div>
+<!--文字链-->
+	<div class="container mgb10">
+        <div class="mgb10 links">
+        	<div>
+                <p><a href="#">新闻</a>|<a href="#">游戏</a>|<a href="#">图片</a>|<a href="#">专区</a></p>
+                <p><a href="#">专访</a>|<a href="#">论坛</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+<div id="footer">
+    <div class="copyright">
+        <ul>
+            <li>上海市长宁区延安西路889号 太平洋企业中心22楼 Tel: 86-021-51757733</li>
+            <li><img src="http://images.pchome.net/global/img2/copyright2011_cnet.png">2013 CBS Interactive. All rights reserved. <a href="http://www.gamespot.com.cn/">gamespot.com.cn</a> 北京智德典康电子商务有限公司 版权所有 <span>ICP证:京010391号</span></li>
+        </ul>
+	</div>
+</div>
+
+<div id="pic_top"><a href="#gotop" target="_self"></a></div>
+<script>
+window.onload = function(){
+	$(".bg").height($("body").height());
+	ulHeight("#h-t-con .p-l-100-140");
+	ulHeight(".p-l-180-130");
+	};
+$(window).resize(function(){ 
+	ulHeight("#h-t-con .p-l-100-140");
+	ulHeight(".p-l-180-130");
+	})
+$(document).ready(function(){
+    $(window).scroll(function(){
+		gotop();
+		});
+})
+score();
+cTab("#h-t-tab","#h-t-con");
+cTab("#g-p-tab","#g-p-con");
+cTab("#info-tab","#info-con");
+$("#h-t-tab li").eq(0).click();
+
+function ulHeight(obj){
+	var uheight = (parseInt($(obj).children("li").height()) + parseInt($(obj).children("li").css("margin-bottom")))*2-5;
+	$(obj).height(uheight+"px");
+	}
+</script>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/swiper-2.1.min.js"></script>
+<!--首页焦点图  触屏滑动 鼠标拖拽-->
+<script type="text/javascript">
+$(function(){
+	var oDetail = $(".swiper_title");
+	oDetail.text($(".swiper-slide a img").eq(0).attr("title"));
+	var mySwiper = new Swiper('.swiper-container',{   
+		pagination: '.pagination',
+		loop:true,
+		autoplay:3000,	
+		paginationClickable: true,
+		onSlideChangeStart: function(){
+		   oDetail.text($(".swiper-slide a img").eq(mySwiper.activeIndex).attr("title"))
+		}
+	});   
+}); 
+</script>
+
+</body>
+</html>

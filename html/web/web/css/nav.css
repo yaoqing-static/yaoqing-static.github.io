@@ -1,0 +1,43 @@
+@charset "gb2312";
+/* 
+  PChome web
+  by: yunfei
+  time:2013-10-20
+*/
+.navWrap{ z-index:5000;position:relative; height:40px;}
+.navWrap .nav{height:40px;margin:0 auto;position:relative;z-index:50;}
+.navWrap .logo{height:40px;width:140px;background:url(../img/logo.png) no-repeat;display:block;text-indent:-200%;float:left;background-position:center center; z-index:200; background-size: contain; }
+.navWrap #ClickMenu{display:none;height:50px;width:50px;background:url(../img/menu.png) center center no-repeat; cursor:pointer; position:absolute;right:0;top:0;}
+.navWrap .navInner{ width:820px;height:40px; float:left; color:#DFDFDF; line-height:40px;}
+.navWrap .navInner a{display:inline-block;padding:0 10px;color:#EFEFEF;_display:inline; transition:all ease 0.3s;}
+.navWrap .navInner a:hover,.navWrap .navInner a.hover{text-decoration:none; color:#F60; text-shadow:0 0 10px #F60;}
+
+@media screen and (max-width : 360px) {	
+.navWrap{width:100%; height:50px;position:relative; background:#000;}
+.navWrap .nav{ width:100%; height:50px; position:relative; background:#000;}
+.navWrap .logo{height:50px; width:150px; position:relative; margin:0 auto;float:none;}
+.navWrap .navInner{ position:absolute; top:50px; left:0; right:0; width:100%; min-height:50px; display:none;}
+.navWrap .navInner .navMargin{ width:100%;}
+.navWrap .navInner a{ float:left; width:50%;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 -1px 0 rgba(0, 0, 0, 0.9);padding:0;text-align:center; margin:0;background:rgba(0, 0, 0, 0.85); font:700 14px/45px "microsoft yahei";}
+.navWrap .navInner i{ display:none;}
+.navWrap #ClickMenu{ display:block;}
+
+}
+
+@media screen and (min-width: 960px) and (max-width: 9999px) {	
+.navWrap .navInner a{ margin:0 10px;}
+.navWrap .nav{ width:960px;}
+body { overflow-x: hidden; }
+}
+
+@media screen and (min-width: 360px) and (max-width: 959px) {	
+.navWrap{width:100%; height:50px; position:relative; background:#000;}
+.navWrap .nav{width:100%; height:50px; position:relative; background:#000;}
+.navWrap .logo{height:50px;width:150px; position:relative; margin:0 auto;float:none;}
+.navWrap .navInner{ position:absolute; top:50px; left:0; right:0; width:100%; min-height:50px; display:none;}
+.navWrap .navInner .navMargin{ width:100%;}
+.navWrap .navInner a{ float:left; width:50%;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 -1px 0 rgba(0, 0, 0, 0.9); padding:0;text-align:center; margin:0;background:rgba(0, 0, 0, 0.85); font:700 15px/50px "microsoft yahei";}
+.navWrap .navInner i{ display:none;}
+.navWrap #ClickMenu{ display:block;}
+
+}

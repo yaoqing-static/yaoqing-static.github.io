@@ -1,0 +1,31 @@
+@charset "gb2312";
+/* 
+  PChome web
+  by:yunfei
+  time:2013-10-11
+  type:login
+*/
+
+input:focus,textarea:focus{ box-shadow:0 0 0.6em #C8C8C8;}
+input[type=button]{ cursor:pointer;}
+input[type=text]{ text-indent:1em;}
+
+/*  意见反馈 */
+.Feedback{ background:#F8F8F8;}
+.Feedback .Feedback_Detail,.Feedback .Feedback_Email{ border:1px #CACACA solid;color:#9D9D9D; text-indent:0.5em; font-family:'microsoft yahei';font-size:1.45em; width:80%; margin:4% 0 0 9.8%; padding:0.4em 0;}
+.Feedback .Feedback_Detail{ height:7em; resize:none;}
+.Feedback .Feedback_Btn{ background:#1B7BD1; color:#FFF; border-radius:5px; padding:0.4em 1em;font:600 1.5em/1.5em 'simsun'; border:none; margin:4% auto; display:block; cursor:pointer; width:2.5em; text-align:center;}
+
+/* 用户登录 */
+.loginTabCut{ background:#E3E3E3;}
+.loginTabCut a{ display:block; float:left; width:50%; text-align:center; background:#E3E3E3; font-size:1.4em; padding:0.5em 0;}
+.loginTabCut a.TabHover{ background:#F8F8F8; color:#1B6CBD;}
+.LoginTab{ display:none;}
+.loginInfo { background:#F8F8F8; padding-top:4%; margin-bottom:5em;}
+.loginInfo p{ width:100%; text-indent:5%;}
+.loginInfo p label{ font-size:1em; color:#2E2E2E; margin-right:4%;}
+.loginInfo p input[type=text]{color:#9D9D9D; border:1px #C8C8C8 solid; border-radius:5px; width:68%; font-size:1em; padding:0.5em 0;}
+.loginInfo a.Login_Btn{ color:#1B6DBF; border:1px #999999 solid;border-radius:5px;font-weight:400; margin:1em auto; display:block; padding:0.35em 2.8em;font-size:1.4em; background:#E7E7E7;box-shadow:0 0.1em 0.2em #C8C8C8; width:2em;}
+.loginInfo p input.Login_verify{ width:25%;color:#9D9D9D;}
+.loginInfo p .Login_verifyInner{vertical-align:middle; display:inline-block; background:#C4C4C4; height:2.2em; width:25%; margin-top:-0.2em;}
+.loginInfo p .cutVerify{ font-size:1em; margin-left:2%; color:#A5A5A5;}
