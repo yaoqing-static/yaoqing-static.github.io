@@ -1,0 +1,254 @@
+*{padding: 0px; margin: 0px; box-sizing: border-box;-webkit-box-sizing:border-box;;-moz-box-sizing:border-box; font-family: 微软雅黑 }
+body,html,.app-box,#app{position: relative;}
+.clear{clear: both}
+.video-bg{width: 100%;  height: auto; vertical-align: top}
+.content{ width: 100%; height: 100%; position: absolute; overflow-y: auto;overflow-x: hidden; z-index: 333; background-color: inherit; top: 0px; left: 0px;
+}
+.app-box.index{background: url("../../static/images/bg0.jpg") center center  repeat-y;background-size: cover; overflow: hidden}
+img{border: 0px}
+.bg-img{width: 100%; left: 0px; top: 0px; opacity: 0.3; height: 100%; position: absolute; z-index:111;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAJ1BMVEX///8AAAD///////////////////////////////////////////8wxMEwAAAADXRSTlOzAIxuLhwGnYeAIROSTrVHQwAAADdJREFUCNdjEAQBBhmGhQUsDAIMrAxMQHIaAzODFKfghkYGwTBB0UQGcYaNDAjZNqCsiLKgkyEAzKEG0aBSpwIAAAAASUVORK5CYII=") top repeat; }
+.logo{ display: inline-block;  padding-top: 10px; vertical-align: middle; width: 140px}
+header{position: relative; max-width: 1100px; margin: auto; width: 100%}
+.nav{ display: inline-block; width: auto; vertical-align: middle; padding-left: 90px}
+.nav img{ vertical-align: middle}
+.nav a{display: inline-block; margin: 0 26px; cursor: pointer}
+.home-top{display: flex;align-items: center;}
+.home-top .left{  width: 29%}
+.home-top .right{  width: 71%}
+.home-top .left .xy{ padding: 0 0 0 30px}
+.home-top .left .xy img{ width: 100%}
+.home-top .right .a1{ padding: 0 160px 0 10px; position: relative}
+.home-top .right .a1 img{ width: 100%; position: relative; margin-top: -20px}
+.home-top .left .Android{ padding-left: 14%; padding-top:1.3%}
+.home-top .left .Android img{ width: 50%}
+.home-top .left .video{padding-left: 14%; padding-top: 1.2%; cursor: pointer}
+.home-top .left .video img{ width: 70%}
+.right-fixed{ position: fixed; right: 30px; top: 30px; z-index: 99999;  top: 20%}
+.right-fixed dd{ position: relative}
+.right-fixed img{ width: 100%; cursor: pointer}
+.right-fixed .code{position: absolute; width: 164px; height: 192px; background: url("../../static/images/erweima.png") center center no-repeat;
+ right: 180px; background-size: 100% auto; top:-25px; display: none;
+}
+.right-fixed .code img{ width: 121px; height: 121px;    margin: 36px 0 0 17px;}
+.right-fixed dd:hover .code{ display: block}
+
+/*模块2*/
+.module2{ width: 1920px; }
+.module2 .name{ padding-left: 242px; margin-bottom: 60px}
+.module2 .con{ width: 1266px; height: 732px;
+  background: url("../../static/images/yyk.png") center center no-repeat; margin: auto; position: relative}
+
+.box2{ padding-top: 80px}
+.module2 .con p{ font-size: 24px; color: #fff; text-align: center; line-height: 42px; padding-top: 50px}
+.module2 .con p span{ font-size: 30px}
+.module2 .con p span strong{ font-size: 36px; color: #ffdc21; display: inline-block; margin: 0 6px}
+.module2 .con .a1 { text-align: center; padding-top: 20px; margin-bottom: 20px}
+.module2 .con .a1 dd{ width: 184px; display: inline-block; position: relative; margin: 0 40px; color: #fff;}
+.module2 .con .a1 dd .text{ font-size: 26px;  font-weight: bold; padding-top: 10px}
+.module2 .con .a1 dd .count{ font-size: 24px; padding-top: 85px}
+.module2 .con .a1 dd .wc{ position: absolute; z-index: 99; left: 0px; top: 30px; display: none}
+.module2 .con .a1 .end .wc{ display: block}
+.module2 .con .a2{ width: 1009px; height: 60px; position: relative;background: url("../../static/images/progess.png") center center no-repeat; margin: auto; position: absolute; top: 399px; left: 130px}
+.module2 .con .a1 .end{ color: #ffdc21}
+.progress{ margin: 22px 6px}
+.progress span{display: block; height: 16px; background-color: #ffb821; border-radius: 20px}
+.module2 .con .a1 dd .yuan{ position: absolute; width: 46px; height: 46px; border-radius: 50%; background-color: #ffb821; bottom: 30px; z-index: 999; left: 50px; bottom: 51px; left: 74px;display: none}
+.module2 .con .a1 dd .yuan span{ position: relative; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center; }
+.module2 .con .a1 .end .yuan{display: block}
+.module2 .con .a1 dd .yuan span:after{content: ''; width: 18px; height: 18px; border-radius: 50%; background-color: #a07009}
+.module2 .text-bottom{font-size: 18px; color: #fff; text-align: center}
+.module2 .con .but{ text-align: center;}
+.module2 .con .right-bottom{position: absolute;right: -150px; bottom: -50px}
+.margin-top{ margin-top: 40px}
+
+/*模块3*/
+.module3{ width: 1920px; }
+.module3 .name{ padding-left: 242px; margin-bottom: 10px}
+.module3 .con{ width: 1336px; height: 472px;
+  background: url("../../static/images/bg3.png") center center no-repeat; margin: auto; position: relative
+}
+.module3 .con .left-bottom{ position: absolute; left: -225px; bottom: -75px; z-index: 99}
+.module3 .swiper-box{width: 510px; height: 285px; position: absolute; top: 127px; left: 59px}
+.module3 .swiper-container{position: relative; height: 100%; width: 100%}
+.swiper-slide{  background:#eaeaea no-repeat center center; background-size: cover}
+.module3 .swiper-pagination{ position: absolute; width: 100%; bottom: 3px; right: 0px; text-align: right}
+.module3 .swiper-pagination .swiper-pagination-switch{ display: inline-block; width: 12px; height: 12px; background-color: #fff; border-radius: 50%;
+  border: 1px solid #000000; margin-right: 10px; cursor: pointer;
+}
+a{text-decoration: none}
+ul{ list-style-type: none}
+.module3 .swiper-pagination .swiper-pagination-switch.swiper-active-switch{ width: 22px; height: 12px; border-radius: 10px}
+.module3 .home-news{ font-size: 18px; padding-left: 640px; padding-top: 117px; width: 1190px}
+.module3 .home-news .but{ font-size: 20px; font-weight: bold; color: #949494; position: relative; border-bottom: 1px solid #949494}
+.module3 .home-news .but span{ display: inline-block;width: 65px; text-align: center; line-height: 40px;cursor: pointer}
+.module3 .home-news .but .active{ color: #ff359e; border-bottom: 2px solid #ff359e; }
+.module3 .home-news .but a{ color: #ff359e; border: 1px solid #ff359e; border-radius: 2px; display: inline-block; float: right; width: 25px; height: 25px; line-height: 17px; text-align: center; font-size: 28px; margin-top: 8px }
+.module3 .con-news li a{ font-size: 18px; color: #333333; display: inline-block; line-height: 50px}
+.module3 .con-news{ padding-top: 13px}
+.module3 .con-news li{ position: relative;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; padding-right:120px}
+.module3 .con-news li span{ position: absolute; right: 0px; top: 10px}
+
+
+/*模块4*/
+.module4{ width: 1920px;  }
+.module4 .name{ padding-left: 242px; margin-bottom: 40px}
+.module4 .con{width: 1373px; height: 696px; margin: auto}
+.module4 .swiper-slide{width: 1373px; height: 696px;
+  background: url("../../static/images/bgm3.png") 460px 95px no-repeat; margin: auto; position: relative
+}
+.module4 .con .person{ position: absolute; left: 120px; top: 20px}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  background: url("../../static/images/left.png") 0px 0px no-repeat; width: 54px; height: 82px;
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+  background: url("../../static/images/right.png") 0px 0px no-repeat; width: 54px; height: 82px;
+}
+.module4 .mars{ position: absolute; font-size: 32px; color: #fff; font-weight: bold; top: 119px; right: 142px; width: 137px; overflow: hidden; text-align: center}
+.module4 .text{ position: absolute; width: 600px; height: 280px; right: 240px; top: 235px; font-size: 22px; color: #333333}
+.module4 .text .a1 dd{ display: inline-block; width: 31%;font-style:italic; font-size: 28px}
+.module4 .text .a1 dd span{ color: #ff359e}
+.module4 .text .a1{ padding-bottom: 15px; }
+.module4 .text .a2{margin-bottom: 20px}
+.module4 .text .fy{ padding-top: 30px}
+.module4 .text .a2 span{background: url("../../static/images/tag1.png") 0px 0px no-repeat; width: 88px; height: 34px; display: inline-block; color: #fff; padding-left: 13px; padding-top: 3px; font-size: 20px}
+
+/*模块5*/
+.module5{ width: 1920px;  }
+.module5 .name{ padding-left: 242px; margin-bottom: 80px}
+.module5 .con{width: 1373px; height: 580px; margin: auto; position: relative}
+.module5 .con .left-bottom{ position: absolute; left: -288px; bottom: -45px}
+.roundabout-holder {
+  LIST-STYLE-TYPE: none; MARGIN: 0px auto; width: 802px; HEIGHT: 550px; LIST-STYLE-IMAGE: none;
+}
+
+.roundabout-moveable-item a img {
+  background-color: #FFFFFF;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+}
+.roundabout-moveable-item {
+  width: 884px; HEIGHT: 548px;padding: 20px 18px 20px 23px;
+  background: url("../../static/images/kuang.png") 0px 0px no-repeat; background-size: 100% 100%;
+}
+.roundabout-moveable-item.roundabout-in-focus{padding: 22px 21px 24px 28px;}
+.ban_l_btn{
+  background: url("../../static/images/left.png") 0px 0px no-repeat; width: 54px; height: 82px; position: absolute; left: 0px; top: 230px;
+}
+.ban_r_btn{
+  background: url("../../static/images/right.png") 0px 0px no-repeat; width: 54px; height: 82px;position: absolute; right: 0px; top: 230px;
+}
+.roundabout-moveable-item .tag2{
+  background: url("../../static/images/tag2.png") 0px 0px no-repeat; width: 411px; height: 120px; position: absolute;
+   left: 250px; bottom: -40px; display: none;
+}
+.roundabout-moveable-item.roundabout-in-focus .tag2{display: block}
+
+/*新闻列表*/
+.news-index .top{background: url("../../static/images/newsTop.jpg") center center no-repeat; width: 100%; height: 520px;  }
+.news-nav{  text-align: center; padding-top: 60px;    border-bottom: 1px solid #949494; margin-bottom: 20px}
+.news-nav span{display: inline-block;width: 75px; text-align: center;line-height: 40px;
+  cursor: pointer; font-size: 24px; color: #333333; padding-bottom: 10px; margin: 0 10px; font-weight: bold}
+.news-nav .active{ border-bottom: 2px solid #ff359e;color: #000000;}
+.news-list{ }
+.news-list li{border-bottom: 1px solid #e0e0e0;}
+.news-list li .box{ position: relative;max-width: 1150px; margin: auto; width: 100%; padding: 20px 85px 20px 170px; cursor: pointer}
+.news-list li h1{font-size: 26px; font-weight: normal; color: #333333; padding-bottom: 10px;overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap;}
+.news-list li .box .hover{ position: absolute; left: 0px; bottom: 0px; display: none}
+.news-list li .box .sj{ position: absolute; right: 40px; top: 56px}
+.news-list li:hover{background-color: #fff05d;}
+.news-list li:hover .hover{display: block}
+.news-list li:hover.text{color: #000000}
+.news-list li .box .text{color: #999999}
+.page{ padding: 40px 0; text-align: center}
+.news-content{ max-width: 1000px; margin: auto; width: 100%; position: relative}
+.news-nav2{  text-align: center; padding: 30px 0;    border-bottom: 1px solid #949494; margin-bottom: 20px}
+.detail-name{padding: 0 100px}
+.detail-name p{ font-size: 26px}
+.detail-name .time{ font-size: 18px; color: #666666; padding-top: 10px}
+.news-content .back{ position: absolute; left: 20px; top: 20px;}
+.news-content.new1{ padding: 10px 0 30px 0}
+.news-content.new1 .con{ padding: 0 20px}
+
+/*资源站*/
+.resource-index .top{background: url("../../static/images/resource.jpg") center center no-repeat; width: 100%; height: 520px;  }
+.resource-box{max-width: 1300px; width: 100%; position: relative; padding:0 20px 20px 20px; margin: auto}
+.resource-box .title{ margin-top: 50px; position: relative}
+.resource-box .title a{ position: absolute; right: 0px; top: 25px; cursor: pointer}
+.resource-box .con{ border: 2px dashed #c3c3c3; padding: 20px; margin-top: 20px; padding-bottom: 0px}
+.resource-box .con ul{ display: flex; align-items: center; justify-content: space-between; flex-wrap:wrap; }
+.resource-box .con li{ width: calc(50% - 5%) ; position: relative;margin-bottom: 30px}
+.resource-box .con li img{ width: 100%; position: relative; z-index: 9;vertical-align: top}
+.resource-box .con li .pic{ position: absolute; width: 100%; height: 100%; background: no-repeat center center; background-size: cover }
+.resource-box .con li .text{ font-size: 30px; text-align: center; position: absolute; width: 100%; left: 0px; bottom: 9%; color: #fff; z-index: 999;
+  overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+}
+.resource-detail-name{text-align: center; padding: 10px 0 20px 0}
+.resource-detail-con{}
+.resource-detail-con ul{ display: flex; align-items: center; justify-content: space-between; flex-wrap:wrap; }
+.resource-detail-con li{ width: calc(50% - 2%) ; position: relative;margin-bottom: 50px; padding: 10px; border: 2px solid #000000}
+.resource-detail-con li .pic{ height: 0px; padding-bottom: 58%;background: no-repeat center center; background-size: cover}
+.resource-detail-con li .text{ font-size: 28px; line-height: 50px; position: relative; margin: 5px 0 2px 0; padding-right: 115px;  overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.resource-detail-con li .text span{ position: absolute; font-size: 24px; right: 0px; top: 2px}
+.show-video .el-dialog__body{ padding-top: 10px}
+@media (max-width: 1600px){
+    .logo img{ width: 130px}
+    .resource-box{max-width: 1000px; width: 100%; position: relative; padding: 20px;}
+   .resource-box .con li .text{font-size: 21px;bottom: 10%;}
+  .resource-detail-con li{margin-bottom: 30px}
+  .resource-detail-con li .text{font-size: 21px;padding-right: 120px;}
+
+  .resource-detail-con li .text span{font-size: 18px}
+
+  }
+@media (max-width: 1100px){
+  header{ text-align: center}
+}
+
+@media (max-width: 650px){
+  .footer-logo img{ height: 24px}
+  .logo{margin-left: 15px; width: auto}
+  .logo img{width: 60px}
+  .nav{margin-left: 30px; padding-left: 0px}
+  .nav img{height: 30px}
+  .nav .no-active{ height: 20px}
+  .nav a{margin: 0 6px}
+  header{text-align: center; padding-bottom: 20px}
+  .right-fixed{right: 0px; top: auto;  bottom: 10px; display: none}
+  .home-top .right .a1{ padding-right: 10px}
+  .home-top .left .xy{ padding-left: 10px}
+  footer .text{font-size: 12px}
+  .box2{ padding-top: 20px}
+  .module2 .name,.module3 .name,.module4 .name,.module5 .name{ padding-left: 10px}
+  .module2{ width: 1266px}
+  .module3 .con,.module4 .con,.module5 .con{ margin-left: 0px}
+  .news-index .top{ width: 100%; height: 260px; background-size:auto 100%  }
+  .news-nav span{font-size: 15px; width: 20%; margin: 0px}
+  .news-nav{ padding-top: 15px}
+  .news-list li .box{    padding: 15px 30px 15px 20px;}
+  .news-list li .box .text{font-size: 12px}
+  .news-list li h1{font-size: 14px}
+  .news-list li .box .sj{ right: 10px}
+  .news-list li .box .sj img{ width: 8px}
+  .news-list li .box .hover{ display: none}
+  .detail-name{ padding: 0 10px 0 10px}
+  .detail-name p{font-size: 14px; font-weight: bold}
+  .news-content .back{display: none}
+  .detail-name .time{font-size: 12px}
+
+  /*资源站*/
+  .resource-index .top{ width: 100%; height: 200px; background-size:auto 100%  }
+  .resource-box .title img{ height: 35px}
+  .resource-box .title a{ top: 10px}
+  .resource-box .title a img{ height: 20px}
+  .resource-box .con{padding: 15px; padding-bottom: 0px}
+  .resource-box .con li{padding-bottom: 0px}
+  .resource-box .con li .text{font-size: 12px; bottom: 8%}
+  .resource-detail-name img{ width: 150px}
+  .resource-detail-con li{  margin-bottom: 20px}
+  .resource-detail-con li .text{font-size: 12px;padding-right: 65px; line-height: 25px}
+  .resource-detail-con li .text span{font-size: 12px; top: 0px}
+
+}
