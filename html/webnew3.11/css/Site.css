@@ -338,29 +338,44 @@ li{ list-style-type:none}
 .page2aBox .conter .page2b .a1 strong{ font-size:20px; color:#3f3e3e; font-weight:normal}
 .page2aBox .conter .page2b .a1.a2{ padding-left:0px; text-align:center}
 
-@media screen and (max-height: 759px)
- {
-	.panel.box1{
-	background-position: center -140px;
+@media screen and (max-height: 759px) {
+	.panel.box1 {
+		background-position: center -140px;
 	}
-	.lxwm1 ul li{
-	width: 130px;
-	color: #FFF;
-	line-height: 30px;
-	background-image: url(../image/ico1.png);
-	background-repeat: no-repeat;
-	background-position: 0px 13px; padding:0 0 0 40px; float:left; height:30px
-} 
-.lxwm1 ul .inpt input{
-	height: 30px;
-	line-height: 30px;
-	border-radius: 8px;
-	background-color: #dbdbdb;
-	font-family: "微软雅黑";
-	font-size: 16px; padding:0 6px; width:320px
+
+	.lxwm1 ul li {
+		width: 130px;
+		color: #FFF;
+		line-height: 30px;
+		background-image: url(../image/ico1.png);
+		background-repeat: no-repeat;
+		background-position: 0px 13px;
+		padding: 0 0 0 40px;
+		float: left;
+		height: 30px
+	}
+
+	.lxwm1 ul .inpt input {
+		height: 30px;
+		line-height: 30px;
+		border-radius: 8px;
+		background-color: #dbdbdb;
+		font-family: "微软雅黑";
+		font-size: 16px;
+		padding: 0 6px;
+		width: 320px
+	}
+
+	.box6 {
+		padding-top: 2%
+	}
+
+	.lxwm2 {
+		padding-top: 300px
+	}
+
+	.lxwm1 ul .inpt textarea {
+		height: 154px;
+
+	}
 }
-.box6{ padding-top:2%}
-.lxwm2{ padding-top:300px}
-.lxwm1 ul .inpt textarea{height: 154px;
-	
- }
