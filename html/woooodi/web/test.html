@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+<body ng-app="myApp" ng-controller="userCtrl">
+<nav class="nav-y">
+    <ul class="nav">
+        <li class="individual dq">
+          <a href="#"> <span class="glyphicon glyphicon-euro"></span>菜单一</a>
+          
+        </li>
+        <li class="individual">
+            <a href="#"><span class="glyphicon glyphicon-euro"></span>菜单一</a>
+            <ul style="display:none">
+				<li><a href="#">菜单一a</a></li>
+                <li><a href="#">菜单一b</a></li>
+            </ul>
+        </li>
+        <li class="individual">
+            <a href="#"> <span class="glyphicon glyphicon-euro"></span>菜单一</a>
+            <ul style="display:none">
+				<li><a href="#">菜单一a</a></li>
+                <li><a href="#">菜单一b</a></li>
+            </ul>
+        </li>
+        <li class="individual">
+            <a href="#"> <span class="glyphicon glyphicon-euro"></span>菜单一</a>
+        </li>
+        <li class="individual">
+            <a href="#"> <span class="glyphicon glyphicon-euro"></span>菜单一</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+<div class="app app-header-fixed">
+    <div class="nav-top">
+        <a href="#/" class="navbar-brand text-lt">
+            <span class="hidden-folded m-l-xs">Angulr</span>
+        </a>
+    </div>
+    <div class="app-right">
+        <div class="user">战三 <img width="40" height="40" src="http://img.taihuwang.com/uploads/zixun/20160328/kk3gmgkpdkc.jpg" /></div>
+    </div>
+
+    <div class="app-left">
+        <a href="#">页面1</a><a href="#">页面1</a><a href="#">页面1</a><a href="#">页面1</a>
+    </div>
+
+
+</div>
+
+
+<div class="content" style="height: 2000px">
+    <div class="c-body">
+        <div class="img"><img width="100%" src="http://img0.bdstatic.com/img/image/star2/huge.png" /></div>
+        <div id="id1" style="width: 100%; height:400px;"></div>
+        <div id="id2" style="width: 100%; height:400px;"></div>
+
+        <div id="aaa"></div>
+
+        <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body easypiechart-panel">
+                    <h4>Customers</h4>
+                    <div class="easypiechart" id="easypiechart-blue" data-percent="82" ><span class="percent">82%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/conter.js"></script>
+<script src="js/easypiechart.js"></script>
+<!-- graphify -->
+<script type="text/javascript" src="js/graphify/graph.js"></script>
+<script type="text/javascript" src="js/graphify/jquery.gvChart.min.js"></script>
+
+<!-- echarts -->
+<script type="text/javascript" src="js/echarts-2.2.7/echarts.js"></script>
+<script type="text/javascript" src="js/echarts-2.2.7/echartConfig.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$(".individual").click(function(){
+		if($(this).find("ul").length>0){
+			$(".individual ul").slideUp(200)
+			if($(this).find("ul").css("display")=="block"){
+				$(this).find("ul").slideUp(500)
+				}else{
+					$(this).find("ul").slideToggle(200)
+					}
+			}
+		
+		})
+	
+	})
+
+
+    require(requireDemo,
+            function requireCallback(ec) {
+                var myChart = ec.init(document.getElementById('id1'));
+                myChart.on('hover', function (param) {
+                    console.log('移上去了')
+                });
+                myChart.on('mouseout', function (param) {
+                    console.log('离开')
+                });
+
+                option = {
+//                    tooltip : {
+//                        trigger: 'item',
+//                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+//                    },
+                    legend: {
+                        orient : 'vertical',
+                        x : 'right',
+                        y:'center',
+                        type:'bar',
+                        data:[{name:'直接访问',icon:'bar'},{name:'邮件营销',icon:'bar'},{name:'联盟广告',icon:'bar'},{name:'视频广告',icon:'bar'},{name:'搜索引擎',icon:'bar'}]
+                    },
+
+                    calculable : true,
+                    series : [
+                        {
+                            name:'访问来源',
+                            type:'pie',
+                            radius : ['40%', '70%'],
+                            itemStyle : {
+                                normal : {
+                                    label : {
+                                        show : false
+                                    },
+                                    labelLine : {
+                                        show : false
+                                    }
+                                },
+                                emphasis : {
+                                    label : {
+                                        formatter : "{b}\n{c}",
+                                        show : true,
+                                        position : 'center',
+                                        textStyle : {
+                                            fontSize : '24',
+                                            fontWeight : 'bold'
+                                        }
+                                    }
+                                }
+                            },
+                            data:[
+                                {value:335, name:'直接访问'},
+                                {value:310, name:'邮件营销'},
+                                {value:234, name:'联盟广告'},
+                                {value:135, name:'视频广告'},
+                                {value:1548, name:'搜索引擎'}
+                            ]
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+
+                var myChart2 = ec.init(document.getElementById('id2'));
+                option2 = {
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['蒸发量']
+                    },
+
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value'
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'蒸发量',
+                            type:'bar',
+                            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                        }
+                    ]
+                };
+                myChart2.setOption(option2);
+                window.onresize =function(evt){
+                    myChart.resize(evt)
+                    myChart2.resize(evt)
+                };//自适应
+
+            })
+
+
+    $(function() {
+        $('#easypiechart-blue').easyPieChart({
+            scaleColor: false,
+            barColor: '#ffb53e'
+        });
+
+
+        $('#aaa').graphify({
+            start: 'donut',
+//            pos:"1111",
+            obj: {
+                id: 'lol',
+                legend: false,
+                showPoints: true,
+                width: 775,
+                legendX: 450,
+                pieSize: 200,
+                shadow: true,
+                height: 400,
+                animations: true,
+                x: [2000, 2001, 2002, 2003, 2004, 2005, 2006],
+                points: [17, 33, 64, 22, 87, 45, 38],
+                xDist: 90,
+                scale: 12,
+                yDist: 35,
+                grid: false,
+                xName: 'Year',
+                dataNames: ['Amount'],
+                design: {
+                    lineColor: 'red',
+                    tooltipFontSize: '20px',
+                    pointColor: 'red',
+                    barColor: 'blue',
+                    areaColor: 'orange'
+                }
+            }
+        });
+
+
+
+
+
+    });
+
+
+</script>
+</body>
+</html>
+			

@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+<body>
+<nav class="nav-y">
+    <ul class="nav">
+        <li class="individual">
+            <a href="#" class="dq"> <span class="d1">&nbsp;</span>统计分析</a>
+        </li>
+        <li class="individual">
+            <a href="#"><span class="d2">&nbsp;</span>文本审核</a>
+            <ul style="display:block">
+                <li><a href="#">文本内容</a></li>
+                <li><a href="#">用户IP</a></li>
+                <li><a href="#">相似内容</a></li>
+            </ul>
+        </li>
+        <li class="individual">
+            <a href="#"><span class="d3">&nbsp;</span>图片审核</a>
+        </li>
+        <li class="individual">
+            <a href="#"><span class="d4">&nbsp;</span>服务策略</a>
+        </li>
+        <li class="individual">
+            <a href="#"><span class="d5">&nbsp;</span>效果验证</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+<div class="app app-header-fixed">
+    <div class="nav-top">
+        <a href="#/" class="navbar-brand text-lt">
+            <span class="hidden-folded m-l-xs"><img src="image/logo.png" width="89" height="32"></span>
+        </a>
+    </div>
+    <div class="app-right">
+        <a href="#" class="user"><span>&nbsp;</span>x-ppp@xxx.com</a><a class="sign" href="#"><span>&nbsp;</span>退出</a>
+    </div>
+
+    <div class="app-left">
+        <a href="#">UGC类应用</a><a href="#">直播类应用</a>
+    </div>
+
+</div>
+
+
+<div class="content">
+    <div class="c-body">
+    	
+        <div class="todayStatistics">
+        	<div class="col-xs-3">
+            	<div class="a">
+                	<p>今日数据总量</p>
+                    <span>10276</span>
+                </div>
+            </div>
+            <div class="col-xs-3">
+            	<div class="a color2">
+                	<p>今日删除总量</p>
+                    <span>10276</span>
+                </div>
+            </div>
+            <div class="col-xs-3">
+            	<div class="a color3">
+                	<p>今日通过总量</p>
+                    <span>10276</span>
+                </div>
+            </div>
+            <div class="col-xs-3">
+            	<div class="a color4">
+                	<p>今日疑似总量</p>
+                    <span>10276</span>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="statistics-text">
+       	 统计时间<input class="form-control datetimepicker date1" type="text">至<input class="form-control datetimepicker date1" type="text"><a href="javascript:;;">今天</a><a href="javascript:;;">昨天</a><a href="javascript:;;">最近7天</a>
+            <span>应用</span><select class="form-control select1"><option>应用1</option><option>应用2</option></select>
+        </div>
+
+        <div class="filtering-rend">
+            <p>过滤趋势</p>
+            <div class="con">
+                <div class="filtering-left"><div id="data1" class="data1"></div></div>
+                <div class="filtering-right">
+                    <div class="easypiechart-panel-box">
+                        <div class="easypiechart-panel all">
+                            <div class="easypiechart"><span class="percent">ALL</b></span> </div>
+                            <h4>总量<br><span>1234</span>条</h4>
+                        </div>
+                        <div class="easypiechart-panel">
+                            <div class="easypiechart" id="easypiechart1" data-percent="82"><span class="percent">82<b>%</b></span> </div>
+                            <h4>删除<br><span>1234</span>条</h4>
+                        </div>
+                        <div class="easypiechart-panel">
+                            <div class="easypiechart" id="easypiechart2" data-percent="82"><span class="percent two">82<b>%</b></span> </div>
+                            <h4>疑似<br><span>1234</span>条</h4>
+                        </div>
+                        <div class="easypiechart-panel">
+                            <div class="easypiechart" id="easypiechart3" data-percent="82"><span class="percent three">82<b>%</b></span> </div>
+                            <h4>通过<br><span>1234</span>条</h4>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+
+        <div class="filtering-rend">
+            <p>命中策略类型分布</p>
+            <div class="con">
+                <div class="ztsj"><span>总量<br />1234</span></div>
+                <div id="pieId" class="pieclass"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    	
+    
+
+
+
+
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/conter.js"></script>
+<script src="js/easypiechart.js"></script>
+<!-- graphify -->
+<!--<script type="text/javascript" src="js/graphify/graph.js"></script>-->
+<!--<script type="text/javascript" src="js/graphify/jquery.gvChart.min.js"></script>-->
+
+<!-- echarts -->
+<script type="text/javascript" src="js/echarts-2.2.7/echarts.js"></script>
+<script type="text/javascript" src="js/echarts-2.2.7/echartConfig.js"></script>
+<script type="text/javascript">
+
+    require(requireDemo,
+            function requireCallback(ec) {
+                var myChart = ec.init(document.getElementById('pieId'));
+                myChart.on('hover', function (param) {
+                   $(".ztsj").hide()
+                });
+                myChart.on('mouseout', function (param) {
+                    $(".ztsj").show()
+                });
+                option = {
+//                    tooltip : {
+//                        trigger: 'item',
+//                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+//                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'right',
+                        y: 'center',
+                        type: 'bar',
+                        data: [{name: '直接访问', icon: 'bar'}, {name: '邮件营销', icon: 'bar'}, {
+                            name: '联盟广告',
+                            icon: 'bar'
+                        }, {name: '视频广告', icon: 'bar'}, {name: '搜索引擎', icon: 'bar'}]
+                    },
+
+                    calculable: true,
+                    series: [
+                        {
+                            name: '访问来源',
+                            type: 'pie',
+                            radius: ['40%', '70%'],
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        show: false
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                },
+                                emphasis: {
+                                    label: {
+                                        formatter: "{b}\n{c}",
+                                        show: true,
+                                        position: 'center',
+                                        textStyle: {
+                                            fontSize: '24',
+                                            color:'#030303',
+                                            fontFamily:'微软雅黑'
+                                        }
+                                    }
+                                }
+                            },
+                            data: [
+                                {value: 335, name: '直接访问'},
+                                {value: 310, name: '邮件营销'},
+                                {value: 234, name: '联盟广告'},
+                                {value: 135, name: '视频广告'},
+                                {value: 1548, name: '搜索引擎'}
+                            ]
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+
+                var myChart2 = ec.init(document.getElementById('data1'));
+                option2 = {
+//                    backgroundColor: '#272b33',
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            splitLine:{show:false},
+                            data: ['0719', '0720', '0721', '0722', '0723', '0724', '0725']
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            axisLabel:{formatter:'{value} k'},
+                            splitLine:{
+                                lineStyle:{
+                                    color:'#434343',
+                                    type:'dashed'
+                                }
+                            }
+                        }
+                    ],
+                    grid:{
+                        backgroundColor:'#272b33',
+//                        borderWidth: 0,
+                        width:'90%',
+                        x:'10%',
+                        y:'6%'
+                    },
+                    series: [
+                        {
+                            name: '蒸发量',
+                            type: 'bar',
+                            itemStyle:{
+                                normal: {color:'#4390da'}
+                            },
+                            data: [1,3,4,6,7,10,1]
+                        }
+                    ]
+                };
+                myChart2.setOption(option2);
+                window.onresize = function (evt) {
+                    myChart.resize(evt)
+                    myChart2.resize(evt)
+                };//自适应
+
+            })
+
+
+    $(function () {
+        $('#easypiechart1').easyPieChart({
+            scaleColor: false,
+            barColor: '#ea5757',
+            lineWidth:5,
+            size:65
+        });
+        $('#easypiechart2').easyPieChart({
+            scaleColor: false,
+            barColor: '#a779e1',
+            lineWidth:5,
+            size:65
+        });
+        $('#easypiechart3').easyPieChart({
+            scaleColor: false,
+            barColor: '#8fd2e5',
+            lineWidth:5,
+            size:65
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>
+			

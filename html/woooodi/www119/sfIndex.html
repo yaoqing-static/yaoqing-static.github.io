@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title>woooodi</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	
+	
+	})
+
+</script>
+<!--Swiper3.0.4-->
+<style>
+
+</style>
+</head>
+<body style="overflow:hidden">
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+  
+    <div class="swiper-slide oneNew">
+    	<div class="a1"><img src="img/sfImg1.png"><img class="a1a" src="img/sfImg2.png"><!--<img class="a1b" src="img/sfImg3.png">--></div>
+        <div class="b1"><img src="img/sfImg4.png"></div>
+        <div class="b2"><img class="b21" src="img/img45a.png"><img style="z-index:22" class="b2a" src="img/img45.png"></div>
+    </div>
+    <div class="swiper-slide twoNew" style="background-color:#ffe500">
+  		 <div class="a1"><img src="img/imgnew2.png"><!--<img class="a1b" src="img/sfImg3.png">--></div>
+         <div class="b1"><img src="img/imgnew3.png"></div>
+         <div class="b2"><img src="img/imgnew4.png"></div>
+    </div>
+    
+
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+  var arr=[];
+  function clearTime(){
+	  for(var i=0;i<arr.length;i++){
+		  if(arr[i]!=-1){
+			  console.log(arr[i]);
+			  clearTimeout(arr[i])
+			  arr[i]=-1;
+		  }
+		  
+	  }
+  }
+ arr[1]=setTimeout(function(){
+					$(".swiper-slide.oneNew .b2 .b21").addClass("bb")
+					},1500);
+	
+  var mySwiper = new Swiper('.swiper-container',{
+    //loop: true,
+    //autoplay: 6000,
+    mousewheelControl : true,
+    pagination : '.swiper-pagination',
+    paginationClickable :true,
+    onSlideChangeEnd: function(swiper){
+		    clearTime();
+			//console.log(swiper.activeIndex)
+			if(swiper.activeIndex==0){
+				arr[2]=setTimeout(function(){
+					$(".swiper-slide.oneNew .b2 .b21").addClass("bb")
+					},1500);
+				}
+			else{
+				$(".swiper-slide.oneNew .b2 .b21").removeClass("bb")
+			}
+    }
+  });
+</script>
+</body>
+</html>

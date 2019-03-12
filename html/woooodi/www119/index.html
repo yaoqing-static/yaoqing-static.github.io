@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title>woooodi</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	
+	
+	})
+
+</script>
+<!--Swiper3.0.4-->
+<style>
+
+</style>
+</head>
+<body style="overflow:hidden">
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+  
+    <div class="swiper-slide one">
+    	<div class="wx1"><div style="position:relative"><img src="img/img1a.png"><img class="animationwx" src="img/img1b.png"></div></div>
+    </div>
+    
+    <div class="swiper-slide two">
+    	<img id="img1" src="img/img2a1.png" class="active top1 anninjs"><img id="img2" src="img/img2a2.png" class="active top2"><img id="img3" src="img/img2a3.png" class="active top3">
+    	<div class="set"><img src="img/img2a.png" class="a"></div>
+    	<img src="img/keypad-Hand.png" id="cuper1" class="cuper1 anninjs1">
+    </div>
+    
+    <div class="swiper-slide three">
+    	<img src="img/img3a.png" class="a">
+        <img src="img/img3b.png" class="b">
+        <img src="img/img3c.png" class="c">
+    </div>
+   
+    
+    <div class="swiper-slide four">
+    	<img src="img/img4a.png" class="a">
+        <img src="img/img4b.png" class="b">
+        <img src="img/img4c.png" class="c">
+    </div>
+
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+  var timeoutArr = [];
+  function myClearTimeout(){
+    for(var i = 0; i < timeoutArr.length; i++){
+      if(timeoutArr[i] != -1){
+        console.log(timeoutArr[i]);
+        clearTimeout(timeoutArr[i]);
+        timeoutArr[i] = -1;
+      }
+    }
+  }
+  var mySwiper = new Swiper('.swiper-container',{
+    loop: true,
+    //autoplay: 6000,
+    mousewheelControl : true,
+    pagination : '.swiper-pagination',
+    paginationClickable :true,
+    onSlideChangeEnd: function(swiper){
+			//console.log(swiper)
+			//console.log(swiper.activeIndex)
+      myClearTimeout();
+			if(swiper.activeIndex==2){
+				timeoutArr[0] = setTimeout(function(){
+          $("#cuper1").removeClass("anninjs1");
+          $("#cuper1").addClass("anninjs2");
+        },1200);
+        timeoutArr[1] = setTimeout(function(){
+          $("#cuper1").removeClass("anninjs2");
+          $("#cuper1").addClass("anninjs3");
+          $(".active").removeClass("anninjs");
+          $(".top2").addClass("anninjs");
+        },2000);
+        timeoutArr[2] = setTimeout(function(){
+          $("#cuper1").addClass("anninjs4");
+        },3000);
+        timeoutArr[3] = setTimeout(function(){
+          $("#cuper1").removeClass("anninjs4");
+          $("#cuper1").addClass("anninjs5");
+          $(".active").removeClass("anninjs3");
+          $(".top3").addClass("anninjs");
+        },4000);
+      }else{
+				$("#img1").attr("class","active top1 anninjs");
+				$("#img2").attr("class","active top2");
+				$("#img3").attr("class","active top3");
+				$("#cuper1").attr("class","cuper1 anninjs1");				
+			}
+			//if(swiper.activeIndex==3){setTimeout("swiper.slideTo(1)",2000);}
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/siste.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+<body>
+<nav class="nav-y">
+    <ul class="nav">
+        <li class="individual">
+            <a href="#"> <span class="d1">&nbsp;</span>统计分析</a>
+        </li>
+        <li class="individual">
+            <a href="#"><span class="d2">&nbsp;</span>文本审核</a>
+            <ul style="display:block">
+                <li><a href="#">文本内容</a></li>
+                <li><a href="#">用户IP</a></li>
+                <li><a href="#">相似内容</a></li>
+            </ul>
+        </li>
+        <li class="individual">
+            <a href="#"><span class="d3">&nbsp;</span>图片审核</a>
+        </li>
+        <li class="individual">
+            <a href="#"><span class="d4">&nbsp;</span>服务策略</a>
+        </li>
+        <li class="individual">
+            <a href="#" class="dq"><span class="d5">&nbsp;</span>效果验证</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+<div class="app app-header-fixed">
+    <div class="nav-top">
+        <a href="#/" class="navbar-brand text-lt">
+            <span class="hidden-folded m-l-xs"><img src="image/logo.png" width="89" height="32"></span>
+        </a>
+    </div>
+    <div class="app-right">
+        <a href="#" class="user"><span>&nbsp;</span>x-ppp@xxx.com</a><a class="sign" href="#"><span>&nbsp;</span>退出</a>
+    </div>
+
+    <div class="app-left">
+        <a href="#">UGC类应用</a><a href="#">直播类应用</a>
+    </div>
+
+</div>
+
+
+<div class="content">
+    <div class="c-body">
+           <div class="service-s s"><p>可批量上传一批数据进行效果验证</p></div>
+           <div class="verification-but"><a>上传文件格式下载（UGC类）</a><a>上传文件格式下载（直播类）</a></div>
+           <div class="verification-a">业务类别&nbsp;&nbsp;&nbsp;<a class="dq"><span>&nbsp;</span>UGC</a><a><span>&nbsp;</span>直播</a></div>
+           <div class="service-i">应用名<input readOnly="true"  class="form-control text1" type="text"><a>上传文件</a>&nbsp;&nbsp;&nbsp;<a>提交</a></div>
+
+           <div class="verification-butc">
+               <span>本批数据已全部处理完成<br />
+您可在审核页面中查看结果</span><a><img src="image/ico6.png"><br />确定</a>
+
+           </div>
+
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/conter.js"></script>
+<script src="js/easypiechart.js"></script>
+<!-- graphify -->
+<!--<script type="text/javascript" src="js/graphify/graph.js"></script>-->
+<!--<script type="text/javascript" src="js/graphify/jquery.gvChart.min.js"></script>-->
+
+<!-- echarts -->
+<script type="text/javascript" src="js/echarts-2.2.7/echarts.js"></script>
+<script type="text/javascript" src="js/echarts-2.2.7/echartConfig.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+
+        $(".verification-a a").click(function(){
+            $(".verification-a a").removeClass("dq");
+            $(this).addClass("dq")
+        })
+
+
+    })
+
+
+
+</script>
+</body>
+</html>
+			
