@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGInfo.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGMemberC.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGLog.png"/>
+    </a>
+    <a href="#">
+      <img src="images/NavGWay.png"/>
+    </a>
+
+
+    <a href="#" class="last1">
+      <img src="images/navBack.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox member">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>成员</h1>
+
+    <div class="subNav">
+      <a href="#">
+        <img class="subNavOrgControl" src="images/subNavOrgControl.png"/>
+        <span>成员管理</span>
+      </a>
+      <a href="#">
+        <img class="subNavOrgJoin" src="images/subNavOrgJoin.png"/>
+        <span>邀请成员</span>
+      </a>
+    </div>
+
+    <div class="content invite">
+      <h3>成员管理</h3>
+
+      <textarea class="form-control" placeholder="将邮箱粘贴至输入框即可添加，不同邮箱用换行分割"></textarea>
+
+      <button class="btn btn-primary">发送邀请</button>
+
+    </div>
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    $('.commonBox').css({'min-height': $(window).height()});
+
+    borderInit();
+    $('#holdingMe').holding({
+      'content': '用户昵称', 'callback': function () {
+        alert($(this).parent().find('input').val());
+      }
+    });
+    $('.rightBtn').on('click', function (e) {
+      e.stopPropagation();
+      $(this).find('ul').show();
+    });
+    $('.rightBtn li').on('click', function (e) {
+      e.stopPropagation();
+      $(this).find('img').toggle();
+    });
+    $('div').not('.rightBtn').on('click', function (e) {
+      e.stopPropagation();
+      $('.rightBtn ul').hide();
+    });
+  });
+</script>
+</body>
+</html>

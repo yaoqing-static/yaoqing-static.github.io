@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui-v1.11.4.css" />
+    <link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css" />
+    <link rel="stylesheet" href="css/ui-dialog.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/flat/blue.css" />
+    <link rel="stylesheet" href="css/kaquan.css" />
+    <link rel="stylesheet" href="css/zstyle.css" />
+    <link rel="stylesheet" href="css/slStyle.css" />
+</head>
+
+<body>
+    <div class="commonBox  ">
+        <div class="nav">
+            <a href="#" class="head">
+                <img src="images/navHead.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon6.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon7.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon8.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon9.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon10.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#" class="last1">
+                <img src="images/navBack.png" />
+            </a>
+        </div>
+        <div class="contentBox">
+            <div class="title text-center">新媒体云服务平台-NewMedia</div>
+            <h1>群发管理</h1>
+            <div class="content" style="padding-left: 50px;">
+                <div class="diy">
+                    <div class="fll">
+                        <h3>高级群发</h3>
+                    </div>
+                </div>
+                <div class="serch-tab">
+                    <div id="city_1" class="w630 h36 mrt15">
+                        <div class="fll kayyio">地域</div>
+                        <div class="fll">
+                            <select class="form-control w100 prov">
+                            </select>
+                        </div>
+                        <div class="fll kayyio mrl10" style="width: 40px;">
+                            <!-- 省 -->&nbsp;</div>
+                        <div class="fll mrlf30">
+                            <select class="form-control w100 city" disabled="disabled" style="display: none;">
+                            </select>
+                        </div>
+                        <div class="fll kayyio mrl10">
+                            <!-- 省 -->&nbsp;</div>
+                    </div>
+                    <div class="w630 h36 mrt15 clearfix tagtag">
+                        <div class="fll kayyio nic1">选择标签</div>
+                        <div class="nic1 fll tags_div">
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签0">标签0</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签1">标签1</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签2">标签2</div>
+                            </div>
+                        <div class="jiahao1 fll">
+                            <div class="jh">+</div>
+                            <div class="tag_list">
+                                <div class=" mrtf15 text-center">
+                                    <img src="images/jian1.png" />
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签0</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签1</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签2</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签3</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签4</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="w630 h36 mrt15 clearfix">
+                        <div class="fll kayyio" style="line-height: 45px;">筛选条件</div>
+                        <div class="mrt15 fll" style="margin: 0;">
+                            <div class=" mrl10 fll">
+                                <div class="mrt10 fll serch-tab-i">
+                                    <div class="radio-wrap">
+                                        <input id="radioAdd" name="validity" type="radio" class="pull-left z-kq-flop" checked/>
+                                    </div>
+                                    <div class="fll ">
+                                        <div class=" gudx" style="margin: 0;">标签组合用户</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" mrl70 fll">
+                                <div class="mrt10 fll serch-tab-i">
+                                    <div class="radio-wrap">
+                                        <input id="radioReduce" name="validity" type="radio" class="pull-left" />
+                                    </div>
+                                    <div class="fll">
+                                        <div class=" gudx fll" style="margin: 0;">所有标签用户</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="holdingMe" class="form-group" style="width: 730px;margin: 22px 0 22px;">
+                            <input type="text" class="form-control">
+                  </div>
+
+                  <div class="bod"></div>
+
+                  <div>
+                      <table id="userAdminTable" class="table" width="100%" border="0">
+                            <tbody>
+                            <tr class="hg50 souc ">
+                                <td><input type="checkbox" class="table_checkall" value="全选" />&nbsp;全选</td>
+                                <td>用户昵称</td>
+                                <td>性别</td>
+                                <td>来源关注</td>
+                                <td>首次关注时间</td>
+                                <td>操作</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="table_checkbox" class="table_checkbox" value="1" /></td>
+                                <td>土土土寺</td>
+                                <td>男</td>
+                                <td>扫码</td>
+                                <td>2015-01-10</td>
+                                <td><img src="images/bianx.png" class="edit" data-toggle="modal" data-target="#myModal" />&nbsp;&nbsp;<img src="images/opt.png" class="opt" data-toggle="modal" data-target="#myModal1" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="table_checkbox" class="table_checkbox" value="2" /></td>
+                                <td>土土土寺</td>
+                                <td>男</td>
+                                <td>扫码</td>
+                                <td>2015-01-10</td>
+                                <td><img src="images/bianx.png" class="edit" data-toggle="modal" data-target="#myModal" />&nbsp;&nbsp;<img src="images/opt.png" class="opt" data-toggle="modal" data-target="#myModal1" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="table_checkbox" class="table_checkbox" value="3 /"></td>
+                                <td>土土土寺</td>
+                                <td>男</td>
+                                <td>扫码</td>
+                                <td>2015-01-10</td>
+                                <td><img src="images/bianx.png" class="edit" data-toggle="modal" data-target="#myModal" />&nbsp;&nbsp;<img src="images/opt.png" class="opt" data-toggle="modal" data-target="#myModal1" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="tanc-box modal fade sl_modal_body" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="overflow: hidden;">
+    <div class="wr_box modal-body">
+        <p class="w-tc-te">用户详情</p>
+        <button type="button" class="btn btn-primary bj_qx" data-dismiss="modal">X</button>
+        <div class="mai_box_one clearfix">
+            <img src="images/lyp_img_03.png" class="avatar fll" />
+            <div class="id">数字ID：<span>999999</span></div>
+            <div class="nickname">用户昵称：<span>土土土寺</span></div>
+
+        </div>
+        <div class="mai_box_one clearfix">
+            <table class="table">
+                <tr>
+                    <td>男</td>
+                    <td>北京</td>
+                </tr>
+                <tr>
+                    <td>扫码</td>
+                    <td>2015-01-10</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="mai_box_one clearfix tagtag" style="padding-left: 38px;">
+            
+                    <div class="clearfix">
+                        <div>标签</div>
+                        <div class="nic1 fll tags_div">
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签0">标签0</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签1">标签1</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签2">标签2</div>
+                            </div>
+                        <div class="jiahao1 fll">
+                            <div class="jh">+</div>
+                            <div class="tag_list">
+                                <div class=" mrtf15 text-center">
+                                    <img src="images/jian1.png" />
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签0</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签1</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签2</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签3</label>
+                                    </li>
+                                    <li>
+                                        <input class="fll checkbox" type="checkbox" name="iCheck">
+                                        <label for="canShare" class=" mrtf3  mrl10 fll">标签4</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+        </div>
+        <div class="bt_box" style="margin-top: 15px;">
+            <div id="myButtons1" class="bs-example">
+                <button id="clickQr" type="button" class="btn btn-primary bj_che ">确认</button>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="tanc-box modal fade sl_modal_body" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="overflow: hidden;">
+    <div class="wr_box modal-body">
+        <p class="w-tc-te">会话记录</p>
+        <button type="button" class="btn btn-primary bj_qx" data-dismiss="modal">X</button>
+        <div class="myModal1_content">
+        <div class="mai_box_one clearfix">
+            <img src="images/lyp_img_03.png" class="avatar fll" />
+            <div class="id"><button type="button" class="btn btn-primary jifen_btn ">积分</button></div>
+            <div class="id">您当前积分为888</div>
+
+        </div>
+        <div class="mai_box_one clearfix">
+            <img src="images/lyp_img_03.png" class="avatar fll" />
+            <div class="id"><a href="http://jf.com" target="_blank" type="button" class="btn btn-primary duihuan_btn ">兑换</a></div>
+            <div class="id">点击蓝色按键进入积分商城jf.com</div>
+
+        </div>
+    </div>
+        <div class="mai_box_one clearfix bordertop">
+            <input class="form-control fll" style="width: 250px;" />
+            <button type="button" class="btn btn-primary send_btn fll " style="margin:0 0 0 20px;">发送</button>
+        </div>
+        
+        
+    </div>
+
+</div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="js/lib/icheck.min.js"></script>
+    <script src="js/border.js"></script>
+    <script src="js/daijin.js"></script>
+    <script src="js/cityselect.js"></script>
+    <script src="js/dialog-min.js"></script>
+    <script src="js/holdingMe.js"></script>
+    <script src="js/slUserAdmin.js"></script>
+    <script>
+    jQuery(function($) {
+        borderInit();
+
+        $('#holdingMe').holding({
+            'content': '昵称或数字ID请以“；”隔开',
+            'callback': function() {
+                alert($(this).parent().find('input').val());
+            }
+        }); 
+        $(':radio').iCheck({
+            radioClass: 'iradio_flat-blue'
+        });
+
+
+    });
+    $(".aa").click(function() {
+        $(this).find(".radi").toggleClass("zu_radi")
+    })
+    </script>
+</body>
+
+</html>

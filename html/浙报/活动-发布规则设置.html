@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/kaquan.css"/>
+    <link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+</head>
+<body>
+
+<div class="commonBox organization ">
+
+    <div class="nav">
+        <a href="#" class="head">
+            <img src="images/navHead.png"/>
+        </a>
+        <a href="#">
+            <img src="images/tan.png"/>
+        </a>
+        <a href="#">
+            <img src="images/yanjing.png"/>
+        </a>
+        <a href="#">
+            <img src="images/xie.png"/>
+        </a>
+        <a href="#">
+            <img src="images/lab.png"/>
+        </a>
+        <a href="#">
+            <img src="images/z-icon7.png"/>
+        </a>
+
+     
+        <a href="#" class="last1">
+            <img src="images/zuohui.png"/>
+        </a>
+    </div>
+
+    <div class="contentBox">
+        <div class="title text-center">
+            新媒体云服务平台-NewMedia
+        </div>
+        <h1>卡券</h1>
+
+        <div class="subNav">
+            <a href="#">
+                <img class="subNavOrgAdd" src="images/subNavOrgdd.png"/>
+                <span>新媒体中心</span>
+            </a>
+            <a href="#">
+                <img class="subNavOrgFind" src="images/subNavOrgdd.png"/>
+                <span>钱报有礼</span>
+            </a>
+            <a href="#"  class="actived">
+                <img class="subNavOrgFind" src="images/subNavOrgdd.png"/>
+                <span>发布规则设置</span>
+            </a>
+          
+          
+        </div>
+
+       <div class="content w620">
+       	<div class="diy">
+       	  <div class="fll">
+       		<h3>发布规则设置</h3>
+          </div>
+        </div>
+        <div class="fon18 ">
+        	定时设置
+        </div>
+        <div class="fenx h20">
+        <input class="fll" type="checkbox" name="iCheck">
+        <label  for="canShare" class="xiaozi mrtf3  mrl10 fll">定时启用活动，启用时间为</label>
+        <div class="wi396 mrl10 fll">
+        <input class="form-control mrtf10" type="text" id="datetimepicker_mask1" value="--请选择日期--" />
+          </div>
+      </div>
+          <div class="fenx h20">
+        <input class="fll" type="checkbox"  name="iCheck">
+        <label  for="canShare" class="xiaozi mrtf3  mrl10 fll">定时停用活动，停用时间为</label>
+        <div class="wi396 mrl10 fll">
+        <input class="form-control mrtf10" type="text" id="datetimepicker_mask2" value="--请选择日期--" />
+          </div>
+      </div>
+           <div class="fenx h20 ">
+        <input class="fll" type="checkbox"  name="iCheck">
+        <label  for="canShare" class="xiaozi mrtf3  mrl10 fll"><span class="fll">收集</span><input id="inputBigTitle" type="text" name="title" class=" mrl10 w95 form-control fll mrtf5"/><span class="mrl10">份表单数据后停用活动</span>
+        </label>
+       
+      </div>
+      <div class="fon18 mrt35">
+        	定时设置
+      </div>
+      <div class=" mrt35">
+      <label class="xiaozi">	
+      	<input type="radio" checked="checked" name="Sex" value="male"/>
+      	<span class="mrl10">
+      		访问不受限
+      	</span>
+      </label>
+      <label class="xiaozi mrl40">	
+      	<input type="radio" checked="checked" name="Sex" value="male"/>
+      	<span class="mrl10">
+      		授权登录后访问
+      	</span>
+      </label>
+         <label class="xiaozi mrl40">	
+      	<input type="radio" checked="checked" name="Sex" value="male"/>
+      	<span class="mrl10">
+      		关注公众号后访问
+      	</span>
+      </label>
+      
+      </div>
+       <div class="fenx h20 ">
+        <input class="fll" type="checkbox"  name="iCheck">
+        <label  for="canShare" class="xiaozi mrtf3  mrl10 fll">只能通过微信访问
+        </label>
+       
+      </div>
+        <div class="fon18 mrt35">
+        	表单提交设置
+      </div> 
+       <div class="fenx h20 ">
+        <input class="fll" type="checkbox"  name="iCheck">
+        <label  for="canShare" class="xiaozi mrtf3  mrl10 fll">每台电脑或手机只能提交一次
+        </label>
+       
+      </div>
+      <div class="fenx h20 ">
+        <input class="fll" type="checkbox"  name="iCheck">
+        <label  for="canShare" class="xiaozi mrtf3  mrl10 fll">每IP只能提交一次
+        </label>
+       
+      </div>
+      <div class="fenx h20 ">
+        <input class="fll" type="checkbox"  name="iCheck">
+        <label  for="canShare" class="xiaozi mrtf3  mrl10 fll">每微信号只能提交一次
+        </label>
+       
+      </div>
+        <div class="mrb60 mrt88">
+        	     <button id="validateBtn" class="btn btn-primary btn-block guideBtn baobc">保存</button>
+        	
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+
+<script type="text/javascript" src="bower_components/datetimepicker/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/datetimepicker/jquery-ui.js"></script>
+<script type="text/javascript" src="bower_components/datetimepicker/jquery-ui-slide.min.js"></script>
+<script type="text/javascript" src="bower_components/datetimepicker/jquery-ui-timepicker-addon.js"></script>
+
+
+<script>
+    jQuery(function ($) {
+        borderInit();
+    });
+
+$('#datetimepicker_mask1').datetimepicker();
+$('#datetimepicker_mask2').datetimepicker();
+</script>
+</body>
+</html>

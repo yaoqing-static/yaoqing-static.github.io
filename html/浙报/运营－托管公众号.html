@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+   <link rel="stylesheet" href="css/lyp_style.css">
+   	  <link rel="stylesheet" href="css/lyp_style.css">
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navHistory.png"/>
+    </a>
+    <a href="#">
+      <img src="images/lyp_icon_01.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navCard.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navActivity.png"/>
+    </a>
+
+    <a href="#" class="last3">
+      <img src="images/navMsg.png"/>
+    </a>
+    <a href="#" class="last2">
+      <img src="images/lyp_icon_02.png"/>
+    </a>
+    <a href="#" class="last1">
+      <img src="images/navOff.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+        钱报有礼 - NewMedia
+    </div>
+    <h1>运营</h1>
+    <div class="subNav">
+        <li>
+            <a href="#">
+                <span>我的</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span>他人分享</span>
+            </a>
+        </li>
+      <li>
+          <a href="#">
+              <span>组织1</span>
+          </a>
+      </li>
+        <li>
+            <a href="#">
+                <span>组织2</span>
+            </a>
+        </li>
+        <a href="#"   class="actived">
+            <img class="subNavOrgCreate" src="images/subNavOrgCreate.png">
+            <span>托管公众号</span>
+        </a>
+    </div>
+
+    <div class="content ">
+      <h3>托管公众号</h3>
+       <div class="lyp_oForm">
+            <h2 class="oTitle_01">生成参数</h2>
+           <div class="oPara">
+               <label>公众账号名</label>
+               <p class="oText">
+                   <input id="myMailPhone" type="text" class="form-control ">
+                   <span>真实的公众账号名称，会影响后续信息的显示</span>
+               </p>
+           </div>
+           <div class="oPara">
+               <label>微信号</label>
+               <p class="oText">
+                   <input id="myMailPhone" type="text" class="form-control ">
+                   <span>建立后不允许修改</span>
+               </p>
+           </div>
+           <div class="oPara">
+               <label>APP_ID</label>
+               <p class="oText">
+                   <input id="myMailPhone" type="text" class="form-control ">
+                   <span>微信开放对接的唯一标识，建立后不允许修改</span>
+               </p>
+           </div>
+           <div class="oPara">
+               <label>APP_Secret</label>
+               <p class="oText">
+                   <input id="myMailPhone" type="text" class="form-control ">
+                   <span>微信开放对接的密钥</span>
+               </p>
+           </div>
+       </div>
+
+    </div>
+    <div class="errorMsg">
+      <img src="images/i.png"/>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    borderInit();
+
+    $('#inputName').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/32');
+      if($(this).val().length>32 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=32 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    $('#describe').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/120');
+      if($(this).val().length>120 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=120 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    var validataFunc = function () {
+      var validator = new Validator();
+      validator.add(document.getElementById('inputName'), [{
+        strategy: 'isNotEmpty',
+        errorMsg: '创建失败！组织名称不能为空'
+      }, {
+        strategy: 'maxLength:32',
+        errorMsg: '创建失败！组织名称不能超过32个字符'
+      }]);
+      validator.add(document.getElementById('describe'), [{
+        strategy: 'maxLength:120',
+        errorMsg: '创建失败！组织描述不能超过120个字符'
+      }]);
+      var errorMsg = validator.start();
+      return errorMsg;
+    };
+
+    var saveBtn = document.getElementById('saveBtn');
+    saveBtn.onclick = function () {
+      var errorMsg = validataFunc();
+      if (errorMsg) {
+        $('.errorMsg').show().find('span').html(errorMsg);
+        return false;
+      } else {
+        $('.errorMsg').hide();
+        //向后台提交...
+      }
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>新媒体云服务平台</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/kaquan.css"/>
+	<link rel="stylesheet" href="css/zstyle.css"/>
+	<link rel="stylesheet" href="css/slStyle.css"/>
+
+</head>
+<body>
+
+	<div class="commonBox  ">
+
+		<div class="nav">
+			<a href="#" class="head">
+				<img src="images/navHead.png"/>
+			</a>
+			<a href="#">
+				<img src="images/z-icon6.png"/>
+			</a>
+			<a href="#">
+				<img src="images/z-icon7.png"/>
+			</a>
+			<a href="#">
+				<img src="images/z-icon8.png"/>
+			</a>
+			<a href="#">
+				<img src="images/z-icon9.png"/>
+			</a>
+			<a href="#">
+				<img src="images/z-icon10.png"/>
+			</a>
+			<a href="#">
+				<img src="images/z-icon11.png"/>
+			</a>
+			<a href="#">
+				<img src="images/z-icon11.png"/>
+			</a>
+			<a href="#" class="last1">
+				<img src="images/navBack.png"/>
+			</a>
+		</div>
+
+		<div class="contentBox">
+			<div class="title text-center">新媒体云服务平台-NewMedia</div>
+			<h1>自定义菜单</h1>
+			<div class=" suh mrl40">
+				<div class="tutop">
+					<div class="fll souc linh50 w95 text-center lans">图文素材</div>
+					<div class="fll souc linh50 w95 text-center ">图片素材</div>
+					<div class="fll souc linh50 w95 text-center">影响素材</div>
+					<div class="fll souc linh50 w95 text-center ">活动素材</div>
+					<div class="fll souc linh50 w95 text-center ">卡券素材</div>
+				</div>
+				<div class="mixinj clearfix">
+					<div class="zdyi-cont" id ="showBox">
+
+            		</div>
+
+					<div class="fll xinjzb">
+						<!-- <div class="tuwen">
+							<p class="default_tip"></p>
+							<div class="tipq">封面图片</div>
+							<div class="sib fon169">
+								<span class="mrl10">标题标题标题</span>
+							</div>
+						</div> -->
+						<div class="xinou text-center" >
+							<div class="jiaop" >
+								<img src="images/jiahao.png" />
+							</div>
+							<div class="xiaozi">从素材库中选择</div>
+						</div>
+					</div>
+					<div class="fll youoi">
+						<div class="w450 clearfix">
+							<div class="xiaozi wk65 fll linh35">标题</div>
+							<div class="fll">
+								<div class="h36">
+									<input type="text" id="title" class="form-control inpup fll "/>
+									<span class="fen">0/64</span>
+								</div>
+							</div>
+						</div>
+						<div class="w450 clearfix mrt15">
+							<div class="xiaozi wk65 fll linh35">作者</div>
+							<div class="fll">
+								<div class="h36">
+									<input type="text" id="author" class="form-control inpup fll "/>
+									<span class="fen">0/8</span>
+								</div>
+							</div>
+						</div>
+						<div class="w450 mrt15 clearfix">
+							<div class="xiaozi wk65 fll linh35">封面</div>
+							<label for="upload" class="fll shangc nizi text-center linh35" style="font-weight: normal;">上传</label>
+       						<input type="file" id="upload" class="upload"/>
+						</div>
+						<div class="w450 mrt15">
+							<div class="tupinz ">
+								<div class="jipw text-center fll">
+									<img id="img" src="images/jiahao.png" />
+								</div>
+								<div class="zilan fll mrt665" id="delImg">删除</div>
+							</div>
+							<div class=" h20 mrl65 ">
+								<input class="fll" type="checkbox"  name="iCheck">
+								<label  for="canShare" class="zhusw mrtf3  mrl10 fll">图片在正文中显示</label>
+
+							</div>
+						</div>
+						<div class=" h65h mrt10">
+							<div class="xiaozi">摘要（选填，该摘要只在发送图文消息为单条时显示）</div>
+							<div class="h36 mrt10">
+								<input type="text" id="desc" class="form-control w390w fll "/>
+								<span class="fen">0/120</span>
+							</div>
+						</div>
+						<div class="mrt10">
+							<div class="xiaozi">正文（自动保存：<span id="autoSave"></span>）</div>
+							<div class="mrt10">
+								<!-- <textarea id="content" type="text" class="form-control w390w  "/>
+															</textarea> -->
+							
+								<!-- 加载编辑器的容器 -->
+								<script id="content" name="content" type="text/plain">
+								这里写你的初始化内容
+								</script>
+							
+
+						</div>
+					</div>
+					<div class=" h65h mrt10">
+						<div class="xiaozi">
+							原文链接（选填）
+						</div>
+						<div class="h36 mrt10">
+							<input type="text" id="link" class="form-control w390w fll "/>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="querut">
+			<input type="button" class="qued fll" id="submit" value="保存"/>
+			<input type="button" class="quxiao frr" value="预览"/>
+
+		</div>
+
+	</div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_co-mponents/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/border.js"></script>
+<script src="js/daijin.js"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="ueditor/editor_config.js"></script>
+<script type="text/javascript" charset="utf-8" src="ueditor/editor_all.js"> </script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="ueditor/lang/zh-cn/zh-cn.js"></script>
+
+<script src="js/slCreatMsgEdit.js"></script>
+
+
+<script>
+    jQuery(function ($) {
+        borderInit();  
+    });
+      $(".aa").click(function(){
+        $(this).find(".radi").toggleClass("zu_radi")
+    })
+
+</script>
+</body>
+</html>

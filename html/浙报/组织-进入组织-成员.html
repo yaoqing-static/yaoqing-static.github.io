@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+    	<i class="Information" title="信息"></i>
+    </a>
+    <a href="#">
+      <i class="Members active" title="成员"></i>
+    </a>
+    <a href="#">
+      <i class="zz-log" title="日志"></i>
+    </a>
+    <a href="#">
+      <i class="Channel" title="渠道"></i>
+    </a>
+    
+    <a href="#" class="last1">
+			<i class="Back-off" title="返回"></i>
+    </a>
+  </div>
+
+  <div class="contentBox member">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>成员</h1>
+
+    <div class="subNav">
+      <a href="#">
+        <img class="subNavOrgControl" src="images/subNavOrgControl.png"/>
+        <span>成员管理</span>
+      </a>
+      <a href="#">
+        <img class="subNavOrgJoin" src="images/subNavOrgJoin.png"/>
+        <span>邀请成员</span>
+      </a>
+    </div>
+
+    <div class="content">
+      <h3>成员管理</h3>
+
+      <div id="holdingMe" class="form-group">
+
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="carousel">
+        <img class="headImg" src="images/myPhoto.png"/>
+
+        <div class="msgBox">
+          <p>我（张敏）<span>13124324@qq.com</span></p>
+
+          <div><i>运营</i><i>活动</i><i>卡券</i></div>
+        </div>
+        <div class="rightBtn">权限 <span class="glyphicon glyphicon-chevron-down"></span>
+          <ul>
+            <li>组织管理者<img src="images/checked.png"/></li>
+            <li>运营<img style="display: none;" src="images/checked.png"/></li>
+            <li>活动<img style="display: none;" src="images/checked.png"/></li>
+            <li>卡券<img src="images/checked.png"/></li>
+            <p>
+              <button class="btn btn-default">移除组员</button>
+            </p>
+          </ul>
+        </div>
+      </div>
+      <div class="carousel">
+        <img class="headImg" src="images/myPhoto.png"/>
+
+        <div class="msgBox">
+          <p>我（张敏）<span>13124324@qq.com</span></p>
+
+          <div><i>运营</i><i>活动</i><i>卡券</i></div>
+        </div>
+
+        <div class="rightBtn">权限 <span class="glyphicon glyphicon-chevron-down"></span>
+          <ul>
+            <li>组织管理者<img style="display: none;" src="images/checked.png"/></li>
+            <li>运营<img style="display: none;" src="images/checked.png"/></li>
+            <li>活动<img style="display: none;" src="images/checked.png"/></li>
+            <li>卡券<img style="display: none;" src="images/checked.png"/></li>
+            <p>
+              <button class="btn btn-default">移除组员</button>
+            </p>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    $('.commonBox').css({'min-height':$(window).height()});
+
+    borderInit();
+    $('#holdingMe').holding({
+      'content': '用户昵称', 'callback': function () {
+        alert($(this).parent().find('input').val());
+      }
+    });
+    $('.rightBtn').on('click',function(e){
+      e.stopPropagation();
+      $(this).find('ul').show();
+    });
+    $('.rightBtn li').on('click',function(e){
+      e.stopPropagation();
+      $(this).find('img').toggle();
+    });
+    $('div').not('.rightBtn').on('click',function(e){
+      e.stopPropagation();
+      $('.rightBtn ul').hide();
+    });
+  });
+</script>
+</body>
+</html>

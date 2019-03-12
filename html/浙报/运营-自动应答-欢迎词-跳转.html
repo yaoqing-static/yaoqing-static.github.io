@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/ui-dialog.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/kaquan.css" />
+    <link rel="stylesheet" href="css/zstyle.css" />
+    <link rel="stylesheet" href="css/slStyle.css" />
+</head>
+
+<body>
+    <div class="commonBox  ">
+        <div class="nav">
+            <a href="#" class="head">
+                <img src="images/navHead.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon6.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon7.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon8.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon9.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon10.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#" class="last1">
+                <img src="images/navBack.png" />
+            </a>
+        </div>
+        <div class="contentBox">
+            <div class="title text-center">
+                新媒体云服务平台-NewMedia
+            </div>
+            <h1>自定义菜单</h1>
+            <div class="subNav">
+                <a href="#" class="actived">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>欢迎词设置</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>无匹配设置</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>图片消息设置</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>音频消息设置</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>视频消息设置</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>关键词设置</span>
+                </a>
+            </div>
+            <div class="content w730 panel-group">
+                <div class="diy">
+                    <div class="fll">
+                        <h3>关键词设置</h3>
+                    </div>
+                </div>
+                <div class="guize mrt15">
+                    <div class="bo_box mrt5">
+                        <div class="fll mrlf10 aa" id="autoText">
+                            <span class="radi radi1"></span>
+                            <span class=" xiaozi">文本</span>
+                        </div>
+                        <div class="fll mrl40 aa" id="imgPic">
+                            <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                <span class="xiaozi">图文</span></a>
+                        </div>
+                        <div class="fll mrl40 aa" id="imgWord">
+                            <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                <span class="xiaozi">图片</span></a>
+                        </div>
+                        <div class="fll mrl40 aa" id="media">
+                            <span class="radi"></span>
+                            <span class="xiaozi">影音</span>
+                        </div>
+                        <div class="fll mrl40 aa" id="URL1">
+                            <span class="radi radi1 zu_radi"></span>
+                            <span class="xiaozi">跳转页面</span>
+                        </div>
+                        <div class="fll mrl40 aa" id="URL2">
+                            <span class="radi radi1"></span>
+                            <span class="xiaozi">动态获取</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="guize mrt15" id="Control">
+                            
+                                <div><input id="url" type="text" class="form-control url" placeholder="Url:"></div>
+                                <div id="urlError" class="error" style="display: none;">请输入URL</div>
+                            
+                        </div>
+                <div class="shangs frr">
+                    <input type="button" class=" qued fll" value="确定">
+                    <input type="button" class="quxiao frr" value="取消">
+                    <div class="relativeNew" style="top: -20px;left: 84px; z-index:11;">
+                        <div class="modal-content w335">
+                            <div class="modal-header">
+                                <div class="mai_box hei_box"><img src="images/z-icon13.png"> 确认删除？</div>
+                                <div class="mai_box_one hei_box">
+                                    <p style="text-align: center">（删除后该菜单内的所有内容将失效）</p>
+                                </div>
+                                <div class="bt_box">
+                                    <div id="myButtons1" class="bs-example" style="text-align: center">
+                                        <button type="button" class="btn btn-primary bj_che ">确认</button>
+                                        <button type="button" class="btn btn-primary bj_qx">取消</button>
+                                    </div>
+                                </div>
+                                <div class="xiaj"><img src="images/jiankk.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/dialog-min.js"></script>
+    <script src="js/border.js"></script>
+    <script src="js/slWelcome.js"></script>
+    <script>
+    jQuery(function($) {
+        borderInit();
+    });
+    $(".aa").click(function() {
+        $(this).find(".radi").toggleClass("zu_radi")
+    })
+    </script>
+</body>
+
+</html>

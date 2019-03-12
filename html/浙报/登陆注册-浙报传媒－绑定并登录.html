@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="login">
+
+  <div class="topBg">
+    <img src="images/topBg.png"/>
+  </div>
+
+  <div class="box">
+    <form>
+      <div class="form-group">
+        <div class="btn btn-default btn-block error"></div>
+      </div>
+      <div class="form-group">
+        <input id="myMailPhone" type="text" class="form-control" placeholder="邮箱/手机"/>
+      </div>
+      <div class="form-group">
+        <input id="myPassword" type="password" class="form-control" placeholder="密码"/>
+      </div>
+      <div class="form-group">
+        <button id="validateBtn" class="btn btn-primary btn-block guideBtn">绑定并登陆</button>
+      </div>
+
+      <hr/>
+
+      <div class="form-group">
+        <a href="#" class="btn btn-default btn-block guideA">快速登陆</a>
+      </div>
+    </form>
+  </div>
+  
+  <div class="footer text-center">
+    <a href="#">About 浙报传媒</a>
+    <span>-</span>
+    <a href="#">公司简介</a>
+    <span>-</span>
+    <a href="#">联系方式</a>
+    <span>-</span>
+    <a href="#">OAuth2.0认证</a>
+    <span>-</span>
+    <a href="#">招聘信息</a>
+    <span>-</span>
+    <a href="#">客户服务</a>
+    <span>-</span>
+    <a href="#">相关法律</a>
+    <span>-</span>
+    <a href="#">网络营销</a>
+    <br/>
+    <span>浙报传媒版权所有权©1997-2015</span>
+  </div>
+
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/jquery.placeholder.min.js"></script>
+<script src="js/Validator.js"></script>
+<script>
+  jQuery(function ($) {
+    //fix IE8 placeholder
+    $('input, textarea').placeholder();
+
+    var validataFunc = function () {
+      var validator = new Validator();
+      validator.add(document.getElementById('myMailPhone'), [{
+        strategy: 'isNotEmpty',
+        errorMsg: '邮箱/手机不能为空'
+      }, {
+        strategy: 'isMailPhone',
+        errorMsg: '邮箱/手机格式不正确'
+      }]);
+      validator.add(document.getElementById('myPassword'), [{
+        strategy: 'isNotEmpty',
+        errorMsg: '密码错误'
+      }, {
+        strategy: 'minLength:6',
+        errorMsg: '密码错误'
+      }, {
+        strategy: 'maxLength:13',
+        errorMsg: '密码错误'
+      }]);
+      var errorMsg = validator.start();
+      return errorMsg;
+    };
+
+    var validateBtn = document.getElementById('validateBtn');
+    validateBtn.onclick = function () {
+      var errorMsg = validataFunc();
+      if (errorMsg) {
+        $('.error').show().html(errorMsg);
+        return false;
+      } else {
+        $('.error').hide();
+        //向后台提交...
+
+        if (strategies.isphone.call($('myMailPhone').val())) {
+          //进行手机登录
+        } else {
+          //进行邮箱登录
+        }
+        //密码错:$('.error').show().html('密码错误');
+      }
+    }
+  });
+</script>
+</body>
+</html>

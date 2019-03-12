@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/ui-dialog.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/kaquan.css" />
+    <link rel="stylesheet" href="css/zstyle.css" />
+    <link rel="stylesheet" href="css/slStyle.css" />
+</head>
+
+<body>
+    <div class="commonBox  ">
+        <div class="nav">
+            <a href="#" class="head">
+                <img src="images/navHead.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon6.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon7.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon8.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon9.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon10.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#" class="last1">
+                <img src="images/navBack.png" />
+            </a>
+        </div>
+        <div class="contentBox">
+            <div class="title text-center">
+                新媒体云服务平台-NewMedia
+            </div>
+            <h1>自定义菜单</h1>
+            
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav1 navbar-nav">
+                            <!-- <li class="active"> -->
+                            <li><a href="#">同步菜单 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">清除菜单</a></li>
+                        </ul>
+                        <div class="lastsync">菜单最近一次同步到微信时间：2015-01-10&nbsp;&nbsp;22:22:22</div>
+                    </div>
+                </div>
+            </nav>
+            <div class="subNav subNav1">
+                <a href="#">
+                    <img class="subNavOrgCreate" src="images/z-icon12.png" />
+                    <span>最新活动</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>菜单一</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>菜单二</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>菜单三</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>菜单四</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>菜单五</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgCreate" src="images/z-icon12.png" />
+                    <span>我的积分</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>添加二级菜单</span>
+                </a>
+                <a href="#" class="actived">
+                    <img class="subNavOrgCreate" src="images/z-icon12.png" />
+                    <span>添加一级菜单</span>
+                </a>
+            </div>
+            <div class="content content1">
+                <div class="diy">
+                    <div class="fll">
+                        <h3>添加一级菜单</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="text-right" style="width:60px;float: left">菜单名称</label>
+                    <input id="username" class="form-control longInput min_wi" type="text" />
+                    <p class="fen fll">0/6</p>
+                </div>
+                <p class="usernameError display_none fll error" style="margin-left: 82px;">规则名称不能为空且长度不超过6个汉字或12个英文字母</p>
+                <!-- <div class="mai_box ma_le_box clearfix">
+                    <div class="mai_left">
+                        <span class="radi"></span>
+                        <span class="sel-ti">二级菜单</span>
+                    </div>
+                    <div class="mai_left">
+                        <span class="radi"></span>
+                        <span class="sel-ti">设置内容</span>
+                    </div>
+                </div> -->
+                <div class="mai_box ma_le_box clearfix">
+                    <div class="btn-group fll" data-toggle="buttons">
+                        <label class="btn btn-primary wqx active">
+                            <input type="radio" name="options" id="option1" checked>二级菜单
+                        </label>
+                        <label class="btn btn-primary yqx">
+                            <input type="radio" name="options" id="option2"> 设置内容
+                        </label>
+                    </div>
+                </div>
+                <div class="panel-group display_none">
+                    <div class="guize mrt15 row top_bo">
+                        <label class="text-right" style="width:60px;float: left">内容设置</label>
+                        <div class="bo_box mrt5 fll" style="margin-top: 5px;margin-left: 20px;">
+                            <div class="fll mrlf10 aa" id="autoText">
+                                <span class="radi radi1 zu_radi"></span>
+                                <span class=" xiaozi">文本</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="imgPic">
+                                <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                    <span class="xiaozi">图文</span></a>
+                            </div>
+                            <div class="fll mrl40 aa" id="imgWord">
+                                <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                    <span class="xiaozi">图片</span></a>
+                            </div>
+                            <div class="fll mrl40 aa" id="media">
+                                <span class="radi"></span>
+                                <span class="xiaozi">影音</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="URL1">
+                                <span class="radi radi1"></span>
+                                <span class="xiaozi">跳转页面</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="URL2">
+                                <span class="radi radi1"></span>
+                                <span class="xiaozi">动态获取</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guize mrt15" id="Control">
+                        <div class="wenben">
+                            <textarea class="dute" style="margin-left: 85px;height:120px;"></textarea>
+                        </div>
+                        <div id='wenben' class='error' style='display:none;margin-left: 85px;'>请输入文本</div>
+                    </div>
+                </div>
+
+                    <div class="shangs frr">
+                        <input type="button" class=" qued fll" value="确定">
+                        <input type="button" class="quxiao frr" value="取消">
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="relativeNew" style="position: static;">
+            <div class="modal-content w335 alert_cos">
+                <div class="modal-header">
+                    <div class="mai_box hei_box"> 温馨提示</div>
+                    <div class="mai_box_one hei_box clearfix">
+                        <img src="images/u74.png">
+                        <p class="fll">
+                            <div class="title">删除提醒</div>
+                            <div class="con">删除后该规则内的所有关键词将失效</div>
+                        </p>
+                    </div>
+                    <div class="bt_box">
+                        <div id="myButtons1" class="bs-example" style="text-align: center">
+                            <button type="button" class="btn btn-primary bj_che ">确认</button>
+                            <button type="button" class="btn btn-primary bj_qx">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+        <script src="js/lib/icheck.min.js"></script>
+        <script src="js/lib/bootstrap-select.min.js"></script>
+        <script src="js/border.js"></script>
+        <script src="js/holdingMe.js"></script>
+        <script src="js/daijin.js"></script>
+        <script src="js/dialog-min.js"></script>
+        <script src="js/slAddNav.js"></script>
+        <script>
+        jQuery(function($) {
+            //borderInit();
+
+            $('#username').on('keyup', function() {
+                var len = this.value.length;
+                if (len > 6) {
+                    $(this).next().text(len + '/6').css('color', '#ff7e3f');
+                } else {
+                    $(this).next().text(len + '/6').css('color', '#999');
+                }
+            });
+
+
+
+
+
+        });
+        </script>
+</body>
+
+</html>

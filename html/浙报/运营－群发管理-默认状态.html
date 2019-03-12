@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>新媒体云服务平台</title>
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css" />
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/kaquan.css"/>
+<link rel="stylesheet" href="css/zstyle.css"/>
+    <link rel="stylesheet" href="css/slStyle.css" />
+</head>
+<body>
+<div class="commonBox  ">
+  <div class="nav"> <a href="#" class="head"><img src="images/navHead.png"/> </a> <a href="#"> <img src="images/z-icon6.png"/> </a> <a href="#"> <img src="images/z-icon7.png"/> </a> <a href="#"> <img src="images/z-icon8.png"/> </a> <a href="#"> <img src="images/z-icon9.png"/> </a> <a href="#"> <img src="images/z-icon10.png"/> </a> <a href="#"> <img src="images/z-icon11.png"/> </a> <a href="#"> <img src="images/z-icon11.png"/> </a> <a href="#" class="last1"> <img src="images/navBack.png"/> </a> </div>
+  <div class="contentBox">
+    <div class="title text-center"> 新媒体云服务平台-NewMedia </div>
+    <h1>群发管理</h1>
+    <div class="subNav">
+			<a href="#"> <img class="subNavOrgAdd" src="images/subNavOrgdd.png" /> <span>精准群发</span> </a>
+			<a href="#"> <img class="subNavOrgAdd" src="images/subNavOrgdd.png" /> <span>高级群发</span> </a>
+			<a href="#" class="actived"> <img class="subNavOrgAdd" src="images/subNavOrgdd.png" /> <span>群发历史</span> </a>
+		</div>
+    <div class="content w630">
+      <div class="diy">
+        <div class="fll">
+          <h3>群发历史</h3>
+        </div>
+      </div>
+      <div class="w630 h36">
+      	<div class="fll  ">
+
+          <select class="btn btn-default select_ctrl">
+             <option>状态</option>
+            <option>时间</option>
+            <option selected="selected">内容</option>
+          </select>
+
+       
+      </div>
+    	<div id="holdingMe" class="form-group frr" style="width: 530px;">
+                <input type="text" class="form-control">
+      </div>
+
+      <div class="data_paker fll display_none relative qixiang_div1">
+          <div class="error date_error" style="left:12px;">结束时间不能大于开始时间</div>
+          <input type="text" name="start_date" class="form-control fll ml10 w150 dataStart2" id="dataStart2">
+          <span class="fll">&nbsp;至</span>
+          <input type="text" name="end_date" class="form-control fll ml10 w150 dataStart3" id="dataStart3">
+          <input type="button" class=" qued fll" value="查找" style="height: 34px;margin-left: 15px;" />
+      </div>
+      <div class="fll display_none static" style="margin-left: 15px;">
+
+          <select class="btn btn-default fll">
+             <option selected="selected">已发送</option>
+            <option>未发送</option>
+          </select>
+          
+          <input type="button" class=" qued fll" value="查找" style="height: 34px;margin-left: 15px;" />
+       
+      </div>
+      
+      </div>
+      <div class="w630 mrt20">
+      	<table width="100%" border="0">
+  <tr class="try juc">
+    <td class="w205 xiaozi">图文标题</td>
+    <td class="w65 xiaozi">发送类别</td>
+    <td class="w85 xiaozi"> 发送条件</td>
+    <td class="w165 xiaozi">发送时间</td>
+    <td class="w50 xiaozi">结果</td>
+  </tr>
+  <tr class="h70 juc bodd">
+    <td class="w205 xiaozi">
+    	<div class="fll mrzl5">
+    		<img src="images/tux.png" />
+    	</div>
+    	<div class="fll w1401">
+    		标题标题标题标题标
+标题标题标题题标...
+    	</div>
+    </td>
+    <td class="w65 nizi">精准群发</td>
+    <td class="w85 nizi"> 浙江省&nbsp;女性</td>
+    <td class="w165 nizi">2015-08-11 09:30:18</td>
+    <td class="w50 nizi">
+    	<span>成功:0</span><br />
+    	<span>失败:0</span>
+    </td>
+  </tr>
+   <tr class="h70 juc bodd">
+    <td class="w205 xiaozi">
+    	<div class="fll mrzl5">
+    		<img src="images/tux.png" />
+    	</div>
+    	<div class="fll w1401">
+    		标题标题标题标题标
+标题标题标题题标...
+    	</div>
+    </td>
+    <td class="w65 nizi">精准群发</td>
+    <td class="w85 nizi"> 浙江省&nbsp;女性</td>
+    <td class="w165 nizi">2015-08-11 09:30:18</td>
+    <td class="w50 nizi">
+    	<span>成功:0</span><br />
+    	<span>失败:0</span>
+    </td>
+  </tr>
+  <tr class="h70 juc bodd">
+    <td class="w205 xiaozi">
+    	<div class="fll mrzl5">
+    		<img src="images/tux.png" />
+    	</div>
+    	<div class="fll w1401">
+    		标题标题标题标题标
+标题标题标题题标...
+    	</div>
+    </td>
+    <td class="w65 nizi">精准群发</td>
+    <td class="w85 nizi"> 浙江省&nbsp;女性</td>
+    <td class="w165 nizi">2015-08-11 09:30:18</td>
+    <td class="w50 nizi">
+    	<span>成功:0</span><br />
+    	<span>失败:0</span>
+    </td>
+  </tr>
+  <tr class="h70 juc">
+    <td class="w205 xiaozi">
+    	<div class="fll mrzl5">
+    		<img src="images/tux.png" />
+    	</div>
+    	<div class="fll w1401">
+    		标题标题标题标题标
+标题标题标题题标...
+    	</div>
+    </td>
+    <td class="w65 nizi">精准群发</td>
+    <td class="w85 nizi"> 浙江省&nbsp;女性</td>
+    <td class="w165 nizi">2015-08-11 09:30:18</td>
+    <td class="w50 nizi">
+    	<span>成功:0</span><br />
+    	<span>失败:0</span>
+    </td>
+  </tr>
+</table>
+      	
+      	
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  </div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script> 
+<script src="bower_co-mponents/bootstrap/dist/js/bootstrap.min.js"></script> 
+<script src="bower_components/underscore/underscore-min.js"></script> 
+    <script src="bower_components/datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="js/dateStartGtDateEnd.js"></script>
+<script src="js/border.js"></script> 
+<script src="js/daijin.js"></script> 
+    <script src="js/holdingMe.js"></script>
+<script>
+    jQuery(function ($) {
+        borderInit();    
+        $('#holdingMe').holding({
+            'content': '请输入内容',
+            'callback': function() {
+                alert($(this).parent().find('input').val());
+            }
+        }); 
+        $('.dataStart2').val(moment().format('YYYY-MM-DD')).datetimepicker({
+            lang: "ch",
+            format: "Y-m-d H:i",
+            timepicker: true,
+            minDate: moment().format('YYYY/MM/DD'),
+            startDate: moment().format('YYYY/MM/DD'),
+            onClose: function() {
+                dateStartGtdateEnd(".dataStart2", ".dataStart3", ".qixiang_div1");
+            }
+        });
+        $('.dataStart3').val(moment().format('YYYY-MM-DD')).datetimepicker({
+            lang: "ch",
+            format: "Y-m-d H:i",
+            timepicker: true,
+            minDate: moment().format('YYYY/MM/DD'),
+            startDate: moment().format('YYYY/MM/DD'),
+            onClose: function() {
+                dateStartGtdateEnd(".dataStart2", ".dataStart3", ".qixiang_div1");
+            }
+        });
+
+        $(".select_ctrl").click(function(){
+          //alert($(this).text());
+          if($(this).find("option:selected").text()=="内容"){
+            $("#holdingMe").show();
+            $(".data_paker").hide();
+            $(".static").hide();
+          };
+          if($(this).find("option:selected").text()=="状态"){
+            $("#holdingMe").hide();
+            $(".data_paker").hide();
+            $(".static").show();
+          };
+          if($(this).find("option:selected").text()=="时间"){
+            $("#holdingMe").hide();
+            $(".data_paker").show();
+            $(".static").hide();
+          };
+
+        });
+    });
+      $(".aa").click(function(){
+        $(this).find(".radi").toggleClass("zu_radi")
+    })
+</script>
+</body>
+</html>

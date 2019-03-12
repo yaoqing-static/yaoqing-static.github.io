@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui-v1.11.4.css" />
+    <link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css" />
+    <link rel="stylesheet" href="css/ui-dialog.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/flat/blue.css" />
+    <link rel="stylesheet" href="css/kaquan.css" />
+    <link rel="stylesheet" href="css/zstyle.css" />
+    <link rel="stylesheet" href="css/slStyle.css" />
+</head>
+
+<body>
+    <div class="commonBox  ">
+        <div class="nav">
+            <a href="#" class="head">
+                <img src="images/navHead.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon6.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon7.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon8.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon9.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon10.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#">
+                <img src="images/z-icon11.png" />
+            </a>
+            <a href="#" class="last1">
+                <img src="images/navBack.png" />
+            </a>
+        </div>
+        <div class="contentBox">
+            <div class="title text-center">新媒体云服务平台-NewMedia</div>
+            <h1>群发管理</h1>
+            <div class="subNav">
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>精准群发</span>
+                </a>
+                <a href="#" class="actived">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>高级群发</span>
+                </a>
+                <a href="#">
+                    <img class="subNavOrgAdd" src="images/subNavOrgdd.png" />
+                    <span>群发历史</span>
+                </a>
+            </div>
+            <div class="content w630">
+                <div class="diy">
+                    <div class="fll">
+                        <h3>高级群发</h3>
+                    </div>
+                </div>
+                <div class="guize mrt15" style="margin-bottom: 10px;">
+                    <div class=" mrl10 fll">
+                        <div class="mrt10 fll serch-tab-i">
+                            <div class="radio-wrap">
+                                <input id="radioAdd" name="validity" type="radio" class="pull-left z-kq-flop" checked/>
+                            </div>
+                            <div class="fll ">
+                                <div class=" gudx" style="margin: 0;">按昵称搜索</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" mrl70 fll">
+                        <div class="mrt10 fll serch-tab-i">
+                            <div class="radio-wrap">
+                                <input id="radioReduce" name="validity" type="radio" class="pull-left" />
+                            </div>
+                            <div class="fll">
+                                <div class=" gudx fll" style="margin: 0;">组合搜索</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="serch-tab">
+                    <div class="qings">
+                        <input id="tags" type="text" class="form-control w630" placeholder="请输入昵称" />
+                        <div class="nic clearfix">
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="delIco" />
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag">昵称0</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="delIco" />
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag">昵称1</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="delIco" />
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag">昵称2</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                <div class="panel-group">
+                    <div class="guize mrt15 row top_bo">
+                        <label class="text-right nrsz">内容设置</label>
+                        <div class="bo_box mrt5 fll" style="margin-top: 5px;margin-left: 20px;">
+                            <div class="fll mrlf10 aa" id="autoText">
+                                <span class="radi radi1 zu_radi"></span>
+                                <span class=" xiaozi">文本</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="imgPic">
+                                <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                    <span class="xiaozi">图文</span></a>
+                            </div>
+                            <div class="fll mrl40 aa" id="imgWord">
+                                <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                    <span class="xiaozi">图片</span></a>
+                            </div>
+                            <div class="fll mrl40 aa" id="media">
+                                <span class="radi"></span>
+                                <span class="xiaozi">影音</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="URL1">
+                                <span class="radi radi1"></span>
+                                <span class="xiaozi">跳转页面</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="URL2">
+                                <span class="radi radi1"></span>
+                                <span class="xiaozi">动态获取</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guize mrt15" id="Control" style="width: 540px; margin-left: 85px;">
+                        <div class="wenben">
+                            <textarea class="dute" style="height:120px;"></textarea>
+                        </div>
+                        <div id='wenben' class='error' style='display:none;margin-left: 85px;'>请输入文本</div>
+                    </div>
+                </div>
+                    
+                    <div class="fenx1 mrl80 mrt20">
+                        <div class="fll wi20 di" id="fn2">
+                            <img src="images/dui.png" />
+                        </div>
+                        <div class="fll wi20" id="fa2">
+                            <input type="checkbox" style="margin-top: 6px;">
+                        </div>
+                        <div class="xiaozi fll">定时发送</div>
+                        <div class="fll mrl10 mrtf5" style="margin-top: -2px;">
+                            <input type="text" name="start_date" class="form-control" id="dataStart1" />
+                        </div>
+                    </div>
+                    <div class="w630 ">
+                        <div class="shurl frr">
+                            <input type="button" class=" qued fll" value="确定" />
+                            <input type="button" class="quxiao frr" value="删除" />
+                        </div>
+                    </div>
+                </div>
+                <div class="serch-tab" style="display: none;">
+                    <div id="city_1" class="w630 h36 mrt15">
+                        <div class="fll kayyio">地域</div>
+                        <div class="fll">
+                            <select class="form-control w100 prov">
+                            </select>
+                        </div>
+                        <div class="fll kayyio mrl10" style="width: 40px;"><!-- 省 -->&nbsp;</div>
+                        <div class="fll mrlf30">
+                            <select class="form-control w100 city" disabled="disabled" style="display: none;">
+                            </select>
+                        </div>
+                        <div class="fll kayyio mrl10"><!-- 省 -->&nbsp;</div>
+                    </div>
+                    <div class="w630 h36 mrt15">
+                        <div class="fll kayyio">性别</div>
+                        <div class="fll ">
+                            <select class="form-control w100">
+                                <option>女</option>
+                                <option>男</option>
+                                <option selected="selected">不限</option>
+                            </select>
+                        </div>
+                        <div class="fll mrl10 mrtz5">
+                            <span class="xingb">以有</span>
+                            <span class="xingb ya5">23人</span>
+                            <span class="xingb">在筛选范围内</span>
+                        </div>
+                    </div>
+                    <div class="w630 h36 mrt15 clearfix">
+                        <div class="fll kayyio nic1">添加标签</div>
+                        <div class="nic1 fll tags_div">
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签0">标签0</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签1">标签1</div>
+                            </div>
+                            <div class="fll chenni mr20">
+                                <div class="guanbi">
+                                    <img src="images/guanbi.png" class="x_ico">
+                                </div>
+                                <div class="nizi mrtf10 mrl10 mrr10 sltag" data-original-title="标签2">标签2</div>
+                            </div>
+                        </div>  
+                        <div class="jiahao1 fll">
+                            <div class="jh">+</div>
+                            <div class="tag_list">
+                                <div class=" mrtf15 text-center">
+                                    <img src="images/jian1.png" />
+                                </div>
+                            <ul class="list-unstyled">
+                              <li>
+                                <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                <label for="canShare" class=" mrtf3  mrl10 fll">标签0</label>
+                              </li>
+                              <li>
+                                <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                <label for="canShare" class=" mrtf3  mrl10 fll">标签1</label>
+                              </li>
+                              <li>
+                                <input class="fll checkbox" type="checkbox" name="iCheck" checked="checked">
+                                <label for="canShare" class=" mrtf3  mrl10 fll">标签2</label>
+                              </li>
+                              <li>
+                                <input class="fll checkbox" type="checkbox" name="iCheck">
+                                <label for="canShare" class=" mrtf3  mrl10 fll">标签3</label>
+                              </li>
+                              <li>
+                                <input class="fll checkbox" type="checkbox" name="iCheck">
+                                <label for="canShare" class=" mrtf3  mrl10 fll">标签4</label>
+                              </li>
+                            </ul>
+                        </div>
+                        </div>                      
+                    </div>
+                    
+                    <div class="panel-group">
+                    <div class="guize mrt15 row top_bo">
+                        <label class="text-right nrsz">内容设置</label>
+                        <div class="bo_box mrt5 fll" style="margin-top: 5px;margin-left: 20px;">
+                            <div class="fll mrlf10 aa" id="autoText">
+                                <span class="radi radi1 zu_radi"></span>
+                                <span class=" xiaozi">文本</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="imgPic">
+                                <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                    <span class="xiaozi">图文</span></a>
+                            </div>
+                            <div class="fll mrl40 aa" id="imgWord">
+                                <a id="tablist2-tab" href="#tablist2" aria-controls="tablist2" role="tab" data-toggle="tab" aria-expanded="false"> <span class="radi"></span>
+                                    <span class="xiaozi">图片</span></a>
+                            </div>
+                            <div class="fll mrl40 aa" id="media">
+                                <span class="radi"></span>
+                                <span class="xiaozi">影音</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="URL1">
+                                <span class="radi radi1"></span>
+                                <span class="xiaozi">跳转页面</span>
+                            </div>
+                            <div class="fll mrl40 aa" id="URL2">
+                                <span class="radi radi1"></span>
+                                <span class="xiaozi">动态获取</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guize mrt15" id="Control"style="width: 540px; margin-left: 85px;">
+                        <div class="wenben">
+                            <textarea class="dute" style="height:120px;"></textarea>
+                        </div>
+                        <div id='wenben' class='error' style='display:none;margin-left: 85px;'>请输入文本</div>
+                    </div>
+                </div>
+
+
+                    <div class="fenx1 mrl80 mrt20">
+                        <div class="fll wi20 di" id="fn2">
+                            <img src="images/dui.png" />
+                        </div>
+                        <div class="fll wi20" id="fa2">
+                            <input type="checkbox" style="margin-top: 6px;">
+                        </div>
+                        <div class="xiaozi fll">定时发送</div>
+                        <div class="fll mrl10 mrtf5">
+                            <div class="fll riqo form-inline" style="margin-top: 3px;">
+                                <input type="text" name="start_date" class="form-control" id="dataStart" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w630 ">
+                        <div class="shurl frr">
+                            <input type="button" class=" qued fll" value="确定" />
+                            <input type="button" class="quxiao frr" value="删除" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="js/lib/icheck.min.js"></script>
+    <script src="js/border.js"></script>
+    <script src="js/daijin.js"></script>
+    <script src="js/cityselect.js"></script>
+        <script src="js/dialog-min.js"></script>
+    <script src="js/slNickName.js"></script>
+    <script>
+    jQuery(function($) {
+        borderInit();
+        $('#dataStart').val(moment().format('YYYY-MM-DD')).datetimepicker({
+            lang: "ch",
+            format: "Y-m-d",
+            timepicker: true,
+            minDate: moment().format('YYYY/MM/DD'),
+            startDate: moment().format('YYYY/MM/DD')
+        });
+        $('#dataStart1').val(moment().format('YYYY-MM-DD')).datetimepicker({
+            lang: "ch",
+            format: "Y-m-d H:i",
+            timepicker: true,
+            minDate: moment().format('YYYY/MM/DD'),
+            startDate: moment().format('YYYY/MM/DD')
+        });
+        $(':radio').iCheck({
+            radioClass: 'iradio_flat-blue'
+        });
+
+        $(".iCheck-helper").click(function() {
+            var serchTab = $(".iCheck-helper").index(this);
+            $(".serch-tab").hide();
+            $(".serch-tab").eq(serchTab).show();
+        });
+    });
+    $(".aa").click(function() {
+        $(this).find(".radi").toggleClass("zu_radi")
+    })
+    </script>
+</body>
+
+</html>

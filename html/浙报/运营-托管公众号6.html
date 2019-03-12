@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+   <link rel="stylesheet" href="css/lyp_style.css">
+   	<link rel="stylesheet" href="css/kaquan.css">
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navHistory.png"/>
+    </a>
+    <a href="#">
+      <img src="images/lyp_icon_01.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navCard.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navActivity.png"/>
+    </a>
+
+    <a href="#" class="last3">
+      <img src="images/navMsg.png"/>
+    </a>
+    <a href="#" class="last2">
+      <img src="images/lyp_icon_02.png"/>
+    </a>
+    <a href="#" class="last1">
+      <img src="images/navOff.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+        钱报有礼 - NewMedia
+    </div>
+    <h1>运营</h1>
+    <div class="subNav">
+       <li>
+            <a href="#"  >
+                <span>全部</span>
+            </a>
+        </li>
+        
+      <li>
+          <a href="#">
+              <span>新媒体中心</span>
+          </a>
+      </li>
+       
+         <li>
+          <a href="#">
+              <span>新媒体中心</span>
+          </a>
+      </li>
+       <li>
+            <a href="#">
+                <span>个人</span>
+            </a>
+        </li>
+        <a href="#"  class="actived">
+            <img class="subNavOrgCreate" src="images/subNavOrgCreate.png">
+            <span>托管公众号</span>
+        </a>
+    </div>
+
+    <div class="content w630 ">
+      <h3>托管公众号</h3>
+       <div class="lyp_oForm k620">
+            <h2 class="oTitle_01">
+               <div class="fll"> 托管参数  &nbsp;>>&nbsp;回填参数&nbsp;>>&nbsp;托管成功&nbsp;>>&nbsp;完善信息</div>
+                
+            </h2>          
+       </div>
+       <div class="tubiao mrt30 w630">
+           	<div class="fll w110 xiaoz  linh80">
+           		 图标
+           	</div> 
+           	<div class="fll wg80">
+           		<img src="images/tub.png" />
+           	</div>
+           	<div class="shangtu fll fon38b mrl40">上传图标</div>
+           	<div class="fll xingb mrt404 mrl10">（建议尺寸：900像素*500像素）</div>
+           </div>
+       <div class=" h40h mrt20 w630">
+       	 <div class="fll w110 xiaoz linh40 ">
+           		 名称
+           	</div>
+           	<div class="fll">
+               <input type="text" class="form-control  w470 fll " placeholder="钱报有礼" id="titleTexts"/>
+               <span class="fen linh40"><em class="nomber1">0</em>/64</span>
+           </div>
+           <p id="KqCjTitle" class="input-text error kq-titleName" style="display: none; margin-left: 113px;">名称不能为空</p>
+       </div>
+       <div class=" h40h mrt20 w630 ">
+       	 <div class="fll w110 xiaoz  ">
+           		 AppSecret
+           	</div>
+           	<div class="fll  xiaoz  ">
+           		 zequanguanggao
+           	</div>
+           		<div class="frr">
+           		 <img src="images/fuw.png" />
+           	</div>
+           	<div class="frr  nizi mrr10 ">
+           		服务号
+           	</div>
+       </div>
+       <div class=" h40h mrt20 w630">
+       	 <div class="fll w110 xiaoz linh40 ">
+           		 隶属组织
+           	</div>
+          
+           <div class="fll">
+
+          <select class="form-control w520">
+            <option>新媒体中心2</option>
+            <option>新媒体中心1</option>
+            <option selected="selected">新媒体中心</option>
+          </select>
+
+        </div>
+       </div>
+       <div class=" h100 mrt20 w630">
+       	 <div class="fll w110 xiaoz linh40 ">
+           		 介绍
+           	</div>
+           	<div class="fll">
+               <textarea type="text" class="  kw470 fll " placeholder="钱报有礼" id="textareaNotNull"></textarea>
+               <div class=" fll mrt88 mrl10"><em class="nomber2">0</em>/256</div>
+           </div>
+           <p id="KqCjTextarea" class="input-text error kq-titleName" style=" margin-left: 113px; display: none;">介绍不能为空</p>
+       </div>
+       <div class=" h40h mrt15 w630 ">
+       	 <div class="fll w110 xiaoz">
+           		 AppID
+           	</div>
+           	<div class="fll  xiaoz  ">
+           		 wx764712b34332b20a
+           	</div>
+           
+       </div>
+       <div class=" h40h mrt20 w630 ">
+       	 <div class="fll w110 xiaoz  ">
+           		 微信号
+           	</div>
+            <div class="panel-show">
+           	<div class="fll">
+           		 <span class="nizi secret1 block">ba****************************ca</span>
+                 <span class="zhusw secret2 block">慎重修改，修改后10分钟后生效</span>
+           	</div>
+           		<div class="frr w85 h40h bob text-center nizi linh40" id="edit">
+           		 修改
+           	</div>
+            </div>
+            <div id="panel-Edit">
+               <div class="fll">
+                     <span class="nizi block"><input type="text" class="form-control w320 fll" id="inputSecret"/></span>
+                </div>
+           		<div class="frr w85 h40h bob text-center nizi linh40" id="Cancel">取消</div> <div class="frr w85 h40h bob text-center nizi linh40" id="save">保存</div>
+            </div>
+           	
+       </div>
+       <div class=" mrl110 mrt665 h100">
+          	<input type="button" class="w5w  w520 fll" value="重试" id="clickCj"/>
+          </div>
+  </div>
+</div>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="js/Validator.js"></script>
+  <script src="js/border.js"></script>
+  <script src="js/holdingMe.js"></script>
+  <script>
+    $(function(){
+		
+	 //修改
+	 $('#edit').on('click',function(){
+			 $(".panel-show").hide();
+			 var secret=$(".secret1").text();
+			 $("#inputSecret").val(secret);
+			 $("#panel-Edit").show();
+     });
+	 
+	 //取消
+	 $('#Cancel').on('click',function(){
+			 $(".panel-show").show();
+			 $("#panel-Edit").hide();
+     });  
+	 //保存
+	 $('#save').on('click',function(){
+		     $(".secret1").html($("#inputSecret").val())
+			 $(".panel-show").show();
+			 $("#panel-Edit").hide();
+     });
+	  
+		
+        borderInit();
+
+        $("#titleTexts").keyup(function(){
+            var len = $(this).val().length;
+            var text = $(".nomber1").html(len);
+            var _this1 = $(".nomber1").html();
+            if($(_this1).html()>=64){
+                return false;
+            }
+        });
+        $("#textareaNotNull").keyup(function(){
+            var len = $(this).val().length;
+            var text = $(".nomber2").html(len);
+            var _this2 = $(".nomber2").html();
+            if($(_this2).html()>=256){
+                return false;
+            }
+        });
+        var validataFunc = function () {
+            var validator = new Validator();
+            validator.add(document.getElementById('titleTexts'), [{
+                strategy: 'isNotEmpty',
+                errorMsg: function () {
+                    $('#KqCjTitle').show();
+                }
+            }]);
+            validator.add(document.getElementById('textareaNotNull'), [{
+                strategy: 'isNotEmpty',
+                errorMsg: function () {
+                    $('#KqCjTextarea').show();
+                }
+            }]);
+
+            var errorMsg = validator.start();
+            return errorMsg;
+        };
+        var validateBtn = document.getElementById('clickCj');
+        validateBtn.onclick = function () {
+            $('.error').hide();
+            var errorMsg = validataFunc();
+            if (errorMsg) {
+                errorMsg();
+
+            }
+        }
+
+
+    })
+  </script>
+</body>
+</html>

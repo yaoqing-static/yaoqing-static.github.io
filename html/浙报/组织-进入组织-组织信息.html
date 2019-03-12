@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGInfoC.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGMember.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navGLog.png"/>
+    </a>
+    <a href="#">
+      <img src="images/NavGWay.png"/>
+    </a>
+
+
+    <a href="#" class="last1">
+      <img src="images/navBack.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox info">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>组织</h1>
+
+    <div class="subNav">
+      <a>
+        <img src="images/subNavShare.png"/>
+        <ul>
+          <li id="copyLink">复制链接</li>
+          <li id="copyNum">复制群号</li>
+        </ul>
+      </a>
+      <a>
+        <img src="images/subNavRelieve.png"/>
+        <div class="text-center">
+          <img class="triangle" src="images/triangle.png"/>
+          <small><img src="images/q.png"/>确定要解除该组织吗？</small>
+          <b>（解除后隶属于该组织的场景实例将转移给组织管理者）</b>
+          <button class="btn btn-primary">确定</button>
+          <button class="btn btn-default">取消</button>
+        </div>
+      </a>
+    </div>
+
+    <div class="content">
+      <h3>组织信息</h3>
+
+      <div class="row mainInfo">
+        <label>图标</label>
+        <img src="images/myPhoto.png"/>
+        <label for="upload" class="btn btn-default">上传新头像</label>
+        <input type="file" id="upload"/>
+        <span>只支持JPG/PNG/GIF，大小不超过5M</span>
+      </div>
+      <div class="row">
+        <label>*组织名称</label>
+        <input id="inputName" class="form-control longInput" type="text"/>
+
+        <p>用户名不能为空或超过32个字符</p>
+      </div>
+      <div class="row">
+        <label>组织群号</label>
+        <b>23123124</b>
+      </div>
+      <div class="row">
+        <label>组织管理者</label>
+        <img src="images/myPhoto.png"/>
+        <b>张敏</b>
+      </div>
+      <div class="row">
+        <label>组织描述</label>
+        <textarea id="describe" class="form-control"></textarea>
+
+        <p>用户名不能为空或超过120个字符</p>
+      </div>
+      <div class="row">
+        <label>创建时间</label>
+        <b>2015-07-12</b>
+      </div>
+      <!-- <div class="row">
+           <label>实体单位</label>
+           <input class="form-control longInput" type="text"/>
+           <p>用户名不能为空或超过32个字符</p>
+       </div>-->
+      <div class="row">
+        <button id="saveBtn" class="btn btn-primary btn-block bottomBtn">保存</button>
+      </div>
+    </div>
+
+
+    <div class="errorMsg">
+      <img src="images/i.png"/>
+      <span></span>
+    </div>
+
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/lib/ZeroClipboard.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    borderInit();
+    $('#holdingMe').holding({'content': '组织名称或者群号'});
+    var once = false;
+    $('.subNav img').eq(0).on('mouseenter', function () {
+      $(this).parent().find('ul').show();
+      return (function(){
+        if(!once){
+          once = true;
+          funcCopyLink();
+          funcCopyNum();
+          $('.commonBox ~ div').on('mouseleave', function () {
+            $('.subNav ul').hide();
+          });
+          $('div').last().on('mouseenter',function(){
+            $('.subNav ul').show();
+          }).on('mouseleave', function () {
+            $('.subNav ul').hide();
+          });
+        }
+      }());
+    });
+
+    function funcCopyLink() {
+      var clipCopylink = new ZeroClipboard.Client();
+      clipCopylink.setHandCursor(true);
+      clipCopylink.setText("aaa");
+      clipCopylink.addEventListener("mouseUp", function (client) {
+        $('.subNav ul').hide();
+      });
+      clipCopylink.glue("copyLink");
+    }
+    function funcCopyNum() {
+      var clipCopylink = new ZeroClipboard.Client();
+      clipCopylink.setHandCursor(true);
+      clipCopylink.setText("bbb");
+      clipCopylink.addEventListener("mouseUp", function (client) {
+        $('.subNav ul').hide();
+      });
+      clipCopylink.glue("copyNum");
+    }
+
+    $('.subNav img').eq(1).on('mouseenter', function () {
+      $(this).parent().find('.text-center').show();
+    }).on('mouseleave', function () {
+      $('.subNav .text-center').hide();
+    });
+    $('.subNav .text-center').on('mouseenter', function () {
+      $(this).show();
+    }).on('mouseleave', function () {
+      $(this).hide();
+    });
+
+    var validataFunc = function () {
+      var validator = new Validator();
+      validator.add(document.getElementById('inputName'), [{
+        strategy: 'isNotEmpty',
+        errorMsg: '创建失败！组织名称不能为空'
+      }, {
+        strategy: 'maxLength:32',
+        errorMsg: '创建失败！组织名称不能超过32个字符'
+      }]);
+      validator.add(document.getElementById('describe'), [{
+        strategy: 'maxLength:120',
+        errorMsg: '创建失败！组织描述不能超过120个字符'
+      }]);
+      var errorMsg = validator.start();
+      return errorMsg;
+    };
+
+    var saveBtn = document.getElementById('saveBtn');
+    saveBtn.onclick = function () {
+      var errorMsg = validataFunc();
+      if (errorMsg) {
+        $('.errorMsg').show().find('span').html(errorMsg);
+        return false;
+      } else {
+        $('.errorMsg').hide();
+        //向后台提交...
+      }
+    }
+  });
+</script>
+</body>
+</html>

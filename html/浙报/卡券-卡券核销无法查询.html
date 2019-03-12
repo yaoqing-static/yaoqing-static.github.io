@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox card">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navicon1.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navicon2.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navicon3.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navicon4.png"/>
+    </a>
+
+
+    <a href="#" class="last1">
+      <img src="images/navBack.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+      新媒体云服务平台-NewMedia
+    </div>
+    <h1>卡券</h1>
+
+    <div class="panel panel-info">
+
+      <div class="panel-heading text-center modal-open">
+        <a class="pull-left actived" href="#">卡券核销</a>
+        <a class="pull-left" href="#">核销记录</a>
+      </div>
+
+      <div class="panel-body">
+
+        <div id="holdingMe" class="form-group">
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="findNothing text-center">无法查到相关信息，请仔细核对卡券序列号并重新输入。</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="js/holdingMe.js"></script>
+<script>
+  jQuery(function ($) {
+    $('#holdingMe').holding({
+      'content': '请输入优惠券序列号，如：888888888', 'callback': function () {
+        alert($(this).parent().find('input').val());
+      }
+    });
+  });
+</script>
+</body>
+</html>

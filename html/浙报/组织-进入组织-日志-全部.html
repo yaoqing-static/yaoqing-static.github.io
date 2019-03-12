@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>新媒体云服务平台</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+<div class="commonBox organization">
+
+    <div class="nav">
+        <a href="#" class="head">
+            <img src="images/navHead.png"/>
+        </a>
+        <a href="#">
+            <img src="images/navGInfo.png"/>
+        </a>
+        <a href="#">
+            <img src="images/navGMember.png"/>
+        </a>
+        <a href="#">
+            <img src="images/navGLogC.png"/>
+        </a>
+        <a href="#">
+            <img src="images/NavGWay.png"/>
+        </a>
+
+
+        <a href="#" class="last1">
+            <img src="images/navBack.png"/>
+        </a>
+    </div>
+
+    <div class="contentBox log">
+        <div class="title text-center">
+            新媒体云服务平台-NewMedia
+        </div>
+        <h1>日志</h1>
+
+        <div class="subNav">
+            <a href="#" class="actived">
+                <img class="subNavOrgAdd" src="images/all.png"/>
+                <span>全部</span>
+            </a>
+            <a class="carousel" href="#">
+                <img class="headImg" src="images/myPhoto.png"/>
+                <div>
+                    <p>Buhe<img src="images/owner.png"/></p>
+                    <i>124253224@qq.com</i>
+                </div>
+            </a>
+            <a class="carousel" href="#">
+                <img class="headImg" src="images/myPhoto.png"/>
+                <div>
+                    <p>Buhe</p>
+                    <i>124253224@qq.com</i>
+                </div>
+            </a>
+        </div>
+
+        <div class="content">
+            <h3>全部</h3>
+
+            <div>
+
+                <div class="carousel">
+                    <img class="headImg" src="images/placeholder.png"/>
+                    <div class="msgBox">
+                        <div>Buhe<img src="images/owner.png"/><i>124253224@qq.com</i></div>
+                        <p>发布活动<a>活动七天乐</a>到公共账号<a>来吧旅游</a></p>
+                    </div>
+                    <div class="rightBtn">09:50</div>
+                </div>
+                <div class="carousel">
+                    <img class="headImg" src="images/placeholder.png"/>
+                    <div class="msgBox">
+                        <div>Buhe <i>124253224@qq.com</i></div>
+                        <p>发布活动<a>活动七天乐</a>到公共账号<a>来吧旅游</a></p>
+                    </div>
+                    <div class="rightBtn">09:50</div>
+                </div>
+
+
+            </div>
+
+            <div class="text-center">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="js/border.js"></script>
+    <script src="js/holdingMe.js"></script>
+    <script>
+        jQuery(function ($) {
+            borderInit();
+            $('#holdingMe').holding({'content': '组织名称或者群号'});
+        });
+    </script>
+</body>
+</html>

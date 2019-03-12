@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>新媒体云服务平台</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/ui-dialog.css">
+  <link rel="stylesheet" href="css/main.css"/>
+   <link rel="stylesheet" href="css/lyp_style.css">
+   	<link rel="stylesheet" href="css/kaquan.css">
+</head>
+<body>
+
+<div class="commonBox organization">
+
+  <div class="nav">
+    <a href="#" class="head">
+      <img src="images/navHead.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navHistory.png"/>
+    </a>
+    <a href="#">
+      <img src="images/lyp_icon_01.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navCard.png"/>
+    </a>
+    <a href="#">
+      <img src="images/navActivity.png"/>
+    </a>
+
+    <a href="#" class="last3">
+      <img src="images/navMsg.png"/>
+    </a>
+    <a href="#" class="last2">
+      <img src="images/lyp_icon_02.png"/>
+    </a>
+    <a href="#" class="last1">
+      <img src="images/navOff.png"/>
+    </a>
+  </div>
+
+  <div class="contentBox">
+    <div class="title text-center">
+        钱报有礼 - NewMedia
+    </div>
+    <h1>运营</h1>
+    <div class="subNav">
+       <li>
+            <a href="#"  >
+                <span>全部</span>
+            </a>
+        </li>
+        
+      <li>
+          <a href="#">
+              <span>新媒体中心</span>
+          </a>
+      </li>
+       
+         <li>
+          <a href="#">
+              <span>新媒体中心</span>
+          </a>
+      </li>
+       <li>
+            <a href="#">
+                <span>个人</span>
+            </a>
+        </li>
+        <a href="#"  class="actived">
+            <img class="subNavOrgCreate" src="images/subNavOrgCreate.png">
+            <span>托管公众号</span>
+        </a>
+    </div>
+
+    <div class="content ">
+      <h3>托管公众号</h3>
+       <div class="lyp_oForm">
+            <h2 class="oTitle_01">
+               <div class="fll"> 托管参数&nbsp;>>&nbsp;回填参数</div>
+                <div class="fon169 ">&nbsp;>>&nbsp;托管成功&nbsp;>>&nbsp;完善信息</div>
+            </h2>
+           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="oTable">
+               <tr>
+                   <td>URL: </td>
+                   <td class="url"> http://huaban.com/pins/465579372/1</td>
+                   <td><span id="copy0">复制</span></td>
+                  
+               </tr>
+               <tr>
+                   <td>URL: </td>
+                   <td class="url"> http://huaban.com/pins/465579372/2</td>
+                   <td><span id="copy1">复制</span></td>
+                   
+               </tr>
+           </table>
+          <div class="fon12 mrt10">>点击进入 微信公共平台</div>
+          <div class="xiayi mrt35">
+          	<input type="button" class="w5w fll" value="下一步"/>
+          </div>
+    </div>
+    <div class="errorMsg">
+      <img src="images/i.png"/>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+        <script src="js/dialog-min.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/border.js"></script>
+<script src="js/holdingMe.js"></script>
+<script type="text/javascript" src="ZeroClipboard.js"></script>
+<script>
+  jQuery(function ($) {
+    borderInit();
+	$(".oTable tr td span").each(function(index, el) {
+    var url=$(el).parents("tr").find(".url").text();
+    copyinit(url,$(el).attr("id"));
+  });
+	$(".oTable tr td span").on('click',function(){
+       var url=$(this).parents("tr").find(".url").text();
+           copyinit(url,$(this).attr("id"));
+
+	})
+	
+    $('#inputName').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/32');
+      if($(this).val().length>32 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=32 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    $('#describe').on('keyup',function(){
+      $(this).parent().find('span').text($(this).val().length+'/120');
+      if($(this).val().length>120 && !$(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').addClass('error');
+      }else if($(this).val().length<=120 && $(this).parent().find('span').hasClass('error')){
+        $(this).parent().find('span').removeClass('error');
+      }
+    });
+    var validataFunc = function () {
+      var validator = new Validator();
+      validator.add(document.getElementById('inputName'), [{
+        strategy: 'isNotEmpty',
+        errorMsg: '创建失败！组织名称不能为空'
+      }, {
+        strategy: 'maxLength:32',
+        errorMsg: '创建失败！组织名称不能超过32个字符'
+      }]);
+      validator.add(document.getElementById('describe'), [{
+        strategy: 'maxLength:120',
+        errorMsg: '创建失败！组织描述不能超过120个字符'
+      }]);
+      var errorMsg = validator.start();
+      return errorMsg;
+    };
+
+    /*var saveBtn = document.getElementById('saveBtn');
+    saveBtn.onclick = function () {
+      var errorMsg = validataFunc();
+      if (errorMsg) {
+        $('.errorMsg').show().find('span').html(errorMsg);
+        return false;
+      } else {
+        $('.errorMsg').hide();
+        //向后台提交...
+      }
+    }*/
+	
+  });
+  
+	  //复制URL
+	function copyToClipboard(txt) 
+	{
+		if (window.clipboardData) 
+		{
+			window.clipboardData.clearData();
+			clipboardData.setData("Text", txt);
+			alert("复制成功！");
+		}
+		else if (navigator.userAgent.indexOf("Opera") != - 1) {
+			window.location = txt;
+		}
+		else if (window.netscape) 
+		{
+			try {
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			}
+			catch (e) 
+			{
+				alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将 'signed.applets.codebase_principal_support'设置为'true'");
+			}
+			var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+			if (!clip) {
+				return;
+			}
+			var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+			if (!trans) {
+				return;
+			}
+			trans.addDataFlavor("text/unicode");
+			var str = new Object();
+			var len = new Object();
+			var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+			var copytext = txt;
+			str.data = copytext;
+			trans.setTransferData("text/unicode", str, copytext.length * 2);
+			var clipid = Components.interfaces.nsIClipboard;
+			if (!clip) {
+				return false;
+			}
+			clip.setData(trans, null, clipid.kGlobalClipboard);
+			alert("复制成功！");
+		}
+		else
+		{
+			alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将 'signed.applets.codebase_principal_support'设置为'true'");
+		}
+	}
+	  
+
+function copyinit(text,ID) {
+  var clip = new ZeroClipboard.Client(); // 新建一个对象
+  clip.setHandCursor( true );
+  clip.setText(text); // 设置要复制的文本。
+  clip.addEventListener( "mouseUp", function(client) {
+    showModal();
+  });
+  // 注册一个 button，参数为 id。点击这个 button 就会复制。
+  //这个 button 不一定要求是一个 input 按钮，也可以是其他 DOM 元素。
+  clip.glue(ID); // 和上一句位置不可调换
+} 
+
+
+//弹框
+  function showModal() {
+    var d = dialog({
+      content: '复制成功！对话框将在2秒内关闭',
+    });
+    d.show();
+    setTimeout(function(){
+      d.close().remove();
+      },2000)
+
+  };   
+</script>
+</body>
+</html>
