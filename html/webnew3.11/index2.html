@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script>
+$(function(){
+	 $(".nav ul li").hover(function(){
+		 $(".imgshow li").stop(true,true).fadeOut(500);
+		$(".imgshow li").stop(true,true).eq($(this).index()).fadeIn(500);
+		var nn=$(this).index();
+		$(".curBg").animate({left:nn*196+"px"});
+		 },function(){
+			 $(".imgshow li").stop(true,true).eq($(this).index()).fadeIn(500);
+			 })
+	 })
+ 
+	function scrollToIndex(index)
+		{
+			var obj = $(".contenty .panel:eq(" + index + ")");
+			var objs = $(".contenty .panel");
+			var temp = 0;
+			var vy = 0;
+			var th = 0;
+			for(var i = 0; i < objs.length; i++)
+			{
+				temp = Number($(objs[i]).css("height").replace("px", ""));
+				if(i < index)
+				{
+					vy += temp;
+				}
+				th += temp;
+			}
+			temp = window.innerHeight?window.innerHeight:$(window).innerHeight();//兼容IE7和IE8
+			if(th - vy < temp)
+			{
+				vy = th - temp;
+			}
+			
+			removeMenuClass(index);
+			var ss = 130;
+			var iii = (vy - $(document).scrollTop()) / (1000 / ss);
+			var step = Math.abs(iii);
+			if(step < 5)
+			{
+				step = 5;
+			}
+			var flag = true;
+			if(iii == 0)
+			{
+				bindScroolEvent();
+				return;
+			}
+			else if(iii < 0)
+			{
+				flag = false;
+			}
+			/****动画****/
+			animateD();
+			function animateD()
+			{
+				$(document).scrollTop($(document).scrollTop() + iii);
+				if(flag)
+				{
+					if($(document).scrollTop() < vy - step)
+					{
+						setTimeout(animateD, ss);
+					}
+					else
+					{	
+						// if($(document).scrollTop() >= vy - step && $(document).scrollTop() < vy)
+						$(document).scrollTop(vy);
+						setTimeout(bindScroolEvent, ss);
+					}
+				}
+				else
+				{
+					if($(document).scrollTop() > vy + step)
+					{
+						setTimeout(animateD, ss);
+					}
+					else
+					{
+						// if($(document).scrollTop() <= vy + step && $(document).scrollTop() > vy)
+						$(document).scrollTop(vy);
+						setTimeout(bindScroolEvent, ss);
+					}
+				}
+			}
+		}
+		function scrollHandle()
+		{
+			var objs = $(".contenty .panel");
+			var vy = 0, vv = 0;
+			for(var i = 0; i < objs.length - 1; i++)
+			{
+				vy += Number($(objs[i]).css("height").replace("px", ""));
+				vv = vy + Number($(objs[i + 1]).css("height").replace("px", ""));
+				if($(document).scrollTop() >= vy && $(document).scrollTop() < vv)
+				{
+					removeMenuClass(i+1);
+					return;
+				}
+			}
+			removeMenuClass(0);
+		}
+		function bindScroolEvent()
+		{
+			$(".menu ul li").bind("click", onListMenuClickHandle);
+			//$(document).bind("scroll",scrollHandle);//IE7、IE8不兼容
+			$(window).bind("scroll",scrollHandle);
+		}
+		function removeMenuClass(index)
+		{
+			var len = $(".menu ul li").length;
+			for(var i = 0; i < len; i++)
+			{
+				$(".menu ul li:eq(" + i +")").removeClass("menu" + (i + 1));
+				$(".contenty .panel:eq(" + i +")").removeClass("animation" + (i + 1));//控制动画
+			}
+			$(".menu ul li:eq(" + index +")").addClass("menu" + (index + 1));
+			$(".contenty .panel:eq(" + index +")").addClass("animation" + (index + 1));//控制动画
+			
+		}
+		function onListMenuClickHandle()
+		{
+			$(".menu ul li").unbind("click", onListMenuClickHandle);
+			//$(document).unbind("scroll", scrollHandle);
+			$(window).unbind("scroll", scrollHandle);
+			var index = $(".menu ul li").index(this);
+			scrollToIndex(index);	
+		}
+		$(document).ready(function(e) {
+			
+			removeMenuClass(0);
+			bindScroolEvent();
+        });
+
+
+</script>
+<link rel="stylesheet" href="css/Site.css">
+<style type="text/css">
+.panel .conter .wrap{ height:800px}
+.panel.box1.new{background-position: center -30px}
+.panel.box1.new .conter #demo01{margin: 298px 0 0 25px;}
+.newhhh{ margin-top:0px}
+.lxwm1 ul .inpt input{
+	height: 44px;
+	line-height: 44px;
+	border-radius: 8px;
+	background-color: #dbdbdb;
+	font-family: "微软雅黑";
+	font-size: 16px; padding:0 6px; width:320px
+}.lxwm1 ul li{
+	width: 130px;
+	color: #FFF;
+	line-height: 44px;
+	background-image: url(../image/ico1.png);
+	background-repeat: no-repeat;
+	background-position: 0px 13px; padding:0 0 0 40px; float:left; height:44px
+}.lxwm2{ width:360px; float:left; padding:360px 0 0 140px}
+</style>
+<title></title>
+</head>
+
+<body>
+<div class="menu">
+  <div class="conter">
+   <div class="logo"><a href="index2.html"><img src="image/logo.png"  /></a></div>
+	<ul>
+			<li class="menu1"><a>关于我们</a></li>
+            <li><a>软件定制</a></li>
+            <li><a>移动开发</a></li>
+            <li><a>微营销</a></li>
+			<li><a>国际频道</a></li>
+			<li><a>服务用户</a></li>
+			<li><a>联系我们</a></li>
+	</ul>
+  </div>
+</div>
+
+
+
+<div class="contenty">
+
+<div class="panel box1 new">
+	<div class="conter" style="position:relative; height:650px">
+    	
+<div id="demo01" class="flexslider">
+	<ul class="slides">
+		<li><div class="img"><img src="image/banner1.jpg" width="534" height="300" /></div></li>
+		<li><div class="img"><img src="image/banner2.jpg" width="534" height="300" /></div></li>
+		<li><div class="img"><img src="image/banner3.jpg" width="534" height="300" /></div></li>
+		<li><div class="img"><img src="image/banner4.jpg" width="534" height="300" /></div></li>
+	</ul>
+</div><!--flexslider end-->
+	
+	<div style="position: absolute; right: -40px; top: -39px"><img src="image/new1.png" width="639" height="368" usemap="#Map" border="0" />
+					<map name="Map" id="Map">
+									<area shape="rect" coords="265,300,507,362" href="javascript:scrollToIndex(7)" />
+					</map>
+	</div>
+	
+    </div>
+</div>
+
+<div class="panel pageOne1" style="background-color:#27bbd1" id="A2">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+              	<div  class="newhhh" style="text-align:center"><img src="image/new2.png" usemap="#Map2" border="0" />
+								<map name="Map2" id="Map2">
+												<area shape="rect" coords="56,393,233,443" href="page2.html" />
+								</map>
+              	</div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+
+<div class="panel box3 pageOne2" style="background-color:#489ecc" id="A3">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div  class="newhhh" style="text-align:center">
+			  				<img src="image/new3.png" width="995" height="474" usemap="#Map3" border="0" />
+							<map name="Map3" id="Map3">
+											<area shape="rect" coords="786,318,981,372" href="page3.html" />
+							</map>
+				</div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+
+<div class="panel pageOne3" style="background-color:#66cd9d" id="A4">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div  class="newhhh" style="text-align:center">
+			  				<img src="image/new4.png" width="994" height="410" usemap="#Map4" border="0" />
+							<map name="Map4" id="Map4">
+											<area shape="rect" coords="12,305,212,372" href="page4.html" />
+							</map>
+				</div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+
+<div class="panel box5 pageOne4" style="background-color:#ea8080" id="A5">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div  class="newhhh" style="text-align:center"><img src="image/new5.png" width="1200" height="400" usemap="#Map5" border="0" />
+							<map name="Map5" id="Map5">
+											<area shape="rect" coords="939,313,1118,359" href="http://www.gpindao.com/" target="_blank" />
+							</map>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+
+<div class="panel pageOne5" style="background-image:url(image/bg2.png); background-repeat:repeat" id="A6">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+				<div style="text-align:center; width:1200px;">
+              <img src="image/new6.jpg" id="img6" />
+			  </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+
+<div class="panel pageOne5" style=" background-color:#333333" id="A7">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div class="box6">
+            	<div class="dlname" id="inn7">联系我们&nbsp;—&nbsp;在开始之前，说说你的需求吧！</div>
+            	<div class="lxwm">
+                	<div class="lxwm1">
+                    	<ul>
+                        	<li>您的姓名：</li><li class="inpt"><input type="text" /></li>
+                        	<li style="background-position: 0px -42px;">您的联系电话：</li>
+                        	<li class="inpt"><input type="text" /></li>
+                            <li style="background-position: 0px -104px;">您的邮箱：</li>
+                        	<li class="inpt"><input type="text" /></li>
+                            <li style="background-position: 0px -166px;">您的需求描述：</li>
+                        	<li class="inpt" style="height:auto; margin-bottom:10px"><textarea></textarea></li>
+                            
+                            <li style="background-position: 0px -1166px;">&nbsp;</li>
+                        	<li class="inpt"><a class="tj" href="mailto:335822984@qq.com">提交</a></li>
+                            <div class="clear"></div>
+                        </ul><div class="clear"></div>
+                    </div>
+                    <div class="lxwm2">
+                    	<div class="lxwm2a">地址:上海市虹口区广纪路800号B幢103室<br />
+                          邮箱:tony.tao@bengosoft.com
+                        </div>
+                    </div>
+                    
+                    	
+                	<div class="clear"></div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+<div class="panel foot" style="min-width:1200px">
+	<div class="conter foot2">Copyright @ 2010-2015 Bengosoft Co.,Ltd All Rights Reserved.<br />
+				上海本格软件有限公司 版权所有</div>
+</div>
+
+<script type="text/javascript" src="js/slider.js"></script> 
+<script type="text/javascript">
+$(function(){
+
+	$('#demo01').flexslider({
+		animation: "slide",
+		direction:"horizontal",
+		easing:"swing"
+	});
+	
+	$('#demo02').flexslider({
+		animation: "slide",
+		direction:"vertical",
+		easing:"swing"
+	});
+	
+});
+</script>
+
+
+</body>
+</html>

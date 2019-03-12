@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  var currentIndex = 0;
+  var ellength;
+	var topArr;
+	var lastTop = 0;
+	var canScrool = true;
+	init();
+	function init()
+	{	
+		 ellength=$(".NNlist").length;
+		 topArr = new Array();
+		 topArr[0] = 0;
+		 for(var i = 1; i <= ellength; i++)
+		 {
+			 	topArr[i] = topArr[i - 1] + $(".NNlist:eq(" + (i - 1) + ")").height();
+		 }
+	}
+  $(window).scroll(function(){
+		if(canScrool)
+		{
+			canScrool = false;
+			var scroolTop=$(window).scrollTop();
+			var temp = currentIndex;
+			var isReturn = false;
+			//alert(scroolTop + "《--》" + (topArr[currentIndex + 1] - $(window).height()));
+			if(lastTop <= scroolTop)
+      {
+				if(scroolTop < topArr[currentIndex + 1] - $(window).height())
+					isReturn = true;
+				temp++;
+      }
+      else 
+      {
+				if(scroolTop > topArr[currentIndex])
+					isReturn = true;
+				temp--;
+      }
+			temp = Math.max(0, Math.min(temp, ellength - 1));
+			if(isReturn == true ||  temp == currentIndex)
+			{
+				canScrool = true;
+				lastTop = topArr[currentIndex];
+			}
+			else
+			{
+				lastTop = scroolTop;
+				currentIndex = temp;
+				$("body , html").animate({scrollTop:topArr[currentIndex]}, "fast", function (){setTimeout( function (){canScrool = true;lastTop = topArr[currentIndex];}, 1000)});
+				$(".NNlist").removeClass("dq");
+				$(".NNlist").eq(currentIndex).addClass("dq")
+			}
+		}
+  })	
+})
+</script>
+<link rel="stylesheet" href="css/Site.css">
+<title></title>
+</head>
+
+<body>
+<div class="menu">
+  <div class="conter">
+   <div class="logo"><img src="image/logo.png"  /></div>
+	<ul>
+			<li><a href="index.html">UI设计</a></li>
+            <li><a class="dq" href="Parents.html">我是父母</a></li>
+            <li><a href="Children.html">我是孩子</a></li>
+            <li><a href="help.html">帮助</a></li>
+	</ul>
+  </div>
+</div>
+
+
+
+<div class="NNlist pageThere1" style="height:930px">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div class="aa1">
+           	    <div class="aa2a" style="color:#686868; font-size:24px; width:599px; padding-left:100px; padding-top:160px"><strong style="color:#424242; line-height:36px">使用零花钱从小培养孩子的<br />
+理财习惯</strong><br /><br />
+当孩子意识到钱是自己的，花的时候就会有一点心<br />
+痛，有一点舍不得，不会再像花父母的钱那样随心<br />
+所欲了！恭喜您，您的培养已经初见成效了。<br /><br />
+                </div>
+                     <div class="aa2b" style="width:382px"><img src="image/p1.png" /></div>
+              	<div class="clear"></div>
+                
+                <div class="nlist1a"><div>天天零花钱通过管理孩子存钱、花钱<br />
+                帮助父母培养孩子的理财习惯</div></div>
+                
+              </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+<div class="NNlist pageThere2" style="height:900px">
+<div style="background-color:#fc8100; min-width:1200px">
+	<div class="conter">
+    <div class="wrap" style="height:700px">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div class="aa1" style="padding-top:20px">
+                	<div class="aa1a" style="width:330px; padding-left:190px; float:left"><img src="image/p2.png" /></div>
+                  <div class="aa1b" style="width:635px; padding-top:120px; color:#FFF; float:left; font-size:24px"><strong style="color:#FFF">孩子三年级了要不要给他零<br />
+花钱呢？</strong><br /><br />
+从7岁开始家长就要注意培养小朋友的理财意识了<br />
+可以按周期性给一些，也可以按家务劳动给一些奖励<br />
+从小培养孩子管理钱的能力，建立孩子的财商意识，<br />
+对以后孩子的独立成长很有益处</div>
+                	<div class="clear"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+<div class="conter">
+<div class="nlist1a" style="margin:0px; border:none; color:#f1b016"><div>天天零花钱可以帮助父母制定零花钱发放计划<br />
+  逐渐培养孩子的预算使用习惯</div></div>
+</div>
+
+</div>
+
+
+<div class="NNlist pageThere3" style="height:900px">
+<div style="background-color:#06d160; min-width:1200px">
+	<div class="conter">
+    <div class="wrap" style="height:700px">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div class="aa1" style="padding-top:20px">
+           	    <div class="aa2a" style="color:#fff; font-size:24px; width:599px; padding-left:100px; padding-top:160px"><strong style="color:#fff; line-height:36px">孩子上初中了，总是乱花钱<br />
+管不住，怎么办</strong><br /><br />
+这个年龄段的孩子渴望拥有自己的钱，渴望拥有支<br />
+配权，对自己的东西往往比别人更珍惜<br />
+孩子往往一拿到钱掉头就去消费，然后再来向父母<br />
+要<br /><br />
+                    
+                </div>
+                     <div class="aa2b" style="width:382px"><img src="image/p3.png" /></div>
+              	<div class="clear"></div>
+
+                
+              </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+<div class="conter">
+<div class="nlist1a" style="margin:0px; border:none; color:#05c058">天天零花钱帮助孩子平衡花钱和存钱的关系<br />
+  建立孩子消费的责任感</div>
+</div>
+</div>
+
+
+<div class="NNlist pageThere4" style="height:900px">
+<div style="background-color:#349ef0; min-width:1200px">
+	<div class="conter">
+    <div class="wrap" style="height:700px">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div class="aa1" style="padding-top:20px">
+                	<div class="aa1a" style="width:330px; padding-left:190px; float:left"><img src="image/p4.png" /></div>
+                  <div class="aa1b" style="width:635px; padding-top:120px; color:#FFF; float:left; font-size:24px"><strong style="color:#FFF">孩子读高中了，零用钱开销<br />
+该如何管理</strong><br /><br />
+随着年龄的增长，孩子的视野不断的扩展，单纯通过<br />
+父母获得零花钱已经不能满足孩子的需求<br />
+通过接触金融的基本知识，建立对金融知识的兴趣，<br />
+对孩子后天的独立生活更有帮助</div>
+                	<div class="clear"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+<div class="conter">
+<div class="nlist1a" style="margin:0px; border:none; color:#3c8cc4"><div>天天零花钱为孩子提供可靠、便捷的理财投资平台<br />
+  培养和提升孩子的财商</div></div>
+</div>
+</div>
+
+<div class="NNlist pageOne5">
+	<div class="conter">
+    <div class="wrap">
+        <div class="verticalWrap">
+            <div class="vertical">
+              <div class="aa1">
+           	    <dd class="icolist1">
+                	<div class="img"></div>
+                  <div class="txt"><strong>终身免费</strong><br />
+                      一分钟注册，永久免费<br />
+                    使用你的天天零花钱</div>
+                </dd>
+                <dd class="icolist1">
+                	<div class="img" style="background-position: -238px 0;"></div>
+                  <div class="txt"><strong>零花钱在线申请</strong><br />
+                    孩子零花钱在线申请<br />
+                  家长实时发放</div>
+                </dd>
+                <dd class="icolist1">
+               	  <div class="img" style="background-position: -456px 0;"></div>
+                  <div class="txt"><strong>定期自动发放</strong><br />
+                    父母可灵活定制零花钱<br />
+                    发放周期培养孩子零花<br />
+                  钱预算使用习惯</div>
+                </dd>
+                
+                <dd class="icolist1">
+               	  <div class="img" style="background-position: -26px -127px"></div>
+                  <div class="txt"><strong>安全</strong><br />
+                    孩子使用零花钱实现自己<br />
+                    的心愿通知父母审核，保<br />
+                  障安全</div>
+                </dd>
+                
+                <dd class="icolist1">
+               	  <div class="img" style="background-position:-237px -127px"></div>
+                  <div class="txt"><strong>零花钱记录</strong><br />
+                    父母和孩子可以实时查看<br />
+                  零花钱的收入和支出</div>
+                </dd>
+                <dd class="icolist1">
+               	  <div class="img" style="background-position:-456px -127px"></div>
+                  <div class="txt"><strong>双登录</strong><br />
+                    父母孩子帐户绑定双<br />
+                    登录机制有效管控零<br />
+                  花钱</div>
+                </dd>
+                
+                
+              	<div class="clear"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+
+
+
+<div class="panel foot">
+  <div class="conter">
+    	<div class="foota">
+          <div class="foota1">
+          	<dd>
+              <strong>应用下载</strong><br />
+              <a href="#">iphone5及以下</a><br />
+              <a href="#">iphone6</a><br />
+              <a href="#">ipad</a><br />
+              <a href="#">android</a><br />
+            </dd>
+            <dd>
+              <strong>使用帮助</strong><br />
+              <a href="Parents.html">父母帮助</a><br />
+              <a href="Children.html">孩子帮助</a><br />
+              <a href="help.html">技术支持</a><br />
+            </dd>
+            <dd>
+              <strong>关于我们</strong><br />
+              <a href="#">了解我们</a><br />
+              <a href="#">加入我们</a><br />
+              <a href="#">联系我们</a><br />
+            </dd>
+            <dd style="width:150px">
+              <strong>关注我们</strong><br />
+              <a href="#">新郎微薄</a><br />
+              <a href="#">QQ空间</a><br />
+              <a href="#">官方微信</a><br />
+            </dd>
+            <div class="clear"></div>
+          </div>
+          <div class="foota2"><a style="color:#b0afaf" href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14046174号</a><br />
+          上海启竹网络科技有限公司　shanghai Qizhu Net Technology LLC</div>
+          
+          <div class="clear"></div>
+        </div>
+        <div class="footb"><img src="image/wx.png" width="285" height="174" /></div>
+        
+        <div class="clear"></div>
+        
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>

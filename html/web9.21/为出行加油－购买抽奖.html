@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>100人以上摇</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+<!--oLogo-->
+<p class="oLogo"><img src="images/logo.png"></p>
+<!--oRuleBtn-->
+<p class="oRuleBtn"><img src="images/logo2.png"><a>活动规则</a></p>
+
+<!--photoDetails-->
+<div class="photoDetails">
+  <p class="oPhoto"><span>上传当日收银条照片</span></p>
+  <p class="oBtn_c"><span onClick="oFile.click()">上 传</span>
+    <input name="" type="file" id="oFile" style="display:none;">
+  </p>
+  <p class="oInput_c">
+    <input type="text" placeholder="收银条号码" class="oText">
+  </p>
+  <p class="oInput_c">
+    <input type="text" placeholder="手机号" class="oText">
+  </p>
+</div>
+
+<p class="oBtn_01 top30"><a href="#" class="oClick_02">确 定</a></p>
+<p class="cd"><img src="images/img1.png"></p>
+
+<!--弹框1-->
+<div class="popup" id="popup1"><b class="close">X</b>
+	<div class="table">
+    	<p>您已输入过此收银条号码<br>请勿重复输入！</p>
+    </div>
+</div>
+
+<div class="popup" id="popup2"><b class="close">X</b>
+	<div class="table">
+    	<p>谢谢您对本活动的支持！<br>
+你本周的参与次数已用完。<br>
+欢迎您下周继续参加！</p>
+    </div>
+</div>
+
+<script>
+$(function(){
+	$(".popup .close").click(function(){
+		$(".popup").hide();
+		})
+	$(".oClick_02").click(function(){
+		$("#popup1").show();
+		})
+	
+	})
+</script>
+
+</body>
+</html>
