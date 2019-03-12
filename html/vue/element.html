@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" style="background-color: transparent;">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="app">
+
+
+    <button @click="showVideo">预览</button>
+    <el-dialog  class="box-dialogVisible" :visible.sync="dialogVisible" width="90%">
+        <div style="width: 100%; padding-bottom: 55%; height: 0px; position: relative; background: #000000">
+            <video style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px" controls>
+                <source src="http://event.haizitong.com/symfollies/image/Comp1.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+            </video>
+        </div>
+    </el-dialog>
+
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+          return{
+              dialogVisible:false
+          }
+        },
+        methods: {
+            showVideo(){
+                this.dialogVisible=true;
+//                setTimeout(function () {
+//                    $("video").attr("src","http://event.haizitong.com/symfollies/image/Comp1.mp4");
+//                })
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
